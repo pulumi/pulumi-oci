@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class BdsInstanceNodeGetArgs : Pulumi.ResourceArgs
+    public sealed class BdsInstanceNodeGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("attachedBlockVolumes")]
         private InputList<Inputs.BdsInstanceNodeAttachedBlockVolumeGetArgs>? _attachedBlockVolumes;
@@ -117,5 +117,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public BdsInstanceNodeGetArgs()
         {
         }
+        public static new BdsInstanceNodeGetArgs Empty => new BdsInstanceNodeGetArgs();
     }
 }

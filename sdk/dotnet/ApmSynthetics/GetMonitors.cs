@@ -22,25 +22,23 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMonitors = Oci.ApmSynthetics.GetMonitors.Invoke(new()
         ///     {
-        ///         var testMonitors = Output.Create(Oci.ApmSynthetics.GetMonitors.InvokeAsync(new Oci.ApmSynthetics.GetMonitorsArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///             DisplayName = @var.Monitor_display_name,
-        ///             MonitorType = @var.Monitor_monitor_type,
-        ///             ScriptId = oci_apm_synthetics_script.Test_script.Id,
-        ///             Status = @var.Monitor_status,
-        ///             VantagePoint = @var.Monitor_vantage_point,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+        ///         DisplayName = @var.Monitor_display_name,
+        ///         MonitorType = @var.Monitor_monitor_type,
+        ///         ScriptId = oci_apm_synthetics_script.Test_script.Id,
+        ///         Status = @var.Monitor_status,
+        ///         VantagePoint = @var.Monitor_vantage_point,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMonitors = Oci.ApmSynthetics.GetMonitors.Invoke(new()
         ///     {
-        ///         var testMonitors = Output.Create(Oci.ApmSynthetics.GetMonitors.InvokeAsync(new Oci.ApmSynthetics.GetMonitorsArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///             DisplayName = @var.Monitor_display_name,
-        ///             MonitorType = @var.Monitor_monitor_type,
-        ///             ScriptId = oci_apm_synthetics_script.Test_script.Id,
-        ///             Status = @var.Monitor_status,
-        ///             VantagePoint = @var.Monitor_vantage_point,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+        ///         DisplayName = @var.Monitor_display_name,
+        ///         MonitorType = @var.Monitor_monitor_type,
+        ///         ScriptId = oci_apm_synthetics_script.Test_script.Id,
+        ///         Status = @var.Monitor_status,
+        ///         VantagePoint = @var.Monitor_vantage_point,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.ApmSynthetics
     }
 
 
-    public sealed class GetMonitorsArgs : Pulumi.InvokeArgs
+    public sealed class GetMonitorsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM domain ID the request is intended for.
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.ApmSynthetics
         public GetMonitorsArgs()
         {
         }
+        public static new GetMonitorsArgs Empty => new GetMonitorsArgs();
     }
 
-    public sealed class GetMonitorsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMonitorsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM domain ID the request is intended for.
@@ -187,6 +184,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public GetMonitorsInvokeArgs()
         {
         }
+        public static new GetMonitorsInvokeArgs Empty => new GetMonitorsInvokeArgs();
     }
 
 

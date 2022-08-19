@@ -17,22 +17,20 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDrgAttachmentsList = new Oci.Core.DrgAttachmentsList("testDrgAttachmentsList", new()
     ///     {
-    ///         var testDrgAttachmentsList = new Oci.Core.DrgAttachmentsList("testDrgAttachmentsList", new Oci.Core.DrgAttachmentsListArgs
-    ///         {
-    ///             DrgId = oci_core_drg.Test_drg.Id,
-    ///             AttachmentType = @var.Drg_attachments_list_attachment_type,
-    ///             IsCrossTenancy = @var.Drg_attachments_list_is_cross_tenancy,
-    ///         });
-    ///     }
+    ///         DrgId = oci_core_drg.Test_drg.Id,
+    ///         AttachmentType = @var.Drg_attachments_list_attachment_type,
+    ///         IsCrossTenancy = @var.Drg_attachments_list_is_cross_tenancy,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -40,7 +38,7 @@ namespace Pulumi.Oci.Core
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Core/drgAttachmentsList:DrgAttachmentsList")]
-    public partial class DrgAttachmentsList : Pulumi.CustomResource
+    public partial class DrgAttachmentsList : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The type for the network resource attached to the DRG.
@@ -110,7 +108,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class DrgAttachmentsListArgs : Pulumi.ResourceArgs
+    public sealed class DrgAttachmentsListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type for the network resource attached to the DRG.
@@ -133,9 +131,10 @@ namespace Pulumi.Oci.Core
         public DrgAttachmentsListArgs()
         {
         }
+        public static new DrgAttachmentsListArgs Empty => new DrgAttachmentsListArgs();
     }
 
-    public sealed class DrgAttachmentsListState : Pulumi.ResourceArgs
+    public sealed class DrgAttachmentsListState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type for the network resource attached to the DRG.
@@ -170,5 +169,6 @@ namespace Pulumi.Oci.Core
         public DrgAttachmentsListState()
         {
         }
+        public static new DrgAttachmentsListState Empty => new DrgAttachmentsListState();
     }
 }

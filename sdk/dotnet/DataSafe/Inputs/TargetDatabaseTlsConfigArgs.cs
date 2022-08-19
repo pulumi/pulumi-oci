@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class TargetDatabaseTlsConfigArgs : Pulumi.ResourceArgs
+    public sealed class TargetDatabaseTlsConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The format of the certificate store.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public TargetDatabaseTlsConfigArgs()
         {
         }
+        public static new TargetDatabaseTlsConfigArgs Empty => new TargetDatabaseTlsConfigArgs();
     }
 }

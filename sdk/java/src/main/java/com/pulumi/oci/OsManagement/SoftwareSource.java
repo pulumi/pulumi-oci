@@ -26,6 +26,44 @@ import javax.annotation.Nullable;
  * and they must be added later.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.OsManagement.SoftwareSource;
+ * import com.pulumi.oci.OsManagement.SoftwareSourceArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSoftwareSource = new SoftwareSource(&#34;testSoftwareSource&#34;, SoftwareSourceArgs.builder()        
+ *             .archType(var_.software_source_arch_type())
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.software_source_display_name())
+ *             .checksumType(var_.software_source_checksum_type())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.software_source_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .maintainerEmail(var_.software_source_maintainer_email())
+ *             .maintainerName(var_.software_source_maintainer_name())
+ *             .maintainerPhone(var_.software_source_maintainer_phone())
+ *             .parentId(oci_osmanagement_parent.test_parent().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testContainerImage = Oci.Artifacts.GetContainerImage.Invoke(new()
         ///     {
-        ///         var testContainerImage = Output.Create(Oci.Artifacts.GetContainerImage.InvokeAsync(new Oci.Artifacts.GetContainerImageArgs
-        ///         {
-        ///             ImageId = @var.Container_image_id,
-        ///         }));
-        ///     }
+        ///         ImageId = @var.Container_image_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testContainerImage = Oci.Artifacts.GetContainerImage.Invoke(new()
         ///     {
-        ///         var testContainerImage = Output.Create(Oci.Artifacts.GetContainerImage.InvokeAsync(new Oci.Artifacts.GetContainerImageArgs
-        ///         {
-        ///             ImageId = @var.Container_image_id,
-        ///         }));
-        ///     }
+        ///         ImageId = @var.Container_image_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Artifacts
     }
 
 
-    public sealed class GetContainerImageArgs : Pulumi.InvokeArgs
+    public sealed class GetContainerImageArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Artifacts
         public GetContainerImageArgs()
         {
         }
+        public static new GetContainerImageArgs Empty => new GetContainerImageArgs();
     }
 
-    public sealed class GetContainerImageInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetContainerImageInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Artifacts
         public GetContainerImageInvokeArgs()
         {
         }
+        public static new GetContainerImageInvokeArgs Empty => new GetContainerImageInvokeArgs();
     }
 
 

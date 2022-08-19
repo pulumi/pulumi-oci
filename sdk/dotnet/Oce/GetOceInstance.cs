@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Oce
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOceInstance = Oci.Oce.GetOceInstance.Invoke(new()
         ///     {
-        ///         var testOceInstance = Output.Create(Oci.Oce.GetOceInstance.InvokeAsync(new Oci.Oce.GetOceInstanceArgs
-        ///         {
-        ///             OceInstanceId = oci_oce_oce_instance.Test_oce_instance.Id,
-        ///         }));
-        ///     }
+        ///         OceInstanceId = oci_oce_oce_instance.Test_oce_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Oce
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOceInstance = Oci.Oce.GetOceInstance.Invoke(new()
         ///     {
-        ///         var testOceInstance = Output.Create(Oci.Oce.GetOceInstance.InvokeAsync(new Oci.Oce.GetOceInstanceArgs
-        ///         {
-        ///             OceInstanceId = oci_oce_oce_instance.Test_oce_instance.Id,
-        ///         }));
-        ///     }
+        ///         OceInstanceId = oci_oce_oce_instance.Test_oce_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Oce
     }
 
 
-    public sealed class GetOceInstanceArgs : Pulumi.InvokeArgs
+    public sealed class GetOceInstanceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique OceInstance identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Oce
         public GetOceInstanceArgs()
         {
         }
+        public static new GetOceInstanceArgs Empty => new GetOceInstanceArgs();
     }
 
-    public sealed class GetOceInstanceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOceInstanceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique OceInstance identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Oce
         public GetOceInstanceInvokeArgs()
         {
         }
+        public static new GetOceInstanceInvokeArgs Empty => new GetOceInstanceInvokeArgs();
     }
 
 

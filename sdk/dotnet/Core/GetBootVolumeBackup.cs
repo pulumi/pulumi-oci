@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBootVolumeBackup = Oci.Core.GetBootVolumeBackup.Invoke(new()
         ///     {
-        ///         var testBootVolumeBackup = Output.Create(Oci.Core.GetBootVolumeBackup.InvokeAsync(new Oci.Core.GetBootVolumeBackupArgs
-        ///         {
-        ///             BootVolumeBackupId = oci_core_boot_volume_backup.Test_boot_volume_backup.Id,
-        ///         }));
-        ///     }
+        ///         BootVolumeBackupId = oci_core_boot_volume_backup.Test_boot_volume_backup.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBootVolumeBackup = Oci.Core.GetBootVolumeBackup.Invoke(new()
         ///     {
-        ///         var testBootVolumeBackup = Output.Create(Oci.Core.GetBootVolumeBackup.InvokeAsync(new Oci.Core.GetBootVolumeBackupArgs
-        ///         {
-        ///             BootVolumeBackupId = oci_core_boot_volume_backup.Test_boot_volume_backup.Id,
-        ///         }));
-        ///     }
+        ///         BootVolumeBackupId = oci_core_boot_volume_backup.Test_boot_volume_backup.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetBootVolumeBackupArgs : Pulumi.InvokeArgs
+    public sealed class GetBootVolumeBackupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the boot volume backup.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetBootVolumeBackupArgs()
         {
         }
+        public static new GetBootVolumeBackupArgs Empty => new GetBootVolumeBackupArgs();
     }
 
-    public sealed class GetBootVolumeBackupInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBootVolumeBackupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the boot volume backup.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetBootVolumeBackupInvokeArgs()
         {
         }
+        public static new GetBootVolumeBackupInvokeArgs Empty => new GetBootVolumeBackupInvokeArgs();
     }
 
 

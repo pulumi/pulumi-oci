@@ -22,24 +22,22 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAccessPolicies = Oci.ServiceMesh.GetAccessPolicies.Invoke(new()
         ///     {
-        ///         var testAccessPolicies = Output.Create(Oci.ServiceMesh.GetAccessPolicies.InvokeAsync(new Oci.ServiceMesh.GetAccessPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Access_policy_id,
-        ///             MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-        ///             Name = @var.Access_policy_name,
-        ///             State = @var.Access_policy_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Access_policy_id,
+        ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+        ///         Name = @var.Access_policy_name,
+        ///         State = @var.Access_policy_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAccessPolicies = Oci.ServiceMesh.GetAccessPolicies.Invoke(new()
         ///     {
-        ///         var testAccessPolicies = Output.Create(Oci.ServiceMesh.GetAccessPolicies.InvokeAsync(new Oci.ServiceMesh.GetAccessPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Access_policy_id,
-        ///             MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-        ///             Name = @var.Access_policy_name,
-        ///             State = @var.Access_policy_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Access_policy_id,
+        ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+        ///         Name = @var.Access_policy_name,
+        ///         State = @var.Access_policy_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetAccessPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetAccessPoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetAccessPoliciesArgs()
         {
         }
+        public static new GetAccessPoliciesArgs Empty => new GetAccessPoliciesArgs();
     }
 
-    public sealed class GetAccessPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAccessPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetAccessPoliciesInvokeArgs()
         {
         }
+        public static new GetAccessPoliciesInvokeArgs Empty => new GetAccessPoliciesInvokeArgs();
     }
 
 

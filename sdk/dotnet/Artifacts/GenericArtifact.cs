@@ -15,28 +15,26 @@ namespace Pulumi.Oci.Artifacts
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testGenericArtifact = new Oci.Artifacts.GenericArtifact("testGenericArtifact", new()
     ///     {
-    ///         var testGenericArtifact = new Oci.Artifacts.GenericArtifact("testGenericArtifact", new Oci.Artifacts.GenericArtifactArgs
+    ///         ArtifactId = oci_artifacts_artifact.Test_artifact.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             ArtifactId = oci_artifacts_artifact.Test_artifact.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -44,7 +42,7 @@ namespace Pulumi.Oci.Artifacts
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Artifacts/genericArtifact:GenericArtifact")]
-    public partial class GenericArtifact : Pulumi.CustomResource
+    public partial class GenericArtifact : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
@@ -162,7 +160,7 @@ namespace Pulumi.Oci.Artifacts
         }
     }
 
-    public sealed class GenericArtifactArgs : Pulumi.ResourceArgs
+    public sealed class GenericArtifactArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
@@ -197,9 +195,10 @@ namespace Pulumi.Oci.Artifacts
         public GenericArtifactArgs()
         {
         }
+        public static new GenericArtifactArgs Empty => new GenericArtifactArgs();
     }
 
-    public sealed class GenericArtifactState : Pulumi.ResourceArgs
+    public sealed class GenericArtifactState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
@@ -288,5 +287,6 @@ namespace Pulumi.Oci.Artifacts
         public GenericArtifactState()
         {
         }
+        public static new GenericArtifactState Empty => new GenericArtifactState();
     }
 }

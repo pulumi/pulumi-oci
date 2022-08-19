@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs()
         {
         }
+        public static new AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs Empty => new AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs();
     }
 }

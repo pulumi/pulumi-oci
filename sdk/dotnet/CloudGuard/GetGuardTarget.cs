@@ -21,20 +21,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTarget = Oci.CloudGuard.GetGuardTarget.Invoke(new()
         ///     {
-        ///         var testTarget = Output.Create(Oci.CloudGuard.GetGuardTarget.InvokeAsync(new Oci.CloudGuard.GetGuardTargetArgs
-        ///         {
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         }));
-        ///     }
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTarget = Oci.CloudGuard.GetGuardTarget.Invoke(new()
         ///     {
-        ///         var testTarget = Output.Create(Oci.CloudGuard.GetGuardTarget.InvokeAsync(new Oci.CloudGuard.GetGuardTargetArgs
-        ///         {
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         }));
-        ///     }
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetGuardTargetArgs : Pulumi.InvokeArgs
+    public sealed class GetGuardTargetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of target
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetGuardTargetArgs()
         {
         }
+        public static new GetGuardTargetArgs Empty => new GetGuardTargetArgs();
     }
 
-    public sealed class GetGuardTargetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetGuardTargetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of target
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetGuardTargetInvokeArgs()
         {
         }
+        public static new GetGuardTargetInvokeArgs Empty => new GetGuardTargetInvokeArgs();
     }
 
 

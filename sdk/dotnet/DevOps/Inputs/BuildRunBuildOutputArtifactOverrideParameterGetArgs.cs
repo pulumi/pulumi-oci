@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildRunBuildOutputArtifactOverrideParameterGetArgs : Pulumi.ResourceArgs
+    public sealed class BuildRunBuildOutputArtifactOverrideParameterGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("items")]
         private InputList<Inputs.BuildRunBuildOutputArtifactOverrideParameterItemGetArgs>? _items;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildRunBuildOutputArtifactOverrideParameterGetArgs()
         {
         }
+        public static new BuildRunBuildOutputArtifactOverrideParameterGetArgs Empty => new BuildRunBuildOutputArtifactOverrideParameterGetArgs();
     }
 }

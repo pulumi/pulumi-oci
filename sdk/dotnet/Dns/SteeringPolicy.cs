@@ -18,72 +18,70 @@ namespace Pulumi.Oci.Dns
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSteeringPolicy = new Oci.Dns.SteeringPolicy("testSteeringPolicy", new()
     ///     {
-    ///         var testSteeringPolicy = new Oci.Dns.SteeringPolicy("testSteeringPolicy", new Oci.Dns.SteeringPolicyArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Steering_policy_display_name,
+    ///         Template = @var.Steering_policy_template,
+    ///         Answers = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Steering_policy_display_name,
-    ///             Template = @var.Steering_policy_template,
-    ///             Answers = 
+    ///             new Oci.Dns.Inputs.SteeringPolicyAnswerArgs
     ///             {
-    ///                 new Oci.Dns.Inputs.SteeringPolicyAnswerArgs
-    ///                 {
-    ///                     Name = @var.Steering_policy_answers_name,
-    ///                     Rdata = @var.Steering_policy_answers_rdata,
-    ///                     Rtype = @var.Steering_policy_answers_rtype,
-    ///                     IsDisabled = @var.Steering_policy_answers_is_disabled,
-    ///                     Pool = @var.Steering_policy_answers_pool,
-    ///                 },
+    ///                 Name = @var.Steering_policy_answers_name,
+    ///                 Rdata = @var.Steering_policy_answers_rdata,
+    ///                 Rtype = @var.Steering_policy_answers_rtype,
+    ///                 IsDisabled = @var.Steering_policy_answers_is_disabled,
+    ///                 Pool = @var.Steering_policy_answers_pool,
     ///             },
-    ///             DefinedTags = @var.Steering_policy_defined_tags,
-    ///             FreeformTags = @var.Steering_policy_freeform_tags,
-    ///             HealthCheckMonitorId = oci_health_checks_http_monitor.Test_http_monitor.Id,
-    ///             Rules = 
+    ///         },
+    ///         DefinedTags = @var.Steering_policy_defined_tags,
+    ///         FreeformTags = @var.Steering_policy_freeform_tags,
+    ///         HealthCheckMonitorId = oci_health_checks_http_monitor.Test_http_monitor.Id,
+    ///         Rules = new[]
+    ///         {
+    ///             new Oci.Dns.Inputs.SteeringPolicyRuleArgs
     ///             {
-    ///                 new Oci.Dns.Inputs.SteeringPolicyRuleArgs
+    ///                 RuleType = @var.Steering_policy_rules_rule_type,
+    ///                 Cases = new[]
     ///                 {
-    ///                     RuleType = @var.Steering_policy_rules_rule_type,
-    ///                     Cases = 
+    ///                     new Oci.Dns.Inputs.SteeringPolicyRuleCaseArgs
     ///                     {
-    ///                         new Oci.Dns.Inputs.SteeringPolicyRuleCaseArgs
+    ///                         AnswerDatas = new[]
     ///                         {
-    ///                             AnswerDatas = 
+    ///                             new Oci.Dns.Inputs.SteeringPolicyRuleCaseAnswerDataArgs
     ///                             {
-    ///                                 new Oci.Dns.Inputs.SteeringPolicyRuleCaseAnswerDataArgs
-    ///                                 {
-    ///                                     AnswerCondition = @var.Steering_policy_rules_cases_answer_data_answer_condition,
-    ///                                     ShouldKeep = @var.Steering_policy_rules_cases_answer_data_should_keep,
-    ///                                     Value = @var.Steering_policy_rules_cases_answer_data_value,
-    ///                                 },
+    ///                                 AnswerCondition = @var.Steering_policy_rules_cases_answer_data_answer_condition,
+    ///                                 ShouldKeep = @var.Steering_policy_rules_cases_answer_data_should_keep,
+    ///                                 Value = @var.Steering_policy_rules_cases_answer_data_value,
     ///                             },
-    ///                             CaseCondition = @var.Steering_policy_rules_cases_case_condition,
-    ///                             Count = @var.Steering_policy_rules_cases_count,
     ///                         },
+    ///                         CaseCondition = @var.Steering_policy_rules_cases_case_condition,
+    ///                         Count = @var.Steering_policy_rules_cases_count,
     ///                     },
-    ///                     DefaultAnswerDatas = 
-    ///                     {
-    ///                         new Oci.Dns.Inputs.SteeringPolicyRuleDefaultAnswerDataArgs
-    ///                         {
-    ///                             AnswerCondition = @var.Steering_policy_rules_default_answer_data_answer_condition,
-    ///                             ShouldKeep = @var.Steering_policy_rules_default_answer_data_should_keep,
-    ///                             Value = @var.Steering_policy_rules_default_answer_data_value,
-    ///                         },
-    ///                     },
-    ///                     DefaultCount = @var.Steering_policy_rules_default_count,
-    ///                     Description = @var.Steering_policy_rules_description,
     ///                 },
+    ///                 DefaultAnswerDatas = new[]
+    ///                 {
+    ///                     new Oci.Dns.Inputs.SteeringPolicyRuleDefaultAnswerDataArgs
+    ///                     {
+    ///                         AnswerCondition = @var.Steering_policy_rules_default_answer_data_answer_condition,
+    ///                         ShouldKeep = @var.Steering_policy_rules_default_answer_data_should_keep,
+    ///                         Value = @var.Steering_policy_rules_default_answer_data_value,
+    ///                     },
+    ///                 },
+    ///                 DefaultCount = @var.Steering_policy_rules_default_count,
+    ///                 Description = @var.Steering_policy_rules_description,
     ///             },
-    ///             Ttl = @var.Steering_policy_ttl,
-    ///         });
-    ///     }
+    ///         },
+    ///         Ttl = @var.Steering_policy_ttl,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -95,7 +93,7 @@ namespace Pulumi.Oci.Dns
     /// ```
     /// </summary>
     [OciResourceType("oci:Dns/steeringPolicy:SteeringPolicy")]
-    public partial class SteeringPolicy : Pulumi.CustomResource
+    public partial class SteeringPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The set of all answers that can potentially issue from the steering policy.
@@ -213,7 +211,7 @@ namespace Pulumi.Oci.Dns
         }
     }
 
-    public sealed class SteeringPolicyArgs : Pulumi.ResourceArgs
+    public sealed class SteeringPolicyArgs : global::Pulumi.ResourceArgs
     {
         [Input("answers")]
         private InputList<Inputs.SteeringPolicyAnswerArgs>? _answers;
@@ -296,9 +294,10 @@ namespace Pulumi.Oci.Dns
         public SteeringPolicyArgs()
         {
         }
+        public static new SteeringPolicyArgs Empty => new SteeringPolicyArgs();
     }
 
-    public sealed class SteeringPolicyState : Pulumi.ResourceArgs
+    public sealed class SteeringPolicyState : global::Pulumi.ResourceArgs
     {
         [Input("answers")]
         private InputList<Inputs.SteeringPolicyAnswerGetArgs>? _answers;
@@ -399,5 +398,6 @@ namespace Pulumi.Oci.Dns
         public SteeringPolicyState()
         {
         }
+        public static new SteeringPolicyState Empty => new SteeringPolicyState();
     }
 }

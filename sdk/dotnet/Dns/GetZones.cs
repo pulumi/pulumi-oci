@@ -24,29 +24,27 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testZones = Oci.Dns.GetZones.Invoke(new()
         ///     {
-        ///         var testZones = Output.Create(Oci.Dns.GetZones.InvokeAsync(new Oci.Dns.GetZonesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Zone_name,
-        ///             NameContains = @var.Zone_name_contains,
-        ///             Scope = @var.Zone_scope,
-        ///             State = @var.Zone_state,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Zone_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Zone_time_created_less_than,
-        ///             TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
-        ///             ViewId = oci_dns_view.Test_view.Id,
-        ///             ZoneType = @var.Zone_zone_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Zone_name,
+        ///         NameContains = @var.Zone_name_contains,
+        ///         Scope = @var.Zone_scope,
+        ///         State = @var.Zone_state,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Zone_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Zone_time_created_less_than,
+        ///         TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
+        ///         ViewId = oci_dns_view.Test_view.Id,
+        ///         ZoneType = @var.Zone_zone_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -67,29 +65,27 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testZones = Oci.Dns.GetZones.Invoke(new()
         ///     {
-        ///         var testZones = Output.Create(Oci.Dns.GetZones.InvokeAsync(new Oci.Dns.GetZonesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Zone_name,
-        ///             NameContains = @var.Zone_name_contains,
-        ///             Scope = @var.Zone_scope,
-        ///             State = @var.Zone_state,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Zone_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Zone_time_created_less_than,
-        ///             TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
-        ///             ViewId = oci_dns_view.Test_view.Id,
-        ///             ZoneType = @var.Zone_zone_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Zone_name,
+        ///         NameContains = @var.Zone_name_contains,
+        ///         Scope = @var.Zone_scope,
+        ///         State = @var.Zone_state,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Zone_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Zone_time_created_less_than,
+        ///         TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
+        ///         ViewId = oci_dns_view.Test_view.Id,
+        ///         ZoneType = @var.Zone_zone_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -99,7 +95,7 @@ namespace Pulumi.Oci.Dns
     }
 
 
-    public sealed class GetZonesArgs : Pulumi.InvokeArgs
+    public sealed class GetZonesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
@@ -185,9 +181,10 @@ namespace Pulumi.Oci.Dns
         public GetZonesArgs()
         {
         }
+        public static new GetZonesArgs Empty => new GetZonesArgs();
     }
 
-    public sealed class GetZonesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetZonesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
@@ -273,6 +270,7 @@ namespace Pulumi.Oci.Dns
         public GetZonesInvokeArgs()
         {
         }
+        public static new GetZonesInvokeArgs Empty => new GetZonesInvokeArgs();
     }
 
 

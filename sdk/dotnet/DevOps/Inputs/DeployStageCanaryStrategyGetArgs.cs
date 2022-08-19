@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployStageCanaryStrategyGetArgs : Pulumi.ResourceArgs
+    public sealed class DeployStageCanaryStrategyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the Ingress resource.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployStageCanaryStrategyGetArgs()
         {
         }
+        public static new DeployStageCanaryStrategyGetArgs Empty => new DeployStageCanaryStrategyGetArgs();
     }
 }

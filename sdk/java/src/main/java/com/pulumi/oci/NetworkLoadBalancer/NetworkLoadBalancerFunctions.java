@@ -53,6 +53,36 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
+     *             .backendName(oci_network_load_balancer_backend.test_backend().name())
+     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendHealthResult> getBackendHealth(GetBackendHealthArgs args) {
@@ -64,6 +94,36 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
+     *             .backendName(oci_network_load_balancer_backend.test_backend().name())
+     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendHealthResult> getBackendHealthPlain(GetBackendHealthPlainArgs args) {
@@ -75,6 +135,36 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
+     *             .backendName(oci_network_load_balancer_backend.test_backend().name())
+     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendHealthResult> getBackendHealth(GetBackendHealthArgs args, InvokeOptions options) {
@@ -86,6 +176,36 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the current health status of the specified backend server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
+     *             .backendName(oci_network_load_balancer_backend.test_backend().name())
+     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendHealthResult> getBackendHealthPlain(GetBackendHealthPlainArgs args, InvokeOptions options) {
@@ -98,6 +218,37 @@ public final class NetworkLoadBalancerFunctions {
      * 
      * ## Example Usage
      * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
+     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .ipVersion(var_.backend_set_ip_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
      */
     public static Output<GetBackendSetResult> getBackendSet(GetBackendSetArgs args) {
         return getBackendSet(args, InvokeOptions.Empty);
@@ -108,6 +259,37 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the configuration information for the specified backend set.
      * 
      * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
+     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .ipVersion(var_.backend_set_ip_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendSetResult> getBackendSetPlain(GetBackendSetPlainArgs args) {
@@ -120,6 +302,37 @@ public final class NetworkLoadBalancerFunctions {
      * 
      * ## Example Usage
      * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
+     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .ipVersion(var_.backend_set_ip_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
      */
     public static Output<GetBackendSetResult> getBackendSet(GetBackendSetArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", TypeShape.of(GetBackendSetResult.class), args, Utilities.withVersion(options));
@@ -130,6 +343,37 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the configuration information for the specified backend set.
      * 
      * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
+     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .ipVersion(var_.backend_set_ip_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendSetResult> getBackendSetPlain(GetBackendSetPlainArgs args, InvokeOptions options) {
@@ -153,6 +397,34 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all backend sets associated with a given network load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendSetsResult> getBackendSets(GetBackendSetsArgs args) {
@@ -164,6 +436,34 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all backend sets associated with a given network load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendSetsResult> getBackendSetsPlain(GetBackendSetsPlainArgs args) {
@@ -175,6 +475,34 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all backend sets associated with a given network load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendSetsResult> getBackendSets(GetBackendSetsArgs args, InvokeOptions options) {
@@ -186,6 +514,34 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all backend sets associated with a given network load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendSetsResult> getBackendSetsPlain(GetBackendSetsPlainArgs args, InvokeOptions options) {
@@ -197,6 +553,35 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the backend servers for a given network load balancer and backend set.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
+     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendsResult> getBackends(GetBackendsArgs args) {
@@ -208,6 +593,35 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the backend servers for a given network load balancer and backend set.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
+     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendsResult> getBackendsPlain(GetBackendsPlainArgs args) {
@@ -219,6 +633,35 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the backend servers for a given network load balancer and backend set.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
+     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackendsResult> getBackends(GetBackendsArgs args, InvokeOptions options) {
@@ -230,6 +673,35 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the backend servers for a given network load balancer and backend set.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.LoadBalancer.inputs.GetBackendsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
+     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackendsResult> getBackendsPlain(GetBackendsPlainArgs args, InvokeOptions options) {
@@ -241,6 +713,35 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves listener properties associated with a given network load balancer and listener name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
+     *             .listenerName(oci_network_load_balancer_listener.test_listener().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListenerResult> getListener(GetListenerArgs args) {
@@ -252,6 +753,35 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves listener properties associated with a given network load balancer and listener name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
+     *             .listenerName(oci_network_load_balancer_listener.test_listener().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListenerResult> getListenerPlain(GetListenerPlainArgs args) {
@@ -263,6 +793,35 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves listener properties associated with a given network load balancer and listener name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
+     *             .listenerName(oci_network_load_balancer_listener.test_listener().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListenerResult> getListener(GetListenerArgs args, InvokeOptions options) {
@@ -274,6 +833,35 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves listener properties associated with a given network load balancer and listener name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
+     *             .listenerName(oci_network_load_balancer_listener.test_listener().name())
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListenerResult> getListenerPlain(GetListenerPlainArgs args, InvokeOptions options) {
@@ -285,6 +873,34 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all listeners associated with a given network load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListenersResult> getListeners(GetListenersArgs args) {
@@ -296,6 +912,34 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all listeners associated with a given network load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListenersResult> getListenersPlain(GetListenersPlainArgs args) {
@@ -307,6 +951,34 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all listeners associated with a given network load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListenersResult> getListeners(GetListenersArgs args, InvokeOptions options) {
@@ -318,6 +990,34 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all listeners associated with a given network load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListenersResult> getListenersPlain(GetListenersPlainArgs args, InvokeOptions options) {
@@ -329,6 +1029,34 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves network load balancer configuration information by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkLoadBalancerResult> getNetworkLoadBalancer(GetNetworkLoadBalancerArgs args) {
@@ -340,6 +1068,34 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves network load balancer configuration information by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancerResult> getNetworkLoadBalancerPlain(GetNetworkLoadBalancerPlainArgs args) {
@@ -351,6 +1107,34 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves network load balancer configuration information by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkLoadBalancerResult> getNetworkLoadBalancer(GetNetworkLoadBalancerArgs args, InvokeOptions options) {
@@ -362,6 +1146,34 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves network load balancer configuration information by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancerResult> getNetworkLoadBalancerPlain(GetNetworkLoadBalancerPlainArgs args, InvokeOptions options) {
@@ -373,6 +1185,34 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the health status for the specified network load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkLoadBalancerHealthResult> getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs args) {
@@ -384,6 +1224,34 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the health status for the specified network load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancerHealthResult> getNetworkLoadBalancerHealthPlain(GetNetworkLoadBalancerHealthPlainArgs args) {
@@ -395,6 +1263,34 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the health status for the specified network load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkLoadBalancerHealthResult> getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs args, InvokeOptions options) {
@@ -406,6 +1302,34 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the health status for the specified network load balancer.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancerHealthArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
+     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancerHealthResult> getNetworkLoadBalancerHealthPlain(GetNetworkLoadBalancerHealthPlainArgs args, InvokeOptions options) {
@@ -417,6 +1341,36 @@ public final class NetworkLoadBalancerFunctions {
      * Returns a list of network load balancers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancers = NetworkLoadBalancerFunctions.getNetworkLoadBalancers(GetNetworkLoadBalancersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_load_balancer_display_name())
+     *             .state(var_.network_load_balancer_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkLoadBalancersResult> getNetworkLoadBalancers(GetNetworkLoadBalancersArgs args) {
@@ -428,6 +1382,36 @@ public final class NetworkLoadBalancerFunctions {
      * Returns a list of network load balancers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancers = NetworkLoadBalancerFunctions.getNetworkLoadBalancers(GetNetworkLoadBalancersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_load_balancer_display_name())
+     *             .state(var_.network_load_balancer_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersResult> getNetworkLoadBalancersPlain(GetNetworkLoadBalancersPlainArgs args) {
@@ -439,6 +1423,36 @@ public final class NetworkLoadBalancerFunctions {
      * Returns a list of network load balancers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancers = NetworkLoadBalancerFunctions.getNetworkLoadBalancers(GetNetworkLoadBalancersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_load_balancer_display_name())
+     *             .state(var_.network_load_balancer_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkLoadBalancersResult> getNetworkLoadBalancers(GetNetworkLoadBalancersArgs args, InvokeOptions options) {
@@ -450,6 +1464,36 @@ public final class NetworkLoadBalancerFunctions {
      * Returns a list of network load balancers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancers = NetworkLoadBalancerFunctions.getNetworkLoadBalancers(GetNetworkLoadBalancersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_load_balancer_display_name())
+     *             .state(var_.network_load_balancer_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersResult> getNetworkLoadBalancersPlain(GetNetworkLoadBalancersPlainArgs args, InvokeOptions options) {
@@ -461,6 +1505,32 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the available network load balancer policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPolicies() {
@@ -472,6 +1542,32 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the available network load balancer policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPoliciesPlain() {
@@ -483,6 +1579,32 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the available network load balancer policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPolicies(GetNetworkLoadBalancersPoliciesArgs args) {
@@ -494,6 +1616,32 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the available network load balancer policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPoliciesPlain(GetNetworkLoadBalancersPoliciesPlainArgs args) {
@@ -505,6 +1653,32 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the available network load balancer policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPolicies(GetNetworkLoadBalancersPoliciesArgs args, InvokeOptions options) {
@@ -516,6 +1690,32 @@ public final class NetworkLoadBalancerFunctions {
      * Lists the available network load balancer policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersPolicies = NetworkLoadBalancerFunctions.getNetworkLoadBalancersPolicies();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersPoliciesResult> getNetworkLoadBalancersPoliciesPlain(GetNetworkLoadBalancersPoliciesPlainArgs args, InvokeOptions options) {
@@ -528,6 +1728,32 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersProtocolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocols() {
@@ -540,6 +1766,32 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersProtocolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocolsPlain() {
@@ -552,6 +1804,32 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersProtocolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocols(GetNetworkLoadBalancersProtocolsArgs args) {
@@ -564,6 +1842,32 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersProtocolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocolsPlain(GetNetworkLoadBalancersProtocolsPlainArgs args) {
@@ -576,6 +1880,32 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersProtocolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocols(GetNetworkLoadBalancersProtocolsArgs args, InvokeOptions options) {
@@ -588,6 +1918,32 @@ public final class NetworkLoadBalancerFunctions {
      * Lists all supported traffic protocols.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetNetworkLoadBalancersProtocolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkLoadBalancersProtocols = NetworkLoadBalancerFunctions.getNetworkLoadBalancersProtocols();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkLoadBalancersProtocolsResult> getNetworkLoadBalancersProtocolsPlain(GetNetworkLoadBalancersProtocolsPlainArgs args, InvokeOptions options) {

@@ -25,6 +25,56 @@ import javax.annotation.Nullable;
  * Create an instance pool.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.InstancePool;
+ * import com.pulumi.oci.Core.InstancePoolArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationArgs;
+ * import com.pulumi.oci.Core.inputs.InstancePoolLoadBalancerArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testInstancePool = new InstancePool(&#34;testInstancePool&#34;, InstancePoolArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .instanceConfigurationId(oci_core_instance_configuration.test_instance_configuration().id())
+ *             .placementConfigurations(InstancePoolPlacementConfigurationArgs.builder()
+ *                 .availabilityDomain(var_.instance_pool_placement_configurations_availability_domain())
+ *                 .primarySubnetId(oci_core_subnet.test_subnet().id())
+ *                 .faultDomains(var_.instance_pool_placement_configurations_fault_domains())
+ *                 .secondaryVnicSubnets(InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs.builder()
+ *                     .subnetId(oci_core_subnet.test_subnet().id())
+ *                     .displayName(var_.instance_pool_placement_configurations_secondary_vnic_subnets_display_name())
+ *                     .build())
+ *                 .build())
+ *             .size(var_.instance_pool_size())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.instance_pool_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .loadBalancers(InstancePoolLoadBalancerArgs.builder()
+ *                 .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
+ *                 .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *                 .port(var_.instance_pool_load_balancers_port())
+ *                 .vnicSelection(var_.instance_pool_load_balancers_vnic_selection())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

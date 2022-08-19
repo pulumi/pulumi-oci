@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationExcludeObjectArgs : Pulumi.ResourceArgs
+    public sealed class MigrationExcludeObjectArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the object (regular expression is allowed)
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationExcludeObjectArgs()
         {
         }
+        public static new MigrationExcludeObjectArgs Empty => new MigrationExcludeObjectArgs();
     }
 }

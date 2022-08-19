@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class AuditPolicyAuditConditionGetArgs : Pulumi.ResourceArgs
+    public sealed class AuditPolicyAuditConditionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public AuditPolicyAuditConditionGetArgs()
         {
         }
+        public static new AuditPolicyAuditConditionGetArgs Empty => new AuditPolicyAuditConditionGetArgs();
     }
 }

@@ -22,22 +22,20 @@ namespace Pulumi.Oci.VnMonitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPathAnalyzerTests = Oci.VnMonitoring.GetPathAnalyzerTests.Invoke(new()
         ///     {
-        ///         var testPathAnalyzerTests = Output.Create(Oci.VnMonitoring.GetPathAnalyzerTests.InvokeAsync(new Oci.VnMonitoring.GetPathAnalyzerTestsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Path_analyzer_test_display_name,
-        ///             State = @var.Path_analyzer_test_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Path_analyzer_test_display_name,
+        ///         State = @var.Path_analyzer_test_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.VnMonitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPathAnalyzerTests = Oci.VnMonitoring.GetPathAnalyzerTests.Invoke(new()
         ///     {
-        ///         var testPathAnalyzerTests = Output.Create(Oci.VnMonitoring.GetPathAnalyzerTests.InvokeAsync(new Oci.VnMonitoring.GetPathAnalyzerTestsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Path_analyzer_test_display_name,
-        ///             State = @var.Path_analyzer_test_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Path_analyzer_test_display_name,
+        ///         State = @var.Path_analyzer_test_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.VnMonitoring
     }
 
 
-    public sealed class GetPathAnalyzerTestsArgs : Pulumi.InvokeArgs
+    public sealed class GetPathAnalyzerTestsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.VnMonitoring
         public GetPathAnalyzerTestsArgs()
         {
         }
+        public static new GetPathAnalyzerTestsArgs Empty => new GetPathAnalyzerTestsArgs();
     }
 
-    public sealed class GetPathAnalyzerTestsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPathAnalyzerTestsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.VnMonitoring
         public GetPathAnalyzerTestsInvokeArgs()
         {
         }
+        public static new GetPathAnalyzerTestsInvokeArgs Empty => new GetPathAnalyzerTestsInvokeArgs();
     }
 
 

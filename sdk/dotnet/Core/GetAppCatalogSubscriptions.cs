@@ -21,21 +21,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAppCatalogSubscriptions = Oci.Core.GetAppCatalogSubscriptions.Invoke(new()
         ///     {
-        ///         var testAppCatalogSubscriptions = Output.Create(Oci.Core.GetAppCatalogSubscriptions.InvokeAsync(new Oci.Core.GetAppCatalogSubscriptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAppCatalogSubscriptions = Oci.Core.GetAppCatalogSubscriptions.Invoke(new()
         ///     {
-        ///         var testAppCatalogSubscriptions = Output.Create(Oci.Core.GetAppCatalogSubscriptions.InvokeAsync(new Oci.Core.GetAppCatalogSubscriptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetAppCatalogSubscriptionsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppCatalogSubscriptionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Core
         public GetAppCatalogSubscriptionsArgs()
         {
         }
+        public static new GetAppCatalogSubscriptionsArgs Empty => new GetAppCatalogSubscriptionsArgs();
     }
 
-    public sealed class GetAppCatalogSubscriptionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppCatalogSubscriptionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.Core
         public GetAppCatalogSubscriptionsInvokeArgs()
         {
         }
+        public static new GetAppCatalogSubscriptionsInvokeArgs Empty => new GetAppCatalogSubscriptionsInvokeArgs();
     }
 
 

@@ -21,25 +21,23 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryConnections = Oci.DataConnectivity.GetRegistryConnections.Invoke(new()
         ///     {
-        ///         var testRegistryConnections = Output.Create(Oci.DataConnectivity.GetRegistryConnections.InvokeAsync(new Oci.DataConnectivity.GetRegistryConnectionsArgs
-        ///         {
-        ///             DataAssetKey = @var.Registry_connection_data_asset_key,
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///             FavoritesQueryParam = @var.Registry_connection_favorites_query_param,
-        ///             Fields = @var.Registry_connection_fields,
-        ///             Name = @var.Registry_connection_name,
-        ///             Type = @var.Registry_connection_type,
-        ///         }));
-        ///     }
+        ///         DataAssetKey = @var.Registry_connection_data_asset_key,
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///         FavoritesQueryParam = @var.Registry_connection_favorites_query_param,
+        ///         Fields = @var.Registry_connection_fields,
+        ///         Name = @var.Registry_connection_name,
+        ///         Type = @var.Registry_connection_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryConnections = Oci.DataConnectivity.GetRegistryConnections.Invoke(new()
         ///     {
-        ///         var testRegistryConnections = Output.Create(Oci.DataConnectivity.GetRegistryConnections.InvokeAsync(new Oci.DataConnectivity.GetRegistryConnectionsArgs
-        ///         {
-        ///             DataAssetKey = @var.Registry_connection_data_asset_key,
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///             FavoritesQueryParam = @var.Registry_connection_favorites_query_param,
-        ///             Fields = @var.Registry_connection_fields,
-        ///             Name = @var.Registry_connection_name,
-        ///             Type = @var.Registry_connection_type,
-        ///         }));
-        ///     }
+        ///         DataAssetKey = @var.Registry_connection_data_asset_key,
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///         FavoritesQueryParam = @var.Registry_connection_favorites_query_param,
+        ///         Fields = @var.Registry_connection_fields,
+        ///         Name = @var.Registry_connection_name,
+        ///         Type = @var.Registry_connection_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DataConnectivity
     }
 
 
-    public sealed class GetRegistryConnectionsArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryConnectionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Used to filter by the data asset key of the object.
@@ -140,9 +136,10 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryConnectionsArgs()
         {
         }
+        public static new GetRegistryConnectionsArgs Empty => new GetRegistryConnectionsArgs();
     }
 
-    public sealed class GetRegistryConnectionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryConnectionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Used to filter by the data asset key of the object.
@@ -197,6 +194,7 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryConnectionsInvokeArgs()
         {
         }
+        public static new GetRegistryConnectionsInvokeArgs Empty => new GetRegistryConnectionsInvokeArgs();
     }
 
 

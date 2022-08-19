@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     [OciResourceType("oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement")]
-    public partial class ListingResourceVersionAgreement : Pulumi.CustomResource
+    public partial class ListingResourceVersionAgreement : global::Pulumi.CustomResource
     {
         [Output("eulaLink")]
         public Output<string> EulaLink { get; private set; } = null!;
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class ListingResourceVersionAgreementArgs : Pulumi.ResourceArgs
+    public sealed class ListingResourceVersionAgreementArgs : global::Pulumi.ResourceArgs
     {
         [Input("listingId", required: true)]
         public Input<string> ListingId { get; set; } = null!;
@@ -85,9 +85,10 @@ namespace Pulumi.Oci.Core
         public ListingResourceVersionAgreementArgs()
         {
         }
+        public static new ListingResourceVersionAgreementArgs Empty => new ListingResourceVersionAgreementArgs();
     }
 
-    public sealed class ListingResourceVersionAgreementState : Pulumi.ResourceArgs
+    public sealed class ListingResourceVersionAgreementState : global::Pulumi.ResourceArgs
     {
         [Input("eulaLink")]
         public Input<string>? EulaLink { get; set; }
@@ -110,5 +111,6 @@ namespace Pulumi.Oci.Core
         public ListingResourceVersionAgreementState()
         {
         }
+        public static new ListingResourceVersionAgreementState Empty => new ListingResourceVersionAgreementState();
     }
 }

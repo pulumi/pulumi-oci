@@ -22,21 +22,19 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRunLog = Oci.DataFlow.GetRunLog.Invoke(new()
         ///     {
-        ///         var testRunLog = Output.Create(Oci.DataFlow.GetRunLog.InvokeAsync(new Oci.DataFlow.GetRunLogArgs
-        ///         {
-        ///             Name = @var.Run_log_name,
-        ///             RunId = oci_dataflow_run.Test_run.Id,
-        ///         }));
-        ///     }
+        ///         Name = @var.Run_log_name,
+        ///         RunId = oci_dataflow_run.Test_run.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRunLog = Oci.DataFlow.GetRunLog.Invoke(new()
         ///     {
-        ///         var testRunLog = Output.Create(Oci.DataFlow.GetRunLog.InvokeAsync(new Oci.DataFlow.GetRunLogArgs
-        ///         {
-        ///             Name = @var.Run_log_name,
-        ///             RunId = oci_dataflow_run.Test_run.Id,
-        ///         }));
-        ///     }
+        ///         Name = @var.Run_log_name,
+        ///         RunId = oci_dataflow_run.Test_run.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.DataFlow
     }
 
 
-    public sealed class GetRunLogArgs : Pulumi.InvokeArgs
+    public sealed class GetRunLogArgs : global::Pulumi.InvokeArgs
     {
         [Input("base64EncodeContent")]
         public bool? Base64EncodeContent { get; set; }
@@ -99,9 +95,10 @@ namespace Pulumi.Oci.DataFlow
         public GetRunLogArgs()
         {
         }
+        public static new GetRunLogArgs Empty => new GetRunLogArgs();
     }
 
-    public sealed class GetRunLogInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRunLogInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("base64EncodeContent")]
         public Input<bool>? Base64EncodeContent { get; set; }
@@ -121,6 +118,7 @@ namespace Pulumi.Oci.DataFlow
         public GetRunLogInvokeArgs()
         {
         }
+        public static new GetRunLogInvokeArgs Empty => new GetRunLogInvokeArgs();
     }
 
 

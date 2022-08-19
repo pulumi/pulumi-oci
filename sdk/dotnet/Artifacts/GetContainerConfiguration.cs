@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testContainerConfiguration = Oci.Artifacts.GetContainerConfiguration.Invoke(new()
         ///     {
-        ///         var testContainerConfiguration = Output.Create(Oci.Artifacts.GetContainerConfiguration.InvokeAsync(new Oci.Artifacts.GetContainerConfigurationArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testContainerConfiguration = Oci.Artifacts.GetContainerConfiguration.Invoke(new()
         ///     {
-        ///         var testContainerConfiguration = Output.Create(Oci.Artifacts.GetContainerConfiguration.InvokeAsync(new Oci.Artifacts.GetContainerConfigurationArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Artifacts
     }
 
 
-    public sealed class GetContainerConfigurationArgs : Pulumi.InvokeArgs
+    public sealed class GetContainerConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Artifacts
         public GetContainerConfigurationArgs()
         {
         }
+        public static new GetContainerConfigurationArgs Empty => new GetContainerConfigurationArgs();
     }
 
-    public sealed class GetContainerConfigurationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetContainerConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Artifacts
         public GetContainerConfigurationInvokeArgs()
         {
         }
+        public static new GetContainerConfigurationInvokeArgs Empty => new GetContainerConfigurationInvokeArgs();
     }
 
 

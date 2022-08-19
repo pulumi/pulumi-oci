@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class ExternalNonContainerDatabaseStackMonitoringConfigArgs : Pulumi.ResourceArgs
+    public sealed class ExternalNonContainerDatabaseStackMonitoringConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Database.Inputs
         public ExternalNonContainerDatabaseStackMonitoringConfigArgs()
         {
         }
+        public static new ExternalNonContainerDatabaseStackMonitoringConfigArgs Empty => new ExternalNonContainerDatabaseStackMonitoringConfigArgs();
     }
 }

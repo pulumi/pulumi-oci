@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer.Inputs
 {
 
-    public sealed class GetRecommendationsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetRecommendationsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Optimizer.Inputs
         public GetRecommendationsFilterArgs()
         {
         }
+        public static new GetRecommendationsFilterArgs Empty => new GetRecommendationsFilterArgs();
     }
 }

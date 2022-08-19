@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousVmClusterMaintenanceWindowGetArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousVmClusterMaintenanceWindowGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("customActionTimeoutInMins")]
         public Input<int>? CustomActionTimeoutInMins { get; set; }
@@ -85,5 +85,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousVmClusterMaintenanceWindowGetArgs()
         {
         }
+        public static new AutonomousVmClusterMaintenanceWindowGetArgs Empty => new AutonomousVmClusterMaintenanceWindowGetArgs();
     }
 }

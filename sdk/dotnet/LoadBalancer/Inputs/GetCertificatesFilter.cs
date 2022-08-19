@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class GetCertificatesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificatesFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public GetCertificatesFilterArgs()
         {
         }
+        public static new GetCertificatesFilterArgs Empty => new GetCertificatesFilterArgs();
     }
 }

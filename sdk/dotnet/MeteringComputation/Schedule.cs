@@ -17,62 +17,60 @@ namespace Pulumi.Oci.MeteringComputation
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSchedule = new Oci.MeteringComputation.Schedule("testSchedule", new()
     ///     {
-    ///         var testSchedule = new Oci.MeteringComputation.Schedule("testSchedule", new Oci.MeteringComputation.ScheduleArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         QueryProperties = new Oci.MeteringComputation.Inputs.ScheduleQueryPropertiesArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             QueryProperties = new Oci.MeteringComputation.Inputs.ScheduleQueryPropertiesArgs
+    ///             DateRange = new Oci.MeteringComputation.Inputs.ScheduleQueryPropertiesDateRangeArgs
     ///             {
-    ///                 DateRange = new Oci.MeteringComputation.Inputs.ScheduleQueryPropertiesDateRangeArgs
+    ///                 DateRangeType = @var.Schedule_query_properties_date_range_date_range_type,
+    ///                 DynamicDateRangeType = @var.Schedule_query_properties_date_range_dynamic_date_range_type,
+    ///                 TimeUsageEnded = @var.Schedule_query_properties_date_range_time_usage_ended,
+    ///                 TimeUsageStarted = @var.Schedule_query_properties_date_range_time_usage_started,
+    ///             },
+    ///             Granularity = @var.Schedule_query_properties_granularity,
+    ///             CompartmentDepth = @var.Schedule_query_properties_compartment_depth,
+    ///             Filter = @var.Schedule_query_properties_filter,
+    ///             GroupBies = @var.Schedule_query_properties_group_by,
+    ///             GroupByTags = new[]
+    ///             {
+    ///                 new Oci.MeteringComputation.Inputs.ScheduleQueryPropertiesGroupByTagArgs
     ///                 {
-    ///                     DateRangeType = @var.Schedule_query_properties_date_range_date_range_type,
-    ///                     DynamicDateRangeType = @var.Schedule_query_properties_date_range_dynamic_date_range_type,
-    ///                     TimeUsageEnded = @var.Schedule_query_properties_date_range_time_usage_ended,
-    ///                     TimeUsageStarted = @var.Schedule_query_properties_date_range_time_usage_started,
+    ///                     Key = @var.Schedule_query_properties_group_by_tag_key,
+    ///                     Namespace = @var.Schedule_query_properties_group_by_tag_namespace,
+    ///                     Value = @var.Schedule_query_properties_group_by_tag_value,
     ///                 },
-    ///                 Granularity = @var.Schedule_query_properties_granularity,
-    ///                 CompartmentDepth = @var.Schedule_query_properties_compartment_depth,
-    ///                 Filter = @var.Schedule_query_properties_filter,
-    ///                 GroupBies = @var.Schedule_query_properties_group_by,
-    ///                 GroupByTags = 
-    ///                 {
-    ///                     new Oci.MeteringComputation.Inputs.ScheduleQueryPropertiesGroupByTagArgs
-    ///                     {
-    ///                         Key = @var.Schedule_query_properties_group_by_tag_key,
-    ///                         Namespace = @var.Schedule_query_properties_group_by_tag_namespace,
-    ///                         Value = @var.Schedule_query_properties_group_by_tag_value,
-    ///                     },
-    ///                 },
-    ///                 IsAggregateByTime = @var.Schedule_query_properties_is_aggregate_by_time,
-    ///                 QueryType = @var.Schedule_query_properties_query_type,
     ///             },
-    ///             ResultLocation = new Oci.MeteringComputation.Inputs.ScheduleResultLocationArgs
-    ///             {
-    ///                 Bucket = @var.Schedule_result_location_bucket,
-    ///                 LocationType = @var.Schedule_result_location_location_type,
-    ///                 Namespace = @var.Schedule_result_location_namespace,
-    ///                 Region = @var.Schedule_result_location_region,
-    ///             },
-    ///             ScheduleRecurrences = @var.Schedule_schedule_recurrences,
-    ///             TimeScheduled = @var.Schedule_time_scheduled,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             IsAggregateByTime = @var.Schedule_query_properties_is_aggregate_by_time,
+    ///             QueryType = @var.Schedule_query_properties_query_type,
+    ///         },
+    ///         ResultLocation = new Oci.MeteringComputation.Inputs.ScheduleResultLocationArgs
+    ///         {
+    ///             Bucket = @var.Schedule_result_location_bucket,
+    ///             LocationType = @var.Schedule_result_location_location_type,
+    ///             Namespace = @var.Schedule_result_location_namespace,
+    ///             Region = @var.Schedule_result_location_region,
+    ///         },
+    ///         ScheduleRecurrences = @var.Schedule_schedule_recurrences,
+    ///         TimeScheduled = @var.Schedule_time_scheduled,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -84,7 +82,7 @@ namespace Pulumi.Oci.MeteringComputation
     /// ```
     /// </summary>
     [OciResourceType("oci:MeteringComputation/schedule:Schedule")]
-    public partial class Schedule : Pulumi.CustomResource
+    public partial class Schedule : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The tenancy of the customer
@@ -196,7 +194,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
     }
 
-    public sealed class ScheduleArgs : Pulumi.ResourceArgs
+    public sealed class ScheduleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The tenancy of the customer
@@ -261,9 +259,10 @@ namespace Pulumi.Oci.MeteringComputation
         public ScheduleArgs()
         {
         }
+        public static new ScheduleArgs Empty => new ScheduleArgs();
     }
 
-    public sealed class ScheduleState : Pulumi.ResourceArgs
+    public sealed class ScheduleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The tenancy of the customer
@@ -352,5 +351,6 @@ namespace Pulumi.Oci.MeteringComputation
         public ScheduleState()
         {
         }
+        public static new ScheduleState Empty => new ScheduleState();
     }
 }

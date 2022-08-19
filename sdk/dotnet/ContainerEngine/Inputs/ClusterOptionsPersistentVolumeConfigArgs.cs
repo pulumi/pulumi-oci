@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class ClusterOptionsPersistentVolumeConfigArgs : Pulumi.ResourceArgs
+    public sealed class ClusterOptionsPersistentVolumeConfigArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public ClusterOptionsPersistentVolumeConfigArgs()
         {
         }
+        public static new ClusterOptionsPersistentVolumeConfigArgs Empty => new ClusterOptionsPersistentVolumeConfigArgs();
     }
 }

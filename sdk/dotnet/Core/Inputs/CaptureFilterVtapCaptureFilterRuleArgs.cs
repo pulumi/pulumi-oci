@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class CaptureFilterVtapCaptureFilterRuleArgs : Pulumi.ResourceArgs
+    public sealed class CaptureFilterVtapCaptureFilterRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
@@ -68,5 +68,6 @@ namespace Pulumi.Oci.Core.Inputs
         public CaptureFilterVtapCaptureFilterRuleArgs()
         {
         }
+        public static new CaptureFilterVtapCaptureFilterRuleArgs Empty => new CaptureFilterVtapCaptureFilterRuleArgs();
     }
 }

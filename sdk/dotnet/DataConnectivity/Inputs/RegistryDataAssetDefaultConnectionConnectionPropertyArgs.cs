@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataConnectivity.Inputs
 {
 
-    public sealed class RegistryDataAssetDefaultConnectionConnectionPropertyArgs : Pulumi.ResourceArgs
+    public sealed class RegistryDataAssetDefaultConnectionConnectionPropertyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public RegistryDataAssetDefaultConnectionConnectionPropertyArgs()
         {
         }
+        public static new RegistryDataAssetDefaultConnectionConnectionPropertyArgs Empty => new RegistryDataAssetDefaultConnectionConnectionPropertyArgs();
     }
 }

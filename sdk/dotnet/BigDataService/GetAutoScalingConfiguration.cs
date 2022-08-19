@@ -22,21 +22,19 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutoScalingConfiguration = Oci.BigDataService.GetAutoScalingConfiguration.Invoke(new()
         ///     {
-        ///         var testAutoScalingConfiguration = Output.Create(Oci.BigDataService.GetAutoScalingConfiguration.InvokeAsync(new Oci.BigDataService.GetAutoScalingConfigurationArgs
-        ///         {
-        ///             AutoScalingConfigurationId = oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
-        ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///         }));
-        ///     }
+        ///         AutoScalingConfigurationId = oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
+        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutoScalingConfiguration = Oci.BigDataService.GetAutoScalingConfiguration.Invoke(new()
         ///     {
-        ///         var testAutoScalingConfiguration = Output.Create(Oci.BigDataService.GetAutoScalingConfiguration.InvokeAsync(new Oci.BigDataService.GetAutoScalingConfigurationArgs
-        ///         {
-        ///             AutoScalingConfigurationId = oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
-        ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///         }));
-        ///     }
+        ///         AutoScalingConfigurationId = oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
+        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.BigDataService
     }
 
 
-    public sealed class GetAutoScalingConfigurationArgs : Pulumi.InvokeArgs
+    public sealed class GetAutoScalingConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Oracle-assigned identifier of the autoscale configuration.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.BigDataService
         public GetAutoScalingConfigurationArgs()
         {
         }
+        public static new GetAutoScalingConfigurationArgs Empty => new GetAutoScalingConfigurationArgs();
     }
 
-    public sealed class GetAutoScalingConfigurationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutoScalingConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Oracle-assigned identifier of the autoscale configuration.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.BigDataService
         public GetAutoScalingConfigurationInvokeArgs()
         {
         }
+        public static new GetAutoScalingConfigurationInvokeArgs Empty => new GetAutoScalingConfigurationInvokeArgs();
     }
 
 

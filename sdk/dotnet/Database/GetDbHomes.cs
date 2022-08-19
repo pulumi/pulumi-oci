@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbHomesArgs : Pulumi.InvokeArgs
+    public sealed class GetDbHomesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
@@ -84,9 +84,10 @@ namespace Pulumi.Oci.Database
         public GetDbHomesArgs()
         {
         }
+        public static new GetDbHomesArgs Empty => new GetDbHomesArgs();
     }
 
-    public sealed class GetDbHomesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbHomesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
@@ -141,6 +142,7 @@ namespace Pulumi.Oci.Database
         public GetDbHomesInvokeArgs()
         {
         }
+        public static new GetDbHomesInvokeArgs Empty => new GetDbHomesInvokeArgs();
     }
 
 

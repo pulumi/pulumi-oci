@@ -17,30 +17,28 @@ namespace Pulumi.Oci.Kms
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testGeneratedKey = new Oci.Kms.GeneratedKey("testGeneratedKey", new()
     ///     {
-    ///         var testGeneratedKey = new Oci.Kms.GeneratedKey("testGeneratedKey", new Oci.Kms.GeneratedKeyArgs
+    ///         CryptoEndpoint = @var.Generated_key_crypto_endpoint,
+    ///         IncludePlaintextKey = @var.Generated_key_include_plaintext_key,
+    ///         KeyId = oci_kms_key.Test_key.Id,
+    ///         KeyShape = new Oci.Kms.Inputs.GeneratedKeyKeyShapeArgs
     ///         {
-    ///             CryptoEndpoint = @var.Generated_key_crypto_endpoint,
-    ///             IncludePlaintextKey = @var.Generated_key_include_plaintext_key,
-    ///             KeyId = oci_kms_key.Test_key.Id,
-    ///             KeyShape = new Oci.Kms.Inputs.GeneratedKeyKeyShapeArgs
-    ///             {
-    ///                 Algorithm = @var.Generated_key_key_shape_algorithm,
-    ///                 Length = @var.Generated_key_key_shape_length,
-    ///                 CurveId = oci_kms_curve.Test_curve.Id,
-    ///             },
-    ///             AssociatedData = @var.Generated_key_associated_data,
-    ///             LoggingContext = @var.Generated_key_logging_context,
-    ///         });
-    ///     }
+    ///             Algorithm = @var.Generated_key_key_shape_algorithm,
+    ///             Length = @var.Generated_key_key_shape_length,
+    ///             CurveId = oci_kms_curve.Test_curve.Id,
+    ///         },
+    ///         AssociatedData = @var.Generated_key_associated_data,
+    ///         LoggingContext = @var.Generated_key_logging_context,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -48,7 +46,7 @@ namespace Pulumi.Oci.Kms
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Kms/generatedKey:GeneratedKey")]
-    public partial class GeneratedKey : Pulumi.CustomResource
+    public partial class GeneratedKey : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
@@ -148,7 +146,7 @@ namespace Pulumi.Oci.Kms
         }
     }
 
-    public sealed class GeneratedKeyArgs : Pulumi.ResourceArgs
+    public sealed class GeneratedKeyArgs : global::Pulumi.ResourceArgs
     {
         [Input("associatedData")]
         private InputMap<object>? _associatedData;
@@ -201,9 +199,10 @@ namespace Pulumi.Oci.Kms
         public GeneratedKeyArgs()
         {
         }
+        public static new GeneratedKeyArgs Empty => new GeneratedKeyArgs();
     }
 
-    public sealed class GeneratedKeyState : Pulumi.ResourceArgs
+    public sealed class GeneratedKeyState : global::Pulumi.ResourceArgs
     {
         [Input("associatedData")]
         private InputMap<object>? _associatedData;
@@ -274,5 +273,6 @@ namespace Pulumi.Oci.Kms
         public GeneratedKeyState()
         {
         }
+        public static new GeneratedKeyState Empty => new GeneratedKeyState();
     }
 }

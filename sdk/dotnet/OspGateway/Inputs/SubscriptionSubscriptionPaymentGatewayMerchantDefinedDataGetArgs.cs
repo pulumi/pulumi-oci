@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OspGateway.Inputs
 {
 
-    public sealed class SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataGetArgs : Pulumi.ResourceArgs
+    public sealed class SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Cloud account name.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.OspGateway.Inputs
         public SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataGetArgs()
         {
         }
+        public static new SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataGetArgs Empty => new SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataGetArgs();
     }
 }

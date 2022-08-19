@@ -21,29 +21,27 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testContainerImageSignatures = Oci.Artifacts.GetContainerSignatures.Invoke(new()
         ///     {
-        ///         var testContainerImageSignatures = Output.Create(Oci.Artifacts.GetContainerSignatures.InvokeAsync(new Oci.Artifacts.GetContainerSignaturesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Container_image_signature_compartment_id_in_subtree,
-        ///             DisplayName = @var.Container_image_signature_display_name,
-        ///             ImageDigest = @var.Container_image_signature_image_digest,
-        ///             ImageId = oci_core_image.Test_image.Id,
-        ///             KmsKeyId = oci_kms_key.Test_key.Id,
-        ///             KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
-        ///             RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///             RepositoryName = oci_artifacts_repository.Test_repository.Name,
-        ///             SigningAlgorithm = @var.Container_image_signature_signing_algorithm,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Container_image_signature_compartment_id_in_subtree,
+        ///         DisplayName = @var.Container_image_signature_display_name,
+        ///         ImageDigest = @var.Container_image_signature_image_digest,
+        ///         ImageId = oci_core_image.Test_image.Id,
+        ///         KmsKeyId = oci_kms_key.Test_key.Id,
+        ///         KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
+        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
+        ///         RepositoryName = oci_artifacts_repository.Test_repository.Name,
+        ///         SigningAlgorithm = @var.Container_image_signature_signing_algorithm,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,29 +59,27 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testContainerImageSignatures = Oci.Artifacts.GetContainerSignatures.Invoke(new()
         ///     {
-        ///         var testContainerImageSignatures = Output.Create(Oci.Artifacts.GetContainerSignatures.InvokeAsync(new Oci.Artifacts.GetContainerSignaturesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Container_image_signature_compartment_id_in_subtree,
-        ///             DisplayName = @var.Container_image_signature_display_name,
-        ///             ImageDigest = @var.Container_image_signature_image_digest,
-        ///             ImageId = oci_core_image.Test_image.Id,
-        ///             KmsKeyId = oci_kms_key.Test_key.Id,
-        ///             KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
-        ///             RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///             RepositoryName = oci_artifacts_repository.Test_repository.Name,
-        ///             SigningAlgorithm = @var.Container_image_signature_signing_algorithm,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Container_image_signature_compartment_id_in_subtree,
+        ///         DisplayName = @var.Container_image_signature_display_name,
+        ///         ImageDigest = @var.Container_image_signature_image_digest,
+        ///         ImageId = oci_core_image.Test_image.Id,
+        ///         KmsKeyId = oci_kms_key.Test_key.Id,
+        ///         KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
+        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
+        ///         RepositoryName = oci_artifacts_repository.Test_repository.Name,
+        ///         SigningAlgorithm = @var.Container_image_signature_signing_algorithm,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.Artifacts
     }
 
 
-    public sealed class GetContainerSignaturesArgs : Pulumi.InvokeArgs
+    public sealed class GetContainerSignaturesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -166,9 +162,10 @@ namespace Pulumi.Oci.Artifacts
         public GetContainerSignaturesArgs()
         {
         }
+        public static new GetContainerSignaturesArgs Empty => new GetContainerSignaturesArgs();
     }
 
-    public sealed class GetContainerSignaturesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetContainerSignaturesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -241,6 +238,7 @@ namespace Pulumi.Oci.Artifacts
         public GetContainerSignaturesInvokeArgs()
         {
         }
+        public static new GetContainerSignaturesInvokeArgs Empty => new GetContainerSignaturesInvokeArgs();
     }
 
 

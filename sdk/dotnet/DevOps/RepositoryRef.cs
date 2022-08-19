@@ -17,24 +17,22 @@ namespace Pulumi.Oci.DevOps
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRepositoryRef = new Oci.DevOps.RepositoryRef("testRepositoryRef", new()
     ///     {
-    ///         var testRepositoryRef = new Oci.DevOps.RepositoryRef("testRepositoryRef", new Oci.DevOps.RepositoryRefArgs
-    ///         {
-    ///             RefName = @var.Repository_ref_ref_name,
-    ///             RefType = @var.Repository_ref_ref_type,
-    ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-    ///             CommitId = oci_devops_commit.Test_commit.Id,
-    ///             ObjectId = oci_objectstorage_object.Test_object.Id,
-    ///         });
-    ///     }
+    ///         RefName = @var.Repository_ref_ref_name,
+    ///         RefType = @var.Repository_ref_ref_type,
+    ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+    ///         CommitId = oci_devops_commit.Test_commit.Id,
+    ///         ObjectId = oci_objectstorage_object.Test_object.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -46,7 +44,7 @@ namespace Pulumi.Oci.DevOps
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/repositoryRef:RepositoryRef")]
-    public partial class RepositoryRef : Pulumi.CustomResource
+    public partial class RepositoryRef : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Commit ID pointed to by the new branch.
@@ -140,7 +138,7 @@ namespace Pulumi.Oci.DevOps
         }
     }
 
-    public sealed class RepositoryRefArgs : Pulumi.ResourceArgs
+    public sealed class RepositoryRefArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Commit ID pointed to by the new branch.
@@ -175,9 +173,10 @@ namespace Pulumi.Oci.DevOps
         public RepositoryRefArgs()
         {
         }
+        public static new RepositoryRefArgs Empty => new RepositoryRefArgs();
     }
 
-    public sealed class RepositoryRefState : Pulumi.ResourceArgs
+    public sealed class RepositoryRefState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Commit ID pointed to by the new branch.
@@ -242,5 +241,6 @@ namespace Pulumi.Oci.DevOps
         public RepositoryRefState()
         {
         }
+        public static new RepositoryRefState Empty => new RepositoryRefState();
     }
 }

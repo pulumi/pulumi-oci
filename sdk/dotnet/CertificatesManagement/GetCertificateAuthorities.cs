@@ -23,24 +23,22 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCertificateAuthorities = Oci.CertificatesManagement.GetCertificateAuthorities.Invoke(new()
         ///     {
-        ///         var testCertificateAuthorities = Output.Create(Oci.CertificatesManagement.GetCertificateAuthorities.InvokeAsync(new Oci.CertificatesManagement.GetCertificateAuthoritiesArgs
-        ///         {
-        ///             CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IssuerCertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///             Name = @var.Certificate_authority_name,
-        ///             State = @var.Certificate_authority_state,
-        ///         }));
-        ///     }
+        ///         CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IssuerCertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
+        ///         Name = @var.Certificate_authority_name,
+        ///         State = @var.Certificate_authority_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,24 +58,22 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCertificateAuthorities = Oci.CertificatesManagement.GetCertificateAuthorities.Invoke(new()
         ///     {
-        ///         var testCertificateAuthorities = Output.Create(Oci.CertificatesManagement.GetCertificateAuthorities.InvokeAsync(new Oci.CertificatesManagement.GetCertificateAuthoritiesArgs
-        ///         {
-        ///             CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IssuerCertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///             Name = @var.Certificate_authority_name,
-        ///             State = @var.Certificate_authority_state,
-        ///         }));
-        ///     }
+        ///         CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IssuerCertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
+        ///         Name = @var.Certificate_authority_name,
+        ///         State = @var.Certificate_authority_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.CertificatesManagement
     }
 
 
-    public sealed class GetCertificateAuthoritiesArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificateAuthoritiesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
@@ -130,9 +126,10 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCertificateAuthoritiesArgs()
         {
         }
+        public static new GetCertificateAuthoritiesArgs Empty => new GetCertificateAuthoritiesArgs();
     }
 
-    public sealed class GetCertificateAuthoritiesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificateAuthoritiesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
@@ -175,6 +172,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCertificateAuthoritiesInvokeArgs()
         {
         }
+        public static new GetCertificateAuthoritiesInvokeArgs Empty => new GetCertificateAuthoritiesInvokeArgs();
     }
 
 

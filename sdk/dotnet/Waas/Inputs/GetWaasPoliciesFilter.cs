@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class GetWaasPoliciesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetWaasPoliciesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique name of the whitelist.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public GetWaasPoliciesFilterArgs()
         {
         }
+        public static new GetWaasPoliciesFilterArgs Empty => new GetWaasPoliciesFilterArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployStageRolloutPolicyArgs : Pulumi.ResourceArgs
+    public sealed class DeployStageRolloutPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The number that will be used to determine how many instances will be deployed concurrently.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployStageRolloutPolicyArgs()
         {
         }
+        public static new DeployStageRolloutPolicyArgs Empty => new DeployStageRolloutPolicyArgs();
     }
 }

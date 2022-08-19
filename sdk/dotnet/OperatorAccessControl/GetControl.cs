@@ -21,20 +21,18 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperatorControl = Oci.OperatorAccessControl.GetControl.Invoke(new()
         ///     {
-        ///         var testOperatorControl = Output.Create(Oci.OperatorAccessControl.GetControl.InvokeAsync(new Oci.OperatorAccessControl.GetControlArgs
-        ///         {
-        ///             OperatorControlId = oci_operator_access_control_operator_control.Test_operator_control.Id,
-        ///         }));
-        ///     }
+        ///         OperatorControlId = oci_operator_access_control_operator_control.Test_operator_control.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperatorControl = Oci.OperatorAccessControl.GetControl.Invoke(new()
         ///     {
-        ///         var testOperatorControl = Output.Create(Oci.OperatorAccessControl.GetControl.InvokeAsync(new Oci.OperatorAccessControl.GetControlArgs
-        ///         {
-        ///             OperatorControlId = oci_operator_access_control_operator_control.Test_operator_control.Id,
-        ///         }));
-        ///     }
+        ///         OperatorControlId = oci_operator_access_control_operator_control.Test_operator_control.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.OperatorAccessControl
     }
 
 
-    public sealed class GetControlArgs : Pulumi.InvokeArgs
+    public sealed class GetControlArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique OperatorControl identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetControlArgs()
         {
         }
+        public static new GetControlArgs Empty => new GetControlArgs();
     }
 
-    public sealed class GetControlInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetControlInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique OperatorControl identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetControlInvokeArgs()
         {
         }
+        public static new GetControlInvokeArgs Empty => new GetControlInvokeArgs();
     }
 
 

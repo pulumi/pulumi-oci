@@ -25,6 +25,55 @@ import javax.annotation.Nullable;
  * Creates a new model.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataScience.Model;
+ * import com.pulumi.oci.DataScience.ModelArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelCustomMetadataListArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelDefinedMetadataListArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testModel = new Model(&#34;testModel&#34;, ModelArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .projectId(oci_datascience_project.test_project().id())
+ *             .customMetadataLists(ModelCustomMetadataListArgs.builder()
+ *                 .category(var_.model_custom_metadata_list_category())
+ *                 .description(var_.model_custom_metadata_list_description())
+ *                 .key(var_.model_custom_metadata_list_key())
+ *                 .value(var_.model_custom_metadata_list_value())
+ *                 .build())
+ *             .definedMetadataLists(ModelDefinedMetadataListArgs.builder()
+ *                 .category(var_.model_defined_metadata_list_category())
+ *                 .description(var_.model_defined_metadata_list_description())
+ *                 .key(var_.model_defined_metadata_list_key())
+ *                 .value(var_.model_defined_metadata_list_value())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.model_description())
+ *             .displayName(var_.model_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .inputSchema(var_.model_input_schema())
+ *             .outputSchema(var_.model_output_schema())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

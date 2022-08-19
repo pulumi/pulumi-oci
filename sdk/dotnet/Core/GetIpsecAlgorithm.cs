@@ -22,17 +22,15 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testIpsecAlgorithm = Output.Create(Oci.Core.GetIpsecAlgorithm.InvokeAsync());
-        ///     }
+        ///     var testIpsecAlgorithm = Oci.Core.GetIpsecAlgorithm.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}

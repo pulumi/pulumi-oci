@@ -35,6 +35,37 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
+     *             .producttype(var_.subscription_product_producttype())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionProductResult> getSubscriptionProduct(GetSubscriptionProductArgs args) {
@@ -46,6 +77,37 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
+     *             .producttype(var_.subscription_product_producttype())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionProductResult> getSubscriptionProductPlain(GetSubscriptionProductPlainArgs args) {
@@ -57,6 +119,37 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
+     *             .producttype(var_.subscription_product_producttype())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionProductResult> getSubscriptionProduct(GetSubscriptionProductArgs args, InvokeOptions options) {
@@ -68,6 +161,37 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionProduct = UsageProxyFunctions.getSubscriptionProduct(GetSubscriptionProductArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
+     *             .producttype(var_.subscription_product_producttype())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionProductResult> getSubscriptionProductPlain(GetSubscriptionProductPlainArgs args, InvokeOptions options) {
@@ -79,6 +203,37 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
+     *             .producttype(var_.subscription_product_producttype())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionProductsResult> getSubscriptionProducts(GetSubscriptionProductsArgs args) {
@@ -90,6 +245,37 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
+     *             .producttype(var_.subscription_product_producttype())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionProductsResult> getSubscriptionProductsPlain(GetSubscriptionProductsPlainArgs args) {
@@ -101,6 +287,37 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
+     *             .producttype(var_.subscription_product_producttype())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionProductsResult> getSubscriptionProducts(GetSubscriptionProductsArgs args, InvokeOptions options) {
@@ -112,6 +329,37 @@ public final class UsageProxyFunctions {
      * Provides product information that is specific to a reward usage period and its usage details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionProductsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionProducts = UsageProxyFunctions.getSubscriptionProducts(GetSubscriptionProductsArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .usagePeriodKey(var_.subscription_product_usage_period_key())
+     *             .producttype(var_.subscription_product_producttype())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionProductsResult> getSubscriptionProductsPlain(GetSubscriptionProductsPlainArgs args, InvokeOptions options) {
@@ -123,6 +371,35 @@ public final class UsageProxyFunctions {
      * Provides the email IDs of users that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionRedeemableUserResult> getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs args) {
@@ -134,6 +411,35 @@ public final class UsageProxyFunctions {
      * Provides the email IDs of users that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionRedeemableUserResult> getSubscriptionRedeemableUserPlain(GetSubscriptionRedeemableUserPlainArgs args) {
@@ -145,6 +451,35 @@ public final class UsageProxyFunctions {
      * Provides the email IDs of users that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionRedeemableUserResult> getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs args, InvokeOptions options) {
@@ -156,6 +491,35 @@ public final class UsageProxyFunctions {
      * Provides the email IDs of users that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedeemableUser = UsageProxyFunctions.getSubscriptionRedeemableUser(GetSubscriptionRedeemableUserArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionRedeemableUserResult> getSubscriptionRedeemableUserPlain(GetSubscriptionRedeemableUserPlainArgs args, InvokeOptions options) {
@@ -167,6 +531,35 @@ public final class UsageProxyFunctions {
      * Provides the email IDs of users that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionRedeemableUsersResult> getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs args) {
@@ -178,6 +571,35 @@ public final class UsageProxyFunctions {
      * Provides the email IDs of users that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionRedeemableUsersResult> getSubscriptionRedeemableUsersPlain(GetSubscriptionRedeemableUsersPlainArgs args) {
@@ -189,6 +611,35 @@ public final class UsageProxyFunctions {
      * Provides the email IDs of users that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionRedeemableUsersResult> getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs args, InvokeOptions options) {
@@ -200,6 +651,35 @@ public final class UsageProxyFunctions {
      * Provides the email IDs of users that can redeem rewards for the given subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRedeemableUsers = UsageProxyFunctions.getSubscriptionRedeemableUsers(GetSubscriptionRedeemableUsersArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionRedeemableUsersResult> getSubscriptionRedeemableUsersPlain(GetSubscriptionRedeemableUsersPlainArgs args, InvokeOptions options) {
@@ -211,6 +691,35 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionRewardResult> getSubscriptionReward(GetSubscriptionRewardArgs args) {
@@ -222,6 +731,35 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionRewardResult> getSubscriptionRewardPlain(GetSubscriptionRewardPlainArgs args) {
@@ -233,6 +771,35 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionRewardResult> getSubscriptionReward(GetSubscriptionRewardArgs args, InvokeOptions options) {
@@ -244,6 +811,35 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionReward = UsageProxyFunctions.getSubscriptionReward(GetSubscriptionRewardArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionRewardResult> getSubscriptionRewardPlain(GetSubscriptionRewardPlainArgs args, InvokeOptions options) {
@@ -255,6 +851,35 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionRewardsResult> getSubscriptionRewards(GetSubscriptionRewardsArgs args) {
@@ -266,6 +891,35 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionRewardsResult> getSubscriptionRewardsPlain(GetSubscriptionRewardsPlainArgs args) {
@@ -277,6 +931,35 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionRewardsResult> getSubscriptionRewards(GetSubscriptionRewardsArgs args, InvokeOptions options) {
@@ -288,6 +971,35 @@ public final class UsageProxyFunctions {
      * Returns the list of rewards for a subscription ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.UsageProxy.UsageProxyFunctions;
+     * import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRewardsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionRewards = UsageProxyFunctions.getSubscriptionRewards(GetSubscriptionRewardsArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionRewardsResult> getSubscriptionRewardsPlain(GetSubscriptionRewardsPlainArgs args, InvokeOptions options) {

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class BdsInstanceCloudSqlDetailKerberosDetailGetArgs : Pulumi.ResourceArgs
+    public sealed class BdsInstanceCloudSqlDetailKerberosDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Location of the keytab file
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public BdsInstanceCloudSqlDetailKerberosDetailGetArgs()
         {
         }
+        public static new BdsInstanceCloudSqlDetailKerberosDetailGetArgs Empty => new BdsInstanceCloudSqlDetailKerberosDetailGetArgs();
     }
 }

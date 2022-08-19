@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard.Inputs
 {
 
-    public sealed class TargetTargetDetectorRecipeDetectorRuleArgs : Pulumi.ResourceArgs
+    public sealed class TargetTargetDetectorRecipeDetectorRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The target description.
@@ -99,5 +99,6 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public TargetTargetDetectorRecipeDetectorRuleArgs()
         {
         }
+        public static new TargetTargetDetectorRecipeDetectorRuleArgs Empty => new TargetTargetDetectorRecipeDetectorRuleArgs();
     }
 }

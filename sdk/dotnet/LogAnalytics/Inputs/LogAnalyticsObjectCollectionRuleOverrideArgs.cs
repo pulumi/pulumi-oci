@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics.Inputs
 {
 
-    public sealed class LogAnalyticsObjectCollectionRuleOverrideArgs : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsObjectCollectionRuleOverrideArgs : global::Pulumi.ResourceArgs
     {
         [Input("matchType")]
         public Input<string>? MatchType { get; set; }
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public LogAnalyticsObjectCollectionRuleOverrideArgs()
         {
         }
+        public static new LogAnalyticsObjectCollectionRuleOverrideArgs Empty => new LogAnalyticsObjectCollectionRuleOverrideArgs();
     }
 }

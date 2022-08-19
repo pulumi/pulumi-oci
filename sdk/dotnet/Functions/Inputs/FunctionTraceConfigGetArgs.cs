@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Functions.Inputs
 {
 
-    public sealed class FunctionTraceConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class FunctionTraceConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Define if tracing is enabled for the resource.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Functions.Inputs
         public FunctionTraceConfigGetArgs()
         {
         }
+        public static new FunctionTraceConfigGetArgs Empty => new FunctionTraceConfigGetArgs();
     }
 }

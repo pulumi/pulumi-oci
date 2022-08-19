@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     [OciResourceType("oci:DataSafe/sensitiveDataModelsApplyDiscoveryJobResults:SensitiveDataModelsApplyDiscoveryJobResults")]
-    public partial class SensitiveDataModelsApplyDiscoveryJobResults : Pulumi.CustomResource
+    public partial class SensitiveDataModelsApplyDiscoveryJobResults : global::Pulumi.CustomResource
     {
         [Output("discoveryJobId")]
         public Output<string> DiscoveryJobId { get; private set; } = null!;
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class SensitiveDataModelsApplyDiscoveryJobResultsArgs : Pulumi.ResourceArgs
+    public sealed class SensitiveDataModelsApplyDiscoveryJobResultsArgs : global::Pulumi.ResourceArgs
     {
         [Input("discoveryJobId", required: true)]
         public Input<string> DiscoveryJobId { get; set; } = null!;
@@ -73,9 +73,10 @@ namespace Pulumi.Oci.DataSafe
         public SensitiveDataModelsApplyDiscoveryJobResultsArgs()
         {
         }
+        public static new SensitiveDataModelsApplyDiscoveryJobResultsArgs Empty => new SensitiveDataModelsApplyDiscoveryJobResultsArgs();
     }
 
-    public sealed class SensitiveDataModelsApplyDiscoveryJobResultsState : Pulumi.ResourceArgs
+    public sealed class SensitiveDataModelsApplyDiscoveryJobResultsState : global::Pulumi.ResourceArgs
     {
         [Input("discoveryJobId")]
         public Input<string>? DiscoveryJobId { get; set; }
@@ -86,5 +87,6 @@ namespace Pulumi.Oci.DataSafe
         public SensitiveDataModelsApplyDiscoveryJobResultsState()
         {
         }
+        public static new SensitiveDataModelsApplyDiscoveryJobResultsState Empty => new SensitiveDataModelsApplyDiscoveryJobResultsState();
     }
 }

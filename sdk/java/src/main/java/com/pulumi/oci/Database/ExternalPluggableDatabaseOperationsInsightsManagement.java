@@ -21,6 +21,36 @@ import javax.annotation.Nullable;
  * When deleting this resource block , we call disable if it was in enabled state .
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.ExternalPluggableDatabaseOperationsInsightsManagement;
+ * import com.pulumi.oci.Database.ExternalPluggableDatabaseOperationsInsightsManagementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testExternalPluggableDatabaseOperationsInsightsManagement = new ExternalPluggableDatabaseOperationsInsightsManagement(&#34;testExternalPluggableDatabaseOperationsInsightsManagement&#34;, ExternalPluggableDatabaseOperationsInsightsManagementArgs.builder()        
+ *             .externalDatabaseConnectorId(oci_database_external_database_connector.test_external_database_connector().id())
+ *             .externalPluggableDatabaseId(oci_database_external_pluggable_database.test_external_pluggable_database().id())
+ *             .enableOperationsInsights(true)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

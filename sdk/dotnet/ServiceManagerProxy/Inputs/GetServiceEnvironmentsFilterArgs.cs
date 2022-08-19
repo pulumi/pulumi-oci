@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceManagerProxy.Inputs
 {
 
-    public sealed class GetServiceEnvironmentsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetServiceEnvironmentsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.ServiceManagerProxy.Inputs
         public GetServiceEnvironmentsFilterInputArgs()
         {
         }
+        public static new GetServiceEnvironmentsFilterInputArgs Empty => new GetServiceEnvironmentsFilterInputArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall.Inputs
 {
 
-    public sealed class NetworkFirewallPolicySecurityRuleArgs : Pulumi.ResourceArgs
+    public sealed class NetworkFirewallPolicySecurityRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Types of Action on the Traffic flow.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
         public NetworkFirewallPolicySecurityRuleArgs()
         {
         }
+        public static new NetworkFirewallPolicySecurityRuleArgs Empty => new NetworkFirewallPolicySecurityRuleArgs();
     }
 }

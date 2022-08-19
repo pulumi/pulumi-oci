@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceAgentConfigArgs : Pulumi.ResourceArgs
+    public sealed class InstanceAgentConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceAgentConfigArgs()
         {
         }
+        public static new InstanceAgentConfigArgs Empty => new InstanceAgentConfigArgs();
     }
 }

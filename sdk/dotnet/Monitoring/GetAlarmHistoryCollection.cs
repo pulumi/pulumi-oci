@@ -27,23 +27,21 @@ namespace Pulumi.Oci.Monitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlarmHistoryCollection = Oci.Monitoring.GetAlarmHistoryCollection.Invoke(new()
         ///     {
-        ///         var testAlarmHistoryCollection = Output.Create(Oci.Monitoring.GetAlarmHistoryCollection.InvokeAsync(new Oci.Monitoring.GetAlarmHistoryCollectionArgs
-        ///         {
-        ///             AlarmId = oci_monitoring_alarm.Test_alarm.Id,
-        ///             AlarmHistorytype = @var.Alarm_history_collection_alarm_historytype,
-        ///             TimestampGreaterThanOrEqualTo = @var.Alarm_history_collection_timestamp_greater_than_or_equal_to,
-        ///             TimestampLessThan = @var.Alarm_history_collection_timestamp_less_than,
-        ///         }));
-        ///     }
+        ///         AlarmId = oci_monitoring_alarm.Test_alarm.Id,
+        ///         AlarmHistorytype = @var.Alarm_history_collection_alarm_historytype,
+        ///         TimestampGreaterThanOrEqualTo = @var.Alarm_history_collection_timestamp_greater_than_or_equal_to,
+        ///         TimestampLessThan = @var.Alarm_history_collection_timestamp_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -67,23 +65,21 @@ namespace Pulumi.Oci.Monitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlarmHistoryCollection = Oci.Monitoring.GetAlarmHistoryCollection.Invoke(new()
         ///     {
-        ///         var testAlarmHistoryCollection = Output.Create(Oci.Monitoring.GetAlarmHistoryCollection.InvokeAsync(new Oci.Monitoring.GetAlarmHistoryCollectionArgs
-        ///         {
-        ///             AlarmId = oci_monitoring_alarm.Test_alarm.Id,
-        ///             AlarmHistorytype = @var.Alarm_history_collection_alarm_historytype,
-        ///             TimestampGreaterThanOrEqualTo = @var.Alarm_history_collection_timestamp_greater_than_or_equal_to,
-        ///             TimestampLessThan = @var.Alarm_history_collection_timestamp_less_than,
-        ///         }));
-        ///     }
+        ///         AlarmId = oci_monitoring_alarm.Test_alarm.Id,
+        ///         AlarmHistorytype = @var.Alarm_history_collection_alarm_historytype,
+        ///         TimestampGreaterThanOrEqualTo = @var.Alarm_history_collection_timestamp_greater_than_or_equal_to,
+        ///         TimestampLessThan = @var.Alarm_history_collection_timestamp_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.Monitoring
     }
 
 
-    public sealed class GetAlarmHistoryCollectionArgs : Pulumi.InvokeArgs
+    public sealed class GetAlarmHistoryCollectionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
@@ -122,9 +118,10 @@ namespace Pulumi.Oci.Monitoring
         public GetAlarmHistoryCollectionArgs()
         {
         }
+        public static new GetAlarmHistoryCollectionArgs Empty => new GetAlarmHistoryCollectionArgs();
     }
 
-    public sealed class GetAlarmHistoryCollectionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAlarmHistoryCollectionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.  Example: `STATE_HISTORY`
@@ -153,6 +150,7 @@ namespace Pulumi.Oci.Monitoring
         public GetAlarmHistoryCollectionInvokeArgs()
         {
         }
+        public static new GetAlarmHistoryCollectionInvokeArgs Empty => new GetAlarmHistoryCollectionInvokeArgs();
     }
 
 

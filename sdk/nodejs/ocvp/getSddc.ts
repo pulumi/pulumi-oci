@@ -140,6 +140,10 @@ export interface GetSddcResult {
      */
     readonly isShieldedInstanceEnabled: boolean;
     /**
+     * Indicates whether this SDDC is designated for only single ESXi host.
+     */
+    readonly isSingleHostSddc: boolean;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
      */
     readonly nsxEdgeUplink1vlanId: string;

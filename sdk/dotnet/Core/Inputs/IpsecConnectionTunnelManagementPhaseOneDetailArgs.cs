@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class IpsecConnectionTunnelManagementPhaseOneDetailArgs : Pulumi.ResourceArgs
+    public sealed class IpsecConnectionTunnelManagementPhaseOneDetailArgs : global::Pulumi.ResourceArgs
     {
         [Input("customAuthenticationAlgorithm")]
         public Input<string>? CustomAuthenticationAlgorithm { get; set; }
@@ -48,5 +48,6 @@ namespace Pulumi.Oci.Core.Inputs
         public IpsecConnectionTunnelManagementPhaseOneDetailArgs()
         {
         }
+        public static new IpsecConnectionTunnelManagementPhaseOneDetailArgs Empty => new IpsecConnectionTunnelManagementPhaseOneDetailArgs();
     }
 }

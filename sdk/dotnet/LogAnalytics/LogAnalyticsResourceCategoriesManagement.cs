@@ -17,23 +17,21 @@ namespace Pulumi.Oci.LogAnalytics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLogAnalyticsResourceCategoriesManagement = new Oci.LogAnalytics.LogAnalyticsResourceCategoriesManagement("testLogAnalyticsResourceCategoriesManagement", new()
     ///     {
-    ///         var testLogAnalyticsResourceCategoriesManagement = new Oci.LogAnalytics.LogAnalyticsResourceCategoriesManagement("testLogAnalyticsResourceCategoriesManagement", new Oci.LogAnalytics.LogAnalyticsResourceCategoriesManagementArgs
-    ///         {
-    ///             Namespace = @var.Log_analytics_resource_categories_management_namespace,
-    ///             ResourceId = oci_log_analytics_resource_categories_management_resource_id,
-    ///             ResourceType = @var.Log_analytics_resource_categories_management_resource_type,
-    ///             ResourceCategories = @var.Log_analytics_resource_categories_management_resource_categories,
-    ///         });
-    ///     }
+    ///         Namespace = @var.Log_analytics_resource_categories_management_namespace,
+    ///         ResourceId = oci_log_analytics_resource_categories_management_resource_id,
+    ///         ResourceType = @var.Log_analytics_resource_categories_management_resource_type,
+    ///         ResourceCategories = @var.Log_analytics_resource_categories_management_resource_categories,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -41,7 +39,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// LogAnalyticsResourceCategoriesManagement cannot be imported.
     /// </summary>
     [OciResourceType("oci:LogAnalytics/logAnalyticsResourceCategoriesManagement:LogAnalyticsResourceCategoriesManagement")]
-    public partial class LogAnalyticsResourceCategoriesManagement : Pulumi.CustomResource
+    public partial class LogAnalyticsResourceCategoriesManagement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -111,7 +109,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
     }
 
-    public sealed class LogAnalyticsResourceCategoriesManagementArgs : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsResourceCategoriesManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -146,9 +144,10 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsResourceCategoriesManagementArgs()
         {
         }
+        public static new LogAnalyticsResourceCategoriesManagementArgs Empty => new LogAnalyticsResourceCategoriesManagementArgs();
     }
 
-    public sealed class LogAnalyticsResourceCategoriesManagementState : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsResourceCategoriesManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -183,5 +182,6 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsResourceCategoriesManagementState()
         {
         }
+        public static new LogAnalyticsResourceCategoriesManagementState Empty => new LogAnalyticsResourceCategoriesManagementState();
     }
 }

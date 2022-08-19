@@ -24,6 +24,90 @@ import javax.annotation.Nullable;
  * Create unified agent configuration registration.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Logging.UnifiedAgentConfiguration;
+ * import com.pulumi.oci.Logging.UnifiedAgentConfigurationArgs;
+ * import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationArgs;
+ * import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationDestinationArgs;
+ * import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationGroupAssociationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testUnifiedAgentConfiguration = new UnifiedAgentConfiguration(&#34;testUnifiedAgentConfiguration&#34;, UnifiedAgentConfigurationArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .isEnabled(var_.unified_agent_configuration_is_enabled())
+ *             .description(var_.unified_agent_configuration_description())
+ *             .displayName(var_.unified_agent_configuration_display_name())
+ *             .serviceConfiguration(UnifiedAgentConfigurationServiceConfigurationArgs.builder()
+ *                 .configurationType(var_.unified_agent_configuration_service_configuration_configuration_type())
+ *                 .destination(UnifiedAgentConfigurationServiceConfigurationDestinationArgs.builder()
+ *                     .logObjectId(oci_objectstorage_object.test_object().id())
+ *                     .build())
+ *                 .sources(UnifiedAgentConfigurationServiceConfigurationSourceArgs.builder()
+ *                     .sourceType(var_.unified_agent_configuration_service_configuration_sources_source_type())
+ *                     .channels(var_.unified_agent_configuration_service_configuration_sources_channels())
+ *                     .name(var_.unified_agent_configuration_service_configuration_sources_name())
+ *                     .parser(UnifiedAgentConfigurationServiceConfigurationSourceParserArgs.builder()
+ *                         .parserType(var_.unified_agent_configuration_service_configuration_sources_parser_parser_type())
+ *                         .delimiter(var_.unified_agent_configuration_service_configuration_sources_parser_delimiter())
+ *                         .expression(var_.unified_agent_configuration_service_configuration_sources_parser_expression())
+ *                         .fieldTimeKey(var_.unified_agent_configuration_service_configuration_sources_parser_field_time_key())
+ *                         .formats(var_.unified_agent_configuration_service_configuration_sources_parser_format())
+ *                         .formatFirstline(var_.unified_agent_configuration_service_configuration_sources_parser_format_firstline())
+ *                         .grokFailureKey(var_.unified_agent_configuration_service_configuration_sources_parser_grok_failure_key())
+ *                         .grokNameKey(var_.unified_agent_configuration_service_configuration_sources_parser_grok_name_key())
+ *                         .isEstimateCurrentEvent(var_.unified_agent_configuration_service_configuration_sources_parser_is_estimate_current_event())
+ *                         .isKeepTimeKey(var_.unified_agent_configuration_service_configuration_sources_parser_is_keep_time_key())
+ *                         .isNullEmptyString(var_.unified_agent_configuration_service_configuration_sources_parser_is_null_empty_string())
+ *                         .isSupportColonlessIdent(var_.unified_agent_configuration_service_configuration_sources_parser_is_support_colonless_ident())
+ *                         .isWithPriority(var_.unified_agent_configuration_service_configuration_sources_parser_is_with_priority())
+ *                         .keys(var_.unified_agent_configuration_service_configuration_sources_parser_keys())
+ *                         .messageFormat(var_.unified_agent_configuration_service_configuration_sources_parser_message_format())
+ *                         .messageKey(var_.unified_agent_configuration_service_configuration_sources_parser_message_key())
+ *                         .multiLineStartRegexp(var_.unified_agent_configuration_service_configuration_sources_parser_multi_line_start_regexp())
+ *                         .nullValuePattern(var_.unified_agent_configuration_service_configuration_sources_parser_null_value_pattern())
+ *                         .patterns(UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs.builder()
+ *                             .fieldTimeFormat(var_.unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_format())
+ *                             .fieldTimeKey(var_.unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_key())
+ *                             .fieldTimeZone(var_.unified_agent_configuration_service_configuration_sources_parser_patterns_field_time_zone())
+ *                             .name(var_.unified_agent_configuration_service_configuration_sources_parser_patterns_name())
+ *                             .pattern(var_.unified_agent_configuration_service_configuration_sources_parser_patterns_pattern())
+ *                             .build())
+ *                         .rfc5424timeFormat(var_.unified_agent_configuration_service_configuration_sources_parser_rfc5424time_format())
+ *                         .syslogParserType(var_.unified_agent_configuration_service_configuration_sources_parser_syslog_parser_type())
+ *                         .timeFormat(var_.unified_agent_configuration_service_configuration_sources_parser_time_format())
+ *                         .timeType(var_.unified_agent_configuration_service_configuration_sources_parser_time_type())
+ *                         .timeoutInMilliseconds(var_.unified_agent_configuration_service_configuration_sources_parser_timeout_in_milliseconds())
+ *                         .types(var_.unified_agent_configuration_service_configuration_sources_parser_types())
+ *                         .build())
+ *                     .paths(var_.unified_agent_configuration_service_configuration_sources_paths())
+ *                     .build())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .groupAssociation(UnifiedAgentConfigurationGroupAssociationArgs.builder()
+ *                 .groupLists(var_.unified_agent_configuration_group_association_group_list())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

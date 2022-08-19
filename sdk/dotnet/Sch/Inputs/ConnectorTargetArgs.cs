@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Sch.Inputs
 {
 
-    public sealed class ConnectorTargetArgs : Pulumi.ResourceArgs
+    public sealed class ConnectorTargetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The batch rollover size in megabytes.
@@ -73,6 +73,12 @@ namespace Pulumi.Oci.Sch.Inputs
         public Input<string>? LogGroupId { get; set; }
 
         /// <summary>
+        /// (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+        /// </summary>
+        [Input("logSourceIdentifier")]
+        public Input<string>? LogSourceIdentifier { get; set; }
+
+        /// <summary>
         /// (Updatable) The name of the metric.  Example: `CpuUtilization`
         /// </summary>
         [Input("metric")]
@@ -111,5 +117,6 @@ namespace Pulumi.Oci.Sch.Inputs
         public ConnectorTargetArgs()
         {
         }
+        public static new ConnectorTargetArgs Empty => new ConnectorTargetArgs();
     }
 }

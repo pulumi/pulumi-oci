@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCrossConnectStatus = Oci.Core.GetCrossConnectStatus.Invoke(new()
         ///     {
-        ///         var testCrossConnectStatus = Output.Create(Oci.Core.GetCrossConnectStatus.InvokeAsync(new Oci.Core.GetCrossConnectStatusArgs
-        ///         {
-        ///             CrossConnectId = oci_core_cross_connect.Test_cross_connect.Id,
-        ///         }));
-        ///     }
+        ///         CrossConnectId = oci_core_cross_connect.Test_cross_connect.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCrossConnectStatus = Oci.Core.GetCrossConnectStatus.Invoke(new()
         ///     {
-        ///         var testCrossConnectStatus = Output.Create(Oci.Core.GetCrossConnectStatus.InvokeAsync(new Oci.Core.GetCrossConnectStatusArgs
-        ///         {
-        ///             CrossConnectId = oci_core_cross_connect.Test_cross_connect.Id,
-        ///         }));
-        ///     }
+        ///         CrossConnectId = oci_core_cross_connect.Test_cross_connect.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetCrossConnectStatusArgs : Pulumi.InvokeArgs
+    public sealed class GetCrossConnectStatusArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Core
         public GetCrossConnectStatusArgs()
         {
         }
+        public static new GetCrossConnectStatusArgs Empty => new GetCrossConnectStatusArgs();
     }
 
-    public sealed class GetCrossConnectStatusInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCrossConnectStatusInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Core
         public GetCrossConnectStatusInvokeArgs()
         {
         }
+        public static new GetCrossConnectStatusInvokeArgs Empty => new GetCrossConnectStatusInvokeArgs();
     }
 
 

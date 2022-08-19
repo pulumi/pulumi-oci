@@ -24,6 +24,44 @@ import javax.annotation.Nullable;
  * Creates a new quota with the details supplied.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Limits.Quota;
+ * import com.pulumi.oci.Limits.QuotaArgs;
+ * import com.pulumi.oci.Limits.inputs.QuotaLockArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testQuota = new Quota(&#34;testQuota&#34;, QuotaArgs.builder()        
+ *             .compartmentId(var_.tenancy_ocid())
+ *             .description(var_.quota_description())
+ *             .statements(var_.quota_statements())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .locks(QuotaLockArgs.builder()
+ *                 .type(var_.quota_locks_type())
+ *                 .message(var_.quota_locks_message())
+ *                 .relatedResourceId(oci_limits_related_resource.test_related_resource().id())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

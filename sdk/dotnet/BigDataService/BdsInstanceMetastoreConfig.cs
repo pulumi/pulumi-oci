@@ -17,25 +17,23 @@ namespace Pulumi.Oci.BigDataService
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBdsInstanceMetastoreConfig = new Oci.BigDataService.BdsInstanceMetastoreConfig("testBdsInstanceMetastoreConfig", new()
     ///     {
-    ///         var testBdsInstanceMetastoreConfig = new Oci.BigDataService.BdsInstanceMetastoreConfig("testBdsInstanceMetastoreConfig", new Oci.BigDataService.BdsInstanceMetastoreConfigArgs
-    ///         {
-    ///             BdsApiKeyId = oci_identity_api_key.Test_api_key.Id,
-    ///             BdsApiKeyPassphrase = @var.Bds_instance_metastore_config_bds_api_key_passphrase,
-    ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-    ///             ClusterAdminPassword = @var.Bds_instance_metastore_config_cluster_admin_password,
-    ///             MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
-    ///             DisplayName = @var.Bds_instance_metastore_config_display_name,
-    ///         });
-    ///     }
+    ///         BdsApiKeyId = oci_identity_api_key.Test_api_key.Id,
+    ///         BdsApiKeyPassphrase = @var.Bds_instance_metastore_config_bds_api_key_passphrase,
+    ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+    ///         ClusterAdminPassword = @var.Bds_instance_metastore_config_cluster_admin_password,
+    ///         MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
+    ///         DisplayName = @var.Bds_instance_metastore_config_display_name,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -47,7 +45,7 @@ namespace Pulumi.Oci.BigDataService
     /// ```
     /// </summary>
     [OciResourceType("oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig")]
-    public partial class BdsInstanceMetastoreConfig : Pulumi.CustomResource
+    public partial class BdsInstanceMetastoreConfig : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) An optional integer, when flipped triggers activation of metastore config.
@@ -159,7 +157,7 @@ namespace Pulumi.Oci.BigDataService
         }
     }
 
-    public sealed class BdsInstanceMetastoreConfigArgs : Pulumi.ResourceArgs
+    public sealed class BdsInstanceMetastoreConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) An optional integer, when flipped triggers activation of metastore config.
@@ -206,9 +204,10 @@ namespace Pulumi.Oci.BigDataService
         public BdsInstanceMetastoreConfigArgs()
         {
         }
+        public static new BdsInstanceMetastoreConfigArgs Empty => new BdsInstanceMetastoreConfigArgs();
     }
 
-    public sealed class BdsInstanceMetastoreConfigState : Pulumi.ResourceArgs
+    public sealed class BdsInstanceMetastoreConfigState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) An optional integer, when flipped triggers activation of metastore config.
@@ -279,5 +278,6 @@ namespace Pulumi.Oci.BigDataService
         public BdsInstanceMetastoreConfigState()
         {
         }
+        public static new BdsInstanceMetastoreConfigState Empty => new BdsInstanceMetastoreConfigState();
     }
 }

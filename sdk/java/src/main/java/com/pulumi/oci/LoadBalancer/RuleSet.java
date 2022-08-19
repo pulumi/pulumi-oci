@@ -22,6 +22,61 @@ import javax.annotation.Nullable;
  * [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LoadBalancer.RuleSet;
+ * import com.pulumi.oci.LoadBalancer.RuleSetArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.RuleSetItemArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.RuleSetItemRedirectUriArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testRuleSet = new RuleSet(&#34;testRuleSet&#34;, RuleSetArgs.builder()        
+ *             .items(RuleSetItemArgs.builder()
+ *                 .action(var_.rule_set_items_action())
+ *                 .allowedMethods(var_.rule_set_items_allowed_methods())
+ *                 .areInvalidCharactersAllowed(var_.rule_set_items_are_invalid_characters_allowed())
+ *                 .conditions(RuleSetItemConditionArgs.builder()
+ *                     .attributeName(var_.rule_set_items_conditions_attribute_name())
+ *                     .attributeValue(var_.rule_set_items_conditions_attribute_value())
+ *                     .operator(var_.rule_set_items_conditions_operator())
+ *                     .build())
+ *                 .description(var_.rule_set_items_description())
+ *                 .header(var_.rule_set_items_header())
+ *                 .httpLargeHeaderSizeInKb(var_.rule_set_items_http_large_header_size_in_kb())
+ *                 .prefix(var_.rule_set_items_prefix())
+ *                 .redirectUri(RuleSetItemRedirectUriArgs.builder()
+ *                     .host(var_.rule_set_items_redirect_uri_host())
+ *                     .path(var_.rule_set_items_redirect_uri_path())
+ *                     .port(var_.rule_set_items_redirect_uri_port())
+ *                     .protocol(var_.rule_set_items_redirect_uri_protocol())
+ *                     .query(var_.rule_set_items_redirect_uri_query())
+ *                     .build())
+ *                 .responseCode(var_.rule_set_items_response_code())
+ *                 .statusCode(var_.rule_set_items_status_code())
+ *                 .suffix(var_.rule_set_items_suffix())
+ *                 .value(var_.rule_set_items_value())
+ *                 .build())
+ *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

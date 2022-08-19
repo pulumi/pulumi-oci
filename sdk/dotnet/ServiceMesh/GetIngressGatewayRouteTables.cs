@@ -22,24 +22,22 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIngressGatewayRouteTables = Oci.ServiceMesh.GetIngressGatewayRouteTables.Invoke(new()
         ///     {
-        ///         var testIngressGatewayRouteTables = Output.Create(Oci.ServiceMesh.GetIngressGatewayRouteTables.InvokeAsync(new Oci.ServiceMesh.GetIngressGatewayRouteTablesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Ingress_gateway_route_table_id,
-        ///             IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
-        ///             Name = @var.Ingress_gateway_route_table_name,
-        ///             State = @var.Ingress_gateway_route_table_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Ingress_gateway_route_table_id,
+        ///         IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
+        ///         Name = @var.Ingress_gateway_route_table_name,
+        ///         State = @var.Ingress_gateway_route_table_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIngressGatewayRouteTables = Oci.ServiceMesh.GetIngressGatewayRouteTables.Invoke(new()
         ///     {
-        ///         var testIngressGatewayRouteTables = Output.Create(Oci.ServiceMesh.GetIngressGatewayRouteTables.InvokeAsync(new Oci.ServiceMesh.GetIngressGatewayRouteTablesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Ingress_gateway_route_table_id,
-        ///             IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
-        ///             Name = @var.Ingress_gateway_route_table_name,
-        ///             State = @var.Ingress_gateway_route_table_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Ingress_gateway_route_table_id,
+        ///         IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
+        ///         Name = @var.Ingress_gateway_route_table_name,
+        ///         State = @var.Ingress_gateway_route_table_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetIngressGatewayRouteTablesArgs : Pulumi.InvokeArgs
+    public sealed class GetIngressGatewayRouteTablesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetIngressGatewayRouteTablesArgs()
         {
         }
+        public static new GetIngressGatewayRouteTablesArgs Empty => new GetIngressGatewayRouteTablesArgs();
     }
 
-    public sealed class GetIngressGatewayRouteTablesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIngressGatewayRouteTablesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetIngressGatewayRouteTablesInvokeArgs()
         {
         }
+        public static new GetIngressGatewayRouteTablesInvokeArgs Empty => new GetIngressGatewayRouteTablesInvokeArgs();
     }
 
 

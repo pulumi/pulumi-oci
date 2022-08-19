@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class DbSystemIormConfigCachDbPlanGetArgs : Pulumi.ResourceArgs
+    public sealed class DbSystemIormConfigCachDbPlanGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Database.Inputs
         public DbSystemIormConfigCachDbPlanGetArgs()
         {
         }
+        public static new DbSystemIormConfigCachDbPlanGetArgs Empty => new DbSystemIormConfigCachDbPlanGetArgs();
     }
 }

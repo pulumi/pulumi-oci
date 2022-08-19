@@ -22,24 +22,22 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentPlugins = Oci.ManagementAgent.GetManagementAgentPlugins.Invoke(new()
         ///     {
-        ///         var testManagementAgentPlugins = Output.Create(Oci.ManagementAgent.GetManagementAgentPlugins.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentPluginsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AgentId = @var.Management_agent_id,
-        ///             DisplayName = @var.Management_agent_plugin_display_name,
-        ///             PlatformTypes = @var.Management_agent_plugin_platform_type,
-        ///             State = @var.Management_agent_plugin_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AgentId = @var.Management_agent_id,
+        ///         DisplayName = @var.Management_agent_plugin_display_name,
+        ///         PlatformTypes = @var.Management_agent_plugin_platform_type,
+        ///         State = @var.Management_agent_plugin_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentPlugins = Oci.ManagementAgent.GetManagementAgentPlugins.Invoke(new()
         ///     {
-        ///         var testManagementAgentPlugins = Output.Create(Oci.ManagementAgent.GetManagementAgentPlugins.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentPluginsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AgentId = @var.Management_agent_id,
-        ///             DisplayName = @var.Management_agent_plugin_display_name,
-        ///             PlatformTypes = @var.Management_agent_plugin_platform_type,
-        ///             State = @var.Management_agent_plugin_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AgentId = @var.Management_agent_id,
+        ///         DisplayName = @var.Management_agent_plugin_display_name,
+        ///         PlatformTypes = @var.Management_agent_plugin_platform_type,
+        ///         State = @var.Management_agent_plugin_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.ManagementAgent
     }
 
 
-    public sealed class GetManagementAgentPluginsArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentPluginsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ManagementAgentID of the agent from which the Management Agents to be filtered.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentPluginsArgs()
         {
         }
+        public static new GetManagementAgentPluginsArgs Empty => new GetManagementAgentPluginsArgs();
     }
 
-    public sealed class GetManagementAgentPluginsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentPluginsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ManagementAgentID of the agent from which the Management Agents to be filtered.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentPluginsInvokeArgs()
         {
         }
+        public static new GetManagementAgentPluginsInvokeArgs Empty => new GetManagementAgentPluginsInvokeArgs();
     }
 
 

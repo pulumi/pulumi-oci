@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class IngressGatewayRouteTableRouteRuleArgs : Pulumi.ResourceArgs
+    public sealed class IngressGatewayRouteTableRouteRuleArgs : global::Pulumi.ResourceArgs
     {
         [Input("destinations", required: true)]
         private InputList<Inputs.IngressGatewayRouteTableRouteRuleDestinationArgs>? _destinations;
@@ -69,5 +69,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public IngressGatewayRouteTableRouteRuleArgs()
         {
         }
+        public static new IngressGatewayRouteTableRouteRuleArgs Empty => new IngressGatewayRouteTableRouteRuleArgs();
     }
 }

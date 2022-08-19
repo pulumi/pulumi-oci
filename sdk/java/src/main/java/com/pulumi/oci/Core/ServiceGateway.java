@@ -32,6 +32,43 @@ import javax.annotation.Nullable;
  * It does not have to be unique, and you can change it. Avoid entering confidential information.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.ServiceGateway;
+ * import com.pulumi.oci.Core.ServiceGatewayArgs;
+ * import com.pulumi.oci.Core.inputs.ServiceGatewayServiceArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testServiceGateway = new ServiceGateway(&#34;testServiceGateway&#34;, ServiceGatewayArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .services(ServiceGatewayServiceArgs.builder()
+ *                 .serviceId(data.oci_core_services().test_services().services()[0].id())
+ *                 .build())
+ *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.service_gateway_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .routeTableId(oci_core_route_table.test_route_table().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

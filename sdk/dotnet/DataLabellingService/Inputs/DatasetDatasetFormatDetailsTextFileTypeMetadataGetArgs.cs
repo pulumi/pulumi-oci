@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataLabellingService.Inputs
 {
 
-    public sealed class DatasetDatasetFormatDetailsTextFileTypeMetadataGetArgs : Pulumi.ResourceArgs
+    public sealed class DatasetDatasetFormatDetailsTextFileTypeMetadataGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A column delimiter
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.DataLabellingService.Inputs
         public DatasetDatasetFormatDetailsTextFileTypeMetadataGetArgs()
         {
         }
+        public static new DatasetDatasetFormatDetailsTextFileTypeMetadataGetArgs Empty => new DatasetDatasetFormatDetailsTextFileTypeMetadataGetArgs();
     }
 }

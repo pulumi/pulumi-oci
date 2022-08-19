@@ -22,24 +22,22 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualServiceRouteTables = Oci.ServiceMesh.GetVirtualServiceRouteTables.Invoke(new()
         ///     {
-        ///         var testVirtualServiceRouteTables = Output.Create(Oci.ServiceMesh.GetVirtualServiceRouteTables.InvokeAsync(new Oci.ServiceMesh.GetVirtualServiceRouteTablesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Virtual_service_route_table_id,
-        ///             Name = @var.Virtual_service_route_table_name,
-        ///             State = @var.Virtual_service_route_table_state,
-        ///             VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Virtual_service_route_table_id,
+        ///         Name = @var.Virtual_service_route_table_name,
+        ///         State = @var.Virtual_service_route_table_state,
+        ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualServiceRouteTables = Oci.ServiceMesh.GetVirtualServiceRouteTables.Invoke(new()
         ///     {
-        ///         var testVirtualServiceRouteTables = Output.Create(Oci.ServiceMesh.GetVirtualServiceRouteTables.InvokeAsync(new Oci.ServiceMesh.GetVirtualServiceRouteTablesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Virtual_service_route_table_id,
-        ///             Name = @var.Virtual_service_route_table_name,
-        ///             State = @var.Virtual_service_route_table_state,
-        ///             VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Virtual_service_route_table_id,
+        ///         Name = @var.Virtual_service_route_table_name,
+        ///         State = @var.Virtual_service_route_table_state,
+        ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetVirtualServiceRouteTablesArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualServiceRouteTablesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetVirtualServiceRouteTablesArgs()
         {
         }
+        public static new GetVirtualServiceRouteTablesArgs Empty => new GetVirtualServiceRouteTablesArgs();
     }
 
-    public sealed class GetVirtualServiceRouteTablesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualServiceRouteTablesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetVirtualServiceRouteTablesInvokeArgs()
         {
         }
+        public static new GetVirtualServiceRouteTablesInvokeArgs Empty => new GetVirtualServiceRouteTablesInvokeArgs();
     }
 
 

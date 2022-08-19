@@ -59,12 +59,84 @@ public final class DnsFunctions {
     /**
      * ## Example Usage
      * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
+     *             .zoneNameOrId(oci_dns_zone_name_or.test_zone_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .domain(var_.record_domain())
+     *             .domainContains(var_.record_domain_contains())
+     *             .rtype(var_.record_rtype())
+     *             .scope(var_.record_scope())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .zoneVersion(var_.record_zone_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
      */
     public static Output<GetRecordsResult> getRecords(GetRecordsArgs args) {
         return getRecords(args, InvokeOptions.Empty);
     }
     /**
      * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
+     *             .zoneNameOrId(oci_dns_zone_name_or.test_zone_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .domain(var_.record_domain())
+     *             .domainContains(var_.record_domain_contains())
+     *             .rtype(var_.record_rtype())
+     *             .scope(var_.record_scope())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .zoneVersion(var_.record_zone_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRecordsResult> getRecordsPlain(GetRecordsPlainArgs args) {
@@ -73,12 +145,84 @@ public final class DnsFunctions {
     /**
      * ## Example Usage
      * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
+     *             .zoneNameOrId(oci_dns_zone_name_or.test_zone_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .domain(var_.record_domain())
+     *             .domainContains(var_.record_domain_contains())
+     *             .rtype(var_.record_rtype())
+     *             .scope(var_.record_scope())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .zoneVersion(var_.record_zone_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
      */
     public static Output<GetRecordsResult> getRecords(GetRecordsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Dns/getRecords:getRecords", TypeShape.of(GetRecordsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecords = DnsFunctions.getRecords(GetRecordsArgs.builder()
+     *             .zoneNameOrId(oci_dns_zone_name_or.test_zone_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .domain(var_.record_domain())
+     *             .domainContains(var_.record_domain_contains())
+     *             .rtype(var_.record_rtype())
+     *             .scope(var_.record_scope())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .zoneVersion(var_.record_zone_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRecordsResult> getRecordsPlain(GetRecordsPlainArgs args, InvokeOptions options) {
@@ -92,6 +236,35 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolverArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
+     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResolverResult> getResolver(GetResolverArgs args) {
@@ -105,6 +278,35 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolverArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
+     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResolverResult> getResolverPlain(GetResolverPlainArgs args) {
@@ -118,6 +320,35 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolverArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
+     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResolverResult> getResolver(GetResolverArgs args, InvokeOptions options) {
@@ -131,6 +362,35 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolverArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolver = DnsFunctions.getResolver(GetResolverArgs.builder()
+     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResolverResult> getResolverPlain(GetResolverPlainArgs args, InvokeOptions options) {
@@ -144,6 +404,36 @@ public final class DnsFunctions {
      * API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolverEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
+     *             .resolverEndpointName(oci_dns_resolver_endpoint.test_resolver_endpoint().name())
+     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResolverEndpointResult> getResolverEndpoint(GetResolverEndpointArgs args) {
@@ -157,6 +447,36 @@ public final class DnsFunctions {
      * API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolverEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
+     *             .resolverEndpointName(oci_dns_resolver_endpoint.test_resolver_endpoint().name())
+     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResolverEndpointResult> getResolverEndpointPlain(GetResolverEndpointPlainArgs args) {
@@ -170,6 +490,36 @@ public final class DnsFunctions {
      * API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolverEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
+     *             .resolverEndpointName(oci_dns_resolver_endpoint.test_resolver_endpoint().name())
+     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResolverEndpointResult> getResolverEndpoint(GetResolverEndpointArgs args, InvokeOptions options) {
@@ -183,6 +533,36 @@ public final class DnsFunctions {
      * API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolverEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolverEndpoint = DnsFunctions.getResolverEndpoint(GetResolverEndpointArgs.builder()
+     *             .resolverEndpointName(oci_dns_resolver_endpoint.test_resolver_endpoint().name())
+     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResolverEndpointResult> getResolverEndpointPlain(GetResolverEndpointPlainArgs args, InvokeOptions options) {
@@ -197,6 +577,37 @@ public final class DnsFunctions {
      * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolverEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
+     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .name(var_.resolver_endpoint_name())
+     *             .state(var_.resolver_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResolverEndpointsResult> getResolverEndpoints(GetResolverEndpointsArgs args) {
@@ -211,6 +622,37 @@ public final class DnsFunctions {
      * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolverEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
+     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .name(var_.resolver_endpoint_name())
+     *             .state(var_.resolver_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResolverEndpointsResult> getResolverEndpointsPlain(GetResolverEndpointsPlainArgs args) {
@@ -225,6 +667,37 @@ public final class DnsFunctions {
      * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolverEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
+     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .name(var_.resolver_endpoint_name())
+     *             .state(var_.resolver_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResolverEndpointsResult> getResolverEndpoints(GetResolverEndpointsArgs args, InvokeOptions options) {
@@ -239,6 +712,37 @@ public final class DnsFunctions {
      * lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolverEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolverEndpoints = DnsFunctions.getResolverEndpoints(GetResolverEndpointsArgs.builder()
+     *             .resolverId(oci_dns_resolver.test_resolver().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .name(var_.resolver_endpoint_name())
+     *             .state(var_.resolver_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResolverEndpointsResult> getResolverEndpointsPlain(GetResolverEndpointsPlainArgs args, InvokeOptions options) {
@@ -255,6 +759,38 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolversArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolvers = DnsFunctions.getResolvers(GetResolversArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .displayName(var_.resolver_display_name())
+     *             .id(var_.resolver_id())
+     *             .state(var_.resolver_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResolversResult> getResolvers(GetResolversArgs args) {
@@ -271,6 +807,38 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolversArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolvers = DnsFunctions.getResolvers(GetResolversArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .displayName(var_.resolver_display_name())
+     *             .id(var_.resolver_id())
+     *             .state(var_.resolver_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResolversResult> getResolversPlain(GetResolversPlainArgs args) {
@@ -287,6 +855,38 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolversArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolvers = DnsFunctions.getResolvers(GetResolversArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .displayName(var_.resolver_display_name())
+     *             .id(var_.resolver_id())
+     *             .state(var_.resolver_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResolversResult> getResolvers(GetResolversArgs args, InvokeOptions options) {
@@ -303,6 +903,38 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetResolversArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResolvers = DnsFunctions.getResolvers(GetResolversArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .displayName(var_.resolver_display_name())
+     *             .id(var_.resolver_id())
+     *             .state(var_.resolver_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResolversResult> getResolversPlain(GetResolversPlainArgs args, InvokeOptions options) {
@@ -317,6 +949,39 @@ public final class DnsFunctions {
      * parameter is required.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetRrsetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRrset = DnsFunctions.getRrset(GetRrsetArgs.builder()
+     *             .domain(var_.rrset_domain())
+     *             .rtype(var_.rrset_rtype())
+     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(var_.rrset_scope())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRrsetResult> getRrset(GetRrsetArgs args) {
@@ -331,6 +996,39 @@ public final class DnsFunctions {
      * parameter is required.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetRrsetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRrset = DnsFunctions.getRrset(GetRrsetArgs.builder()
+     *             .domain(var_.rrset_domain())
+     *             .rtype(var_.rrset_rtype())
+     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(var_.rrset_scope())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRrsetResult> getRrsetPlain(GetRrsetPlainArgs args) {
@@ -345,6 +1043,39 @@ public final class DnsFunctions {
      * parameter is required.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetRrsetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRrset = DnsFunctions.getRrset(GetRrsetArgs.builder()
+     *             .domain(var_.rrset_domain())
+     *             .rtype(var_.rrset_rtype())
+     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(var_.rrset_scope())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRrsetResult> getRrset(GetRrsetArgs args, InvokeOptions options) {
@@ -359,6 +1090,39 @@ public final class DnsFunctions {
      * parameter is required.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetRrsetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRrset = DnsFunctions.getRrset(GetRrsetArgs.builder()
+     *             .domain(var_.rrset_domain())
+     *             .rtype(var_.rrset_rtype())
+     *             .zoneNameOrId(oci_dns_zone.test_zone().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(var_.rrset_scope())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRrsetResult> getRrsetPlain(GetRrsetPlainArgs args, InvokeOptions options) {
@@ -370,6 +1134,42 @@ public final class DnsFunctions {
      * Gets a list of all steering policies in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicies = DnsFunctions.getSteeringPolicies(GetSteeringPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.steering_policy_display_name())
+     *             .displayNameContains(var_.steering_policy_display_name_contains())
+     *             .healthCheckMonitorId(oci_health_checks_http_monitor.test_http_monitor().id())
+     *             .id(var_.steering_policy_id())
+     *             .state(var_.steering_policy_state())
+     *             .template(var_.steering_policy_template())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.steering_policy_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSteeringPoliciesResult> getSteeringPolicies(GetSteeringPoliciesArgs args) {
@@ -381,6 +1181,42 @@ public final class DnsFunctions {
      * Gets a list of all steering policies in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicies = DnsFunctions.getSteeringPolicies(GetSteeringPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.steering_policy_display_name())
+     *             .displayNameContains(var_.steering_policy_display_name_contains())
+     *             .healthCheckMonitorId(oci_health_checks_http_monitor.test_http_monitor().id())
+     *             .id(var_.steering_policy_id())
+     *             .state(var_.steering_policy_state())
+     *             .template(var_.steering_policy_template())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.steering_policy_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSteeringPoliciesResult> getSteeringPoliciesPlain(GetSteeringPoliciesPlainArgs args) {
@@ -392,6 +1228,42 @@ public final class DnsFunctions {
      * Gets a list of all steering policies in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicies = DnsFunctions.getSteeringPolicies(GetSteeringPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.steering_policy_display_name())
+     *             .displayNameContains(var_.steering_policy_display_name_contains())
+     *             .healthCheckMonitorId(oci_health_checks_http_monitor.test_http_monitor().id())
+     *             .id(var_.steering_policy_id())
+     *             .state(var_.steering_policy_state())
+     *             .template(var_.steering_policy_template())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.steering_policy_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSteeringPoliciesResult> getSteeringPolicies(GetSteeringPoliciesArgs args, InvokeOptions options) {
@@ -403,6 +1275,42 @@ public final class DnsFunctions {
      * Gets a list of all steering policies in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicies = DnsFunctions.getSteeringPolicies(GetSteeringPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.steering_policy_display_name())
+     *             .displayNameContains(var_.steering_policy_display_name_contains())
+     *             .healthCheckMonitorId(oci_health_checks_http_monitor.test_http_monitor().id())
+     *             .id(var_.steering_policy_id())
+     *             .state(var_.steering_policy_state())
+     *             .template(var_.steering_policy_template())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.steering_policy_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSteeringPoliciesResult> getSteeringPoliciesPlain(GetSteeringPoliciesPlainArgs args, InvokeOptions options) {
@@ -414,6 +1322,34 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicy = DnsFunctions.getSteeringPolicy(GetSteeringPolicyArgs.builder()
+     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSteeringPolicyResult> getSteeringPolicy(GetSteeringPolicyArgs args) {
@@ -425,6 +1361,34 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicy = DnsFunctions.getSteeringPolicy(GetSteeringPolicyArgs.builder()
+     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSteeringPolicyResult> getSteeringPolicyPlain(GetSteeringPolicyPlainArgs args) {
@@ -436,6 +1400,34 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicy = DnsFunctions.getSteeringPolicy(GetSteeringPolicyArgs.builder()
+     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSteeringPolicyResult> getSteeringPolicy(GetSteeringPolicyArgs args, InvokeOptions options) {
@@ -447,6 +1439,34 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicy = DnsFunctions.getSteeringPolicy(GetSteeringPolicyArgs.builder()
+     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSteeringPolicyResult> getSteeringPolicyPlain(GetSteeringPolicyPlainArgs args, InvokeOptions options) {
@@ -458,6 +1478,34 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy attachment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicyAttachment = DnsFunctions.getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs.builder()
+     *             .steeringPolicyAttachmentId(oci_dns_steering_policy_attachment.test_steering_policy_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSteeringPolicyAttachmentResult> getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs args) {
@@ -469,6 +1517,34 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy attachment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicyAttachment = DnsFunctions.getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs.builder()
+     *             .steeringPolicyAttachmentId(oci_dns_steering_policy_attachment.test_steering_policy_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSteeringPolicyAttachmentResult> getSteeringPolicyAttachmentPlain(GetSteeringPolicyAttachmentPlainArgs args) {
@@ -480,6 +1556,34 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy attachment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicyAttachment = DnsFunctions.getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs.builder()
+     *             .steeringPolicyAttachmentId(oci_dns_steering_policy_attachment.test_steering_policy_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSteeringPolicyAttachmentResult> getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs args, InvokeOptions options) {
@@ -491,6 +1595,34 @@ public final class DnsFunctions {
      * Gets information about the specified steering policy attachment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicyAttachment = DnsFunctions.getSteeringPolicyAttachment(GetSteeringPolicyAttachmentArgs.builder()
+     *             .steeringPolicyAttachmentId(oci_dns_steering_policy_attachment.test_steering_policy_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSteeringPolicyAttachmentResult> getSteeringPolicyAttachmentPlain(GetSteeringPolicyAttachmentPlainArgs args, InvokeOptions options) {
@@ -502,6 +1634,43 @@ public final class DnsFunctions {
      * Lists the steering policy attachments in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicyAttachments = DnsFunctions.getSteeringPolicyAttachments(GetSteeringPolicyAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.steering_policy_attachment_display_name())
+     *             .domain(var_.steering_policy_attachment_domain())
+     *             .domainContains(var_.steering_policy_attachment_domain_contains())
+     *             .id(var_.steering_policy_attachment_id())
+     *             .state(var_.steering_policy_attachment_state())
+     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_attachment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.steering_policy_attachment_time_created_less_than())
+     *             .zoneId(oci_dns_zone.test_zone().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSteeringPolicyAttachmentsResult> getSteeringPolicyAttachments(GetSteeringPolicyAttachmentsArgs args) {
@@ -513,6 +1682,43 @@ public final class DnsFunctions {
      * Lists the steering policy attachments in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicyAttachments = DnsFunctions.getSteeringPolicyAttachments(GetSteeringPolicyAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.steering_policy_attachment_display_name())
+     *             .domain(var_.steering_policy_attachment_domain())
+     *             .domainContains(var_.steering_policy_attachment_domain_contains())
+     *             .id(var_.steering_policy_attachment_id())
+     *             .state(var_.steering_policy_attachment_state())
+     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_attachment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.steering_policy_attachment_time_created_less_than())
+     *             .zoneId(oci_dns_zone.test_zone().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSteeringPolicyAttachmentsResult> getSteeringPolicyAttachmentsPlain(GetSteeringPolicyAttachmentsPlainArgs args) {
@@ -524,6 +1730,43 @@ public final class DnsFunctions {
      * Lists the steering policy attachments in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicyAttachments = DnsFunctions.getSteeringPolicyAttachments(GetSteeringPolicyAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.steering_policy_attachment_display_name())
+     *             .domain(var_.steering_policy_attachment_domain())
+     *             .domainContains(var_.steering_policy_attachment_domain_contains())
+     *             .id(var_.steering_policy_attachment_id())
+     *             .state(var_.steering_policy_attachment_state())
+     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_attachment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.steering_policy_attachment_time_created_less_than())
+     *             .zoneId(oci_dns_zone.test_zone().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSteeringPolicyAttachmentsResult> getSteeringPolicyAttachments(GetSteeringPolicyAttachmentsArgs args, InvokeOptions options) {
@@ -535,6 +1778,43 @@ public final class DnsFunctions {
      * Lists the steering policy attachments in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetSteeringPolicyAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSteeringPolicyAttachments = DnsFunctions.getSteeringPolicyAttachments(GetSteeringPolicyAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.steering_policy_attachment_display_name())
+     *             .domain(var_.steering_policy_attachment_domain())
+     *             .domainContains(var_.steering_policy_attachment_domain_contains())
+     *             .id(var_.steering_policy_attachment_id())
+     *             .state(var_.steering_policy_attachment_state())
+     *             .steeringPolicyId(oci_dns_steering_policy.test_steering_policy().id())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.steering_policy_attachment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.steering_policy_attachment_time_created_less_than())
+     *             .zoneId(oci_dns_zone.test_zone().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSteeringPolicyAttachmentsResult> getSteeringPolicyAttachmentsPlain(GetSteeringPolicyAttachmentsPlainArgs args, InvokeOptions options) {
@@ -546,6 +1826,34 @@ public final class DnsFunctions {
      * Gets information about the specified TSIG key.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetTsigKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTsigKey = DnsFunctions.getTsigKey(GetTsigKeyArgs.builder()
+     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTsigKeyResult> getTsigKey(GetTsigKeyArgs args) {
@@ -557,6 +1865,34 @@ public final class DnsFunctions {
      * Gets information about the specified TSIG key.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetTsigKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTsigKey = DnsFunctions.getTsigKey(GetTsigKeyArgs.builder()
+     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTsigKeyResult> getTsigKeyPlain(GetTsigKeyPlainArgs args) {
@@ -568,6 +1904,34 @@ public final class DnsFunctions {
      * Gets information about the specified TSIG key.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetTsigKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTsigKey = DnsFunctions.getTsigKey(GetTsigKeyArgs.builder()
+     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTsigKeyResult> getTsigKey(GetTsigKeyArgs args, InvokeOptions options) {
@@ -579,6 +1943,34 @@ public final class DnsFunctions {
      * Gets information about the specified TSIG key.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetTsigKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTsigKey = DnsFunctions.getTsigKey(GetTsigKeyArgs.builder()
+     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTsigKeyResult> getTsigKeyPlain(GetTsigKeyPlainArgs args, InvokeOptions options) {
@@ -590,6 +1982,37 @@ public final class DnsFunctions {
      * Gets a list of all TSIG keys in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetTsigKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTsigKeys = DnsFunctions.getTsigKeys(GetTsigKeysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.tsig_key_id())
+     *             .name(var_.tsig_key_name())
+     *             .state(var_.tsig_key_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTsigKeysResult> getTsigKeys(GetTsigKeysArgs args) {
@@ -601,6 +2024,37 @@ public final class DnsFunctions {
      * Gets a list of all TSIG keys in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetTsigKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTsigKeys = DnsFunctions.getTsigKeys(GetTsigKeysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.tsig_key_id())
+     *             .name(var_.tsig_key_name())
+     *             .state(var_.tsig_key_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTsigKeysResult> getTsigKeysPlain(GetTsigKeysPlainArgs args) {
@@ -612,6 +2066,37 @@ public final class DnsFunctions {
      * Gets a list of all TSIG keys in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetTsigKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTsigKeys = DnsFunctions.getTsigKeys(GetTsigKeysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.tsig_key_id())
+     *             .name(var_.tsig_key_name())
+     *             .state(var_.tsig_key_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTsigKeysResult> getTsigKeys(GetTsigKeysArgs args, InvokeOptions options) {
@@ -623,6 +2108,37 @@ public final class DnsFunctions {
      * Gets a list of all TSIG keys in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetTsigKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTsigKeys = DnsFunctions.getTsigKeys(GetTsigKeysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.tsig_key_id())
+     *             .name(var_.tsig_key_name())
+     *             .state(var_.tsig_key_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTsigKeysResult> getTsigKeysPlain(GetTsigKeysPlainArgs args, InvokeOptions options) {
@@ -636,6 +2152,35 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetViewArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetViewResult> getView(GetViewArgs args) {
@@ -649,6 +2194,35 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetViewArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetViewResult> getViewPlain(GetViewPlainArgs args) {
@@ -662,6 +2236,35 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetViewArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetViewResult> getView(GetViewArgs args, InvokeOptions options) {
@@ -675,6 +2278,35 @@ public final class DnsFunctions {
      * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetViewArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testView = DnsFunctions.getView(GetViewArgs.builder()
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetViewResult> getViewPlain(GetViewPlainArgs args, InvokeOptions options) {
@@ -691,6 +2323,38 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetViewsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testViews = DnsFunctions.getViews(GetViewsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .displayName(var_.view_display_name())
+     *             .id(var_.view_id())
+     *             .state(var_.view_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetViewsResult> getViews(GetViewsArgs args) {
@@ -707,6 +2371,38 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetViewsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testViews = DnsFunctions.getViews(GetViewsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .displayName(var_.view_display_name())
+     *             .id(var_.view_id())
+     *             .state(var_.view_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetViewsResult> getViewsPlain(GetViewsPlainArgs args) {
@@ -723,6 +2419,38 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetViewsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testViews = DnsFunctions.getViews(GetViewsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .displayName(var_.view_display_name())
+     *             .id(var_.view_id())
+     *             .state(var_.view_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetViewsResult> getViews(GetViewsArgs args, InvokeOptions options) {
@@ -739,6 +2467,38 @@ public final class DnsFunctions {
      * with other operations of the API. Requires a `PRIVATE` scope query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetViewsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testViews = DnsFunctions.getViews(GetViewsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(&#34;PRIVATE&#34;)
+     *             .displayName(var_.view_display_name())
+     *             .id(var_.view_id())
+     *             .state(var_.view_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetViewsResult> getViewsPlain(GetViewsPlainArgs args, InvokeOptions options) {
@@ -753,6 +2513,43 @@ public final class DnsFunctions {
      * listing private zones.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testZones = DnsFunctions.getZones(GetZonesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.zone_name())
+     *             .nameContains(var_.zone_name_contains())
+     *             .scope(var_.zone_scope())
+     *             .state(var_.zone_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.zone_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.zone_time_created_less_than())
+     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .zoneType(var_.zone_zone_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetZonesResult> getZones(GetZonesArgs args) {
@@ -767,6 +2564,43 @@ public final class DnsFunctions {
      * listing private zones.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testZones = DnsFunctions.getZones(GetZonesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.zone_name())
+     *             .nameContains(var_.zone_name_contains())
+     *             .scope(var_.zone_scope())
+     *             .state(var_.zone_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.zone_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.zone_time_created_less_than())
+     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .zoneType(var_.zone_zone_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetZonesResult> getZonesPlain(GetZonesPlainArgs args) {
@@ -781,6 +2615,43 @@ public final class DnsFunctions {
      * listing private zones.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testZones = DnsFunctions.getZones(GetZonesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.zone_name())
+     *             .nameContains(var_.zone_name_contains())
+     *             .scope(var_.zone_scope())
+     *             .state(var_.zone_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.zone_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.zone_time_created_less_than())
+     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .zoneType(var_.zone_zone_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetZonesResult> getZones(GetZonesArgs args, InvokeOptions options) {
@@ -795,6 +2666,43 @@ public final class DnsFunctions {
      * listing private zones.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dns.DnsFunctions;
+     * import com.pulumi.oci.Dns.inputs.GetZonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testZones = DnsFunctions.getZones(GetZonesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.zone_name())
+     *             .nameContains(var_.zone_name_contains())
+     *             .scope(var_.zone_scope())
+     *             .state(var_.zone_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.zone_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.zone_time_created_less_than())
+     *             .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+     *             .viewId(oci_dns_view.test_view().id())
+     *             .zoneType(var_.zone_zone_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetZonesResult> getZonesPlain(GetZonesPlainArgs args, InvokeOptions options) {

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class GetJobsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetJobsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public GetJobsFilterArgs()
         {
         }
+        public static new GetJobsFilterArgs Empty => new GetJobsFilterArgs();
     }
 }

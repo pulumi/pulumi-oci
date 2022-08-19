@@ -74,7 +74,7 @@ namespace Pulumi.Oci
         }
     }
 
-    internal sealed class OciResourceTypeAttribute : Pulumi.ResourceTypeAttribute
+    internal sealed class OciResourceTypeAttribute : global::Pulumi.ResourceTypeAttribute
     {
         public OciResourceTypeAttribute(string type) : base(type, Utilities.Version)
         {

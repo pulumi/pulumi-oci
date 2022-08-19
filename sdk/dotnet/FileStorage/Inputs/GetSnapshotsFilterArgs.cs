@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FileStorage.Inputs
 {
 
-    public sealed class GetSnapshotsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetSnapshotsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the snapshot. This value is immutable.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.FileStorage.Inputs
         public GetSnapshotsFilterInputArgs()
         {
         }
+        public static new GetSnapshotsFilterInputArgs Empty => new GetSnapshotsFilterInputArgs();
     }
 }

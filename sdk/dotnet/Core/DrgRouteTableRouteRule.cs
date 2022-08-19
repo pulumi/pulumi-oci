@@ -17,23 +17,21 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDrgRouteTableRouteRule = new Oci.Core.DrgRouteTableRouteRule("testDrgRouteTableRouteRule", new()
     ///     {
-    ///         var testDrgRouteTableRouteRule = new Oci.Core.DrgRouteTableRouteRule("testDrgRouteTableRouteRule", new Oci.Core.DrgRouteTableRouteRuleArgs
-    ///         {
-    ///             DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
-    ///             Destination = @var.Drg_route_table_route_rule_route_rules_destination,
-    ///             DestinationType = @var.Drg_route_table_route_rule_route_rules_destination_type,
-    ///             NextHopDrgAttachmentId = oci_core_drg_attachment.Test_drg_attachment.Id,
-    ///         });
-    ///     }
+    ///         DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
+    ///         Destination = @var.Drg_route_table_route_rule_route_rules_destination,
+    ///         DestinationType = @var.Drg_route_table_route_rule_route_rules_destination_type,
+    ///         NextHopDrgAttachmentId = oci_core_drg_attachment.Test_drg_attachment.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -45,7 +43,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule")]
-    public partial class DrgRouteTableRouteRule : Pulumi.CustomResource
+    public partial class DrgRouteTableRouteRule : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Additional properties for the route, computed by the service.
@@ -146,7 +144,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class DrgRouteTableRouteRuleArgs : Pulumi.ResourceArgs
+    public sealed class DrgRouteTableRouteRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
@@ -176,9 +174,10 @@ namespace Pulumi.Oci.Core
         public DrgRouteTableRouteRuleArgs()
         {
         }
+        public static new DrgRouteTableRouteRuleArgs Empty => new DrgRouteTableRouteRuleArgs();
     }
 
-    public sealed class DrgRouteTableRouteRuleState : Pulumi.ResourceArgs
+    public sealed class DrgRouteTableRouteRuleState : global::Pulumi.ResourceArgs
     {
         [Input("attributes")]
         private InputMap<object>? _attributes;
@@ -244,5 +243,6 @@ namespace Pulumi.Oci.Core
         public DrgRouteTableRouteRuleState()
         {
         }
+        public static new DrgRouteTableRouteRuleState Empty => new DrgRouteTableRouteRuleState();
     }
 }

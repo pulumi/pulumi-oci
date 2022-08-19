@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Sch.Inputs
 {
 
-    public sealed class GetServiceConnectorsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetServiceConnectorsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Sch.Inputs
         public GetServiceConnectorsFilterInputArgs()
         {
         }
+        public static new GetServiceConnectorsFilterInputArgs Empty => new GetServiceConnectorsFilterInputArgs();
     }
 }

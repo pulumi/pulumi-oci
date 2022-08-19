@@ -29,6 +29,34 @@ public final class WaaFunctions {
      * Gets a WebAppAcceleration by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAcceleration = WaaFunctions.getAppAcceleration(GetAppAccelerationArgs.builder()
+     *             .webAppAccelerationId(oci_waa_web_app_acceleration.test_web_app_acceleration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppAccelerationResult> getAppAcceleration(GetAppAccelerationArgs args) {
@@ -40,6 +68,34 @@ public final class WaaFunctions {
      * Gets a WebAppAcceleration by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAcceleration = WaaFunctions.getAppAcceleration(GetAppAccelerationArgs.builder()
+     *             .webAppAccelerationId(oci_waa_web_app_acceleration.test_web_app_acceleration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppAccelerationResult> getAppAccelerationPlain(GetAppAccelerationPlainArgs args) {
@@ -51,6 +107,34 @@ public final class WaaFunctions {
      * Gets a WebAppAcceleration by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAcceleration = WaaFunctions.getAppAcceleration(GetAppAccelerationArgs.builder()
+     *             .webAppAccelerationId(oci_waa_web_app_acceleration.test_web_app_acceleration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppAccelerationResult> getAppAcceleration(GetAppAccelerationArgs args, InvokeOptions options) {
@@ -62,6 +146,34 @@ public final class WaaFunctions {
      * Gets a WebAppAcceleration by OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAcceleration = WaaFunctions.getAppAcceleration(GetAppAccelerationArgs.builder()
+     *             .webAppAccelerationId(oci_waa_web_app_acceleration.test_web_app_acceleration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppAccelerationResult> getAppAccelerationPlain(GetAppAccelerationPlainArgs args, InvokeOptions options) {
@@ -73,6 +185,37 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerationPolicies in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAccelerationPolicies = WaaFunctions.getAppAccelerationPolicies(GetAppAccelerationPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_acceleration_policy_display_name())
+     *             .id(var_.web_app_acceleration_policy_id())
+     *             .states(var_.web_app_acceleration_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppAccelerationPoliciesResult> getAppAccelerationPolicies(GetAppAccelerationPoliciesArgs args) {
@@ -84,6 +227,37 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerationPolicies in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAccelerationPolicies = WaaFunctions.getAppAccelerationPolicies(GetAppAccelerationPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_acceleration_policy_display_name())
+     *             .id(var_.web_app_acceleration_policy_id())
+     *             .states(var_.web_app_acceleration_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppAccelerationPoliciesResult> getAppAccelerationPoliciesPlain(GetAppAccelerationPoliciesPlainArgs args) {
@@ -95,6 +269,37 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerationPolicies in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAccelerationPolicies = WaaFunctions.getAppAccelerationPolicies(GetAppAccelerationPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_acceleration_policy_display_name())
+     *             .id(var_.web_app_acceleration_policy_id())
+     *             .states(var_.web_app_acceleration_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppAccelerationPoliciesResult> getAppAccelerationPolicies(GetAppAccelerationPoliciesArgs args, InvokeOptions options) {
@@ -106,6 +311,37 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerationPolicies in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAccelerationPolicies = WaaFunctions.getAppAccelerationPolicies(GetAppAccelerationPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_acceleration_policy_display_name())
+     *             .id(var_.web_app_acceleration_policy_id())
+     *             .states(var_.web_app_acceleration_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppAccelerationPoliciesResult> getAppAccelerationPoliciesPlain(GetAppAccelerationPoliciesPlainArgs args, InvokeOptions options) {
@@ -117,6 +353,34 @@ public final class WaaFunctions {
      * Gets a WebAppAccelerationPolicy with the given OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAccelerationPolicy = WaaFunctions.getAppAccelerationPolicy(GetAppAccelerationPolicyArgs.builder()
+     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppAccelerationPolicyResult> getAppAccelerationPolicy(GetAppAccelerationPolicyArgs args) {
@@ -128,6 +392,34 @@ public final class WaaFunctions {
      * Gets a WebAppAccelerationPolicy with the given OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAccelerationPolicy = WaaFunctions.getAppAccelerationPolicy(GetAppAccelerationPolicyArgs.builder()
+     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppAccelerationPolicyResult> getAppAccelerationPolicyPlain(GetAppAccelerationPolicyPlainArgs args) {
@@ -139,6 +431,34 @@ public final class WaaFunctions {
      * Gets a WebAppAccelerationPolicy with the given OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAccelerationPolicy = WaaFunctions.getAppAccelerationPolicy(GetAppAccelerationPolicyArgs.builder()
+     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppAccelerationPolicyResult> getAppAccelerationPolicy(GetAppAccelerationPolicyArgs args, InvokeOptions options) {
@@ -150,6 +470,34 @@ public final class WaaFunctions {
      * Gets a WebAppAccelerationPolicy with the given OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAccelerationPolicy = WaaFunctions.getAppAccelerationPolicy(GetAppAccelerationPolicyArgs.builder()
+     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppAccelerationPolicyResult> getAppAccelerationPolicyPlain(GetAppAccelerationPolicyPlainArgs args, InvokeOptions options) {
@@ -161,6 +509,38 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerations in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAccelerations = WaaFunctions.getAppAccelerations(GetAppAccelerationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_acceleration_display_name())
+     *             .id(var_.web_app_acceleration_id())
+     *             .states(var_.web_app_acceleration_state())
+     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppAccelerationsResult> getAppAccelerations(GetAppAccelerationsArgs args) {
@@ -172,6 +552,38 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerations in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAccelerations = WaaFunctions.getAppAccelerations(GetAppAccelerationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_acceleration_display_name())
+     *             .id(var_.web_app_acceleration_id())
+     *             .states(var_.web_app_acceleration_state())
+     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppAccelerationsResult> getAppAccelerationsPlain(GetAppAccelerationsPlainArgs args) {
@@ -183,6 +595,38 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerations in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAccelerations = WaaFunctions.getAppAccelerations(GetAppAccelerationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_acceleration_display_name())
+     *             .id(var_.web_app_acceleration_id())
+     *             .states(var_.web_app_acceleration_state())
+     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppAccelerationsResult> getAppAccelerations(GetAppAccelerationsArgs args, InvokeOptions options) {
@@ -194,6 +638,38 @@ public final class WaaFunctions {
      * Gets a list of all WebAppAccelerations in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Waa.WaaFunctions;
+     * import com.pulumi.oci.Waa.inputs.GetAppAccelerationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWebAppAccelerations = WaaFunctions.getAppAccelerations(GetAppAccelerationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.web_app_acceleration_display_name())
+     *             .id(var_.web_app_acceleration_id())
+     *             .states(var_.web_app_acceleration_state())
+     *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppAccelerationsResult> getAppAccelerationsPlain(GetAppAccelerationsPlainArgs args, InvokeOptions options) {

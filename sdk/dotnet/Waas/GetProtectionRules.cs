@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProtectionRules = Oci.Waas.GetProtectionRules.Invoke(new()
         ///     {
-        ///         var testProtectionRules = Output.Create(Oci.Waas.GetProtectionRules.InvokeAsync(new Oci.Waas.GetProtectionRulesArgs
-        ///         {
-        ///             WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
-        ///             Actions = @var.Protection_rule_action,
-        ///             ModSecurityRuleIds = oci_events_rule.Test_rule.Id,
-        ///         }));
-        ///     }
+        ///         WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
+        ///         Actions = @var.Protection_rule_action,
+        ///         ModSecurityRuleIds = oci_events_rule.Test_rule.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProtectionRules = Oci.Waas.GetProtectionRules.Invoke(new()
         ///     {
-        ///         var testProtectionRules = Output.Create(Oci.Waas.GetProtectionRules.InvokeAsync(new Oci.Waas.GetProtectionRulesArgs
-        ///         {
-        ///             WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
-        ///             Actions = @var.Protection_rule_action,
-        ///             ModSecurityRuleIds = oci_events_rule.Test_rule.Id,
-        ///         }));
-        ///     }
+        ///         WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
+        ///         Actions = @var.Protection_rule_action,
+        ///         ModSecurityRuleIds = oci_events_rule.Test_rule.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Waas
     }
 
 
-    public sealed class GetProtectionRulesArgs : Pulumi.InvokeArgs
+    public sealed class GetProtectionRulesArgs : global::Pulumi.InvokeArgs
     {
         [Input("actions")]
         private List<string>? _actions;
@@ -124,9 +120,10 @@ namespace Pulumi.Oci.Waas
         public GetProtectionRulesArgs()
         {
         }
+        public static new GetProtectionRulesArgs Empty => new GetProtectionRulesArgs();
     }
 
-    public sealed class GetProtectionRulesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetProtectionRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("actions")]
         private InputList<string>? _actions;
@@ -169,6 +166,7 @@ namespace Pulumi.Oci.Waas
         public GetProtectionRulesInvokeArgs()
         {
         }
+        public static new GetProtectionRulesInvokeArgs Empty => new GetProtectionRulesInvokeArgs();
     }
 
 

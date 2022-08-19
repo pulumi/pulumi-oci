@@ -22,21 +22,19 @@ namespace Pulumi.Oci.ManagementDashboard
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testManagementDashboardsImport = new Oci.ManagementDashboard.ManagementDashboardsImport("testManagementDashboardsImport", new()
     ///     {
-    ///         var testManagementDashboardsImport = new Oci.ManagementDashboard.ManagementDashboardsImport("testManagementDashboardsImport", new Oci.ManagementDashboard.ManagementDashboardsImportArgs
-    ///         {
-    ///             ImportDetails = @var.Sample_import_details,
-    ///             ImportDetailsFile = @var.Sample_import_details_file_path,
-    ///         });
-    ///     }
+    ///         ImportDetails = @var.Sample_import_details,
+    ///         ImportDetailsFile = @var.Sample_import_details_file_path,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -48,7 +46,7 @@ namespace Pulumi.Oci.ManagementDashboard
     /// ```
     /// </summary>
     [OciResourceType("oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport")]
-    public partial class ManagementDashboardsImport : Pulumi.CustomResource
+    public partial class ManagementDashboardsImport : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
@@ -103,7 +101,7 @@ namespace Pulumi.Oci.ManagementDashboard
         }
     }
 
-    public sealed class ManagementDashboardsImportArgs : Pulumi.ResourceArgs
+    public sealed class ManagementDashboardsImportArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
@@ -117,9 +115,10 @@ namespace Pulumi.Oci.ManagementDashboard
         public ManagementDashboardsImportArgs()
         {
         }
+        public static new ManagementDashboardsImportArgs Empty => new ManagementDashboardsImportArgs();
     }
 
-    public sealed class ManagementDashboardsImportState : Pulumi.ResourceArgs
+    public sealed class ManagementDashboardsImportState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
@@ -133,5 +132,6 @@ namespace Pulumi.Oci.ManagementDashboard
         public ManagementDashboardsImportState()
         {
         }
+        public static new ManagementDashboardsImportState Empty => new ManagementDashboardsImportState();
     }
 }

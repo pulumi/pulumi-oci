@@ -22,6 +22,41 @@ import javax.annotation.Nullable;
  * terms of use for a package before you can deploy the package.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Marketplace.AcceptedAgreement;
+ * import com.pulumi.oci.Marketplace.AcceptedAgreementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAcceptedAgreement = new AcceptedAgreement(&#34;testAcceptedAgreement&#34;, AcceptedAgreementArgs.builder()        
+ *             .agreementId(oci_marketplace_agreement.test_agreement().id())
+ *             .compartmentId(var_.compartment_id())
+ *             .listingId(oci_marketplace_listing.test_listing().id())
+ *             .packageVersion(var_.accepted_agreement_package_version())
+ *             .signature(var_.accepted_agreement_signature())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.accepted_agreement_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

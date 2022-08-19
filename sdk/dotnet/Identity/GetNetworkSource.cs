@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkSource = Oci.Identity.GetNetworkSource.Invoke(new()
         ///     {
-        ///         var testNetworkSource = Output.Create(Oci.Identity.GetNetworkSource.InvokeAsync(new Oci.Identity.GetNetworkSourceArgs
-        ///         {
-        ///             NetworkSourceId = oci_identity_network_source.Test_network_source.Id,
-        ///         }));
-        ///     }
+        ///         NetworkSourceId = oci_identity_network_source.Test_network_source.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkSource = Oci.Identity.GetNetworkSource.Invoke(new()
         ///     {
-        ///         var testNetworkSource = Output.Create(Oci.Identity.GetNetworkSource.InvokeAsync(new Oci.Identity.GetNetworkSourceArgs
-        ///         {
-        ///             NetworkSourceId = oci_identity_network_source.Test_network_source.Id,
-        ///         }));
-        ///     }
+        ///         NetworkSourceId = oci_identity_network_source.Test_network_source.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetNetworkSourceArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSourceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the network source.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Identity
         public GetNetworkSourceArgs()
         {
         }
+        public static new GetNetworkSourceArgs Empty => new GetNetworkSourceArgs();
     }
 
-    public sealed class GetNetworkSourceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSourceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the network source.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Identity
         public GetNetworkSourceInvokeArgs()
         {
         }
+        public static new GetNetworkSourceInvokeArgs Empty => new GetNetworkSourceInvokeArgs();
     }
 
 

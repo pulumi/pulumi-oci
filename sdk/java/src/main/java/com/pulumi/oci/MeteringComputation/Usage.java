@@ -26,6 +26,54 @@ import javax.annotation.Nullable;
  * Returns usage for the given account.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.MeteringComputation.Usage;
+ * import com.pulumi.oci.MeteringComputation.UsageArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.UsageForecastArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.UsageGroupByTagArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testUsage = new Usage(&#34;testUsage&#34;, UsageArgs.builder()        
+ *             .granularity(var_.usage_granularity())
+ *             .tenantId(oci_metering_computation_tenant.test_tenant().id())
+ *             .timeUsageEnded(var_.usage_time_usage_ended())
+ *             .timeUsageStarted(var_.usage_time_usage_started())
+ *             .compartmentDepth(var_.usage_compartment_depth())
+ *             .filter(var_.usage_filter())
+ *             .forecast(UsageForecastArgs.builder()
+ *                 .timeForecastEnded(var_.usage_forecast_time_forecast_ended())
+ *                 .forecastType(var_.usage_forecast_forecast_type())
+ *                 .timeForecastStarted(var_.usage_forecast_time_forecast_started())
+ *                 .build())
+ *             .groupBies(var_.usage_group_by())
+ *             .groupByTags(UsageGroupByTagArgs.builder()
+ *                 .key(var_.usage_group_by_tag_key())
+ *                 .namespace(var_.usage_group_by_tag_namespace())
+ *                 .value(var_.usage_group_by_tag_value())
+ *                 .build())
+ *             .isAggregateByTime(var_.usage_is_aggregate_by_time())
+ *             .queryType(var_.usage_query_type())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class CaptureFilterVtapCaptureFilterRuleIcmpOptionsGetArgs : Pulumi.ResourceArgs
+    public sealed class CaptureFilterVtapCaptureFilterRuleIcmpOptionsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The ICMP code (optional).
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public CaptureFilterVtapCaptureFilterRuleIcmpOptionsGetArgs()
         {
         }
+        public static new CaptureFilterVtapCaptureFilterRuleIcmpOptionsGetArgs Empty => new CaptureFilterVtapCaptureFilterRuleIcmpOptionsGetArgs();
     }
 }

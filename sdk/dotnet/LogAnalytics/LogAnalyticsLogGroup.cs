@@ -17,31 +17,29 @@ namespace Pulumi.Oci.LogAnalytics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLogAnalyticsLogGroup = new Oci.LogAnalytics.LogAnalyticsLogGroup("testLogAnalyticsLogGroup", new()
     ///     {
-    ///         var testLogAnalyticsLogGroup = new Oci.LogAnalytics.LogAnalyticsLogGroup("testLogAnalyticsLogGroup", new Oci.LogAnalytics.LogAnalyticsLogGroupArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Log_analytics_log_group_display_name,
+    ///         Namespace = @var.Log_analytics_log_group_namespace,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Log_analytics_log_group_display_name,
-    ///             Namespace = @var.Log_analytics_log_group_namespace,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Log_analytics_log_group_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Log_analytics_log_group_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// ```
     /// </summary>
     [OciResourceType("oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup")]
-    public partial class LogAnalyticsLogGroup : Pulumi.CustomResource
+    public partial class LogAnalyticsLogGroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -147,7 +145,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
     }
 
-    public sealed class LogAnalyticsLogGroupArgs : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsLogGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -200,9 +198,10 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsLogGroupArgs()
         {
         }
+        public static new LogAnalyticsLogGroupArgs Empty => new LogAnalyticsLogGroupArgs();
     }
 
-    public sealed class LogAnalyticsLogGroupState : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsLogGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -267,5 +266,6 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsLogGroupState()
         {
         }
+        public static new LogAnalyticsLogGroupState Empty => new LogAnalyticsLogGroupState();
     }
 }

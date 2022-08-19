@@ -26,22 +26,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVcns = Oci.Core.GetVcns.Invoke(new()
         ///     {
-        ///         var testVcns = Output.Create(Oci.Core.GetVcns.InvokeAsync(new Oci.Core.GetVcnsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Vcn_display_name,
-        ///             State = @var.Vcn_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Vcn_display_name,
+        ///         State = @var.Vcn_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -64,22 +62,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVcns = Oci.Core.GetVcns.Invoke(new()
         ///     {
-        ///         var testVcns = Output.Create(Oci.Core.GetVcns.InvokeAsync(new Oci.Core.GetVcnsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Vcn_display_name,
-        ///             State = @var.Vcn_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Vcn_display_name,
+        ///         State = @var.Vcn_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVcnsArgs : Pulumi.InvokeArgs
+    public sealed class GetVcnsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.Core
         public GetVcnsArgs()
         {
         }
+        public static new GetVcnsArgs Empty => new GetVcnsArgs();
     }
 
-    public sealed class GetVcnsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVcnsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -153,6 +150,7 @@ namespace Pulumi.Oci.Core
         public GetVcnsInvokeArgs()
         {
         }
+        public static new GetVcnsInvokeArgs Empty => new GetVcnsInvokeArgs();
     }
 
 

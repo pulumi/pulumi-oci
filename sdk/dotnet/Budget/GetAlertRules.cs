@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Budget
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlertRules = Oci.Budget.GetAlertRules.Invoke(new()
         ///     {
-        ///         var testAlertRules = Output.Create(Oci.Budget.GetAlertRules.InvokeAsync(new Oci.Budget.GetAlertRulesArgs
-        ///         {
-        ///             BudgetId = oci_budget_budget.Test_budget.Id,
-        ///             DisplayName = @var.Alert_rule_display_name,
-        ///             State = @var.Alert_rule_state,
-        ///         }));
-        ///     }
+        ///         BudgetId = oci_budget_budget.Test_budget.Id,
+        ///         DisplayName = @var.Alert_rule_display_name,
+        ///         State = @var.Alert_rule_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Budget
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAlertRules = Oci.Budget.GetAlertRules.Invoke(new()
         ///     {
-        ///         var testAlertRules = Output.Create(Oci.Budget.GetAlertRules.InvokeAsync(new Oci.Budget.GetAlertRulesArgs
-        ///         {
-        ///             BudgetId = oci_budget_budget.Test_budget.Id,
-        ///             DisplayName = @var.Alert_rule_display_name,
-        ///             State = @var.Alert_rule_state,
-        ///         }));
-        ///     }
+        ///         BudgetId = oci_budget_budget.Test_budget.Id,
+        ///         DisplayName = @var.Alert_rule_display_name,
+        ///         State = @var.Alert_rule_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Budget
     }
 
 
-    public sealed class GetAlertRulesArgs : Pulumi.InvokeArgs
+    public sealed class GetAlertRulesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique budget OCID.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Budget
         public GetAlertRulesArgs()
         {
         }
+        public static new GetAlertRulesArgs Empty => new GetAlertRulesArgs();
     }
 
-    public sealed class GetAlertRulesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAlertRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique budget OCID.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Budget
         public GetAlertRulesInvokeArgs()
         {
         }
+        public static new GetAlertRulesInvokeArgs Empty => new GetAlertRulesInvokeArgs();
     }
 
 

@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Waa
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWebAppAccelerations = Oci.Waa.GetAppAccelerations.Invoke(new()
         ///     {
-        ///         var testWebAppAccelerations = Output.Create(Oci.Waa.GetAppAccelerations.InvokeAsync(new Oci.Waa.GetAppAccelerationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Web_app_acceleration_display_name,
-        ///             Id = @var.Web_app_acceleration_id,
-        ///             States = @var.Web_app_acceleration_state,
-        ///             WebAppAccelerationPolicyId = oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Web_app_acceleration_display_name,
+        ///         Id = @var.Web_app_acceleration_id,
+        ///         States = @var.Web_app_acceleration_state,
+        ///         WebAppAccelerationPolicyId = oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Waa
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWebAppAccelerations = Oci.Waa.GetAppAccelerations.Invoke(new()
         ///     {
-        ///         var testWebAppAccelerations = Output.Create(Oci.Waa.GetAppAccelerations.InvokeAsync(new Oci.Waa.GetAppAccelerationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Web_app_acceleration_display_name,
-        ///             Id = @var.Web_app_acceleration_id,
-        ///             States = @var.Web_app_acceleration_state,
-        ///             WebAppAccelerationPolicyId = oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Web_app_acceleration_display_name,
+        ///         Id = @var.Web_app_acceleration_id,
+        ///         States = @var.Web_app_acceleration_state,
+        ///         WebAppAccelerationPolicyId = oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Waa
     }
 
 
-    public sealed class GetAppAccelerationsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppAccelerationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.Waa
         public GetAppAccelerationsArgs()
         {
         }
+        public static new GetAppAccelerationsArgs Empty => new GetAppAccelerationsArgs();
     }
 
-    public sealed class GetAppAccelerationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppAccelerationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.Waa
         public GetAppAccelerationsInvokeArgs()
         {
         }
+        public static new GetAppAccelerationsInvokeArgs Empty => new GetAppAccelerationsInvokeArgs();
     }
 
 

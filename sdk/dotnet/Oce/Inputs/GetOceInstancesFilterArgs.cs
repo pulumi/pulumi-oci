@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oce.Inputs
 {
 
-    public sealed class GetOceInstancesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetOceInstancesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// OceInstance Name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Oce.Inputs
         public GetOceInstancesFilterInputArgs()
         {
         }
+        public static new GetOceInstancesFilterInputArgs Empty => new GetOceInstancesFilterInputArgs();
     }
 }

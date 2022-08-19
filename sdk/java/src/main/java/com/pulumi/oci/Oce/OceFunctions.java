@@ -23,6 +23,34 @@ public final class OceFunctions {
      * Gets a OceInstance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oce.OceFunctions;
+     * import com.pulumi.oci.Oce.inputs.GetOceInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
+     *             .oceInstanceId(oci_oce_oce_instance.test_oce_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOceInstanceResult> getOceInstance(GetOceInstanceArgs args) {
@@ -34,6 +62,34 @@ public final class OceFunctions {
      * Gets a OceInstance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oce.OceFunctions;
+     * import com.pulumi.oci.Oce.inputs.GetOceInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
+     *             .oceInstanceId(oci_oce_oce_instance.test_oce_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOceInstanceResult> getOceInstancePlain(GetOceInstancePlainArgs args) {
@@ -45,6 +101,34 @@ public final class OceFunctions {
      * Gets a OceInstance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oce.OceFunctions;
+     * import com.pulumi.oci.Oce.inputs.GetOceInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
+     *             .oceInstanceId(oci_oce_oce_instance.test_oce_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOceInstanceResult> getOceInstance(GetOceInstanceArgs args, InvokeOptions options) {
@@ -56,6 +140,34 @@ public final class OceFunctions {
      * Gets a OceInstance by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oce.OceFunctions;
+     * import com.pulumi.oci.Oce.inputs.GetOceInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
+     *             .oceInstanceId(oci_oce_oce_instance.test_oce_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOceInstanceResult> getOceInstancePlain(GetOceInstancePlainArgs args, InvokeOptions options) {
@@ -67,6 +179,37 @@ public final class OceFunctions {
      * Returns a list of OceInstances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oce.OceFunctions;
+     * import com.pulumi.oci.Oce.inputs.GetOceInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOceInstances = OceFunctions.getOceInstances(GetOceInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.oce_instance_display_name())
+     *             .state(var_.oce_instance_state())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOceInstancesResult> getOceInstances(GetOceInstancesArgs args) {
@@ -78,6 +221,37 @@ public final class OceFunctions {
      * Returns a list of OceInstances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oce.OceFunctions;
+     * import com.pulumi.oci.Oce.inputs.GetOceInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOceInstances = OceFunctions.getOceInstances(GetOceInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.oce_instance_display_name())
+     *             .state(var_.oce_instance_state())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOceInstancesResult> getOceInstancesPlain(GetOceInstancesPlainArgs args) {
@@ -89,6 +263,37 @@ public final class OceFunctions {
      * Returns a list of OceInstances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oce.OceFunctions;
+     * import com.pulumi.oci.Oce.inputs.GetOceInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOceInstances = OceFunctions.getOceInstances(GetOceInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.oce_instance_display_name())
+     *             .state(var_.oce_instance_state())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOceInstancesResult> getOceInstances(GetOceInstancesArgs args, InvokeOptions options) {
@@ -100,6 +305,37 @@ public final class OceFunctions {
      * Returns a list of OceInstances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oce.OceFunctions;
+     * import com.pulumi.oci.Oce.inputs.GetOceInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOceInstances = OceFunctions.getOceInstances(GetOceInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.oce_instance_display_name())
+     *             .state(var_.oce_instance_state())
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOceInstancesResult> getOceInstancesPlain(GetOceInstancesPlainArgs args, InvokeOptions options) {

@@ -25,6 +25,45 @@ import javax.annotation.Nullable;
  * Create a new table.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Nosql.Table;
+ * import com.pulumi.oci.Nosql.TableArgs;
+ * import com.pulumi.oci.Nosql.inputs.TableTableLimitsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testTable = new Table(&#34;testTable&#34;, TableArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .ddlStatement(var_.table_ddl_statement())
+ *             .definedTags(var_.table_defined_tags())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .isAutoReclaimable(var_.table_is_auto_reclaimable())
+ *             .tableLimits(TableTableLimitsArgs.builder()
+ *                 .maxReadUnits(var_.table_table_limits_max_read_units())
+ *                 .maxStorageInGbs(var_.table_table_limits_max_storage_in_gbs())
+ *                 .maxWriteUnits(var_.table_table_limits_max_write_units())
+ *                 .capacityMode(var_.table_table_limits_capacity_mode())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

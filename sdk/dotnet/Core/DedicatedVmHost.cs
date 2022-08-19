@@ -20,32 +20,30 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDedicatedVmHost = new Oci.Core.DedicatedVmHost("testDedicatedVmHost", new()
     ///     {
-    ///         var testDedicatedVmHost = new Oci.Core.DedicatedVmHost("testDedicatedVmHost", new Oci.Core.DedicatedVmHostArgs
+    ///         AvailabilityDomain = @var.Dedicated_vm_host_availability_domain,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DedicatedVmHostShape = @var.Dedicated_vm_host_dedicated_vm_host_shape,
+    ///         DefinedTags = 
     ///         {
-    ///             AvailabilityDomain = @var.Dedicated_vm_host_availability_domain,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DedicatedVmHostShape = @var.Dedicated_vm_host_dedicated_vm_host_shape,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Dedicated_vm_host_display_name,
-    ///             FaultDomain = @var.Dedicated_vm_host_fault_domain,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Dedicated_vm_host_display_name,
+    ///         FaultDomain = @var.Dedicated_vm_host_fault_domain,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -57,7 +55,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/dedicatedVmHost:DedicatedVmHost")]
-    public partial class DedicatedVmHost : Pulumi.CustomResource
+    public partial class DedicatedVmHost : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
@@ -181,7 +179,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class DedicatedVmHostArgs : Pulumi.ResourceArgs
+    public sealed class DedicatedVmHostArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
@@ -240,9 +238,10 @@ namespace Pulumi.Oci.Core
         public DedicatedVmHostArgs()
         {
         }
+        public static new DedicatedVmHostArgs Empty => new DedicatedVmHostArgs();
     }
 
-    public sealed class DedicatedVmHostState : Pulumi.ResourceArgs
+    public sealed class DedicatedVmHostState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
@@ -337,5 +336,6 @@ namespace Pulumi.Oci.Core
         public DedicatedVmHostState()
         {
         }
+        public static new DedicatedVmHostState Empty => new DedicatedVmHostState();
     }
 }

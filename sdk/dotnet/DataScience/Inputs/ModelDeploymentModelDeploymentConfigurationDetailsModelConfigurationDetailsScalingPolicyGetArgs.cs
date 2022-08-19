@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyGetArgs : Pulumi.ResourceArgs
+    public sealed class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The number of instances for the model deployment.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyGetArgs()
         {
         }
+        public static new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyGetArgs Empty => new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyGetArgs();
     }
 }

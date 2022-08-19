@@ -22,23 +22,21 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscriptionProduct = Oci.UsageProxy.GetSubscriptionProduct.Invoke(new()
         ///     {
-        ///         var testSubscriptionProduct = Output.Create(Oci.UsageProxy.GetSubscriptionProduct.InvokeAsync(new Oci.UsageProxy.GetSubscriptionProductArgs
-        ///         {
-        ///             SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///             TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-        ///             UsagePeriodKey = @var.Subscription_product_usage_period_key,
-        ///             Producttype = @var.Subscription_product_producttype,
-        ///         }));
-        ///     }
+        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
+        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+        ///         UsagePeriodKey = @var.Subscription_product_usage_period_key,
+        ///         Producttype = @var.Subscription_product_producttype,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscriptionProduct = Oci.UsageProxy.GetSubscriptionProduct.Invoke(new()
         ///     {
-        ///         var testSubscriptionProduct = Output.Create(Oci.UsageProxy.GetSubscriptionProduct.InvokeAsync(new Oci.UsageProxy.GetSubscriptionProductArgs
-        ///         {
-        ///             SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///             TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-        ///             UsagePeriodKey = @var.Subscription_product_usage_period_key,
-        ///             Producttype = @var.Subscription_product_producttype,
-        ///         }));
-        ///     }
+        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
+        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+        ///         UsagePeriodKey = @var.Subscription_product_usage_period_key,
+        ///         Producttype = @var.Subscription_product_producttype,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.UsageProxy
     }
 
 
-    public sealed class GetSubscriptionProductArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionProductArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The field to specify the type of product.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.UsageProxy
         public GetSubscriptionProductArgs()
         {
         }
+        public static new GetSubscriptionProductArgs Empty => new GetSubscriptionProductArgs();
     }
 
-    public sealed class GetSubscriptionProductInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionProductInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The field to specify the type of product.
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.UsageProxy
         public GetSubscriptionProductInvokeArgs()
         {
         }
+        public static new GetSubscriptionProductInvokeArgs Empty => new GetSubscriptionProductInvokeArgs();
     }
 
 

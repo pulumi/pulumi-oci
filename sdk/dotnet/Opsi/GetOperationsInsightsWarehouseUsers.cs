@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperationsInsightsWarehouseUsers = Oci.Opsi.GetOperationsInsightsWarehouseUsers.Invoke(new()
         ///     {
-        ///         var testOperationsInsightsWarehouseUsers = Output.Create(Oci.Opsi.GetOperationsInsightsWarehouseUsers.InvokeAsync(new Oci.Opsi.GetOperationsInsightsWarehouseUsersArgs
-        ///         {
-        ///             OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Operations_insights_warehouse_user_display_name,
-        ///             Id = @var.Operations_insights_warehouse_user_id,
-        ///             States = @var.Operations_insights_warehouse_user_state,
-        ///         }));
-        ///     }
+        ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Operations_insights_warehouse_user_display_name,
+        ///         Id = @var.Operations_insights_warehouse_user_id,
+        ///         States = @var.Operations_insights_warehouse_user_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperationsInsightsWarehouseUsers = Oci.Opsi.GetOperationsInsightsWarehouseUsers.Invoke(new()
         ///     {
-        ///         var testOperationsInsightsWarehouseUsers = Output.Create(Oci.Opsi.GetOperationsInsightsWarehouseUsers.InvokeAsync(new Oci.Opsi.GetOperationsInsightsWarehouseUsersArgs
-        ///         {
-        ///             OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Operations_insights_warehouse_user_display_name,
-        ///             Id = @var.Operations_insights_warehouse_user_id,
-        ///             States = @var.Operations_insights_warehouse_user_state,
-        ///         }));
-        ///     }
+        ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Operations_insights_warehouse_user_display_name,
+        ///         Id = @var.Operations_insights_warehouse_user_id,
+        ///         States = @var.Operations_insights_warehouse_user_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetOperationsInsightsWarehouseUsersArgs : Pulumi.InvokeArgs
+    public sealed class GetOperationsInsightsWarehouseUsersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.Opsi
         public GetOperationsInsightsWarehouseUsersArgs()
         {
         }
+        public static new GetOperationsInsightsWarehouseUsersArgs Empty => new GetOperationsInsightsWarehouseUsersArgs();
     }
 
-    public sealed class GetOperationsInsightsWarehouseUsersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOperationsInsightsWarehouseUsersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.Opsi
         public GetOperationsInsightsWarehouseUsersInvokeArgs()
         {
         }
+        public static new GetOperationsInsightsWarehouseUsersInvokeArgs Empty => new GetOperationsInsightsWarehouseUsersInvokeArgs();
     }
 
 

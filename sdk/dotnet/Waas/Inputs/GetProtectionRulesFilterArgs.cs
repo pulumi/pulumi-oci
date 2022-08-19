@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class GetProtectionRulesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetProtectionRulesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the protection rule.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public GetProtectionRulesFilterInputArgs()
         {
         }
+        public static new GetProtectionRulesFilterInputArgs Empty => new GetProtectionRulesFilterInputArgs();
     }
 }

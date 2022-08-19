@@ -21,23 +21,21 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnection = Oci.DataCatalog.GetConnection.Invoke(new()
         ///     {
-        ///         var testConnection = Output.Create(Oci.DataCatalog.GetConnection.InvokeAsync(new Oci.DataCatalog.GetConnectionArgs
-        ///         {
-        ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///             ConnectionKey = @var.Connection_connection_key,
-        ///             DataAssetKey = @var.Connection_data_asset_key,
-        ///             Fields = @var.Connection_fields,
-        ///         }));
-        ///     }
+        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
+        ///         ConnectionKey = @var.Connection_connection_key,
+        ///         DataAssetKey = @var.Connection_data_asset_key,
+        ///         Fields = @var.Connection_fields,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,23 +53,21 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnection = Oci.DataCatalog.GetConnection.Invoke(new()
         ///     {
-        ///         var testConnection = Output.Create(Oci.DataCatalog.GetConnection.InvokeAsync(new Oci.DataCatalog.GetConnectionArgs
-        ///         {
-        ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///             ConnectionKey = @var.Connection_connection_key,
-        ///             DataAssetKey = @var.Connection_data_asset_key,
-        ///             Fields = @var.Connection_fields,
-        ///         }));
-        ///     }
+        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
+        ///         ConnectionKey = @var.Connection_connection_key,
+        ///         DataAssetKey = @var.Connection_data_asset_key,
+        ///         Fields = @var.Connection_fields,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.DataCatalog
     }
 
 
-    public sealed class GetConnectionArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -116,9 +112,10 @@ namespace Pulumi.Oci.DataCatalog
         public GetConnectionArgs()
         {
         }
+        public static new GetConnectionArgs Empty => new GetConnectionArgs();
     }
 
-    public sealed class GetConnectionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -153,6 +150,7 @@ namespace Pulumi.Oci.DataCatalog
         public GetConnectionInvokeArgs()
         {
         }
+        public static new GetConnectionInvokeArgs Empty => new GetConnectionInvokeArgs();
     }
 
 

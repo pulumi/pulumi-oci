@@ -103,6 +103,10 @@ export interface GetBdsInstanceResult {
      */
     readonly isSecure: boolean;
     readonly kerberosRealmName: string;
+    /**
+     * The OCID of the Key Management master encryption key.
+     */
+    readonly kmsKeyId: string;
     readonly masterNodes: outputs.BigDataService.GetBdsInstanceMasterNode[];
     /**
      * Additional configuration of the user's network.

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsGetArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsGetArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsGetArgs Empty => new InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsGetArgs();
     }
 }

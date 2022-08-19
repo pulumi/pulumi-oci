@@ -17,24 +17,22 @@ namespace Pulumi.Oci.DataCatalog
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDataAsset = new Oci.DataCatalog.DataAsset("testDataAsset", new()
     ///     {
-    ///         var testDataAsset = new Oci.DataCatalog.DataAsset("testDataAsset", new Oci.DataCatalog.DataAssetArgs
-    ///         {
-    ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-    ///             DisplayName = @var.Data_asset_display_name,
-    ///             TypeKey = @var.Data_asset_type_key,
-    ///             Description = @var.Data_asset_description,
-    ///             Properties = @var.Data_asset_properties,
-    ///         });
-    ///     }
+    ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
+    ///         DisplayName = @var.Data_asset_display_name,
+    ///         TypeKey = @var.Data_asset_type_key,
+    ///         Description = @var.Data_asset_description,
+    ///         Properties = @var.Data_asset_properties,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -46,7 +44,7 @@ namespace Pulumi.Oci.DataCatalog
     /// ```
     /// </summary>
     [OciResourceType("oci:DataCatalog/dataAsset:DataAsset")]
-    public partial class DataAsset : Pulumi.CustomResource
+    public partial class DataAsset : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -176,7 +174,7 @@ namespace Pulumi.Oci.DataCatalog
         }
     }
 
-    public sealed class DataAssetArgs : Pulumi.ResourceArgs
+    public sealed class DataAssetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -217,9 +215,10 @@ namespace Pulumi.Oci.DataCatalog
         public DataAssetArgs()
         {
         }
+        public static new DataAssetArgs Empty => new DataAssetArgs();
     }
 
-    public sealed class DataAssetState : Pulumi.ResourceArgs
+    public sealed class DataAssetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -314,5 +313,6 @@ namespace Pulumi.Oci.DataCatalog
         public DataAssetState()
         {
         }
+        public static new DataAssetState Empty => new DataAssetState();
     }
 }

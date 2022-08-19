@@ -17,24 +17,22 @@ namespace Pulumi.Oci.ManagementAgent
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testManagementAgentInstallKey = new Oci.ManagementAgent.ManagementAgentInstallKey("testManagementAgentInstallKey", new()
     ///     {
-    ///         var testManagementAgentInstallKey = new Oci.ManagementAgent.ManagementAgentInstallKey("testManagementAgentInstallKey", new Oci.ManagementAgent.ManagementAgentInstallKeyArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Management_agent_install_key_display_name,
-    ///             AllowedKeyInstallCount = @var.Management_agent_install_key_allowed_key_install_count,
-    ///             IsUnlimited = @var.Management_agent_install_key_is_unlimited,
-    ///             TimeExpires = @var.Management_agent_install_key_time_expires,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Management_agent_install_key_display_name,
+    ///         AllowedKeyInstallCount = @var.Management_agent_install_key_allowed_key_install_count,
+    ///         IsUnlimited = @var.Management_agent_install_key_is_unlimited,
+    ///         TimeExpires = @var.Management_agent_install_key_time_expires,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -46,7 +44,7 @@ namespace Pulumi.Oci.ManagementAgent
     /// ```
     /// </summary>
     [OciResourceType("oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey")]
-    public partial class ManagementAgentInstallKey : Pulumi.CustomResource
+    public partial class ManagementAgentInstallKey : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Total number of install for this keys
@@ -164,7 +162,7 @@ namespace Pulumi.Oci.ManagementAgent
         }
     }
 
-    public sealed class ManagementAgentInstallKeyArgs : Pulumi.ResourceArgs
+    public sealed class ManagementAgentInstallKeyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Total number of install for this keys
@@ -199,9 +197,10 @@ namespace Pulumi.Oci.ManagementAgent
         public ManagementAgentInstallKeyArgs()
         {
         }
+        public static new ManagementAgentInstallKeyArgs Empty => new ManagementAgentInstallKeyArgs();
     }
 
-    public sealed class ManagementAgentInstallKeyState : Pulumi.ResourceArgs
+    public sealed class ManagementAgentInstallKeyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Total number of install for this keys
@@ -278,5 +277,6 @@ namespace Pulumi.Oci.ManagementAgent
         public ManagementAgentInstallKeyState()
         {
         }
+        public static new ManagementAgentInstallKeyState Empty => new ManagementAgentInstallKeyState();
     }
 }

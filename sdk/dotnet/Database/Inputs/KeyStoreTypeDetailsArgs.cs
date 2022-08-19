@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class KeyStoreTypeDetailsArgs : Pulumi.ResourceArgs
+    public sealed class KeyStoreTypeDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The administrator username to connect to Oracle Key Vault
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.Database.Inputs
         public KeyStoreTypeDetailsArgs()
         {
         }
+        public static new KeyStoreTypeDetailsArgs Empty => new KeyStoreTypeDetailsArgs();
     }
 }

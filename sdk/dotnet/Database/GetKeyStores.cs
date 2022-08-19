@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKeyStores = Oci.Database.GetKeyStores.Invoke(new()
         ///     {
-        ///         var testKeyStores = Output.Create(Oci.Database.GetKeyStores.InvokeAsync(new Oci.Database.GetKeyStoresArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKeyStores = Oci.Database.GetKeyStores.Invoke(new()
         ///     {
-        ///         var testKeyStores = Output.Create(Oci.Database.GetKeyStores.InvokeAsync(new Oci.Database.GetKeyStoresArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetKeyStoresArgs : Pulumi.InvokeArgs
+    public sealed class GetKeyStoresArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Database
         public GetKeyStoresArgs()
         {
         }
+        public static new GetKeyStoresArgs Empty => new GetKeyStoresArgs();
     }
 
-    public sealed class GetKeyStoresInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetKeyStoresInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Database
         public GetKeyStoresInvokeArgs()
         {
         }
+        public static new GetKeyStoresInvokeArgs Empty => new GetKeyStoresInvokeArgs();
     }
 
 

@@ -19,21 +19,19 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVolumeBackupPolicyAssignment = new Oci.Core.VolumeBackupPolicyAssignment("testVolumeBackupPolicyAssignment", new()
     ///     {
-    ///         var testVolumeBackupPolicyAssignment = new Oci.Core.VolumeBackupPolicyAssignment("testVolumeBackupPolicyAssignment", new Oci.Core.VolumeBackupPolicyAssignmentArgs
-    ///         {
-    ///             AssetId = oci_core_volume.Test_volume.Id,
-    ///             PolicyId = oci_core_volume_backup_policy.Test_volume_backup_policy.Id,
-    ///         });
-    ///     }
+    ///         AssetId = oci_core_volume.Test_volume.Id,
+    ///         PolicyId = oci_core_volume_backup_policy.Test_volume_backup_policy.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -45,7 +43,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment")]
-    public partial class VolumeBackupPolicyAssignment : Pulumi.CustomResource
+    public partial class VolumeBackupPolicyAssignment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the volume to assign the policy to.
@@ -109,7 +107,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class VolumeBackupPolicyAssignmentArgs : Pulumi.ResourceArgs
+    public sealed class VolumeBackupPolicyAssignmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the volume to assign the policy to.
@@ -126,9 +124,10 @@ namespace Pulumi.Oci.Core
         public VolumeBackupPolicyAssignmentArgs()
         {
         }
+        public static new VolumeBackupPolicyAssignmentArgs Empty => new VolumeBackupPolicyAssignmentArgs();
     }
 
-    public sealed class VolumeBackupPolicyAssignmentState : Pulumi.ResourceArgs
+    public sealed class VolumeBackupPolicyAssignmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the volume to assign the policy to.
@@ -151,5 +150,6 @@ namespace Pulumi.Oci.Core
         public VolumeBackupPolicyAssignmentState()
         {
         }
+        public static new VolumeBackupPolicyAssignmentState Empty => new VolumeBackupPolicyAssignmentState();
     }
 }

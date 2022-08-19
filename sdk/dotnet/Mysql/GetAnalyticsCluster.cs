@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAnalyticsCluster = Oci.Mysql.GetAnalyticsCluster.Invoke(new()
         ///     {
-        ///         var testAnalyticsCluster = Output.Create(Oci.Mysql.GetAnalyticsCluster.InvokeAsync(new Oci.Mysql.GetAnalyticsClusterArgs
-        ///         {
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAnalyticsCluster = Oci.Mysql.GetAnalyticsCluster.Invoke(new()
         ///     {
-        ///         var testAnalyticsCluster = Output.Create(Oci.Mysql.GetAnalyticsCluster.InvokeAsync(new Oci.Mysql.GetAnalyticsClusterArgs
-        ///         {
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Mysql
     }
 
 
-    public sealed class GetAnalyticsClusterArgs : Pulumi.InvokeArgs
+    public sealed class GetAnalyticsClusterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -90,9 +86,10 @@ namespace Pulumi.Oci.Mysql
         public GetAnalyticsClusterArgs()
         {
         }
+        public static new GetAnalyticsClusterArgs Empty => new GetAnalyticsClusterArgs();
     }
 
-    public sealed class GetAnalyticsClusterInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAnalyticsClusterInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -103,6 +100,7 @@ namespace Pulumi.Oci.Mysql
         public GetAnalyticsClusterInvokeArgs()
         {
         }
+        public static new GetAnalyticsClusterInvokeArgs Empty => new GetAnalyticsClusterInvokeArgs();
     }
 
 

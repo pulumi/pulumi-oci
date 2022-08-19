@@ -11,77 +11,15 @@ namespace Pulumi.Oci.Dns
 {
     public static class GetRecords
     {
-        /// <summary>
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testRecords = Output.Create(Oci.Dns.GetRecords.InvokeAsync(new Oci.Dns.GetRecordsArgs
-        ///         {
-        ///             ZoneNameOrId = oci_dns_zone_name_or.Test_zone_name_or.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Domain = @var.Record_domain,
-        ///             DomainContains = @var.Record_domain_contains,
-        ///             Rtype = @var.Record_rtype,
-        ///             Scope = @var.Record_scope,
-        ///             ViewId = oci_dns_view.Test_view.Id,
-        ///             ZoneVersion = @var.Record_zone_version,
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Task<GetRecordsResult> InvokeAsync(GetRecordsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetRecordsResult>("oci:Dns/getRecords:getRecords", args ?? new GetRecordsArgs(), options.WithDefaults());
 
-        /// <summary>
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testRecords = Output.Create(Oci.Dns.GetRecords.InvokeAsync(new Oci.Dns.GetRecordsArgs
-        ///         {
-        ///             ZoneNameOrId = oci_dns_zone_name_or.Test_zone_name_or.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Domain = @var.Record_domain,
-        ///             DomainContains = @var.Record_domain_contains,
-        ///             Rtype = @var.Record_rtype,
-        ///             Scope = @var.Record_scope,
-        ///             ViewId = oci_dns_view.Test_view.Id,
-        ///             ZoneVersion = @var.Record_zone_version,
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
-        /// </summary>
         public static Output<GetRecordsResult> Invoke(GetRecordsInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetRecordsResult>("oci:Dns/getRecords:getRecords", args ?? new GetRecordsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetRecordsArgs : Pulumi.InvokeArgs
+    public sealed class GetRecordsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
@@ -142,9 +80,10 @@ namespace Pulumi.Oci.Dns
         public GetRecordsArgs()
         {
         }
+        public static new GetRecordsArgs Empty => new GetRecordsArgs();
     }
 
-    public sealed class GetRecordsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRecordsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
@@ -205,6 +144,7 @@ namespace Pulumi.Oci.Dns
         public GetRecordsInvokeArgs()
         {
         }
+        public static new GetRecordsInvokeArgs Empty => new GetRecordsInvokeArgs();
     }
 
 

@@ -27,24 +27,22 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabases = Oci.DatabaseManagement.GetManagedDatabases.Invoke(new()
         ///     {
-        ///         var testManagedDatabases = Output.Create(Oci.DatabaseManagement.GetManagedDatabases.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DeploymentType = @var.Managed_database_deployment_type,
-        ///             Id = @var.Managed_database_id,
-        ///             ManagementOption = @var.Managed_database_management_option,
-        ///             Name = @var.Managed_database_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DeploymentType = @var.Managed_database_deployment_type,
+        ///         Id = @var.Managed_database_id,
+        ///         ManagementOption = @var.Managed_database_management_option,
+        ///         Name = @var.Managed_database_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -68,24 +66,22 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabases = Oci.DatabaseManagement.GetManagedDatabases.Invoke(new()
         ///     {
-        ///         var testManagedDatabases = Output.Create(Oci.DatabaseManagement.GetManagedDatabases.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DeploymentType = @var.Managed_database_deployment_type,
-        ///             Id = @var.Managed_database_id,
-        ///             ManagementOption = @var.Managed_database_management_option,
-        ///             Name = @var.Managed_database_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DeploymentType = @var.Managed_database_deployment_type,
+        ///         Id = @var.Managed_database_id,
+        ///         ManagementOption = @var.Managed_database_management_option,
+        ///         Name = @var.Managed_database_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabasesArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabasesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -138,9 +134,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabasesArgs()
         {
         }
+        public static new GetManagedDatabasesArgs Empty => new GetManagedDatabasesArgs();
     }
 
-    public sealed class GetManagedDatabasesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabasesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -183,6 +180,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabasesInvokeArgs()
         {
         }
+        public static new GetManagedDatabasesInvokeArgs Empty => new GetManagedDatabasesInvokeArgs();
     }
 
 

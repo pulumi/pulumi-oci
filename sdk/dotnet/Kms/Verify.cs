@@ -19,26 +19,24 @@ namespace Pulumi.Oci.Kms
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVerify = new Oci.Kms.Verify("testVerify", new()
     ///     {
-    ///         var testVerify = new Oci.Kms.Verify("testVerify", new Oci.Kms.VerifyArgs
-    ///         {
-    ///             CryptoEndpoint = @var.Verify_message_crypto_endpoint,
-    ///             KeyId = oci_kms_key.Test_key.Id,
-    ///             KeyVersionId = oci_kms_key_version.Test_key_version.Id,
-    ///             Message = @var.Verify_message,
-    ///             Signature = @var.Verify_signature,
-    ///             SigningAlgorithm = @var.Verify_signing_algorithm,
-    ///             MessageType = @var.Verify_message_type,
-    ///         });
-    ///     }
+    ///         CryptoEndpoint = @var.Verify_message_crypto_endpoint,
+    ///         KeyId = oci_kms_key.Test_key.Id,
+    ///         KeyVersionId = oci_kms_key_version.Test_key_version.Id,
+    ///         Message = @var.Verify_message,
+    ///         Signature = @var.Verify_signature,
+    ///         SigningAlgorithm = @var.Verify_signing_algorithm,
+    ///         MessageType = @var.Verify_message_type,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -50,7 +48,7 @@ namespace Pulumi.Oci.Kms
     /// ```
     /// </summary>
     [OciResourceType("oci:Kms/verify:Verify")]
-    public partial class Verify : Pulumi.CustomResource
+    public partial class Verify : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
@@ -144,7 +142,7 @@ namespace Pulumi.Oci.Kms
         }
     }
 
-    public sealed class VerifyArgs : Pulumi.ResourceArgs
+    public sealed class VerifyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
@@ -191,9 +189,10 @@ namespace Pulumi.Oci.Kms
         public VerifyArgs()
         {
         }
+        public static new VerifyArgs Empty => new VerifyArgs();
     }
 
-    public sealed class VerifyState : Pulumi.ResourceArgs
+    public sealed class VerifyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
@@ -246,5 +245,6 @@ namespace Pulumi.Oci.Kms
         public VerifyState()
         {
         }
+        public static new VerifyState Empty => new VerifyState();
     }
 }

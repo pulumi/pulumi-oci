@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Autoscaling.Inputs
 {
 
-    public sealed class AutoScalingConfigurationPolicyRuleMetricThresholdArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationPolicyRuleMetricThresholdArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
@@ -24,5 +24,6 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         public AutoScalingConfigurationPolicyRuleMetricThresholdArgs()
         {
         }
+        public static new AutoScalingConfigurationPolicyRuleMetricThresholdArgs Empty => new AutoScalingConfigurationPolicyRuleMetricThresholdArgs();
     }
 }

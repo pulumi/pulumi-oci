@@ -17,33 +17,31 @@ namespace Pulumi.Oci.GoldenGate
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDeploymentBackup = new Oci.GoldenGate.DeploymentBackup("testDeploymentBackup", new()
     ///     {
-    ///         var testDeploymentBackup = new Oci.GoldenGate.DeploymentBackup("testDeploymentBackup", new Oci.GoldenGate.DeploymentBackupArgs
+    ///         Bucket = @var.Deployment_backup_bucket,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
+    ///         DisplayName = @var.Deployment_backup_display_name,
+    ///         Namespace = @var.Deployment_backup_namespace,
+    ///         Object = @var.Deployment_backup_object,
+    ///         DefinedTags = 
     ///         {
-    ///             Bucket = @var.Deployment_backup_bucket,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-    ///             DisplayName = @var.Deployment_backup_display_name,
-    ///             Namespace = @var.Deployment_backup_namespace,
-    ///             Object = @var.Deployment_backup_object,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.GoldenGate
     /// ```
     /// </summary>
     [OciResourceType("oci:GoldenGate/deploymentBackup:DeploymentBackup")]
-    public partial class DeploymentBackup : Pulumi.CustomResource
+    public partial class DeploymentBackup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Possible Deployment backup types.
@@ -215,7 +213,7 @@ namespace Pulumi.Oci.GoldenGate
         }
     }
 
-    public sealed class DeploymentBackupArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentBackupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the bucket where the object is to be uploaded in the object storage
@@ -280,9 +278,10 @@ namespace Pulumi.Oci.GoldenGate
         public DeploymentBackupArgs()
         {
         }
+        public static new DeploymentBackupArgs Empty => new DeploymentBackupArgs();
     }
 
-    public sealed class DeploymentBackupState : Pulumi.ResourceArgs
+    public sealed class DeploymentBackupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Possible Deployment backup types.
@@ -419,5 +418,6 @@ namespace Pulumi.Oci.GoldenGate
         public DeploymentBackupState()
         {
         }
+        public static new DeploymentBackupState Empty => new DeploymentBackupState();
     }
 }

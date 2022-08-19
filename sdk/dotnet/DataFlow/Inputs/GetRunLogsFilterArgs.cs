@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow.Inputs
 {
 
-    public sealed class GetRunLogsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetRunLogsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DataFlow.Inputs
         public GetRunLogsFilterInputArgs()
         {
         }
+        public static new GetRunLogsFilterInputArgs Empty => new GetRunLogsFilterInputArgs();
     }
 }

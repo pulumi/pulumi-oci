@@ -28,17 +28,15 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testCompatibleFormatsForDataType = Output.Create(Oci.DataSafe.GetCompatibleFormatsForDataType.InvokeAsync());
-        ///     }
+        ///     var testCompatibleFormatsForDataType = Oci.DataSafe.GetCompatibleFormatsForDataType.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}

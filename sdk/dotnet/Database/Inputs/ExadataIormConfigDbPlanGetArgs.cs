@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class ExadataIormConfigDbPlanGetArgs : Pulumi.ResourceArgs
+    public sealed class ExadataIormConfigDbPlanGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The database name. For the default `DbPlan`, the `dbName` is `default`.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Database.Inputs
         public ExadataIormConfigDbPlanGetArgs()
         {
         }
+        public static new ExadataIormConfigDbPlanGetArgs Empty => new ExadataIormConfigDbPlanGetArgs();
     }
 }

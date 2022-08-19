@@ -22,6 +22,35 @@ import javax.annotation.Nullable;
  * suppression list are normalized to include only lowercase letters.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Email.Suppression;
+ * import com.pulumi.oci.Email.SuppressionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSuppression = new Suppression(&#34;testSuppression&#34;, SuppressionArgs.builder()        
+ *             .compartmentId(var_.tenancy_ocid())
+ *             .emailAddress(var_.suppression_email_address())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

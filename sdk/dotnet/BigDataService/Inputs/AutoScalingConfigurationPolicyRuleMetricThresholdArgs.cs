@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class AutoScalingConfigurationPolicyRuleMetricThresholdArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationPolicyRuleMetricThresholdArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public AutoScalingConfigurationPolicyRuleMetricThresholdArgs()
         {
         }
+        public static new AutoScalingConfigurationPolicyRuleMetricThresholdArgs Empty => new AutoScalingConfigurationPolicyRuleMetricThresholdArgs();
     }
 }

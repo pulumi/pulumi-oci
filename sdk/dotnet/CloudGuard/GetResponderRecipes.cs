@@ -35,25 +35,23 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResponderRecipes = Oci.CloudGuard.GetResponderRecipes.Invoke(new()
         ///     {
-        ///         var testResponderRecipes = Output.Create(Oci.CloudGuard.GetResponderRecipes.InvokeAsync(new Oci.CloudGuard.GetResponderRecipesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Responder_recipe_access_level,
-        ///             CompartmentIdInSubtree = @var.Responder_recipe_compartment_id_in_subtree,
-        ///             DisplayName = @var.Responder_recipe_display_name,
-        ///             ResourceMetadataOnly = @var.Responder_recipe_resource_metadata_only,
-        ///             State = @var.Responder_recipe_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Responder_recipe_access_level,
+        ///         CompartmentIdInSubtree = @var.Responder_recipe_compartment_id_in_subtree,
+        ///         DisplayName = @var.Responder_recipe_display_name,
+        ///         ResourceMetadataOnly = @var.Responder_recipe_resource_metadata_only,
+        ///         State = @var.Responder_recipe_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,25 +83,23 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResponderRecipes = Oci.CloudGuard.GetResponderRecipes.Invoke(new()
         ///     {
-        ///         var testResponderRecipes = Output.Create(Oci.CloudGuard.GetResponderRecipes.InvokeAsync(new Oci.CloudGuard.GetResponderRecipesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Responder_recipe_access_level,
-        ///             CompartmentIdInSubtree = @var.Responder_recipe_compartment_id_in_subtree,
-        ///             DisplayName = @var.Responder_recipe_display_name,
-        ///             ResourceMetadataOnly = @var.Responder_recipe_resource_metadata_only,
-        ///             State = @var.Responder_recipe_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Responder_recipe_access_level,
+        ///         CompartmentIdInSubtree = @var.Responder_recipe_compartment_id_in_subtree,
+        ///         DisplayName = @var.Responder_recipe_display_name,
+        ///         ResourceMetadataOnly = @var.Responder_recipe_resource_metadata_only,
+        ///         State = @var.Responder_recipe_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -113,7 +109,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetResponderRecipesArgs : Pulumi.InvokeArgs
+    public sealed class GetResponderRecipesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
@@ -162,9 +158,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetResponderRecipesArgs()
         {
         }
+        public static new GetResponderRecipesArgs Empty => new GetResponderRecipesArgs();
     }
 
-    public sealed class GetResponderRecipesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetResponderRecipesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
@@ -213,6 +210,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetResponderRecipesInvokeArgs()
         {
         }
+        public static new GetResponderRecipesInvokeArgs Empty => new GetResponderRecipesInvokeArgs();
     }
 
 

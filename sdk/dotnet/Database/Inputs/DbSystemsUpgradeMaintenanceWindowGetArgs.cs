@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class DbSystemsUpgradeMaintenanceWindowGetArgs : Pulumi.ResourceArgs
+    public sealed class DbSystemsUpgradeMaintenanceWindowGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("daysOfWeeks")]
         private InputList<Inputs.DbSystemsUpgradeMaintenanceWindowDaysOfWeekGetArgs>? _daysOfWeeks;
@@ -76,5 +76,6 @@ namespace Pulumi.Oci.Database.Inputs
         public DbSystemsUpgradeMaintenanceWindowGetArgs()
         {
         }
+        public static new DbSystemsUpgradeMaintenanceWindowGetArgs Empty => new DbSystemsUpgradeMaintenanceWindowGetArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Kms.Inputs
 {
 
-    public sealed class GeneratedKeyKeyShapeArgs : Pulumi.ResourceArgs
+    public sealed class GeneratedKeyKeyShapeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The algorithm used by a key's key versions to encrypt or decrypt.
@@ -36,5 +36,6 @@ namespace Pulumi.Oci.Kms.Inputs
         public GeneratedKeyKeyShapeArgs()
         {
         }
+        public static new GeneratedKeyKeyShapeArgs Empty => new GeneratedKeyKeyShapeArgs();
     }
 }

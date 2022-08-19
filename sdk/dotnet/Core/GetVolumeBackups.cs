@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVolumeBackups = Oci.Core.GetVolumeBackups.Invoke(new()
         ///     {
-        ///         var testVolumeBackups = Output.Create(Oci.Core.GetVolumeBackups.InvokeAsync(new Oci.Core.GetVolumeBackupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Volume_backup_display_name,
-        ///             SourceVolumeBackupId = oci_core_volume_backup.Test_volume_backup.Id,
-        ///             State = @var.Volume_backup_state,
-        ///             VolumeId = oci_core_volume.Test_volume.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Volume_backup_display_name,
+        ///         SourceVolumeBackupId = oci_core_volume_backup.Test_volume_backup.Id,
+        ///         State = @var.Volume_backup_state,
+        ///         VolumeId = oci_core_volume.Test_volume.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVolumeBackups = Oci.Core.GetVolumeBackups.Invoke(new()
         ///     {
-        ///         var testVolumeBackups = Output.Create(Oci.Core.GetVolumeBackups.InvokeAsync(new Oci.Core.GetVolumeBackupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Volume_backup_display_name,
-        ///             SourceVolumeBackupId = oci_core_volume_backup.Test_volume_backup.Id,
-        ///             State = @var.Volume_backup_state,
-        ///             VolumeId = oci_core_volume.Test_volume.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Volume_backup_display_name,
+        ///         SourceVolumeBackupId = oci_core_volume_backup.Test_volume_backup.Id,
+        ///         State = @var.Volume_backup_state,
+        ///         VolumeId = oci_core_volume.Test_volume.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVolumeBackupsArgs : Pulumi.InvokeArgs
+    public sealed class GetVolumeBackupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.Core
         public GetVolumeBackupsArgs()
         {
         }
+        public static new GetVolumeBackupsArgs Empty => new GetVolumeBackupsArgs();
     }
 
-    public sealed class GetVolumeBackupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVolumeBackupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.Core
         public GetVolumeBackupsInvokeArgs()
         {
         }
+        public static new GetVolumeBackupsInvokeArgs Empty => new GetVolumeBackupsInvokeArgs();
     }
 
 

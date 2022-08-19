@@ -17,61 +17,59 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCloudExadataInfrastructure = new Oci.Database.CloudExadataInfrastructure("testCloudExadataInfrastructure", new()
     ///     {
-    ///         var testCloudExadataInfrastructure = new Oci.Database.CloudExadataInfrastructure("testCloudExadataInfrastructure", new Oci.Database.CloudExadataInfrastructureArgs
+    ///         AvailabilityDomain = @var.Cloud_exadata_infrastructure_availability_domain,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Cloud_exadata_infrastructure_display_name,
+    ///         Shape = @var.Cloud_exadata_infrastructure_shape,
+    ///         ComputeCount = @var.Cloud_exadata_infrastructure_compute_count,
+    ///         CustomerContacts = new[]
     ///         {
-    ///             AvailabilityDomain = @var.Cloud_exadata_infrastructure_availability_domain,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Cloud_exadata_infrastructure_display_name,
-    ///             Shape = @var.Cloud_exadata_infrastructure_shape,
-    ///             ComputeCount = @var.Cloud_exadata_infrastructure_compute_count,
-    ///             CustomerContacts = 
+    ///             new Oci.Database.Inputs.CloudExadataInfrastructureCustomerContactArgs
     ///             {
-    ///                 new Oci.Database.Inputs.CloudExadataInfrastructureCustomerContactArgs
+    ///                 Email = @var.Cloud_exadata_infrastructure_customer_contacts_email,
+    ///             },
+    ///         },
+    ///         DefinedTags = @var.Cloud_exadata_infrastructure_defined_tags,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         MaintenanceWindow = new Oci.Database.Inputs.CloudExadataInfrastructureMaintenanceWindowArgs
+    ///         {
+    ///             Preference = @var.Cloud_exadata_infrastructure_maintenance_window_preference,
+    ///             CustomActionTimeoutInMins = @var.Cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
+    ///             DaysOfWeeks = new[]
+    ///             {
+    ///                 new Oci.Database.Inputs.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs
     ///                 {
-    ///                     Email = @var.Cloud_exadata_infrastructure_customer_contacts_email,
+    ///                     Name = @var.Cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
     ///                 },
     ///             },
-    ///             DefinedTags = @var.Cloud_exadata_infrastructure_defined_tags,
-    ///             FreeformTags = 
+    ///             HoursOfDays = @var.Cloud_exadata_infrastructure_maintenance_window_hours_of_day,
+    ///             IsCustomActionTimeoutEnabled = @var.Cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
+    ///             LeadTimeInWeeks = @var.Cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
+    ///             Months = new[]
     ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             MaintenanceWindow = new Oci.Database.Inputs.CloudExadataInfrastructureMaintenanceWindowArgs
-    ///             {
-    ///                 Preference = @var.Cloud_exadata_infrastructure_maintenance_window_preference,
-    ///                 CustomActionTimeoutInMins = @var.Cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
-    ///                 DaysOfWeeks = 
+    ///                 new Oci.Database.Inputs.CloudExadataInfrastructureMaintenanceWindowMonthArgs
     ///                 {
-    ///                     new Oci.Database.Inputs.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs
-    ///                     {
-    ///                         Name = @var.Cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
-    ///                     },
+    ///                     Name = @var.Cloud_exadata_infrastructure_maintenance_window_months_name,
     ///                 },
-    ///                 HoursOfDays = @var.Cloud_exadata_infrastructure_maintenance_window_hours_of_day,
-    ///                 IsCustomActionTimeoutEnabled = @var.Cloud_exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
-    ///                 LeadTimeInWeeks = @var.Cloud_exadata_infrastructure_maintenance_window_lead_time_in_weeks,
-    ///                 Months = 
-    ///                 {
-    ///                     new Oci.Database.Inputs.CloudExadataInfrastructureMaintenanceWindowMonthArgs
-    ///                     {
-    ///                         Name = @var.Cloud_exadata_infrastructure_maintenance_window_months_name,
-    ///                     },
-    ///                 },
-    ///                 PatchingMode = @var.Cloud_exadata_infrastructure_maintenance_window_patching_mode,
-    ///                 WeeksOfMonths = @var.Cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
     ///             },
-    ///             StorageCount = @var.Cloud_exadata_infrastructure_storage_count,
-    ///         });
-    ///     }
+    ///             PatchingMode = @var.Cloud_exadata_infrastructure_maintenance_window_patching_mode,
+    ///             WeeksOfMonths = @var.Cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
+    ///         },
+    ///         StorageCount = @var.Cloud_exadata_infrastructure_storage_count,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -83,7 +81,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure")]
-    public partial class CloudExadataInfrastructure : Pulumi.CustomResource
+    public partial class CloudExadataInfrastructure : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The availability domain where the cloud Exadata infrastructure is located.
@@ -231,7 +229,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class CloudExadataInfrastructureArgs : Pulumi.ResourceArgs
+    public sealed class CloudExadataInfrastructureArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain where the cloud Exadata infrastructure is located.
@@ -314,9 +312,10 @@ namespace Pulumi.Oci.Database
         public CloudExadataInfrastructureArgs()
         {
         }
+        public static new CloudExadataInfrastructureArgs Empty => new CloudExadataInfrastructureArgs();
     }
 
-    public sealed class CloudExadataInfrastructureState : Pulumi.ResourceArgs
+    public sealed class CloudExadataInfrastructureState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain where the cloud Exadata infrastructure is located.
@@ -441,5 +440,6 @@ namespace Pulumi.Oci.Database
         public CloudExadataInfrastructureState()
         {
         }
+        public static new CloudExadataInfrastructureState Empty => new CloudExadataInfrastructureState();
     }
 }

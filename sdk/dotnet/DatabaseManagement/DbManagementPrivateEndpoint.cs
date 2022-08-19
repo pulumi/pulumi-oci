@@ -17,24 +17,22 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDbManagementPrivateEndpoint = new Oci.DatabaseManagement.DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint", new()
     ///     {
-    ///         var testDbManagementPrivateEndpoint = new Oci.DatabaseManagement.DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint", new Oci.DatabaseManagement.DbManagementPrivateEndpointArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             Description = @var.Db_management_private_endpoint_description,
-    ///             IsCluster = @var.Db_management_private_endpoint_is_cluster,
-    ///             NsgIds = @var.Db_management_private_endpoint_nsg_ids,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         Description = @var.Db_management_private_endpoint_description,
+    ///         IsCluster = @var.Db_management_private_endpoint_is_cluster,
+    ///         NsgIds = @var.Db_management_private_endpoint_nsg_ids,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -46,7 +44,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint")]
-    public partial class DbManagementPrivateEndpoint : Pulumi.CustomResource
+    public partial class DbManagementPrivateEndpoint : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -152,7 +150,7 @@ namespace Pulumi.Oci.DatabaseManagement
         }
     }
 
-    public sealed class DbManagementPrivateEndpointArgs : Pulumi.ResourceArgs
+    public sealed class DbManagementPrivateEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -199,9 +197,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public DbManagementPrivateEndpointArgs()
         {
         }
+        public static new DbManagementPrivateEndpointArgs Empty => new DbManagementPrivateEndpointArgs();
     }
 
-    public sealed class DbManagementPrivateEndpointState : Pulumi.ResourceArgs
+    public sealed class DbManagementPrivateEndpointState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -272,5 +271,6 @@ namespace Pulumi.Oci.DatabaseManagement
         public DbManagementPrivateEndpointState()
         {
         }
+        public static new DbManagementPrivateEndpointState Empty => new DbManagementPrivateEndpointState();
     }
 }

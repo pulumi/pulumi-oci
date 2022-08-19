@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAppCatalogListingResourceVersions = Oci.Core.GetAppCatalogListingResourceVersions.Invoke(new()
         ///     {
-        ///         var testAppCatalogListingResourceVersions = Output.Create(Oci.Core.GetAppCatalogListingResourceVersions.InvokeAsync(new Oci.Core.GetAppCatalogListingResourceVersionsArgs
-        ///         {
-        ///             ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
-        ///         }));
-        ///     }
+        ///         ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAppCatalogListingResourceVersions = Oci.Core.GetAppCatalogListingResourceVersions.Invoke(new()
         ///     {
-        ///         var testAppCatalogListingResourceVersions = Output.Create(Oci.Core.GetAppCatalogListingResourceVersions.InvokeAsync(new Oci.Core.GetAppCatalogListingResourceVersionsArgs
-        ///         {
-        ///             ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
-        ///         }));
-        ///     }
+        ///         ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetAppCatalogListingResourceVersionsArgs : Pulumi.InvokeArgs
+    public sealed class GetAppCatalogListingResourceVersionsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetAppCatalogListingResourceVersionsFilterArgs>? _filters;
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Core
         public GetAppCatalogListingResourceVersionsArgs()
         {
         }
+        public static new GetAppCatalogListingResourceVersionsArgs Empty => new GetAppCatalogListingResourceVersionsArgs();
     }
 
-    public sealed class GetAppCatalogListingResourceVersionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppCatalogListingResourceVersionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetAppCatalogListingResourceVersionsFilterInputArgs>? _filters;
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Core
         public GetAppCatalogListingResourceVersionsInvokeArgs()
         {
         }
+        public static new GetAppCatalogListingResourceVersionsInvokeArgs Empty => new GetAppCatalogListingResourceVersionsInvokeArgs();
     }
 
 

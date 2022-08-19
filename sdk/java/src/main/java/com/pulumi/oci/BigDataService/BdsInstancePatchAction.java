@@ -19,6 +19,36 @@ import javax.annotation.Nullable;
  * Install the specified patch to this cluster.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.BigDataService.BdsInstancePatchAction;
+ * import com.pulumi.oci.BigDataService.BdsInstancePatchActionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBdsInstancePatchAction = new BdsInstancePatchAction(&#34;testBdsInstancePatchAction&#34;, BdsInstancePatchActionArgs.builder()        
+ *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+ *             .clusterAdminPassword(var_.bds_instance_patch_action_cluster_admin_password())
+ *             .version(var_.bds_instance_patch_action_version())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

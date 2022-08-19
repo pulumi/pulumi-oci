@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Ons.Inputs
 {
 
-    public sealed class GetNotificationTopicsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetNotificationTopicsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A filter to only return resources that match the given name exactly.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Ons.Inputs
         public GetNotificationTopicsFilterInputArgs()
         {
         }
+        public static new GetNotificationTopicsFilterInputArgs Empty => new GetNotificationTopicsFilterInputArgs();
     }
 }

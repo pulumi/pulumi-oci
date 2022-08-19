@@ -24,37 +24,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
         /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        /// 
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testObjects = Output.Create(Oci.ObjectStorage.GetObjects.InvokeAsync(new Oci.ObjectStorage.GetObjectsArgs
-        ///         {
-        ///             Bucket = @var.Object_bucket,
-        ///             Namespace = @var.Object_namespace,
-        ///             Delimiter = @var.Object_delimiter,
-        ///             End = @var.Object_end,
-        ///             Fields = @var.Object_fields,
-        ///             Prefix = @var.Object_prefix,
-        ///             Start = @var.Object_start,
-        ///             StartAfter = @var.Object_start_after,
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetObjectsResult> InvokeAsync(GetObjectsArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetObjectsResult>("oci:ObjectStorage/getObjects:getObjects", args ?? new GetObjectsArgs(), options.WithDefaults());
@@ -72,44 +41,13 @@ namespace Pulumi.Oci.ObjectStorage
         /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
         /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        /// 
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testObjects = Output.Create(Oci.ObjectStorage.GetObjects.InvokeAsync(new Oci.ObjectStorage.GetObjectsArgs
-        ///         {
-        ///             Bucket = @var.Object_bucket,
-        ///             Namespace = @var.Object_namespace,
-        ///             Delimiter = @var.Object_delimiter,
-        ///             End = @var.Object_end,
-        ///             Fields = @var.Object_fields,
-        ///             Prefix = @var.Object_prefix,
-        ///             Start = @var.Object_start,
-        ///             StartAfter = @var.Object_start_after,
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetObjectsResult> Invoke(GetObjectsInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetObjectsResult>("oci:ObjectStorage/getObjects:getObjects", args ?? new GetObjectsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetObjectsArgs : Pulumi.InvokeArgs
+    public sealed class GetObjectsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -164,9 +102,10 @@ namespace Pulumi.Oci.ObjectStorage
         public GetObjectsArgs()
         {
         }
+        public static new GetObjectsArgs Empty => new GetObjectsArgs();
     }
 
-    public sealed class GetObjectsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetObjectsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -221,6 +160,7 @@ namespace Pulumi.Oci.ObjectStorage
         public GetObjectsInvokeArgs()
         {
         }
+        public static new GetObjectsInvokeArgs Empty => new GetObjectsInvokeArgs();
     }
 
 

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualDeployment = Oci.ServiceMesh.GetVirtualDeployment.Invoke(new()
         ///     {
-        ///         var testVirtualDeployment = Output.Create(Oci.ServiceMesh.GetVirtualDeployment.InvokeAsync(new Oci.ServiceMesh.GetVirtualDeploymentArgs
-        ///         {
-        ///             VirtualDeploymentId = oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id,
-        ///         }));
-        ///     }
+        ///         VirtualDeploymentId = oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualDeployment = Oci.ServiceMesh.GetVirtualDeployment.Invoke(new()
         ///     {
-        ///         var testVirtualDeployment = Output.Create(Oci.ServiceMesh.GetVirtualDeployment.InvokeAsync(new Oci.ServiceMesh.GetVirtualDeploymentArgs
-        ///         {
-        ///             VirtualDeploymentId = oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id,
-        ///         }));
-        ///     }
+        ///         VirtualDeploymentId = oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetVirtualDeploymentArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualDeploymentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique VirtualDeployment identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetVirtualDeploymentArgs()
         {
         }
+        public static new GetVirtualDeploymentArgs Empty => new GetVirtualDeploymentArgs();
     }
 
-    public sealed class GetVirtualDeploymentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualDeploymentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique VirtualDeployment identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetVirtualDeploymentInvokeArgs()
         {
         }
+        public static new GetVirtualDeploymentInvokeArgs Empty => new GetVirtualDeploymentInvokeArgs();
     }
 
 

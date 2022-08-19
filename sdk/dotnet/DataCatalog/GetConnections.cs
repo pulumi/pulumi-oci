@@ -21,32 +21,30 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnections = Oci.DataCatalog.GetConnections.Invoke(new()
         ///     {
-        ///         var testConnections = Output.Create(Oci.DataCatalog.GetConnections.InvokeAsync(new Oci.DataCatalog.GetConnectionsArgs
-        ///         {
-        ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///             DataAssetKey = @var.Connection_data_asset_key,
-        ///             CreatedById = oci_datacatalog_created_by.Test_created_by.Id,
-        ///             DisplayName = @var.Connection_display_name,
-        ///             DisplayNameContains = @var.Connection_display_name_contains,
-        ///             ExternalKey = @var.Connection_external_key,
-        ///             Fields = @var.Connection_fields,
-        ///             IsDefault = @var.Connection_is_default,
-        ///             State = @var.Connection_state,
-        ///             TimeCreated = @var.Connection_time_created,
-        ///             TimeStatusUpdated = @var.Connection_time_status_updated,
-        ///             TimeUpdated = @var.Connection_time_updated,
-        ///             UpdatedById = oci_datacatalog_updated_by.Test_updated_by.Id,
-        ///         }));
-        ///     }
+        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
+        ///         DataAssetKey = @var.Connection_data_asset_key,
+        ///         CreatedById = oci_datacatalog_created_by.Test_created_by.Id,
+        ///         DisplayName = @var.Connection_display_name,
+        ///         DisplayNameContains = @var.Connection_display_name_contains,
+        ///         ExternalKey = @var.Connection_external_key,
+        ///         Fields = @var.Connection_fields,
+        ///         IsDefault = @var.Connection_is_default,
+        ///         State = @var.Connection_state,
+        ///         TimeCreated = @var.Connection_time_created,
+        ///         TimeStatusUpdated = @var.Connection_time_status_updated,
+        ///         TimeUpdated = @var.Connection_time_updated,
+        ///         UpdatedById = oci_datacatalog_updated_by.Test_updated_by.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -64,32 +62,30 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnections = Oci.DataCatalog.GetConnections.Invoke(new()
         ///     {
-        ///         var testConnections = Output.Create(Oci.DataCatalog.GetConnections.InvokeAsync(new Oci.DataCatalog.GetConnectionsArgs
-        ///         {
-        ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///             DataAssetKey = @var.Connection_data_asset_key,
-        ///             CreatedById = oci_datacatalog_created_by.Test_created_by.Id,
-        ///             DisplayName = @var.Connection_display_name,
-        ///             DisplayNameContains = @var.Connection_display_name_contains,
-        ///             ExternalKey = @var.Connection_external_key,
-        ///             Fields = @var.Connection_fields,
-        ///             IsDefault = @var.Connection_is_default,
-        ///             State = @var.Connection_state,
-        ///             TimeCreated = @var.Connection_time_created,
-        ///             TimeStatusUpdated = @var.Connection_time_status_updated,
-        ///             TimeUpdated = @var.Connection_time_updated,
-        ///             UpdatedById = oci_datacatalog_updated_by.Test_updated_by.Id,
-        ///         }));
-        ///     }
+        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
+        ///         DataAssetKey = @var.Connection_data_asset_key,
+        ///         CreatedById = oci_datacatalog_created_by.Test_created_by.Id,
+        ///         DisplayName = @var.Connection_display_name,
+        ///         DisplayNameContains = @var.Connection_display_name_contains,
+        ///         ExternalKey = @var.Connection_external_key,
+        ///         Fields = @var.Connection_fields,
+        ///         IsDefault = @var.Connection_is_default,
+        ///         State = @var.Connection_state,
+        ///         TimeCreated = @var.Connection_time_created,
+        ///         TimeStatusUpdated = @var.Connection_time_status_updated,
+        ///         TimeUpdated = @var.Connection_time_updated,
+        ///         UpdatedById = oci_datacatalog_updated_by.Test_updated_by.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -99,7 +95,7 @@ namespace Pulumi.Oci.DataCatalog
     }
 
 
-    public sealed class GetConnectionsArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -196,9 +192,10 @@ namespace Pulumi.Oci.DataCatalog
         public GetConnectionsArgs()
         {
         }
+        public static new GetConnectionsArgs Empty => new GetConnectionsArgs();
     }
 
-    public sealed class GetConnectionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -295,6 +292,7 @@ namespace Pulumi.Oci.DataCatalog
         public GetConnectionsInvokeArgs()
         {
         }
+        public static new GetConnectionsInvokeArgs Empty => new GetConnectionsInvokeArgs();
     }
 
 

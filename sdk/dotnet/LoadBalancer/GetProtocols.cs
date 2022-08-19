@@ -21,20 +21,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLoadBalancerProtocols = Oci.LoadBalancer.GetProtocols.Invoke(new()
         ///     {
-        ///         var testLoadBalancerProtocols = Output.Create(Oci.LoadBalancer.GetProtocols.InvokeAsync(new Oci.LoadBalancer.GetProtocolsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLoadBalancerProtocols = Oci.LoadBalancer.GetProtocols.Invoke(new()
         ///     {
-        ///         var testLoadBalancerProtocols = Output.Create(Oci.LoadBalancer.GetProtocols.InvokeAsync(new Oci.LoadBalancer.GetProtocolsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetProtocolsArgs : Pulumi.InvokeArgs
+    public sealed class GetProtocolsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer protocols to list.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetProtocolsArgs()
         {
         }
+        public static new GetProtocolsArgs Empty => new GetProtocolsArgs();
     }
 
-    public sealed class GetProtocolsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetProtocolsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer protocols to list.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetProtocolsInvokeArgs()
         {
         }
+        public static new GetProtocolsInvokeArgs Empty => new GetProtocolsInvokeArgs();
     }
 
 

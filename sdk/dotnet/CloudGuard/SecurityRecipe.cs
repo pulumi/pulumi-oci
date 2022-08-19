@@ -17,31 +17,29 @@ namespace Pulumi.Oci.CloudGuard
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSecurityRecipe = new Oci.CloudGuard.SecurityRecipe("testSecurityRecipe", new()
     ///     {
-    ///         var testSecurityRecipe = new Oci.CloudGuard.SecurityRecipe("testSecurityRecipe", new Oci.CloudGuard.SecurityRecipeArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Security_recipe_display_name,
+    ///         SecurityPolicies = @var.Security_recipe_security_policies,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Security_recipe_display_name,
-    ///             SecurityPolicies = @var.Security_recipe_security_policies,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Security_recipe_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Security_recipe_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.CloudGuard
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudGuard/securityRecipe:SecurityRecipe")]
-    public partial class SecurityRecipe : Pulumi.CustomResource
+    public partial class SecurityRecipe : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The compartment in which to create the recipe
@@ -171,7 +169,7 @@ namespace Pulumi.Oci.CloudGuard
         }
     }
 
-    public sealed class SecurityRecipeArgs : Pulumi.ResourceArgs
+    public sealed class SecurityRecipeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The compartment in which to create the recipe
@@ -230,9 +228,10 @@ namespace Pulumi.Oci.CloudGuard
         public SecurityRecipeArgs()
         {
         }
+        public static new SecurityRecipeArgs Empty => new SecurityRecipeArgs();
     }
 
-    public sealed class SecurityRecipeState : Pulumi.ResourceArgs
+    public sealed class SecurityRecipeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The compartment in which to create the recipe
@@ -333,5 +332,6 @@ namespace Pulumi.Oci.CloudGuard
         public SecurityRecipeState()
         {
         }
+        public static new SecurityRecipeState Empty => new SecurityRecipeState();
     }
 }

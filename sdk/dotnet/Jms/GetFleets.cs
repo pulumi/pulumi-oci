@@ -23,24 +23,22 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFleets = Oci.Jms.GetFleets.Invoke(new()
         ///     {
-        ///         var testFleets = Output.Create(Oci.Jms.GetFleets.InvokeAsync(new Oci.Jms.GetFleetsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Fleet_display_name,
-        ///             DisplayNameContains = @var.Fleet_display_name_contains,
-        ///             Id = @var.Fleet_id,
-        ///             State = @var.Fleet_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Fleet_display_name,
+        ///         DisplayNameContains = @var.Fleet_display_name_contains,
+        ///         Id = @var.Fleet_id,
+        ///         State = @var.Fleet_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,24 +58,22 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFleets = Oci.Jms.GetFleets.Invoke(new()
         ///     {
-        ///         var testFleets = Output.Create(Oci.Jms.GetFleets.InvokeAsync(new Oci.Jms.GetFleetsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Fleet_display_name,
-        ///             DisplayNameContains = @var.Fleet_display_name_contains,
-        ///             Id = @var.Fleet_id,
-        ///             State = @var.Fleet_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Fleet_display_name,
+        ///         DisplayNameContains = @var.Fleet_display_name_contains,
+        ///         Id = @var.Fleet_id,
+        ///         State = @var.Fleet_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Jms
     }
 
 
-    public sealed class GetFleetsArgs : Pulumi.InvokeArgs
+    public sealed class GetFleetsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -130,9 +126,10 @@ namespace Pulumi.Oci.Jms
         public GetFleetsArgs()
         {
         }
+        public static new GetFleetsArgs Empty => new GetFleetsArgs();
     }
 
-    public sealed class GetFleetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFleetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -175,6 +172,7 @@ namespace Pulumi.Oci.Jms
         public GetFleetsInvokeArgs()
         {
         }
+        public static new GetFleetsInvokeArgs Empty => new GetFleetsInvokeArgs();
     }
 
 

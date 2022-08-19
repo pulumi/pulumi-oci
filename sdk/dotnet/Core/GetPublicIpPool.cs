@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPublicIpPool = Oci.Core.GetPublicIpPool.Invoke(new()
         ///     {
-        ///         var testPublicIpPool = Output.Create(Oci.Core.GetPublicIpPool.InvokeAsync(new Oci.Core.GetPublicIpPoolArgs
-        ///         {
-        ///             PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
-        ///         }));
-        ///     }
+        ///         PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPublicIpPool = Oci.Core.GetPublicIpPool.Invoke(new()
         ///     {
-        ///         var testPublicIpPool = Output.Create(Oci.Core.GetPublicIpPool.InvokeAsync(new Oci.Core.GetPublicIpPoolArgs
-        ///         {
-        ///             PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
-        ///         }));
-        ///     }
+        ///         PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetPublicIpPoolArgs : Pulumi.InvokeArgs
+    public sealed class GetPublicIpPoolArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Core
         public GetPublicIpPoolArgs()
         {
         }
+        public static new GetPublicIpPoolArgs Empty => new GetPublicIpPoolArgs();
     }
 
-    public sealed class GetPublicIpPoolInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPublicIpPoolInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Core
         public GetPublicIpPoolInvokeArgs()
         {
         }
+        public static new GetPublicIpPoolInvokeArgs Empty => new GetPublicIpPoolInvokeArgs();
     }
 
 

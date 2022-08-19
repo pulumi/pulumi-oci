@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildPipelineStageBuildSourceCollectionItemGetArgs : Pulumi.ResourceArgs
+    public sealed class BuildPipelineStageBuildSourceCollectionItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Branch name.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildPipelineStageBuildSourceCollectionItemGetArgs()
         {
         }
+        public static new BuildPipelineStageBuildSourceCollectionItemGetArgs Empty => new BuildPipelineStageBuildSourceCollectionItemGetArgs();
     }
 }

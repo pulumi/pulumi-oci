@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetListingResourceVersionArgs : Pulumi.InvokeArgs
+    public sealed class GetListingResourceVersionArgs : global::Pulumi.InvokeArgs
     {
         [Input("listingId", required: true)]
         public string ListingId { get; set; } = null!;
@@ -30,9 +30,10 @@ namespace Pulumi.Oci.Core
         public GetListingResourceVersionArgs()
         {
         }
+        public static new GetListingResourceVersionArgs Empty => new GetListingResourceVersionArgs();
     }
 
-    public sealed class GetListingResourceVersionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetListingResourceVersionInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("listingId", required: true)]
         public Input<string> ListingId { get; set; } = null!;
@@ -43,6 +44,7 @@ namespace Pulumi.Oci.Core
         public GetListingResourceVersionInvokeArgs()
         {
         }
+        public static new GetListingResourceVersionInvokeArgs Empty => new GetListingResourceVersionInvokeArgs();
     }
 
 

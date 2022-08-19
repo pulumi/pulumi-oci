@@ -17,40 +17,38 @@ namespace Pulumi.Oci.Waf
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testNetworkAddressList = new Oci.Waf.NetworkAddressList("testNetworkAddressList", new()
     ///     {
-    ///         var testNetworkAddressList = new Oci.Waf.NetworkAddressList("testNetworkAddressList", new Oci.Waf.NetworkAddressListArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Type = @var.Network_address_list_type,
+    ///         Addresses = @var.Network_address_list_addresses,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Type = @var.Network_address_list_type,
-    ///             Addresses = @var.Network_address_list_addresses,
-    ///             DefinedTags = 
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Network_address_list_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         SystemTags = @var.Network_address_list_system_tags,
+    ///         VcnAddresses = new[]
+    ///         {
+    ///             new Oci.Waf.Inputs.NetworkAddressListVcnAddressArgs
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
+    ///                 Addresses = @var.Network_address_list_vcn_addresses_addresses,
+    ///                 VcnId = oci_core_vcn.Test_vcn.Id,
     ///             },
-    ///             DisplayName = @var.Network_address_list_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             SystemTags = @var.Network_address_list_system_tags,
-    ///             VcnAddresses = 
-    ///             {
-    ///                 new Oci.Waf.Inputs.NetworkAddressListVcnAddressArgs
-    ///                 {
-    ///                     Addresses = @var.Network_address_list_vcn_addresses_addresses,
-    ///                     VcnId = oci_core_vcn.Test_vcn.Id,
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -62,7 +60,7 @@ namespace Pulumi.Oci.Waf
     /// ```
     /// </summary>
     [OciResourceType("oci:Waf/networkAddressList:NetworkAddressList")]
-    public partial class NetworkAddressList : Pulumi.CustomResource
+    public partial class NetworkAddressList : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) A private IP address or CIDR IP address range.
@@ -180,7 +178,7 @@ namespace Pulumi.Oci.Waf
         }
     }
 
-    public sealed class NetworkAddressListArgs : Pulumi.ResourceArgs
+    public sealed class NetworkAddressListArgs : global::Pulumi.ResourceArgs
     {
         [Input("addresses")]
         private InputList<string>? _addresses;
@@ -263,9 +261,10 @@ namespace Pulumi.Oci.Waf
         public NetworkAddressListArgs()
         {
         }
+        public static new NetworkAddressListArgs Empty => new NetworkAddressListArgs();
     }
 
-    public sealed class NetworkAddressListState : Pulumi.ResourceArgs
+    public sealed class NetworkAddressListState : global::Pulumi.ResourceArgs
     {
         [Input("addresses")]
         private InputList<string>? _addresses;
@@ -372,5 +371,6 @@ namespace Pulumi.Oci.Waf
         public NetworkAddressListState()
         {
         }
+        public static new NetworkAddressListState Empty => new NetworkAddressListState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class JobJobLogConfigurationDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class JobJobLogConfigurationDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// If automatic on-behalf-of log object creation is enabled for job runs.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public JobJobLogConfigurationDetailsGetArgs()
         {
         }
+        public static new JobJobLogConfigurationDetailsGetArgs Empty => new JobJobLogConfigurationDetailsGetArgs();
     }
 }

@@ -22,26 +22,24 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResourceActions = Oci.Optimizer.GetResourceActions.Invoke(new()
         ///     {
-        ///         var testResourceActions = Output.Create(Oci.Optimizer.GetResourceActions.InvokeAsync(new Oci.Optimizer.GetResourceActionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Resource_action_compartment_id_in_subtree,
-        ///             RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
-        ///             Name = @var.Resource_action_name,
-        ///             ResourceType = @var.Resource_action_resource_type,
-        ///             State = @var.Resource_action_state,
-        ///             Status = @var.Resource_action_status,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Resource_action_compartment_id_in_subtree,
+        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
+        ///         Name = @var.Resource_action_name,
+        ///         ResourceType = @var.Resource_action_resource_type,
+        ///         State = @var.Resource_action_state,
+        ///         Status = @var.Resource_action_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,26 +58,24 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testResourceActions = Oci.Optimizer.GetResourceActions.Invoke(new()
         ///     {
-        ///         var testResourceActions = Output.Create(Oci.Optimizer.GetResourceActions.InvokeAsync(new Oci.Optimizer.GetResourceActionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Resource_action_compartment_id_in_subtree,
-        ///             RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
-        ///             Name = @var.Resource_action_name,
-        ///             ResourceType = @var.Resource_action_resource_type,
-        ///             State = @var.Resource_action_state,
-        ///             Status = @var.Resource_action_status,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Resource_action_compartment_id_in_subtree,
+        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
+        ///         Name = @var.Resource_action_name,
+        ///         ResourceType = @var.Resource_action_resource_type,
+        ///         State = @var.Resource_action_state,
+        ///         Status = @var.Resource_action_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Optimizer
     }
 
 
-    public sealed class GetResourceActionsArgs : Pulumi.InvokeArgs
+    public sealed class GetResourceActionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -144,9 +140,10 @@ namespace Pulumi.Oci.Optimizer
         public GetResourceActionsArgs()
         {
         }
+        public static new GetResourceActionsArgs Empty => new GetResourceActionsArgs();
     }
 
-    public sealed class GetResourceActionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetResourceActionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -201,6 +198,7 @@ namespace Pulumi.Oci.Optimizer
         public GetResourceActionsInvokeArgs()
         {
         }
+        public static new GetResourceActionsInvokeArgs Empty => new GetResourceActionsInvokeArgs();
     }
 
 

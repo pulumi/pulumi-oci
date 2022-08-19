@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement.Inputs
 {
 
-    public sealed class GetManagedDatabaseUserProxiedForUsersFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetManagedDatabaseUserProxiedForUsersFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire name.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public GetManagedDatabaseUserProxiedForUsersFilterInputArgs()
         {
         }
+        public static new GetManagedDatabaseUserProxiedForUsersFilterInputArgs Empty => new GetManagedDatabaseUserProxiedForUsersFilterInputArgs();
     }
 }

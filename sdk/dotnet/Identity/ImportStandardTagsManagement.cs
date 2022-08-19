@@ -18,21 +18,19 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testImportStandardTagsManagement = new Oci.Identity.ImportStandardTagsManagement("testImportStandardTagsManagement", new()
     ///     {
-    ///         var testImportStandardTagsManagement = new Oci.Identity.ImportStandardTagsManagement("testImportStandardTagsManagement", new Oci.Identity.ImportStandardTagsManagementArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             StandardTagNamespaceName = oci_identity_tag_namespace.Test_tag_namespace.Name,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         StandardTagNamespaceName = oci_identity_tag_namespace.Test_tag_namespace.Name,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -44,7 +42,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement")]
-    public partial class ImportStandardTagsManagement : Pulumi.CustomResource
+    public partial class ImportStandardTagsManagement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
@@ -105,7 +103,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class ImportStandardTagsManagementArgs : Pulumi.ResourceArgs
+    public sealed class ImportStandardTagsManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
@@ -122,9 +120,10 @@ namespace Pulumi.Oci.Identity
         public ImportStandardTagsManagementArgs()
         {
         }
+        public static new ImportStandardTagsManagementArgs Empty => new ImportStandardTagsManagementArgs();
     }
 
-    public sealed class ImportStandardTagsManagementState : Pulumi.ResourceArgs
+    public sealed class ImportStandardTagsManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
@@ -144,5 +143,6 @@ namespace Pulumi.Oci.Identity
         public ImportStandardTagsManagementState()
         {
         }
+        public static new ImportStandardTagsManagementState Empty => new ImportStandardTagsManagementState();
     }
 }

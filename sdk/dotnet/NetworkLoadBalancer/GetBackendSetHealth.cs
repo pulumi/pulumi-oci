@@ -19,7 +19,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     }
 
 
-    public sealed class GetBackendSetHealthArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendSetHealthArgs : global::Pulumi.InvokeArgs
     {
         [Input("backendSetName", required: true)]
         public string BackendSetName { get; set; } = null!;
@@ -30,9 +30,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetBackendSetHealthArgs()
         {
         }
+        public static new GetBackendSetHealthArgs Empty => new GetBackendSetHealthArgs();
     }
 
-    public sealed class GetBackendSetHealthInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendSetHealthInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("backendSetName", required: true)]
         public Input<string> BackendSetName { get; set; } = null!;
@@ -43,6 +44,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetBackendSetHealthInvokeArgs()
         {
         }
+        public static new GetBackendSetHealthInvokeArgs Empty => new GetBackendSetHealthInvokeArgs();
     }
 
 

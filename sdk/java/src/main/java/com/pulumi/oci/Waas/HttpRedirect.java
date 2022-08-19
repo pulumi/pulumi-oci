@@ -23,6 +23,47 @@ import javax.annotation.Nullable;
  * Creates a new HTTP Redirect on the WAF edge.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Waas.HttpRedirect;
+ * import com.pulumi.oci.Waas.HttpRedirectArgs;
+ * import com.pulumi.oci.Waas.inputs.HttpRedirectTargetArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testHttpRedirect = new HttpRedirect(&#34;testHttpRedirect&#34;, HttpRedirectArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .domain(var_.http_redirect_domain())
+ *             .target(HttpRedirectTargetArgs.builder()
+ *                 .host(var_.http_redirect_target_host())
+ *                 .path(var_.http_redirect_target_path())
+ *                 .protocol(var_.http_redirect_target_protocol())
+ *                 .query(var_.http_redirect_target_query())
+ *                 .port(var_.http_redirect_target_port())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.http_redirect_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .responseCode(var_.http_redirect_response_code())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

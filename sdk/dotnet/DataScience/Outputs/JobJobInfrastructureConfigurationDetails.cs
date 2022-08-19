@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly string JobInfrastructureType;
         /// <summary>
+        /// (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
+        /// </summary>
+        public readonly Outputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails? JobShapeConfigDetails;
+        /// <summary>
         /// (Updatable) The shape used to launch the job run instances.
         /// </summary>
         public readonly string ShapeName;
@@ -36,12 +40,15 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string jobInfrastructureType,
 
+            Outputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails? jobShapeConfigDetails,
+
             string shapeName,
 
             string? subnetId)
         {
             BlockStorageSizeInGbs = blockStorageSizeInGbs;
             JobInfrastructureType = jobInfrastructureType;
+            JobShapeConfigDetails = jobShapeConfigDetails;
             ShapeName = shapeName;
             SubnetId = subnetId;
         }

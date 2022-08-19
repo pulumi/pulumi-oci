@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperationsInsightsWarehouseUser = Oci.Opsi.GetOperationsInsightsWarehouseUser.Invoke(new()
         ///     {
-        ///         var testOperationsInsightsWarehouseUser = Output.Create(Oci.Opsi.GetOperationsInsightsWarehouseUser.InvokeAsync(new Oci.Opsi.GetOperationsInsightsWarehouseUserArgs
-        ///         {
-        ///             OperationsInsightsWarehouseUserId = oci_opsi_operations_insights_warehouse_user.Test_operations_insights_warehouse_user.Id,
-        ///         }));
-        ///     }
+        ///         OperationsInsightsWarehouseUserId = oci_opsi_operations_insights_warehouse_user.Test_operations_insights_warehouse_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperationsInsightsWarehouseUser = Oci.Opsi.GetOperationsInsightsWarehouseUser.Invoke(new()
         ///     {
-        ///         var testOperationsInsightsWarehouseUser = Output.Create(Oci.Opsi.GetOperationsInsightsWarehouseUser.InvokeAsync(new Oci.Opsi.GetOperationsInsightsWarehouseUserArgs
-        ///         {
-        ///             OperationsInsightsWarehouseUserId = oci_opsi_operations_insights_warehouse_user.Test_operations_insights_warehouse_user.Id,
-        ///         }));
-        ///     }
+        ///         OperationsInsightsWarehouseUserId = oci_opsi_operations_insights_warehouse_user.Test_operations_insights_warehouse_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetOperationsInsightsWarehouseUserArgs : Pulumi.InvokeArgs
+    public sealed class GetOperationsInsightsWarehouseUserArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Operations Insights Warehouse User identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Opsi
         public GetOperationsInsightsWarehouseUserArgs()
         {
         }
+        public static new GetOperationsInsightsWarehouseUserArgs Empty => new GetOperationsInsightsWarehouseUserArgs();
     }
 
-    public sealed class GetOperationsInsightsWarehouseUserInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOperationsInsightsWarehouseUserInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Operations Insights Warehouse User identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Opsi
         public GetOperationsInsightsWarehouseUserInvokeArgs()
         {
         }
+        public static new GetOperationsInsightsWarehouseUserInvokeArgs Empty => new GetOperationsInsightsWarehouseUserInvokeArgs();
     }
 
 

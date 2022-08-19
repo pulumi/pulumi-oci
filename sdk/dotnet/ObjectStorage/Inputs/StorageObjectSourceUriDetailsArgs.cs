@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage.Inputs
 {
 
-    public sealed class StorageObjectSourceUriDetailsArgs : Pulumi.ResourceArgs
+    public sealed class StorageObjectSourceUriDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the bucket for the source object.
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
         public StorageObjectSourceUriDetailsArgs()
         {
         }
+        public static new StorageObjectSourceUriDetailsArgs Empty => new StorageObjectSourceUriDetailsArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage.Inputs
 {
 
-    public sealed class BucketRetentionRuleDurationGetArgs : Pulumi.ResourceArgs
+    public sealed class BucketRetentionRuleDurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
         public BucketRetentionRuleDurationGetArgs()
         {
         }
+        public static new BucketRetentionRuleDurationGetArgs Empty => new BucketRetentionRuleDurationGetArgs();
     }
 }

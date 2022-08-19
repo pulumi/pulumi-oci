@@ -25,20 +25,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBackendSets = Oci.LoadBalancer.GetBackendSets.Invoke(new()
         ///     {
-        ///         var testBackendSets = Output.Create(Oci.LoadBalancer.GetBackendSets.InvokeAsync(new Oci.LoadBalancer.GetBackendSetsArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,20 +58,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBackendSets = Oci.LoadBalancer.GetBackendSets.Invoke(new()
         ///     {
-        ///         var testBackendSets = Output.Create(Oci.LoadBalancer.GetBackendSets.InvokeAsync(new Oci.LoadBalancer.GetBackendSetsArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetBackendSetsArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendSetsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetBackendSetsFilterArgs>? _filters;
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetBackendSetsArgs()
         {
         }
+        public static new GetBackendSetsArgs Empty => new GetBackendSetsArgs();
     }
 
-    public sealed class GetBackendSetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendSetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetBackendSetsFilterInputArgs>? _filters;
@@ -123,6 +120,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetBackendSetsInvokeArgs()
         {
         }
+        public static new GetBackendSetsInvokeArgs Empty => new GetBackendSetsInvokeArgs();
     }
 
 

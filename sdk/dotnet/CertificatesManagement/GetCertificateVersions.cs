@@ -23,21 +23,19 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCertificateVersions = Oci.CertificatesManagement.GetCertificateVersions.Invoke(new()
         ///     {
-        ///         var testCertificateVersions = Output.Create(Oci.CertificatesManagement.GetCertificateVersions.InvokeAsync(new Oci.CertificatesManagement.GetCertificateVersionsArgs
-        ///         {
-        ///             CertificateId = oci_certificates_management_certificate.Test_certificate.Id,
-        ///             VersionNumber = @var.Certificate_version_version_number,
-        ///         }));
-        ///     }
+        ///         CertificateId = oci_certificates_management_certificate.Test_certificate.Id,
+        ///         VersionNumber = @var.Certificate_version_version_number,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,21 +55,19 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCertificateVersions = Oci.CertificatesManagement.GetCertificateVersions.Invoke(new()
         ///     {
-        ///         var testCertificateVersions = Output.Create(Oci.CertificatesManagement.GetCertificateVersions.InvokeAsync(new Oci.CertificatesManagement.GetCertificateVersionsArgs
-        ///         {
-        ///             CertificateId = oci_certificates_management_certificate.Test_certificate.Id,
-        ///             VersionNumber = @var.Certificate_version_version_number,
-        ///         }));
-        ///     }
+        ///         CertificateId = oci_certificates_management_certificate.Test_certificate.Id,
+        ///         VersionNumber = @var.Certificate_version_version_number,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.CertificatesManagement
     }
 
 
-    public sealed class GetCertificateVersionsArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificateVersionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the certificate.
@@ -106,9 +102,10 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCertificateVersionsArgs()
         {
         }
+        public static new GetCertificateVersionsArgs Empty => new GetCertificateVersionsArgs();
     }
 
-    public sealed class GetCertificateVersionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificateVersionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the certificate.
@@ -133,6 +130,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCertificateVersionsInvokeArgs()
         {
         }
+        public static new GetCertificateVersionsInvokeArgs Empty => new GetCertificateVersionsInvokeArgs();
     }
 
 

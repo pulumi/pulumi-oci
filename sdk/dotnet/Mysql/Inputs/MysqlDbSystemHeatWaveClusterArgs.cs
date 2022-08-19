@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlDbSystemHeatWaveClusterArgs : Pulumi.ResourceArgs
+    public sealed class MysqlDbSystemHeatWaveClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
@@ -46,5 +46,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlDbSystemHeatWaveClusterArgs()
         {
         }
+        public static new MysqlDbSystemHeatWaveClusterArgs Empty => new MysqlDbSystemHeatWaveClusterArgs();
     }
 }

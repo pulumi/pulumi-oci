@@ -22,6 +22,76 @@ import javax.annotation.Nullable;
  * Add an autoscale configuration to the cluster.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.BigDataService.AutoScalingConfiguration;
+ * import com.pulumi.oci.BigDataService.AutoScalingConfigurationArgs;
+ * import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyDetailsArgs;
+ * import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs;
+ * import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs;
+ * import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs;
+ * import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs;
+ * import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs;
+ * import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutoScalingConfiguration = new AutoScalingConfiguration(&#34;testAutoScalingConfiguration&#34;, AutoScalingConfigurationArgs.builder()        
+ *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
+ *             .clusterAdminPassword(var_.auto_scaling_configuration_cluster_admin_password())
+ *             .isEnabled(var_.auto_scaling_configuration_is_enabled())
+ *             .nodeType(var_.auto_scaling_configuration_node_type())
+ *             .displayName(var_.auto_scaling_configuration_display_name())
+ *             .policyDetails(AutoScalingConfigurationPolicyDetailsArgs.builder()
+ *                 .policyType(var_.auto_scaling_configuration_policy_details_policy_type())
+ *                 .scaleDownConfig(AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs.builder()
+ *                     .memoryStepSize(var_.auto_scaling_configuration_policy_details_scale_down_config_memory_step_size())
+ *                     .metric(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs.builder()
+ *                         .metricType(var_.auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type())
+ *                         .threshold(AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs.builder()
+ *                             .durationInMinutes(var_.auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes())
+ *                             .operator(var_.auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator())
+ *                             .value(var_.auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value())
+ *                             .build())
+ *                         .build())
+ *                     .minMemoryPerNode(var_.auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node())
+ *                     .minOcpusPerNode(var_.auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node())
+ *                     .ocpuStepSize(var_.auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size())
+ *                     .build())
+ *                 .scaleUpConfig(AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs.builder()
+ *                     .maxMemoryPerNode(var_.auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node())
+ *                     .maxOcpusPerNode(var_.auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node())
+ *                     .memoryStepSize(var_.auto_scaling_configuration_policy_details_scale_up_config_memory_step_size())
+ *                     .metric(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs.builder()
+ *                         .metricType(var_.auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type())
+ *                         .threshold(AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs.builder()
+ *                             .durationInMinutes(var_.auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes())
+ *                             .operator(var_.auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator())
+ *                             .value(var_.auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value())
+ *                             .build())
+ *                         .build())
+ *                     .ocpuStepSize(var_.auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size())
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

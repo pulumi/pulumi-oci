@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryFileDiff = Oci.DevOps.GetRepositoryFileDiff.Invoke(new()
         ///     {
-        ///         var testRepositoryFileDiff = Output.Create(Oci.DevOps.GetRepositoryFileDiff.InvokeAsync(new Oci.DevOps.GetRepositoryFileDiffArgs
-        ///         {
-        ///             BaseVersion = @var.Repository_file_diff_base_version,
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             TargetVersion = @var.Repository_file_diff_target_version,
-        ///             FilePath = @var.Repository_file_diff_file_path,
-        ///             IsComparisonFromMergeBase = @var.Repository_file_diff_is_comparison_from_merge_base,
-        ///         }));
-        ///     }
+        ///         BaseVersion = @var.Repository_file_diff_base_version,
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         TargetVersion = @var.Repository_file_diff_target_version,
+        ///         FilePath = @var.Repository_file_diff_file_path,
+        ///         IsComparisonFromMergeBase = @var.Repository_file_diff_is_comparison_from_merge_base,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryFileDiff = Oci.DevOps.GetRepositoryFileDiff.Invoke(new()
         ///     {
-        ///         var testRepositoryFileDiff = Output.Create(Oci.DevOps.GetRepositoryFileDiff.InvokeAsync(new Oci.DevOps.GetRepositoryFileDiffArgs
-        ///         {
-        ///             BaseVersion = @var.Repository_file_diff_base_version,
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             TargetVersion = @var.Repository_file_diff_target_version,
-        ///             FilePath = @var.Repository_file_diff_file_path,
-        ///             IsComparisonFromMergeBase = @var.Repository_file_diff_is_comparison_from_merge_base,
-        ///         }));
-        ///     }
+        ///         BaseVersion = @var.Repository_file_diff_base_version,
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         TargetVersion = @var.Repository_file_diff_target_version,
+        ///         FilePath = @var.Repository_file_diff_file_path,
+        ///         IsComparisonFromMergeBase = @var.Repository_file_diff_is_comparison_from_merge_base,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetRepositoryFileDiffArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryFileDiffArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The branch to compare changes against.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryFileDiffArgs()
         {
         }
+        public static new GetRepositoryFileDiffArgs Empty => new GetRepositoryFileDiffArgs();
     }
 
-    public sealed class GetRepositoryFileDiffInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryFileDiffInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The branch to compare changes against.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryFileDiffInvokeArgs()
         {
         }
+        public static new GetRepositoryFileDiffInvokeArgs Empty => new GetRepositoryFileDiffInvokeArgs();
     }
 
 

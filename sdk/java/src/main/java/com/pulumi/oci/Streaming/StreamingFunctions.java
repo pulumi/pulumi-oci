@@ -35,6 +35,34 @@ public final class StreamingFunctions {
      * Gets detailed information about a connect harness.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
+     *             .connectHarnessId(oci_streaming_connect_harnes.test_connect_harnes().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConnectHarnessResult> getConnectHarness(GetConnectHarnessArgs args) {
@@ -46,6 +74,34 @@ public final class StreamingFunctions {
      * Gets detailed information about a connect harness.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
+     *             .connectHarnessId(oci_streaming_connect_harnes.test_connect_harnes().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConnectHarnessResult> getConnectHarnessPlain(GetConnectHarnessPlainArgs args) {
@@ -57,6 +113,34 @@ public final class StreamingFunctions {
      * Gets detailed information about a connect harness.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
+     *             .connectHarnessId(oci_streaming_connect_harnes.test_connect_harnes().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConnectHarnessResult> getConnectHarness(GetConnectHarnessArgs args, InvokeOptions options) {
@@ -68,6 +152,34 @@ public final class StreamingFunctions {
      * Gets detailed information about a connect harness.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
+     *             .connectHarnessId(oci_streaming_connect_harnes.test_connect_harnes().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConnectHarnessResult> getConnectHarnessPlain(GetConnectHarnessPlainArgs args, InvokeOptions options) {
@@ -79,6 +191,37 @@ public final class StreamingFunctions {
      * Lists the connectharness.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectHarnesses = StreamingFunctions.getConnectHarnesses(GetConnectHarnessesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.connect_harness_id())
+     *             .name(var_.connect_harness_name())
+     *             .state(var_.connect_harness_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConnectHarnessesResult> getConnectHarnesses(GetConnectHarnessesArgs args) {
@@ -90,6 +233,37 @@ public final class StreamingFunctions {
      * Lists the connectharness.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectHarnesses = StreamingFunctions.getConnectHarnesses(GetConnectHarnessesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.connect_harness_id())
+     *             .name(var_.connect_harness_name())
+     *             .state(var_.connect_harness_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConnectHarnessesResult> getConnectHarnessesPlain(GetConnectHarnessesPlainArgs args) {
@@ -101,6 +275,37 @@ public final class StreamingFunctions {
      * Lists the connectharness.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectHarnesses = StreamingFunctions.getConnectHarnesses(GetConnectHarnessesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.connect_harness_id())
+     *             .name(var_.connect_harness_name())
+     *             .state(var_.connect_harness_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConnectHarnessesResult> getConnectHarnesses(GetConnectHarnessesArgs args, InvokeOptions options) {
@@ -112,6 +317,37 @@ public final class StreamingFunctions {
      * Lists the connectharness.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnectHarnesses = StreamingFunctions.getConnectHarnesses(GetConnectHarnessesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.connect_harness_id())
+     *             .name(var_.connect_harness_name())
+     *             .state(var_.connect_harness_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConnectHarnessesResult> getConnectHarnessesPlain(GetConnectHarnessesPlainArgs args, InvokeOptions options) {
@@ -123,6 +359,34 @@ public final class StreamingFunctions {
      * Gets detailed information about a stream, including the number of partitions.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
+     *             .streamId(oci_streaming_stream.test_stream().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStreamResult> getStream(GetStreamArgs args) {
@@ -134,6 +398,34 @@ public final class StreamingFunctions {
      * Gets detailed information about a stream, including the number of partitions.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
+     *             .streamId(oci_streaming_stream.test_stream().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStreamResult> getStreamPlain(GetStreamPlainArgs args) {
@@ -145,6 +437,34 @@ public final class StreamingFunctions {
      * Gets detailed information about a stream, including the number of partitions.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
+     *             .streamId(oci_streaming_stream.test_stream().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStreamResult> getStream(GetStreamArgs args, InvokeOptions options) {
@@ -156,6 +476,34 @@ public final class StreamingFunctions {
      * Gets detailed information about a stream, including the number of partitions.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
+     *             .streamId(oci_streaming_stream.test_stream().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStreamResult> getStreamPlain(GetStreamPlainArgs args, InvokeOptions options) {
@@ -167,6 +515,34 @@ public final class StreamingFunctions {
      * Gets detailed information about the stream pool, such as Kafka settings.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
+     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStreamPoolResult> getStreamPool(GetStreamPoolArgs args) {
@@ -178,6 +554,34 @@ public final class StreamingFunctions {
      * Gets detailed information about the stream pool, such as Kafka settings.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
+     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStreamPoolResult> getStreamPoolPlain(GetStreamPoolPlainArgs args) {
@@ -189,6 +593,34 @@ public final class StreamingFunctions {
      * Gets detailed information about the stream pool, such as Kafka settings.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
+     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStreamPoolResult> getStreamPool(GetStreamPoolArgs args, InvokeOptions options) {
@@ -200,6 +632,34 @@ public final class StreamingFunctions {
      * Gets detailed information about the stream pool, such as Kafka settings.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
+     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStreamPoolResult> getStreamPoolPlain(GetStreamPoolPlainArgs args, InvokeOptions options) {
@@ -211,6 +671,37 @@ public final class StreamingFunctions {
      * List the stream pools for a given compartment ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamPools = StreamingFunctions.getStreamPools(GetStreamPoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.stream_pool_id())
+     *             .name(var_.stream_pool_name())
+     *             .state(var_.stream_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStreamPoolsResult> getStreamPools(GetStreamPoolsArgs args) {
@@ -222,6 +713,37 @@ public final class StreamingFunctions {
      * List the stream pools for a given compartment ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamPools = StreamingFunctions.getStreamPools(GetStreamPoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.stream_pool_id())
+     *             .name(var_.stream_pool_name())
+     *             .state(var_.stream_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStreamPoolsResult> getStreamPoolsPlain(GetStreamPoolsPlainArgs args) {
@@ -233,6 +755,37 @@ public final class StreamingFunctions {
      * List the stream pools for a given compartment ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamPools = StreamingFunctions.getStreamPools(GetStreamPoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.stream_pool_id())
+     *             .name(var_.stream_pool_name())
+     *             .state(var_.stream_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStreamPoolsResult> getStreamPools(GetStreamPoolsArgs args, InvokeOptions options) {
@@ -244,6 +797,37 @@ public final class StreamingFunctions {
      * List the stream pools for a given compartment ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamPools = StreamingFunctions.getStreamPools(GetStreamPoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.stream_pool_id())
+     *             .name(var_.stream_pool_name())
+     *             .state(var_.stream_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStreamPoolsResult> getStreamPoolsPlain(GetStreamPoolsPlainArgs args, InvokeOptions options) {
@@ -258,6 +842,38 @@ public final class StreamingFunctions {
      * The compartment id and stream pool id cannot be specified at the same time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreams = StreamingFunctions.getStreams(GetStreamsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.stream_id())
+     *             .name(var_.stream_name())
+     *             .state(var_.stream_state())
+     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStreamsResult> getStreams() {
@@ -272,6 +888,38 @@ public final class StreamingFunctions {
      * The compartment id and stream pool id cannot be specified at the same time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreams = StreamingFunctions.getStreams(GetStreamsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.stream_id())
+     *             .name(var_.stream_name())
+     *             .state(var_.stream_state())
+     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStreamsResult> getStreamsPlain() {
@@ -286,6 +934,38 @@ public final class StreamingFunctions {
      * The compartment id and stream pool id cannot be specified at the same time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreams = StreamingFunctions.getStreams(GetStreamsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.stream_id())
+     *             .name(var_.stream_name())
+     *             .state(var_.stream_state())
+     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStreamsResult> getStreams(GetStreamsArgs args) {
@@ -300,6 +980,38 @@ public final class StreamingFunctions {
      * The compartment id and stream pool id cannot be specified at the same time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreams = StreamingFunctions.getStreams(GetStreamsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.stream_id())
+     *             .name(var_.stream_name())
+     *             .state(var_.stream_state())
+     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStreamsResult> getStreamsPlain(GetStreamsPlainArgs args) {
@@ -314,6 +1026,38 @@ public final class StreamingFunctions {
      * The compartment id and stream pool id cannot be specified at the same time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreams = StreamingFunctions.getStreams(GetStreamsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.stream_id())
+     *             .name(var_.stream_name())
+     *             .state(var_.stream_state())
+     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStreamsResult> getStreams(GetStreamsArgs args, InvokeOptions options) {
@@ -328,6 +1072,38 @@ public final class StreamingFunctions {
      * The compartment id and stream pool id cannot be specified at the same time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Streaming.StreamingFunctions;
+     * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreams = StreamingFunctions.getStreams(GetStreamsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.stream_id())
+     *             .name(var_.stream_name())
+     *             .state(var_.stream_state())
+     *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStreamsResult> getStreamsPlain(GetStreamsPlainArgs args, InvokeOptions options) {

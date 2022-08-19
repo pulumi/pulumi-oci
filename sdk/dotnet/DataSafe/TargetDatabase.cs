@@ -17,61 +17,59 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testTargetDatabase = new Oci.DataSafe.TargetDatabase("testTargetDatabase", new()
     ///     {
-    ///         var testTargetDatabase = new Oci.DataSafe.TargetDatabase("testTargetDatabase", new Oci.DataSafe.TargetDatabaseArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DatabaseDetails = new Oci.DataSafe.Inputs.TargetDatabaseDatabaseDetailsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DatabaseDetails = new Oci.DataSafe.Inputs.TargetDatabaseDatabaseDetailsArgs
-    ///             {
-    ///                 DatabaseType = @var.Target_database_database_details_database_type,
-    ///                 InfrastructureType = @var.Target_database_database_details_infrastructure_type,
-    ///                 AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-    ///                 DbSystemId = oci_database_db_system.Test_db_system.Id,
-    ///                 InstanceId = oci_core_instance.Test_instance.Id,
-    ///                 IpAddresses = @var.Target_database_database_details_ip_addresses,
-    ///                 ListenerPort = @var.Target_database_database_details_listener_port,
-    ///                 ServiceName = oci_core_service.Test_service.Name,
-    ///                 VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-    ///             },
-    ///             ConnectionOption = new Oci.DataSafe.Inputs.TargetDatabaseConnectionOptionArgs
-    ///             {
-    ///                 ConnectionType = @var.Target_database_connection_option_connection_type,
-    ///                 DatasafePrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-    ///                 OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
-    ///             },
-    ///             Credentials = new Oci.DataSafe.Inputs.TargetDatabaseCredentialsArgs
-    ///             {
-    ///                 Password = @var.Target_database_credentials_password,
-    ///                 UserName = oci_identity_user.Test_user.Name,
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Target_database_description,
-    ///             DisplayName = @var.Target_database_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             TlsConfig = new Oci.DataSafe.Inputs.TargetDatabaseTlsConfigArgs
-    ///             {
-    ///                 Status = @var.Target_database_tls_config_status,
-    ///                 CertificateStoreType = @var.Target_database_tls_config_certificate_store_type,
-    ///                 KeyStoreContent = @var.Target_database_tls_config_key_store_content,
-    ///                 StorePassword = @var.Target_database_tls_config_store_password,
-    ///                 TrustStoreContent = @var.Target_database_tls_config_trust_store_content,
-    ///             },
-    ///         });
-    ///     }
+    ///             DatabaseType = @var.Target_database_database_details_database_type,
+    ///             InfrastructureType = @var.Target_database_database_details_infrastructure_type,
+    ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+    ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
+    ///             InstanceId = oci_core_instance.Test_instance.Id,
+    ///             IpAddresses = @var.Target_database_database_details_ip_addresses,
+    ///             ListenerPort = @var.Target_database_database_details_listener_port,
+    ///             ServiceName = oci_core_service.Test_service.Name,
+    ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+    ///         },
+    ///         ConnectionOption = new Oci.DataSafe.Inputs.TargetDatabaseConnectionOptionArgs
+    ///         {
+    ///             ConnectionType = @var.Target_database_connection_option_connection_type,
+    ///             DatasafePrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+    ///             OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
+    ///         },
+    ///         Credentials = new Oci.DataSafe.Inputs.TargetDatabaseCredentialsArgs
+    ///         {
+    ///             Password = @var.Target_database_credentials_password,
+    ///             UserName = oci_identity_user.Test_user.Name,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Target_database_description,
+    ///         DisplayName = @var.Target_database_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         TlsConfig = new Oci.DataSafe.Inputs.TargetDatabaseTlsConfigArgs
+    ///         {
+    ///             Status = @var.Target_database_tls_config_status,
+    ///             CertificateStoreType = @var.Target_database_tls_config_certificate_store_type,
+    ///             KeyStoreContent = @var.Target_database_tls_config_key_store_content,
+    ///             StorePassword = @var.Target_database_tls_config_store_password,
+    ///             TrustStoreContent = @var.Target_database_tls_config_trust_store_content,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -83,7 +81,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/targetDatabase:TargetDatabase")]
-    public partial class TargetDatabase : Pulumi.CustomResource
+    public partial class TargetDatabase : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCIDs of associated resources like Database, Data Safe private endpoint etc.
@@ -219,7 +217,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class TargetDatabaseArgs : Pulumi.ResourceArgs
+    public sealed class TargetDatabaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment in which to create the Data Safe target database.
@@ -290,9 +288,10 @@ namespace Pulumi.Oci.DataSafe
         public TargetDatabaseArgs()
         {
         }
+        public static new TargetDatabaseArgs Empty => new TargetDatabaseArgs();
     }
 
-    public sealed class TargetDatabaseState : Pulumi.ResourceArgs
+    public sealed class TargetDatabaseState : global::Pulumi.ResourceArgs
     {
         [Input("associatedResourceIds")]
         private InputList<string>? _associatedResourceIds;
@@ -411,5 +410,6 @@ namespace Pulumi.Oci.DataSafe
         public TargetDatabaseState()
         {
         }
+        public static new TargetDatabaseState Empty => new TargetDatabaseState();
     }
 }

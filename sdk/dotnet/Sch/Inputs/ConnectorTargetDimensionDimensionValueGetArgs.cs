@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Sch.Inputs
 {
 
-    public sealed class ConnectorTargetDimensionDimensionValueGetArgs : Pulumi.ResourceArgs
+    public sealed class ConnectorTargetDimensionDimensionValueGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The type descriminator.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Sch.Inputs
         public ConnectorTargetDimensionDimensionValueGetArgs()
         {
         }
+        public static new ConnectorTargetDimensionDimensionValueGetArgs Empty => new ConnectorTargetDimensionDimensionValueGetArgs();
     }
 }

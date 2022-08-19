@@ -24,6 +24,45 @@ import javax.annotation.Nullable;
  * Creates a new Model.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.AiAnomalyDetection.Model;
+ * import com.pulumi.oci.AiAnomalyDetection.ModelArgs;
+ * import com.pulumi.oci.AiAnomalyDetection.inputs.ModelModelTrainingDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testModel = new Model(&#34;testModel&#34;, ModelArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .modelTrainingDetails(ModelModelTrainingDetailsArgs.builder()
+ *                 .dataAssetIds(var_.model_model_training_details_data_asset_ids())
+ *                 .targetFap(var_.model_model_training_details_target_fap())
+ *                 .trainingFraction(var_.model_model_training_details_training_fraction())
+ *                 .build())
+ *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.model_description())
+ *             .displayName(var_.model_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

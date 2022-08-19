@@ -17,335 +17,333 @@ namespace Pulumi.Oci.ApiGateway
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDeployment = new Oci.ApiGateway.Deployment("testDeployment", new()
     ///     {
-    ///         var testDeployment = new Oci.ApiGateway.Deployment("testDeployment", new Oci.ApiGateway.DeploymentArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         GatewayId = oci_apigateway_gateway.Test_gateway.Id,
+    ///         PathPrefix = @var.Deployment_path_prefix,
+    ///         Specification = new Oci.ApiGateway.Inputs.DeploymentSpecificationArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             GatewayId = oci_apigateway_gateway.Test_gateway.Id,
-    ///             PathPrefix = @var.Deployment_path_prefix,
-    ///             Specification = new Oci.ApiGateway.Inputs.DeploymentSpecificationArgs
+    ///             LoggingPolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationLoggingPoliciesArgs
     ///             {
-    ///                 LoggingPolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationLoggingPoliciesArgs
+    ///                 AccessLog = new Oci.ApiGateway.Inputs.DeploymentSpecificationLoggingPoliciesAccessLogArgs
     ///                 {
-    ///                     AccessLog = new Oci.ApiGateway.Inputs.DeploymentSpecificationLoggingPoliciesAccessLogArgs
+    ///                     IsEnabled = @var.Deployment_specification_logging_policies_access_log_is_enabled,
+    ///                 },
+    ///                 ExecutionLog = new Oci.ApiGateway.Inputs.DeploymentSpecificationLoggingPoliciesExecutionLogArgs
+    ///                 {
+    ///                     IsEnabled = @var.Deployment_specification_logging_policies_execution_log_is_enabled,
+    ///                     LogLevel = @var.Deployment_specification_logging_policies_execution_log_log_level,
+    ///                 },
+    ///             },
+    ///             RequestPolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesArgs
+    ///             {
+    ///                 Authentication = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationArgs
+    ///                 {
+    ///                     Type = @var.Deployment_specification_request_policies_authentication_type,
+    ///                     Audiences = @var.Deployment_specification_request_policies_authentication_audiences,
+    ///                     FunctionId = oci_functions_function.Test_function.Id,
+    ///                     IsAnonymousAccessAllowed = @var.Deployment_specification_request_policies_authentication_is_anonymous_access_allowed,
+    ///                     Issuers = @var.Deployment_specification_request_policies_authentication_issuers,
+    ///                     MaxClockSkewInSeconds = @var.Deployment_specification_request_policies_authentication_max_clock_skew_in_seconds,
+    ///                     PublicKeys = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs
     ///                     {
-    ///                         IsEnabled = @var.Deployment_specification_logging_policies_access_log_is_enabled,
+    ///                         Type = @var.Deployment_specification_request_policies_authentication_public_keys_type,
+    ///                         IsSslVerifyDisabled = @var.Deployment_specification_request_policies_authentication_public_keys_is_ssl_verify_disabled,
+    ///                         Keys = new[]
+    ///                         {
+    ///                             new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs
+    ///                             {
+    ///                                 Format = @var.Deployment_specification_request_policies_authentication_public_keys_keys_format,
+    ///                                 Alg = @var.Deployment_specification_request_policies_authentication_public_keys_keys_alg,
+    ///                                 E = @var.Deployment_specification_request_policies_authentication_public_keys_keys_e,
+    ///                                 Key = @var.Deployment_specification_request_policies_authentication_public_keys_keys_key,
+    ///                                 KeyOps = @var.Deployment_specification_request_policies_authentication_public_keys_keys_key_ops,
+    ///                                 Kid = @var.Deployment_specification_request_policies_authentication_public_keys_keys_kid,
+    ///                                 Kty = @var.Deployment_specification_request_policies_authentication_public_keys_keys_kty,
+    ///                                 N = @var.Deployment_specification_request_policies_authentication_public_keys_keys_n,
+    ///                                 Use = @var.Deployment_specification_request_policies_authentication_public_keys_keys_use,
+    ///                             },
+    ///                         },
+    ///                         MaxCacheDurationInHours = @var.Deployment_specification_request_policies_authentication_public_keys_max_cache_duration_in_hours,
+    ///                         Uri = @var.Deployment_specification_request_policies_authentication_public_keys_uri,
     ///                     },
-    ///                     ExecutionLog = new Oci.ApiGateway.Inputs.DeploymentSpecificationLoggingPoliciesExecutionLogArgs
+    ///                     TokenAuthScheme = @var.Deployment_specification_request_policies_authentication_token_auth_scheme,
+    ///                     TokenHeader = @var.Deployment_specification_request_policies_authentication_token_header,
+    ///                     TokenQueryParam = @var.Deployment_specification_request_policies_authentication_token_query_param,
+    ///                     VerifyClaims = new[]
     ///                     {
-    ///                         IsEnabled = @var.Deployment_specification_logging_policies_execution_log_is_enabled,
-    ///                         LogLevel = @var.Deployment_specification_logging_policies_execution_log_log_level,
+    ///                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs
+    ///                         {
+    ///                             IsRequired = @var.Deployment_specification_request_policies_authentication_verify_claims_is_required,
+    ///                             Key = @var.Deployment_specification_request_policies_authentication_verify_claims_key,
+    ///                             Values = @var.Deployment_specification_request_policies_authentication_verify_claims_values,
+    ///                         },
     ///                     },
     ///                 },
-    ///                 RequestPolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesArgs
+    ///                 Cors = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesCorsArgs
     ///                 {
-    ///                     Authentication = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationArgs
+    ///                     AllowedOrigins = @var.Deployment_specification_request_policies_cors_allowed_origins,
+    ///                     AllowedHeaders = @var.Deployment_specification_request_policies_cors_allowed_headers,
+    ///                     AllowedMethods = @var.Deployment_specification_request_policies_cors_allowed_methods,
+    ///                     ExposedHeaders = @var.Deployment_specification_request_policies_cors_exposed_headers,
+    ///                     IsAllowCredentialsEnabled = @var.Deployment_specification_request_policies_cors_is_allow_credentials_enabled,
+    ///                     MaxAgeInSeconds = @var.Deployment_specification_request_policies_cors_max_age_in_seconds,
+    ///                 },
+    ///                 MutualTls = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesMutualTlsArgs
+    ///                 {
+    ///                     AllowedSans = @var.Deployment_specification_request_policies_mutual_tls_allowed_sans,
+    ///                     IsVerifiedCertificateRequired = @var.Deployment_specification_request_policies_mutual_tls_is_verified_certificate_required,
+    ///                 },
+    ///                 RateLimiting = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesRateLimitingArgs
+    ///                 {
+    ///                     RateInRequestsPerSecond = @var.Deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second,
+    ///                     RateKey = @var.Deployment_specification_request_policies_rate_limiting_rate_key,
+    ///                 },
+    ///                 UsagePlans = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesUsagePlansArgs
+    ///                 {
+    ///                     TokenLocations = @var.Deployment_specification_request_policies_usage_plans_token_locations,
+    ///                 },
+    ///             },
+    ///             Routes = new[]
+    ///             {
+    ///                 new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteArgs
+    ///                 {
+    ///                     Backend = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteBackendArgs
     ///                     {
-    ///                         Type = @var.Deployment_specification_request_policies_authentication_type,
-    ///                         Audiences = @var.Deployment_specification_request_policies_authentication_audiences,
+    ///                         Type = @var.Deployment_specification_routes_backend_type,
+    ///                         Body = @var.Deployment_specification_routes_backend_body,
+    ///                         ConnectTimeoutInSeconds = @var.Deployment_specification_routes_backend_connect_timeout_in_seconds,
     ///                         FunctionId = oci_functions_function.Test_function.Id,
-    ///                         IsAnonymousAccessAllowed = @var.Deployment_specification_request_policies_authentication_is_anonymous_access_allowed,
-    ///                         Issuers = @var.Deployment_specification_request_policies_authentication_issuers,
-    ///                         MaxClockSkewInSeconds = @var.Deployment_specification_request_policies_authentication_max_clock_skew_in_seconds,
-    ///                         PublicKeys = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs
+    ///                         Headers = new[]
     ///                         {
-    ///                             Type = @var.Deployment_specification_request_policies_authentication_public_keys_type,
-    ///                             IsSslVerifyDisabled = @var.Deployment_specification_request_policies_authentication_public_keys_is_ssl_verify_disabled,
-    ///                             Keys = 
+    ///                             new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteBackendHeaderArgs
     ///                             {
-    ///                                 new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs
-    ///                                 {
-    ///                                     Format = @var.Deployment_specification_request_policies_authentication_public_keys_keys_format,
-    ///                                     Alg = @var.Deployment_specification_request_policies_authentication_public_keys_keys_alg,
-    ///                                     E = @var.Deployment_specification_request_policies_authentication_public_keys_keys_e,
-    ///                                     Key = @var.Deployment_specification_request_policies_authentication_public_keys_keys_key,
-    ///                                     KeyOps = @var.Deployment_specification_request_policies_authentication_public_keys_keys_key_ops,
-    ///                                     Kid = @var.Deployment_specification_request_policies_authentication_public_keys_keys_kid,
-    ///                                     Kty = @var.Deployment_specification_request_policies_authentication_public_keys_keys_kty,
-    ///                                     N = @var.Deployment_specification_request_policies_authentication_public_keys_keys_n,
-    ///                                     Use = @var.Deployment_specification_request_policies_authentication_public_keys_keys_use,
-    ///                                 },
-    ///                             },
-    ///                             MaxCacheDurationInHours = @var.Deployment_specification_request_policies_authentication_public_keys_max_cache_duration_in_hours,
-    ///                             Uri = @var.Deployment_specification_request_policies_authentication_public_keys_uri,
-    ///                         },
-    ///                         TokenAuthScheme = @var.Deployment_specification_request_policies_authentication_token_auth_scheme,
-    ///                         TokenHeader = @var.Deployment_specification_request_policies_authentication_token_header,
-    ///                         TokenQueryParam = @var.Deployment_specification_request_policies_authentication_token_query_param,
-    ///                         VerifyClaims = 
-    ///                         {
-    ///                             new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs
-    ///                             {
-    ///                                 IsRequired = @var.Deployment_specification_request_policies_authentication_verify_claims_is_required,
-    ///                                 Key = @var.Deployment_specification_request_policies_authentication_verify_claims_key,
-    ///                                 Values = @var.Deployment_specification_request_policies_authentication_verify_claims_values,
+    ///                                 Name = @var.Deployment_specification_routes_backend_headers_name,
+    ///                                 Value = @var.Deployment_specification_routes_backend_headers_value,
     ///                             },
     ///                         },
+    ///                         IsSslVerifyDisabled = @var.Deployment_specification_routes_backend_is_ssl_verify_disabled,
+    ///                         ReadTimeoutInSeconds = @var.Deployment_specification_routes_backend_read_timeout_in_seconds,
+    ///                         SendTimeoutInSeconds = @var.Deployment_specification_routes_backend_send_timeout_in_seconds,
+    ///                         Status = @var.Deployment_specification_routes_backend_status,
+    ///                         Url = @var.Deployment_specification_routes_backend_url,
     ///                     },
-    ///                     Cors = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesCorsArgs
+    ///                     Path = @var.Deployment_specification_routes_path,
+    ///                     LoggingPolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteLoggingPoliciesArgs
     ///                     {
-    ///                         AllowedOrigins = @var.Deployment_specification_request_policies_cors_allowed_origins,
-    ///                         AllowedHeaders = @var.Deployment_specification_request_policies_cors_allowed_headers,
-    ///                         AllowedMethods = @var.Deployment_specification_request_policies_cors_allowed_methods,
-    ///                         ExposedHeaders = @var.Deployment_specification_request_policies_cors_exposed_headers,
-    ///                         IsAllowCredentialsEnabled = @var.Deployment_specification_request_policies_cors_is_allow_credentials_enabled,
-    ///                         MaxAgeInSeconds = @var.Deployment_specification_request_policies_cors_max_age_in_seconds,
-    ///                     },
-    ///                     MutualTls = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesMutualTlsArgs
-    ///                     {
-    ///                         AllowedSans = @var.Deployment_specification_request_policies_mutual_tls_allowed_sans,
-    ///                         IsVerifiedCertificateRequired = @var.Deployment_specification_request_policies_mutual_tls_is_verified_certificate_required,
-    ///                     },
-    ///                     RateLimiting = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesRateLimitingArgs
-    ///                     {
-    ///                         RateInRequestsPerSecond = @var.Deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second,
-    ///                         RateKey = @var.Deployment_specification_request_policies_rate_limiting_rate_key,
-    ///                     },
-    ///                     UsagePlans = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesUsagePlansArgs
-    ///                     {
-    ///                         TokenLocations = @var.Deployment_specification_request_policies_usage_plans_token_locations,
-    ///                     },
-    ///                 },
-    ///                 Routes = 
-    ///                 {
-    ///                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteArgs
-    ///                     {
-    ///                         Backend = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteBackendArgs
+    ///                         AccessLog = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs
     ///                         {
-    ///                             Type = @var.Deployment_specification_routes_backend_type,
-    ///                             Body = @var.Deployment_specification_routes_backend_body,
-    ///                             ConnectTimeoutInSeconds = @var.Deployment_specification_routes_backend_connect_timeout_in_seconds,
-    ///                             FunctionId = oci_functions_function.Test_function.Id,
-    ///                             Headers = 
-    ///                             {
-    ///                                 new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteBackendHeaderArgs
-    ///                                 {
-    ///                                     Name = @var.Deployment_specification_routes_backend_headers_name,
-    ///                                     Value = @var.Deployment_specification_routes_backend_headers_value,
-    ///                                 },
-    ///                             },
-    ///                             IsSslVerifyDisabled = @var.Deployment_specification_routes_backend_is_ssl_verify_disabled,
-    ///                             ReadTimeoutInSeconds = @var.Deployment_specification_routes_backend_read_timeout_in_seconds,
-    ///                             SendTimeoutInSeconds = @var.Deployment_specification_routes_backend_send_timeout_in_seconds,
-    ///                             Status = @var.Deployment_specification_routes_backend_status,
-    ///                             Url = @var.Deployment_specification_routes_backend_url,
+    ///                             IsEnabled = @var.Deployment_specification_routes_logging_policies_access_log_is_enabled,
     ///                         },
-    ///                         Path = @var.Deployment_specification_routes_path,
-    ///                         LoggingPolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteLoggingPoliciesArgs
+    ///                         ExecutionLog = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs
     ///                         {
-    ///                             AccessLog = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs
-    ///                             {
-    ///                                 IsEnabled = @var.Deployment_specification_routes_logging_policies_access_log_is_enabled,
-    ///                             },
-    ///                             ExecutionLog = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs
-    ///                             {
-    ///                                 IsEnabled = @var.Deployment_specification_routes_logging_policies_execution_log_is_enabled,
-    ///                                 LogLevel = @var.Deployment_specification_routes_logging_policies_execution_log_log_level,
-    ///                             },
+    ///                             IsEnabled = @var.Deployment_specification_routes_logging_policies_execution_log_is_enabled,
+    ///                             LogLevel = @var.Deployment_specification_routes_logging_policies_execution_log_log_level,
     ///                         },
-    ///                         Methods = @var.Deployment_specification_routes_methods,
-    ///                         RequestPolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesArgs
+    ///                     },
+    ///                     Methods = @var.Deployment_specification_routes_methods,
+    ///                     RequestPolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesArgs
+    ///                     {
+    ///                         Authorization = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs
     ///                         {
-    ///                             Authorization = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs
+    ///                             AllowedScopes = @var.Deployment_specification_routes_request_policies_authorization_allowed_scope,
+    ///                             Type = @var.Deployment_specification_routes_request_policies_authorization_type,
+    ///                         },
+    ///                         BodyValidation = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs
+    ///                         {
+    ///                             Contents = new[]
     ///                             {
-    ///                                 AllowedScopes = @var.Deployment_specification_routes_request_policies_authorization_allowed_scope,
-    ///                                 Type = @var.Deployment_specification_routes_request_policies_authorization_type,
-    ///                             },
-    ///                             BodyValidation = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs
-    ///                             {
-    ///                                 Contents = 
+    ///                                 new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs
     ///                                 {
-    ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs
+    ///                                     MediaType = @var.Deployment_specification_routes_request_policies_body_validation_content_media_type,
+    ///                                     ValidationType = @var.Deployment_specification_routes_request_policies_body_validation_content_validation_type,
+    ///                                 },
+    ///                             },
+    ///                             Required = @var.Deployment_specification_routes_request_policies_body_validation_required,
+    ///                             ValidationMode = @var.Deployment_specification_routes_request_policies_body_validation_validation_mode,
+    ///                         },
+    ///                         Cors = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesCorsArgs
+    ///                         {
+    ///                             AllowedOrigins = @var.Deployment_specification_routes_request_policies_cors_allowed_origins,
+    ///                             AllowedHeaders = @var.Deployment_specification_routes_request_policies_cors_allowed_headers,
+    ///                             AllowedMethods = @var.Deployment_specification_routes_request_policies_cors_allowed_methods,
+    ///                             ExposedHeaders = @var.Deployment_specification_routes_request_policies_cors_exposed_headers,
+    ///                             IsAllowCredentialsEnabled = @var.Deployment_specification_routes_request_policies_cors_is_allow_credentials_enabled,
+    ///                             MaxAgeInSeconds = @var.Deployment_specification_routes_request_policies_cors_max_age_in_seconds,
+    ///                         },
+    ///                         HeaderTransformations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs
+    ///                         {
+    ///                             FilterHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgs
+    ///                             {
+    ///                                 Items = new[]
+    ///                                 {
+    ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs
     ///                                     {
-    ///                                         MediaType = @var.Deployment_specification_routes_request_policies_body_validation_content_media_type,
-    ///                                         ValidationType = @var.Deployment_specification_routes_request_policies_body_validation_content_validation_type,
+    ///                                         Name = @var.Deployment_specification_routes_request_policies_header_transformations_filter_headers_items_name,
     ///                                     },
     ///                                 },
-    ///                                 Required = @var.Deployment_specification_routes_request_policies_body_validation_required,
-    ///                                 ValidationMode = @var.Deployment_specification_routes_request_policies_body_validation_validation_mode,
+    ///                                 Type = @var.Deployment_specification_routes_request_policies_header_transformations_filter_headers_type,
     ///                             },
-    ///                             Cors = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesCorsArgs
+    ///                             RenameHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgs
     ///                             {
-    ///                                 AllowedOrigins = @var.Deployment_specification_routes_request_policies_cors_allowed_origins,
-    ///                                 AllowedHeaders = @var.Deployment_specification_routes_request_policies_cors_allowed_headers,
-    ///                                 AllowedMethods = @var.Deployment_specification_routes_request_policies_cors_allowed_methods,
-    ///                                 ExposedHeaders = @var.Deployment_specification_routes_request_policies_cors_exposed_headers,
-    ///                                 IsAllowCredentialsEnabled = @var.Deployment_specification_routes_request_policies_cors_is_allow_credentials_enabled,
-    ///                                 MaxAgeInSeconds = @var.Deployment_specification_routes_request_policies_cors_max_age_in_seconds,
-    ///                             },
-    ///                             HeaderTransformations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs
-    ///                             {
-    ///                                 FilterHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersArgs
+    ///                                 Items = new[]
     ///                                 {
-    ///                                     Items = 
+    ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgs
     ///                                     {
-    ///                                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs
-    ///                                         {
-    ///                                             Name = @var.Deployment_specification_routes_request_policies_header_transformations_filter_headers_items_name,
-    ///                                         },
-    ///                                     },
-    ///                                     Type = @var.Deployment_specification_routes_request_policies_header_transformations_filter_headers_type,
-    ///                                 },
-    ///                                 RenameHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgs
-    ///                                 {
-    ///                                     Items = 
-    ///                                     {
-    ///                                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgs
-    ///                                         {
-    ///                                             From = @var.Deployment_specification_routes_request_policies_header_transformations_rename_headers_items_from,
-    ///                                             To = @var.Deployment_specification_routes_request_policies_header_transformations_rename_headers_items_to,
-    ///                                         },
-    ///                                     },
-    ///                                 },
-    ///                                 SetHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgs
-    ///                                 {
-    ///                                     Items = 
-    ///                                     {
-    ///                                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgs
-    ///                                         {
-    ///                                             Name = @var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_name,
-    ///                                             Values = @var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_values,
-    ///                                             IfExists = @var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_if_exists,
-    ///                                         },
+    ///                                         From = @var.Deployment_specification_routes_request_policies_header_transformations_rename_headers_items_from,
+    ///                                         To = @var.Deployment_specification_routes_request_policies_header_transformations_rename_headers_items_to,
     ///                                     },
     ///                                 },
     ///                             },
-    ///                             HeaderValidations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs
+    ///                             SetHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersArgs
     ///                             {
-    ///                                 Headers = 
+    ///                                 Items = new[]
     ///                                 {
-    ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs
+    ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgs
     ///                                     {
-    ///                                         Name = @var.Deployment_specification_routes_request_policies_header_validations_headers_name,
-    ///                                         Required = @var.Deployment_specification_routes_request_policies_header_validations_headers_required,
+    ///                                         Name = @var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_name,
+    ///                                         Values = @var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_values,
+    ///                                         IfExists = @var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_if_exists,
     ///                                     },
     ///                                 },
-    ///                                 ValidationMode = @var.Deployment_specification_routes_request_policies_header_validations_validation_mode,
-    ///                             },
-    ///                             QueryParameterTransformations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgs
-    ///                             {
-    ///                                 FilterQueryParameters = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgs
-    ///                                 {
-    ///                                     Items = 
-    ///                                     {
-    ///                                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs
-    ///                                         {
-    ///                                             Name = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_filter_query_parameters_items_name,
-    ///                                         },
-    ///                                     },
-    ///                                     Type = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_filter_query_parameters_type,
-    ///                                 },
-    ///                                 RenameQueryParameters = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs
-    ///                                 {
-    ///                                     Items = 
-    ///                                     {
-    ///                                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs
-    ///                                         {
-    ///                                             From = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_rename_query_parameters_items_from,
-    ///                                             To = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_rename_query_parameters_items_to,
-    ///                                         },
-    ///                                     },
-    ///                                 },
-    ///                                 SetQueryParameters = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgs
-    ///                                 {
-    ///                                     Items = 
-    ///                                     {
-    ///                                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgs
-    ///                                         {
-    ///                                             Name = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_name,
-    ///                                             Values = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_values,
-    ///                                             IfExists = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_if_exists,
-    ///                                         },
-    ///                                     },
-    ///                                 },
-    ///                             },
-    ///                             QueryParameterValidations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs
-    ///                             {
-    ///                                 Parameters = 
-    ///                                 {
-    ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs
-    ///                                     {
-    ///                                         Name = @var.Deployment_specification_routes_request_policies_query_parameter_validations_parameters_name,
-    ///                                         Required = @var.Deployment_specification_routes_request_policies_query_parameter_validations_parameters_required,
-    ///                                     },
-    ///                                 },
-    ///                                 ValidationMode = @var.Deployment_specification_routes_request_policies_query_parameter_validations_validation_mode,
-    ///                             },
-    ///                             ResponseCacheLookup = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs
-    ///                             {
-    ///                                 Type = @var.Deployment_specification_routes_request_policies_response_cache_lookup_type,
-    ///                                 CacheKeyAdditions = @var.Deployment_specification_routes_request_policies_response_cache_lookup_cache_key_additions,
-    ///                                 IsEnabled = @var.Deployment_specification_routes_request_policies_response_cache_lookup_is_enabled,
-    ///                                 IsPrivateCachingEnabled = @var.Deployment_specification_routes_request_policies_response_cache_lookup_is_private_caching_enabled,
     ///                             },
     ///                         },
-    ///                         ResponsePolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesArgs
+    ///                         HeaderValidations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs
     ///                         {
-    ///                             HeaderTransformations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs
+    ///                             Headers = new[]
     ///                             {
-    ///                                 FilterHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgs
+    ///                                 new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs
     ///                                 {
-    ///                                     Items = 
-    ///                                     {
-    ///                                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgs
-    ///                                         {
-    ///                                             Name = @var.Deployment_specification_routes_response_policies_header_transformations_filter_headers_items_name,
-    ///                                         },
-    ///                                     },
-    ///                                     Type = @var.Deployment_specification_routes_response_policies_header_transformations_filter_headers_type,
+    ///                                     Name = @var.Deployment_specification_routes_request_policies_header_validations_headers_name,
+    ///                                     Required = @var.Deployment_specification_routes_request_policies_header_validations_headers_required,
     ///                                 },
-    ///                                 RenameHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgs
+    ///                             },
+    ///                             ValidationMode = @var.Deployment_specification_routes_request_policies_header_validations_validation_mode,
+    ///                         },
+    ///                         QueryParameterTransformations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgs
+    ///                         {
+    ///                             FilterQueryParameters = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgs
+    ///                             {
+    ///                                 Items = new[]
     ///                                 {
-    ///                                     Items = 
+    ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs
     ///                                     {
-    ///                                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs
-    ///                                         {
-    ///                                             From = @var.Deployment_specification_routes_response_policies_header_transformations_rename_headers_items_from,
-    ///                                             To = @var.Deployment_specification_routes_response_policies_header_transformations_rename_headers_items_to,
-    ///                                         },
+    ///                                         Name = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_filter_query_parameters_items_name,
     ///                                     },
     ///                                 },
-    ///                                 SetHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgs
+    ///                                 Type = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_filter_query_parameters_type,
+    ///                             },
+    ///                             RenameQueryParameters = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs
+    ///                             {
+    ///                                 Items = new[]
     ///                                 {
-    ///                                     Items = 
+    ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs
     ///                                     {
-    ///                                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgs
-    ///                                         {
-    ///                                             Name = @var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_name,
-    ///                                             Values = @var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_values,
-    ///                                             IfExists = @var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_if_exists,
-    ///                                         },
+    ///                                         From = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_rename_query_parameters_items_from,
+    ///                                         To = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_rename_query_parameters_items_to,
     ///                                     },
     ///                                 },
     ///                             },
-    ///                             ResponseCacheStore = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs
+    ///                             SetQueryParameters = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersArgs
     ///                             {
-    ///                                 TimeToLiveInSeconds = @var.Deployment_specification_routes_response_policies_response_cache_store_time_to_live_in_seconds,
-    ///                                 Type = @var.Deployment_specification_routes_response_policies_response_cache_store_type,
+    ///                                 Items = new[]
+    ///                                 {
+    ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgs
+    ///                                     {
+    ///                                         Name = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_name,
+    ///                                         Values = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_values,
+    ///                                         IfExists = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_if_exists,
+    ///                                     },
+    ///                                 },
     ///                             },
+    ///                         },
+    ///                         QueryParameterValidations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs
+    ///                         {
+    ///                             Parameters = new[]
+    ///                             {
+    ///                                 new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs
+    ///                                 {
+    ///                                     Name = @var.Deployment_specification_routes_request_policies_query_parameter_validations_parameters_name,
+    ///                                     Required = @var.Deployment_specification_routes_request_policies_query_parameter_validations_parameters_required,
+    ///                                 },
+    ///                             },
+    ///                             ValidationMode = @var.Deployment_specification_routes_request_policies_query_parameter_validations_validation_mode,
+    ///                         },
+    ///                         ResponseCacheLookup = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs
+    ///                         {
+    ///                             Type = @var.Deployment_specification_routes_request_policies_response_cache_lookup_type,
+    ///                             CacheKeyAdditions = @var.Deployment_specification_routes_request_policies_response_cache_lookup_cache_key_additions,
+    ///                             IsEnabled = @var.Deployment_specification_routes_request_policies_response_cache_lookup_is_enabled,
+    ///                             IsPrivateCachingEnabled = @var.Deployment_specification_routes_request_policies_response_cache_lookup_is_private_caching_enabled,
+    ///                         },
+    ///                     },
+    ///                     ResponsePolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesArgs
+    ///                     {
+    ///                         HeaderTransformations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsArgs
+    ///                         {
+    ///                             FilterHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersArgs
+    ///                             {
+    ///                                 Items = new[]
+    ///                                 {
+    ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgs
+    ///                                     {
+    ///                                         Name = @var.Deployment_specification_routes_response_policies_header_transformations_filter_headers_items_name,
+    ///                                     },
+    ///                                 },
+    ///                                 Type = @var.Deployment_specification_routes_response_policies_header_transformations_filter_headers_type,
+    ///                             },
+    ///                             RenameHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgs
+    ///                             {
+    ///                                 Items = new[]
+    ///                                 {
+    ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs
+    ///                                     {
+    ///                                         From = @var.Deployment_specification_routes_response_policies_header_transformations_rename_headers_items_from,
+    ///                                         To = @var.Deployment_specification_routes_response_policies_header_transformations_rename_headers_items_to,
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             SetHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersArgs
+    ///                             {
+    ///                                 Items = new[]
+    ///                                 {
+    ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgs
+    ///                                     {
+    ///                                         Name = @var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_name,
+    ///                                         Values = @var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_values,
+    ///                                         IfExists = @var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_if_exists,
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         ResponseCacheStore = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs
+    ///                         {
+    ///                             TimeToLiveInSeconds = @var.Deployment_specification_routes_response_policies_response_cache_store_time_to_live_in_seconds,
+    ///                             Type = @var.Deployment_specification_routes_response_policies_response_cache_store_type,
     ///                         },
     ///                     },
     ///                 },
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Deployment_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Deployment_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -357,7 +355,7 @@ namespace Pulumi.Oci.ApiGateway
     /// ```
     /// </summary>
     [OciResourceType("oci:ApiGateway/deployment:Deployment")]
-    public partial class Deployment : Pulumi.CustomResource
+    public partial class Deployment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
@@ -475,7 +473,7 @@ namespace Pulumi.Oci.ApiGateway
         }
     }
 
-    public sealed class DeploymentArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
@@ -534,9 +532,10 @@ namespace Pulumi.Oci.ApiGateway
         public DeploymentArgs()
         {
         }
+        public static new DeploymentArgs Empty => new DeploymentArgs();
     }
 
-    public sealed class DeploymentState : Pulumi.ResourceArgs
+    public sealed class DeploymentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
@@ -625,5 +624,6 @@ namespace Pulumi.Oci.ApiGateway
         public DeploymentState()
         {
         }
+        public static new DeploymentState Empty => new DeploymentState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class GetBackendsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetBackendsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public GetBackendsFilterInputArgs()
         {
         }
+        public static new GetBackendsFilterInputArgs Empty => new GetBackendsFilterInputArgs();
     }
 }

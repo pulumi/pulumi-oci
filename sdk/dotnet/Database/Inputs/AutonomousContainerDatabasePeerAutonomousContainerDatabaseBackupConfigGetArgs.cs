@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("backupDestinationDetails")]
         private InputList<Inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailGetArgs>? _backupDestinationDetails;
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigGetArgs()
         {
         }
+        public static new AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigGetArgs Empty => new AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigGetArgs();
     }
 }

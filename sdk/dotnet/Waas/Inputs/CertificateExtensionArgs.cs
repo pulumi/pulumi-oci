@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class CertificateExtensionArgs : Pulumi.ResourceArgs
+    public sealed class CertificateExtensionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public CertificateExtensionArgs()
         {
         }
+        public static new CertificateExtensionArgs Empty => new CertificateExtensionArgs();
     }
 }

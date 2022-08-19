@@ -25,24 +25,22 @@ namespace Pulumi.Oci.Streaming
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testStreams = Oci.Streaming.GetStreams.Invoke(new()
         ///     {
-        ///         var testStreams = Output.Create(Oci.Streaming.GetStreams.InvokeAsync(new Oci.Streaming.GetStreamsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Stream_id,
-        ///             Name = @var.Stream_name,
-        ///             State = @var.Stream_state,
-        ///             StreamPoolId = oci_streaming_stream_pool.Test_stream_pool.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Stream_id,
+        ///         Name = @var.Stream_name,
+        ///         State = @var.Stream_state,
+        ///         StreamPoolId = oci_streaming_stream_pool.Test_stream_pool.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -64,24 +62,22 @@ namespace Pulumi.Oci.Streaming
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testStreams = Oci.Streaming.GetStreams.Invoke(new()
         ///     {
-        ///         var testStreams = Output.Create(Oci.Streaming.GetStreams.InvokeAsync(new Oci.Streaming.GetStreamsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Stream_id,
-        ///             Name = @var.Stream_name,
-        ///             State = @var.Stream_state,
-        ///             StreamPoolId = oci_streaming_stream_pool.Test_stream_pool.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Stream_id,
+        ///         Name = @var.Stream_name,
+        ///         State = @var.Stream_state,
+        ///         StreamPoolId = oci_streaming_stream_pool.Test_stream_pool.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.Streaming
     }
 
 
-    public sealed class GetStreamsArgs : Pulumi.InvokeArgs
+    public sealed class GetStreamsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.Streaming
         public GetStreamsArgs()
         {
         }
+        public static new GetStreamsArgs Empty => new GetStreamsArgs();
     }
 
-    public sealed class GetStreamsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetStreamsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
@@ -179,6 +176,7 @@ namespace Pulumi.Oci.Streaming
         public GetStreamsInvokeArgs()
         {
         }
+        public static new GetStreamsInvokeArgs Empty => new GetStreamsInvokeArgs();
     }
 
 

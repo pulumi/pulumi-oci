@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class GetDedicatedVantagePointsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetDedicatedVantagePointsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only the resources that match the entire name.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public GetDedicatedVantagePointsFilterArgs()
         {
         }
+        public static new GetDedicatedVantagePointsFilterArgs Empty => new GetDedicatedVantagePointsFilterArgs();
     }
 }

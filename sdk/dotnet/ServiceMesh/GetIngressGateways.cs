@@ -22,24 +22,22 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIngressGateways = Oci.ServiceMesh.GetIngressGateways.Invoke(new()
         ///     {
-        ///         var testIngressGateways = Output.Create(Oci.ServiceMesh.GetIngressGateways.InvokeAsync(new Oci.ServiceMesh.GetIngressGatewaysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Ingress_gateway_id,
-        ///             MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-        ///             Name = @var.Ingress_gateway_name,
-        ///             State = @var.Ingress_gateway_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Ingress_gateway_id,
+        ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+        ///         Name = @var.Ingress_gateway_name,
+        ///         State = @var.Ingress_gateway_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIngressGateways = Oci.ServiceMesh.GetIngressGateways.Invoke(new()
         ///     {
-        ///         var testIngressGateways = Output.Create(Oci.ServiceMesh.GetIngressGateways.InvokeAsync(new Oci.ServiceMesh.GetIngressGatewaysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Ingress_gateway_id,
-        ///             MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-        ///             Name = @var.Ingress_gateway_name,
-        ///             State = @var.Ingress_gateway_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Ingress_gateway_id,
+        ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+        ///         Name = @var.Ingress_gateway_name,
+        ///         State = @var.Ingress_gateway_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetIngressGatewaysArgs : Pulumi.InvokeArgs
+    public sealed class GetIngressGatewaysArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetIngressGatewaysArgs()
         {
         }
+        public static new GetIngressGatewaysArgs Empty => new GetIngressGatewaysArgs();
     }
 
-    public sealed class GetIngressGatewaysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIngressGatewaysInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetIngressGatewaysInvokeArgs()
         {
         }
+        public static new GetIngressGatewaysInvokeArgs Empty => new GetIngressGatewaysInvokeArgs();
     }
 
 

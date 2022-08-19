@@ -10,10 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataLabellingService.Inputs
 {
 
-    public sealed class DatasetInitialRecordGenerationConfigurationGetArgs : Pulumi.ResourceArgs
+    public sealed class DatasetInitialRecordGenerationConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         public DatasetInitialRecordGenerationConfigurationGetArgs()
         {
         }
+        public static new DatasetInitialRecordGenerationConfigurationGetArgs Empty => new DatasetInitialRecordGenerationConfigurationGetArgs();
     }
 }

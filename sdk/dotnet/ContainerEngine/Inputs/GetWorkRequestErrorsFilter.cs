@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class GetWorkRequestErrorsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetWorkRequestErrorsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public GetWorkRequestErrorsFilterArgs()
         {
         }
+        public static new GetWorkRequestErrorsFilterArgs Empty => new GetWorkRequestErrorsFilterArgs();
     }
 }

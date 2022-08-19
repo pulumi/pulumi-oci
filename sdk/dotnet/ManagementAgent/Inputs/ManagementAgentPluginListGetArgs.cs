@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ManagementAgent.Inputs
 {
 
-    public sealed class ManagementAgentPluginListGetArgs : Pulumi.ResourceArgs
+    public sealed class ManagementAgentPluginListGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// flag indicating whether the plugin is in enabled mode or disabled mode.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
         public ManagementAgentPluginListGetArgs()
         {
         }
+        public static new ManagementAgentPluginListGetArgs Empty => new ManagementAgentPluginListGetArgs();
     }
 }

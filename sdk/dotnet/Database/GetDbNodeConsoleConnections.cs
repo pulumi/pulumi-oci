@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbNodeConsoleConnections = Oci.Database.GetDbNodeConsoleConnections.Invoke(new()
         ///     {
-        ///         var testDbNodeConsoleConnections = Output.Create(Oci.Database.GetDbNodeConsoleConnections.InvokeAsync(new Oci.Database.GetDbNodeConsoleConnectionsArgs
-        ///         {
-        ///             DbNodeId = oci_database_db_node.Test_db_node.Id,
-        ///         }));
-        ///     }
+        ///         DbNodeId = oci_database_db_node.Test_db_node.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbNodeConsoleConnections = Oci.Database.GetDbNodeConsoleConnections.Invoke(new()
         ///     {
-        ///         var testDbNodeConsoleConnections = Output.Create(Oci.Database.GetDbNodeConsoleConnections.InvokeAsync(new Oci.Database.GetDbNodeConsoleConnectionsArgs
-        ///         {
-        ///             DbNodeId = oci_database_db_node.Test_db_node.Id,
-        ///         }));
-        ///     }
+        ///         DbNodeId = oci_database_db_node.Test_db_node.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbNodeConsoleConnectionsArgs : Pulumi.InvokeArgs
+    public sealed class GetDbNodeConsoleConnectionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Database
         public GetDbNodeConsoleConnectionsArgs()
         {
         }
+        public static new GetDbNodeConsoleConnectionsArgs Empty => new GetDbNodeConsoleConnectionsArgs();
     }
 
-    public sealed class GetDbNodeConsoleConnectionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbNodeConsoleConnectionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Database
         public GetDbNodeConsoleConnectionsInvokeArgs()
         {
         }
+        public static new GetDbNodeConsoleConnectionsInvokeArgs Empty => new GetDbNodeConsoleConnectionsInvokeArgs();
     }
 
 

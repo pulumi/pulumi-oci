@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetAlertPolicyAssociation = Oci.DataSafe.GetTargetAlertPolicyAssociation.Invoke(new()
         ///     {
-        ///         var testTargetAlertPolicyAssociation = Output.Create(Oci.DataSafe.GetTargetAlertPolicyAssociation.InvokeAsync(new Oci.DataSafe.GetTargetAlertPolicyAssociationArgs
-        ///         {
-        ///             TargetAlertPolicyAssociationId = oci_data_safe_target_alert_policy_association.Test_target_alert_policy_association.Id,
-        ///         }));
-        ///     }
+        ///         TargetAlertPolicyAssociationId = oci_data_safe_target_alert_policy_association.Test_target_alert_policy_association.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetAlertPolicyAssociation = Oci.DataSafe.GetTargetAlertPolicyAssociation.Invoke(new()
         ///     {
-        ///         var testTargetAlertPolicyAssociation = Output.Create(Oci.DataSafe.GetTargetAlertPolicyAssociation.InvokeAsync(new Oci.DataSafe.GetTargetAlertPolicyAssociationArgs
-        ///         {
-        ///             TargetAlertPolicyAssociationId = oci_data_safe_target_alert_policy_association.Test_target_alert_policy_association.Id,
-        ///         }));
-        ///     }
+        ///         TargetAlertPolicyAssociationId = oci_data_safe_target_alert_policy_association.Test_target_alert_policy_association.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetTargetAlertPolicyAssociationArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetAlertPolicyAssociationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the target-alert policy association.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetAlertPolicyAssociationArgs()
         {
         }
+        public static new GetTargetAlertPolicyAssociationArgs Empty => new GetTargetAlertPolicyAssociationArgs();
     }
 
-    public sealed class GetTargetAlertPolicyAssociationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetAlertPolicyAssociationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the target-alert policy association.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetAlertPolicyAssociationInvokeArgs()
         {
         }
+        public static new GetTargetAlertPolicyAssociationInvokeArgs Empty => new GetTargetAlertPolicyAssociationInvokeArgs();
     }
 
 

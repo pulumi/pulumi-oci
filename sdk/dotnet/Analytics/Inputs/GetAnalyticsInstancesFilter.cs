@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Analytics.Inputs
 {
 
-    public sealed class GetAnalyticsInstancesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetAnalyticsInstancesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given name exactly.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Analytics.Inputs
         public GetAnalyticsInstancesFilterArgs()
         {
         }
+        public static new GetAnalyticsInstancesFilterArgs Empty => new GetAnalyticsInstancesFilterArgs();
     }
 }

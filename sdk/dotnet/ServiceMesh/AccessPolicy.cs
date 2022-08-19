@@ -17,57 +17,55 @@ namespace Pulumi.Oci.ServiceMesh
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAccessPolicy = new Oci.ServiceMesh.AccessPolicy("testAccessPolicy", new()
     ///     {
-    ///         var testAccessPolicy = new Oci.ServiceMesh.AccessPolicy("testAccessPolicy", new Oci.ServiceMesh.AccessPolicyArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-    ///             DefinedTags = 
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Access_policy_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         Rules = new[]
+    ///         {
+    ///             new Oci.ServiceMesh.Inputs.AccessPolicyRuleArgs
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Access_policy_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             Rules = 
-    ///             {
-    ///                 new Oci.ServiceMesh.Inputs.AccessPolicyRuleArgs
+    ///                 Action = @var.Access_policy_rules_action,
+    ///                 Destination = new Oci.ServiceMesh.Inputs.AccessPolicyRuleDestinationArgs
     ///                 {
-    ///                     Action = @var.Access_policy_rules_action,
-    ///                     Destination = new Oci.ServiceMesh.Inputs.AccessPolicyRuleDestinationArgs
-    ///                     {
-    ///                         Type = @var.Access_policy_rules_destination_type,
-    ///                         Hostnames = @var.Access_policy_rules_destination_hostnames,
-    ///                         IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
-    ///                         IpAddresses = @var.Access_policy_rules_destination_ip_addresses,
-    ///                         Ports = @var.Access_policy_rules_destination_ports,
-    ///                         Protocol = @var.Access_policy_rules_destination_protocol,
-    ///                         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
-    ///                     },
-    ///                     Source = new Oci.ServiceMesh.Inputs.AccessPolicyRuleSourceArgs
-    ///                     {
-    ///                         Type = @var.Access_policy_rules_source_type,
-    ///                         Hostnames = @var.Access_policy_rules_source_hostnames,
-    ///                         IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
-    ///                         IpAddresses = @var.Access_policy_rules_source_ip_addresses,
-    ///                         Ports = @var.Access_policy_rules_source_ports,
-    ///                         Protocol = @var.Access_policy_rules_source_protocol,
-    ///                         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
-    ///                     },
+    ///                     Type = @var.Access_policy_rules_destination_type,
+    ///                     Hostnames = @var.Access_policy_rules_destination_hostnames,
+    ///                     IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
+    ///                     IpAddresses = @var.Access_policy_rules_destination_ip_addresses,
+    ///                     Ports = @var.Access_policy_rules_destination_ports,
+    ///                     Protocol = @var.Access_policy_rules_destination_protocol,
+    ///                     VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+    ///                 },
+    ///                 Source = new Oci.ServiceMesh.Inputs.AccessPolicyRuleSourceArgs
+    ///                 {
+    ///                     Type = @var.Access_policy_rules_source_type,
+    ///                     Hostnames = @var.Access_policy_rules_source_hostnames,
+    ///                     IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
+    ///                     IpAddresses = @var.Access_policy_rules_source_ip_addresses,
+    ///                     Ports = @var.Access_policy_rules_source_ports,
+    ///                     Protocol = @var.Access_policy_rules_source_protocol,
+    ///                     VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
     ///                 },
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -79,7 +77,7 @@ namespace Pulumi.Oci.ServiceMesh
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceMesh/accessPolicy:AccessPolicy")]
-    public partial class AccessPolicy : Pulumi.CustomResource
+    public partial class AccessPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -197,7 +195,7 @@ namespace Pulumi.Oci.ServiceMesh
         }
     }
 
-    public sealed class AccessPolicyArgs : Pulumi.ResourceArgs
+    public sealed class AccessPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -262,9 +260,10 @@ namespace Pulumi.Oci.ServiceMesh
         public AccessPolicyArgs()
         {
         }
+        public static new AccessPolicyArgs Empty => new AccessPolicyArgs();
     }
 
-    public sealed class AccessPolicyState : Pulumi.ResourceArgs
+    public sealed class AccessPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -365,5 +364,6 @@ namespace Pulumi.Oci.ServiceMesh
         public AccessPolicyState()
         {
         }
+        public static new AccessPolicyState Empty => new AccessPolicyState();
     }
 }

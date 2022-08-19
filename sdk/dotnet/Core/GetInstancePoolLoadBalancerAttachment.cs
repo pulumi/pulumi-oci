@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstancePoolLoadBalancerAttachment = Oci.Core.GetInstancePoolLoadBalancerAttachment.Invoke(new()
         ///     {
-        ///         var testInstancePoolLoadBalancerAttachment = Output.Create(Oci.Core.GetInstancePoolLoadBalancerAttachment.InvokeAsync(new Oci.Core.GetInstancePoolLoadBalancerAttachmentArgs
-        ///         {
-        ///             InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
-        ///             InstancePoolLoadBalancerAttachmentId = oci_core_instance_pool_load_balancer_attachment.Test_instance_pool_load_balancer_attachment.Id,
-        ///         }));
-        ///     }
+        ///         InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
+        ///         InstancePoolLoadBalancerAttachmentId = oci_core_instance_pool_load_balancer_attachment.Test_instance_pool_load_balancer_attachment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstancePoolLoadBalancerAttachment = Oci.Core.GetInstancePoolLoadBalancerAttachment.Invoke(new()
         ///     {
-        ///         var testInstancePoolLoadBalancerAttachment = Output.Create(Oci.Core.GetInstancePoolLoadBalancerAttachment.InvokeAsync(new Oci.Core.GetInstancePoolLoadBalancerAttachmentArgs
-        ///         {
-        ///             InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
-        ///             InstancePoolLoadBalancerAttachmentId = oci_core_instance_pool_load_balancer_attachment.Test_instance_pool_load_balancer_attachment.Id,
-        ///         }));
-        ///     }
+        ///         InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
+        ///         InstancePoolLoadBalancerAttachmentId = oci_core_instance_pool_load_balancer_attachment.Test_instance_pool_load_balancer_attachment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetInstancePoolLoadBalancerAttachmentArgs : Pulumi.InvokeArgs
+    public sealed class GetInstancePoolLoadBalancerAttachmentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Core
         public GetInstancePoolLoadBalancerAttachmentArgs()
         {
         }
+        public static new GetInstancePoolLoadBalancerAttachmentArgs Empty => new GetInstancePoolLoadBalancerAttachmentArgs();
     }
 
-    public sealed class GetInstancePoolLoadBalancerAttachmentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInstancePoolLoadBalancerAttachmentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Core
         public GetInstancePoolLoadBalancerAttachmentInvokeArgs()
         {
         }
+        public static new GetInstancePoolLoadBalancerAttachmentInvokeArgs Empty => new GetInstancePoolLoadBalancerAttachmentInvokeArgs();
     }
 
 

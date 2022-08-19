@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlConfiguration = Oci.Mysql.GetMysqlConfiguration.Invoke(new()
         ///     {
-        ///         var testMysqlConfiguration = Output.Create(Oci.Mysql.GetMysqlConfiguration.InvokeAsync(new Oci.Mysql.GetMysqlConfigurationArgs
-        ///         {
-        ///             ConfigurationId = @var.Mysql_configuration_id,
-        ///         }));
-        ///     }
+        ///         ConfigurationId = @var.Mysql_configuration_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlConfiguration = Oci.Mysql.GetMysqlConfiguration.Invoke(new()
         ///     {
-        ///         var testMysqlConfiguration = Output.Create(Oci.Mysql.GetMysqlConfiguration.InvokeAsync(new Oci.Mysql.GetMysqlConfigurationArgs
-        ///         {
-        ///             ConfigurationId = @var.Mysql_configuration_id,
-        ///         }));
-        ///     }
+        ///         ConfigurationId = @var.Mysql_configuration_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Mysql
     }
 
 
-    public sealed class GetMysqlConfigurationArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the Configuration.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlConfigurationArgs()
         {
         }
+        public static new GetMysqlConfigurationArgs Empty => new GetMysqlConfigurationArgs();
     }
 
-    public sealed class GetMysqlConfigurationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the Configuration.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlConfigurationInvokeArgs()
         {
         }
+        public static new GetMysqlConfigurationInvokeArgs Empty => new GetMysqlConfigurationInvokeArgs();
     }
 
 

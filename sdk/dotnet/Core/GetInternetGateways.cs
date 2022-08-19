@@ -23,23 +23,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInternetGateways = Oci.Core.GetInternetGateways.Invoke(new()
         ///     {
-        ///         var testInternetGateways = Output.Create(Oci.Core.GetInternetGateways.InvokeAsync(new Oci.Core.GetInternetGatewaysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Internet_gateway_display_name,
-        ///             State = @var.Internet_gateway_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Internet_gateway_display_name,
+        ///         State = @var.Internet_gateway_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,23 +57,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInternetGateways = Oci.Core.GetInternetGateways.Invoke(new()
         ///     {
-        ///         var testInternetGateways = Output.Create(Oci.Core.GetInternetGateways.InvokeAsync(new Oci.Core.GetInternetGatewaysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Internet_gateway_display_name,
-        ///             State = @var.Internet_gateway_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Internet_gateway_display_name,
+        ///         State = @var.Internet_gateway_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetInternetGatewaysArgs : Pulumi.InvokeArgs
+    public sealed class GetInternetGatewaysArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -122,9 +118,10 @@ namespace Pulumi.Oci.Core
         public GetInternetGatewaysArgs()
         {
         }
+        public static new GetInternetGatewaysArgs Empty => new GetInternetGatewaysArgs();
     }
 
-    public sealed class GetInternetGatewaysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInternetGatewaysInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -161,6 +158,7 @@ namespace Pulumi.Oci.Core
         public GetInternetGatewaysInvokeArgs()
         {
         }
+        public static new GetInternetGatewaysInvokeArgs Empty => new GetInternetGatewaysInvokeArgs();
     }
 
 

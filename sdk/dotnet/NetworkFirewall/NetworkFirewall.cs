@@ -17,35 +17,33 @@ namespace Pulumi.Oci.NetworkFirewall
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testNetworkFirewall = new Oci.NetworkFirewall.NetworkFirewall("testNetworkFirewall", new()
     ///     {
-    ///         var testNetworkFirewall = new Oci.NetworkFirewall.NetworkFirewall("testNetworkFirewall", new Oci.NetworkFirewall.NetworkFirewallArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         AvailabilityDomain = @var.Network_firewall_availability_domain,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             AvailabilityDomain = @var.Network_firewall_availability_domain,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Network_firewall_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             Ipv4address = @var.Network_firewall_ipv4address,
-    ///             Ipv6address = @var.Network_firewall_ipv6address,
-    ///             NetworkSecurityGroupIds = @var.Network_firewall_network_security_group_ids,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Network_firewall_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         Ipv4address = @var.Network_firewall_ipv4address,
+    ///         Ipv6address = @var.Network_firewall_ipv6address,
+    ///         NetworkSecurityGroupIds = @var.Network_firewall_network_security_group_ids,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -57,7 +55,7 @@ namespace Pulumi.Oci.NetworkFirewall
     /// ```
     /// </summary>
     [OciResourceType("oci:NetworkFirewall/networkFirewall:NetworkFirewall")]
-    public partial class NetworkFirewall : Pulumi.CustomResource
+    public partial class NetworkFirewall : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
@@ -193,7 +191,7 @@ namespace Pulumi.Oci.NetworkFirewall
         }
     }
 
-    public sealed class NetworkFirewallArgs : Pulumi.ResourceArgs
+    public sealed class NetworkFirewallArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
@@ -276,9 +274,10 @@ namespace Pulumi.Oci.NetworkFirewall
         public NetworkFirewallArgs()
         {
         }
+        public static new NetworkFirewallArgs Empty => new NetworkFirewallArgs();
     }
 
-    public sealed class NetworkFirewallState : Pulumi.ResourceArgs
+    public sealed class NetworkFirewallState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
@@ -397,5 +396,6 @@ namespace Pulumi.Oci.NetworkFirewall
         public NetworkFirewallState()
         {
         }
+        public static new NetworkFirewallState Empty => new NetworkFirewallState();
     }
 }

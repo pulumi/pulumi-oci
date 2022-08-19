@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class NodePoolNodeErrorGetArgs : Pulumi.ResourceArgs
+    public sealed class NodePoolNodeErrorGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public NodePoolNodeErrorGetArgs()
         {
         }
+        public static new NodePoolNodeErrorGetArgs Empty => new NodePoolNodeErrorGetArgs();
     }
 }

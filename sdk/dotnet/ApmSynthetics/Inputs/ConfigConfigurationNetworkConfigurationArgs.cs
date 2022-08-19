@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class ConfigConfigurationNetworkConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class ConfigConfigurationNetworkConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Number of hops.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public ConfigConfigurationNetworkConfigurationArgs()
         {
         }
+        public static new ConfigConfigurationNetworkConfigurationArgs Empty => new ConfigConfigurationNetworkConfigurationArgs();
     }
 }

@@ -24,22 +24,20 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkSources = Oci.Identity.GetNetworkSources.Invoke(new()
         ///     {
-        ///         var testNetworkSources = Output.Create(Oci.Identity.GetNetworkSources.InvokeAsync(new Oci.Identity.GetNetworkSourcesArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             Name = @var.Network_source_name,
-        ///             State = @var.Network_source_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         Name = @var.Network_source_name,
+        ///         State = @var.Network_source_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,22 +58,20 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkSources = Oci.Identity.GetNetworkSources.Invoke(new()
         ///     {
-        ///         var testNetworkSources = Output.Create(Oci.Identity.GetNetworkSources.InvokeAsync(new Oci.Identity.GetNetworkSourcesArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             Name = @var.Network_source_name,
-        ///             State = @var.Network_source_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         Name = @var.Network_source_name,
+        ///         State = @var.Network_source_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetNetworkSourcesArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSourcesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -116,9 +112,10 @@ namespace Pulumi.Oci.Identity
         public GetNetworkSourcesArgs()
         {
         }
+        public static new GetNetworkSourcesArgs Empty => new GetNetworkSourcesArgs();
     }
 
-    public sealed class GetNetworkSourcesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSourcesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -149,6 +146,7 @@ namespace Pulumi.Oci.Identity
         public GetNetworkSourcesInvokeArgs()
         {
         }
+        public static new GetNetworkSourcesInvokeArgs Empty => new GetNetworkSourcesInvokeArgs();
     }
 
 

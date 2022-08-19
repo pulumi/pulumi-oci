@@ -18,20 +18,18 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testUnsetUserAssessmentBaseline = new Oci.DataSafe.UnsetUserAssessmentBaseline("testUnsetUserAssessmentBaseline", new()
     ///     {
-    ///         var testUnsetUserAssessmentBaseline = new Oci.DataSafe.UnsetUserAssessmentBaseline("testUnsetUserAssessmentBaseline", new Oci.DataSafe.UnsetUserAssessmentBaselineArgs
-    ///         {
-    ///             UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-    ///         });
-    ///     }
+    ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/unsetUserAssessmentBaseline:UnsetUserAssessmentBaseline")]
-    public partial class UnsetUserAssessmentBaseline : Pulumi.CustomResource
+    public partial class UnsetUserAssessmentBaseline : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the user assessment.
@@ -95,7 +93,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class UnsetUserAssessmentBaselineArgs : Pulumi.ResourceArgs
+    public sealed class UnsetUserAssessmentBaselineArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the user assessment.
@@ -106,9 +104,10 @@ namespace Pulumi.Oci.DataSafe
         public UnsetUserAssessmentBaselineArgs()
         {
         }
+        public static new UnsetUserAssessmentBaselineArgs Empty => new UnsetUserAssessmentBaselineArgs();
     }
 
-    public sealed class UnsetUserAssessmentBaselineState : Pulumi.ResourceArgs
+    public sealed class UnsetUserAssessmentBaselineState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the user assessment.
@@ -119,5 +118,6 @@ namespace Pulumi.Oci.DataSafe
         public UnsetUserAssessmentBaselineState()
         {
         }
+        public static new UnsetUserAssessmentBaselineState Empty => new UnsetUserAssessmentBaselineState();
     }
 }

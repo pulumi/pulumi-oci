@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class QueryQueryDefinitionReportQueryArgs : Pulumi.ResourceArgs
+    public sealed class QueryQueryDefinitionReportQueryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The compartment depth level.
@@ -99,5 +99,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public QueryQueryDefinitionReportQueryArgs()
         {
         }
+        public static new QueryQueryDefinitionReportQueryArgs Empty => new QueryQueryDefinitionReportQueryArgs();
     }
 }

@@ -22,20 +22,18 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testQuery = Oci.MeteringComputation.GetQuery.Invoke(new()
         ///     {
-        ///         var testQuery = Output.Create(Oci.MeteringComputation.GetQuery.InvokeAsync(new Oci.MeteringComputation.GetQueryArgs
-        ///         {
-        ///             QueryId = oci_metering_computation_query.Test_query.Id,
-        ///         }));
-        ///     }
+        ///         QueryId = oci_metering_computation_query.Test_query.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testQuery = Oci.MeteringComputation.GetQuery.Invoke(new()
         ///     {
-        ///         var testQuery = Output.Create(Oci.MeteringComputation.GetQuery.InvokeAsync(new Oci.MeteringComputation.GetQueryArgs
-        ///         {
-        ///             QueryId = oci_metering_computation_query.Test_query.Id,
-        ///         }));
-        ///     }
+        ///         QueryId = oci_metering_computation_query.Test_query.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.MeteringComputation
     }
 
 
-    public sealed class GetQueryArgs : Pulumi.InvokeArgs
+    public sealed class GetQueryArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The query unique OCID.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.MeteringComputation
         public GetQueryArgs()
         {
         }
+        public static new GetQueryArgs Empty => new GetQueryArgs();
     }
 
-    public sealed class GetQueryInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetQueryInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The query unique OCID.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.MeteringComputation
         public GetQueryInvokeArgs()
         {
         }
+        public static new GetQueryInvokeArgs Empty => new GetQueryInvokeArgs();
     }
 
 

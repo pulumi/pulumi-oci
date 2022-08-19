@@ -30,6 +30,35 @@ import javax.annotation.Nullable;
  * you have. Also confirm you&#39;re working in the correct compartment.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.ApiKey;
+ * import com.pulumi.oci.Identity.ApiKeyArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testApiKey = new ApiKey(&#34;testApiKey&#34;, ApiKeyArgs.builder()        
+ *             .keyValue(var_.api_key_key_value())
+ *             .userId(oci_identity_user.test_user().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

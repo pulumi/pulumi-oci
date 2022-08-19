@@ -17,24 +17,22 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDbSystemsUpgrade = new Oci.Database.DbSystemsUpgrade("testDbSystemsUpgrade", new()
     ///     {
-    ///         var testDbSystemsUpgrade = new Oci.Database.DbSystemsUpgrade("testDbSystemsUpgrade", new Oci.Database.DbSystemsUpgradeArgs
-    ///         {
-    ///             Action = @var.Db_systems_upgrade_action,
-    ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-    ///             IsSnapshotRetentionDaysForceUpdated = @var.Db_systems_upgrade_is_snapshot_retention_days_force_updated,
-    ///             NewGiVersion = @var.Db_systems_upgrade_new_gi_version,
-    ///             SnapshotRetentionPeriodInDays = @var.Db_systems_upgrade_snapshot_retention_period_in_days,
-    ///         });
-    ///     }
+    ///         Action = @var.Db_systems_upgrade_action,
+    ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+    ///         IsSnapshotRetentionDaysForceUpdated = @var.Db_systems_upgrade_is_snapshot_retention_days_force_updated,
+    ///         NewGiVersion = @var.Db_systems_upgrade_new_gi_version,
+    ///         SnapshotRetentionPeriodInDays = @var.Db_systems_upgrade_snapshot_retention_period_in_days,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -42,7 +40,7 @@ namespace Pulumi.Oci.Database
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/dbSystemsUpgrade:DbSystemsUpgrade")]
-    public partial class DbSystemsUpgrade : Pulumi.CustomResource
+    public partial class DbSystemsUpgrade : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The operating system upgrade action.
@@ -385,7 +383,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class DbSystemsUpgradeArgs : Pulumi.ResourceArgs
+    public sealed class DbSystemsUpgradeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The operating system upgrade action.
@@ -420,9 +418,10 @@ namespace Pulumi.Oci.Database
         public DbSystemsUpgradeArgs()
         {
         }
+        public static new DbSystemsUpgradeArgs Empty => new DbSystemsUpgradeArgs();
     }
 
-    public sealed class DbSystemsUpgradeState : Pulumi.ResourceArgs
+    public sealed class DbSystemsUpgradeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The operating system upgrade action.
@@ -790,5 +789,6 @@ namespace Pulumi.Oci.Database
         public DbSystemsUpgradeState()
         {
         }
+        public static new DbSystemsUpgradeState Empty => new DbSystemsUpgradeState();
     }
 }

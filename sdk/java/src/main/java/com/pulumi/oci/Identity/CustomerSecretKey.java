@@ -29,6 +29,35 @@ import javax.annotation.Nullable;
  * tenancy can use this operation to create a secret key for any user, including themselves.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.CustomerSecretKey;
+ * import com.pulumi.oci.Identity.CustomerSecretKeyArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCustomerSecretKey = new CustomerSecretKey(&#34;testCustomerSecretKey&#34;, CustomerSecretKeyArgs.builder()        
+ *             .displayName(var_.customer_secret_key_display_name())
+ *             .userId(oci_identity_user.test_user().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

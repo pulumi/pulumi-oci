@@ -25,6 +25,46 @@ import javax.annotation.Nullable;
  * Creates a new deployment pipeline.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DevOps.DeployPipeline;
+ * import com.pulumi.oci.DevOps.DeployPipelineArgs;
+ * import com.pulumi.oci.DevOps.inputs.DeployPipelineDeployPipelineParametersArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDeployPipeline = new DeployPipeline(&#34;testDeployPipeline&#34;, DeployPipelineArgs.builder()        
+ *             .projectId(oci_devops_project.test_project().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .deployPipelineParameters(DeployPipelineDeployPipelineParametersArgs.builder()
+ *                 .items(DeployPipelineDeployPipelineParametersItemArgs.builder()
+ *                     .name(var_.deploy_pipeline_deploy_pipeline_parameters_items_name())
+ *                     .defaultValue(var_.deploy_pipeline_deploy_pipeline_parameters_items_default_value())
+ *                     .description(var_.deploy_pipeline_deploy_pipeline_parameters_items_description())
+ *                     .build())
+ *                 .build())
+ *             .description(var_.deploy_pipeline_description())
+ *             .displayName(var_.deploy_pipeline_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

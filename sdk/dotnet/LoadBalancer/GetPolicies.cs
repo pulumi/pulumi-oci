@@ -21,20 +21,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLoadBalancerPolicies = Oci.LoadBalancer.GetPolicies.Invoke(new()
         ///     {
-        ///         var testLoadBalancerPolicies = Output.Create(Oci.LoadBalancer.GetPolicies.InvokeAsync(new Oci.LoadBalancer.GetPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLoadBalancerPolicies = Oci.LoadBalancer.GetPolicies.Invoke(new()
         ///     {
-        ///         var testLoadBalancerPolicies = Output.Create(Oci.LoadBalancer.GetPolicies.InvokeAsync(new Oci.LoadBalancer.GetPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetPoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer policies to list.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetPoliciesArgs()
         {
         }
+        public static new GetPoliciesArgs Empty => new GetPoliciesArgs();
     }
 
-    public sealed class GetPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer policies to list.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetPoliciesInvokeArgs()
         {
         }
+        public static new GetPoliciesInvokeArgs Empty => new GetPoliciesInvokeArgs();
     }
 
 

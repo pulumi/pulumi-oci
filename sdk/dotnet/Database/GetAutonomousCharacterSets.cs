@@ -21,21 +21,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabaseCharacterSets = Oci.Database.GetAutonomousCharacterSets.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabaseCharacterSets = Output.Create(Oci.Database.GetAutonomousCharacterSets.InvokeAsync(new Oci.Database.GetAutonomousCharacterSetsArgs
-        ///         {
-        ///             CharacterSetType = @var.Autonomous_database_character_set_character_set_type,
-        ///             IsShared = @var.Autonomous_database_character_set_is_shared,
-        ///         }));
-        ///     }
+        ///         CharacterSetType = @var.Autonomous_database_character_set_character_set_type,
+        ///         IsShared = @var.Autonomous_database_character_set_is_shared,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabaseCharacterSets = Oci.Database.GetAutonomousCharacterSets.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabaseCharacterSets = Output.Create(Oci.Database.GetAutonomousCharacterSets.InvokeAsync(new Oci.Database.GetAutonomousCharacterSetsArgs
-        ///         {
-        ///             CharacterSetType = @var.Autonomous_database_character_set_character_set_type,
-        ///             IsShared = @var.Autonomous_database_character_set_is_shared,
-        ///         }));
-        ///     }
+        ///         CharacterSetType = @var.Autonomous_database_character_set_character_set_type,
+        ///         IsShared = @var.Autonomous_database_character_set_is_shared,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousCharacterSetsArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousCharacterSetsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Specifies whether this request pertains to database character sets or national character sets.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousCharacterSetsArgs()
         {
         }
+        public static new GetAutonomousCharacterSetsArgs Empty => new GetAutonomousCharacterSetsArgs();
     }
 
-    public sealed class GetAutonomousCharacterSetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousCharacterSetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Specifies whether this request pertains to database character sets or national character sets.
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousCharacterSetsInvokeArgs()
         {
         }
+        public static new GetAutonomousCharacterSetsInvokeArgs Empty => new GetAutonomousCharacterSetsInvokeArgs();
     }
 
 

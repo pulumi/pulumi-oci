@@ -22,24 +22,22 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualDeployments = Oci.ServiceMesh.GetVirtualDeployments.Invoke(new()
         ///     {
-        ///         var testVirtualDeployments = Output.Create(Oci.ServiceMesh.GetVirtualDeployments.InvokeAsync(new Oci.ServiceMesh.GetVirtualDeploymentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Virtual_deployment_id,
-        ///             Name = @var.Virtual_deployment_name,
-        ///             State = @var.Virtual_deployment_state,
-        ///             VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Virtual_deployment_id,
+        ///         Name = @var.Virtual_deployment_name,
+        ///         State = @var.Virtual_deployment_state,
+        ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualDeployments = Oci.ServiceMesh.GetVirtualDeployments.Invoke(new()
         ///     {
-        ///         var testVirtualDeployments = Output.Create(Oci.ServiceMesh.GetVirtualDeployments.InvokeAsync(new Oci.ServiceMesh.GetVirtualDeploymentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Virtual_deployment_id,
-        ///             Name = @var.Virtual_deployment_name,
-        ///             State = @var.Virtual_deployment_state,
-        ///             VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Virtual_deployment_id,
+        ///         Name = @var.Virtual_deployment_name,
+        ///         State = @var.Virtual_deployment_state,
+        ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetVirtualDeploymentsArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualDeploymentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetVirtualDeploymentsArgs()
         {
         }
+        public static new GetVirtualDeploymentsArgs Empty => new GetVirtualDeploymentsArgs();
     }
 
-    public sealed class GetVirtualDeploymentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualDeploymentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetVirtualDeploymentsInvokeArgs()
         {
         }
+        public static new GetVirtualDeploymentsInvokeArgs Empty => new GetVirtualDeploymentsInvokeArgs();
     }
 
 

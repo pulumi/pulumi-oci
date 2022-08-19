@@ -17,21 +17,19 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSetSecurityAssessmentBaseline = new Oci.DataSafe.SetSecurityAssessmentBaseline("testSetSecurityAssessmentBaseline", new()
     ///     {
-    ///         var testSetSecurityAssessmentBaseline = new Oci.DataSafe.SetSecurityAssessmentBaseline("testSetSecurityAssessmentBaseline", new Oci.DataSafe.SetSecurityAssessmentBaselineArgs
-    ///         {
-    ///             SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
-    ///             AssessmentIds = @var.Set_security_assessment_baseline_assessment_ids,
-    ///         });
-    ///     }
+    ///         SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
+    ///         AssessmentIds = @var.Set_security_assessment_baseline_assessment_ids,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline")]
-    public partial class SetSecurityAssessmentBaseline : Pulumi.CustomResource
+    public partial class SetSecurityAssessmentBaseline : global::Pulumi.CustomResource
     {
         /// <summary>
         /// List of security assessment OCIDs that need to be updated while setting the baseline.
@@ -101,7 +99,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class SetSecurityAssessmentBaselineArgs : Pulumi.ResourceArgs
+    public sealed class SetSecurityAssessmentBaselineArgs : global::Pulumi.ResourceArgs
     {
         [Input("assessmentIds")]
         private InputList<string>? _assessmentIds;
@@ -124,9 +122,10 @@ namespace Pulumi.Oci.DataSafe
         public SetSecurityAssessmentBaselineArgs()
         {
         }
+        public static new SetSecurityAssessmentBaselineArgs Empty => new SetSecurityAssessmentBaselineArgs();
     }
 
-    public sealed class SetSecurityAssessmentBaselineState : Pulumi.ResourceArgs
+    public sealed class SetSecurityAssessmentBaselineState : global::Pulumi.ResourceArgs
     {
         [Input("assessmentIds")]
         private InputList<string>? _assessmentIds;
@@ -149,5 +148,6 @@ namespace Pulumi.Oci.DataSafe
         public SetSecurityAssessmentBaselineState()
         {
         }
+        public static new SetSecurityAssessmentBaselineState Empty => new SetSecurityAssessmentBaselineState();
     }
 }

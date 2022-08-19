@@ -24,22 +24,20 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGroups = Oci.Identity.GetGroups.Invoke(new()
         ///     {
-        ///         var testGroups = Output.Create(Oci.Identity.GetGroups.InvokeAsync(new Oci.Identity.GetGroupsArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             Name = @var.Group_name,
-        ///             State = @var.Group_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         Name = @var.Group_name,
+        ///         State = @var.Group_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,22 +58,20 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGroups = Oci.Identity.GetGroups.Invoke(new()
         ///     {
-        ///         var testGroups = Output.Create(Oci.Identity.GetGroups.InvokeAsync(new Oci.Identity.GetGroupsArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             Name = @var.Group_name,
-        ///             State = @var.Group_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         Name = @var.Group_name,
+        ///         State = @var.Group_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetGroupsArgs : Pulumi.InvokeArgs
+    public sealed class GetGroupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -116,9 +112,10 @@ namespace Pulumi.Oci.Identity
         public GetGroupsArgs()
         {
         }
+        public static new GetGroupsArgs Empty => new GetGroupsArgs();
     }
 
-    public sealed class GetGroupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -149,6 +146,7 @@ namespace Pulumi.Oci.Identity
         public GetGroupsInvokeArgs()
         {
         }
+        public static new GetGroupsInvokeArgs Empty => new GetGroupsInvokeArgs();
     }
 
 

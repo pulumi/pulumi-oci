@@ -35,35 +35,33 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCrossConnect = new Oci.Core.CrossConnect("testCrossConnect", new()
     ///     {
-    ///         var testCrossConnect = new Oci.Core.CrossConnect("testCrossConnect", new Oci.Core.CrossConnectArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         LocationName = @var.Cross_connect_location_name,
+    ///         PortSpeedShapeName = @var.Cross_connect_port_speed_shape_name,
+    ///         CrossConnectGroupId = oci_core_cross_connect_group.Test_cross_connect_group.Id,
+    ///         CustomerReferenceName = @var.Cross_connect_customer_reference_name,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             LocationName = @var.Cross_connect_location_name,
-    ///             PortSpeedShapeName = @var.Cross_connect_port_speed_shape_name,
-    ///             CrossConnectGroupId = oci_core_cross_connect_group.Test_cross_connect_group.Id,
-    ///             CustomerReferenceName = @var.Cross_connect_customer_reference_name,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Cross_connect_display_name,
-    ///             FarCrossConnectOrCrossConnectGroupId = oci_core_cross_connect_group.Test_cross_connect_group.Id,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             NearCrossConnectOrCrossConnectGroupId = oci_core_cross_connect_group.Test_cross_connect_group.Id,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Cross_connect_display_name,
+    ///         FarCrossConnectOrCrossConnectGroupId = oci_core_cross_connect_group.Test_cross_connect_group.Id,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         NearCrossConnectOrCrossConnectGroupId = oci_core_cross_connect_group.Test_cross_connect_group.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -75,7 +73,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/crossConnect:CrossConnect")]
-    public partial class CrossConnect : Pulumi.CustomResource
+    public partial class CrossConnect : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment to contain the cross-connect.
@@ -223,7 +221,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class CrossConnectArgs : Pulumi.ResourceArgs
+    public sealed class CrossConnectArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment to contain the cross-connect.
@@ -312,9 +310,10 @@ namespace Pulumi.Oci.Core
         public CrossConnectArgs()
         {
         }
+        public static new CrossConnectArgs Empty => new CrossConnectArgs();
     }
 
-    public sealed class CrossConnectState : Pulumi.ResourceArgs
+    public sealed class CrossConnectState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment to contain the cross-connect.
@@ -433,5 +432,6 @@ namespace Pulumi.Oci.Core
         public CrossConnectState()
         {
         }
+        public static new CrossConnectState Empty => new CrossConnectState();
     }
 }

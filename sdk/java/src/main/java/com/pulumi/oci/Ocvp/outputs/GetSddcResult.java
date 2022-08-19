@@ -133,6 +133,11 @@ public final class GetSddcResult {
      */
     private final Boolean isShieldedInstanceEnabled;
     /**
+     * @return Indicates whether this SDDC is designated for only single ESXi host.
+     * 
+     */
+    private final Boolean isSingleHostSddc;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
      * 
      */
@@ -302,6 +307,7 @@ public final class GetSddcResult {
         @CustomType.Parameter("isHcxEnterpriseEnabled") Boolean isHcxEnterpriseEnabled,
         @CustomType.Parameter("isHcxPendingDowngrade") Boolean isHcxPendingDowngrade,
         @CustomType.Parameter("isShieldedInstanceEnabled") Boolean isShieldedInstanceEnabled,
+        @CustomType.Parameter("isSingleHostSddc") Boolean isSingleHostSddc,
         @CustomType.Parameter("nsxEdgeUplink1vlanId") String nsxEdgeUplink1vlanId,
         @CustomType.Parameter("nsxEdgeUplink2vlanId") String nsxEdgeUplink2vlanId,
         @CustomType.Parameter("nsxEdgeUplinkIpId") String nsxEdgeUplinkIpId,
@@ -357,6 +363,7 @@ public final class GetSddcResult {
         this.isHcxEnterpriseEnabled = isHcxEnterpriseEnabled;
         this.isHcxPendingDowngrade = isHcxPendingDowngrade;
         this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
+        this.isSingleHostSddc = isSingleHostSddc;
         this.nsxEdgeUplink1vlanId = nsxEdgeUplink1vlanId;
         this.nsxEdgeUplink2vlanId = nsxEdgeUplink2vlanId;
         this.nsxEdgeUplinkIpId = nsxEdgeUplinkIpId;
@@ -553,6 +560,13 @@ public final class GetSddcResult {
      */
     public Boolean isShieldedInstanceEnabled() {
         return this.isShieldedInstanceEnabled;
+    }
+    /**
+     * @return Indicates whether this SDDC is designated for only single ESXi host.
+     * 
+     */
+    public Boolean isSingleHostSddc() {
+        return this.isSingleHostSddc;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
@@ -793,6 +807,7 @@ public final class GetSddcResult {
         private Boolean isHcxEnterpriseEnabled;
         private Boolean isHcxPendingDowngrade;
         private Boolean isShieldedInstanceEnabled;
+        private Boolean isSingleHostSddc;
         private String nsxEdgeUplink1vlanId;
         private String nsxEdgeUplink2vlanId;
         private String nsxEdgeUplinkIpId;
@@ -855,6 +870,7 @@ public final class GetSddcResult {
     	      this.isHcxEnterpriseEnabled = defaults.isHcxEnterpriseEnabled;
     	      this.isHcxPendingDowngrade = defaults.isHcxPendingDowngrade;
     	      this.isShieldedInstanceEnabled = defaults.isShieldedInstanceEnabled;
+    	      this.isSingleHostSddc = defaults.isSingleHostSddc;
     	      this.nsxEdgeUplink1vlanId = defaults.nsxEdgeUplink1vlanId;
     	      this.nsxEdgeUplink2vlanId = defaults.nsxEdgeUplink2vlanId;
     	      this.nsxEdgeUplinkIpId = defaults.nsxEdgeUplinkIpId;
@@ -987,6 +1003,10 @@ public final class GetSddcResult {
             this.isShieldedInstanceEnabled = Objects.requireNonNull(isShieldedInstanceEnabled);
             return this;
         }
+        public Builder isSingleHostSddc(Boolean isSingleHostSddc) {
+            this.isSingleHostSddc = Objects.requireNonNull(isSingleHostSddc);
+            return this;
+        }
         public Builder nsxEdgeUplink1vlanId(String nsxEdgeUplink1vlanId) {
             this.nsxEdgeUplink1vlanId = Objects.requireNonNull(nsxEdgeUplink1vlanId);
             return this;
@@ -1114,7 +1134,7 @@ public final class GetSddcResult {
             this.workloadNetworkCidr = Objects.requireNonNull(workloadNetworkCidr);
             return this;
         }        public GetSddcResult build() {
-            return new GetSddcResult(actualEsxiHostsCount, capacityReservationId, compartmentId, computeAvailabilityDomain, definedTags, displayName, esxiHostsCount, freeformTags, hcxAction, hcxFqdn, hcxInitialPassword, hcxOnPremKey, hcxOnPremLicenses, hcxPrivateIpId, hcxVlanId, id, initialHostOcpuCount, initialHostShapeName, initialSku, instanceDisplayNamePrefix, isHcxEnabled, isHcxEnterpriseEnabled, isHcxPendingDowngrade, isShieldedInstanceEnabled, nsxEdgeUplink1vlanId, nsxEdgeUplink2vlanId, nsxEdgeUplinkIpId, nsxEdgeVtepVlanId, nsxManagerFqdn, nsxManagerInitialPassword, nsxManagerPrivateIpId, nsxManagerUsername, nsxOverlaySegmentName, nsxVtepVlanId, provisioningSubnetId, provisioningVlanId, refreshHcxLicenseStatus, replicationVlanId, reservingHcxOnPremiseLicenseKeys, sddcId, sshAuthorizedKeys, state, timeCreated, timeHcxBillingCycleEnd, timeHcxLicenseStatusUpdated, timeUpdated, vcenterFqdn, vcenterInitialPassword, vcenterPrivateIpId, vcenterUsername, vmotionVlanId, vmwareSoftwareVersion, vsanVlanId, vsphereVlanId, workloadNetworkCidr);
+            return new GetSddcResult(actualEsxiHostsCount, capacityReservationId, compartmentId, computeAvailabilityDomain, definedTags, displayName, esxiHostsCount, freeformTags, hcxAction, hcxFqdn, hcxInitialPassword, hcxOnPremKey, hcxOnPremLicenses, hcxPrivateIpId, hcxVlanId, id, initialHostOcpuCount, initialHostShapeName, initialSku, instanceDisplayNamePrefix, isHcxEnabled, isHcxEnterpriseEnabled, isHcxPendingDowngrade, isShieldedInstanceEnabled, isSingleHostSddc, nsxEdgeUplink1vlanId, nsxEdgeUplink2vlanId, nsxEdgeUplinkIpId, nsxEdgeVtepVlanId, nsxManagerFqdn, nsxManagerInitialPassword, nsxManagerPrivateIpId, nsxManagerUsername, nsxOverlaySegmentName, nsxVtepVlanId, provisioningSubnetId, provisioningVlanId, refreshHcxLicenseStatus, replicationVlanId, reservingHcxOnPremiseLicenseKeys, sddcId, sshAuthorizedKeys, state, timeCreated, timeHcxBillingCycleEnd, timeHcxLicenseStatusUpdated, timeUpdated, vcenterFqdn, vcenterInitialPassword, vcenterPrivateIpId, vcenterUsername, vmotionVlanId, vmwareSoftwareVersion, vsanVlanId, vsphereVlanId, workloadNetworkCidr);
         }
     }
 }

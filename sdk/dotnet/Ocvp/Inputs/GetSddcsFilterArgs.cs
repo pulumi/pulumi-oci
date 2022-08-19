@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Ocvp.Inputs
 {
 
-    public sealed class GetSddcsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetSddcsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Ocvp.Inputs
         public GetSddcsFilterInputArgs()
         {
         }
+        public static new GetSddcsFilterInputArgs Empty => new GetSddcsFilterInputArgs();
     }
 }

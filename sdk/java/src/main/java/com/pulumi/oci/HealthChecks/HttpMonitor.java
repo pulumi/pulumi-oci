@@ -26,6 +26,47 @@ import javax.annotation.Nullable;
  * specified by `intervalInSeconds`.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.HealthChecks.HttpMonitor;
+ * import com.pulumi.oci.HealthChecks.HttpMonitorArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testHttpMonitor = new HttpMonitor(&#34;testHttpMonitor&#34;, HttpMonitorArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.http_monitor_display_name())
+ *             .intervalInSeconds(var_.http_monitor_interval_in_seconds())
+ *             .protocol(var_.http_monitor_protocol())
+ *             .targets(var_.http_monitor_targets())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .headers(var_.http_monitor_headers())
+ *             .isEnabled(var_.http_monitor_is_enabled())
+ *             .method(var_.http_monitor_method())
+ *             .path(var_.http_monitor_path())
+ *             .port(var_.http_monitor_port())
+ *             .timeoutInSeconds(var_.http_monitor_timeout_in_seconds())
+ *             .vantagePointNames(var_.http_monitor_vantage_point_names())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

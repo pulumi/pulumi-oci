@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTsigKey = Oci.Dns.GetTsigKey.Invoke(new()
         ///     {
-        ///         var testTsigKey = Output.Create(Oci.Dns.GetTsigKey.InvokeAsync(new Oci.Dns.GetTsigKeyArgs
-        ///         {
-        ///             TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
-        ///         }));
-        ///     }
+        ///         TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTsigKey = Oci.Dns.GetTsigKey.Invoke(new()
         ///     {
-        ///         var testTsigKey = Output.Create(Oci.Dns.GetTsigKey.InvokeAsync(new Oci.Dns.GetTsigKeyArgs
-        ///         {
-        ///             TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
-        ///         }));
-        ///     }
+        ///         TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Dns
     }
 
 
-    public sealed class GetTsigKeyArgs : Pulumi.InvokeArgs
+    public sealed class GetTsigKeyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the target TSIG key.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Dns
         public GetTsigKeyArgs()
         {
         }
+        public static new GetTsigKeyArgs Empty => new GetTsigKeyArgs();
     }
 
-    public sealed class GetTsigKeyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTsigKeyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the target TSIG key.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Dns
         public GetTsigKeyInvokeArgs()
         {
         }
+        public static new GetTsigKeyInvokeArgs Empty => new GetTsigKeyInvokeArgs();
     }
 
 

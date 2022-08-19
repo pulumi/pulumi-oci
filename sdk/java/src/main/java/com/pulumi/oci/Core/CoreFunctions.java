@@ -436,6 +436,34 @@ public final class CoreFunctions {
      * Gets the specified listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppCatalogListingResult> getAppCatalogListing(GetAppCatalogListingArgs args) {
@@ -447,6 +475,34 @@ public final class CoreFunctions {
      * Gets the specified listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppCatalogListingResult> getAppCatalogListingPlain(GetAppCatalogListingPlainArgs args) {
@@ -458,6 +514,34 @@ public final class CoreFunctions {
      * Gets the specified listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppCatalogListingResult> getAppCatalogListing(GetAppCatalogListingArgs args, InvokeOptions options) {
@@ -469,6 +553,34 @@ public final class CoreFunctions {
      * Gets the specified listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppCatalogListingResult> getAppCatalogListingPlain(GetAppCatalogListingPlainArgs args, InvokeOptions options) {
@@ -480,6 +592,35 @@ public final class CoreFunctions {
      * Gets the specified listing resource version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .resourceVersion(var_.app_catalog_listing_resource_version_resource_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppCatalogListingResourceVersionResult> getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs args) {
@@ -491,6 +632,35 @@ public final class CoreFunctions {
      * Gets the specified listing resource version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .resourceVersion(var_.app_catalog_listing_resource_version_resource_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppCatalogListingResourceVersionResult> getAppCatalogListingResourceVersionPlain(GetAppCatalogListingResourceVersionPlainArgs args) {
@@ -502,6 +672,35 @@ public final class CoreFunctions {
      * Gets the specified listing resource version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .resourceVersion(var_.app_catalog_listing_resource_version_resource_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppCatalogListingResourceVersionResult> getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs args, InvokeOptions options) {
@@ -513,6 +712,35 @@ public final class CoreFunctions {
      * Gets the specified listing resource version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .resourceVersion(var_.app_catalog_listing_resource_version_resource_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppCatalogListingResourceVersionResult> getAppCatalogListingResourceVersionPlain(GetAppCatalogListingResourceVersionPlainArgs args, InvokeOptions options) {
@@ -524,6 +752,34 @@ public final class CoreFunctions {
      * Gets all resource versions for a particular listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppCatalogListingResourceVersionsResult> getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs args) {
@@ -535,6 +791,34 @@ public final class CoreFunctions {
      * Gets all resource versions for a particular listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppCatalogListingResourceVersionsResult> getAppCatalogListingResourceVersionsPlain(GetAppCatalogListingResourceVersionsPlainArgs args) {
@@ -546,6 +830,34 @@ public final class CoreFunctions {
      * Gets all resource versions for a particular listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppCatalogListingResourceVersionsResult> getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs args, InvokeOptions options) {
@@ -557,6 +869,34 @@ public final class CoreFunctions {
      * Gets all resource versions for a particular listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingResourceVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppCatalogListingResourceVersionsResult> getAppCatalogListingResourceVersionsPlain(GetAppCatalogListingResourceVersionsPlainArgs args, InvokeOptions options) {
@@ -568,6 +908,36 @@ public final class CoreFunctions {
      * Lists the published listings.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListings = CoreFunctions.getAppCatalogListings(GetAppCatalogListingsArgs.builder()
+     *             .displayName(var_.app_catalog_listing_display_name())
+     *             .publisherName(var_.app_catalog_listing_publisher_name())
+     *             .publisherType(var_.app_catalog_listing_publisher_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppCatalogListingsResult> getAppCatalogListings() {
@@ -579,6 +949,36 @@ public final class CoreFunctions {
      * Lists the published listings.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListings = CoreFunctions.getAppCatalogListings(GetAppCatalogListingsArgs.builder()
+     *             .displayName(var_.app_catalog_listing_display_name())
+     *             .publisherName(var_.app_catalog_listing_publisher_name())
+     *             .publisherType(var_.app_catalog_listing_publisher_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppCatalogListingsResult> getAppCatalogListingsPlain() {
@@ -590,6 +990,36 @@ public final class CoreFunctions {
      * Lists the published listings.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListings = CoreFunctions.getAppCatalogListings(GetAppCatalogListingsArgs.builder()
+     *             .displayName(var_.app_catalog_listing_display_name())
+     *             .publisherName(var_.app_catalog_listing_publisher_name())
+     *             .publisherType(var_.app_catalog_listing_publisher_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppCatalogListingsResult> getAppCatalogListings(GetAppCatalogListingsArgs args) {
@@ -601,6 +1031,36 @@ public final class CoreFunctions {
      * Lists the published listings.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListings = CoreFunctions.getAppCatalogListings(GetAppCatalogListingsArgs.builder()
+     *             .displayName(var_.app_catalog_listing_display_name())
+     *             .publisherName(var_.app_catalog_listing_publisher_name())
+     *             .publisherType(var_.app_catalog_listing_publisher_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppCatalogListingsResult> getAppCatalogListingsPlain(GetAppCatalogListingsPlainArgs args) {
@@ -612,6 +1072,36 @@ public final class CoreFunctions {
      * Lists the published listings.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListings = CoreFunctions.getAppCatalogListings(GetAppCatalogListingsArgs.builder()
+     *             .displayName(var_.app_catalog_listing_display_name())
+     *             .publisherName(var_.app_catalog_listing_publisher_name())
+     *             .publisherType(var_.app_catalog_listing_publisher_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppCatalogListingsResult> getAppCatalogListings(GetAppCatalogListingsArgs args, InvokeOptions options) {
@@ -623,6 +1113,36 @@ public final class CoreFunctions {
      * Lists the published listings.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogListings = CoreFunctions.getAppCatalogListings(GetAppCatalogListingsArgs.builder()
+     *             .displayName(var_.app_catalog_listing_display_name())
+     *             .publisherName(var_.app_catalog_listing_publisher_name())
+     *             .publisherType(var_.app_catalog_listing_publisher_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppCatalogListingsResult> getAppCatalogListingsPlain(GetAppCatalogListingsPlainArgs args, InvokeOptions options) {
@@ -634,6 +1154,35 @@ public final class CoreFunctions {
      * Lists subscriptions for a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppCatalogSubscriptionsResult> getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs args) {
@@ -645,6 +1194,35 @@ public final class CoreFunctions {
      * Lists subscriptions for a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppCatalogSubscriptionsResult> getAppCatalogSubscriptionsPlain(GetAppCatalogSubscriptionsPlainArgs args) {
@@ -656,6 +1234,35 @@ public final class CoreFunctions {
      * Lists subscriptions for a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAppCatalogSubscriptionsResult> getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs args, InvokeOptions options) {
@@ -667,6 +1274,35 @@ public final class CoreFunctions {
      * Lists subscriptions for a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetAppCatalogSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAppCatalogSubscriptionsResult> getAppCatalogSubscriptionsPlain(GetAppCatalogSubscriptionsPlainArgs args, InvokeOptions options) {
@@ -678,6 +1314,34 @@ public final class CoreFunctions {
      * Gets information for the specified block volume replica.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
+     *             .blockVolumeReplicaId(oci_core_block_volume_replica.test_block_volume_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBlockVolumeReplicaResult> getBlockVolumeReplica(GetBlockVolumeReplicaArgs args) {
@@ -689,6 +1353,34 @@ public final class CoreFunctions {
      * Gets information for the specified block volume replica.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
+     *             .blockVolumeReplicaId(oci_core_block_volume_replica.test_block_volume_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBlockVolumeReplicaResult> getBlockVolumeReplicaPlain(GetBlockVolumeReplicaPlainArgs args) {
@@ -700,6 +1392,34 @@ public final class CoreFunctions {
      * Gets information for the specified block volume replica.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
+     *             .blockVolumeReplicaId(oci_core_block_volume_replica.test_block_volume_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBlockVolumeReplicaResult> getBlockVolumeReplica(GetBlockVolumeReplicaArgs args, InvokeOptions options) {
@@ -711,6 +1431,34 @@ public final class CoreFunctions {
      * Gets information for the specified block volume replica.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
+     *             .blockVolumeReplicaId(oci_core_block_volume_replica.test_block_volume_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBlockVolumeReplicaResult> getBlockVolumeReplicaPlain(GetBlockVolumeReplicaPlainArgs args, InvokeOptions options) {
@@ -722,6 +1470,38 @@ public final class CoreFunctions {
      * Lists the block volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockVolumeReplicas = CoreFunctions.getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.builder()
+     *             .availabilityDomain(var_.block_volume_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.block_volume_replica_display_name())
+     *             .state(var_.block_volume_replica_state())
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBlockVolumeReplicasResult> getBlockVolumeReplicas() {
@@ -733,6 +1513,38 @@ public final class CoreFunctions {
      * Lists the block volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockVolumeReplicas = CoreFunctions.getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.builder()
+     *             .availabilityDomain(var_.block_volume_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.block_volume_replica_display_name())
+     *             .state(var_.block_volume_replica_state())
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBlockVolumeReplicasResult> getBlockVolumeReplicasPlain() {
@@ -744,6 +1556,38 @@ public final class CoreFunctions {
      * Lists the block volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockVolumeReplicas = CoreFunctions.getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.builder()
+     *             .availabilityDomain(var_.block_volume_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.block_volume_replica_display_name())
+     *             .state(var_.block_volume_replica_state())
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBlockVolumeReplicasResult> getBlockVolumeReplicas(GetBlockVolumeReplicasArgs args) {
@@ -755,6 +1599,38 @@ public final class CoreFunctions {
      * Lists the block volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockVolumeReplicas = CoreFunctions.getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.builder()
+     *             .availabilityDomain(var_.block_volume_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.block_volume_replica_display_name())
+     *             .state(var_.block_volume_replica_state())
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBlockVolumeReplicasResult> getBlockVolumeReplicasPlain(GetBlockVolumeReplicasPlainArgs args) {
@@ -766,6 +1642,38 @@ public final class CoreFunctions {
      * Lists the block volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockVolumeReplicas = CoreFunctions.getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.builder()
+     *             .availabilityDomain(var_.block_volume_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.block_volume_replica_display_name())
+     *             .state(var_.block_volume_replica_state())
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBlockVolumeReplicasResult> getBlockVolumeReplicas(GetBlockVolumeReplicasArgs args, InvokeOptions options) {
@@ -777,6 +1685,38 @@ public final class CoreFunctions {
      * Lists the block volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBlockVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockVolumeReplicas = CoreFunctions.getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.builder()
+     *             .availabilityDomain(var_.block_volume_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.block_volume_replica_display_name())
+     *             .state(var_.block_volume_replica_state())
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBlockVolumeReplicasResult> getBlockVolumeReplicasPlain(GetBlockVolumeReplicasPlainArgs args, InvokeOptions options) {
@@ -788,6 +1728,34 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
+     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumeResult> getBootVolume(GetBootVolumeArgs args) {
@@ -799,6 +1767,34 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
+     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumeResult> getBootVolumePlain(GetBootVolumePlainArgs args) {
@@ -810,6 +1806,34 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
+     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumeResult> getBootVolume(GetBootVolumeArgs args, InvokeOptions options) {
@@ -821,6 +1845,34 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
+     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumeResult> getBootVolumePlain(GetBootVolumePlainArgs args, InvokeOptions options) {
@@ -844,6 +1896,34 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume backup.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
+     *             .bootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumeBackupResult> getBootVolumeBackup(GetBootVolumeBackupArgs args) {
@@ -855,6 +1935,34 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume backup.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
+     *             .bootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumeBackupResult> getBootVolumeBackupPlain(GetBootVolumeBackupPlainArgs args) {
@@ -866,6 +1974,34 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume backup.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
+     *             .bootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumeBackupResult> getBootVolumeBackup(GetBootVolumeBackupArgs args, InvokeOptions options) {
@@ -877,6 +2013,34 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume backup.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
+     *             .bootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumeBackupResult> getBootVolumeBackupPlain(GetBootVolumeBackupPlainArgs args, InvokeOptions options) {
@@ -888,6 +2052,38 @@ public final class CoreFunctions {
      * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .displayName(var_.boot_volume_backup_display_name())
+     *             .sourceBootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
+     *             .state(var_.boot_volume_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumeBackupsResult> getBootVolumeBackups(GetBootVolumeBackupsArgs args) {
@@ -899,6 +2095,38 @@ public final class CoreFunctions {
      * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .displayName(var_.boot_volume_backup_display_name())
+     *             .sourceBootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
+     *             .state(var_.boot_volume_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumeBackupsResult> getBootVolumeBackupsPlain(GetBootVolumeBackupsPlainArgs args) {
@@ -910,6 +2138,38 @@ public final class CoreFunctions {
      * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .displayName(var_.boot_volume_backup_display_name())
+     *             .sourceBootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
+     *             .state(var_.boot_volume_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumeBackupsResult> getBootVolumeBackups(GetBootVolumeBackupsArgs args, InvokeOptions options) {
@@ -921,6 +2181,38 @@ public final class CoreFunctions {
      * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .displayName(var_.boot_volume_backup_display_name())
+     *             .sourceBootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
+     *             .state(var_.boot_volume_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumeBackupsResult> getBootVolumeBackupsPlain(GetBootVolumeBackupsPlainArgs args, InvokeOptions options) {
@@ -932,6 +2224,34 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume replica.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
+     *             .bootVolumeReplicaId(oci_core_boot_volume_replica.test_boot_volume_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumeReplicaResult> getBootVolumeReplica(GetBootVolumeReplicaArgs args) {
@@ -943,6 +2263,34 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume replica.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
+     *             .bootVolumeReplicaId(oci_core_boot_volume_replica.test_boot_volume_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumeReplicaResult> getBootVolumeReplicaPlain(GetBootVolumeReplicaPlainArgs args) {
@@ -954,6 +2302,34 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume replica.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
+     *             .bootVolumeReplicaId(oci_core_boot_volume_replica.test_boot_volume_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumeReplicaResult> getBootVolumeReplica(GetBootVolumeReplicaArgs args, InvokeOptions options) {
@@ -965,6 +2341,34 @@ public final class CoreFunctions {
      * Gets information for the specified boot volume replica.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
+     *             .bootVolumeReplicaId(oci_core_boot_volume_replica.test_boot_volume_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumeReplicaResult> getBootVolumeReplicaPlain(GetBootVolumeReplicaPlainArgs args, InvokeOptions options) {
@@ -976,6 +2380,38 @@ public final class CoreFunctions {
      * Lists the boot volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeReplicas = CoreFunctions.getBootVolumeReplicas(GetBootVolumeReplicasArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.boot_volume_replica_display_name())
+     *             .state(var_.boot_volume_replica_state())
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumeReplicasResult> getBootVolumeReplicas() {
@@ -987,6 +2423,38 @@ public final class CoreFunctions {
      * Lists the boot volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeReplicas = CoreFunctions.getBootVolumeReplicas(GetBootVolumeReplicasArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.boot_volume_replica_display_name())
+     *             .state(var_.boot_volume_replica_state())
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumeReplicasResult> getBootVolumeReplicasPlain() {
@@ -998,6 +2466,38 @@ public final class CoreFunctions {
      * Lists the boot volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeReplicas = CoreFunctions.getBootVolumeReplicas(GetBootVolumeReplicasArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.boot_volume_replica_display_name())
+     *             .state(var_.boot_volume_replica_state())
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumeReplicasResult> getBootVolumeReplicas(GetBootVolumeReplicasArgs args) {
@@ -1009,6 +2509,38 @@ public final class CoreFunctions {
      * Lists the boot volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeReplicas = CoreFunctions.getBootVolumeReplicas(GetBootVolumeReplicasArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.boot_volume_replica_display_name())
+     *             .state(var_.boot_volume_replica_state())
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumeReplicasResult> getBootVolumeReplicasPlain(GetBootVolumeReplicasPlainArgs args) {
@@ -1020,6 +2552,38 @@ public final class CoreFunctions {
      * Lists the boot volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeReplicas = CoreFunctions.getBootVolumeReplicas(GetBootVolumeReplicasArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.boot_volume_replica_display_name())
+     *             .state(var_.boot_volume_replica_state())
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumeReplicasResult> getBootVolumeReplicas(GetBootVolumeReplicasArgs args, InvokeOptions options) {
@@ -1031,6 +2595,38 @@ public final class CoreFunctions {
      * Lists the boot volume replicas in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumeReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumeReplicas = CoreFunctions.getBootVolumeReplicas(GetBootVolumeReplicasArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.boot_volume_replica_display_name())
+     *             .state(var_.boot_volume_replica_state())
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumeReplicasResult> getBootVolumeReplicasPlain(GetBootVolumeReplicasPlainArgs args, InvokeOptions options) {
@@ -1042,6 +2638,36 @@ public final class CoreFunctions {
      * Lists the boot volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumesResult> getBootVolumes() {
@@ -1053,6 +2679,36 @@ public final class CoreFunctions {
      * Lists the boot volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumesResult> getBootVolumesPlain() {
@@ -1064,6 +2720,36 @@ public final class CoreFunctions {
      * Lists the boot volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumesResult> getBootVolumes(GetBootVolumesArgs args) {
@@ -1075,6 +2761,36 @@ public final class CoreFunctions {
      * Lists the boot volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumesResult> getBootVolumesPlain(GetBootVolumesPlainArgs args) {
@@ -1086,6 +2802,36 @@ public final class CoreFunctions {
      * Lists the boot volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBootVolumesResult> getBootVolumes(GetBootVolumesArgs args, InvokeOptions options) {
@@ -1097,6 +2843,36 @@ public final class CoreFunctions {
      * Lists the boot volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetBootVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
+     *             .availabilityDomain(var_.boot_volume_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBootVolumesResult> getBootVolumesPlain(GetBootVolumesPlainArgs args, InvokeOptions options) {
@@ -1109,6 +2885,34 @@ public final class CoreFunctions {
      * Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipAllocatedRangesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
+     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetByoipAllocatedRangesResult> getByoipAllocatedRanges(GetByoipAllocatedRangesArgs args) {
@@ -1121,6 +2925,34 @@ public final class CoreFunctions {
      * Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipAllocatedRangesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
+     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetByoipAllocatedRangesResult> getByoipAllocatedRangesPlain(GetByoipAllocatedRangesPlainArgs args) {
@@ -1133,6 +2965,34 @@ public final class CoreFunctions {
      * Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipAllocatedRangesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
+     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetByoipAllocatedRangesResult> getByoipAllocatedRanges(GetByoipAllocatedRangesArgs args, InvokeOptions options) {
@@ -1145,6 +3005,34 @@ public final class CoreFunctions {
      * Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipAllocatedRangesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
+     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetByoipAllocatedRangesResult> getByoipAllocatedRangesPlain(GetByoipAllocatedRangesPlainArgs args, InvokeOptions options) {
@@ -1156,6 +3044,34 @@ public final class CoreFunctions {
      * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipRangeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
+     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetByoipRangeResult> getByoipRange(GetByoipRangeArgs args) {
@@ -1167,6 +3083,34 @@ public final class CoreFunctions {
      * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipRangeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
+     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetByoipRangeResult> getByoipRangePlain(GetByoipRangePlainArgs args) {
@@ -1178,6 +3122,34 @@ public final class CoreFunctions {
      * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipRangeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
+     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetByoipRangeResult> getByoipRange(GetByoipRangeArgs args, InvokeOptions options) {
@@ -1189,6 +3161,34 @@ public final class CoreFunctions {
      * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipRangeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
+     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetByoipRangeResult> getByoipRangePlain(GetByoipRangePlainArgs args, InvokeOptions options) {
@@ -1201,6 +3201,36 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipRangesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipRanges = CoreFunctions.getByoipRanges(GetByoipRangesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.byoip_range_display_name())
+     *             .state(var_.byoip_range_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetByoipRangesResult> getByoipRanges(GetByoipRangesArgs args) {
@@ -1213,6 +3243,36 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipRangesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipRanges = CoreFunctions.getByoipRanges(GetByoipRangesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.byoip_range_display_name())
+     *             .state(var_.byoip_range_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetByoipRangesResult> getByoipRangesPlain(GetByoipRangesPlainArgs args) {
@@ -1225,6 +3285,36 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipRangesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipRanges = CoreFunctions.getByoipRanges(GetByoipRangesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.byoip_range_display_name())
+     *             .state(var_.byoip_range_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetByoipRangesResult> getByoipRanges(GetByoipRangesArgs args, InvokeOptions options) {
@@ -1237,6 +3327,36 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoipRangesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoipRanges = CoreFunctions.getByoipRanges(GetByoipRangesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.byoip_range_display_name())
+     *             .state(var_.byoip_range_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetByoipRangesResult> getByoipRangesPlain(GetByoipRangesPlainArgs args, InvokeOptions options) {
@@ -1248,6 +3368,34 @@ public final class CoreFunctions {
      * Gets information about the specified VTAP capture filter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCaptureFilterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
+     *             .captureFilterId(oci_core_capture_filter.test_capture_filter().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCaptureFilterResult> getCaptureFilter(GetCaptureFilterArgs args) {
@@ -1259,6 +3407,34 @@ public final class CoreFunctions {
      * Gets information about the specified VTAP capture filter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCaptureFilterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
+     *             .captureFilterId(oci_core_capture_filter.test_capture_filter().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCaptureFilterResult> getCaptureFilterPlain(GetCaptureFilterPlainArgs args) {
@@ -1270,6 +3446,34 @@ public final class CoreFunctions {
      * Gets information about the specified VTAP capture filter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCaptureFilterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
+     *             .captureFilterId(oci_core_capture_filter.test_capture_filter().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCaptureFilterResult> getCaptureFilter(GetCaptureFilterArgs args, InvokeOptions options) {
@@ -1281,6 +3485,34 @@ public final class CoreFunctions {
      * Gets information about the specified VTAP capture filter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCaptureFilterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
+     *             .captureFilterId(oci_core_capture_filter.test_capture_filter().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCaptureFilterResult> getCaptureFilterPlain(GetCaptureFilterPlainArgs args, InvokeOptions options) {
@@ -1292,6 +3524,36 @@ public final class CoreFunctions {
      * Lists the capture filters in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCaptureFiltersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaptureFilters = CoreFunctions.getCaptureFilters(GetCaptureFiltersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.capture_filter_display_name())
+     *             .state(var_.capture_filter_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCaptureFiltersResult> getCaptureFilters(GetCaptureFiltersArgs args) {
@@ -1303,6 +3565,36 @@ public final class CoreFunctions {
      * Lists the capture filters in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCaptureFiltersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaptureFilters = CoreFunctions.getCaptureFilters(GetCaptureFiltersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.capture_filter_display_name())
+     *             .state(var_.capture_filter_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCaptureFiltersResult> getCaptureFiltersPlain(GetCaptureFiltersPlainArgs args) {
@@ -1314,6 +3606,36 @@ public final class CoreFunctions {
      * Lists the capture filters in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCaptureFiltersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaptureFilters = CoreFunctions.getCaptureFilters(GetCaptureFiltersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.capture_filter_display_name())
+     *             .state(var_.capture_filter_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCaptureFiltersResult> getCaptureFilters(GetCaptureFiltersArgs args, InvokeOptions options) {
@@ -1325,6 +3647,36 @@ public final class CoreFunctions {
      * Lists the capture filters in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCaptureFiltersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaptureFilters = CoreFunctions.getCaptureFilters(GetCaptureFiltersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.capture_filter_display_name())
+     *             .state(var_.capture_filter_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCaptureFiltersResult> getCaptureFiltersPlain(GetCaptureFiltersPlainArgs args, InvokeOptions options) {
@@ -1336,6 +3688,34 @@ public final class CoreFunctions {
      * Gets information about the specified cluster network.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
+     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetClusterNetworkResult> getClusterNetwork(GetClusterNetworkArgs args) {
@@ -1347,6 +3727,34 @@ public final class CoreFunctions {
      * Gets information about the specified cluster network.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
+     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetClusterNetworkResult> getClusterNetworkPlain(GetClusterNetworkPlainArgs args) {
@@ -1358,6 +3766,34 @@ public final class CoreFunctions {
      * Gets information about the specified cluster network.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
+     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetClusterNetworkResult> getClusterNetwork(GetClusterNetworkArgs args, InvokeOptions options) {
@@ -1369,6 +3805,34 @@ public final class CoreFunctions {
      * Gets information about the specified cluster network.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
+     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetClusterNetworkResult> getClusterNetworkPlain(GetClusterNetworkPlainArgs args, InvokeOptions options) {
@@ -1380,6 +3844,36 @@ public final class CoreFunctions {
      * Lists the instances in the specified cluster network.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworkInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
+     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_network_instance_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetClusterNetworkInstancesResult> getClusterNetworkInstances(GetClusterNetworkInstancesArgs args) {
@@ -1391,6 +3885,36 @@ public final class CoreFunctions {
      * Lists the instances in the specified cluster network.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworkInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
+     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_network_instance_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetClusterNetworkInstancesResult> getClusterNetworkInstancesPlain(GetClusterNetworkInstancesPlainArgs args) {
@@ -1402,6 +3926,36 @@ public final class CoreFunctions {
      * Lists the instances in the specified cluster network.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworkInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
+     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_network_instance_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetClusterNetworkInstancesResult> getClusterNetworkInstances(GetClusterNetworkInstancesArgs args, InvokeOptions options) {
@@ -1413,6 +3967,36 @@ public final class CoreFunctions {
      * Lists the instances in the specified cluster network.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworkInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
+     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_network_instance_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetClusterNetworkInstancesResult> getClusterNetworkInstancesPlain(GetClusterNetworkInstancesPlainArgs args, InvokeOptions options) {
@@ -1424,6 +4008,36 @@ public final class CoreFunctions {
      * Lists the cluster networks in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetworks = CoreFunctions.getClusterNetworks(GetClusterNetworksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_network_display_name())
+     *             .state(var_.cluster_network_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetClusterNetworksResult> getClusterNetworks(GetClusterNetworksArgs args) {
@@ -1435,6 +4049,36 @@ public final class CoreFunctions {
      * Lists the cluster networks in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetworks = CoreFunctions.getClusterNetworks(GetClusterNetworksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_network_display_name())
+     *             .state(var_.cluster_network_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetClusterNetworksResult> getClusterNetworksPlain(GetClusterNetworksPlainArgs args) {
@@ -1446,6 +4090,36 @@ public final class CoreFunctions {
      * Lists the cluster networks in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetworks = CoreFunctions.getClusterNetworks(GetClusterNetworksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_network_display_name())
+     *             .state(var_.cluster_network_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetClusterNetworksResult> getClusterNetworks(GetClusterNetworksArgs args, InvokeOptions options) {
@@ -1457,6 +4131,36 @@ public final class CoreFunctions {
      * Lists the cluster networks in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetClusterNetworksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterNetworks = CoreFunctions.getClusterNetworks(GetClusterNetworksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_network_display_name())
+     *             .state(var_.cluster_network_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetClusterNetworksResult> getClusterNetworksPlain(GetClusterNetworksPlainArgs args, InvokeOptions options) {
@@ -1468,6 +4172,34 @@ public final class CoreFunctions {
      * Get the associated DNS resolver information with a vcn
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCnvDnsResolverAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCnvDnsResolverAssociationResult> getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs args) {
@@ -1479,6 +4211,34 @@ public final class CoreFunctions {
      * Get the associated DNS resolver information with a vcn
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCnvDnsResolverAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCnvDnsResolverAssociationResult> getCnvDnsResolverAssociationPlain(GetCnvDnsResolverAssociationPlainArgs args) {
@@ -1490,6 +4250,34 @@ public final class CoreFunctions {
      * Get the associated DNS resolver information with a vcn
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCnvDnsResolverAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCnvDnsResolverAssociationResult> getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs args, InvokeOptions options) {
@@ -1501,6 +4289,34 @@ public final class CoreFunctions {
      * Get the associated DNS resolver information with a vcn
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCnvDnsResolverAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCnvDnsResolverAssociationResult> getCnvDnsResolverAssociationPlain(GetCnvDnsResolverAssociationPlainArgs args, InvokeOptions options) {
@@ -1512,6 +4328,34 @@ public final class CoreFunctions {
      * Gets information about the specified compute capacity reservation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
+     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeCapacityReservationResult> getComputeCapacityReservation(GetComputeCapacityReservationArgs args) {
@@ -1523,6 +4367,34 @@ public final class CoreFunctions {
      * Gets information about the specified compute capacity reservation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
+     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationResult> getComputeCapacityReservationPlain(GetComputeCapacityReservationPlainArgs args) {
@@ -1534,6 +4406,34 @@ public final class CoreFunctions {
      * Gets information about the specified compute capacity reservation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
+     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeCapacityReservationResult> getComputeCapacityReservation(GetComputeCapacityReservationArgs args, InvokeOptions options) {
@@ -1545,6 +4445,34 @@ public final class CoreFunctions {
      * Gets information about the specified compute capacity reservation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
+     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationResult> getComputeCapacityReservationPlain(GetComputeCapacityReservationPlainArgs args, InvokeOptions options) {
@@ -1556,6 +4484,36 @@ public final class CoreFunctions {
      * Lists the shapes that can be reserved within the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstanceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservationInstanceShapes = CoreFunctions.getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_capacity_reservation_instance_shape_availability_domain())
+     *             .displayName(var_.compute_capacity_reservation_instance_shape_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeCapacityReservationInstanceShapesResult> getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs args) {
@@ -1567,6 +4525,36 @@ public final class CoreFunctions {
      * Lists the shapes that can be reserved within the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstanceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservationInstanceShapes = CoreFunctions.getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_capacity_reservation_instance_shape_availability_domain())
+     *             .displayName(var_.compute_capacity_reservation_instance_shape_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationInstanceShapesResult> getComputeCapacityReservationInstanceShapesPlain(GetComputeCapacityReservationInstanceShapesPlainArgs args) {
@@ -1578,6 +4566,36 @@ public final class CoreFunctions {
      * Lists the shapes that can be reserved within the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstanceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservationInstanceShapes = CoreFunctions.getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_capacity_reservation_instance_shape_availability_domain())
+     *             .displayName(var_.compute_capacity_reservation_instance_shape_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeCapacityReservationInstanceShapesResult> getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs args, InvokeOptions options) {
@@ -1589,6 +4607,36 @@ public final class CoreFunctions {
      * Lists the shapes that can be reserved within the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstanceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservationInstanceShapes = CoreFunctions.getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_capacity_reservation_instance_shape_availability_domain())
+     *             .displayName(var_.compute_capacity_reservation_instance_shape_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationInstanceShapesResult> getComputeCapacityReservationInstanceShapesPlain(GetComputeCapacityReservationInstanceShapesPlainArgs args, InvokeOptions options) {
@@ -1600,6 +4648,36 @@ public final class CoreFunctions {
      * Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
+     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .availabilityDomain(var_.compute_capacity_reservation_instance_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeCapacityReservationInstancesResult> getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs args) {
@@ -1611,6 +4689,36 @@ public final class CoreFunctions {
      * Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
+     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .availabilityDomain(var_.compute_capacity_reservation_instance_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationInstancesResult> getComputeCapacityReservationInstancesPlain(GetComputeCapacityReservationInstancesPlainArgs args) {
@@ -1622,6 +4730,36 @@ public final class CoreFunctions {
      * Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
+     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .availabilityDomain(var_.compute_capacity_reservation_instance_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeCapacityReservationInstancesResult> getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs args, InvokeOptions options) {
@@ -1633,6 +4771,36 @@ public final class CoreFunctions {
      * Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
+     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .availabilityDomain(var_.compute_capacity_reservation_instance_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationInstancesResult> getComputeCapacityReservationInstancesPlain(GetComputeCapacityReservationInstancesPlainArgs args, InvokeOptions options) {
@@ -1647,6 +4815,37 @@ public final class CoreFunctions {
      * (the list will include all the identically-named compute capacity reservations in the compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservations = CoreFunctions.getComputeCapacityReservations(GetComputeCapacityReservationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_capacity_reservation_availability_domain())
+     *             .displayName(var_.compute_capacity_reservation_display_name())
+     *             .state(var_.compute_capacity_reservation_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeCapacityReservationsResult> getComputeCapacityReservations(GetComputeCapacityReservationsArgs args) {
@@ -1661,6 +4860,37 @@ public final class CoreFunctions {
      * (the list will include all the identically-named compute capacity reservations in the compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservations = CoreFunctions.getComputeCapacityReservations(GetComputeCapacityReservationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_capacity_reservation_availability_domain())
+     *             .displayName(var_.compute_capacity_reservation_display_name())
+     *             .state(var_.compute_capacity_reservation_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationsResult> getComputeCapacityReservationsPlain(GetComputeCapacityReservationsPlainArgs args) {
@@ -1675,6 +4905,37 @@ public final class CoreFunctions {
      * (the list will include all the identically-named compute capacity reservations in the compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservations = CoreFunctions.getComputeCapacityReservations(GetComputeCapacityReservationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_capacity_reservation_availability_domain())
+     *             .displayName(var_.compute_capacity_reservation_display_name())
+     *             .state(var_.compute_capacity_reservation_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeCapacityReservationsResult> getComputeCapacityReservations(GetComputeCapacityReservationsArgs args, InvokeOptions options) {
@@ -1689,6 +4950,37 @@ public final class CoreFunctions {
      * (the list will include all the identically-named compute capacity reservations in the compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityReservations = CoreFunctions.getComputeCapacityReservations(GetComputeCapacityReservationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_capacity_reservation_availability_domain())
+     *             .displayName(var_.compute_capacity_reservation_display_name())
+     *             .state(var_.compute_capacity_reservation_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeCapacityReservationsResult> getComputeCapacityReservationsPlain(GetComputeCapacityReservationsPlainArgs args, InvokeOptions options) {
@@ -1700,6 +4992,34 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemaResult> getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs args) {
@@ -1711,6 +5031,34 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemaResult> getComputeGlobalImageCapabilitySchemaPlain(GetComputeGlobalImageCapabilitySchemaPlainArgs args) {
@@ -1722,6 +5070,34 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemaResult> getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs args, InvokeOptions options) {
@@ -1733,6 +5109,34 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemaResult> getComputeGlobalImageCapabilitySchemaPlain(GetComputeGlobalImageCapabilitySchemaPlainArgs args, InvokeOptions options) {
@@ -1744,6 +5148,35 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemas = CoreFunctions.getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.compute_global_image_capability_schema_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemas() {
@@ -1755,6 +5188,35 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemas = CoreFunctions.getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.compute_global_image_capability_schema_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemasPlain() {
@@ -1766,6 +5228,35 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemas = CoreFunctions.getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.compute_global_image_capability_schema_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs args) {
@@ -1777,6 +5268,35 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemas = CoreFunctions.getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.compute_global_image_capability_schema_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemasPlain(GetComputeGlobalImageCapabilitySchemasPlainArgs args) {
@@ -1788,6 +5308,35 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemas = CoreFunctions.getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.compute_global_image_capability_schema_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs args, InvokeOptions options) {
@@ -1799,6 +5348,35 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemas = CoreFunctions.getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.compute_global_image_capability_schema_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasResult> getComputeGlobalImageCapabilitySchemasPlain(GetComputeGlobalImageCapabilitySchemasPlainArgs args, InvokeOptions options) {
@@ -1810,6 +5388,35 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema Version
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .computeGlobalImageCapabilitySchemaVersionName(var_.compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasVersionResult> getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs args) {
@@ -1821,6 +5428,35 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema Version
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .computeGlobalImageCapabilitySchemaVersionName(var_.compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasVersionResult> getComputeGlobalImageCapabilitySchemasVersionPlain(GetComputeGlobalImageCapabilitySchemasVersionPlainArgs args) {
@@ -1832,6 +5468,35 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema Version
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .computeGlobalImageCapabilitySchemaVersionName(var_.compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasVersionResult> getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs args, InvokeOptions options) {
@@ -1843,6 +5508,35 @@ public final class CoreFunctions {
      * Gets the specified Compute Global Image Capability Schema Version
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .computeGlobalImageCapabilitySchemaVersionName(var_.compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasVersionResult> getComputeGlobalImageCapabilitySchemasVersionPlain(GetComputeGlobalImageCapabilitySchemasVersionPlainArgs args, InvokeOptions options) {
@@ -1854,6 +5548,35 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema versions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .displayName(var_.compute_global_image_capability_schemas_version_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasVersionsResult> getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs args) {
@@ -1865,6 +5588,35 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema versions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .displayName(var_.compute_global_image_capability_schemas_version_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasVersionsResult> getComputeGlobalImageCapabilitySchemasVersionsPlain(GetComputeGlobalImageCapabilitySchemasVersionsPlainArgs args) {
@@ -1876,6 +5628,35 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema versions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .displayName(var_.compute_global_image_capability_schemas_version_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeGlobalImageCapabilitySchemasVersionsResult> getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs args, InvokeOptions options) {
@@ -1887,6 +5668,35 @@ public final class CoreFunctions {
      * Lists Compute Global Image Capability Schema versions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeGlobalImageCapabilitySchemasVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
+     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .displayName(var_.compute_global_image_capability_schemas_version_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeGlobalImageCapabilitySchemasVersionsResult> getComputeGlobalImageCapabilitySchemasVersionsPlain(GetComputeGlobalImageCapabilitySchemasVersionsPlainArgs args, InvokeOptions options) {
@@ -1898,6 +5708,35 @@ public final class CoreFunctions {
      * Gets the specified Compute Image Capability Schema
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
+     *             .computeImageCapabilitySchemaId(oci_core_compute_image_capability_schema.test_compute_image_capability_schema().id())
+     *             .isMergeEnabled(var_.compute_image_capability_schema_is_merge_enabled())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeImageCapabilitySchemaResult> getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs args) {
@@ -1909,6 +5748,35 @@ public final class CoreFunctions {
      * Gets the specified Compute Image Capability Schema
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
+     *             .computeImageCapabilitySchemaId(oci_core_compute_image_capability_schema.test_compute_image_capability_schema().id())
+     *             .isMergeEnabled(var_.compute_image_capability_schema_is_merge_enabled())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeImageCapabilitySchemaResult> getComputeImageCapabilitySchemaPlain(GetComputeImageCapabilitySchemaPlainArgs args) {
@@ -1920,6 +5788,35 @@ public final class CoreFunctions {
      * Gets the specified Compute Image Capability Schema
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
+     *             .computeImageCapabilitySchemaId(oci_core_compute_image_capability_schema.test_compute_image_capability_schema().id())
+     *             .isMergeEnabled(var_.compute_image_capability_schema_is_merge_enabled())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeImageCapabilitySchemaResult> getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs args, InvokeOptions options) {
@@ -1931,6 +5828,35 @@ public final class CoreFunctions {
      * Gets the specified Compute Image Capability Schema
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
+     *             .computeImageCapabilitySchemaId(oci_core_compute_image_capability_schema.test_compute_image_capability_schema().id())
+     *             .isMergeEnabled(var_.compute_image_capability_schema_is_merge_enabled())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeImageCapabilitySchemaResult> getComputeImageCapabilitySchemaPlain(GetComputeImageCapabilitySchemaPlainArgs args, InvokeOptions options) {
@@ -1942,6 +5868,36 @@ public final class CoreFunctions {
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.compute_image_capability_schema_display_name())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemas() {
@@ -1953,6 +5909,36 @@ public final class CoreFunctions {
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.compute_image_capability_schema_display_name())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemasPlain() {
@@ -1964,6 +5950,36 @@ public final class CoreFunctions {
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.compute_image_capability_schema_display_name())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs args) {
@@ -1975,6 +5991,36 @@ public final class CoreFunctions {
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.compute_image_capability_schema_display_name())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemasPlain(GetComputeImageCapabilitySchemasPlainArgs args) {
@@ -1986,6 +6032,36 @@ public final class CoreFunctions {
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.compute_image_capability_schema_display_name())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs args, InvokeOptions options) {
@@ -1997,6 +6073,36 @@ public final class CoreFunctions {
      * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeImageCapabilitySchemasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.compute_image_capability_schema_display_name())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetComputeImageCapabilitySchemasResult> getComputeImageCapabilitySchemasPlain(GetComputeImageCapabilitySchemasPlainArgs args, InvokeOptions options) {
@@ -2008,6 +6114,37 @@ public final class CoreFunctions {
      * Lists the console history metadata for the specified compartment or instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetConsoleHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.console_history_availability_domain())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .state(var_.console_history_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConsoleHistoriesResult> getConsoleHistories(GetConsoleHistoriesArgs args) {
@@ -2019,6 +6156,37 @@ public final class CoreFunctions {
      * Lists the console history metadata for the specified compartment or instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetConsoleHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.console_history_availability_domain())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .state(var_.console_history_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConsoleHistoriesResult> getConsoleHistoriesPlain(GetConsoleHistoriesPlainArgs args) {
@@ -2030,6 +6198,37 @@ public final class CoreFunctions {
      * Lists the console history metadata for the specified compartment or instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetConsoleHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.console_history_availability_domain())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .state(var_.console_history_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConsoleHistoriesResult> getConsoleHistories(GetConsoleHistoriesArgs args, InvokeOptions options) {
@@ -2041,6 +6240,37 @@ public final class CoreFunctions {
      * Lists the console history metadata for the specified compartment or instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetConsoleHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.console_history_availability_domain())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .state(var_.console_history_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConsoleHistoriesResult> getConsoleHistoriesPlain(GetConsoleHistoriesPlainArgs args, InvokeOptions options) {
@@ -2054,6 +6284,36 @@ public final class CoreFunctions {
      * for details about using the console history operations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetConsoleHistoryDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
+     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
+     *             .length(var_.console_history_content_length())
+     *             .offset(var_.console_history_content_offset())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConsoleHistoryDataResult> getConsoleHistoryData(GetConsoleHistoryDataArgs args) {
@@ -2067,6 +6327,36 @@ public final class CoreFunctions {
      * for details about using the console history operations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetConsoleHistoryDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
+     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
+     *             .length(var_.console_history_content_length())
+     *             .offset(var_.console_history_content_offset())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConsoleHistoryDataResult> getConsoleHistoryDataPlain(GetConsoleHistoryDataPlainArgs args) {
@@ -2080,6 +6370,36 @@ public final class CoreFunctions {
      * for details about using the console history operations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetConsoleHistoryDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
+     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
+     *             .length(var_.console_history_content_length())
+     *             .offset(var_.console_history_content_offset())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConsoleHistoryDataResult> getConsoleHistoryData(GetConsoleHistoryDataArgs args, InvokeOptions options) {
@@ -2093,6 +6413,36 @@ public final class CoreFunctions {
      * for details about using the console history operations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetConsoleHistoryDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
+     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
+     *             .length(var_.console_history_content_length())
+     *             .offset(var_.console_history_content_offset())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConsoleHistoryDataResult> getConsoleHistoryDataPlain(GetConsoleHistoryDataPlainArgs args, InvokeOptions options) {
@@ -2112,6 +6462,34 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
+     *             .cpeDeviceShapeId(oci_core_cpe_device_shape.test_cpe_device_shape().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCpeDeviceShapeResult> getCpeDeviceShape(GetCpeDeviceShapeArgs args) {
@@ -2131,6 +6509,34 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
+     *             .cpeDeviceShapeId(oci_core_cpe_device_shape.test_cpe_device_shape().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCpeDeviceShapeResult> getCpeDeviceShapePlain(GetCpeDeviceShapePlainArgs args) {
@@ -2150,6 +6556,34 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
+     *             .cpeDeviceShapeId(oci_core_cpe_device_shape.test_cpe_device_shape().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCpeDeviceShapeResult> getCpeDeviceShape(GetCpeDeviceShapeArgs args, InvokeOptions options) {
@@ -2169,6 +6603,34 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
+     *             .cpeDeviceShapeId(oci_core_cpe_device_shape.test_cpe_device_shape().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCpeDeviceShapeResult> getCpeDeviceShapePlain(GetCpeDeviceShapePlainArgs args, InvokeOptions options) {
@@ -2192,6 +6654,32 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCpeDeviceShapesResult> getCpeDeviceShapes() {
@@ -2215,6 +6703,32 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCpeDeviceShapesResult> getCpeDeviceShapesPlain() {
@@ -2238,6 +6752,32 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCpeDeviceShapesResult> getCpeDeviceShapes(GetCpeDeviceShapesArgs args) {
@@ -2261,6 +6801,32 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCpeDeviceShapesResult> getCpeDeviceShapesPlain(GetCpeDeviceShapesPlainArgs args) {
@@ -2284,6 +6850,32 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCpeDeviceShapesResult> getCpeDeviceShapes(GetCpeDeviceShapesArgs args, InvokeOptions options) {
@@ -2307,6 +6899,32 @@ public final class CoreFunctions {
      *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpeDeviceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpeDeviceShapes = CoreFunctions.getCpeDeviceShapes();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCpeDeviceShapesResult> getCpeDeviceShapesPlain(GetCpeDeviceShapesPlainArgs args, InvokeOptions options) {
@@ -2318,6 +6936,34 @@ public final class CoreFunctions {
      * Lists the customer-premises equipment objects (CPEs) in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpes = CoreFunctions.getCpes(GetCpesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCpesResult> getCpes(GetCpesArgs args) {
@@ -2329,6 +6975,34 @@ public final class CoreFunctions {
      * Lists the customer-premises equipment objects (CPEs) in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpes = CoreFunctions.getCpes(GetCpesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCpesResult> getCpesPlain(GetCpesPlainArgs args) {
@@ -2340,6 +7014,34 @@ public final class CoreFunctions {
      * Lists the customer-premises equipment objects (CPEs) in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpes = CoreFunctions.getCpes(GetCpesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCpesResult> getCpes(GetCpesArgs args, InvokeOptions options) {
@@ -2351,6 +7053,34 @@ public final class CoreFunctions {
      * Lists the customer-premises equipment objects (CPEs) in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCpesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCpes = CoreFunctions.getCpes(GetCpesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCpesResult> getCpesPlain(GetCpesPlainArgs args, InvokeOptions options) {
@@ -2362,6 +7092,34 @@ public final class CoreFunctions {
      * Gets the specified cross-connect&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
+     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectResult> getCrossConnect(GetCrossConnectArgs args) {
@@ -2373,6 +7131,34 @@ public final class CoreFunctions {
      * Gets the specified cross-connect&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
+     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectResult> getCrossConnectPlain(GetCrossConnectPlainArgs args) {
@@ -2384,6 +7170,34 @@ public final class CoreFunctions {
      * Gets the specified cross-connect&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
+     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectResult> getCrossConnect(GetCrossConnectArgs args, InvokeOptions options) {
@@ -2395,6 +7209,34 @@ public final class CoreFunctions {
      * Gets the specified cross-connect&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
+     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectResult> getCrossConnectPlain(GetCrossConnectPlainArgs args, InvokeOptions options) {
@@ -2406,6 +7248,34 @@ public final class CoreFunctions {
      * Gets the specified cross-connect group&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
+     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectGroupResult> getCrossConnectGroup(GetCrossConnectGroupArgs args) {
@@ -2417,6 +7287,34 @@ public final class CoreFunctions {
      * Gets the specified cross-connect group&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
+     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectGroupResult> getCrossConnectGroupPlain(GetCrossConnectGroupPlainArgs args) {
@@ -2428,6 +7326,34 @@ public final class CoreFunctions {
      * Gets the specified cross-connect group&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
+     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectGroupResult> getCrossConnectGroup(GetCrossConnectGroupArgs args, InvokeOptions options) {
@@ -2439,6 +7365,34 @@ public final class CoreFunctions {
      * Gets the specified cross-connect group&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
+     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectGroupResult> getCrossConnectGroupPlain(GetCrossConnectGroupPlainArgs args, InvokeOptions options) {
@@ -2450,6 +7404,36 @@ public final class CoreFunctions {
      * Lists the cross-connect groups in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectGroups = CoreFunctions.getCrossConnectGroups(GetCrossConnectGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cross_connect_group_display_name())
+     *             .state(var_.cross_connect_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectGroupsResult> getCrossConnectGroups(GetCrossConnectGroupsArgs args) {
@@ -2461,6 +7445,36 @@ public final class CoreFunctions {
      * Lists the cross-connect groups in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectGroups = CoreFunctions.getCrossConnectGroups(GetCrossConnectGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cross_connect_group_display_name())
+     *             .state(var_.cross_connect_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectGroupsResult> getCrossConnectGroupsPlain(GetCrossConnectGroupsPlainArgs args) {
@@ -2472,6 +7486,36 @@ public final class CoreFunctions {
      * Lists the cross-connect groups in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectGroups = CoreFunctions.getCrossConnectGroups(GetCrossConnectGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cross_connect_group_display_name())
+     *             .state(var_.cross_connect_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectGroupsResult> getCrossConnectGroups(GetCrossConnectGroupsArgs args, InvokeOptions options) {
@@ -2483,6 +7527,36 @@ public final class CoreFunctions {
      * Lists the cross-connect groups in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectGroups = CoreFunctions.getCrossConnectGroups(GetCrossConnectGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cross_connect_group_display_name())
+     *             .state(var_.cross_connect_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectGroupsResult> getCrossConnectGroupsPlain(GetCrossConnectGroupsPlainArgs args, InvokeOptions options) {
@@ -2495,6 +7569,34 @@ public final class CoreFunctions {
      * this information so you can specify your desired location when you create a cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectLocationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectLocations = CoreFunctions.getCrossConnectLocations(GetCrossConnectLocationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectLocationsResult> getCrossConnectLocations(GetCrossConnectLocationsArgs args) {
@@ -2507,6 +7609,34 @@ public final class CoreFunctions {
      * this information so you can specify your desired location when you create a cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectLocationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectLocations = CoreFunctions.getCrossConnectLocations(GetCrossConnectLocationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectLocationsResult> getCrossConnectLocationsPlain(GetCrossConnectLocationsPlainArgs args) {
@@ -2519,6 +7649,34 @@ public final class CoreFunctions {
      * this information so you can specify your desired location when you create a cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectLocationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectLocations = CoreFunctions.getCrossConnectLocations(GetCrossConnectLocationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectLocationsResult> getCrossConnectLocations(GetCrossConnectLocationsArgs args, InvokeOptions options) {
@@ -2531,6 +7689,34 @@ public final class CoreFunctions {
      * this information so you can specify your desired location when you create a cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectLocationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectLocations = CoreFunctions.getCrossConnectLocations(GetCrossConnectLocationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectLocationsResult> getCrossConnectLocationsPlain(GetCrossConnectLocationsPlainArgs args, InvokeOptions options) {
@@ -2544,6 +7730,34 @@ public final class CoreFunctions {
      * cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectPortSpeedShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectPortSpeedShapes = CoreFunctions.getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectPortSpeedShapeResult> getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs args) {
@@ -2557,6 +7771,34 @@ public final class CoreFunctions {
      * cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectPortSpeedShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectPortSpeedShapes = CoreFunctions.getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectPortSpeedShapeResult> getCrossConnectPortSpeedShapePlain(GetCrossConnectPortSpeedShapePlainArgs args) {
@@ -2570,6 +7812,34 @@ public final class CoreFunctions {
      * cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectPortSpeedShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectPortSpeedShapes = CoreFunctions.getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectPortSpeedShapeResult> getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs args, InvokeOptions options) {
@@ -2583,6 +7853,34 @@ public final class CoreFunctions {
      * cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectPortSpeedShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectPortSpeedShapes = CoreFunctions.getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectPortSpeedShapeResult> getCrossConnectPortSpeedShapePlain(GetCrossConnectPortSpeedShapePlainArgs args, InvokeOptions options) {
@@ -2594,6 +7892,34 @@ public final class CoreFunctions {
      * Gets the status of the specified cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
+     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectStatusResult> getCrossConnectStatus(GetCrossConnectStatusArgs args) {
@@ -2605,6 +7931,34 @@ public final class CoreFunctions {
      * Gets the status of the specified cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
+     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectStatusResult> getCrossConnectStatusPlain(GetCrossConnectStatusPlainArgs args) {
@@ -2616,6 +7970,34 @@ public final class CoreFunctions {
      * Gets the status of the specified cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
+     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectStatusResult> getCrossConnectStatus(GetCrossConnectStatusArgs args, InvokeOptions options) {
@@ -2627,6 +8009,34 @@ public final class CoreFunctions {
      * Gets the status of the specified cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
+     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectStatusResult> getCrossConnectStatusPlain(GetCrossConnectStatusPlainArgs args, InvokeOptions options) {
@@ -2639,6 +8049,37 @@ public final class CoreFunctions {
      * by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+     *             .displayName(var_.cross_connect_display_name())
+     *             .state(var_.cross_connect_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectsResult> getCrossConnects(GetCrossConnectsArgs args) {
@@ -2651,6 +8092,37 @@ public final class CoreFunctions {
      * by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+     *             .displayName(var_.cross_connect_display_name())
+     *             .state(var_.cross_connect_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectsResult> getCrossConnectsPlain(GetCrossConnectsPlainArgs args) {
@@ -2663,6 +8135,37 @@ public final class CoreFunctions {
      * by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+     *             .displayName(var_.cross_connect_display_name())
+     *             .state(var_.cross_connect_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCrossConnectsResult> getCrossConnects(GetCrossConnectsArgs args, InvokeOptions options) {
@@ -2675,6 +8178,37 @@ public final class CoreFunctions {
      * by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetCrossConnectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+     *             .displayName(var_.cross_connect_display_name())
+     *             .state(var_.cross_connect_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCrossConnectsResult> getCrossConnectsPlain(GetCrossConnectsPlainArgs args, InvokeOptions options) {
@@ -2686,6 +8220,34 @@ public final class CoreFunctions {
      * Gets information about the specified dedicated virtual machine host.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
+     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVmHostResult> getDedicatedVmHost(GetDedicatedVmHostArgs args) {
@@ -2697,6 +8259,34 @@ public final class CoreFunctions {
      * Gets information about the specified dedicated virtual machine host.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
+     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostResult> getDedicatedVmHostPlain(GetDedicatedVmHostPlainArgs args) {
@@ -2708,6 +8298,34 @@ public final class CoreFunctions {
      * Gets information about the specified dedicated virtual machine host.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
+     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVmHostResult> getDedicatedVmHost(GetDedicatedVmHostArgs args, InvokeOptions options) {
@@ -2719,6 +8337,34 @@ public final class CoreFunctions {
      * Gets information about the specified dedicated virtual machine host.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
+     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostResult> getDedicatedVmHostPlain(GetDedicatedVmHostPlainArgs args, InvokeOptions options) {
@@ -2731,6 +8377,36 @@ public final class CoreFunctions {
      * You can filter the list by compatibility with a specific dedicated virtual machine host shape.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstanceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostInstanceShapes = CoreFunctions.getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.dedicated_vm_host_instance_shape_availability_domain())
+     *             .dedicatedVmHostShape(var_.dedicated_vm_host_instance_shape_dedicated_vm_host_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVmHostInstanceShapesResult> getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs args) {
@@ -2743,6 +8419,36 @@ public final class CoreFunctions {
      * You can filter the list by compatibility with a specific dedicated virtual machine host shape.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstanceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostInstanceShapes = CoreFunctions.getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.dedicated_vm_host_instance_shape_availability_domain())
+     *             .dedicatedVmHostShape(var_.dedicated_vm_host_instance_shape_dedicated_vm_host_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostInstanceShapesResult> getDedicatedVmHostInstanceShapesPlain(GetDedicatedVmHostInstanceShapesPlainArgs args) {
@@ -2755,6 +8461,36 @@ public final class CoreFunctions {
      * You can filter the list by compatibility with a specific dedicated virtual machine host shape.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstanceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostInstanceShapes = CoreFunctions.getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.dedicated_vm_host_instance_shape_availability_domain())
+     *             .dedicatedVmHostShape(var_.dedicated_vm_host_instance_shape_dedicated_vm_host_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVmHostInstanceShapesResult> getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs args, InvokeOptions options) {
@@ -2767,6 +8503,36 @@ public final class CoreFunctions {
      * You can filter the list by compatibility with a specific dedicated virtual machine host shape.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstanceShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostInstanceShapes = CoreFunctions.getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.dedicated_vm_host_instance_shape_availability_domain())
+     *             .dedicatedVmHostShape(var_.dedicated_vm_host_instance_shape_dedicated_vm_host_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostInstanceShapesResult> getDedicatedVmHostInstanceShapesPlain(GetDedicatedVmHostInstanceShapesPlainArgs args, InvokeOptions options) {
@@ -2778,6 +8544,36 @@ public final class CoreFunctions {
      * Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
+     *             .availabilityDomain(var_.dedicated_vm_hosts_instance_availability_domain())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVmHostInstancesResult> getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs args) {
@@ -2789,6 +8585,36 @@ public final class CoreFunctions {
      * Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
+     *             .availabilityDomain(var_.dedicated_vm_hosts_instance_availability_domain())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostInstancesResult> getDedicatedVmHostInstancesPlain(GetDedicatedVmHostInstancesPlainArgs args) {
@@ -2800,6 +8626,36 @@ public final class CoreFunctions {
      * Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
+     *             .availabilityDomain(var_.dedicated_vm_hosts_instance_availability_domain())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVmHostInstancesResult> getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs args, InvokeOptions options) {
@@ -2811,6 +8667,36 @@ public final class CoreFunctions {
      * Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
+     *             .availabilityDomain(var_.dedicated_vm_hosts_instance_availability_domain())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostInstancesResult> getDedicatedVmHostInstancesPlain(GetDedicatedVmHostInstancesPlainArgs args, InvokeOptions options) {
@@ -2822,6 +8708,36 @@ public final class CoreFunctions {
      * Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostShapes = CoreFunctions.getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.dedicated_vm_host_shape_availability_domain())
+     *             .instanceShapeName(var_.dedicated_vm_host_shape_instance_shape_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVmHostShapesResult> getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs args) {
@@ -2833,6 +8749,36 @@ public final class CoreFunctions {
      * Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostShapes = CoreFunctions.getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.dedicated_vm_host_shape_availability_domain())
+     *             .instanceShapeName(var_.dedicated_vm_host_shape_instance_shape_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostShapesResult> getDedicatedVmHostShapesPlain(GetDedicatedVmHostShapesPlainArgs args) {
@@ -2844,6 +8790,36 @@ public final class CoreFunctions {
      * Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostShapes = CoreFunctions.getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.dedicated_vm_host_shape_availability_domain())
+     *             .instanceShapeName(var_.dedicated_vm_host_shape_instance_shape_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVmHostShapesResult> getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs args, InvokeOptions options) {
@@ -2855,6 +8831,36 @@ public final class CoreFunctions {
      * Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHostShapes = CoreFunctions.getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.dedicated_vm_host_shape_availability_domain())
+     *             .instanceShapeName(var_.dedicated_vm_host_shape_instance_shape_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostShapesResult> getDedicatedVmHostShapesPlain(GetDedicatedVmHostShapesPlainArgs args, InvokeOptions options) {
@@ -2869,6 +8875,40 @@ public final class CoreFunctions {
      * dedicated virtual machine hosts in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHosts = CoreFunctions.getDedicatedVmHosts(GetDedicatedVmHostsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.dedicated_vm_host_availability_domain())
+     *             .displayName(var_.dedicated_vm_host_display_name())
+     *             .instanceShapeName(var_.dedicated_vm_host_instance_shape_name())
+     *             .remainingMemoryInGbsGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to())
+     *             .remainingOcpusGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to())
+     *             .state(var_.dedicated_vm_host_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVmHostsResult> getDedicatedVmHosts(GetDedicatedVmHostsArgs args) {
@@ -2883,6 +8923,40 @@ public final class CoreFunctions {
      * dedicated virtual machine hosts in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHosts = CoreFunctions.getDedicatedVmHosts(GetDedicatedVmHostsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.dedicated_vm_host_availability_domain())
+     *             .displayName(var_.dedicated_vm_host_display_name())
+     *             .instanceShapeName(var_.dedicated_vm_host_instance_shape_name())
+     *             .remainingMemoryInGbsGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to())
+     *             .remainingOcpusGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to())
+     *             .state(var_.dedicated_vm_host_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostsResult> getDedicatedVmHostsPlain(GetDedicatedVmHostsPlainArgs args) {
@@ -2897,6 +8971,40 @@ public final class CoreFunctions {
      * dedicated virtual machine hosts in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHosts = CoreFunctions.getDedicatedVmHosts(GetDedicatedVmHostsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.dedicated_vm_host_availability_domain())
+     *             .displayName(var_.dedicated_vm_host_display_name())
+     *             .instanceShapeName(var_.dedicated_vm_host_instance_shape_name())
+     *             .remainingMemoryInGbsGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to())
+     *             .remainingOcpusGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to())
+     *             .state(var_.dedicated_vm_host_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDedicatedVmHostsResult> getDedicatedVmHosts(GetDedicatedVmHostsArgs args, InvokeOptions options) {
@@ -2911,6 +9019,40 @@ public final class CoreFunctions {
      * dedicated virtual machine hosts in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDedicatedVmHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedVmHosts = CoreFunctions.getDedicatedVmHosts(GetDedicatedVmHostsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.dedicated_vm_host_availability_domain())
+     *             .displayName(var_.dedicated_vm_host_display_name())
+     *             .instanceShapeName(var_.dedicated_vm_host_instance_shape_name())
+     *             .remainingMemoryInGbsGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to())
+     *             .remainingOcpusGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to())
+     *             .state(var_.dedicated_vm_host_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDedicatedVmHostsResult> getDedicatedVmHostsPlain(GetDedicatedVmHostsPlainArgs args, InvokeOptions options) {
@@ -2925,6 +9067,37 @@ public final class CoreFunctions {
      * plus any other sets you&#39;ve created.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDhcpOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDhcpOptions = CoreFunctions.getDhcpOptions(GetDhcpOptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.dhcp_options_display_name())
+     *             .state(var_.dhcp_options_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDhcpOptionsResult> getDhcpOptions(GetDhcpOptionsArgs args) {
@@ -2939,6 +9112,37 @@ public final class CoreFunctions {
      * plus any other sets you&#39;ve created.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDhcpOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDhcpOptions = CoreFunctions.getDhcpOptions(GetDhcpOptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.dhcp_options_display_name())
+     *             .state(var_.dhcp_options_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDhcpOptionsResult> getDhcpOptionsPlain(GetDhcpOptionsPlainArgs args) {
@@ -2953,6 +9157,37 @@ public final class CoreFunctions {
      * plus any other sets you&#39;ve created.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDhcpOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDhcpOptions = CoreFunctions.getDhcpOptions(GetDhcpOptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.dhcp_options_display_name())
+     *             .state(var_.dhcp_options_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDhcpOptionsResult> getDhcpOptions(GetDhcpOptionsArgs args, InvokeOptions options) {
@@ -2967,6 +9202,37 @@ public final class CoreFunctions {
      * plus any other sets you&#39;ve created.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDhcpOptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDhcpOptions = CoreFunctions.getDhcpOptions(GetDhcpOptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.dhcp_options_display_name())
+     *             .state(var_.dhcp_options_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDhcpOptionsResult> getDhcpOptionsPlain(GetDhcpOptionsPlainArgs args, InvokeOptions options) {
@@ -2983,6 +9249,41 @@ public final class CoreFunctions {
      * but you may request to list ALL attachments of ALL types.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgAttachments = CoreFunctions.getDrgAttachments(GetDrgAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .attachmentType(var_.drg_attachment_attachment_type())
+     *             .displayName(var_.drg_attachment_display_name())
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .networkId(oci_core_network.test_network().id())
+     *             .state(var_.drg_attachment_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgAttachmentsResult> getDrgAttachments(GetDrgAttachmentsArgs args) {
@@ -2999,6 +9300,41 @@ public final class CoreFunctions {
      * but you may request to list ALL attachments of ALL types.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgAttachments = CoreFunctions.getDrgAttachments(GetDrgAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .attachmentType(var_.drg_attachment_attachment_type())
+     *             .displayName(var_.drg_attachment_display_name())
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .networkId(oci_core_network.test_network().id())
+     *             .state(var_.drg_attachment_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgAttachmentsResult> getDrgAttachmentsPlain(GetDrgAttachmentsPlainArgs args) {
@@ -3015,6 +9351,41 @@ public final class CoreFunctions {
      * but you may request to list ALL attachments of ALL types.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgAttachments = CoreFunctions.getDrgAttachments(GetDrgAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .attachmentType(var_.drg_attachment_attachment_type())
+     *             .displayName(var_.drg_attachment_display_name())
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .networkId(oci_core_network.test_network().id())
+     *             .state(var_.drg_attachment_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgAttachmentsResult> getDrgAttachments(GetDrgAttachmentsArgs args, InvokeOptions options) {
@@ -3031,6 +9402,41 @@ public final class CoreFunctions {
      * but you may request to list ALL attachments of ALL types.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgAttachments = CoreFunctions.getDrgAttachments(GetDrgAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .attachmentType(var_.drg_attachment_attachment_type())
+     *             .displayName(var_.drg_attachment_display_name())
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .networkId(oci_core_network.test_network().id())
+     *             .state(var_.drg_attachment_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgAttachmentsResult> getDrgAttachmentsPlain(GetDrgAttachmentsPlainArgs args, InvokeOptions options) {
@@ -3042,6 +9448,34 @@ public final class CoreFunctions {
      * Gets the specified route distribution&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
+     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgRouteDistributionResult> getDrgRouteDistribution(GetDrgRouteDistributionArgs args) {
@@ -3053,6 +9487,34 @@ public final class CoreFunctions {
      * Gets the specified route distribution&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
+     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgRouteDistributionResult> getDrgRouteDistributionPlain(GetDrgRouteDistributionPlainArgs args) {
@@ -3064,6 +9526,34 @@ public final class CoreFunctions {
      * Gets the specified route distribution&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
+     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgRouteDistributionResult> getDrgRouteDistribution(GetDrgRouteDistributionArgs args, InvokeOptions options) {
@@ -3075,6 +9565,34 @@ public final class CoreFunctions {
      * Gets the specified route distribution&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
+     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgRouteDistributionResult> getDrgRouteDistributionPlain(GetDrgRouteDistributionPlainArgs args, InvokeOptions options) {
@@ -3086,6 +9604,34 @@ public final class CoreFunctions {
      * Lists the statements for the specified route distribution.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
+     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgRouteDistributionStatementsResult> getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs args) {
@@ -3097,6 +9643,34 @@ public final class CoreFunctions {
      * Lists the statements for the specified route distribution.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
+     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgRouteDistributionStatementsResult> getDrgRouteDistributionStatementsPlain(GetDrgRouteDistributionStatementsPlainArgs args) {
@@ -3108,6 +9682,34 @@ public final class CoreFunctions {
      * Lists the statements for the specified route distribution.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
+     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgRouteDistributionStatementsResult> getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs args, InvokeOptions options) {
@@ -3119,6 +9721,34 @@ public final class CoreFunctions {
      * Lists the statements for the specified route distribution.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
+     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgRouteDistributionStatementsResult> getDrgRouteDistributionStatementsPlain(GetDrgRouteDistributionStatementsPlainArgs args, InvokeOptions options) {
@@ -3133,6 +9763,36 @@ public final class CoreFunctions {
      * ListDrgRouteDistributionStatements operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .displayName(var_.drg_route_distribution_display_name())
+     *             .state(var_.drg_route_distribution_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgRouteDistributionsResult> getDrgRouteDistributions(GetDrgRouteDistributionsArgs args) {
@@ -3147,6 +9807,36 @@ public final class CoreFunctions {
      * ListDrgRouteDistributionStatements operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .displayName(var_.drg_route_distribution_display_name())
+     *             .state(var_.drg_route_distribution_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgRouteDistributionsResult> getDrgRouteDistributionsPlain(GetDrgRouteDistributionsPlainArgs args) {
@@ -3161,6 +9851,36 @@ public final class CoreFunctions {
      * ListDrgRouteDistributionStatements operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .displayName(var_.drg_route_distribution_display_name())
+     *             .state(var_.drg_route_distribution_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgRouteDistributionsResult> getDrgRouteDistributions(GetDrgRouteDistributionsArgs args, InvokeOptions options) {
@@ -3175,6 +9895,36 @@ public final class CoreFunctions {
      * ListDrgRouteDistributionStatements operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteDistributionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .displayName(var_.drg_route_distribution_display_name())
+     *             .state(var_.drg_route_distribution_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgRouteDistributionsResult> getDrgRouteDistributionsPlain(GetDrgRouteDistributionsPlainArgs args, InvokeOptions options) {
@@ -3186,6 +9936,34 @@ public final class CoreFunctions {
      * Gets the specified DRG route table&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
+     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgRouteRuleResult> getDrgRouteRule(GetDrgRouteRuleArgs args) {
@@ -3197,6 +9975,34 @@ public final class CoreFunctions {
      * Gets the specified DRG route table&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
+     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgRouteRuleResult> getDrgRouteRulePlain(GetDrgRouteRulePlainArgs args) {
@@ -3208,6 +10014,34 @@ public final class CoreFunctions {
      * Gets the specified DRG route table&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
+     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgRouteRuleResult> getDrgRouteRule(GetDrgRouteRuleArgs args, InvokeOptions options) {
@@ -3219,6 +10053,34 @@ public final class CoreFunctions {
      * Gets the specified DRG route table&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
+     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgRouteRuleResult> getDrgRouteRulePlain(GetDrgRouteRulePlainArgs args, InvokeOptions options) {
@@ -3230,6 +10092,35 @@ public final class CoreFunctions {
      * Lists the route rules in the specified DRG route table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteTableRouteRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
+     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .routeType(var_.drg_route_table_route_rule_route_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgRouteTableRouteRulesResult> getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs args) {
@@ -3241,6 +10132,35 @@ public final class CoreFunctions {
      * Lists the route rules in the specified DRG route table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteTableRouteRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
+     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .routeType(var_.drg_route_table_route_rule_route_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgRouteTableRouteRulesResult> getDrgRouteTableRouteRulesPlain(GetDrgRouteTableRouteRulesPlainArgs args) {
@@ -3252,6 +10172,35 @@ public final class CoreFunctions {
      * Lists the route rules in the specified DRG route table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteTableRouteRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
+     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .routeType(var_.drg_route_table_route_rule_route_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgRouteTableRouteRulesResult> getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs args, InvokeOptions options) {
@@ -3263,6 +10212,35 @@ public final class CoreFunctions {
      * Lists the route rules in the specified DRG route table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteTableRouteRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
+     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .routeType(var_.drg_route_table_route_rule_route_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgRouteTableRouteRulesResult> getDrgRouteTableRouteRulesPlain(GetDrgRouteTableRouteRulesPlainArgs args, InvokeOptions options) {
@@ -3276,6 +10254,37 @@ public final class CoreFunctions {
      * Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .displayName(var_.drg_route_table_display_name())
+     *             .importDrgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .state(var_.drg_route_table_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgRouteTablesResult> getDrgRouteTables(GetDrgRouteTablesArgs args) {
@@ -3289,6 +10298,37 @@ public final class CoreFunctions {
      * Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .displayName(var_.drg_route_table_display_name())
+     *             .importDrgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .state(var_.drg_route_table_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgRouteTablesResult> getDrgRouteTablesPlain(GetDrgRouteTablesPlainArgs args) {
@@ -3302,6 +10342,37 @@ public final class CoreFunctions {
      * Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .displayName(var_.drg_route_table_display_name())
+     *             .importDrgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .state(var_.drg_route_table_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgRouteTablesResult> getDrgRouteTables(GetDrgRouteTablesArgs args, InvokeOptions options) {
@@ -3315,6 +10386,37 @@ public final class CoreFunctions {
      * Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .displayName(var_.drg_route_table_display_name())
+     *             .importDrgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .state(var_.drg_route_table_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgRouteTablesResult> getDrgRouteTablesPlain(GetDrgRouteTablesPlainArgs args, InvokeOptions options) {
@@ -3326,6 +10428,34 @@ public final class CoreFunctions {
      * Lists the DRGs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgs = CoreFunctions.getDrgs(GetDrgsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgsResult> getDrgs(GetDrgsArgs args) {
@@ -3337,6 +10467,34 @@ public final class CoreFunctions {
      * Lists the DRGs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgs = CoreFunctions.getDrgs(GetDrgsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgsResult> getDrgsPlain(GetDrgsPlainArgs args) {
@@ -3348,6 +10506,34 @@ public final class CoreFunctions {
      * Lists the DRGs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgs = CoreFunctions.getDrgs(GetDrgsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDrgsResult> getDrgs(GetDrgsArgs args, InvokeOptions options) {
@@ -3359,6 +10545,34 @@ public final class CoreFunctions {
      * Lists the DRGs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetDrgsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDrgs = CoreFunctions.getDrgs(GetDrgsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDrgsResult> getDrgsPlain(GetDrgsPlainArgs args, InvokeOptions options) {
@@ -3371,6 +10585,34 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
+     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFastConnectProviderServiceResult> getFastConnectProviderService(GetFastConnectProviderServiceArgs args) {
@@ -3383,6 +10625,34 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
+     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFastConnectProviderServiceResult> getFastConnectProviderServicePlain(GetFastConnectProviderServicePlainArgs args) {
@@ -3395,6 +10665,34 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
+     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFastConnectProviderServiceResult> getFastConnectProviderService(GetFastConnectProviderServiceArgs args, InvokeOptions options) {
@@ -3407,6 +10705,34 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
+     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFastConnectProviderServiceResult> getFastConnectProviderServicePlain(GetFastConnectProviderServicePlainArgs args, InvokeOptions options) {
@@ -3419,6 +10745,35 @@ public final class CoreFunctions {
      * provider service key. An invalid key returns a 404 error.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
+     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .providerServiceKeyName(var_.fast_connect_provider_service_key_provider_service_key_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFastConnectProviderServiceKeyResult> getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs args) {
@@ -3431,6 +10786,35 @@ public final class CoreFunctions {
      * provider service key. An invalid key returns a 404 error.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
+     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .providerServiceKeyName(var_.fast_connect_provider_service_key_provider_service_key_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFastConnectProviderServiceKeyResult> getFastConnectProviderServiceKeyPlain(GetFastConnectProviderServiceKeyPlainArgs args) {
@@ -3443,6 +10827,35 @@ public final class CoreFunctions {
      * provider service key. An invalid key returns a 404 error.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
+     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .providerServiceKeyName(var_.fast_connect_provider_service_key_provider_service_key_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFastConnectProviderServiceKeyResult> getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs args, InvokeOptions options) {
@@ -3455,6 +10868,35 @@ public final class CoreFunctions {
      * provider service key. An invalid key returns a 404 error.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
+     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .providerServiceKeyName(var_.fast_connect_provider_service_key_provider_service_key_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFastConnectProviderServiceKeyResult> getFastConnectProviderServiceKeyPlain(GetFastConnectProviderServiceKeyPlainArgs args, InvokeOptions options) {
@@ -3472,6 +10914,34 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderServices = CoreFunctions.getFastConnectProviderServices(GetFastConnectProviderServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFastConnectProviderServicesResult> getFastConnectProviderServices(GetFastConnectProviderServicesArgs args) {
@@ -3489,6 +10959,34 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderServices = CoreFunctions.getFastConnectProviderServices(GetFastConnectProviderServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFastConnectProviderServicesResult> getFastConnectProviderServicesPlain(GetFastConnectProviderServicesPlainArgs args) {
@@ -3506,6 +11004,34 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderServices = CoreFunctions.getFastConnectProviderServices(GetFastConnectProviderServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFastConnectProviderServicesResult> getFastConnectProviderServices(GetFastConnectProviderServicesArgs args, InvokeOptions options) {
@@ -3523,6 +11049,34 @@ public final class CoreFunctions {
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFastConnectProviderServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFastConnectProviderServices = CoreFunctions.getFastConnectProviderServices(GetFastConnectProviderServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFastConnectProviderServicesResult> getFastConnectProviderServicesPlain(GetFastConnectProviderServicesPlainArgs args, InvokeOptions options) {
@@ -3534,6 +11088,34 @@ public final class CoreFunctions {
      * Gets the specified image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImageResult> getImage(GetImageArgs args) {
@@ -3545,6 +11127,34 @@ public final class CoreFunctions {
      * Gets the specified image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImageResult> getImagePlain(GetImagePlainArgs args) {
@@ -3556,6 +11166,34 @@ public final class CoreFunctions {
      * Gets the specified image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImageResult> getImage(GetImageArgs args, InvokeOptions options) {
@@ -3567,6 +11205,34 @@ public final class CoreFunctions {
      * Gets the specified image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImageResult> getImagePlain(GetImagePlainArgs args, InvokeOptions options) {
@@ -3578,6 +11244,35 @@ public final class CoreFunctions {
      * Retrieves an image shape compatibility entry.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
+     *             .imageId(oci_core_image.test_image().id())
+     *             .shapeName(oci_core_shape.test_shape().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImageShapeResult> getImageShape(GetImageShapeArgs args) {
@@ -3589,6 +11284,35 @@ public final class CoreFunctions {
      * Retrieves an image shape compatibility entry.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
+     *             .imageId(oci_core_image.test_image().id())
+     *             .shapeName(oci_core_shape.test_shape().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImageShapeResult> getImageShapePlain(GetImageShapePlainArgs args) {
@@ -3600,6 +11324,35 @@ public final class CoreFunctions {
      * Retrieves an image shape compatibility entry.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
+     *             .imageId(oci_core_image.test_image().id())
+     *             .shapeName(oci_core_shape.test_shape().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImageShapeResult> getImageShape(GetImageShapeArgs args, InvokeOptions options) {
@@ -3611,6 +11364,35 @@ public final class CoreFunctions {
      * Retrieves an image shape compatibility entry.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageShapeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
+     *             .imageId(oci_core_image.test_image().id())
+     *             .shapeName(oci_core_shape.test_shape().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImageShapeResult> getImageShapePlain(GetImageShapePlainArgs args, InvokeOptions options) {
@@ -3622,6 +11404,34 @@ public final class CoreFunctions {
      * Lists the compatible shapes for the specified image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImageShapesResult> getImageShapes(GetImageShapesArgs args) {
@@ -3633,6 +11443,34 @@ public final class CoreFunctions {
      * Lists the compatible shapes for the specified image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImageShapesResult> getImageShapesPlain(GetImageShapesPlainArgs args) {
@@ -3644,6 +11482,34 @@ public final class CoreFunctions {
      * Lists the compatible shapes for the specified image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImageShapesResult> getImageShapes(GetImageShapesArgs args, InvokeOptions options) {
@@ -3655,6 +11521,34 @@ public final class CoreFunctions {
      * Lists the compatible shapes for the specified image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImageShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImageShapesResult> getImageShapesPlain(GetImageShapesPlainArgs args, InvokeOptions options) {
@@ -3676,6 +11570,41 @@ public final class CoreFunctions {
      * The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImages = CoreFunctions.getImages(GetImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.image_display_name())
+     *             .operatingSystem(var_.image_operating_system())
+     *             .operatingSystemVersion(var_.image_operating_system_version())
+     *             .shape(var_.image_shape())
+     *             .state(var_.image_state())
+     *             .sortBy(var_.image_sort_by())
+     *             .sortOrder(var_.image_sort_order())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImagesResult> getImages(GetImagesArgs args) {
@@ -3697,6 +11626,41 @@ public final class CoreFunctions {
      * The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImages = CoreFunctions.getImages(GetImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.image_display_name())
+     *             .operatingSystem(var_.image_operating_system())
+     *             .operatingSystemVersion(var_.image_operating_system_version())
+     *             .shape(var_.image_shape())
+     *             .state(var_.image_state())
+     *             .sortBy(var_.image_sort_by())
+     *             .sortOrder(var_.image_sort_order())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImagesResult> getImagesPlain(GetImagesPlainArgs args) {
@@ -3718,6 +11682,41 @@ public final class CoreFunctions {
      * The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImages = CoreFunctions.getImages(GetImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.image_display_name())
+     *             .operatingSystem(var_.image_operating_system())
+     *             .operatingSystemVersion(var_.image_operating_system_version())
+     *             .shape(var_.image_shape())
+     *             .state(var_.image_state())
+     *             .sortBy(var_.image_sort_by())
+     *             .sortOrder(var_.image_sort_order())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImagesResult> getImages(GetImagesArgs args, InvokeOptions options) {
@@ -3739,6 +11738,41 @@ public final class CoreFunctions {
      * The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImages = CoreFunctions.getImages(GetImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.image_display_name())
+     *             .operatingSystem(var_.image_operating_system())
+     *             .operatingSystemVersion(var_.image_operating_system_version())
+     *             .shape(var_.image_shape())
+     *             .state(var_.image_state())
+     *             .sortBy(var_.image_sort_by())
+     *             .sortOrder(var_.image_sort_order())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImagesResult> getImagesPlain(GetImagesPlainArgs args, InvokeOptions options) {
@@ -3750,6 +11784,34 @@ public final class CoreFunctions {
      * Gets information about the specified instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceResult> getInstance(GetInstanceArgs args) {
@@ -3761,6 +11823,34 @@ public final class CoreFunctions {
      * Gets information about the specified instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceResult> getInstancePlain(GetInstancePlainArgs args) {
@@ -3772,6 +11862,34 @@ public final class CoreFunctions {
      * Gets information about the specified instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceResult> getInstance(GetInstanceArgs args, InvokeOptions options) {
@@ -3783,6 +11901,34 @@ public final class CoreFunctions {
      * Gets information about the specified instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceResult> getInstancePlain(GetInstancePlainArgs args, InvokeOptions options) {
@@ -3794,6 +11940,34 @@ public final class CoreFunctions {
      * Gets the specified instance configuration
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
+     *             .instanceConfigurationId(oci_core_instance_configuration.test_instance_configuration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceConfigurationResult> getInstanceConfiguration(GetInstanceConfigurationArgs args) {
@@ -3805,6 +11979,34 @@ public final class CoreFunctions {
      * Gets the specified instance configuration
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
+     *             .instanceConfigurationId(oci_core_instance_configuration.test_instance_configuration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceConfigurationResult> getInstanceConfigurationPlain(GetInstanceConfigurationPlainArgs args) {
@@ -3816,6 +12018,34 @@ public final class CoreFunctions {
      * Gets the specified instance configuration
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
+     *             .instanceConfigurationId(oci_core_instance_configuration.test_instance_configuration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceConfigurationResult> getInstanceConfiguration(GetInstanceConfigurationArgs args, InvokeOptions options) {
@@ -3827,6 +12057,34 @@ public final class CoreFunctions {
      * Gets the specified instance configuration
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
+     *             .instanceConfigurationId(oci_core_instance_configuration.test_instance_configuration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceConfigurationResult> getInstanceConfigurationPlain(GetInstanceConfigurationPlainArgs args, InvokeOptions options) {
@@ -3838,6 +12096,34 @@ public final class CoreFunctions {
      * Lists the instance configurations in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConfigurations = CoreFunctions.getInstanceConfigurations(GetInstanceConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceConfigurationsResult> getInstanceConfigurations(GetInstanceConfigurationsArgs args) {
@@ -3849,6 +12135,34 @@ public final class CoreFunctions {
      * Lists the instance configurations in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConfigurations = CoreFunctions.getInstanceConfigurations(GetInstanceConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceConfigurationsResult> getInstanceConfigurationsPlain(GetInstanceConfigurationsPlainArgs args) {
@@ -3860,6 +12174,34 @@ public final class CoreFunctions {
      * Lists the instance configurations in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConfigurations = CoreFunctions.getInstanceConfigurations(GetInstanceConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceConfigurationsResult> getInstanceConfigurations(GetInstanceConfigurationsArgs args, InvokeOptions options) {
@@ -3871,6 +12213,34 @@ public final class CoreFunctions {
      * Lists the instance configurations in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConfigurations = CoreFunctions.getInstanceConfigurations(GetInstanceConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceConfigurationsResult> getInstanceConfigurationsPlain(GetInstanceConfigurationsPlainArgs args, InvokeOptions options) {
@@ -3884,6 +12254,35 @@ public final class CoreFunctions {
      * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConsoleConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceConsoleConnectionsResult> getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs args) {
@@ -3897,6 +12296,35 @@ public final class CoreFunctions {
      * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConsoleConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceConsoleConnectionsResult> getInstanceConsoleConnectionsPlain(GetInstanceConsoleConnectionsPlainArgs args) {
@@ -3910,6 +12338,35 @@ public final class CoreFunctions {
      * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConsoleConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceConsoleConnectionsResult> getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs args, InvokeOptions options) {
@@ -3923,6 +12380,35 @@ public final class CoreFunctions {
      * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceConsoleConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceConsoleConnectionsResult> getInstanceConsoleConnectionsPlain(GetInstanceConsoleConnectionsPlainArgs args, InvokeOptions options) {
@@ -3935,6 +12421,34 @@ public final class CoreFunctions {
      * For certain operating systems, users will be forced to change the initial credentials.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceCredentialsResult> getInstanceCredentials(GetInstanceCredentialsArgs args) {
@@ -3947,6 +12461,34 @@ public final class CoreFunctions {
      * For certain operating systems, users will be forced to change the initial credentials.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceCredentialsResult> getInstanceCredentialsPlain(GetInstanceCredentialsPlainArgs args) {
@@ -3959,6 +12501,34 @@ public final class CoreFunctions {
      * For certain operating systems, users will be forced to change the initial credentials.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceCredentialsResult> getInstanceCredentials(GetInstanceCredentialsArgs args, InvokeOptions options) {
@@ -3971,6 +12541,34 @@ public final class CoreFunctions {
      * For certain operating systems, users will be forced to change the initial credentials.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceCredentialsResult> getInstanceCredentialsPlain(GetInstanceCredentialsPlainArgs args, InvokeOptions options) {
@@ -3982,6 +12580,36 @@ public final class CoreFunctions {
      * Gets a list of all the devices for given instance. You can optionally filter results by device availability.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceDevicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .isAvailable(var_.instance_device_is_available())
+     *             .name(var_.instance_device_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceDevicesResult> getInstanceDevices(GetInstanceDevicesArgs args) {
@@ -3993,6 +12621,36 @@ public final class CoreFunctions {
      * Gets a list of all the devices for given instance. You can optionally filter results by device availability.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceDevicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .isAvailable(var_.instance_device_is_available())
+     *             .name(var_.instance_device_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceDevicesResult> getInstanceDevicesPlain(GetInstanceDevicesPlainArgs args) {
@@ -4004,6 +12662,36 @@ public final class CoreFunctions {
      * Gets a list of all the devices for given instance. You can optionally filter results by device availability.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceDevicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .isAvailable(var_.instance_device_is_available())
+     *             .name(var_.instance_device_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceDevicesResult> getInstanceDevices(GetInstanceDevicesArgs args, InvokeOptions options) {
@@ -4015,6 +12703,36 @@ public final class CoreFunctions {
      * Gets a list of all the devices for given instance. You can optionally filter results by device availability.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceDevicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .isAvailable(var_.instance_device_is_available())
+     *             .name(var_.instance_device_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceDevicesResult> getInstanceDevicesPlain(GetInstanceDevicesPlainArgs args, InvokeOptions options) {
@@ -4026,6 +12744,34 @@ public final class CoreFunctions {
      * Gets the maximum possible date that a maintenance reboot can be extended.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs args) {
@@ -4037,6 +12783,34 @@ public final class CoreFunctions {
      * Gets the maximum possible date that a maintenance reboot can be extended.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceRebootPlain(GetInstanceMaintenanceRebootPlainArgs args) {
@@ -4048,6 +12822,34 @@ public final class CoreFunctions {
      * Gets the maximum possible date that a maintenance reboot can be extended.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs args, InvokeOptions options) {
@@ -4059,6 +12861,34 @@ public final class CoreFunctions {
      * Gets the maximum possible date that a maintenance reboot can be extended.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMaintenanceRebootArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceMaintenanceRebootResult> getInstanceMaintenanceRebootPlain(GetInstanceMaintenanceRebootPlainArgs args, InvokeOptions options) {
@@ -4070,6 +12900,34 @@ public final class CoreFunctions {
      * Gets the measured boot report for this shielded instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMeasuredBootReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceMeasuredBootReportResult> getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs args) {
@@ -4081,6 +12939,34 @@ public final class CoreFunctions {
      * Gets the measured boot report for this shielded instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMeasuredBootReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceMeasuredBootReportResult> getInstanceMeasuredBootReportPlain(GetInstanceMeasuredBootReportPlainArgs args) {
@@ -4092,6 +12978,34 @@ public final class CoreFunctions {
      * Gets the measured boot report for this shielded instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMeasuredBootReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceMeasuredBootReportResult> getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs args, InvokeOptions options) {
@@ -4103,6 +13017,34 @@ public final class CoreFunctions {
      * Gets the measured boot report for this shielded instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstanceMeasuredBootReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceMeasuredBootReportResult> getInstanceMeasuredBootReportPlain(GetInstanceMeasuredBootReportPlainArgs args, InvokeOptions options) {
@@ -4114,6 +13056,34 @@ public final class CoreFunctions {
      * Gets the specified instance pool
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
+     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstancePoolResult> getInstancePool(GetInstancePoolArgs args) {
@@ -4125,6 +13095,34 @@ public final class CoreFunctions {
      * Gets the specified instance pool
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
+     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstancePoolResult> getInstancePoolPlain(GetInstancePoolPlainArgs args) {
@@ -4136,6 +13134,34 @@ public final class CoreFunctions {
      * Gets the specified instance pool
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
+     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstancePoolResult> getInstancePool(GetInstancePoolArgs args, InvokeOptions options) {
@@ -4147,6 +13173,34 @@ public final class CoreFunctions {
      * Gets the specified instance pool
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
+     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstancePoolResult> getInstancePoolPlain(GetInstancePoolPlainArgs args, InvokeOptions options) {
@@ -4158,6 +13212,36 @@ public final class CoreFunctions {
      * List the instances in the specified instance pool.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .displayName(var_.instance_pool_instance_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstancePoolInstancesResult> getInstancePoolInstances(GetInstancePoolInstancesArgs args) {
@@ -4169,6 +13253,36 @@ public final class CoreFunctions {
      * List the instances in the specified instance pool.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .displayName(var_.instance_pool_instance_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstancePoolInstancesResult> getInstancePoolInstancesPlain(GetInstancePoolInstancesPlainArgs args) {
@@ -4180,6 +13294,36 @@ public final class CoreFunctions {
      * List the instances in the specified instance pool.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .displayName(var_.instance_pool_instance_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstancePoolInstancesResult> getInstancePoolInstances(GetInstancePoolInstancesArgs args, InvokeOptions options) {
@@ -4191,6 +13335,36 @@ public final class CoreFunctions {
      * List the instances in the specified instance pool.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .displayName(var_.instance_pool_instance_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstancePoolInstancesResult> getInstancePoolInstancesPlain(GetInstancePoolInstancesPlainArgs args, InvokeOptions options) {
@@ -4202,6 +13376,35 @@ public final class CoreFunctions {
      * Gets information about a load balancer that is attached to the specified instance pool.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolLoadBalancerAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
+     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .instancePoolLoadBalancerAttachmentId(oci_core_instance_pool_load_balancer_attachment.test_instance_pool_load_balancer_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstancePoolLoadBalancerAttachmentResult> getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs args) {
@@ -4213,6 +13416,35 @@ public final class CoreFunctions {
      * Gets information about a load balancer that is attached to the specified instance pool.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolLoadBalancerAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
+     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .instancePoolLoadBalancerAttachmentId(oci_core_instance_pool_load_balancer_attachment.test_instance_pool_load_balancer_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstancePoolLoadBalancerAttachmentResult> getInstancePoolLoadBalancerAttachmentPlain(GetInstancePoolLoadBalancerAttachmentPlainArgs args) {
@@ -4224,6 +13456,35 @@ public final class CoreFunctions {
      * Gets information about a load balancer that is attached to the specified instance pool.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolLoadBalancerAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
+     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .instancePoolLoadBalancerAttachmentId(oci_core_instance_pool_load_balancer_attachment.test_instance_pool_load_balancer_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstancePoolLoadBalancerAttachmentResult> getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs args, InvokeOptions options) {
@@ -4235,6 +13496,35 @@ public final class CoreFunctions {
      * Gets information about a load balancer that is attached to the specified instance pool.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolLoadBalancerAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
+     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .instancePoolLoadBalancerAttachmentId(oci_core_instance_pool_load_balancer_attachment.test_instance_pool_load_balancer_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstancePoolLoadBalancerAttachmentResult> getInstancePoolLoadBalancerAttachmentPlain(GetInstancePoolLoadBalancerAttachmentPlainArgs args, InvokeOptions options) {
@@ -4246,6 +13536,36 @@ public final class CoreFunctions {
      * Lists the instance pools in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePools = CoreFunctions.getInstancePools(GetInstancePoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.instance_pool_display_name())
+     *             .state(var_.instance_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstancePoolsResult> getInstancePools(GetInstancePoolsArgs args) {
@@ -4257,6 +13577,36 @@ public final class CoreFunctions {
      * Lists the instance pools in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePools = CoreFunctions.getInstancePools(GetInstancePoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.instance_pool_display_name())
+     *             .state(var_.instance_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstancePoolsResult> getInstancePoolsPlain(GetInstancePoolsPlainArgs args) {
@@ -4268,6 +13618,36 @@ public final class CoreFunctions {
      * Lists the instance pools in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePools = CoreFunctions.getInstancePools(GetInstancePoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.instance_pool_display_name())
+     *             .state(var_.instance_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstancePoolsResult> getInstancePools(GetInstancePoolsArgs args, InvokeOptions options) {
@@ -4279,6 +13659,36 @@ public final class CoreFunctions {
      * Lists the instance pools in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstancePools = CoreFunctions.getInstancePools(GetInstancePoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.instance_pool_display_name())
+     *             .state(var_.instance_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstancePoolsResult> getInstancePoolsPlain(GetInstancePoolsPlainArgs args, InvokeOptions options) {
@@ -4292,6 +13702,38 @@ public final class CoreFunctions {
      * instances in the compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.instance_availability_domain())
+     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .displayName(var_.instance_display_name())
+     *             .state(var_.instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstancesResult> getInstances(GetInstancesArgs args) {
@@ -4305,6 +13747,38 @@ public final class CoreFunctions {
      * instances in the compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.instance_availability_domain())
+     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .displayName(var_.instance_display_name())
+     *             .state(var_.instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(GetInstancesPlainArgs args) {
@@ -4318,6 +13792,38 @@ public final class CoreFunctions {
      * instances in the compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.instance_availability_domain())
+     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .displayName(var_.instance_display_name())
+     *             .state(var_.instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstancesResult> getInstances(GetInstancesArgs args, InvokeOptions options) {
@@ -4331,6 +13837,38 @@ public final class CoreFunctions {
      * instances in the compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.instance_availability_domain())
+     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .displayName(var_.instance_display_name())
+     *             .state(var_.instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(GetInstancesPlainArgs args, InvokeOptions options) {
@@ -4343,6 +13881,37 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the internet gateways from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInternetGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternetGateways = CoreFunctions.getInternetGateways(GetInternetGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.internet_gateway_display_name())
+     *             .state(var_.internet_gateway_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInternetGatewaysResult> getInternetGateways(GetInternetGatewaysArgs args) {
@@ -4355,6 +13924,37 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the internet gateways from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInternetGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternetGateways = CoreFunctions.getInternetGateways(GetInternetGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.internet_gateway_display_name())
+     *             .state(var_.internet_gateway_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInternetGatewaysResult> getInternetGatewaysPlain(GetInternetGatewaysPlainArgs args) {
@@ -4367,6 +13967,37 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the internet gateways from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInternetGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternetGateways = CoreFunctions.getInternetGateways(GetInternetGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.internet_gateway_display_name())
+     *             .state(var_.internet_gateway_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInternetGatewaysResult> getInternetGateways(GetInternetGatewaysArgs args, InvokeOptions options) {
@@ -4379,6 +14010,37 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the internet gateways from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetInternetGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInternetGateways = CoreFunctions.getInternetGateways(GetInternetGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.internet_gateway_display_name())
+     *             .state(var_.internet_gateway_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInternetGatewaysResult> getInternetGatewaysPlain(GetInternetGatewaysPlainArgs args, InvokeOptions options) {
@@ -4390,6 +14052,31 @@ public final class CoreFunctions {
      * The parameters allowed for IKE IPSec tunnels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecAlgorithmResult> getIpsecAlgorithm() {
@@ -4401,6 +14088,31 @@ public final class CoreFunctions {
      * The parameters allowed for IKE IPSec tunnels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecAlgorithmResult> getIpsecAlgorithmPlain() {
@@ -4412,6 +14124,31 @@ public final class CoreFunctions {
      * The parameters allowed for IKE IPSec tunnels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecAlgorithmResult> getIpsecAlgorithm(InvokeArgs args) {
@@ -4423,6 +14160,31 @@ public final class CoreFunctions {
      * The parameters allowed for IKE IPSec tunnels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecAlgorithmResult> getIpsecAlgorithmPlain(InvokeArgs args) {
@@ -4434,6 +14196,31 @@ public final class CoreFunctions {
      * The parameters allowed for IKE IPSec tunnels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecAlgorithmResult> getIpsecAlgorithm(InvokeArgs args, InvokeOptions options) {
@@ -4445,6 +14232,31 @@ public final class CoreFunctions {
      * The parameters allowed for IKE IPSec tunnels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecAlgorithm = CoreFunctions.getIpsecAlgorithm();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecAlgorithmResult> getIpsecAlgorithmPlain(InvokeArgs args, InvokeOptions options) {
@@ -4459,6 +14271,34 @@ public final class CoreFunctions {
      * * [GetIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecConfigResult> getIpsecConfig(GetIpsecConfigArgs args) {
@@ -4473,6 +14313,34 @@ public final class CoreFunctions {
      * * [GetIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecConfigResult> getIpsecConfigPlain(GetIpsecConfigPlainArgs args) {
@@ -4487,6 +14355,34 @@ public final class CoreFunctions {
      * * [GetIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecConfigResult> getIpsecConfig(GetIpsecConfigArgs args, InvokeOptions options) {
@@ -4501,6 +14397,34 @@ public final class CoreFunctions {
      * * [GetIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret)
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecConfigResult> getIpsecConfigPlain(GetIpsecConfigPlainArgs args, InvokeOptions options) {
@@ -4512,6 +14436,35 @@ public final class CoreFunctions {
      * Gets the specified IPSec connection&#39;s specified tunnel basic information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(data.oci_core_ipsec_connection_tunnels().test_ip_sec_connection_tunnels().ip_sec_connection_tunnels()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecConnectionTunnelResult> getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs args) {
@@ -4523,6 +14476,35 @@ public final class CoreFunctions {
      * Gets the specified IPSec connection&#39;s specified tunnel basic information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(data.oci_core_ipsec_connection_tunnels().test_ip_sec_connection_tunnels().ip_sec_connection_tunnels()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelResult> getIpsecConnectionTunnelPlain(GetIpsecConnectionTunnelPlainArgs args) {
@@ -4534,6 +14516,35 @@ public final class CoreFunctions {
      * Gets the specified IPSec connection&#39;s specified tunnel basic information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(data.oci_core_ipsec_connection_tunnels().test_ip_sec_connection_tunnels().ip_sec_connection_tunnels()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecConnectionTunnelResult> getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs args, InvokeOptions options) {
@@ -4545,6 +14556,35 @@ public final class CoreFunctions {
      * Gets the specified IPSec connection&#39;s specified tunnel basic information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(data.oci_core_ipsec_connection_tunnels().test_ip_sec_connection_tunnels().ip_sec_connection_tunnels()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelResult> getIpsecConnectionTunnelPlain(GetIpsecConnectionTunnelPlainArgs args, InvokeOptions options) {
@@ -4556,6 +14596,35 @@ public final class CoreFunctions {
      * Gets the identified error for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelErrorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecConnectionTunnelErrorResult> getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs args) {
@@ -4567,6 +14636,35 @@ public final class CoreFunctions {
      * Gets the identified error for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelErrorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelErrorResult> getIpsecConnectionTunnelErrorPlain(GetIpsecConnectionTunnelErrorPlainArgs args) {
@@ -4578,6 +14676,35 @@ public final class CoreFunctions {
      * Gets the identified error for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelErrorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecConnectionTunnelErrorResult> getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs args, InvokeOptions options) {
@@ -4589,6 +14716,35 @@ public final class CoreFunctions {
      * Gets the identified error for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelErrorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelErrorResult> getIpsecConnectionTunnelErrorPlain(GetIpsecConnectionTunnelErrorPlainArgs args, InvokeOptions options) {
@@ -4600,6 +14756,36 @@ public final class CoreFunctions {
      * The routes advertised to the on-premises network and the routes received from the on-premises network.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelRoutesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .advertiser(var_.ipsec_connection_tunnel_route_advertiser())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecConnectionTunnelRoutesResult> getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs args) {
@@ -4611,6 +14797,36 @@ public final class CoreFunctions {
      * The routes advertised to the on-premises network and the routes received from the on-premises network.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelRoutesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .advertiser(var_.ipsec_connection_tunnel_route_advertiser())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelRoutesResult> getIpsecConnectionTunnelRoutesPlain(GetIpsecConnectionTunnelRoutesPlainArgs args) {
@@ -4622,6 +14838,36 @@ public final class CoreFunctions {
      * The routes advertised to the on-premises network and the routes received from the on-premises network.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelRoutesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .advertiser(var_.ipsec_connection_tunnel_route_advertiser())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecConnectionTunnelRoutesResult> getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs args, InvokeOptions options) {
@@ -4633,6 +14879,36 @@ public final class CoreFunctions {
      * The routes advertised to the on-premises network and the routes received from the on-premises network.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelRoutesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .advertiser(var_.ipsec_connection_tunnel_route_advertiser())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelRoutesResult> getIpsecConnectionTunnelRoutesPlain(GetIpsecConnectionTunnelRoutesPlainArgs args, InvokeOptions options) {
@@ -4644,6 +14920,34 @@ public final class CoreFunctions {
      * Lists the tunnel information for the specified IPSec connection.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecConnectionTunnelsResult> getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs args) {
@@ -4655,6 +14959,34 @@ public final class CoreFunctions {
      * Lists the tunnel information for the specified IPSec connection.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelsResult> getIpsecConnectionTunnelsPlain(GetIpsecConnectionTunnelsPlainArgs args) {
@@ -4666,6 +14998,34 @@ public final class CoreFunctions {
      * Lists the tunnel information for the specified IPSec connection.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecConnectionTunnelsResult> getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs args, InvokeOptions options) {
@@ -4677,6 +15037,34 @@ public final class CoreFunctions {
      * Lists the tunnel information for the specified IPSec connection.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionTunnelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecConnectionTunnelsResult> getIpsecConnectionTunnelsPlain(GetIpsecConnectionTunnelsPlainArgs args, InvokeOptions options) {
@@ -4689,6 +15077,36 @@ public final class CoreFunctions {
      * results by DRG or CPE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .cpeId(oci_core_cpe.test_cpe().id())
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecConnectionsResult> getIpsecConnections(GetIpsecConnectionsArgs args) {
@@ -4701,6 +15119,36 @@ public final class CoreFunctions {
      * results by DRG or CPE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .cpeId(oci_core_cpe.test_cpe().id())
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecConnectionsResult> getIpsecConnectionsPlain(GetIpsecConnectionsPlainArgs args) {
@@ -4713,6 +15161,36 @@ public final class CoreFunctions {
      * results by DRG or CPE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .cpeId(oci_core_cpe.test_cpe().id())
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecConnectionsResult> getIpsecConnections(GetIpsecConnectionsArgs args, InvokeOptions options) {
@@ -4725,6 +15203,36 @@ public final class CoreFunctions {
      * results by DRG or CPE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .cpeId(oci_core_cpe.test_cpe().id())
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecConnectionsResult> getIpsecConnectionsPlain(GetIpsecConnectionsPlainArgs args, InvokeOptions options) {
@@ -4737,6 +15245,34 @@ public final class CoreFunctions {
      * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecStatusResult> getIpsecStatus(GetIpsecStatusArgs args) {
@@ -4749,6 +15285,34 @@ public final class CoreFunctions {
      * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecStatusResult> getIpsecStatusPlain(GetIpsecStatusPlainArgs args) {
@@ -4761,6 +15325,34 @@ public final class CoreFunctions {
      * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpsecStatusResult> getIpsecStatus(GetIpsecStatusArgs args, InvokeOptions options) {
@@ -4773,6 +15365,34 @@ public final class CoreFunctions {
      * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpsecStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpsecStatusResult> getIpsecStatusPlain(GetIpsecStatusPlainArgs args, InvokeOptions options) {
@@ -4787,6 +15407,34 @@ public final class CoreFunctions {
      * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpv6Args;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
+     *             .ipv6id(oci_core_ipv6.test_ipv6().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpv6Result> getIpv6(GetIpv6Args args) {
@@ -4801,6 +15449,34 @@ public final class CoreFunctions {
      * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpv6Args;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
+     *             .ipv6id(oci_core_ipv6.test_ipv6().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpv6Result> getIpv6Plain(GetIpv6PlainArgs args) {
@@ -4815,6 +15491,34 @@ public final class CoreFunctions {
      * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpv6Args;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
+     *             .ipv6id(oci_core_ipv6.test_ipv6().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpv6Result> getIpv6(GetIpv6Args args, InvokeOptions options) {
@@ -4829,6 +15533,34 @@ public final class CoreFunctions {
      * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpv6Args;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
+     *             .ipv6id(oci_core_ipv6.test_ipv6().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpv6Result> getIpv6Plain(GetIpv6PlainArgs args, InvokeOptions options) {
@@ -4847,6 +15579,36 @@ public final class CoreFunctions {
      *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
+     *             .ipAddress(var_.ipv6_ip_address())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpv6sResult> getIpv6s() {
@@ -4865,6 +15627,36 @@ public final class CoreFunctions {
      *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
+     *             .ipAddress(var_.ipv6_ip_address())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpv6sResult> getIpv6sPlain() {
@@ -4883,6 +15675,36 @@ public final class CoreFunctions {
      *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
+     *             .ipAddress(var_.ipv6_ip_address())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpv6sResult> getIpv6s(GetIpv6sArgs args) {
@@ -4901,6 +15723,36 @@ public final class CoreFunctions {
      *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
+     *             .ipAddress(var_.ipv6_ip_address())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpv6sResult> getIpv6sPlain(GetIpv6sPlainArgs args) {
@@ -4919,6 +15771,36 @@ public final class CoreFunctions {
      *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
+     *             .ipAddress(var_.ipv6_ip_address())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIpv6sResult> getIpv6s(GetIpv6sArgs args, InvokeOptions options) {
@@ -4937,6 +15819,36 @@ public final class CoreFunctions {
      *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetIpv6sArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
+     *             .ipAddress(var_.ipv6_ip_address())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIpv6sResult> getIpv6sPlain(GetIpv6sPlainArgs args, InvokeOptions options) {
@@ -4948,6 +15860,34 @@ public final class CoreFunctions {
      * Gets the Letter of Authority for the specified cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetLetterOfAuthorityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
+     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLetterOfAuthorityResult> getLetterOfAuthority(GetLetterOfAuthorityArgs args) {
@@ -4959,6 +15899,34 @@ public final class CoreFunctions {
      * Gets the Letter of Authority for the specified cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetLetterOfAuthorityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
+     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLetterOfAuthorityResult> getLetterOfAuthorityPlain(GetLetterOfAuthorityPlainArgs args) {
@@ -4970,6 +15938,34 @@ public final class CoreFunctions {
      * Gets the Letter of Authority for the specified cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetLetterOfAuthorityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
+     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLetterOfAuthorityResult> getLetterOfAuthority(GetLetterOfAuthorityArgs args, InvokeOptions options) {
@@ -4981,6 +15977,34 @@ public final class CoreFunctions {
      * Gets the Letter of Authority for the specified cross-connect.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetLetterOfAuthorityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
+     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLetterOfAuthorityResult> getLetterOfAuthorityPlain(GetLetterOfAuthorityPlainArgs args, InvokeOptions options) {
@@ -5017,6 +16041,35 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetLocalPeeringGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLocalPeeringGatewaysResult> getLocalPeeringGateways(GetLocalPeeringGatewaysArgs args) {
@@ -5029,6 +16082,35 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetLocalPeeringGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLocalPeeringGatewaysResult> getLocalPeeringGatewaysPlain(GetLocalPeeringGatewaysPlainArgs args) {
@@ -5041,6 +16123,35 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetLocalPeeringGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLocalPeeringGatewaysResult> getLocalPeeringGateways(GetLocalPeeringGatewaysArgs args, InvokeOptions options) {
@@ -5053,6 +16164,35 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetLocalPeeringGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLocalPeeringGatewaysResult> getLocalPeeringGatewaysPlain(GetLocalPeeringGatewaysPlainArgs args, InvokeOptions options) {
@@ -5064,6 +16204,34 @@ public final class CoreFunctions {
      * Gets the specified NAT gateway&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNatGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
+     *             .natGatewayId(oci_core_nat_gateway.test_nat_gateway().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNatGatewayResult> getNatGateway(GetNatGatewayArgs args) {
@@ -5075,6 +16243,34 @@ public final class CoreFunctions {
      * Gets the specified NAT gateway&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNatGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
+     *             .natGatewayId(oci_core_nat_gateway.test_nat_gateway().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNatGatewayResult> getNatGatewayPlain(GetNatGatewayPlainArgs args) {
@@ -5086,6 +16282,34 @@ public final class CoreFunctions {
      * Gets the specified NAT gateway&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNatGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
+     *             .natGatewayId(oci_core_nat_gateway.test_nat_gateway().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNatGatewayResult> getNatGateway(GetNatGatewayArgs args, InvokeOptions options) {
@@ -5097,6 +16321,34 @@ public final class CoreFunctions {
      * Gets the specified NAT gateway&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNatGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
+     *             .natGatewayId(oci_core_nat_gateway.test_nat_gateway().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNatGatewayResult> getNatGatewayPlain(GetNatGatewayPlainArgs args, InvokeOptions options) {
@@ -5109,6 +16361,37 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNatGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNatGateways = CoreFunctions.getNatGateways(GetNatGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.nat_gateway_display_name())
+     *             .state(var_.nat_gateway_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNatGatewaysResult> getNatGateways(GetNatGatewaysArgs args) {
@@ -5121,6 +16404,37 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNatGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNatGateways = CoreFunctions.getNatGateways(GetNatGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.nat_gateway_display_name())
+     *             .state(var_.nat_gateway_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNatGatewaysResult> getNatGatewaysPlain(GetNatGatewaysPlainArgs args) {
@@ -5133,6 +16447,37 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNatGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNatGateways = CoreFunctions.getNatGateways(GetNatGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.nat_gateway_display_name())
+     *             .state(var_.nat_gateway_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNatGatewaysResult> getNatGateways(GetNatGatewaysArgs args, InvokeOptions options) {
@@ -5145,6 +16490,37 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNatGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNatGateways = CoreFunctions.getNatGateways(GetNatGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.nat_gateway_display_name())
+     *             .state(var_.nat_gateway_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNatGatewaysResult> getNatGatewaysPlain(GetNatGatewaysPlainArgs args, InvokeOptions options) {
@@ -5162,6 +16538,34 @@ public final class CoreFunctions {
      * [ListNetworkSecurityGroupSecurityRules](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/SecurityRule/ListNetworkSecurityGroupSecurityRules).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
+     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkSecurityGroupResult> getNetworkSecurityGroup(GetNetworkSecurityGroupArgs args) {
@@ -5179,6 +16583,34 @@ public final class CoreFunctions {
      * [ListNetworkSecurityGroupSecurityRules](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/SecurityRule/ListNetworkSecurityGroupSecurityRules).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
+     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupResult> getNetworkSecurityGroupPlain(GetNetworkSecurityGroupPlainArgs args) {
@@ -5196,6 +16628,34 @@ public final class CoreFunctions {
      * [ListNetworkSecurityGroupSecurityRules](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/SecurityRule/ListNetworkSecurityGroupSecurityRules).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
+     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkSecurityGroupResult> getNetworkSecurityGroup(GetNetworkSecurityGroupArgs args, InvokeOptions options) {
@@ -5213,6 +16673,34 @@ public final class CoreFunctions {
      * [ListNetworkSecurityGroupSecurityRules](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/SecurityRule/ListNetworkSecurityGroupSecurityRules).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
+     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupResult> getNetworkSecurityGroupPlain(GetNetworkSecurityGroupPlainArgs args, InvokeOptions options) {
@@ -5224,6 +16712,35 @@ public final class CoreFunctions {
      * Lists the security rules in the specified network security group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupSecurityRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
+     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .direction(var_.network_security_group_security_rule_direction())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkSecurityGroupSecurityRulesResult> getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs args) {
@@ -5235,6 +16752,35 @@ public final class CoreFunctions {
      * Lists the security rules in the specified network security group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupSecurityRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
+     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .direction(var_.network_security_group_security_rule_direction())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupSecurityRulesResult> getNetworkSecurityGroupSecurityRulesPlain(GetNetworkSecurityGroupSecurityRulesPlainArgs args) {
@@ -5246,6 +16792,35 @@ public final class CoreFunctions {
      * Lists the security rules in the specified network security group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupSecurityRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
+     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .direction(var_.network_security_group_security_rule_direction())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkSecurityGroupSecurityRulesResult> getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs args, InvokeOptions options) {
@@ -5257,6 +16832,35 @@ public final class CoreFunctions {
      * Lists the security rules in the specified network security group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupSecurityRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
+     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .direction(var_.network_security_group_security_rule_direction())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupSecurityRulesResult> getNetworkSecurityGroupSecurityRulesPlain(GetNetworkSecurityGroupSecurityRulesPlainArgs args, InvokeOptions options) {
@@ -5268,6 +16872,34 @@ public final class CoreFunctions {
      * Lists the VNICs in the specified network security group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupVnicsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
+     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkSecurityGroupVnicsResult> getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs args) {
@@ -5279,6 +16911,34 @@ public final class CoreFunctions {
      * Lists the VNICs in the specified network security group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupVnicsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
+     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupVnicsResult> getNetworkSecurityGroupVnicsPlain(GetNetworkSecurityGroupVnicsPlainArgs args) {
@@ -5290,6 +16950,34 @@ public final class CoreFunctions {
      * Lists the VNICs in the specified network security group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupVnicsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
+     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkSecurityGroupVnicsResult> getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs args, InvokeOptions options) {
@@ -5301,6 +16989,34 @@ public final class CoreFunctions {
      * Lists the VNICs in the specified network security group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupVnicsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
+     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupVnicsResult> getNetworkSecurityGroupVnicsPlain(GetNetworkSecurityGroupVnicsPlainArgs args, InvokeOptions options) {
@@ -5313,6 +17029,38 @@ public final class CoreFunctions {
      * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroups = CoreFunctions.getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_security_group_display_name())
+     *             .state(var_.network_security_group_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkSecurityGroupsResult> getNetworkSecurityGroups() {
@@ -5325,6 +17073,38 @@ public final class CoreFunctions {
      * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroups = CoreFunctions.getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_security_group_display_name())
+     *             .state(var_.network_security_group_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupsResult> getNetworkSecurityGroupsPlain() {
@@ -5337,6 +17117,38 @@ public final class CoreFunctions {
      * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroups = CoreFunctions.getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_security_group_display_name())
+     *             .state(var_.network_security_group_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkSecurityGroupsResult> getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs args) {
@@ -5349,6 +17161,38 @@ public final class CoreFunctions {
      * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroups = CoreFunctions.getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_security_group_display_name())
+     *             .state(var_.network_security_group_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupsResult> getNetworkSecurityGroupsPlain(GetNetworkSecurityGroupsPlainArgs args) {
@@ -5361,6 +17205,38 @@ public final class CoreFunctions {
      * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroups = CoreFunctions.getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_security_group_display_name())
+     *             .state(var_.network_security_group_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkSecurityGroupsResult> getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs args, InvokeOptions options) {
@@ -5373,6 +17249,38 @@ public final class CoreFunctions {
      * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetNetworkSecurityGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSecurityGroups = CoreFunctions.getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.network_security_group_display_name())
+     *             .state(var_.network_security_group_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkSecurityGroupsResult> getNetworkSecurityGroupsPlain(GetNetworkSecurityGroupsPlainArgs args, InvokeOptions options) {
@@ -5385,6 +17293,32 @@ public final class CoreFunctions {
      * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeerings() {
@@ -5397,6 +17331,32 @@ public final class CoreFunctions {
      * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeeringsPlain() {
@@ -5409,6 +17369,32 @@ public final class CoreFunctions {
      * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsArgs args) {
@@ -5421,6 +17407,32 @@ public final class CoreFunctions {
      * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeeringsPlain(GetPeerRegionForRemotePeeringsPlainArgs args) {
@@ -5433,6 +17445,32 @@ public final class CoreFunctions {
      * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeerings(GetPeerRegionForRemotePeeringsArgs args, InvokeOptions options) {
@@ -5445,6 +17483,32 @@ public final class CoreFunctions {
      * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPeerRegionForRemotePeeringsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeerRegionForRemotePeerings = CoreFunctions.getPeerRegionForRemotePeerings();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPeerRegionForRemotePeeringsResult> getPeerRegionForRemotePeeringsPlain(GetPeerRegionForRemotePeeringsPlainArgs args, InvokeOptions options) {
@@ -5459,6 +17523,34 @@ public final class CoreFunctions {
      * with the private IP address (for example, 10.0.3.3) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
+     *             .privateIpId(oci_core_private_ip.test_private_ip().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateIpResult> getPrivateIp(GetPrivateIpArgs args) {
@@ -5473,6 +17565,34 @@ public final class CoreFunctions {
      * with the private IP address (for example, 10.0.3.3) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
+     *             .privateIpId(oci_core_private_ip.test_private_ip().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateIpResult> getPrivateIpPlain(GetPrivateIpPlainArgs args) {
@@ -5487,6 +17607,34 @@ public final class CoreFunctions {
      * with the private IP address (for example, 10.0.3.3) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
+     *             .privateIpId(oci_core_private_ip.test_private_ip().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateIpResult> getPrivateIp(GetPrivateIpArgs args, InvokeOptions options) {
@@ -5501,6 +17649,34 @@ public final class CoreFunctions {
      * with the private IP address (for example, 10.0.3.3) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
+     *             .privateIpId(oci_core_private_ip.test_private_ip().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateIpResult> getPrivateIpPlain(GetPrivateIpPlainArgs args, InvokeOptions options) {
@@ -5527,6 +17703,93 @@ public final class CoreFunctions {
      * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsBySubnet = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .subnetId(var_.private_ip_subnet_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .ipAddress(var_.private_ip_ip_address())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateIpsResult> getPrivateIps() {
@@ -5553,6 +17816,93 @@ public final class CoreFunctions {
      * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsBySubnet = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .subnetId(var_.private_ip_subnet_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .ipAddress(var_.private_ip_ip_address())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateIpsResult> getPrivateIpsPlain() {
@@ -5579,6 +17929,93 @@ public final class CoreFunctions {
      * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsBySubnet = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .subnetId(var_.private_ip_subnet_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .ipAddress(var_.private_ip_ip_address())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateIpsResult> getPrivateIps(GetPrivateIpsArgs args) {
@@ -5605,6 +18042,93 @@ public final class CoreFunctions {
      * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsBySubnet = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .subnetId(var_.private_ip_subnet_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .ipAddress(var_.private_ip_ip_address())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateIpsResult> getPrivateIpsPlain(GetPrivateIpsPlainArgs args) {
@@ -5631,6 +18155,93 @@ public final class CoreFunctions {
      * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsBySubnet = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .subnetId(var_.private_ip_subnet_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .ipAddress(var_.private_ip_ip_address())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateIpsResult> getPrivateIps(GetPrivateIpsArgs args, InvokeOptions options) {
@@ -5657,6 +18268,93 @@ public final class CoreFunctions {
      * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsBySubnet = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .subnetId(var_.private_ip_subnet_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPrivateIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
+     *             .ipAddress(var_.private_ip_ip_address())
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateIpsResult> getPrivateIpsPlain(GetPrivateIpsPlainArgs args, InvokeOptions options) {
@@ -5678,6 +18376,93 @@ public final class CoreFunctions {
      * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      * 
      * ## Example Usage
+     * ### Get a public ip by public ip id
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpById = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .id(var_.test_public_ip_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ### Get a public ip by private ip id
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByPrivateIpId = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .privateIpId(var_.test_public_ip_private_ip_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ### Get a public ip by public ip address
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByIp = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .ipAddress(var_.test_public_ip_ip_address())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicIpResult> getPublicIp() {
@@ -5699,6 +18484,93 @@ public final class CoreFunctions {
      * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      * 
      * ## Example Usage
+     * ### Get a public ip by public ip id
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpById = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .id(var_.test_public_ip_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ### Get a public ip by private ip id
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByPrivateIpId = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .privateIpId(var_.test_public_ip_private_ip_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ### Get a public ip by public ip address
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByIp = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .ipAddress(var_.test_public_ip_ip_address())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicIpResult> getPublicIpPlain() {
@@ -5720,6 +18592,93 @@ public final class CoreFunctions {
      * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      * 
      * ## Example Usage
+     * ### Get a public ip by public ip id
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpById = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .id(var_.test_public_ip_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ### Get a public ip by private ip id
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByPrivateIpId = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .privateIpId(var_.test_public_ip_private_ip_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ### Get a public ip by public ip address
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByIp = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .ipAddress(var_.test_public_ip_ip_address())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicIpResult> getPublicIp(GetPublicIpArgs args) {
@@ -5741,6 +18700,93 @@ public final class CoreFunctions {
      * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      * 
      * ## Example Usage
+     * ### Get a public ip by public ip id
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpById = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .id(var_.test_public_ip_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ### Get a public ip by private ip id
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByPrivateIpId = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .privateIpId(var_.test_public_ip_private_ip_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ### Get a public ip by public ip address
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByIp = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .ipAddress(var_.test_public_ip_ip_address())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicIpResult> getPublicIpPlain(GetPublicIpPlainArgs args) {
@@ -5762,6 +18808,93 @@ public final class CoreFunctions {
      * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      * 
      * ## Example Usage
+     * ### Get a public ip by public ip id
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpById = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .id(var_.test_public_ip_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ### Get a public ip by private ip id
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByPrivateIpId = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .privateIpId(var_.test_public_ip_private_ip_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ### Get a public ip by public ip address
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByIp = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .ipAddress(var_.test_public_ip_ip_address())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicIpResult> getPublicIp(GetPublicIpArgs args, InvokeOptions options) {
@@ -5783,6 +18916,93 @@ public final class CoreFunctions {
      * `lifecycleState` = ASSIGNING and `assignedEntityId` = [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target private IP.
      * 
      * ## Example Usage
+     * ### Get a public ip by public ip id
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpById = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .id(var_.test_public_ip_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ### Get a public ip by private ip id
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByPrivateIpId = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .privateIpId(var_.test_public_ip_private_ip_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * ### Get a public ip by public ip address
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCorePublicIpByIp = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
+     *             .ipAddress(var_.test_public_ip_ip_address())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicIpResult> getPublicIpPlain(GetPublicIpPlainArgs args, InvokeOptions options) {
@@ -5794,6 +19014,34 @@ public final class CoreFunctions {
      * Gets the specified `PublicIpPool` object. You must specify the object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
+     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicIpPoolResult> getPublicIpPool(GetPublicIpPoolArgs args) {
@@ -5805,6 +19053,34 @@ public final class CoreFunctions {
      * Gets the specified `PublicIpPool` object. You must specify the object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
+     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicIpPoolResult> getPublicIpPoolPlain(GetPublicIpPoolPlainArgs args) {
@@ -5816,6 +19092,34 @@ public final class CoreFunctions {
      * Gets the specified `PublicIpPool` object. You must specify the object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
+     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicIpPoolResult> getPublicIpPool(GetPublicIpPoolArgs args, InvokeOptions options) {
@@ -5827,6 +19131,34 @@ public final class CoreFunctions {
      * Gets the specified `PublicIpPool` object. You must specify the object&#39;s [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
+     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicIpPoolResult> getPublicIpPoolPlain(GetPublicIpPoolPlainArgs args, InvokeOptions options) {
@@ -5839,6 +19171,36 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .displayName(var_.public_ip_pool_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicIpPoolsResult> getPublicIpPools(GetPublicIpPoolsArgs args) {
@@ -5851,6 +19213,36 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .displayName(var_.public_ip_pool_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicIpPoolsResult> getPublicIpPoolsPlain(GetPublicIpPoolsPlainArgs args) {
@@ -5863,6 +19255,36 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .displayName(var_.public_ip_pool_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicIpPoolsResult> getPublicIpPools(GetPublicIpPoolsArgs args, InvokeOptions options) {
@@ -5875,6 +19297,36 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .displayName(var_.public_ip_pool_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicIpPoolsResult> getPublicIpPoolsPlain(GetPublicIpPoolsPlainArgs args, InvokeOptions options) {
@@ -5905,6 +19357,38 @@ public final class CoreFunctions {
      * is always in the same availability domain and compartment as the private IP.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIps = CoreFunctions.getPublicIps(GetPublicIpsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(var_.public_ip_scope())
+     *             .availabilityDomain(var_.public_ip_availability_domain())
+     *             .lifetime(var_.public_ip_lifetime())
+     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicIpsResult> getPublicIps(GetPublicIpsArgs args) {
@@ -5935,6 +19419,38 @@ public final class CoreFunctions {
      * is always in the same availability domain and compartment as the private IP.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIps = CoreFunctions.getPublicIps(GetPublicIpsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(var_.public_ip_scope())
+     *             .availabilityDomain(var_.public_ip_availability_domain())
+     *             .lifetime(var_.public_ip_lifetime())
+     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicIpsResult> getPublicIpsPlain(GetPublicIpsPlainArgs args) {
@@ -5965,6 +19481,38 @@ public final class CoreFunctions {
      * is always in the same availability domain and compartment as the private IP.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIps = CoreFunctions.getPublicIps(GetPublicIpsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(var_.public_ip_scope())
+     *             .availabilityDomain(var_.public_ip_availability_domain())
+     *             .lifetime(var_.public_ip_lifetime())
+     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicIpsResult> getPublicIps(GetPublicIpsArgs args, InvokeOptions options) {
@@ -5995,6 +19543,38 @@ public final class CoreFunctions {
      * is always in the same availability domain and compartment as the private IP.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetPublicIpsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicIps = CoreFunctions.getPublicIps(GetPublicIpsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .scope(var_.public_ip_scope())
+     *             .availabilityDomain(var_.public_ip_availability_domain())
+     *             .lifetime(var_.public_ip_lifetime())
+     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicIpsResult> getPublicIpsPlain(GetPublicIpsPlainArgs args, InvokeOptions options) {
@@ -6007,6 +19587,35 @@ public final class CoreFunctions {
      * (the RPC&#39;s compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetRemotePeeringConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRemotePeeringConnectionsResult> getRemotePeeringConnections(GetRemotePeeringConnectionsArgs args) {
@@ -6019,6 +19628,35 @@ public final class CoreFunctions {
      * (the RPC&#39;s compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetRemotePeeringConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRemotePeeringConnectionsResult> getRemotePeeringConnectionsPlain(GetRemotePeeringConnectionsPlainArgs args) {
@@ -6031,6 +19669,35 @@ public final class CoreFunctions {
      * (the RPC&#39;s compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetRemotePeeringConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRemotePeeringConnectionsResult> getRemotePeeringConnections(GetRemotePeeringConnectionsArgs args, InvokeOptions options) {
@@ -6043,6 +19710,35 @@ public final class CoreFunctions {
      * (the RPC&#39;s compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetRemotePeeringConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .drgId(oci_core_drg.test_drg().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRemotePeeringConnectionsResult> getRemotePeeringConnectionsPlain(GetRemotePeeringConnectionsPlainArgs args, InvokeOptions options) {
@@ -6057,6 +19753,37 @@ public final class CoreFunctions {
      * each VCN in the specified compartment, plus any route tables you&#39;ve created.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRouteTables = CoreFunctions.getRouteTables(GetRouteTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.route_table_display_name())
+     *             .state(var_.route_table_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRouteTablesResult> getRouteTables(GetRouteTablesArgs args) {
@@ -6071,6 +19798,37 @@ public final class CoreFunctions {
      * each VCN in the specified compartment, plus any route tables you&#39;ve created.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRouteTables = CoreFunctions.getRouteTables(GetRouteTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.route_table_display_name())
+     *             .state(var_.route_table_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRouteTablesResult> getRouteTablesPlain(GetRouteTablesPlainArgs args) {
@@ -6085,6 +19843,37 @@ public final class CoreFunctions {
      * each VCN in the specified compartment, plus any route tables you&#39;ve created.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRouteTables = CoreFunctions.getRouteTables(GetRouteTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.route_table_display_name())
+     *             .state(var_.route_table_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRouteTablesResult> getRouteTables(GetRouteTablesArgs args, InvokeOptions options) {
@@ -6099,6 +19888,37 @@ public final class CoreFunctions {
      * each VCN in the specified compartment, plus any route tables you&#39;ve created.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRouteTables = CoreFunctions.getRouteTables(GetRouteTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.route_table_display_name())
+     *             .state(var_.route_table_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRouteTablesResult> getRouteTablesPlain(GetRouteTablesPlainArgs args, InvokeOptions options) {
@@ -6111,6 +19931,37 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSecurityListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityLists = CoreFunctions.getSecurityLists(GetSecurityListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_list_display_name())
+     *             .state(var_.security_list_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityListsResult> getSecurityLists(GetSecurityListsArgs args) {
@@ -6123,6 +19974,37 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSecurityListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityLists = CoreFunctions.getSecurityLists(GetSecurityListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_list_display_name())
+     *             .state(var_.security_list_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityListsResult> getSecurityListsPlain(GetSecurityListsPlainArgs args) {
@@ -6135,6 +20017,37 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSecurityListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityLists = CoreFunctions.getSecurityLists(GetSecurityListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_list_display_name())
+     *             .state(var_.security_list_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityListsResult> getSecurityLists(GetSecurityListsArgs args, InvokeOptions options) {
@@ -6147,6 +20060,37 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSecurityListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityLists = CoreFunctions.getSecurityLists(GetSecurityListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_list_display_name())
+     *             .state(var_.security_list_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityListsResult> getSecurityListsPlain(GetSecurityListsPlainArgs args, InvokeOptions options) {
@@ -6159,6 +20103,36 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServiceGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.service_gateway_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceGatewaysResult> getServiceGateways(GetServiceGatewaysArgs args) {
@@ -6171,6 +20145,36 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServiceGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.service_gateway_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceGatewaysResult> getServiceGatewaysPlain(GetServiceGatewaysPlainArgs args) {
@@ -6183,6 +20187,36 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServiceGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.service_gateway_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceGatewaysResult> getServiceGateways(GetServiceGatewaysArgs args, InvokeOptions options) {
@@ -6195,6 +20229,36 @@ public final class CoreFunctions {
      * to filter the results by VCN.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServiceGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.service_gateway_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceGatewaysResult> getServiceGatewaysPlain(GetServiceGatewaysPlainArgs args, InvokeOptions options) {
@@ -6207,6 +20271,32 @@ public final class CoreFunctions {
      * service gateway in this region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = CoreFunctions.getServices();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServicesResult> getServices() {
@@ -6219,6 +20309,32 @@ public final class CoreFunctions {
      * service gateway in this region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = CoreFunctions.getServices();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServicesResult> getServicesPlain() {
@@ -6231,6 +20347,32 @@ public final class CoreFunctions {
      * service gateway in this region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = CoreFunctions.getServices();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServicesResult> getServices(GetServicesArgs args) {
@@ -6243,6 +20385,32 @@ public final class CoreFunctions {
      * service gateway in this region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = CoreFunctions.getServices();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServicesResult> getServicesPlain(GetServicesPlainArgs args) {
@@ -6255,6 +20423,32 @@ public final class CoreFunctions {
      * service gateway in this region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = CoreFunctions.getServices();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServicesResult> getServices(GetServicesArgs args, InvokeOptions options) {
@@ -6267,6 +20461,32 @@ public final class CoreFunctions {
      * service gateway in this region.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServices = CoreFunctions.getServices();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServicesResult> getServicesPlain(GetServicesPlainArgs args, InvokeOptions options) {
@@ -6291,6 +20511,36 @@ public final class CoreFunctions {
      * filter the list by compatibility with a specific image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.shape_availability_domain())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args) {
@@ -6303,6 +20553,36 @@ public final class CoreFunctions {
      * filter the list by compatibility with a specific image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.shape_availability_domain())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args) {
@@ -6315,6 +20595,36 @@ public final class CoreFunctions {
      * filter the list by compatibility with a specific image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.shape_availability_domain())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetShapesResult> getShapes(GetShapesArgs args, InvokeOptions options) {
@@ -6327,6 +20637,36 @@ public final class CoreFunctions {
      * filter the list by compatibility with a specific image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.shape_availability_domain())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetShapesResult> getShapesPlain(GetShapesPlainArgs args, InvokeOptions options) {
@@ -6338,6 +20678,34 @@ public final class CoreFunctions {
      * Gets the specified subnet&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSubnetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubnetResult> getSubnet(GetSubnetArgs args) {
@@ -6349,6 +20717,34 @@ public final class CoreFunctions {
      * Gets the specified subnet&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSubnetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubnetResult> getSubnetPlain(GetSubnetPlainArgs args) {
@@ -6360,6 +20756,34 @@ public final class CoreFunctions {
      * Gets the specified subnet&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSubnetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubnetResult> getSubnet(GetSubnetArgs args, InvokeOptions options) {
@@ -6371,6 +20795,34 @@ public final class CoreFunctions {
      * Gets the specified subnet&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSubnetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
+     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubnetResult> getSubnetPlain(GetSubnetPlainArgs args, InvokeOptions options) {
@@ -6383,6 +20835,37 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSubnetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubnets = CoreFunctions.getSubnets(GetSubnetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.subnet_display_name())
+     *             .state(var_.subnet_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubnetsResult> getSubnets(GetSubnetsArgs args) {
@@ -6395,6 +20878,37 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSubnetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubnets = CoreFunctions.getSubnets(GetSubnetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.subnet_display_name())
+     *             .state(var_.subnet_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubnetsResult> getSubnetsPlain(GetSubnetsPlainArgs args) {
@@ -6407,6 +20921,37 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSubnetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubnets = CoreFunctions.getSubnets(GetSubnetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.subnet_display_name())
+     *             .state(var_.subnet_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubnetsResult> getSubnets(GetSubnetsArgs args, InvokeOptions options) {
@@ -6419,6 +20964,37 @@ public final class CoreFunctions {
      * If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetSubnetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubnets = CoreFunctions.getSubnets(GetSubnetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.subnet_display_name())
+     *             .state(var_.subnet_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubnetsResult> getSubnetsPlain(GetSubnetsPlainArgs args, InvokeOptions options) {
@@ -6430,6 +21006,35 @@ public final class CoreFunctions {
      * Lists the tunnel security associations information for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetTunnelSecurityAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTunnelSecurityAssociationsResult> getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs args) {
@@ -6441,6 +21046,35 @@ public final class CoreFunctions {
      * Lists the tunnel security associations information for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetTunnelSecurityAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTunnelSecurityAssociationsResult> getTunnelSecurityAssociationsPlain(GetTunnelSecurityAssociationsPlainArgs args) {
@@ -6452,6 +21086,35 @@ public final class CoreFunctions {
      * Lists the tunnel security associations information for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetTunnelSecurityAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTunnelSecurityAssociationsResult> getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs args, InvokeOptions options) {
@@ -6463,6 +21126,35 @@ public final class CoreFunctions {
      * Lists the tunnel security associations information for the specified IPSec tunnel ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetTunnelSecurityAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
+     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTunnelSecurityAssociationsResult> getTunnelSecurityAssociationsPlain(GetTunnelSecurityAssociationsPlainArgs args, InvokeOptions options) {
@@ -6474,6 +21166,34 @@ public final class CoreFunctions {
      * Gets the specified VCN&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVcnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVcnResult> getVcn(GetVcnArgs args) {
@@ -6485,6 +21205,34 @@ public final class CoreFunctions {
      * Gets the specified VCN&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVcnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVcnResult> getVcnPlain(GetVcnPlainArgs args) {
@@ -6496,6 +21244,34 @@ public final class CoreFunctions {
      * Gets the specified VCN&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVcnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVcnResult> getVcn(GetVcnArgs args, InvokeOptions options) {
@@ -6507,6 +21283,34 @@ public final class CoreFunctions {
      * Gets the specified VCN&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVcnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVcnResult> getVcnPlain(GetVcnPlainArgs args, InvokeOptions options) {
@@ -6522,6 +21326,36 @@ public final class CoreFunctions {
      * * `oci.Core.getVirtualNetworks`
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVcnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcns = CoreFunctions.getVcns(GetVcnsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vcn_display_name())
+     *             .state(var_.vcn_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVcnsResult> getVcns(GetVcnsArgs args) {
@@ -6537,6 +21371,36 @@ public final class CoreFunctions {
      * * `oci.Core.getVirtualNetworks`
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVcnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcns = CoreFunctions.getVcns(GetVcnsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vcn_display_name())
+     *             .state(var_.vcn_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVcnsResult> getVcnsPlain(GetVcnsPlainArgs args) {
@@ -6552,6 +21416,36 @@ public final class CoreFunctions {
      * * `oci.Core.getVirtualNetworks`
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVcnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcns = CoreFunctions.getVcns(GetVcnsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vcn_display_name())
+     *             .state(var_.vcn_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVcnsResult> getVcns(GetVcnsArgs args, InvokeOptions options) {
@@ -6567,6 +21461,36 @@ public final class CoreFunctions {
      * * `oci.Core.getVirtualNetworks`
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVcnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVcns = CoreFunctions.getVcns(GetVcnsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vcn_display_name())
+     *             .state(var_.vcn_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVcnsResult> getVcnsPlain(GetVcnsPlainArgs args, InvokeOptions options) {
@@ -6578,6 +21502,34 @@ public final class CoreFunctions {
      * Gets the specified virtual circuit&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
+     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualCircuitResult> getVirtualCircuit(GetVirtualCircuitArgs args) {
@@ -6589,6 +21541,34 @@ public final class CoreFunctions {
      * Gets the specified virtual circuit&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
+     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualCircuitResult> getVirtualCircuitPlain(GetVirtualCircuitPlainArgs args) {
@@ -6600,6 +21580,34 @@ public final class CoreFunctions {
      * Gets the specified virtual circuit&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
+     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualCircuitResult> getVirtualCircuit(GetVirtualCircuitArgs args, InvokeOptions options) {
@@ -6611,6 +21619,34 @@ public final class CoreFunctions {
      * Gets the specified virtual circuit&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
+     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualCircuitResult> getVirtualCircuitPlain(GetVirtualCircuitPlainArgs args, InvokeOptions options) {
@@ -6625,6 +21661,34 @@ public final class CoreFunctions {
      * For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitBandwidthShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
+     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualCircuitBandwidthShapesResult> getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs args) {
@@ -6639,6 +21703,34 @@ public final class CoreFunctions {
      * For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitBandwidthShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
+     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualCircuitBandwidthShapesResult> getVirtualCircuitBandwidthShapesPlain(GetVirtualCircuitBandwidthShapesPlainArgs args) {
@@ -6653,6 +21745,34 @@ public final class CoreFunctions {
      * For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitBandwidthShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
+     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualCircuitBandwidthShapesResult> getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs args, InvokeOptions options) {
@@ -6667,6 +21787,34 @@ public final class CoreFunctions {
      * For more information about virtual circuits, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitBandwidthShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
+     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualCircuitBandwidthShapesResult> getVirtualCircuitBandwidthShapesPlain(GetVirtualCircuitBandwidthShapesPlainArgs args, InvokeOptions options) {
@@ -6679,6 +21827,35 @@ public final class CoreFunctions {
      * public virtual circuit.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitPublicPrefixesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
+     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .verificationState(var_.virtual_circuit_public_prefix_verification_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualCircuitPublicPrefixesResult> getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs args) {
@@ -6691,6 +21868,35 @@ public final class CoreFunctions {
      * public virtual circuit.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitPublicPrefixesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
+     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .verificationState(var_.virtual_circuit_public_prefix_verification_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualCircuitPublicPrefixesResult> getVirtualCircuitPublicPrefixesPlain(GetVirtualCircuitPublicPrefixesPlainArgs args) {
@@ -6703,6 +21909,35 @@ public final class CoreFunctions {
      * public virtual circuit.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitPublicPrefixesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
+     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .verificationState(var_.virtual_circuit_public_prefix_verification_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualCircuitPublicPrefixesResult> getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs args, InvokeOptions options) {
@@ -6715,6 +21950,35 @@ public final class CoreFunctions {
      * public virtual circuit.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitPublicPrefixesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
+     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .verificationState(var_.virtual_circuit_public_prefix_verification_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualCircuitPublicPrefixesResult> getVirtualCircuitPublicPrefixesPlain(GetVirtualCircuitPublicPrefixesPlainArgs args, InvokeOptions options) {
@@ -6726,6 +21990,36 @@ public final class CoreFunctions {
      * Lists the virtual circuits in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuits = CoreFunctions.getVirtualCircuits(GetVirtualCircuitsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.virtual_circuit_display_name())
+     *             .state(var_.virtual_circuit_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualCircuitsResult> getVirtualCircuits(GetVirtualCircuitsArgs args) {
@@ -6737,6 +22031,36 @@ public final class CoreFunctions {
      * Lists the virtual circuits in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuits = CoreFunctions.getVirtualCircuits(GetVirtualCircuitsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.virtual_circuit_display_name())
+     *             .state(var_.virtual_circuit_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualCircuitsResult> getVirtualCircuitsPlain(GetVirtualCircuitsPlainArgs args) {
@@ -6748,6 +22072,36 @@ public final class CoreFunctions {
      * Lists the virtual circuits in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuits = CoreFunctions.getVirtualCircuits(GetVirtualCircuitsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.virtual_circuit_display_name())
+     *             .state(var_.virtual_circuit_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualCircuitsResult> getVirtualCircuits(GetVirtualCircuitsArgs args, InvokeOptions options) {
@@ -6759,6 +22113,36 @@ public final class CoreFunctions {
      * Lists the virtual circuits in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVirtualCircuitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualCircuits = CoreFunctions.getVirtualCircuits(GetVirtualCircuitsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.virtual_circuit_display_name())
+     *             .state(var_.virtual_circuit_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualCircuitsResult> getVirtualCircuitsPlain(GetVirtualCircuitsPlainArgs args, InvokeOptions options) {
@@ -6782,6 +22166,34 @@ public final class CoreFunctions {
      * Gets the specified VLAN&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVlanResult> getVlan(GetVlanArgs args) {
@@ -6793,6 +22205,34 @@ public final class CoreFunctions {
      * Gets the specified VLAN&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVlanResult> getVlanPlain(GetVlanPlainArgs args) {
@@ -6804,6 +22244,34 @@ public final class CoreFunctions {
      * Gets the specified VLAN&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVlanResult> getVlan(GetVlanArgs args, InvokeOptions options) {
@@ -6815,6 +22283,34 @@ public final class CoreFunctions {
      * Gets the specified VLAN&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
+     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVlanResult> getVlanPlain(GetVlanPlainArgs args, InvokeOptions options) {
@@ -6826,6 +22322,37 @@ public final class CoreFunctions {
      * Lists the VLANs in the specified VCN and the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVlans = CoreFunctions.getVlans(GetVlansArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vlan_display_name())
+     *             .state(var_.vlan_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVlansResult> getVlans(GetVlansArgs args) {
@@ -6837,6 +22364,37 @@ public final class CoreFunctions {
      * Lists the VLANs in the specified VCN and the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVlans = CoreFunctions.getVlans(GetVlansArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vlan_display_name())
+     *             .state(var_.vlan_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVlansResult> getVlansPlain(GetVlansPlainArgs args) {
@@ -6848,6 +22406,37 @@ public final class CoreFunctions {
      * Lists the VLANs in the specified VCN and the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVlans = CoreFunctions.getVlans(GetVlansArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vlan_display_name())
+     *             .state(var_.vlan_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVlansResult> getVlans(GetVlansArgs args, InvokeOptions options) {
@@ -6859,6 +22448,37 @@ public final class CoreFunctions {
      * Lists the VLANs in the specified VCN and the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVlansArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVlans = CoreFunctions.getVlans(GetVlansArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vlan_display_name())
+     *             .state(var_.vlan_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVlansResult> getVlansPlain(GetVlansPlainArgs args, InvokeOptions options) {
@@ -6873,6 +22493,34 @@ public final class CoreFunctions {
      * operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVnicArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVnicResult> getVnic(GetVnicArgs args) {
@@ -6887,6 +22535,34 @@ public final class CoreFunctions {
      * operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVnicArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVnicResult> getVnicPlain(GetVnicPlainArgs args) {
@@ -6901,6 +22577,34 @@ public final class CoreFunctions {
      * operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVnicArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVnicResult> getVnic(GetVnicArgs args, InvokeOptions options) {
@@ -6915,6 +22619,34 @@ public final class CoreFunctions {
      * operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVnicArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVnicResult> getVnicPlain(GetVnicPlainArgs args, InvokeOptions options) {
@@ -6928,6 +22660,37 @@ public final class CoreFunctions {
      * filtered by instance, VNIC, or availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVnicAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.vnic_attachment_availability_domain())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVnicAttachmentsResult> getVnicAttachments(GetVnicAttachmentsArgs args) {
@@ -6941,6 +22704,37 @@ public final class CoreFunctions {
      * filtered by instance, VNIC, or availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVnicAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.vnic_attachment_availability_domain())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVnicAttachmentsResult> getVnicAttachmentsPlain(GetVnicAttachmentsPlainArgs args) {
@@ -6954,6 +22748,37 @@ public final class CoreFunctions {
      * filtered by instance, VNIC, or availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVnicAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.vnic_attachment_availability_domain())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVnicAttachmentsResult> getVnicAttachments(GetVnicAttachmentsArgs args, InvokeOptions options) {
@@ -6967,6 +22792,37 @@ public final class CoreFunctions {
      * filtered by instance, VNIC, or availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVnicAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.vnic_attachment_availability_domain())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVnicAttachmentsResult> getVnicAttachmentsPlain(GetVnicAttachmentsPlainArgs args, InvokeOptions options) {
@@ -6978,6 +22834,34 @@ public final class CoreFunctions {
      * Gets information for the specified volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
+     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeResult> getVolume(GetVolumeArgs args) {
@@ -6989,6 +22873,34 @@ public final class CoreFunctions {
      * Gets information for the specified volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
+     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeResult> getVolumePlain(GetVolumePlainArgs args) {
@@ -7000,6 +22912,34 @@ public final class CoreFunctions {
      * Gets information for the specified volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
+     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeResult> getVolume(GetVolumeArgs args, InvokeOptions options) {
@@ -7011,6 +22951,34 @@ public final class CoreFunctions {
      * Gets information for the specified volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
+     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeResult> getVolumePlain(GetVolumePlainArgs args, InvokeOptions options) {
@@ -7026,6 +22994,37 @@ public final class CoreFunctions {
      * [ParavirtualizedVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ParavirtualizedVolumeAttachment/).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.volume_attachment_availability_domain())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeAttachmentsResult> getVolumeAttachments(GetVolumeAttachmentsArgs args) {
@@ -7041,6 +23040,37 @@ public final class CoreFunctions {
      * [ParavirtualizedVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ParavirtualizedVolumeAttachment/).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.volume_attachment_availability_domain())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeAttachmentsResult> getVolumeAttachmentsPlain(GetVolumeAttachmentsPlainArgs args) {
@@ -7056,6 +23086,37 @@ public final class CoreFunctions {
      * [ParavirtualizedVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ParavirtualizedVolumeAttachment/).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.volume_attachment_availability_domain())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeAttachmentsResult> getVolumeAttachments(GetVolumeAttachmentsArgs args, InvokeOptions options) {
@@ -7071,6 +23132,37 @@ public final class CoreFunctions {
      * [ParavirtualizedVolumeAttachment](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ParavirtualizedVolumeAttachment/).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.volume_attachment_availability_domain())
+     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeAttachmentsResult> getVolumeAttachmentsPlain(GetVolumeAttachmentsPlainArgs args, InvokeOptions options) {
@@ -7085,6 +23177,34 @@ public final class CoreFunctions {
      * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackupPolicies = CoreFunctions.getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeBackupPoliciesResult> getVolumeBackupPolicies() {
@@ -7099,6 +23219,34 @@ public final class CoreFunctions {
      * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackupPolicies = CoreFunctions.getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeBackupPoliciesResult> getVolumeBackupPoliciesPlain() {
@@ -7113,6 +23261,34 @@ public final class CoreFunctions {
      * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackupPolicies = CoreFunctions.getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeBackupPoliciesResult> getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs args) {
@@ -7127,6 +23303,34 @@ public final class CoreFunctions {
      * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackupPolicies = CoreFunctions.getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeBackupPoliciesResult> getVolumeBackupPoliciesPlain(GetVolumeBackupPoliciesPlainArgs args) {
@@ -7141,6 +23345,34 @@ public final class CoreFunctions {
      * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackupPolicies = CoreFunctions.getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeBackupPoliciesResult> getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs args, InvokeOptions options) {
@@ -7155,6 +23387,34 @@ public final class CoreFunctions {
      * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackupPolicies = CoreFunctions.getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeBackupPoliciesResult> getVolumeBackupPoliciesPlain(GetVolumeBackupPoliciesPlainArgs args, InvokeOptions options) {
@@ -7168,6 +23428,34 @@ public final class CoreFunctions {
      * one item, since volume can only have one volume backup policy assigned at a time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupPolicyAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
+     *             .assetId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeBackupPolicyAssignmentsResult> getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs args) {
@@ -7181,6 +23469,34 @@ public final class CoreFunctions {
      * one item, since volume can only have one volume backup policy assigned at a time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupPolicyAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
+     *             .assetId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeBackupPolicyAssignmentsResult> getVolumeBackupPolicyAssignmentsPlain(GetVolumeBackupPolicyAssignmentsPlainArgs args) {
@@ -7194,6 +23510,34 @@ public final class CoreFunctions {
      * one item, since volume can only have one volume backup policy assigned at a time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupPolicyAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
+     *             .assetId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeBackupPolicyAssignmentsResult> getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs args, InvokeOptions options) {
@@ -7207,6 +23551,34 @@ public final class CoreFunctions {
      * one item, since volume can only have one volume backup policy assigned at a time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupPolicyAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
+     *             .assetId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeBackupPolicyAssignmentsResult> getVolumeBackupPolicyAssignmentsPlain(GetVolumeBackupPolicyAssignmentsPlainArgs args, InvokeOptions options) {
@@ -7218,6 +23590,38 @@ public final class CoreFunctions {
      * Lists the volume backups in the specified compartment. You can filter the results by volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_backup_display_name())
+     *             .sourceVolumeBackupId(oci_core_volume_backup.test_volume_backup().id())
+     *             .state(var_.volume_backup_state())
+     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeBackupsResult> getVolumeBackups(GetVolumeBackupsArgs args) {
@@ -7229,6 +23633,38 @@ public final class CoreFunctions {
      * Lists the volume backups in the specified compartment. You can filter the results by volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_backup_display_name())
+     *             .sourceVolumeBackupId(oci_core_volume_backup.test_volume_backup().id())
+     *             .state(var_.volume_backup_state())
+     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeBackupsResult> getVolumeBackupsPlain(GetVolumeBackupsPlainArgs args) {
@@ -7240,6 +23676,38 @@ public final class CoreFunctions {
      * Lists the volume backups in the specified compartment. You can filter the results by volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_backup_display_name())
+     *             .sourceVolumeBackupId(oci_core_volume_backup.test_volume_backup().id())
+     *             .state(var_.volume_backup_state())
+     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeBackupsResult> getVolumeBackups(GetVolumeBackupsArgs args, InvokeOptions options) {
@@ -7251,6 +23719,38 @@ public final class CoreFunctions {
      * Lists the volume backups in the specified compartment. You can filter the results by volume.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_backup_display_name())
+     *             .sourceVolumeBackupId(oci_core_volume_backup.test_volume_backup().id())
+     *             .state(var_.volume_backup_state())
+     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeBackupsResult> getVolumeBackupsPlain(GetVolumeBackupsPlainArgs args, InvokeOptions options) {
@@ -7263,6 +23763,36 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_group_backup_display_name())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeGroupBackupsResult> getVolumeGroupBackups(GetVolumeGroupBackupsArgs args) {
@@ -7275,6 +23805,36 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_group_backup_display_name())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeGroupBackupsResult> getVolumeGroupBackupsPlain(GetVolumeGroupBackupsPlainArgs args) {
@@ -7287,6 +23847,36 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_group_backup_display_name())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeGroupBackupsResult> getVolumeGroupBackups(GetVolumeGroupBackupsArgs args, InvokeOptions options) {
@@ -7299,6 +23889,36 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_group_backup_display_name())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeGroupBackupsResult> getVolumeGroupBackupsPlain(GetVolumeGroupBackupsPlainArgs args, InvokeOptions options) {
@@ -7310,6 +23930,34 @@ public final class CoreFunctions {
      * Gets information for the specified volume group replica.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeGroupReplicaResult> getVolumeGroupReplica(GetVolumeGroupReplicaArgs args) {
@@ -7321,6 +23969,34 @@ public final class CoreFunctions {
      * Gets information for the specified volume group replica.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeGroupReplicaResult> getVolumeGroupReplicaPlain(GetVolumeGroupReplicaPlainArgs args) {
@@ -7332,6 +24008,34 @@ public final class CoreFunctions {
      * Gets information for the specified volume group replica.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeGroupReplicaResult> getVolumeGroupReplica(GetVolumeGroupReplicaArgs args, InvokeOptions options) {
@@ -7343,6 +24047,34 @@ public final class CoreFunctions {
      * Gets information for the specified volume group replica.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicaArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
+     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeGroupReplicaResult> getVolumeGroupReplicaPlain(GetVolumeGroupReplicaPlainArgs args, InvokeOptions options) {
@@ -7355,6 +24087,37 @@ public final class CoreFunctions {
      * For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupReplicas = CoreFunctions.getVolumeGroupReplicas(GetVolumeGroupReplicasArgs.builder()
+     *             .availabilityDomain(var_.volume_group_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_group_replica_display_name())
+     *             .state(var_.volume_group_replica_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeGroupReplicasResult> getVolumeGroupReplicas(GetVolumeGroupReplicasArgs args) {
@@ -7367,6 +24130,37 @@ public final class CoreFunctions {
      * For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupReplicas = CoreFunctions.getVolumeGroupReplicas(GetVolumeGroupReplicasArgs.builder()
+     *             .availabilityDomain(var_.volume_group_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_group_replica_display_name())
+     *             .state(var_.volume_group_replica_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeGroupReplicasResult> getVolumeGroupReplicasPlain(GetVolumeGroupReplicasPlainArgs args) {
@@ -7379,6 +24173,37 @@ public final class CoreFunctions {
      * For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupReplicas = CoreFunctions.getVolumeGroupReplicas(GetVolumeGroupReplicasArgs.builder()
+     *             .availabilityDomain(var_.volume_group_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_group_replica_display_name())
+     *             .state(var_.volume_group_replica_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeGroupReplicasResult> getVolumeGroupReplicas(GetVolumeGroupReplicasArgs args, InvokeOptions options) {
@@ -7391,6 +24216,37 @@ public final class CoreFunctions {
      * For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroupReplicas = CoreFunctions.getVolumeGroupReplicas(GetVolumeGroupReplicasArgs.builder()
+     *             .availabilityDomain(var_.volume_group_replica_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_group_replica_display_name())
+     *             .state(var_.volume_group_replica_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeGroupReplicasResult> getVolumeGroupReplicasPlain(GetVolumeGroupReplicasPlainArgs args, InvokeOptions options) {
@@ -7403,6 +24259,37 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroups = CoreFunctions.getVolumeGroups(GetVolumeGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.volume_group_availability_domain())
+     *             .displayName(var_.volume_group_display_name())
+     *             .state(var_.volume_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeGroupsResult> getVolumeGroups(GetVolumeGroupsArgs args) {
@@ -7415,6 +24302,37 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroups = CoreFunctions.getVolumeGroups(GetVolumeGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.volume_group_availability_domain())
+     *             .displayName(var_.volume_group_display_name())
+     *             .state(var_.volume_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeGroupsResult> getVolumeGroupsPlain(GetVolumeGroupsPlainArgs args) {
@@ -7427,6 +24345,37 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroups = CoreFunctions.getVolumeGroups(GetVolumeGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.volume_group_availability_domain())
+     *             .displayName(var_.volume_group_display_name())
+     *             .state(var_.volume_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumeGroupsResult> getVolumeGroups(GetVolumeGroupsArgs args, InvokeOptions options) {
@@ -7439,6 +24388,37 @@ public final class CoreFunctions {
      * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumeGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumeGroups = CoreFunctions.getVolumeGroups(GetVolumeGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.volume_group_availability_domain())
+     *             .displayName(var_.volume_group_display_name())
+     *             .state(var_.volume_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumeGroupsResult> getVolumeGroupsPlain(GetVolumeGroupsPlainArgs args, InvokeOptions options) {
@@ -7450,6 +24430,38 @@ public final class CoreFunctions {
      * Lists the volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
+     *             .availabilityDomain(var_.volume_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_display_name())
+     *             .state(var_.volume_state())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumesResult> getVolumes() {
@@ -7461,6 +24473,38 @@ public final class CoreFunctions {
      * Lists the volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
+     *             .availabilityDomain(var_.volume_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_display_name())
+     *             .state(var_.volume_state())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumesResult> getVolumesPlain() {
@@ -7472,6 +24516,38 @@ public final class CoreFunctions {
      * Lists the volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
+     *             .availabilityDomain(var_.volume_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_display_name())
+     *             .state(var_.volume_state())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumesResult> getVolumes(GetVolumesArgs args) {
@@ -7483,6 +24559,38 @@ public final class CoreFunctions {
      * Lists the volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
+     *             .availabilityDomain(var_.volume_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_display_name())
+     *             .state(var_.volume_state())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumesResult> getVolumesPlain(GetVolumesPlainArgs args) {
@@ -7494,6 +24602,38 @@ public final class CoreFunctions {
      * Lists the volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
+     *             .availabilityDomain(var_.volume_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_display_name())
+     *             .state(var_.volume_state())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVolumesResult> getVolumes(GetVolumesArgs args, InvokeOptions options) {
@@ -7505,6 +24645,38 @@ public final class CoreFunctions {
      * Lists the volumes in the specified compartment and availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVolumesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
+     *             .availabilityDomain(var_.volume_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.volume_display_name())
+     *             .state(var_.volume_state())
+     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVolumesResult> getVolumesPlain(GetVolumesPlainArgs args, InvokeOptions options) {
@@ -7516,6 +24688,34 @@ public final class CoreFunctions {
      * Gets the specified `Vtap` resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVtapArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
+     *             .vtapId(oci_core_vtap.test_vtap().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVtapResult> getVtap(GetVtapArgs args) {
@@ -7527,6 +24727,34 @@ public final class CoreFunctions {
      * Gets the specified `Vtap` resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVtapArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
+     *             .vtapId(oci_core_vtap.test_vtap().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVtapResult> getVtapPlain(GetVtapPlainArgs args) {
@@ -7538,6 +24766,34 @@ public final class CoreFunctions {
      * Gets the specified `Vtap` resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVtapArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
+     *             .vtapId(oci_core_vtap.test_vtap().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVtapResult> getVtap(GetVtapArgs args, InvokeOptions options) {
@@ -7549,6 +24805,34 @@ public final class CoreFunctions {
      * Gets the specified `Vtap` resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVtapArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
+     *             .vtapId(oci_core_vtap.test_vtap().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVtapResult> getVtapPlain(GetVtapPlainArgs args, InvokeOptions options) {
@@ -7560,6 +24844,41 @@ public final class CoreFunctions {
      * Lists the virtual test access points (VTAPs) in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVtapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVtaps = CoreFunctions.getVtaps(GetVtapsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vtap_display_name())
+     *             .isVtapEnabled(var_.vtap_is_vtap_enabled())
+     *             .source(var_.vtap_source())
+     *             .state(var_.vtap_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .targetIp(var_.vtap_target_ip())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVtapsResult> getVtaps(GetVtapsArgs args) {
@@ -7571,6 +24890,41 @@ public final class CoreFunctions {
      * Lists the virtual test access points (VTAPs) in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVtapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVtaps = CoreFunctions.getVtaps(GetVtapsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vtap_display_name())
+     *             .isVtapEnabled(var_.vtap_is_vtap_enabled())
+     *             .source(var_.vtap_source())
+     *             .state(var_.vtap_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .targetIp(var_.vtap_target_ip())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVtapsResult> getVtapsPlain(GetVtapsPlainArgs args) {
@@ -7582,6 +24936,41 @@ public final class CoreFunctions {
      * Lists the virtual test access points (VTAPs) in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVtapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVtaps = CoreFunctions.getVtaps(GetVtapsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vtap_display_name())
+     *             .isVtapEnabled(var_.vtap_is_vtap_enabled())
+     *             .source(var_.vtap_source())
+     *             .state(var_.vtap_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .targetIp(var_.vtap_target_ip())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVtapsResult> getVtaps(GetVtapsArgs args, InvokeOptions options) {
@@ -7593,6 +24982,41 @@ public final class CoreFunctions {
      * Lists the virtual test access points (VTAPs) in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetVtapsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVtaps = CoreFunctions.getVtaps(GetVtapsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vtap_display_name())
+     *             .isVtapEnabled(var_.vtap_is_vtap_enabled())
+     *             .source(var_.vtap_source())
+     *             .state(var_.vtap_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .targetIp(var_.vtap_target_ip())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVtapsResult> getVtapsPlain(GetVtapsPlainArgs args, InvokeOptions options) {

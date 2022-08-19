@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class UsageItemGetArgs : Pulumi.ResourceArgs
+    public sealed class UsageItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain of the usage.
@@ -195,5 +195,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public UsageItemGetArgs()
         {
         }
+        public static new UsageItemGetArgs Empty => new UsageItemGetArgs();
     }
 }

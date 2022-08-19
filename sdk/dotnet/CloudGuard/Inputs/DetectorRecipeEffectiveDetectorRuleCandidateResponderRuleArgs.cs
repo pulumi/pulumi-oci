@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard.Inputs
 {
 
-    public sealed class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs : Pulumi.ResourceArgs
+    public sealed class DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Detector recipe display name.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs()
         {
         }
+        public static new DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs Empty => new DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs();
     }
 }

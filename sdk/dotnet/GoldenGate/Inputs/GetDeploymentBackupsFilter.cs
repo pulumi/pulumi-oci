@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GoldenGate.Inputs
 {
 
-    public sealed class GetDeploymentBackupsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetDeploymentBackupsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public GetDeploymentBackupsFilterArgs()
         {
         }
+        public static new GetDeploymentBackupsFilterArgs Empty => new GetDeploymentBackupsFilterArgs();
     }
 }

@@ -22,21 +22,19 @@ namespace Pulumi.Oci.VisualBuilder
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVbInstanceApplications = Oci.VisualBuilder.GetVbInstanceApplications.Invoke(new()
         ///     {
-        ///         var testVbInstanceApplications = Output.Create(Oci.VisualBuilder.GetVbInstanceApplications.InvokeAsync(new Oci.VisualBuilder.GetVbInstanceApplicationsArgs
-        ///         {
-        ///             VbInstanceId = oci_visual_builder_vb_instance.Test_vb_instance.Id,
-        ///             IdcsOpenId = "idcs_open_id_value",
-        ///         }));
-        ///     }
+        ///         VbInstanceId = oci_visual_builder_vb_instance.Test_vb_instance.Id,
+        ///         IdcsOpenId = "idcs_open_id_value",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.VisualBuilder
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVbInstanceApplications = Oci.VisualBuilder.GetVbInstanceApplications.Invoke(new()
         ///     {
-        ///         var testVbInstanceApplications = Output.Create(Oci.VisualBuilder.GetVbInstanceApplications.InvokeAsync(new Oci.VisualBuilder.GetVbInstanceApplicationsArgs
-        ///         {
-        ///             VbInstanceId = oci_visual_builder_vb_instance.Test_vb_instance.Id,
-        ///             IdcsOpenId = "idcs_open_id_value",
-        ///         }));
-        ///     }
+        ///         VbInstanceId = oci_visual_builder_vb_instance.Test_vb_instance.Id,
+        ///         IdcsOpenId = "idcs_open_id_value",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.VisualBuilder
     }
 
 
-    public sealed class GetVbInstanceApplicationsArgs : Pulumi.InvokeArgs
+    public sealed class GetVbInstanceApplicationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Encrypted IDCS Open ID token which allows access to Visual Builder REST apis
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.VisualBuilder
         public GetVbInstanceApplicationsArgs()
         {
         }
+        public static new GetVbInstanceApplicationsArgs Empty => new GetVbInstanceApplicationsArgs();
     }
 
-    public sealed class GetVbInstanceApplicationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVbInstanceApplicationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Encrypted IDCS Open ID token which allows access to Visual Builder REST apis
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.VisualBuilder
         public GetVbInstanceApplicationsInvokeArgs()
         {
         }
+        public static new GetVbInstanceApplicationsInvokeArgs Empty => new GetVbInstanceApplicationsInvokeArgs();
     }
 
 

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.OsubUsage
     }
 
 
-    public sealed class GetCommitmentAggregatedsArgs : Pulumi.InvokeArgs
+    public sealed class GetCommitmentAggregatedsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the root compartment.
@@ -84,9 +84,10 @@ namespace Pulumi.Oci.OsubUsage
         public GetCommitmentAggregatedsArgs()
         {
         }
+        public static new GetCommitmentAggregatedsArgs Empty => new GetCommitmentAggregatedsArgs();
     }
 
-    public sealed class GetCommitmentAggregatedsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCommitmentAggregatedsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the root compartment.
@@ -141,6 +142,7 @@ namespace Pulumi.Oci.OsubUsage
         public GetCommitmentAggregatedsInvokeArgs()
         {
         }
+        public static new GetCommitmentAggregatedsInvokeArgs Empty => new GetCommitmentAggregatedsInvokeArgs();
     }
 
 

@@ -21,6 +21,51 @@ import javax.annotation.Nullable;
  * Creates a new DatabaseRegistration.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.GoldenGate.DatabaseRegistration;
+ * import com.pulumi.oci.GoldenGate.DatabaseRegistrationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDatabaseRegistration = new DatabaseRegistration(&#34;testDatabaseRegistration&#34;, DatabaseRegistrationArgs.builder()        
+ *             .aliasName(var_.database_registration_alias_name())
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.database_registration_display_name())
+ *             .fqdn(var_.database_registration_fqdn())
+ *             .password(var_.database_registration_password())
+ *             .username(var_.database_registration_username())
+ *             .connectionString(var_.database_registration_connection_string())
+ *             .databaseId(oci_database_database.test_database().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.database_registration_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .ipAddress(var_.database_registration_ip_address())
+ *             .keyId(oci_kms_key.test_key().id())
+ *             .secretCompartmentId(oci_identity_compartment.test_compartment().id())
+ *             .sessionMode(var_.database_registration_session_mode())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .vaultId(oci_kms_vault.test_vault().id())
+ *             .wallet(var_.database_registration_wallet())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

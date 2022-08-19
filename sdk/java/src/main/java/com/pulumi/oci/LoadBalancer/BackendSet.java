@@ -30,6 +30,76 @@ import javax.annotation.Nullable;
  * * `oci_load_balancer_backendset`
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LoadBalancer.BackendSet;
+ * import com.pulumi.oci.LoadBalancer.BackendSetArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.BackendSetHealthCheckerArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.BackendSetLbCookieSessionPersistenceConfigurationArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.BackendSetSessionPersistenceConfigurationArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.BackendSetSslConfigurationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBackendSet = new BackendSet(&#34;testBackendSet&#34;, BackendSetArgs.builder()        
+ *             .healthChecker(BackendSetHealthCheckerArgs.builder()
+ *                 .protocol(var_.backend_set_health_checker_protocol())
+ *                 .intervalMs(var_.backend_set_health_checker_interval_ms())
+ *                 .port(var_.backend_set_health_checker_port())
+ *                 .responseBodyRegex(var_.backend_set_health_checker_response_body_regex())
+ *                 .retries(var_.backend_set_health_checker_retries())
+ *                 .returnCode(var_.backend_set_health_checker_return_code())
+ *                 .timeoutInMillis(var_.backend_set_health_checker_timeout_in_millis())
+ *                 .urlPath(var_.backend_set_health_checker_url_path())
+ *                 .build())
+ *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *             .policy(var_.backend_set_policy())
+ *             .lbCookieSessionPersistenceConfiguration(BackendSetLbCookieSessionPersistenceConfigurationArgs.builder()
+ *                 .cookieName(var_.backend_set_lb_cookie_session_persistence_configuration_cookie_name())
+ *                 .disableFallback(var_.backend_set_lb_cookie_session_persistence_configuration_disable_fallback())
+ *                 .domain(var_.backend_set_lb_cookie_session_persistence_configuration_domain())
+ *                 .isHttpOnly(var_.backend_set_lb_cookie_session_persistence_configuration_is_http_only())
+ *                 .isSecure(var_.backend_set_lb_cookie_session_persistence_configuration_is_secure())
+ *                 .maxAgeInSeconds(var_.backend_set_lb_cookie_session_persistence_configuration_max_age_in_seconds())
+ *                 .path(var_.backend_set_lb_cookie_session_persistence_configuration_path())
+ *                 .build())
+ *             .sessionPersistenceConfiguration(BackendSetSessionPersistenceConfigurationArgs.builder()
+ *                 .cookieName(var_.backend_set_session_persistence_configuration_cookie_name())
+ *                 .disableFallback(var_.backend_set_session_persistence_configuration_disable_fallback())
+ *                 .build())
+ *             .sslConfiguration(BackendSetSslConfigurationArgs.builder()
+ *                 .certificateIds(var_.backend_set_ssl_configuration_certificate_ids())
+ *                 .certificateName(oci_load_balancer_certificate.test_certificate().name())
+ *                 .cipherSuiteName(var_.backend_set_ssl_configuration_cipher_suite_name())
+ *                 .protocols(var_.backend_set_ssl_configuration_protocols())
+ *                 .serverOrderPreference(var_.backend_set_ssl_configuration_server_order_preference())
+ *                 .trustedCertificateAuthorityIds(var_.backend_set_ssl_configuration_trusted_certificate_authority_ids())
+ *                 .verifyDepth(var_.backend_set_ssl_configuration_verify_depth())
+ *                 .verifyPeerCertificate(var_.backend_set_ssl_configuration_verify_peer_certificate())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
+ *       (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
+ *       attributes per backend set.
+ * {{% /example %}}
  * 
  * ## Import
  * 

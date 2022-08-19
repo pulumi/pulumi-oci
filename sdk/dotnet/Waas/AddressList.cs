@@ -17,30 +17,28 @@ namespace Pulumi.Oci.Waas
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAddressList = new Oci.Waas.AddressList("testAddressList", new()
     ///     {
-    ///         var testAddressList = new Oci.Waas.AddressList("testAddressList", new Oci.Waas.AddressListArgs
+    ///         Addresses = @var.Address_list_addresses,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Address_list_display_name,
+    ///         DefinedTags = 
     ///         {
-    ///             Addresses = @var.Address_list_addresses,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Address_list_display_name,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.Waas
     /// ```
     /// </summary>
     [OciResourceType("oci:Waas/addressList:AddressList")]
-    public partial class AddressList : Pulumi.CustomResource
+    public partial class AddressList : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The total number of unique IP addresses in the address list.
@@ -146,7 +144,7 @@ namespace Pulumi.Oci.Waas
         }
     }
 
-    public sealed class AddressListArgs : Pulumi.ResourceArgs
+    public sealed class AddressListArgs : global::Pulumi.ResourceArgs
     {
         [Input("addresses", required: true)]
         private InputList<string>? _addresses;
@@ -199,9 +197,10 @@ namespace Pulumi.Oci.Waas
         public AddressListArgs()
         {
         }
+        public static new AddressListArgs Empty => new AddressListArgs();
     }
 
-    public sealed class AddressListState : Pulumi.ResourceArgs
+    public sealed class AddressListState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The total number of unique IP addresses in the address list.
@@ -272,5 +271,6 @@ namespace Pulumi.Oci.Waas
         public AddressListState()
         {
         }
+        public static new AddressListState Empty => new AddressListState();
     }
 }

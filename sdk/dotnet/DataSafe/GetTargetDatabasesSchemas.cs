@@ -22,23 +22,21 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetDatabasesSchemas = Oci.DataSafe.GetTargetDatabasesSchemas.Invoke(new()
         ///     {
-        ///         var testTargetDatabasesSchemas = Output.Create(Oci.DataSafe.GetTargetDatabasesSchemas.InvokeAsync(new Oci.DataSafe.GetTargetDatabasesSchemasArgs
-        ///         {
-        ///             TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///             IsOracleMaintained = @var.Target_databases_schema_is_oracle_maintained,
-        ///             SchemaNames = @var.Target_databases_schema_schema_name,
-        ///             SchemaNameContains = @var.Target_databases_schema_schema_name_contains,
-        ///         }));
-        ///     }
+        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///         IsOracleMaintained = @var.Target_databases_schema_is_oracle_maintained,
+        ///         SchemaNames = @var.Target_databases_schema_schema_name,
+        ///         SchemaNameContains = @var.Target_databases_schema_schema_name_contains,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetDatabasesSchemas = Oci.DataSafe.GetTargetDatabasesSchemas.Invoke(new()
         ///     {
-        ///         var testTargetDatabasesSchemas = Output.Create(Oci.DataSafe.GetTargetDatabasesSchemas.InvokeAsync(new Oci.DataSafe.GetTargetDatabasesSchemasArgs
-        ///         {
-        ///             TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///             IsOracleMaintained = @var.Target_databases_schema_is_oracle_maintained,
-        ///             SchemaNames = @var.Target_databases_schema_schema_name,
-        ///             SchemaNameContains = @var.Target_databases_schema_schema_name_contains,
-        ///         }));
-        ///     }
+        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///         IsOracleMaintained = @var.Target_databases_schema_is_oracle_maintained,
+        ///         SchemaNames = @var.Target_databases_schema_schema_name,
+        ///         SchemaNameContains = @var.Target_databases_schema_schema_name_contains,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetTargetDatabasesSchemasArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabasesSchemasArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetTargetDatabasesSchemasFilterArgs>? _filters;
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabasesSchemasArgs()
         {
         }
+        public static new GetTargetDatabasesSchemasArgs Empty => new GetTargetDatabasesSchemasArgs();
     }
 
-    public sealed class GetTargetDatabasesSchemasInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabasesSchemasInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetTargetDatabasesSchemasFilterInputArgs>? _filters;
@@ -171,6 +168,7 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabasesSchemasInvokeArgs()
         {
         }
+        public static new GetTargetDatabasesSchemasInvokeArgs Empty => new GetTargetDatabasesSchemasInvokeArgs();
     }
 
 

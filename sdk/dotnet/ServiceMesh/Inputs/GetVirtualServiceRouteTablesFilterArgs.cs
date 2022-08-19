@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class GetVirtualServiceRouteTablesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetVirtualServiceRouteTablesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire name given.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public GetVirtualServiceRouteTablesFilterInputArgs()
         {
         }
+        public static new GetVirtualServiceRouteTablesFilterInputArgs Empty => new GetVirtualServiceRouteTablesFilterInputArgs();
     }
 }

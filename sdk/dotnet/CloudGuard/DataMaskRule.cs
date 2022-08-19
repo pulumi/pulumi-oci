@@ -17,39 +17,37 @@ namespace Pulumi.Oci.CloudGuard
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDataMaskRule = new Oci.CloudGuard.DataMaskRule("testDataMaskRule", new()
     ///     {
-    ///         var testDataMaskRule = new Oci.CloudGuard.DataMaskRule("testDataMaskRule", new Oci.CloudGuard.DataMaskRuleArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DataMaskCategories = @var.Data_mask_rule_data_mask_categories,
+    ///         DisplayName = @var.Data_mask_rule_display_name,
+    ///         IamGroupId = oci_identity_group.Test_group.Id,
+    ///         TargetSelected = new Oci.CloudGuard.Inputs.DataMaskRuleTargetSelectedArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DataMaskCategories = @var.Data_mask_rule_data_mask_categories,
-    ///             DisplayName = @var.Data_mask_rule_display_name,
-    ///             IamGroupId = oci_identity_group.Test_group.Id,
-    ///             TargetSelected = new Oci.CloudGuard.Inputs.DataMaskRuleTargetSelectedArgs
-    ///             {
-    ///                 Kind = @var.Data_mask_rule_target_selected_kind,
-    ///                 Values = @var.Data_mask_rule_target_selected_values,
-    ///             },
-    ///             DataMaskRuleStatus = @var.Data_mask_rule_data_mask_rule_status,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Data_mask_rule_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             State = @var.Data_mask_rule_state,
-    ///         });
-    ///     }
+    ///             Kind = @var.Data_mask_rule_target_selected_kind,
+    ///             Values = @var.Data_mask_rule_target_selected_values,
+    ///         },
+    ///         DataMaskRuleStatus = @var.Data_mask_rule_data_mask_rule_status,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Data_mask_rule_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         State = @var.Data_mask_rule_state,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -61,7 +59,7 @@ namespace Pulumi.Oci.CloudGuard
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudGuard/dataMaskRule:DataMaskRule")]
-    public partial class DataMaskRule : Pulumi.CustomResource
+    public partial class DataMaskRule : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Compartment Identifier where the resource is created
@@ -191,7 +189,7 @@ namespace Pulumi.Oci.CloudGuard
         }
     }
 
-    public sealed class DataMaskRuleArgs : Pulumi.ResourceArgs
+    public sealed class DataMaskRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier where the resource is created
@@ -274,9 +272,10 @@ namespace Pulumi.Oci.CloudGuard
         public DataMaskRuleArgs()
         {
         }
+        public static new DataMaskRuleArgs Empty => new DataMaskRuleArgs();
     }
 
-    public sealed class DataMaskRuleState : Pulumi.ResourceArgs
+    public sealed class DataMaskRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier where the resource is created
@@ -389,5 +388,6 @@ namespace Pulumi.Oci.CloudGuard
         public DataMaskRuleState()
         {
         }
+        public static new DataMaskRuleState Empty => new DataMaskRuleState();
     }
 }

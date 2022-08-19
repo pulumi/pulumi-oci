@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFleet = Oci.Jms.GetFleet.Invoke(new()
         ///     {
-        ///         var testFleet = Output.Create(Oci.Jms.GetFleet.InvokeAsync(new Oci.Jms.GetFleetArgs
-        ///         {
-        ///             FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///         }));
-        ///     }
+        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFleet = Oci.Jms.GetFleet.Invoke(new()
         ///     {
-        ///         var testFleet = Output.Create(Oci.Jms.GetFleet.InvokeAsync(new Oci.Jms.GetFleetArgs
-        ///         {
-        ///             FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///         }));
-        ///     }
+        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Jms
     }
 
 
-    public sealed class GetFleetArgs : Pulumi.InvokeArgs
+    public sealed class GetFleetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Jms
         public GetFleetArgs()
         {
         }
+        public static new GetFleetArgs Empty => new GetFleetArgs();
     }
 
-    public sealed class GetFleetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFleetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Jms
         public GetFleetInvokeArgs()
         {
         }
+        public static new GetFleetInvokeArgs Empty => new GetFleetInvokeArgs();
     }
 
 

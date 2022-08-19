@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Artifacts.Inputs
 {
 
-    public sealed class GetContainerImagesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetContainerImagesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Artifacts.Inputs
         public GetContainerImagesFilterInputArgs()
         {
         }
+        public static new GetContainerImagesFilterInputArgs Empty => new GetContainerImagesFilterInputArgs();
     }
 }

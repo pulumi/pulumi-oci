@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildPipelineStageBuildSourceCollectionGetArgs : Pulumi.ResourceArgs
+    public sealed class BuildPipelineStageBuildSourceCollectionGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("items")]
         private InputList<Inputs.BuildPipelineStageBuildSourceCollectionItemGetArgs>? _items;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildPipelineStageBuildSourceCollectionGetArgs()
         {
         }
+        public static new BuildPipelineStageBuildSourceCollectionGetArgs Empty => new BuildPipelineStageBuildSourceCollectionGetArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs : global::Pulumi.ResourceArgs
     {
         [Input("cacheKeyAdditions")]
         private InputList<string>? _cacheKeyAdditions;
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs()
         {
         }
+        public static new DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs Empty => new DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs();
     }
 }

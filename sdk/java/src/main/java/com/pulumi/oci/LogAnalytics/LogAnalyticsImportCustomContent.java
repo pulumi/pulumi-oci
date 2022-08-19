@@ -22,6 +22,37 @@ import javax.annotation.Nullable;
  * Imports the specified custom content from the input in zip format.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LogAnalytics.LogAnalyticsImportCustomContent;
+ * import com.pulumi.oci.LogAnalytics.LogAnalyticsImportCustomContentArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testLogAnalyticsImportCustomContent = new LogAnalyticsImportCustomContent(&#34;testLogAnalyticsImportCustomContent&#34;, LogAnalyticsImportCustomContentArgs.builder()        
+ *             .importCustomContentFile(var_.log_analytics_import_custom_content_import_custom_content_file())
+ *             .namespace(var_.log_analytics_import_custom_content_namespace())
+ *             .expect(var_.log_analytics_import_custom_content_expect())
+ *             .isOverwrite(var_.log_analytics_import_custom_content_is_overwrite())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

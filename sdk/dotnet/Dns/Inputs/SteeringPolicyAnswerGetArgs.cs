@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class SteeringPolicyAnswerGetArgs : Pulumi.ResourceArgs
+    public sealed class SteeringPolicyAnswerGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public SteeringPolicyAnswerGetArgs()
         {
         }
+        public static new SteeringPolicyAnswerGetArgs Empty => new SteeringPolicyAnswerGetArgs();
     }
 }

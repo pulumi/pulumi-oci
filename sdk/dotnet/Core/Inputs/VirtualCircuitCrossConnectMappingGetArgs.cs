@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class VirtualCircuitCrossConnectMappingGetArgs : Pulumi.ResourceArgs
+    public sealed class VirtualCircuitCrossConnectMappingGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The key for BGP MD5 authentication. Only applicable if your system requires MD5 authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Core.Inputs
         public VirtualCircuitCrossConnectMappingGetArgs()
         {
         }
+        public static new VirtualCircuitCrossConnectMappingGetArgs Empty => new VirtualCircuitCrossConnectMappingGetArgs();
     }
 }

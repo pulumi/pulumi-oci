@@ -32,6 +32,34 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouse by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEmWarehouseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouse = EmWarehouseFunctions.getEmWarehouse(GetEmWarehouseArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEmWarehouseResult> getEmWarehouse(GetEmWarehouseArgs args) {
@@ -43,6 +71,34 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouse by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEmWarehouseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouse = EmWarehouseFunctions.getEmWarehouse(GetEmWarehouseArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEmWarehouseResult> getEmWarehousePlain(GetEmWarehousePlainArgs args) {
@@ -54,6 +110,34 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouse by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEmWarehouseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouse = EmWarehouseFunctions.getEmWarehouse(GetEmWarehouseArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEmWarehouseResult> getEmWarehouse(GetEmWarehouseArgs args, InvokeOptions options) {
@@ -65,6 +149,34 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouse by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEmWarehouseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouse = EmWarehouseFunctions.getEmWarehouse(GetEmWarehouseArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEmWarehouseResult> getEmWarehousePlain(GetEmWarehousePlainArgs args, InvokeOptions options) {
@@ -76,6 +188,38 @@ public final class EmWarehouseFunctions {
      * Returns a list of EmWarehouses.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEmWarehousesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouses = EmWarehouseFunctions.getEmWarehouses(GetEmWarehousesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_display_name())
+     *             .id(var_.em_warehouse_id())
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .state(var_.em_warehouse_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEmWarehousesResult> getEmWarehouses() {
@@ -87,6 +231,38 @@ public final class EmWarehouseFunctions {
      * Returns a list of EmWarehouses.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEmWarehousesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouses = EmWarehouseFunctions.getEmWarehouses(GetEmWarehousesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_display_name())
+     *             .id(var_.em_warehouse_id())
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .state(var_.em_warehouse_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEmWarehousesResult> getEmWarehousesPlain() {
@@ -98,6 +274,38 @@ public final class EmWarehouseFunctions {
      * Returns a list of EmWarehouses.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEmWarehousesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouses = EmWarehouseFunctions.getEmWarehouses(GetEmWarehousesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_display_name())
+     *             .id(var_.em_warehouse_id())
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .state(var_.em_warehouse_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEmWarehousesResult> getEmWarehouses(GetEmWarehousesArgs args) {
@@ -109,6 +317,38 @@ public final class EmWarehouseFunctions {
      * Returns a list of EmWarehouses.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEmWarehousesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouses = EmWarehouseFunctions.getEmWarehouses(GetEmWarehousesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_display_name())
+     *             .id(var_.em_warehouse_id())
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .state(var_.em_warehouse_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEmWarehousesResult> getEmWarehousesPlain(GetEmWarehousesPlainArgs args) {
@@ -120,6 +360,38 @@ public final class EmWarehouseFunctions {
      * Returns a list of EmWarehouses.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEmWarehousesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouses = EmWarehouseFunctions.getEmWarehouses(GetEmWarehousesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_display_name())
+     *             .id(var_.em_warehouse_id())
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .state(var_.em_warehouse_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEmWarehousesResult> getEmWarehouses(GetEmWarehousesArgs args, InvokeOptions options) {
@@ -131,6 +403,38 @@ public final class EmWarehouseFunctions {
      * Returns a list of EmWarehouses.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEmWarehousesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouses = EmWarehouseFunctions.getEmWarehouses(GetEmWarehousesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_display_name())
+     *             .id(var_.em_warehouse_id())
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .state(var_.em_warehouse_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEmWarehousesResult> getEmWarehousesPlain(GetEmWarehousesPlainArgs args, InvokeOptions options) {
@@ -142,6 +446,36 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEtlRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouseEtlRun = EmWarehouseFunctions.getEtlRun(GetEtlRunArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEtlRunResult> getEtlRun(GetEtlRunArgs args) {
@@ -153,6 +487,36 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEtlRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouseEtlRun = EmWarehouseFunctions.getEtlRun(GetEtlRunArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEtlRunResult> getEtlRunPlain(GetEtlRunPlainArgs args) {
@@ -164,6 +528,36 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEtlRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouseEtlRun = EmWarehouseFunctions.getEtlRun(GetEtlRunArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEtlRunResult> getEtlRun(GetEtlRunArgs args, InvokeOptions options) {
@@ -175,6 +569,36 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEtlRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouseEtlRun = EmWarehouseFunctions.getEtlRun(GetEtlRunArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEtlRunResult> getEtlRunPlain(GetEtlRunPlainArgs args, InvokeOptions options) {
@@ -186,6 +610,36 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEtlRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouseEtlRuns = EmWarehouseFunctions.getEtlRuns(GetEtlRunsArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEtlRunsResult> getEtlRuns(GetEtlRunsArgs args) {
@@ -197,6 +651,36 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEtlRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouseEtlRuns = EmWarehouseFunctions.getEtlRuns(GetEtlRunsArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEtlRunsResult> getEtlRunsPlain(GetEtlRunsPlainArgs args) {
@@ -208,6 +692,36 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEtlRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouseEtlRuns = EmWarehouseFunctions.getEtlRuns(GetEtlRunsArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEtlRunsResult> getEtlRuns(GetEtlRunsArgs args, InvokeOptions options) {
@@ -219,6 +733,36 @@ public final class EmWarehouseFunctions {
      * Gets a list of runs of an EmWarehouseResource by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetEtlRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouseEtlRuns = EmWarehouseFunctions.getEtlRuns(GetEtlRunsArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEtlRunsResult> getEtlRunsPlain(GetEtlRunsPlainArgs args, InvokeOptions options) {
@@ -230,6 +774,34 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouseResourceUsage by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouseResourceUsage = EmWarehouseFunctions.getResourceUsage(GetResourceUsageArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResourceUsageResult> getResourceUsage(GetResourceUsageArgs args) {
@@ -241,6 +813,34 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouseResourceUsage by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouseResourceUsage = EmWarehouseFunctions.getResourceUsage(GetResourceUsageArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResourceUsageResult> getResourceUsagePlain(GetResourceUsagePlainArgs args) {
@@ -252,6 +852,34 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouseResourceUsage by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouseResourceUsage = EmWarehouseFunctions.getResourceUsage(GetResourceUsageArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResourceUsageResult> getResourceUsage(GetResourceUsageArgs args, InvokeOptions options) {
@@ -263,6 +891,34 @@ public final class EmWarehouseFunctions {
      * Gets a EmWarehouseResourceUsage by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.EmWarehouse.EmWarehouseFunctions;
+     * import com.pulumi.oci.EmWarehouse.inputs.GetResourceUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEmWarehouseResourceUsage = EmWarehouseFunctions.getResourceUsage(GetResourceUsageArgs.builder()
+     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResourceUsageResult> getResourceUsagePlain(GetResourceUsagePlainArgs args, InvokeOptions options) {

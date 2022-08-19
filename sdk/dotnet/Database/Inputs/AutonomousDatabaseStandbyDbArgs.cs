@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousDatabaseStandbyDbArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseStandbyDbArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousDatabaseStandbyDbArgs()
         {
         }
+        public static new AutonomousDatabaseStandbyDbArgs Empty => new AutonomousDatabaseStandbyDbArgs();
     }
 }

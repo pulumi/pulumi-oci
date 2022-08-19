@@ -19,31 +19,29 @@ namespace Pulumi.Oci.Opsi
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testOperationsInsightsWarehouse = new Oci.Opsi.OperationsInsightsWarehouse("testOperationsInsightsWarehouse", new()
     ///     {
-    ///         var testOperationsInsightsWarehouse = new Oci.Opsi.OperationsInsightsWarehouse("testOperationsInsightsWarehouse", new Oci.Opsi.OperationsInsightsWarehouseArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         CpuAllocated = @var.Operations_insights_warehouse_cpu_allocated,
+    ///         DisplayName = @var.Operations_insights_warehouse_display_name,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             CpuAllocated = @var.Operations_insights_warehouse_cpu_allocated,
-    ///             DisplayName = @var.Operations_insights_warehouse_display_name,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             StorageAllocatedInGbs = @var.Operations_insights_warehouse_storage_allocated_in_gbs,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         StorageAllocatedInGbs = @var.Operations_insights_warehouse_storage_allocated_in_gbs,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.Opsi
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse")]
-    public partial class OperationsInsightsWarehouse : Pulumi.CustomResource
+    public partial class OperationsInsightsWarehouse : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -197,7 +195,7 @@ namespace Pulumi.Oci.Opsi
         }
     }
 
-    public sealed class OperationsInsightsWarehouseArgs : Pulumi.ResourceArgs
+    public sealed class OperationsInsightsWarehouseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -250,9 +248,10 @@ namespace Pulumi.Oci.Opsi
         public OperationsInsightsWarehouseArgs()
         {
         }
+        public static new OperationsInsightsWarehouseArgs Empty => new OperationsInsightsWarehouseArgs();
     }
 
-    public sealed class OperationsInsightsWarehouseState : Pulumi.ResourceArgs
+    public sealed class OperationsInsightsWarehouseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -371,5 +370,6 @@ namespace Pulumi.Oci.Opsi
         public OperationsInsightsWarehouseState()
         {
         }
+        public static new OperationsInsightsWarehouseState Empty => new OperationsInsightsWarehouseState();
     }
 }

@@ -31,6 +31,74 @@ import javax.annotation.Nullable;
  * returned from either of these methods can be used to build a final report.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.VnMonitoring.PathAnalysi;
+ * import com.pulumi.oci.VnMonitoring.PathAnalysiArgs;
+ * import com.pulumi.oci.VnMonitoring.inputs.PathAnalysiDestinationEndpointArgs;
+ * import com.pulumi.oci.VnMonitoring.inputs.PathAnalysiProtocolParametersArgs;
+ * import com.pulumi.oci.VnMonitoring.inputs.PathAnalysiQueryOptionsArgs;
+ * import com.pulumi.oci.VnMonitoring.inputs.PathAnalysiSourceEndpointArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPathAnalysi = new PathAnalysi(&#34;testPathAnalysi&#34;, PathAnalysiArgs.builder()        
+ *             .type(var_.path_analysi_type())
+ *             .cacheControl(var_.path_analysi_cache_control())
+ *             .compartmentId(var_.compartment_id())
+ *             .destinationEndpoint(PathAnalysiDestinationEndpointArgs.builder()
+ *                 .type(var_.path_analysi_destination_endpoint_type())
+ *                 .address(var_.path_analysi_destination_endpoint_address())
+ *                 .instanceId(oci_core_instance.test_instance().id())
+ *                 .listenerId(oci_load_balancer_listener.test_listener().id())
+ *                 .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *                 .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .vlanId(oci_core_vlan.test_vlan().id())
+ *                 .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+ *                 .build())
+ *             .pathAnalyzerTestId(oci_vn_monitoring_path_analyzer_test.test_path_analyzer_test().id())
+ *             .protocol(var_.path_analysi_protocol())
+ *             .protocolParameters(PathAnalysiProtocolParametersArgs.builder()
+ *                 .type(var_.path_analysi_protocol_parameters_type())
+ *                 .destinationPort(var_.path_analysi_protocol_parameters_destination_port())
+ *                 .icmpCode(var_.path_analysi_protocol_parameters_icmp_code())
+ *                 .icmpType(var_.path_analysi_protocol_parameters_icmp_type())
+ *                 .sourcePort(var_.path_analysi_protocol_parameters_source_port())
+ *                 .build())
+ *             .queryOptions(PathAnalysiQueryOptionsArgs.builder()
+ *                 .isBiDirectionalAnalysis(var_.path_analysi_query_options_is_bi_directional_analysis())
+ *                 .build())
+ *             .sourceEndpoint(PathAnalysiSourceEndpointArgs.builder()
+ *                 .type(var_.path_analysi_source_endpoint_type())
+ *                 .address(var_.path_analysi_source_endpoint_address())
+ *                 .instanceId(oci_core_instance.test_instance().id())
+ *                 .listenerId(oci_load_balancer_listener.test_listener().id())
+ *                 .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *                 .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .vlanId(oci_core_vlan.test_vlan().id())
+ *                 .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

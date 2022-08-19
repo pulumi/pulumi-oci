@@ -24,6 +24,73 @@ import javax.annotation.Nullable;
  * Adds a security rule to the specified network security group.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.NetworkSecurityGroupSecurityRule;
+ * import com.pulumi.oci.Core.NetworkSecurityGroupSecurityRuleArgs;
+ * import com.pulumi.oci.Core.inputs.NetworkSecurityGroupSecurityRuleIcmpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.NetworkSecurityGroupSecurityRuleTcpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs;
+ * import com.pulumi.oci.Core.inputs.NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs;
+ * import com.pulumi.oci.Core.inputs.NetworkSecurityGroupSecurityRuleUdpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs;
+ * import com.pulumi.oci.Core.inputs.NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNetworkSecurityGroupSecurityRule = new NetworkSecurityGroupSecurityRule(&#34;testNetworkSecurityGroupSecurityRule&#34;, NetworkSecurityGroupSecurityRuleArgs.builder()        
+ *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+ *             .direction(var_.network_security_group_security_rule_direction())
+ *             .protocol(var_.network_security_group_security_rule_protocol())
+ *             .description(var_.network_security_group_security_rule_description())
+ *             .destination(var_.network_security_group_security_rule_destination())
+ *             .destinationType(var_.network_security_group_security_rule_destination_type())
+ *             .icmpOptions(NetworkSecurityGroupSecurityRuleIcmpOptionsArgs.builder()
+ *                 .type(var_.network_security_group_security_rule_icmp_options_type())
+ *                 .code(var_.network_security_group_security_rule_icmp_options_code())
+ *                 .build())
+ *             .source(var_.network_security_group_security_rule_source())
+ *             .sourceType(var_.network_security_group_security_rule_source_type())
+ *             .stateless(var_.network_security_group_security_rule_stateless())
+ *             .tcpOptions(NetworkSecurityGroupSecurityRuleTcpOptionsArgs.builder()
+ *                 .destinationPortRange(NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs.builder()
+ *                     .max(var_.network_security_group_security_rule_tcp_options_destination_port_range_max())
+ *                     .min(var_.network_security_group_security_rule_tcp_options_destination_port_range_min())
+ *                     .build())
+ *                 .sourcePortRange(NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs.builder()
+ *                     .max(var_.network_security_group_security_rule_tcp_options_source_port_range_max())
+ *                     .min(var_.network_security_group_security_rule_tcp_options_source_port_range_min())
+ *                     .build())
+ *                 .build())
+ *             .udpOptions(NetworkSecurityGroupSecurityRuleUdpOptionsArgs.builder()
+ *                 .destinationPortRange(NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs.builder()
+ *                     .max(var_.network_security_group_security_rule_udp_options_destination_port_range_max())
+ *                     .min(var_.network_security_group_security_rule_udp_options_destination_port_range_min())
+ *                     .build())
+ *                 .sourcePortRange(NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs.builder()
+ *                     .max(var_.network_security_group_security_rule_udp_options_source_port_range_max())
+ *                     .min(var_.network_security_group_security_rule_udp_options_source_port_range_min())
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -13,49 +13,47 @@ namespace Pulumi.Oci.Functions
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testApplication = new Oci.Functions.Application("testApplication", new()
     ///     {
-    ///         var testApplication = new Oci.Functions.Application("testApplication", new Oci.Functions.ApplicationArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Application_display_name,
+    ///         SubnetIds = @var.Application_subnet_ids,
+    ///         Config = @var.Application_config,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Application_display_name,
-    ///             SubnetIds = @var.Application_subnet_ids,
-    ///             Config = @var.Application_config,
-    ///             DefinedTags = 
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         NetworkSecurityGroupIds = @var.Application_network_security_group_ids,
+    ///         ImagePolicyConfig = new Oci.Functions.Inputs.ApplicationImagePolicyConfigArgs
+    ///         {
+    ///             IsPolicyEnabled = @var.Application_image_policy_config_is_policy_enabled,
+    ///             KeyDetails = new[]
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             NetworkSecurityGroupIds = @var.Application_network_security_group_ids,
-    ///             ImagePolicyConfig = new Oci.Functions.Inputs.ApplicationImagePolicyConfigArgs
-    ///             {
-    ///                 IsPolicyEnabled = @var.Application_image_policy_config_is_policy_enabled,
-    ///                 KeyDetails = 
+    ///                 new Oci.Functions.Inputs.ApplicationImagePolicyConfigKeyDetailArgs
     ///                 {
-    ///                     new Oci.Functions.Inputs.ApplicationImagePolicyConfigKeyDetailArgs
-    ///                     {
-    ///                         KmsKeyId = oci_kms_key.Test_key.Id,
-    ///                     },
+    ///                     KmsKeyId = oci_kms_key.Test_key.Id,
     ///                 },
     ///             },
-    ///             SyslogUrl = @var.Application_syslog_url,
-    ///             TraceConfig = new Oci.Functions.Inputs.ApplicationTraceConfigArgs
-    ///             {
-    ///                 DomainId = oci_functions_domain.Test_domain.Id,
-    ///                 IsEnabled = @var.Application_trace_config_is_enabled,
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         SyslogUrl = @var.Application_syslog_url,
+    ///         TraceConfig = new Oci.Functions.Inputs.ApplicationTraceConfigArgs
+    ///         {
+    ///             DomainId = oci_functions_domain.Test_domain.Id,
+    ///             IsEnabled = @var.Application_trace_config_is_enabled,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -67,7 +65,7 @@ namespace Pulumi.Oci.Functions
     /// ```
     /// </summary>
     [OciResourceType("oci:Functions/application:Application")]
-    public partial class Application : Pulumi.CustomResource
+    public partial class Application : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment to create the application within.
@@ -191,7 +189,7 @@ namespace Pulumi.Oci.Functions
         }
     }
 
-    public sealed class ApplicationArgs : Pulumi.ResourceArgs
+    public sealed class ApplicationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment to create the application within.
@@ -286,9 +284,10 @@ namespace Pulumi.Oci.Functions
         public ApplicationArgs()
         {
         }
+        public static new ApplicationArgs Empty => new ApplicationArgs();
     }
 
-    public sealed class ApplicationState : Pulumi.ResourceArgs
+    public sealed class ApplicationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment to create the application within.
@@ -401,5 +400,6 @@ namespace Pulumi.Oci.Functions
         public ApplicationState()
         {
         }
+        public static new ApplicationState Empty => new ApplicationState();
     }
 }

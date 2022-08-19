@@ -21,22 +21,20 @@ namespace Pulumi.Oci.EmWarehouse
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEmWarehouseEtlRun = Oci.EmWarehouse.GetEtlRun.Invoke(new()
         ///     {
-        ///         var testEmWarehouseEtlRun = Output.Create(Oci.EmWarehouse.GetEtlRun.InvokeAsync(new Oci.EmWarehouse.GetEtlRunArgs
-        ///         {
-        ///             EmWarehouseId = oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Em_warehouse_etl_run_display_name,
-        ///         }));
-        ///     }
+        ///         EmWarehouseId = oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Em_warehouse_etl_run_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.EmWarehouse
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEmWarehouseEtlRun = Oci.EmWarehouse.GetEtlRun.Invoke(new()
         ///     {
-        ///         var testEmWarehouseEtlRun = Output.Create(Oci.EmWarehouse.GetEtlRun.InvokeAsync(new Oci.EmWarehouse.GetEtlRunArgs
-        ///         {
-        ///             EmWarehouseId = oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Em_warehouse_etl_run_display_name,
-        ///         }));
-        ///     }
+        ///         EmWarehouseId = oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Em_warehouse_etl_run_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.EmWarehouse
     }
 
 
-    public sealed class GetEtlRunArgs : Pulumi.InvokeArgs
+    public sealed class GetEtlRunArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.EmWarehouse
         public GetEtlRunArgs()
         {
         }
+        public static new GetEtlRunArgs Empty => new GetEtlRunArgs();
     }
 
-    public sealed class GetEtlRunInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEtlRunInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.EmWarehouse
         public GetEtlRunInvokeArgs()
         {
         }
+        public static new GetEtlRunInvokeArgs Empty => new GetEtlRunInvokeArgs();
     }
 
 

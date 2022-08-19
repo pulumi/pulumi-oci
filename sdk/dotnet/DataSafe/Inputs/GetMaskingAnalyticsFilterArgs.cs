@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class GetMaskingAnalyticsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetMaskingAnalyticsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public GetMaskingAnalyticsFilterInputArgs()
         {
         }
+        public static new GetMaskingAnalyticsFilterInputArgs Empty => new GetMaskingAnalyticsFilterInputArgs();
     }
 }

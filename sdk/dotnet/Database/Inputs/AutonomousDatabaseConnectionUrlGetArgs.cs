@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousDatabaseConnectionUrlGetArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseConnectionUrlGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Oracle Application Express (APEX) URL.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousDatabaseConnectionUrlGetArgs()
         {
         }
+        public static new AutonomousDatabaseConnectionUrlGetArgs Empty => new AutonomousDatabaseConnectionUrlGetArgs();
     }
 }

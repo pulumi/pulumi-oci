@@ -29,25 +29,23 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlConfigurations = Oci.Mysql.GetMysqlConfigurations.Invoke(new()
         ///     {
-        ///         var testMysqlConfigurations = Output.Create(Oci.Mysql.GetMysqlConfigurations.InvokeAsync(new Oci.Mysql.GetMysqlConfigurationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ConfigurationId = @var.Mysql_configuration_id,
-        ///             DisplayName = @var.Mysql_configuration_display_name,
-        ///             ShapeName = @var.Mysql_shape_name,
-        ///             State = @var.Mysql_configuration_state,
-        ///             Types = @var.Mysql_configuration_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ConfigurationId = @var.Mysql_configuration_id,
+        ///         DisplayName = @var.Mysql_configuration_display_name,
+        ///         ShapeName = @var.Mysql_shape_name,
+        ///         State = @var.Mysql_configuration_state,
+        ///         Types = @var.Mysql_configuration_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -73,25 +71,23 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlConfigurations = Oci.Mysql.GetMysqlConfigurations.Invoke(new()
         ///     {
-        ///         var testMysqlConfigurations = Output.Create(Oci.Mysql.GetMysqlConfigurations.InvokeAsync(new Oci.Mysql.GetMysqlConfigurationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ConfigurationId = @var.Mysql_configuration_id,
-        ///             DisplayName = @var.Mysql_configuration_display_name,
-        ///             ShapeName = @var.Mysql_shape_name,
-        ///             State = @var.Mysql_configuration_state,
-        ///             Types = @var.Mysql_configuration_type,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ConfigurationId = @var.Mysql_configuration_id,
+        ///         DisplayName = @var.Mysql_configuration_display_name,
+        ///         ShapeName = @var.Mysql_shape_name,
+        ///         State = @var.Mysql_configuration_state,
+        ///         Types = @var.Mysql_configuration_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -101,7 +97,7 @@ namespace Pulumi.Oci.Mysql
     }
 
 
-    public sealed class GetMysqlConfigurationsArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlConfigurationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -156,9 +152,10 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlConfigurationsArgs()
         {
         }
+        public static new GetMysqlConfigurationsArgs Empty => new GetMysqlConfigurationsArgs();
     }
 
-    public sealed class GetMysqlConfigurationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlConfigurationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -213,6 +210,7 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlConfigurationsInvokeArgs()
         {
         }
+        public static new GetMysqlConfigurationsInvokeArgs Empty => new GetMysqlConfigurationsInvokeArgs();
     }
 
 

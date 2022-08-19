@@ -24,6 +24,49 @@ import javax.annotation.Nullable;
  * Creates a new repository.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DevOps.Repository;
+ * import com.pulumi.oci.DevOps.RepositoryArgs;
+ * import com.pulumi.oci.DevOps.inputs.RepositoryMirrorRepositoryConfigArgs;
+ * import com.pulumi.oci.DevOps.inputs.RepositoryMirrorRepositoryConfigTriggerScheduleArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testRepository = new Repository(&#34;testRepository&#34;, RepositoryArgs.builder()        
+ *             .projectId(oci_devops_project.test_project().id())
+ *             .repositoryType(var_.repository_repository_type())
+ *             .defaultBranch(var_.repository_default_branch())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.repository_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .mirrorRepositoryConfig(RepositoryMirrorRepositoryConfigArgs.builder()
+ *                 .connectorId(oci_devops_connector.test_connector().id())
+ *                 .repositoryUrl(var_.repository_mirror_repository_config_repository_url())
+ *                 .triggerSchedule(RepositoryMirrorRepositoryConfigTriggerScheduleArgs.builder()
+ *                     .scheduleType(var_.repository_mirror_repository_config_trigger_schedule_schedule_type())
+ *                     .customSchedule(var_.repository_mirror_repository_config_trigger_schedule_custom_schedule())
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

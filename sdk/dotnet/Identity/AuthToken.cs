@@ -26,21 +26,19 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAuthToken = new Oci.Identity.AuthToken("testAuthToken", new()
     ///     {
-    ///         var testAuthToken = new Oci.Identity.AuthToken("testAuthToken", new Oci.Identity.AuthTokenArgs
-    ///         {
-    ///             Description = @var.Auth_token_description,
-    ///             UserId = oci_identity_user.Test_user.Id,
-    ///         });
-    ///     }
+    ///         Description = @var.Auth_token_description,
+    ///         UserId = oci_identity_user.Test_user.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/authToken:AuthToken")]
-    public partial class AuthToken : Pulumi.CustomResource
+    public partial class AuthToken : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
@@ -140,7 +138,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class AuthTokenArgs : Pulumi.ResourceArgs
+    public sealed class AuthTokenArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
@@ -157,9 +155,10 @@ namespace Pulumi.Oci.Identity
         public AuthTokenArgs()
         {
         }
+        public static new AuthTokenArgs Empty => new AuthTokenArgs();
     }
 
-    public sealed class AuthTokenState : Pulumi.ResourceArgs
+    public sealed class AuthTokenState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
@@ -206,5 +205,6 @@ namespace Pulumi.Oci.Identity
         public AuthTokenState()
         {
         }
+        public static new AuthTokenState Empty => new AuthTokenState();
     }
 }

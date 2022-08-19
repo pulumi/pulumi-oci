@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class UsagePlanEntitlementGetArgs : Pulumi.ResourceArgs
+    public sealed class UsagePlanEntitlementGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public UsagePlanEntitlementGetArgs()
         {
         }
+        public static new UsagePlanEntitlementGetArgs Empty => new UsagePlanEntitlementGetArgs();
     }
 }

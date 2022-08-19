@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class DrgRouteDistributionStatementMatchCriteriaGetArgs : Pulumi.ResourceArgs
+    public sealed class DrgRouteDistributionStatementMatchCriteriaGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type of the network resource to be included in this match. A match for a network type implies that all DRG attachments of that type insert routes into the table.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Core.Inputs
         public DrgRouteDistributionStatementMatchCriteriaGetArgs()
         {
         }
+        public static new DrgRouteDistributionStatementMatchCriteriaGetArgs Empty => new DrgRouteDistributionStatementMatchCriteriaGetArgs();
     }
 }

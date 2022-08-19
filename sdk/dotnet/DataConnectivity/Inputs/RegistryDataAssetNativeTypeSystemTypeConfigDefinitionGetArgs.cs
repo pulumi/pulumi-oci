@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataConnectivity.Inputs
 {
 
-    public sealed class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionGetArgs : Pulumi.ResourceArgs
+    public sealed class RegistryDataAssetNativeTypeSystemTypeConfigDefinitionGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("configParameterDefinitions")]
         private InputMap<object>? _configParameterDefinitions;
@@ -69,5 +69,6 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public RegistryDataAssetNativeTypeSystemTypeConfigDefinitionGetArgs()
         {
         }
+        public static new RegistryDataAssetNativeTypeSystemTypeConfigDefinitionGetArgs Empty => new RegistryDataAssetNativeTypeSystemTypeConfigDefinitionGetArgs();
     }
 }

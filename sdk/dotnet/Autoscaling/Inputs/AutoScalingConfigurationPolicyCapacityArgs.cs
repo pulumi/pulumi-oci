@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Autoscaling.Inputs
 {
 
-    public sealed class AutoScalingConfigurationPolicyCapacityArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationPolicyCapacityArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         public AutoScalingConfigurationPolicyCapacityArgs()
         {
         }
+        public static new AutoScalingConfigurationPolicyCapacityArgs Empty => new AutoScalingConfigurationPolicyCapacityArgs();
     }
 }

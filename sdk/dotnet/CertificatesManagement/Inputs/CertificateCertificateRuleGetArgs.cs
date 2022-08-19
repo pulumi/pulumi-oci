@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement.Inputs
 {
 
-    public sealed class CertificateCertificateRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class CertificateCertificateRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public CertificateCertificateRuleGetArgs()
         {
         }
+        public static new CertificateCertificateRuleGetArgs Empty => new CertificateCertificateRuleGetArgs();
     }
 }

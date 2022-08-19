@@ -14,90 +14,6 @@ namespace Pulumi.Oci.CertificatesManagement
     /// 
     /// Creates a new certificate according to the details of the request.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var testCertificate = new Oci.CertificatesManagement.Certificate("testCertificate", new Oci.CertificatesManagement.CertificateArgs
-    ///         {
-    ///             CertificateConfig = new Oci.CertificatesManagement.Inputs.CertificateCertificateConfigArgs
-    ///             {
-    ///                 ConfigType = @var.Certificate_certificate_config_config_type,
-    ///                 CertChainPem = @var.Certificate_certificate_config_cert_chain_pem,
-    ///                 CertificatePem = @var.Certificate_certificate_config_certificate_pem,
-    ///                 CertificateProfileType = @var.Certificate_certificate_config_certificate_profile_type,
-    ///                 CsrPem = @var.Certificate_certificate_config_csr_pem,
-    ///                 IssuerCertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-    ///                 KeyAlgorithm = @var.Certificate_certificate_config_key_algorithm,
-    ///                 PrivateKeyPem = @var.Certificate_certificate_config_private_key_pem,
-    ///                 PrivateKeyPemPassphrase = @var.Certificate_certificate_config_private_key_pem_passphrase,
-    ///                 SignatureAlgorithm = @var.Certificate_certificate_config_signature_algorithm,
-    ///                 Subject = new Oci.CertificatesManagement.Inputs.CertificateCertificateConfigSubjectArgs
-    ///                 {
-    ///                     CommonName = @var.Certificate_certificate_config_subject_common_name,
-    ///                     Country = @var.Certificate_certificate_config_subject_country,
-    ///                     DistinguishedNameQualifier = @var.Certificate_certificate_config_subject_distinguished_name_qualifier,
-    ///                     DomainComponent = @var.Certificate_certificate_config_subject_domain_component,
-    ///                     GenerationQualifier = @var.Certificate_certificate_config_subject_generation_qualifier,
-    ///                     GivenName = @var.Certificate_certificate_config_subject_given_name,
-    ///                     Initials = @var.Certificate_certificate_config_subject_initials,
-    ///                     LocalityName = @var.Certificate_certificate_config_subject_locality_name,
-    ///                     Organization = @var.Certificate_certificate_config_subject_organization,
-    ///                     OrganizationalUnit = @var.Certificate_certificate_config_subject_organizational_unit,
-    ///                     Pseudonym = @var.Certificate_certificate_config_subject_pseudonym,
-    ///                     SerialNumber = @var.Certificate_certificate_config_subject_serial_number,
-    ///                     StateOrProvinceName = @var.Certificate_certificate_config_subject_state_or_province_name,
-    ///                     Street = @var.Certificate_certificate_config_subject_street,
-    ///                     Surname = @var.Certificate_certificate_config_subject_surname,
-    ///                     Title = @var.Certificate_certificate_config_subject_title,
-    ///                     UserId = oci_identity_user.Test_user.Id,
-    ///                 },
-    ///                 SubjectAlternativeNames = 
-    ///                 {
-    ///                     new Oci.CertificatesManagement.Inputs.CertificateCertificateConfigSubjectAlternativeNameArgs
-    ///                     {
-    ///                         Type = @var.Certificate_certificate_config_subject_alternative_names_type,
-    ///                         Value = @var.Certificate_certificate_config_subject_alternative_names_value,
-    ///                     },
-    ///                 },
-    ///                 Validity = new Oci.CertificatesManagement.Inputs.CertificateCertificateConfigValidityArgs
-    ///                 {
-    ///                     TimeOfValidityNotAfter = @var.Certificate_certificate_config_validity_time_of_validity_not_after,
-    ///                     TimeOfValidityNotBefore = @var.Certificate_certificate_config_validity_time_of_validity_not_before,
-    ///                 },
-    ///                 VersionName = @var.Certificate_certificate_config_version_name,
-    ///             },
-    ///             CompartmentId = @var.Compartment_id,
-    ///             CertificateRules = 
-    ///             {
-    ///                 new Oci.CertificatesManagement.Inputs.CertificateCertificateRuleArgs
-    ///                 {
-    ///                     AdvanceRenewalPeriod = @var.Certificate_certificate_rules_advance_renewal_period,
-    ///                     RenewalInterval = @var.Certificate_certificate_rules_renewal_interval,
-    ///                     RuleType = @var.Certificate_certificate_rules_rule_type,
-    ///                 },
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Certificate_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Certificates can be imported using the `id`, e.g.
@@ -107,7 +23,7 @@ namespace Pulumi.Oci.CertificatesManagement
     /// ```
     /// </summary>
     [OciResourceType("oci:CertificatesManagement/certificate:Certificate")]
-    public partial class Certificate : Pulumi.CustomResource
+    public partial class Certificate : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The details of the contents of the certificate and certificate metadata.
@@ -267,7 +183,7 @@ namespace Pulumi.Oci.CertificatesManagement
         }
     }
 
-    public sealed class CertificateArgs : Pulumi.ResourceArgs
+    public sealed class CertificateArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The details of the contents of the certificate and certificate metadata.
@@ -332,9 +248,10 @@ namespace Pulumi.Oci.CertificatesManagement
         public CertificateArgs()
         {
         }
+        public static new CertificateArgs Empty => new CertificateArgs();
     }
 
-    public sealed class CertificateState : Pulumi.ResourceArgs
+    public sealed class CertificateState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The details of the contents of the certificate and certificate metadata.
@@ -489,5 +406,6 @@ namespace Pulumi.Oci.CertificatesManagement
         public CertificateState()
         {
         }
+        public static new CertificateState Empty => new CertificateState();
     }
 }

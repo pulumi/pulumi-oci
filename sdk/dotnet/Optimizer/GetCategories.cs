@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCategories = Oci.Optimizer.GetCategories.Invoke(new()
         ///     {
-        ///         var testCategories = Output.Create(Oci.Optimizer.GetCategories.InvokeAsync(new Oci.Optimizer.GetCategoriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Category_compartment_id_in_subtree,
-        ///             Name = @var.Category_name,
-        ///             State = @var.Category_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Category_compartment_id_in_subtree,
+        ///         Name = @var.Category_name,
+        ///         State = @var.Category_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCategories = Oci.Optimizer.GetCategories.Invoke(new()
         ///     {
-        ///         var testCategories = Output.Create(Oci.Optimizer.GetCategories.InvokeAsync(new Oci.Optimizer.GetCategoriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Category_compartment_id_in_subtree,
-        ///             Name = @var.Category_name,
-        ///             State = @var.Category_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Category_compartment_id_in_subtree,
+        ///         Name = @var.Category_name,
+        ///         State = @var.Category_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Optimizer
     }
 
 
-    public sealed class GetCategoriesArgs : Pulumi.InvokeArgs
+    public sealed class GetCategoriesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.Optimizer
         public GetCategoriesArgs()
         {
         }
+        public static new GetCategoriesArgs Empty => new GetCategoriesArgs();
     }
 
-    public sealed class GetCategoriesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCategoriesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.Optimizer
         public GetCategoriesInvokeArgs()
         {
         }
+        public static new GetCategoriesInvokeArgs Empty => new GetCategoriesInvokeArgs();
     }
 
 

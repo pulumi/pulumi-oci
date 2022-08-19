@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstancePoolLoadBalancerArgs : Pulumi.ResourceArgs
+    public sealed class InstancePoolLoadBalancerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the backend set on the load balancer to add instances to.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstancePoolLoadBalancerArgs()
         {
         }
+        public static new InstancePoolLoadBalancerArgs Empty => new InstancePoolLoadBalancerArgs();
     }
 }

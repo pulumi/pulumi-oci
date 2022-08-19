@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationVaultDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class MigrationVaultDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationVaultDetailsGetArgs()
         {
         }
+        public static new MigrationVaultDetailsGetArgs Empty => new MigrationVaultDetailsGetArgs();
     }
 }

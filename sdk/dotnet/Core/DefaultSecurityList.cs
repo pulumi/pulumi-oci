@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     [OciResourceType("oci:Core/defaultSecurityList:DefaultSecurityList")]
-    public partial class DefaultSecurityList : Pulumi.CustomResource
+    public partial class DefaultSecurityList : global::Pulumi.CustomResource
     {
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class DefaultSecurityListArgs : Pulumi.ResourceArgs
+    public sealed class DefaultSecurityListArgs : global::Pulumi.ResourceArgs
     {
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -129,9 +129,10 @@ namespace Pulumi.Oci.Core
         public DefaultSecurityListArgs()
         {
         }
+        public static new DefaultSecurityListArgs Empty => new DefaultSecurityListArgs();
     }
 
-    public sealed class DefaultSecurityListState : Pulumi.ResourceArgs
+    public sealed class DefaultSecurityListState : global::Pulumi.ResourceArgs
     {
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -183,5 +184,6 @@ namespace Pulumi.Oci.Core
         public DefaultSecurityListState()
         {
         }
+        public static new DefaultSecurityListState Empty => new DefaultSecurityListState();
     }
 }

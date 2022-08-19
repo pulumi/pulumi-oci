@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class GetProtocolsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetProtocolsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of a protocol.  Example: 'HTTP'
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public GetProtocolsFilterInputArgs()
         {
         }
+        public static new GetProtocolsFilterInputArgs Empty => new GetProtocolsFilterInputArgs();
     }
 }

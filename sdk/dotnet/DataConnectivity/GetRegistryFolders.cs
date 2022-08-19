@@ -21,24 +21,22 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryFolders = Oci.DataConnectivity.GetRegistryFolders.Invoke(new()
         ///     {
-        ///         var testRegistryFolders = Output.Create(Oci.DataConnectivity.GetRegistryFolders.InvokeAsync(new Oci.DataConnectivity.GetRegistryFoldersArgs
-        ///         {
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///             FavoritesQueryParam = @var.Registry_folder_favorites_query_param,
-        ///             Fields = @var.Registry_folder_fields,
-        ///             Name = @var.Registry_folder_name,
-        ///             Type = @var.Registry_folder_type,
-        ///         }));
-        ///     }
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///         FavoritesQueryParam = @var.Registry_folder_favorites_query_param,
+        ///         Fields = @var.Registry_folder_fields,
+        ///         Name = @var.Registry_folder_name,
+        ///         Type = @var.Registry_folder_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,24 +54,22 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryFolders = Oci.DataConnectivity.GetRegistryFolders.Invoke(new()
         ///     {
-        ///         var testRegistryFolders = Output.Create(Oci.DataConnectivity.GetRegistryFolders.InvokeAsync(new Oci.DataConnectivity.GetRegistryFoldersArgs
-        ///         {
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///             FavoritesQueryParam = @var.Registry_folder_favorites_query_param,
-        ///             Fields = @var.Registry_folder_fields,
-        ///             Name = @var.Registry_folder_name,
-        ///             Type = @var.Registry_folder_type,
-        ///         }));
-        ///     }
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///         FavoritesQueryParam = @var.Registry_folder_favorites_query_param,
+        ///         Fields = @var.Registry_folder_fields,
+        ///         Name = @var.Registry_folder_name,
+        ///         Type = @var.Registry_folder_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DataConnectivity
     }
 
 
-    public sealed class GetRegistryFoldersArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryFoldersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
@@ -132,9 +128,10 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryFoldersArgs()
         {
         }
+        public static new GetRegistryFoldersArgs Empty => new GetRegistryFoldersArgs();
     }
 
-    public sealed class GetRegistryFoldersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryFoldersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// If value is FAVORITES_ONLY, then only objects marked as favorite by the requesting user will be included in result. If value is NON_FAVORITES_ONLY, then objects marked as favorites by the requesting user will be skipped. If value is ALL or if not specified, all objects, irrespective of favorites or not will be returned. Default is ALL.
@@ -183,6 +180,7 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryFoldersInvokeArgs()
         {
         }
+        public static new GetRegistryFoldersInvokeArgs Empty => new GetRegistryFoldersInvokeArgs();
     }
 
 

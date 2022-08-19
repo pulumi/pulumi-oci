@@ -151,6 +151,34 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAllowedDomainLicenseTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAllowedDomainLicenseTypes = IdentityFunctions.getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs.builder()
+     *             .currentLicenseTypeName(var_.allowed_domain_license_type_current_license_type_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAllowedDomainLicenseTypesResult> getAllowedDomainLicenseTypes() {
@@ -167,6 +195,34 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAllowedDomainLicenseTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAllowedDomainLicenseTypes = IdentityFunctions.getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs.builder()
+     *             .currentLicenseTypeName(var_.allowed_domain_license_type_current_license_type_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAllowedDomainLicenseTypesResult> getAllowedDomainLicenseTypesPlain() {
@@ -183,6 +239,34 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAllowedDomainLicenseTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAllowedDomainLicenseTypes = IdentityFunctions.getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs.builder()
+     *             .currentLicenseTypeName(var_.allowed_domain_license_type_current_license_type_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAllowedDomainLicenseTypesResult> getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs args) {
@@ -199,6 +283,34 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAllowedDomainLicenseTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAllowedDomainLicenseTypes = IdentityFunctions.getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs.builder()
+     *             .currentLicenseTypeName(var_.allowed_domain_license_type_current_license_type_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAllowedDomainLicenseTypesResult> getAllowedDomainLicenseTypesPlain(GetAllowedDomainLicenseTypesPlainArgs args) {
@@ -215,6 +327,34 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAllowedDomainLicenseTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAllowedDomainLicenseTypes = IdentityFunctions.getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs.builder()
+     *             .currentLicenseTypeName(var_.allowed_domain_license_type_current_license_type_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAllowedDomainLicenseTypesResult> getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs args, InvokeOptions options) {
@@ -231,6 +371,34 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAllowedDomainLicenseTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAllowedDomainLicenseTypes = IdentityFunctions.getAllowedDomainLicenseTypes(GetAllowedDomainLicenseTypesArgs.builder()
+     *             .currentLicenseTypeName(var_.allowed_domain_license_type_current_license_type_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAllowedDomainLicenseTypesResult> getAllowedDomainLicenseTypesPlain(GetAllowedDomainLicenseTypesPlainArgs args, InvokeOptions options) {
@@ -245,6 +413,34 @@ public final class IdentityFunctions {
      * organization does not need to write a policy to give users this ability.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetApiKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiKeys = IdentityFunctions.getApiKeys(GetApiKeysArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApiKeysResult> getApiKeys(GetApiKeysArgs args) {
@@ -259,6 +455,34 @@ public final class IdentityFunctions {
      * organization does not need to write a policy to give users this ability.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetApiKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiKeys = IdentityFunctions.getApiKeys(GetApiKeysArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApiKeysResult> getApiKeysPlain(GetApiKeysPlainArgs args) {
@@ -273,6 +497,34 @@ public final class IdentityFunctions {
      * organization does not need to write a policy to give users this ability.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetApiKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiKeys = IdentityFunctions.getApiKeys(GetApiKeysArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetApiKeysResult> getApiKeys(GetApiKeysArgs args, InvokeOptions options) {
@@ -287,6 +539,34 @@ public final class IdentityFunctions {
      * organization does not need to write a policy to give users this ability.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetApiKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiKeys = IdentityFunctions.getApiKeys(GetApiKeysArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetApiKeysResult> getApiKeysPlain(GetApiKeysPlainArgs args, InvokeOptions options) {
@@ -299,6 +579,34 @@ public final class IdentityFunctions {
      * the token itself. The actual token is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAuthTokensArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuthTokens = IdentityFunctions.getAuthTokens(GetAuthTokensArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuthTokensResult> getAuthTokens(GetAuthTokensArgs args) {
@@ -311,6 +619,34 @@ public final class IdentityFunctions {
      * the token itself. The actual token is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAuthTokensArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuthTokens = IdentityFunctions.getAuthTokens(GetAuthTokensArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuthTokensResult> getAuthTokensPlain(GetAuthTokensPlainArgs args) {
@@ -323,6 +659,34 @@ public final class IdentityFunctions {
      * the token itself. The actual token is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAuthTokensArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuthTokens = IdentityFunctions.getAuthTokens(GetAuthTokensArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuthTokensResult> getAuthTokens(GetAuthTokensArgs args, InvokeOptions options) {
@@ -335,6 +699,34 @@ public final class IdentityFunctions {
      * the token itself. The actual token is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAuthTokensArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuthTokens = IdentityFunctions.getAuthTokens(GetAuthTokensArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuthTokensResult> getAuthTokensPlain(GetAuthTokensPlainArgs args, InvokeOptions options) {
@@ -347,6 +739,34 @@ public final class IdentityFunctions {
      * the compartment ID (remember that the tenancy is simply the root compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAuthenticationPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuthenticationPolicy = IdentityFunctions.getAuthenticationPolicy(GetAuthenticationPolicyArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuthenticationPolicyResult> getAuthenticationPolicy(GetAuthenticationPolicyArgs args) {
@@ -359,6 +779,34 @@ public final class IdentityFunctions {
      * the compartment ID (remember that the tenancy is simply the root compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAuthenticationPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuthenticationPolicy = IdentityFunctions.getAuthenticationPolicy(GetAuthenticationPolicyArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuthenticationPolicyResult> getAuthenticationPolicyPlain(GetAuthenticationPolicyPlainArgs args) {
@@ -371,6 +819,34 @@ public final class IdentityFunctions {
      * the compartment ID (remember that the tenancy is simply the root compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAuthenticationPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuthenticationPolicy = IdentityFunctions.getAuthenticationPolicy(GetAuthenticationPolicyArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAuthenticationPolicyResult> getAuthenticationPolicy(GetAuthenticationPolicyArgs args, InvokeOptions options) {
@@ -383,6 +859,34 @@ public final class IdentityFunctions {
      * the compartment ID (remember that the tenancy is simply the root compartment).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAuthenticationPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAuthenticationPolicy = IdentityFunctions.getAuthenticationPolicy(GetAuthenticationPolicyArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAuthenticationPolicyResult> getAuthenticationPolicyPlain(GetAuthenticationPolicyPlainArgs args, InvokeOptions options) {
@@ -392,6 +896,36 @@ public final class IdentityFunctions {
      * This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompartment = IdentityFunctions.getAvailabilityDomain(GetAvailabilityDomainArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .id(var_.id())
+     *             .adNumber(var_.ad_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAvailabilityDomainResult> getAvailabilityDomain(GetAvailabilityDomainArgs args) {
@@ -401,6 +935,36 @@ public final class IdentityFunctions {
      * This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompartment = IdentityFunctions.getAvailabilityDomain(GetAvailabilityDomainArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .id(var_.id())
+     *             .adNumber(var_.ad_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAvailabilityDomainResult> getAvailabilityDomainPlain(GetAvailabilityDomainPlainArgs args) {
@@ -410,6 +974,36 @@ public final class IdentityFunctions {
      * This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompartment = IdentityFunctions.getAvailabilityDomain(GetAvailabilityDomainArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .id(var_.id())
+     *             .adNumber(var_.ad_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAvailabilityDomainResult> getAvailabilityDomain(GetAvailabilityDomainArgs args, InvokeOptions options) {
@@ -419,6 +1013,36 @@ public final class IdentityFunctions {
      * This data source provides the details of a single Availability Domain in Oracle Cloud Infrastructure Identity service.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompartment = IdentityFunctions.getAvailabilityDomain(GetAvailabilityDomainArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .id(var_.id())
+     *             .adNumber(var_.ad_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAvailabilityDomainResult> getAvailabilityDomainPlain(GetAvailabilityDomainPlainArgs args, InvokeOptions options) {
@@ -434,6 +1058,34 @@ public final class IdentityFunctions {
      * create a dependency on the list order.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailabilityDomains = IdentityFunctions.getAvailabilityDomains(GetAvailabilityDomainsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAvailabilityDomainsResult> getAvailabilityDomains(GetAvailabilityDomainsArgs args) {
@@ -449,6 +1101,34 @@ public final class IdentityFunctions {
      * create a dependency on the list order.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailabilityDomains = IdentityFunctions.getAvailabilityDomains(GetAvailabilityDomainsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAvailabilityDomainsResult> getAvailabilityDomainsPlain(GetAvailabilityDomainsPlainArgs args) {
@@ -464,6 +1144,34 @@ public final class IdentityFunctions {
      * create a dependency on the list order.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailabilityDomains = IdentityFunctions.getAvailabilityDomains(GetAvailabilityDomainsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAvailabilityDomainsResult> getAvailabilityDomains(GetAvailabilityDomainsArgs args, InvokeOptions options) {
@@ -479,6 +1187,34 @@ public final class IdentityFunctions {
      * create a dependency on the list order.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAvailabilityDomains = IdentityFunctions.getAvailabilityDomains(GetAvailabilityDomainsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAvailabilityDomainsResult> getAvailabilityDomainsPlain(GetAvailabilityDomainsPlainArgs args, InvokeOptions options) {
@@ -497,6 +1233,34 @@ public final class IdentityFunctions {
      * Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCompartmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompartment = IdentityFunctions.getCompartment(GetCompartmentArgs.builder()
+     *             .id(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCompartmentResult> getCompartment(GetCompartmentArgs args) {
@@ -515,6 +1279,34 @@ public final class IdentityFunctions {
      * Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCompartmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompartment = IdentityFunctions.getCompartment(GetCompartmentArgs.builder()
+     *             .id(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCompartmentResult> getCompartmentPlain(GetCompartmentPlainArgs args) {
@@ -533,6 +1325,34 @@ public final class IdentityFunctions {
      * Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCompartmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompartment = IdentityFunctions.getCompartment(GetCompartmentArgs.builder()
+     *             .id(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCompartmentResult> getCompartment(GetCompartmentArgs args, InvokeOptions options) {
@@ -551,6 +1371,34 @@ public final class IdentityFunctions {
      * Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCompartmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompartment = IdentityFunctions.getCompartment(GetCompartmentArgs.builder()
+     *             .id(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCompartmentResult> getCompartmentPlain(GetCompartmentPlainArgs args, InvokeOptions options) {
@@ -579,6 +1427,38 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCompartmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompartments = IdentityFunctions.getCompartments(GetCompartmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.compartment_access_level())
+     *             .compartmentIdInSubtree(var_.compartment_compartment_id_in_subtree())
+     *             .name(var_.compartment_name())
+     *             .state(var_.compartment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCompartmentsResult> getCompartments(GetCompartmentsArgs args) {
@@ -607,6 +1487,38 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCompartmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompartments = IdentityFunctions.getCompartments(GetCompartmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.compartment_access_level())
+     *             .compartmentIdInSubtree(var_.compartment_compartment_id_in_subtree())
+     *             .name(var_.compartment_name())
+     *             .state(var_.compartment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCompartmentsResult> getCompartmentsPlain(GetCompartmentsPlainArgs args) {
@@ -635,6 +1547,38 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCompartmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompartments = IdentityFunctions.getCompartments(GetCompartmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.compartment_access_level())
+     *             .compartmentIdInSubtree(var_.compartment_compartment_id_in_subtree())
+     *             .name(var_.compartment_name())
+     *             .state(var_.compartment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCompartmentsResult> getCompartments(GetCompartmentsArgs args, InvokeOptions options) {
@@ -663,6 +1607,38 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCompartmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCompartments = IdentityFunctions.getCompartments(GetCompartmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.compartment_access_level())
+     *             .compartmentIdInSubtree(var_.compartment_compartment_id_in_subtree())
+     *             .name(var_.compartment_name())
+     *             .state(var_.compartment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCompartmentsResult> getCompartmentsPlain(GetCompartmentsPlainArgs args, InvokeOptions options) {
@@ -675,6 +1651,34 @@ public final class IdentityFunctions {
      * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCostTrackingTagsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostTrackingTags = IdentityFunctions.getCostTrackingTags(GetCostTrackingTagsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCostTrackingTagsResult> getCostTrackingTags(GetCostTrackingTagsArgs args) {
@@ -687,6 +1691,34 @@ public final class IdentityFunctions {
      * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCostTrackingTagsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostTrackingTags = IdentityFunctions.getCostTrackingTags(GetCostTrackingTagsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCostTrackingTagsResult> getCostTrackingTagsPlain(GetCostTrackingTagsPlainArgs args) {
@@ -699,6 +1731,34 @@ public final class IdentityFunctions {
      * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCostTrackingTagsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostTrackingTags = IdentityFunctions.getCostTrackingTags(GetCostTrackingTagsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCostTrackingTagsResult> getCostTrackingTags(GetCostTrackingTagsArgs args, InvokeOptions options) {
@@ -711,6 +1771,34 @@ public final class IdentityFunctions {
      * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCostTrackingTagsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostTrackingTags = IdentityFunctions.getCostTrackingTags(GetCostTrackingTagsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCostTrackingTagsResult> getCostTrackingTagsPlain(GetCostTrackingTagsPlainArgs args, InvokeOptions options) {
@@ -723,6 +1811,34 @@ public final class IdentityFunctions {
      * the secret key itself. The actual secret key is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCustomerSecretKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomerSecretKeys = IdentityFunctions.getCustomerSecretKeys(GetCustomerSecretKeysArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCustomerSecretKeysResult> getCustomerSecretKeys(GetCustomerSecretKeysArgs args) {
@@ -735,6 +1851,34 @@ public final class IdentityFunctions {
      * the secret key itself. The actual secret key is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCustomerSecretKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomerSecretKeys = IdentityFunctions.getCustomerSecretKeys(GetCustomerSecretKeysArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCustomerSecretKeysResult> getCustomerSecretKeysPlain(GetCustomerSecretKeysPlainArgs args) {
@@ -747,6 +1891,34 @@ public final class IdentityFunctions {
      * the secret key itself. The actual secret key is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCustomerSecretKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomerSecretKeys = IdentityFunctions.getCustomerSecretKeys(GetCustomerSecretKeysArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCustomerSecretKeysResult> getCustomerSecretKeys(GetCustomerSecretKeysArgs args, InvokeOptions options) {
@@ -759,6 +1931,34 @@ public final class IdentityFunctions {
      * the secret key itself. The actual secret key is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetCustomerSecretKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCustomerSecretKeys = IdentityFunctions.getCustomerSecretKeys(GetCustomerSecretKeysArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCustomerSecretKeysResult> getCustomerSecretKeysPlain(GetCustomerSecretKeysPlainArgs args, InvokeOptions options) {
@@ -770,6 +1970,36 @@ public final class IdentityFunctions {
      * Lists the DB credentials for the specified user. The returned object contains the credential&#39;s OCID
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDbCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbCredentials = IdentityFunctions.getDbCredentials(GetDbCredentialsArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .name(var_.db_credential_name())
+     *             .state(var_.db_credential_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbCredentialsResult> getDbCredentials(GetDbCredentialsArgs args) {
@@ -781,6 +2011,36 @@ public final class IdentityFunctions {
      * Lists the DB credentials for the specified user. The returned object contains the credential&#39;s OCID
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDbCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbCredentials = IdentityFunctions.getDbCredentials(GetDbCredentialsArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .name(var_.db_credential_name())
+     *             .state(var_.db_credential_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbCredentialsResult> getDbCredentialsPlain(GetDbCredentialsPlainArgs args) {
@@ -792,6 +2052,36 @@ public final class IdentityFunctions {
      * Lists the DB credentials for the specified user. The returned object contains the credential&#39;s OCID
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDbCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbCredentials = IdentityFunctions.getDbCredentials(GetDbCredentialsArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .name(var_.db_credential_name())
+     *             .state(var_.db_credential_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbCredentialsResult> getDbCredentials(GetDbCredentialsArgs args, InvokeOptions options) {
@@ -803,6 +2093,36 @@ public final class IdentityFunctions {
      * Lists the DB credentials for the specified user. The returned object contains the credential&#39;s OCID
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDbCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbCredentials = IdentityFunctions.getDbCredentials(GetDbCredentialsArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .name(var_.db_credential_name())
+     *             .state(var_.db_credential_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbCredentialsResult> getDbCredentialsPlain(GetDbCredentialsPlainArgs args, InvokeOptions options) {
@@ -817,6 +2137,34 @@ public final class IdentityFunctions {
      * - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDomain = IdentityFunctions.getDomain(GetDomainArgs.builder()
+     *             .domainId(oci_identity_domain.test_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDomainResult> getDomain(GetDomainArgs args) {
@@ -831,6 +2179,34 @@ public final class IdentityFunctions {
      * - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDomain = IdentityFunctions.getDomain(GetDomainArgs.builder()
+     *             .domainId(oci_identity_domain.test_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDomainResult> getDomainPlain(GetDomainPlainArgs args) {
@@ -845,6 +2221,34 @@ public final class IdentityFunctions {
      * - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDomain = IdentityFunctions.getDomain(GetDomainArgs.builder()
+     *             .domainId(oci_identity_domain.test_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDomainResult> getDomain(GetDomainArgs args, InvokeOptions options) {
@@ -859,6 +2263,34 @@ public final class IdentityFunctions {
      * - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDomain = IdentityFunctions.getDomain(GetDomainArgs.builder()
+     *             .domainId(oci_identity_domain.test_domain().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDomainResult> getDomainPlain(GetDomainPlainArgs args, InvokeOptions options) {
@@ -871,6 +2303,42 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDomains = IdentityFunctions.getDomains(GetDomainsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.domain_display_name())
+     *             .homeRegionUrl(var_.domain_home_region_url())
+     *             .isHiddenOnLogin(var_.domain_is_hidden_on_login())
+     *             .licenseType(var_.domain_license_type())
+     *             .name(var_.domain_name())
+     *             .state(var_.domain_state())
+     *             .type(var_.domain_type())
+     *             .url(var_.domain_url())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDomainsResult> getDomains(GetDomainsArgs args) {
@@ -883,6 +2351,42 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDomains = IdentityFunctions.getDomains(GetDomainsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.domain_display_name())
+     *             .homeRegionUrl(var_.domain_home_region_url())
+     *             .isHiddenOnLogin(var_.domain_is_hidden_on_login())
+     *             .licenseType(var_.domain_license_type())
+     *             .name(var_.domain_name())
+     *             .state(var_.domain_state())
+     *             .type(var_.domain_type())
+     *             .url(var_.domain_url())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDomainsResult> getDomainsPlain(GetDomainsPlainArgs args) {
@@ -895,6 +2399,42 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDomains = IdentityFunctions.getDomains(GetDomainsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.domain_display_name())
+     *             .homeRegionUrl(var_.domain_home_region_url())
+     *             .isHiddenOnLogin(var_.domain_is_hidden_on_login())
+     *             .licenseType(var_.domain_license_type())
+     *             .name(var_.domain_name())
+     *             .state(var_.domain_state())
+     *             .type(var_.domain_type())
+     *             .url(var_.domain_url())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDomainsResult> getDomains(GetDomainsArgs args, InvokeOptions options) {
@@ -907,6 +2447,42 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDomains = IdentityFunctions.getDomains(GetDomainsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.domain_display_name())
+     *             .homeRegionUrl(var_.domain_home_region_url())
+     *             .isHiddenOnLogin(var_.domain_is_hidden_on_login())
+     *             .licenseType(var_.domain_license_type())
+     *             .name(var_.domain_name())
+     *             .state(var_.domain_state())
+     *             .type(var_.domain_type())
+     *             .url(var_.domain_url())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDomainsResult> getDomainsPlain(GetDomainsPlainArgs args, InvokeOptions options) {
@@ -920,6 +2496,36 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDynamicGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicGroups = IdentityFunctions.getDynamicGroups(GetDynamicGroupsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.dynamic_group_name())
+     *             .state(var_.dynamic_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDynamicGroupsResult> getDynamicGroups(GetDynamicGroupsArgs args) {
@@ -933,6 +2539,36 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDynamicGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicGroups = IdentityFunctions.getDynamicGroups(GetDynamicGroupsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.dynamic_group_name())
+     *             .state(var_.dynamic_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDynamicGroupsResult> getDynamicGroupsPlain(GetDynamicGroupsPlainArgs args) {
@@ -946,6 +2582,36 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDynamicGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicGroups = IdentityFunctions.getDynamicGroups(GetDynamicGroupsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.dynamic_group_name())
+     *             .state(var_.dynamic_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDynamicGroupsResult> getDynamicGroups(GetDynamicGroupsArgs args, InvokeOptions options) {
@@ -959,6 +2625,36 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDynamicGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDynamicGroups = IdentityFunctions.getDynamicGroups(GetDynamicGroupsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.dynamic_group_name())
+     *             .state(var_.dynamic_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDynamicGroupsResult> getDynamicGroupsPlain(GetDynamicGroupsPlainArgs args, InvokeOptions options) {
@@ -972,6 +2668,35 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetFaultDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFaultDomains = IdentityFunctions.getFaultDomains(GetFaultDomainsArgs.builder()
+     *             .availabilityDomain(var_.fault_domain_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFaultDomainsResult> getFaultDomains(GetFaultDomainsArgs args) {
@@ -985,6 +2710,35 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetFaultDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFaultDomains = IdentityFunctions.getFaultDomains(GetFaultDomainsArgs.builder()
+     *             .availabilityDomain(var_.fault_domain_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFaultDomainsResult> getFaultDomainsPlain(GetFaultDomainsPlainArgs args) {
@@ -998,6 +2752,35 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetFaultDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFaultDomains = IdentityFunctions.getFaultDomains(GetFaultDomainsArgs.builder()
+     *             .availabilityDomain(var_.fault_domain_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFaultDomainsResult> getFaultDomains(GetFaultDomainsArgs args, InvokeOptions options) {
@@ -1011,6 +2794,35 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetFaultDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFaultDomains = IdentityFunctions.getFaultDomains(GetFaultDomainsArgs.builder()
+     *             .availabilityDomain(var_.fault_domain_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFaultDomainsResult> getFaultDomainsPlain(GetFaultDomainsPlainArgs args, InvokeOptions options) {
@@ -1026,6 +2838,34 @@ public final class IdentityFunctions {
      * provide the group&#39;s OCID as a query parameter in the request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGroup = IdentityFunctions.getGroup(GetGroupArgs.builder()
+     *             .groupId(oci_identity_group.test_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGroupResult> getGroup(GetGroupArgs args) {
@@ -1041,6 +2881,34 @@ public final class IdentityFunctions {
      * provide the group&#39;s OCID as a query parameter in the request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGroup = IdentityFunctions.getGroup(GetGroupArgs.builder()
+     *             .groupId(oci_identity_group.test_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGroupResult> getGroupPlain(GetGroupPlainArgs args) {
@@ -1056,6 +2924,34 @@ public final class IdentityFunctions {
      * provide the group&#39;s OCID as a query parameter in the request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGroup = IdentityFunctions.getGroup(GetGroupArgs.builder()
+     *             .groupId(oci_identity_group.test_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGroupResult> getGroup(GetGroupArgs args, InvokeOptions options) {
@@ -1071,6 +2967,34 @@ public final class IdentityFunctions {
      * provide the group&#39;s OCID as a query parameter in the request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGroup = IdentityFunctions.getGroup(GetGroupArgs.builder()
+     *             .groupId(oci_identity_group.test_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGroupResult> getGroupPlain(GetGroupPlainArgs args, InvokeOptions options) {
@@ -1084,6 +3008,36 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGroups = IdentityFunctions.getGroups(GetGroupsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.group_name())
+     *             .state(var_.group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGroupsResult> getGroups(GetGroupsArgs args) {
@@ -1097,6 +3051,36 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGroups = IdentityFunctions.getGroups(GetGroupsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.group_name())
+     *             .state(var_.group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGroupsResult> getGroupsPlain(GetGroupsPlainArgs args) {
@@ -1110,6 +3094,36 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGroups = IdentityFunctions.getGroups(GetGroupsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.group_name())
+     *             .state(var_.group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGroupsResult> getGroups(GetGroupsArgs args, InvokeOptions options) {
@@ -1123,6 +3137,36 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGroups = IdentityFunctions.getGroups(GetGroupsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.group_name())
+     *             .state(var_.group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGroupsResult> getGroupsPlain(GetGroupsPlainArgs args, InvokeOptions options) {
@@ -1138,6 +3182,34 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequest = IdentityFunctions.getIamWorkRequest(GetIamWorkRequestArgs.builder()
+     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIamWorkRequestResult> getIamWorkRequest(GetIamWorkRequestArgs args) {
@@ -1153,6 +3225,34 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequest = IdentityFunctions.getIamWorkRequest(GetIamWorkRequestArgs.builder()
+     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIamWorkRequestResult> getIamWorkRequestPlain(GetIamWorkRequestPlainArgs args) {
@@ -1168,6 +3268,34 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequest = IdentityFunctions.getIamWorkRequest(GetIamWorkRequestArgs.builder()
+     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIamWorkRequestResult> getIamWorkRequest(GetIamWorkRequestArgs args, InvokeOptions options) {
@@ -1183,6 +3311,34 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequest = IdentityFunctions.getIamWorkRequest(GetIamWorkRequestArgs.builder()
+     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIamWorkRequestResult> getIamWorkRequestPlain(GetIamWorkRequestPlainArgs args, InvokeOptions options) {
@@ -1198,6 +3354,34 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequestErrors = IdentityFunctions.getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs.builder()
+     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIamWorkRequestErrorsResult> getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs args) {
@@ -1213,6 +3397,34 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequestErrors = IdentityFunctions.getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs.builder()
+     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIamWorkRequestErrorsResult> getIamWorkRequestErrorsPlain(GetIamWorkRequestErrorsPlainArgs args) {
@@ -1228,6 +3440,34 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequestErrors = IdentityFunctions.getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs.builder()
+     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIamWorkRequestErrorsResult> getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs args, InvokeOptions options) {
@@ -1243,6 +3483,34 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequestErrors = IdentityFunctions.getIamWorkRequestErrors(GetIamWorkRequestErrorsArgs.builder()
+     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIamWorkRequestErrorsResult> getIamWorkRequestErrorsPlain(GetIamWorkRequestErrorsPlainArgs args, InvokeOptions options) {
@@ -1258,6 +3526,34 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequestLogs = IdentityFunctions.getIamWorkRequestLogs(GetIamWorkRequestLogsArgs.builder()
+     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIamWorkRequestLogsResult> getIamWorkRequestLogs(GetIamWorkRequestLogsArgs args) {
@@ -1273,6 +3569,34 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequestLogs = IdentityFunctions.getIamWorkRequestLogs(GetIamWorkRequestLogsArgs.builder()
+     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIamWorkRequestLogsResult> getIamWorkRequestLogsPlain(GetIamWorkRequestLogsPlainArgs args) {
@@ -1288,6 +3612,34 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequestLogs = IdentityFunctions.getIamWorkRequestLogs(GetIamWorkRequestLogsArgs.builder()
+     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIamWorkRequestLogsResult> getIamWorkRequestLogs(GetIamWorkRequestLogsArgs args, InvokeOptions options) {
@@ -1303,6 +3655,34 @@ public final class IdentityFunctions {
      * - If workrequest does not exist, returns 404 NOT FOUND
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequestLogs = IdentityFunctions.getIamWorkRequestLogs(GetIamWorkRequestLogsArgs.builder()
+     *             .iamWorkRequestId(oci_identity_iam_work_request.test_iam_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIamWorkRequestLogsResult> getIamWorkRequestLogsPlain(GetIamWorkRequestLogsPlainArgs args, InvokeOptions options) {
@@ -1317,6 +3697,35 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequests = IdentityFunctions.getIamWorkRequests(GetIamWorkRequestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .resourceIdentifier(var_.iam_work_request_resource_identifier())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIamWorkRequestsResult> getIamWorkRequests(GetIamWorkRequestsArgs args) {
@@ -1331,6 +3740,35 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequests = IdentityFunctions.getIamWorkRequests(GetIamWorkRequestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .resourceIdentifier(var_.iam_work_request_resource_identifier())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIamWorkRequestsResult> getIamWorkRequestsPlain(GetIamWorkRequestsPlainArgs args) {
@@ -1345,6 +3783,35 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequests = IdentityFunctions.getIamWorkRequests(GetIamWorkRequestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .resourceIdentifier(var_.iam_work_request_resource_identifier())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIamWorkRequestsResult> getIamWorkRequests(GetIamWorkRequestsArgs args, InvokeOptions options) {
@@ -1359,6 +3826,35 @@ public final class IdentityFunctions {
      * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIamWorkRequests = IdentityFunctions.getIamWorkRequests(GetIamWorkRequestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .resourceIdentifier(var_.iam_work_request_resource_identifier())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIamWorkRequestsResult> getIamWorkRequestsPlain(GetIamWorkRequestsPlainArgs args, InvokeOptions options) {
@@ -1372,6 +3868,36 @@ public final class IdentityFunctions {
      * Lists the identity provider groups.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIdentityProviderGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProviderGroups = IdentityFunctions.getIdentityProviderGroups(GetIdentityProviderGroupsArgs.builder()
+     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .name(var_.identity_provider_group_name())
+     *             .state(var_.identity_provider_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIdentityProviderGroupsResult> getIdentityProviderGroups(GetIdentityProviderGroupsArgs args) {
@@ -1385,6 +3911,36 @@ public final class IdentityFunctions {
      * Lists the identity provider groups.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIdentityProviderGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProviderGroups = IdentityFunctions.getIdentityProviderGroups(GetIdentityProviderGroupsArgs.builder()
+     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .name(var_.identity_provider_group_name())
+     *             .state(var_.identity_provider_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIdentityProviderGroupsResult> getIdentityProviderGroupsPlain(GetIdentityProviderGroupsPlainArgs args) {
@@ -1398,6 +3954,36 @@ public final class IdentityFunctions {
      * Lists the identity provider groups.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIdentityProviderGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProviderGroups = IdentityFunctions.getIdentityProviderGroups(GetIdentityProviderGroupsArgs.builder()
+     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .name(var_.identity_provider_group_name())
+     *             .state(var_.identity_provider_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIdentityProviderGroupsResult> getIdentityProviderGroups(GetIdentityProviderGroupsArgs args, InvokeOptions options) {
@@ -1411,6 +3997,36 @@ public final class IdentityFunctions {
      * Lists the identity provider groups.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIdentityProviderGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProviderGroups = IdentityFunctions.getIdentityProviderGroups(GetIdentityProviderGroupsArgs.builder()
+     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .name(var_.identity_provider_group_name())
+     *             .state(var_.identity_provider_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIdentityProviderGroupsResult> getIdentityProviderGroupsPlain(GetIdentityProviderGroupsPlainArgs args, InvokeOptions options) {
@@ -1427,6 +4043,37 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIdentityProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProviders = IdentityFunctions.getIdentityProviders(GetIdentityProvidersArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .protocol(var_.identity_provider_protocol())
+     *             .name(var_.identity_provider_name())
+     *             .state(var_.identity_provider_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIdentityProvidersResult> getIdentityProviders(GetIdentityProvidersArgs args) {
@@ -1443,6 +4090,37 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIdentityProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProviders = IdentityFunctions.getIdentityProviders(GetIdentityProvidersArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .protocol(var_.identity_provider_protocol())
+     *             .name(var_.identity_provider_name())
+     *             .state(var_.identity_provider_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIdentityProvidersResult> getIdentityProvidersPlain(GetIdentityProvidersPlainArgs args) {
@@ -1459,6 +4137,37 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIdentityProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProviders = IdentityFunctions.getIdentityProviders(GetIdentityProvidersArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .protocol(var_.identity_provider_protocol())
+     *             .name(var_.identity_provider_name())
+     *             .state(var_.identity_provider_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIdentityProvidersResult> getIdentityProviders(GetIdentityProvidersArgs args, InvokeOptions options) {
@@ -1475,6 +4184,37 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIdentityProvidersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityProviders = IdentityFunctions.getIdentityProviders(GetIdentityProvidersArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .protocol(var_.identity_provider_protocol())
+     *             .name(var_.identity_provider_name())
+     *             .state(var_.identity_provider_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIdentityProvidersResult> getIdentityProvidersPlain(GetIdentityProvidersPlainArgs args, InvokeOptions options) {
@@ -1488,6 +4228,34 @@ public final class IdentityFunctions {
      * Lists the group mappings for the specified identity provider.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIdpGroupMappingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdpGroupMappings = IdentityFunctions.getIdpGroupMappings(GetIdpGroupMappingsArgs.builder()
+     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIdpGroupMappingsResult> getIdpGroupMappings(GetIdpGroupMappingsArgs args) {
@@ -1501,6 +4269,34 @@ public final class IdentityFunctions {
      * Lists the group mappings for the specified identity provider.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIdpGroupMappingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdpGroupMappings = IdentityFunctions.getIdpGroupMappings(GetIdpGroupMappingsArgs.builder()
+     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIdpGroupMappingsResult> getIdpGroupMappingsPlain(GetIdpGroupMappingsPlainArgs args) {
@@ -1514,6 +4310,34 @@ public final class IdentityFunctions {
      * Lists the group mappings for the specified identity provider.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIdpGroupMappingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdpGroupMappings = IdentityFunctions.getIdpGroupMappings(GetIdpGroupMappingsArgs.builder()
+     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIdpGroupMappingsResult> getIdpGroupMappings(GetIdpGroupMappingsArgs args, InvokeOptions options) {
@@ -1527,6 +4351,34 @@ public final class IdentityFunctions {
      * Lists the group mappings for the specified identity provider.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetIdpGroupMappingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdpGroupMappings = IdentityFunctions.getIdpGroupMappings(GetIdpGroupMappingsArgs.builder()
+     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIdpGroupMappingsResult> getIdpGroupMappingsPlain(GetIdpGroupMappingsPlainArgs args, InvokeOptions options) {
@@ -1538,6 +4390,34 @@ public final class IdentityFunctions {
      * Gets the specified network source&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetNetworkSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSource = IdentityFunctions.getNetworkSource(GetNetworkSourceArgs.builder()
+     *             .networkSourceId(oci_identity_network_source.test_network_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkSourceResult> getNetworkSource(GetNetworkSourceArgs args) {
@@ -1549,6 +4429,34 @@ public final class IdentityFunctions {
      * Gets the specified network source&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetNetworkSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSource = IdentityFunctions.getNetworkSource(GetNetworkSourceArgs.builder()
+     *             .networkSourceId(oci_identity_network_source.test_network_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkSourceResult> getNetworkSourcePlain(GetNetworkSourcePlainArgs args) {
@@ -1560,6 +4468,34 @@ public final class IdentityFunctions {
      * Gets the specified network source&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetNetworkSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSource = IdentityFunctions.getNetworkSource(GetNetworkSourceArgs.builder()
+     *             .networkSourceId(oci_identity_network_source.test_network_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkSourceResult> getNetworkSource(GetNetworkSourceArgs args, InvokeOptions options) {
@@ -1571,6 +4507,34 @@ public final class IdentityFunctions {
      * Gets the specified network source&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetNetworkSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSource = IdentityFunctions.getNetworkSource(GetNetworkSourceArgs.builder()
+     *             .networkSourceId(oci_identity_network_source.test_network_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkSourceResult> getNetworkSourcePlain(GetNetworkSourcePlainArgs args, InvokeOptions options) {
@@ -1584,6 +4548,36 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetNetworkSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSources = IdentityFunctions.getNetworkSources(GetNetworkSourcesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.network_source_name())
+     *             .state(var_.network_source_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkSourcesResult> getNetworkSources(GetNetworkSourcesArgs args) {
@@ -1597,6 +4591,36 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetNetworkSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSources = IdentityFunctions.getNetworkSources(GetNetworkSourcesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.network_source_name())
+     *             .state(var_.network_source_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkSourcesResult> getNetworkSourcesPlain(GetNetworkSourcesPlainArgs args) {
@@ -1610,6 +4634,36 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetNetworkSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSources = IdentityFunctions.getNetworkSources(GetNetworkSourcesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.network_source_name())
+     *             .state(var_.network_source_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNetworkSourcesResult> getNetworkSources(GetNetworkSourcesArgs args, InvokeOptions options) {
@@ -1623,6 +4677,36 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetNetworkSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkSources = IdentityFunctions.getNetworkSources(GetNetworkSourcesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.network_source_name())
+     *             .state(var_.network_source_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNetworkSourcesResult> getNetworkSourcesPlain(GetNetworkSourcesPlainArgs args, InvokeOptions options) {
@@ -1638,6 +4722,36 @@ public final class IdentityFunctions {
      * statements inside all your policies. There isn&#39;t a way to automatically obtain that information via the API.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPolicies = IdentityFunctions.getPolicies(GetPoliciesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.policy_name())
+     *             .state(var_.policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPoliciesResult> getPolicies(GetPoliciesArgs args) {
@@ -1653,6 +4767,36 @@ public final class IdentityFunctions {
      * statements inside all your policies. There isn&#39;t a way to automatically obtain that information via the API.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPolicies = IdentityFunctions.getPolicies(GetPoliciesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.policy_name())
+     *             .state(var_.policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPoliciesResult> getPoliciesPlain(GetPoliciesPlainArgs args) {
@@ -1668,6 +4812,36 @@ public final class IdentityFunctions {
      * statements inside all your policies. There isn&#39;t a way to automatically obtain that information via the API.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPolicies = IdentityFunctions.getPolicies(GetPoliciesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.policy_name())
+     *             .state(var_.policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPoliciesResult> getPolicies(GetPoliciesArgs args, InvokeOptions options) {
@@ -1683,6 +4857,36 @@ public final class IdentityFunctions {
      * statements inside all your policies. There isn&#39;t a way to automatically obtain that information via the API.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPolicies = IdentityFunctions.getPolicies(GetPoliciesArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .name(var_.policy_name())
+     *             .state(var_.policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPoliciesResult> getPoliciesPlain(GetPoliciesPlainArgs args, InvokeOptions options) {
@@ -1694,6 +4898,34 @@ public final class IdentityFunctions {
      * Lists the region subscriptions for the specified tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetRegionSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegionSubscriptions = IdentityFunctions.getRegionSubscriptions(GetRegionSubscriptionsArgs.builder()
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegionSubscriptionsResult> getRegionSubscriptions(GetRegionSubscriptionsArgs args) {
@@ -1705,6 +4937,34 @@ public final class IdentityFunctions {
      * Lists the region subscriptions for the specified tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetRegionSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegionSubscriptions = IdentityFunctions.getRegionSubscriptions(GetRegionSubscriptionsArgs.builder()
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegionSubscriptionsResult> getRegionSubscriptionsPlain(GetRegionSubscriptionsPlainArgs args) {
@@ -1716,6 +4976,34 @@ public final class IdentityFunctions {
      * Lists the region subscriptions for the specified tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetRegionSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegionSubscriptions = IdentityFunctions.getRegionSubscriptions(GetRegionSubscriptionsArgs.builder()
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegionSubscriptionsResult> getRegionSubscriptions(GetRegionSubscriptionsArgs args, InvokeOptions options) {
@@ -1727,6 +5015,34 @@ public final class IdentityFunctions {
      * Lists the region subscriptions for the specified tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetRegionSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegionSubscriptions = IdentityFunctions.getRegionSubscriptions(GetRegionSubscriptionsArgs.builder()
+     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegionSubscriptionsResult> getRegionSubscriptionsPlain(GetRegionSubscriptionsPlainArgs args, InvokeOptions options) {
@@ -1738,6 +5054,32 @@ public final class IdentityFunctions {
      * Lists all the regions offered by Oracle Cloud Infrastructure.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegions = IdentityFunctions.getRegions();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegionsResult> getRegions() {
@@ -1749,6 +5091,32 @@ public final class IdentityFunctions {
      * Lists all the regions offered by Oracle Cloud Infrastructure.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegions = IdentityFunctions.getRegions();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegionsResult> getRegionsPlain() {
@@ -1760,6 +5128,32 @@ public final class IdentityFunctions {
      * Lists all the regions offered by Oracle Cloud Infrastructure.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegions = IdentityFunctions.getRegions();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegionsResult> getRegions(GetRegionsArgs args) {
@@ -1771,6 +5165,32 @@ public final class IdentityFunctions {
      * Lists all the regions offered by Oracle Cloud Infrastructure.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegions = IdentityFunctions.getRegions();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegionsResult> getRegionsPlain(GetRegionsPlainArgs args) {
@@ -1782,6 +5202,32 @@ public final class IdentityFunctions {
      * Lists all the regions offered by Oracle Cloud Infrastructure.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegions = IdentityFunctions.getRegions();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegionsResult> getRegions(GetRegionsArgs args, InvokeOptions options) {
@@ -1793,6 +5239,32 @@ public final class IdentityFunctions {
      * Lists all the regions offered by Oracle Cloud Infrastructure.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegions = IdentityFunctions.getRegions();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegionsResult> getRegionsPlain(GetRegionsPlainArgs args, InvokeOptions options) {
@@ -1805,6 +5277,34 @@ public final class IdentityFunctions {
      * the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetSmtpCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSmtpCredentials = IdentityFunctions.getSmtpCredentials(GetSmtpCredentialsArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSmtpCredentialsResult> getSmtpCredentials(GetSmtpCredentialsArgs args) {
@@ -1817,6 +5317,34 @@ public final class IdentityFunctions {
      * the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetSmtpCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSmtpCredentials = IdentityFunctions.getSmtpCredentials(GetSmtpCredentialsArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSmtpCredentialsResult> getSmtpCredentialsPlain(GetSmtpCredentialsPlainArgs args) {
@@ -1829,6 +5357,34 @@ public final class IdentityFunctions {
      * the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetSmtpCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSmtpCredentials = IdentityFunctions.getSmtpCredentials(GetSmtpCredentialsArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSmtpCredentialsResult> getSmtpCredentials(GetSmtpCredentialsArgs args, InvokeOptions options) {
@@ -1841,6 +5397,34 @@ public final class IdentityFunctions {
      * the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetSmtpCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSmtpCredentials = IdentityFunctions.getSmtpCredentials(GetSmtpCredentialsArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSmtpCredentialsResult> getSmtpCredentialsPlain(GetSmtpCredentialsPlainArgs args, InvokeOptions options) {
@@ -1855,6 +5439,34 @@ public final class IdentityFunctions {
      * the password itself. The actual password is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetSwiftPasswordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSwiftPasswords = IdentityFunctions.getSwiftPasswords(GetSwiftPasswordsArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSwiftPasswordsResult> getSwiftPasswords(GetSwiftPasswordsArgs args) {
@@ -1869,6 +5481,34 @@ public final class IdentityFunctions {
      * the password itself. The actual password is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetSwiftPasswordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSwiftPasswords = IdentityFunctions.getSwiftPasswords(GetSwiftPasswordsArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSwiftPasswordsResult> getSwiftPasswordsPlain(GetSwiftPasswordsPlainArgs args) {
@@ -1883,6 +5523,34 @@ public final class IdentityFunctions {
      * the password itself. The actual password is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetSwiftPasswordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSwiftPasswords = IdentityFunctions.getSwiftPasswords(GetSwiftPasswordsArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSwiftPasswordsResult> getSwiftPasswords(GetSwiftPasswordsArgs args, InvokeOptions options) {
@@ -1897,6 +5565,34 @@ public final class IdentityFunctions {
      * the password itself. The actual password is returned only upon creation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetSwiftPasswordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSwiftPasswords = IdentityFunctions.getSwiftPasswords(GetSwiftPasswordsArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSwiftPasswordsResult> getSwiftPasswordsPlain(GetSwiftPasswordsPlainArgs args, InvokeOptions options) {
@@ -1908,6 +5604,35 @@ public final class IdentityFunctions {
      * Gets the specified tag&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTag = IdentityFunctions.getTag(GetTagArgs.builder()
+     *             .tagName(oci_identity_tag.test_tag().name())
+     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagResult> getTag(GetTagArgs args) {
@@ -1919,6 +5644,35 @@ public final class IdentityFunctions {
      * Gets the specified tag&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTag = IdentityFunctions.getTag(GetTagArgs.builder()
+     *             .tagName(oci_identity_tag.test_tag().name())
+     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagResult> getTagPlain(GetTagPlainArgs args) {
@@ -1930,6 +5684,35 @@ public final class IdentityFunctions {
      * Gets the specified tag&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTag = IdentityFunctions.getTag(GetTagArgs.builder()
+     *             .tagName(oci_identity_tag.test_tag().name())
+     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagResult> getTag(GetTagArgs args, InvokeOptions options) {
@@ -1941,6 +5724,35 @@ public final class IdentityFunctions {
      * Gets the specified tag&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTag = IdentityFunctions.getTag(GetTagArgs.builder()
+     *             .tagName(oci_identity_tag.test_tag().name())
+     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagResult> getTagPlain(GetTagPlainArgs args, InvokeOptions options) {
@@ -1952,6 +5764,34 @@ public final class IdentityFunctions {
      * Retrieves the specified tag default.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagDefaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagDefault = IdentityFunctions.getTagDefault(GetTagDefaultArgs.builder()
+     *             .tagDefaultId(oci_identity_tag_default.test_tag_default().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagDefaultResult> getTagDefault(GetTagDefaultArgs args) {
@@ -1963,6 +5803,34 @@ public final class IdentityFunctions {
      * Retrieves the specified tag default.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagDefaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagDefault = IdentityFunctions.getTagDefault(GetTagDefaultArgs.builder()
+     *             .tagDefaultId(oci_identity_tag_default.test_tag_default().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagDefaultResult> getTagDefaultPlain(GetTagDefaultPlainArgs args) {
@@ -1974,6 +5842,34 @@ public final class IdentityFunctions {
      * Retrieves the specified tag default.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagDefaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagDefault = IdentityFunctions.getTagDefault(GetTagDefaultArgs.builder()
+     *             .tagDefaultId(oci_identity_tag_default.test_tag_default().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagDefaultResult> getTagDefault(GetTagDefaultArgs args, InvokeOptions options) {
@@ -1985,6 +5881,34 @@ public final class IdentityFunctions {
      * Retrieves the specified tag default.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagDefaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagDefault = IdentityFunctions.getTagDefault(GetTagDefaultArgs.builder()
+     *             .tagDefaultId(oci_identity_tag_default.test_tag_default().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagDefaultResult> getTagDefaultPlain(GetTagDefaultPlainArgs args, InvokeOptions options) {
@@ -1996,6 +5920,37 @@ public final class IdentityFunctions {
      * Lists the tag defaults for tag definitions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagDefaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagDefaults = IdentityFunctions.getTagDefaults(GetTagDefaultsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.tag_default_id())
+     *             .state(var_.tag_default_state())
+     *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagDefaultsResult> getTagDefaults() {
@@ -2007,6 +5962,37 @@ public final class IdentityFunctions {
      * Lists the tag defaults for tag definitions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagDefaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagDefaults = IdentityFunctions.getTagDefaults(GetTagDefaultsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.tag_default_id())
+     *             .state(var_.tag_default_state())
+     *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagDefaultsResult> getTagDefaultsPlain() {
@@ -2018,6 +6004,37 @@ public final class IdentityFunctions {
      * Lists the tag defaults for tag definitions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagDefaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagDefaults = IdentityFunctions.getTagDefaults(GetTagDefaultsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.tag_default_id())
+     *             .state(var_.tag_default_state())
+     *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagDefaultsResult> getTagDefaults(GetTagDefaultsArgs args) {
@@ -2029,6 +6046,37 @@ public final class IdentityFunctions {
      * Lists the tag defaults for tag definitions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagDefaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagDefaults = IdentityFunctions.getTagDefaults(GetTagDefaultsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.tag_default_id())
+     *             .state(var_.tag_default_state())
+     *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagDefaultsResult> getTagDefaultsPlain(GetTagDefaultsPlainArgs args) {
@@ -2040,6 +6088,37 @@ public final class IdentityFunctions {
      * Lists the tag defaults for tag definitions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagDefaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagDefaults = IdentityFunctions.getTagDefaults(GetTagDefaultsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.tag_default_id())
+     *             .state(var_.tag_default_state())
+     *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagDefaultsResult> getTagDefaults(GetTagDefaultsArgs args, InvokeOptions options) {
@@ -2051,6 +6130,37 @@ public final class IdentityFunctions {
      * Lists the tag defaults for tag definitions in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagDefaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagDefaults = IdentityFunctions.getTagDefaults(GetTagDefaultsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.tag_default_id())
+     *             .state(var_.tag_default_state())
+     *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagDefaultsResult> getTagDefaultsPlain(GetTagDefaultsPlainArgs args, InvokeOptions options) {
@@ -2062,6 +6172,36 @@ public final class IdentityFunctions {
      * Lists the tag namespaces in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagNamespacesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagNamespaces = IdentityFunctions.getTagNamespaces(GetTagNamespacesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .includeSubcompartments(var_.tag_namespace_include_subcompartments())
+     *             .state(var_.tag_namespace_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagNamespacesResult> getTagNamespaces(GetTagNamespacesArgs args) {
@@ -2073,6 +6213,36 @@ public final class IdentityFunctions {
      * Lists the tag namespaces in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagNamespacesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagNamespaces = IdentityFunctions.getTagNamespaces(GetTagNamespacesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .includeSubcompartments(var_.tag_namespace_include_subcompartments())
+     *             .state(var_.tag_namespace_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagNamespacesResult> getTagNamespacesPlain(GetTagNamespacesPlainArgs args) {
@@ -2084,6 +6254,36 @@ public final class IdentityFunctions {
      * Lists the tag namespaces in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagNamespacesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagNamespaces = IdentityFunctions.getTagNamespaces(GetTagNamespacesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .includeSubcompartments(var_.tag_namespace_include_subcompartments())
+     *             .state(var_.tag_namespace_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagNamespacesResult> getTagNamespaces(GetTagNamespacesArgs args, InvokeOptions options) {
@@ -2095,6 +6295,36 @@ public final class IdentityFunctions {
      * Lists the tag namespaces in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagNamespacesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagNamespaces = IdentityFunctions.getTagNamespaces(GetTagNamespacesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .includeSubcompartments(var_.tag_namespace_include_subcompartments())
+     *             .state(var_.tag_namespace_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagNamespacesResult> getTagNamespacesPlain(GetTagNamespacesPlainArgs args, InvokeOptions options) {
@@ -2106,6 +6336,35 @@ public final class IdentityFunctions {
      * Retrieve the standard tag namespace template given the standard tag namespace name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagStandardTagNamespaceTemplate = IdentityFunctions.getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .standardTagNamespaceName(oci_identity_tag_namespace.test_tag_namespace().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagStandardTagNamespaceTemplateResult> getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs args) {
@@ -2117,6 +6376,35 @@ public final class IdentityFunctions {
      * Retrieve the standard tag namespace template given the standard tag namespace name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagStandardTagNamespaceTemplate = IdentityFunctions.getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .standardTagNamespaceName(oci_identity_tag_namespace.test_tag_namespace().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagStandardTagNamespaceTemplateResult> getTagStandardTagNamespaceTemplatePlain(GetTagStandardTagNamespaceTemplatePlainArgs args) {
@@ -2128,6 +6416,35 @@ public final class IdentityFunctions {
      * Retrieve the standard tag namespace template given the standard tag namespace name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagStandardTagNamespaceTemplate = IdentityFunctions.getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .standardTagNamespaceName(oci_identity_tag_namespace.test_tag_namespace().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagStandardTagNamespaceTemplateResult> getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs args, InvokeOptions options) {
@@ -2139,6 +6456,35 @@ public final class IdentityFunctions {
      * Retrieve the standard tag namespace template given the standard tag namespace name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagStandardTagNamespaceTemplate = IdentityFunctions.getTagStandardTagNamespaceTemplate(GetTagStandardTagNamespaceTemplateArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .standardTagNamespaceName(oci_identity_tag_namespace.test_tag_namespace().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagStandardTagNamespaceTemplateResult> getTagStandardTagNamespaceTemplatePlain(GetTagStandardTagNamespaceTemplatePlainArgs args, InvokeOptions options) {
@@ -2150,6 +6496,34 @@ public final class IdentityFunctions {
      * Lists available standard tag namespaces that users can create.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagStandardTagNamespaceTemplates = IdentityFunctions.getTagStandardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagStandardTagNamespaceTemplatesResult> getTagStandardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesArgs args) {
@@ -2161,6 +6535,34 @@ public final class IdentityFunctions {
      * Lists available standard tag namespaces that users can create.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagStandardTagNamespaceTemplates = IdentityFunctions.getTagStandardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagStandardTagNamespaceTemplatesResult> getTagStandardTagNamespaceTemplatesPlain(GetTagStandardTagNamespaceTemplatesPlainArgs args) {
@@ -2172,6 +6574,34 @@ public final class IdentityFunctions {
      * Lists available standard tag namespaces that users can create.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagStandardTagNamespaceTemplates = IdentityFunctions.getTagStandardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagStandardTagNamespaceTemplatesResult> getTagStandardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesArgs args, InvokeOptions options) {
@@ -2183,6 +6613,34 @@ public final class IdentityFunctions {
      * Lists available standard tag namespaces that users can create.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTagStandardTagNamespaceTemplates = IdentityFunctions.getTagStandardTagNamespaceTemplates(GetTagStandardTagNamespaceTemplatesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagStandardTagNamespaceTemplatesResult> getTagStandardTagNamespaceTemplatesPlain(GetTagStandardTagNamespaceTemplatesPlainArgs args, InvokeOptions options) {
@@ -2194,6 +6652,35 @@ public final class IdentityFunctions {
      * Lists the tag definitions in the specified tag namespace.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTags = IdentityFunctions.getTags(GetTagsArgs.builder()
+     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+     *             .state(var_.tag_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagsResult> getTags(GetTagsArgs args) {
@@ -2205,6 +6692,35 @@ public final class IdentityFunctions {
      * Lists the tag definitions in the specified tag namespace.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTags = IdentityFunctions.getTags(GetTagsArgs.builder()
+     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+     *             .state(var_.tag_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagsResult> getTagsPlain(GetTagsPlainArgs args) {
@@ -2216,6 +6732,35 @@ public final class IdentityFunctions {
      * Lists the tag definitions in the specified tag namespace.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTags = IdentityFunctions.getTags(GetTagsArgs.builder()
+     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+     *             .state(var_.tag_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTagsResult> getTags(GetTagsArgs args, InvokeOptions options) {
@@ -2227,6 +6772,35 @@ public final class IdentityFunctions {
      * Lists the tag definitions in the specified tag namespace.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTagsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTags = IdentityFunctions.getTags(GetTagsArgs.builder()
+     *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+     *             .state(var_.tag_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTagsResult> getTagsPlain(GetTagsPlainArgs args, InvokeOptions options) {
@@ -2238,6 +6812,34 @@ public final class IdentityFunctions {
      * Get the specified tenancy&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTenancyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancy = IdentityFunctions.getTenancy(GetTenancyArgs.builder()
+     *             .tenancyId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTenancyResult> getTenancy(GetTenancyArgs args) {
@@ -2249,6 +6851,34 @@ public final class IdentityFunctions {
      * Get the specified tenancy&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTenancyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancy = IdentityFunctions.getTenancy(GetTenancyArgs.builder()
+     *             .tenancyId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTenancyResult> getTenancyPlain(GetTenancyPlainArgs args) {
@@ -2260,6 +6890,34 @@ public final class IdentityFunctions {
      * Get the specified tenancy&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTenancyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancy = IdentityFunctions.getTenancy(GetTenancyArgs.builder()
+     *             .tenancyId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTenancyResult> getTenancy(GetTenancyArgs args, InvokeOptions options) {
@@ -2271,6 +6929,34 @@ public final class IdentityFunctions {
      * Get the specified tenancy&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetTenancyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancy = IdentityFunctions.getTenancy(GetTenancyArgs.builder()
+     *             .tenancyId(var_.tenancy_ocid())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTenancyResult> getTenancyPlain(GetTenancyPlainArgs args, InvokeOptions options) {
@@ -2283,6 +6969,34 @@ public final class IdentityFunctions {
      * but not the password itself. The actual password is returned only when created or reset.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUiPasswordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUiPassword = IdentityFunctions.getUiPassword(GetUiPasswordArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUiPasswordResult> getUiPassword(GetUiPasswordArgs args) {
@@ -2295,6 +7009,34 @@ public final class IdentityFunctions {
      * but not the password itself. The actual password is returned only when created or reset.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUiPasswordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUiPassword = IdentityFunctions.getUiPassword(GetUiPasswordArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUiPasswordResult> getUiPasswordPlain(GetUiPasswordPlainArgs args) {
@@ -2307,6 +7049,34 @@ public final class IdentityFunctions {
      * but not the password itself. The actual password is returned only when created or reset.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUiPasswordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUiPassword = IdentityFunctions.getUiPassword(GetUiPasswordArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUiPasswordResult> getUiPassword(GetUiPasswordArgs args, InvokeOptions options) {
@@ -2319,6 +7089,34 @@ public final class IdentityFunctions {
      * but not the password itself. The actual password is returned only when created or reset.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUiPasswordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUiPassword = IdentityFunctions.getUiPassword(GetUiPasswordArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUiPasswordResult> getUiPasswordPlain(GetUiPasswordPlainArgs args, InvokeOptions options) {
@@ -2330,6 +7128,34 @@ public final class IdentityFunctions {
      * Gets the specified user&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUser = IdentityFunctions.getUser(GetUserArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserResult> getUser(GetUserArgs args) {
@@ -2341,6 +7167,34 @@ public final class IdentityFunctions {
      * Gets the specified user&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUser = IdentityFunctions.getUser(GetUserArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserResult> getUserPlain(GetUserPlainArgs args) {
@@ -2352,6 +7206,34 @@ public final class IdentityFunctions {
      * Gets the specified user&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUser = IdentityFunctions.getUser(GetUserArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserResult> getUser(GetUserArgs args, InvokeOptions options) {
@@ -2363,6 +7245,34 @@ public final class IdentityFunctions {
      * Gets the specified user&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUser = IdentityFunctions.getUser(GetUserArgs.builder()
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserResult> getUserPlain(GetUserPlainArgs args, InvokeOptions options) {
@@ -2383,6 +7293,36 @@ public final class IdentityFunctions {
      * - Although`userId` and `groupId` are not individually required, you must set one of them.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUserGroupMembershipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserGroupMemberships = IdentityFunctions.getUserGroupMemberships(GetUserGroupMembershipsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .groupId(oci_identity_group.test_group().id())
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserGroupMembershipsResult> getUserGroupMemberships(GetUserGroupMembershipsArgs args) {
@@ -2403,6 +7343,36 @@ public final class IdentityFunctions {
      * - Although`userId` and `groupId` are not individually required, you must set one of them.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUserGroupMembershipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserGroupMemberships = IdentityFunctions.getUserGroupMemberships(GetUserGroupMembershipsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .groupId(oci_identity_group.test_group().id())
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserGroupMembershipsResult> getUserGroupMembershipsPlain(GetUserGroupMembershipsPlainArgs args) {
@@ -2423,6 +7393,36 @@ public final class IdentityFunctions {
      * - Although`userId` and `groupId` are not individually required, you must set one of them.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUserGroupMembershipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserGroupMemberships = IdentityFunctions.getUserGroupMemberships(GetUserGroupMembershipsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .groupId(oci_identity_group.test_group().id())
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUserGroupMembershipsResult> getUserGroupMemberships(GetUserGroupMembershipsArgs args, InvokeOptions options) {
@@ -2443,6 +7443,36 @@ public final class IdentityFunctions {
      * - Although`userId` and `groupId` are not individually required, you must set one of them.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUserGroupMembershipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserGroupMemberships = IdentityFunctions.getUserGroupMemberships(GetUserGroupMembershipsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .groupId(oci_identity_group.test_group().id())
+     *             .userId(oci_identity_user.test_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUserGroupMembershipsResult> getUserGroupMembershipsPlain(GetUserGroupMembershipsPlainArgs args, InvokeOptions options) {
@@ -2456,6 +7486,38 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsers = IdentityFunctions.getUsers(GetUsersArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .externalIdentifier(var_.user_external_identifier())
+     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .name(var_.user_name())
+     *             .state(var_.user_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUsersResult> getUsers(GetUsersArgs args) {
@@ -2469,6 +7531,38 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsers = IdentityFunctions.getUsers(GetUsersArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .externalIdentifier(var_.user_external_identifier())
+     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .name(var_.user_name())
+     *             .state(var_.user_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUsersResult> getUsersPlain(GetUsersPlainArgs args) {
@@ -2482,6 +7576,38 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsers = IdentityFunctions.getUsers(GetUsersArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .externalIdentifier(var_.user_external_identifier())
+     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .name(var_.user_name())
+     *             .state(var_.user_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUsersResult> getUsers(GetUsersArgs args, InvokeOptions options) {
@@ -2495,6 +7621,38 @@ public final class IdentityFunctions {
      * See [Where to Get the Tenancy&#39;s OCID and User&#39;s OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsers = IdentityFunctions.getUsers(GetUsersArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .externalIdentifier(var_.user_external_identifier())
+     *             .identityProviderId(oci_identity_identity_provider.test_identity_provider().id())
+     *             .name(var_.user_name())
+     *             .state(var_.user_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUsersResult> getUsersPlain(GetUsersPlainArgs args, InvokeOptions options) {

@@ -23,7 +23,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/auditProfile:AuditProfile")]
-    public partial class AuditProfile : Pulumi.CustomResource
+    public partial class AuditProfile : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class AuditProfileArgs : Pulumi.ResourceArgs
+    public sealed class AuditProfileArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the audit.
@@ -248,9 +248,10 @@ namespace Pulumi.Oci.DataSafe
         public AuditProfileArgs()
         {
         }
+        public static new AuditProfileArgs Empty => new AuditProfileArgs();
     }
 
-    public sealed class AuditProfileState : Pulumi.ResourceArgs
+    public sealed class AuditProfileState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
@@ -393,5 +394,6 @@ namespace Pulumi.Oci.DataSafe
         public AuditProfileState()
         {
         }
+        public static new AuditProfileState Empty => new AuditProfileState();
     }
 }

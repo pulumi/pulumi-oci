@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Audit.Inputs
 {
 
-    public sealed class GetEventsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetEventsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Audit.Inputs
         public GetEventsFilterInputArgs()
         {
         }
+        public static new GetEventsFilterInputArgs Empty => new GetEventsFilterInputArgs();
     }
 }

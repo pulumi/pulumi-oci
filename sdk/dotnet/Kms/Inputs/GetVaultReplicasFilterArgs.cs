@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Kms.Inputs
 {
 
-    public sealed class GetVaultReplicasFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetVaultReplicasFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Kms.Inputs
         public GetVaultReplicasFilterInputArgs()
         {
         }
+        public static new GetVaultReplicasFilterInputArgs Empty => new GetVaultReplicasFilterInputArgs();
     }
 }

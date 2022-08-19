@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class CloudVmClusterIormConfigCachGetArgs : Pulumi.ResourceArgs
+    public sealed class CloudVmClusterIormConfigCachGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("dbPlans")]
         private InputList<Inputs.CloudVmClusterIormConfigCachDbPlanGetArgs>? _dbPlans;
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Database.Inputs
         public CloudVmClusterIormConfigCachGetArgs()
         {
         }
+        public static new CloudVmClusterIormConfigCachGetArgs Empty => new CloudVmClusterIormConfigCachGetArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetCrossConnectPortSpeedShapeFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetCrossConnectPortSpeedShapeFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the port speed shape.  Example: `10 Gbps`
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetCrossConnectPortSpeedShapeFilterArgs()
         {
         }
+        public static new GetCrossConnectPortSpeedShapeFilterArgs Empty => new GetCrossConnectPortSpeedShapeFilterArgs();
     }
 }

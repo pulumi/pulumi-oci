@@ -21,24 +21,22 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaskingAnalytics = Oci.DataSafe.GetMaskingAnalytics.Invoke(new()
         ///     {
-        ///         var testMaskingAnalytics = Output.Create(Oci.DataSafe.GetMaskingAnalytics.InvokeAsync(new Oci.DataSafe.GetMaskingAnalyticsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Masking_analytic_compartment_id_in_subtree,
-        ///             GroupBy = @var.Masking_analytic_group_by,
-        ///             MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Masking_analytic_compartment_id_in_subtree,
+        ///         GroupBy = @var.Masking_analytic_group_by,
+        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,24 +54,22 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaskingAnalytics = Oci.DataSafe.GetMaskingAnalytics.Invoke(new()
         ///     {
-        ///         var testMaskingAnalytics = Output.Create(Oci.DataSafe.GetMaskingAnalytics.InvokeAsync(new Oci.DataSafe.GetMaskingAnalyticsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Masking_analytic_compartment_id_in_subtree,
-        ///             GroupBy = @var.Masking_analytic_group_by,
-        ///             MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Masking_analytic_compartment_id_in_subtree,
+        ///         GroupBy = @var.Masking_analytic_group_by,
+        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetMaskingAnalyticsArgs : Pulumi.InvokeArgs
+    public sealed class GetMaskingAnalyticsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.DataSafe
         public GetMaskingAnalyticsArgs()
         {
         }
+        public static new GetMaskingAnalyticsArgs Empty => new GetMaskingAnalyticsArgs();
     }
 
-    public sealed class GetMaskingAnalyticsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMaskingAnalyticsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
@@ -171,6 +168,7 @@ namespace Pulumi.Oci.DataSafe
         public GetMaskingAnalyticsInvokeArgs()
         {
         }
+        public static new GetMaskingAnalyticsInvokeArgs Empty => new GetMaskingAnalyticsInvokeArgs();
     }
 
 

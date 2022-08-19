@@ -17,74 +17,72 @@ namespace Pulumi.Oci.ServiceMesh
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testIngressGateway = new Oci.ServiceMesh.IngressGateway("testIngressGateway", new()
     ///     {
-    ///         var testIngressGateway = new Oci.ServiceMesh.IngressGateway("testIngressGateway", new Oci.ServiceMesh.IngressGatewayArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Hosts = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Hosts = 
+    ///             new Oci.ServiceMesh.Inputs.IngressGatewayHostArgs
     ///             {
-    ///                 new Oci.ServiceMesh.Inputs.IngressGatewayHostArgs
+    ///                 Listeners = new[]
     ///                 {
-    ///                     Listeners = 
+    ///                     new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerArgs
     ///                     {
-    ///                         new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerArgs
+    ///                         Port = @var.Ingress_gateway_hosts_listeners_port,
+    ///                         Protocol = @var.Ingress_gateway_hosts_listeners_protocol,
+    ///                         Tls = new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerTlsArgs
     ///                         {
-    ///                             Port = @var.Ingress_gateway_hosts_listeners_port,
-    ///                             Protocol = @var.Ingress_gateway_hosts_listeners_protocol,
-    ///                             Tls = new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerTlsArgs
+    ///                             Mode = @var.Ingress_gateway_hosts_listeners_tls_mode,
+    ///                             ClientValidation = new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerTlsClientValidationArgs
     ///                             {
-    ///                                 Mode = @var.Ingress_gateway_hosts_listeners_tls_mode,
-    ///                                 ClientValidation = new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerTlsClientValidationArgs
+    ///                                 SubjectAlternateNames = @var.Ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names,
+    ///                                 TrustedCaBundle = new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs
     ///                                 {
-    ///                                     SubjectAlternateNames = @var.Ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names,
-    ///                                     TrustedCaBundle = new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs
-    ///                                     {
-    ///                                         Type = @var.Ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type,
-    ///                                         CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
-    ///                                         SecretName = oci_vault_secret.Test_secret.Name,
-    ///                                     },
-    ///                                 },
-    ///                                 ServerCertificate = new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerTlsServerCertificateArgs
-    ///                                 {
-    ///                                     Type = @var.Ingress_gateway_hosts_listeners_tls_server_certificate_type,
-    ///                                     CertificateId = oci_certificates_management_certificate.Test_certificate.Id,
+    ///                                     Type = @var.Ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type,
+    ///                                     CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
     ///                                     SecretName = oci_vault_secret.Test_secret.Name,
     ///                                 },
     ///                             },
+    ///                             ServerCertificate = new Oci.ServiceMesh.Inputs.IngressGatewayHostListenerTlsServerCertificateArgs
+    ///                             {
+    ///                                 Type = @var.Ingress_gateway_hosts_listeners_tls_server_certificate_type,
+    ///                                 CertificateId = oci_certificates_management_certificate.Test_certificate.Id,
+    ///                                 SecretName = oci_vault_secret.Test_secret.Name,
+    ///                             },
     ///                         },
     ///                     },
-    ///                     Name = @var.Ingress_gateway_hosts_name,
-    ///                     Hostnames = @var.Ingress_gateway_hosts_hostnames,
     ///                 },
+    ///                 Name = @var.Ingress_gateway_hosts_name,
+    ///                 Hostnames = @var.Ingress_gateway_hosts_hostnames,
     ///             },
-    ///             MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-    ///             AccessLogging = new Oci.ServiceMesh.Inputs.IngressGatewayAccessLoggingArgs
-    ///             {
-    ///                 IsEnabled = @var.Ingress_gateway_access_logging_is_enabled,
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Ingress_gateway_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             Mtls = new Oci.ServiceMesh.Inputs.IngressGatewayMtlsArgs
-    ///             {
-    ///                 MaximumValidity = @var.Ingress_gateway_mtls_maximum_validity,
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+    ///         AccessLogging = new Oci.ServiceMesh.Inputs.IngressGatewayAccessLoggingArgs
+    ///         {
+    ///             IsEnabled = @var.Ingress_gateway_access_logging_is_enabled,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Ingress_gateway_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         Mtls = new Oci.ServiceMesh.Inputs.IngressGatewayMtlsArgs
+    ///         {
+    ///             MaximumValidity = @var.Ingress_gateway_mtls_maximum_validity,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -96,7 +94,7 @@ namespace Pulumi.Oci.ServiceMesh
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceMesh/ingressGateway:IngressGateway")]
-    public partial class IngressGateway : Pulumi.CustomResource
+    public partial class IngressGateway : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) This configuration determines if logging is enabled and where the logs will be output.
@@ -226,7 +224,7 @@ namespace Pulumi.Oci.ServiceMesh
         }
     }
 
-    public sealed class IngressGatewayArgs : Pulumi.ResourceArgs
+    public sealed class IngressGatewayArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) This configuration determines if logging is enabled and where the logs will be output.
@@ -303,9 +301,10 @@ namespace Pulumi.Oci.ServiceMesh
         public IngressGatewayArgs()
         {
         }
+        public static new IngressGatewayArgs Empty => new IngressGatewayArgs();
     }
 
-    public sealed class IngressGatewayState : Pulumi.ResourceArgs
+    public sealed class IngressGatewayState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) This configuration determines if logging is enabled and where the logs will be output.
@@ -418,5 +417,6 @@ namespace Pulumi.Oci.ServiceMesh
         public IngressGatewayState()
         {
         }
+        public static new IngressGatewayState Empty => new IngressGatewayState();
     }
 }

@@ -28,6 +28,128 @@ import javax.annotation.Nullable;
  * Creates a connection under an existing data asset.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataConnectivity.RegistryConnection;
+ * import com.pulumi.oci.DataConnectivity.RegistryConnectionArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryConnectionConnectionPropertyArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryConnectionMetadataArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryConnectionMetadataAggregatorArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryConnectionPrimarySchemaArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryConnectionPrimarySchemaMetadataArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryConnectionPrimarySchemaMetadataAggregatorArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryConnectionPrimarySchemaParentRefArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryConnectionRegistryMetadataArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testRegistryConnection = new RegistryConnection(&#34;testRegistryConnection&#34;, RegistryConnectionArgs.builder()        
+ *             .identifier(var_.registry_connection_identifier())
+ *             .properties(var_.registry_connection_properties())
+ *             .registryId(oci_data_connectivity_registry.test_registry().id())
+ *             .type(var_.registry_connection_type())
+ *             .connectionProperties(RegistryConnectionConnectionPropertyArgs.builder()
+ *                 .name(var_.registry_connection_connection_properties_name())
+ *                 .value(var_.registry_connection_connection_properties_value())
+ *                 .build())
+ *             .description(var_.registry_connection_description())
+ *             .isDefault(var_.registry_connection_is_default())
+ *             .key(var_.registry_connection_key())
+ *             .metadata(RegistryConnectionMetadataArgs.builder()
+ *                 .aggregator(RegistryConnectionMetadataAggregatorArgs.builder()
+ *                     .description(var_.registry_connection_metadata_aggregator_description())
+ *                     .identifier(var_.registry_connection_metadata_aggregator_identifier())
+ *                     .key(var_.registry_connection_metadata_aggregator_key())
+ *                     .name(var_.registry_connection_metadata_aggregator_name())
+ *                     .type(var_.registry_connection_metadata_aggregator_type())
+ *                     .build())
+ *                 .aggregatorKey(var_.registry_connection_metadata_aggregator_key())
+ *                 .createdBy(var_.registry_connection_metadata_created_by())
+ *                 .createdByName(var_.registry_connection_metadata_created_by_name())
+ *                 .identifierPath(var_.registry_connection_metadata_identifier_path())
+ *                 .infoFields(var_.registry_connection_metadata_info_fields())
+ *                 .isFavorite(var_.registry_connection_metadata_is_favorite())
+ *                 .labels(var_.registry_connection_metadata_labels())
+ *                 .registryVersion(var_.registry_connection_metadata_registry_version())
+ *                 .timeCreated(var_.registry_connection_metadata_time_created())
+ *                 .timeUpdated(var_.registry_connection_metadata_time_updated())
+ *                 .updatedBy(var_.registry_connection_metadata_updated_by())
+ *                 .updatedByName(var_.registry_connection_metadata_updated_by_name())
+ *                 .build())
+ *             .modelType(var_.registry_connection_model_type())
+ *             .modelVersion(var_.registry_connection_model_version())
+ *             .objectStatus(var_.registry_connection_object_status())
+ *             .objectVersion(var_.registry_connection_object_version())
+ *             .primarySchema(RegistryConnectionPrimarySchemaArgs.builder()
+ *                 .identifier(var_.registry_connection_primary_schema_identifier())
+ *                 .key(var_.registry_connection_primary_schema_key())
+ *                 .modelType(var_.registry_connection_primary_schema_model_type())
+ *                 .name(var_.registry_connection_primary_schema_name())
+ *                 .defaultConnection(var_.registry_connection_primary_schema_default_connection())
+ *                 .description(var_.registry_connection_primary_schema_description())
+ *                 .externalKey(var_.registry_connection_primary_schema_external_key())
+ *                 .isHasContainers(var_.registry_connection_primary_schema_is_has_containers())
+ *                 .metadata(RegistryConnectionPrimarySchemaMetadataArgs.builder()
+ *                     .aggregator(RegistryConnectionPrimarySchemaMetadataAggregatorArgs.builder()
+ *                         .description(var_.registry_connection_primary_schema_metadata_aggregator_description())
+ *                         .identifier(var_.registry_connection_primary_schema_metadata_aggregator_identifier())
+ *                         .key(var_.registry_connection_primary_schema_metadata_aggregator_key())
+ *                         .name(var_.registry_connection_primary_schema_metadata_aggregator_name())
+ *                         .type(var_.registry_connection_primary_schema_metadata_aggregator_type())
+ *                         .build())
+ *                     .aggregatorKey(var_.registry_connection_primary_schema_metadata_aggregator_key())
+ *                     .createdBy(var_.registry_connection_primary_schema_metadata_created_by())
+ *                     .createdByName(var_.registry_connection_primary_schema_metadata_created_by_name())
+ *                     .identifierPath(var_.registry_connection_primary_schema_metadata_identifier_path())
+ *                     .infoFields(var_.registry_connection_primary_schema_metadata_info_fields())
+ *                     .isFavorite(var_.registry_connection_primary_schema_metadata_is_favorite())
+ *                     .labels(var_.registry_connection_primary_schema_metadata_labels())
+ *                     .registryVersion(var_.registry_connection_primary_schema_metadata_registry_version())
+ *                     .timeCreated(var_.registry_connection_primary_schema_metadata_time_created())
+ *                     .timeUpdated(var_.registry_connection_primary_schema_metadata_time_updated())
+ *                     .updatedBy(var_.registry_connection_primary_schema_metadata_updated_by())
+ *                     .updatedByName(var_.registry_connection_primary_schema_metadata_updated_by_name())
+ *                     .build())
+ *                 .modelVersion(var_.registry_connection_primary_schema_model_version())
+ *                 .objectStatus(var_.registry_connection_primary_schema_object_status())
+ *                 .objectVersion(var_.registry_connection_primary_schema_object_version())
+ *                 .parentRef(RegistryConnectionPrimarySchemaParentRefArgs.builder()
+ *                     .parent(var_.registry_connection_primary_schema_parent_ref_parent())
+ *                     .build())
+ *                 .resourceName(var_.registry_connection_primary_schema_resource_name())
+ *                 .build())
+ *             .registryMetadata(RegistryConnectionRegistryMetadataArgs.builder()
+ *                 .aggregatorKey(var_.registry_connection_registry_metadata_aggregator_key())
+ *                 .createdByUserId(oci_identity_user.test_user().id())
+ *                 .createdByUserName(oci_identity_user.test_user().name())
+ *                 .isFavorite(var_.registry_connection_registry_metadata_is_favorite())
+ *                 .key(var_.registry_connection_registry_metadata_key())
+ *                 .labels(var_.registry_connection_registry_metadata_labels())
+ *                 .registryVersion(var_.registry_connection_registry_metadata_registry_version())
+ *                 .timeCreated(var_.registry_connection_registry_metadata_time_created())
+ *                 .timeUpdated(var_.registry_connection_registry_metadata_time_updated())
+ *                 .updatedByUserId(oci_identity_user.test_user().id())
+ *                 .updatedByUserName(oci_identity_user.test_user().name())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

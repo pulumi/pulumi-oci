@@ -32,58 +32,52 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// ### Get a public ip by public ip id
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOciCorePublicIpById = Oci.Core.GetPublicIp.Invoke(new()
         ///     {
-        ///         var testOciCorePublicIpById = Output.Create(Oci.Core.GetPublicIp.InvokeAsync(new Oci.Core.GetPublicIpArgs
-        ///         {
-        ///             Id = @var.Test_public_ip_id,
-        ///         }));
-        ///     }
+        ///         Id = @var.Test_public_ip_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% example %}}
         /// ### Get a public ip by private ip id
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOciCorePublicIpByPrivateIpId = Oci.Core.GetPublicIp.Invoke(new()
         ///     {
-        ///         var testOciCorePublicIpByPrivateIpId = Output.Create(Oci.Core.GetPublicIp.InvokeAsync(new Oci.Core.GetPublicIpArgs
-        ///         {
-        ///             PrivateIpId = @var.Test_public_ip_private_ip_id,
-        ///         }));
-        ///     }
+        ///         PrivateIpId = @var.Test_public_ip_private_ip_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% example %}}
         /// ### Get a public ip by public ip address
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOciCorePublicIpByIp = Oci.Core.GetPublicIp.Invoke(new()
         ///     {
-        ///         var testOciCorePublicIpByIp = Output.Create(Oci.Core.GetPublicIp.InvokeAsync(new Oci.Core.GetPublicIpArgs
-        ///         {
-        ///             IpAddress = @var.Test_public_ip_ip_address,
-        ///         }));
-        ///     }
+        ///         IpAddress = @var.Test_public_ip_ip_address,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -112,58 +106,52 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// ### Get a public ip by public ip id
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOciCorePublicIpById = Oci.Core.GetPublicIp.Invoke(new()
         ///     {
-        ///         var testOciCorePublicIpById = Output.Create(Oci.Core.GetPublicIp.InvokeAsync(new Oci.Core.GetPublicIpArgs
-        ///         {
-        ///             Id = @var.Test_public_ip_id,
-        ///         }));
-        ///     }
+        ///         Id = @var.Test_public_ip_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% example %}}
         /// ### Get a public ip by private ip id
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOciCorePublicIpByPrivateIpId = Oci.Core.GetPublicIp.Invoke(new()
         ///     {
-        ///         var testOciCorePublicIpByPrivateIpId = Output.Create(Oci.Core.GetPublicIp.InvokeAsync(new Oci.Core.GetPublicIpArgs
-        ///         {
-        ///             PrivateIpId = @var.Test_public_ip_private_ip_id,
-        ///         }));
-        ///     }
+        ///         PrivateIpId = @var.Test_public_ip_private_ip_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% example %}}
         /// ### Get a public ip by public ip address
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOciCorePublicIpByIp = Oci.Core.GetPublicIp.Invoke(new()
         ///     {
-        ///         var testOciCorePublicIpByIp = Output.Create(Oci.Core.GetPublicIp.InvokeAsync(new Oci.Core.GetPublicIpArgs
-        ///         {
-        ///             IpAddress = @var.Test_public_ip_ip_address,
-        ///         }));
-        ///     }
+        ///         IpAddress = @var.Test_public_ip_ip_address,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -173,7 +161,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetPublicIpArgs : Pulumi.InvokeArgs
+    public sealed class GetPublicIpArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the public IP.
@@ -196,9 +184,10 @@ namespace Pulumi.Oci.Core
         public GetPublicIpArgs()
         {
         }
+        public static new GetPublicIpArgs Empty => new GetPublicIpArgs();
     }
 
-    public sealed class GetPublicIpInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPublicIpInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the public IP.
@@ -221,6 +210,7 @@ namespace Pulumi.Oci.Core
         public GetPublicIpInvokeArgs()
         {
         }
+        public static new GetPublicIpInvokeArgs Empty => new GetPublicIpInvokeArgs();
     }
 
 

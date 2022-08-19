@@ -22,23 +22,21 @@ namespace Pulumi.Oci.OsubUsage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputedUsage = Oci.OsubUsage.GetComputedUsage.Invoke(new()
         ///     {
-        ///         var testComputedUsage = Output.Create(Oci.OsubUsage.GetComputedUsage.InvokeAsync(new Oci.OsubUsage.GetComputedUsageArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ComputedUsageId = oci_osub_usage_computed_usage.Test_computed_usage.Id,
-        ///             Fields = @var.Computed_usage_fields,
-        ///             XOneOriginRegion = @var.Computed_usage_x_one_origin_region,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ComputedUsageId = oci_osub_usage_computed_usage.Test_computed_usage.Id,
+        ///         Fields = @var.Computed_usage_fields,
+        ///         XOneOriginRegion = @var.Computed_usage_x_one_origin_region,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.OsubUsage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputedUsage = Oci.OsubUsage.GetComputedUsage.Invoke(new()
         ///     {
-        ///         var testComputedUsage = Output.Create(Oci.OsubUsage.GetComputedUsage.InvokeAsync(new Oci.OsubUsage.GetComputedUsageArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ComputedUsageId = oci_osub_usage_computed_usage.Test_computed_usage.Id,
-        ///             Fields = @var.Computed_usage_fields,
-        ///             XOneOriginRegion = @var.Computed_usage_x_one_origin_region,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ComputedUsageId = oci_osub_usage_computed_usage.Test_computed_usage.Id,
+        ///         Fields = @var.Computed_usage_fields,
+        ///         XOneOriginRegion = @var.Computed_usage_x_one_origin_region,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.OsubUsage
     }
 
 
-    public sealed class GetComputedUsageArgs : Pulumi.InvokeArgs
+    public sealed class GetComputedUsageArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the root compartment.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.OsubUsage
         public GetComputedUsageArgs()
         {
         }
+        public static new GetComputedUsageArgs Empty => new GetComputedUsageArgs();
     }
 
-    public sealed class GetComputedUsageInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetComputedUsageInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the root compartment.
@@ -155,6 +152,7 @@ namespace Pulumi.Oci.OsubUsage
         public GetComputedUsageInvokeArgs()
         {
         }
+        public static new GetComputedUsageInvokeArgs Empty => new GetComputedUsageInvokeArgs();
     }
 
 

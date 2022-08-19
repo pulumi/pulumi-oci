@@ -22,25 +22,23 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseSoftwareImages = Oci.Database.GetDatabaseSoftwareImages.Invoke(new()
         ///     {
-        ///         var testDatabaseSoftwareImages = Output.Create(Oci.Database.GetDatabaseSoftwareImages.InvokeAsync(new Oci.Database.GetDatabaseSoftwareImagesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Database_software_image_display_name,
-        ///             ImageShapeFamily = @var.Database_software_image_image_shape_family,
-        ///             ImageType = @var.Database_software_image_image_type,
-        ///             IsUpgradeSupported = @var.Database_software_image_is_upgrade_supported,
-        ///             State = @var.Database_software_image_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Database_software_image_display_name,
+        ///         ImageShapeFamily = @var.Database_software_image_image_shape_family,
+        ///         ImageType = @var.Database_software_image_image_type,
+        ///         IsUpgradeSupported = @var.Database_software_image_is_upgrade_supported,
+        ///         State = @var.Database_software_image_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseSoftwareImages = Oci.Database.GetDatabaseSoftwareImages.Invoke(new()
         ///     {
-        ///         var testDatabaseSoftwareImages = Output.Create(Oci.Database.GetDatabaseSoftwareImages.InvokeAsync(new Oci.Database.GetDatabaseSoftwareImagesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Database_software_image_display_name,
-        ///             ImageShapeFamily = @var.Database_software_image_image_shape_family,
-        ///             ImageType = @var.Database_software_image_image_type,
-        ///             IsUpgradeSupported = @var.Database_software_image_is_upgrade_supported,
-        ///             State = @var.Database_software_image_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Database_software_image_display_name,
+        ///         ImageShapeFamily = @var.Database_software_image_image_shape_family,
+        ///         ImageType = @var.Database_software_image_image_type,
+        ///         IsUpgradeSupported = @var.Database_software_image_is_upgrade_supported,
+        ///         State = @var.Database_software_image_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDatabaseSoftwareImagesArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseSoftwareImagesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.Database
         public GetDatabaseSoftwareImagesArgs()
         {
         }
+        public static new GetDatabaseSoftwareImagesArgs Empty => new GetDatabaseSoftwareImagesArgs();
     }
 
-    public sealed class GetDatabaseSoftwareImagesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseSoftwareImagesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -187,6 +184,7 @@ namespace Pulumi.Oci.Database
         public GetDatabaseSoftwareImagesInvokeArgs()
         {
         }
+        public static new GetDatabaseSoftwareImagesInvokeArgs Empty => new GetDatabaseSoftwareImagesInvokeArgs();
     }
 
 

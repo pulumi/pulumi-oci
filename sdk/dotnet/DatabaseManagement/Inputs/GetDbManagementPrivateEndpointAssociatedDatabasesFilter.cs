@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement.Inputs
 {
 
-    public sealed class GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the database.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs()
         {
         }
+        public static new GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs Empty => new GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs();
     }
 }

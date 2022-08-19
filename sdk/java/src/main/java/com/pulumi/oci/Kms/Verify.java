@@ -22,6 +22,40 @@ import javax.annotation.Nullable;
  * digital signature outside of the service, you can do so by using the public key of the asymmetric key.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Kms.Verify;
+ * import com.pulumi.oci.Kms.VerifyArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVerify = new Verify(&#34;testVerify&#34;, VerifyArgs.builder()        
+ *             .cryptoEndpoint(var_.verify_message_crypto_endpoint())
+ *             .keyId(oci_kms_key.test_key().id())
+ *             .keyVersionId(oci_kms_key_version.test_key_version().id())
+ *             .message(var_.verify_message())
+ *             .signature(var_.verify_signature())
+ *             .signingAlgorithm(var_.verify_signing_algorithm())
+ *             .messageType(var_.verify_message_type())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

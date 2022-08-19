@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) This value is the desired number of nodes in the cluster.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigGetArgs()
         {
         }
+        public static new AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigGetArgs Empty => new AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfigGetArgs();
     }
 }

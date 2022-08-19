@@ -5,8 +5,10 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -47,6 +49,21 @@ public final class JobRunJobInfrastructureConfigurationDetailArgs extends com.pu
     }
 
     /**
+     * Details for the job run shape configuration. Specify only when a flex shape is selected.
+     * 
+     */
+    @Import(name="jobShapeConfigDetails")
+    private @Nullable Output<List<JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs>> jobShapeConfigDetails;
+
+    /**
+     * @return Details for the job run shape configuration. Specify only when a flex shape is selected.
+     * 
+     */
+    public Optional<Output<List<JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs>>> jobShapeConfigDetails() {
+        return Optional.ofNullable(this.jobShapeConfigDetails);
+    }
+
+    /**
      * The shape used to launch the job run instances.
      * 
      */
@@ -81,6 +98,7 @@ public final class JobRunJobInfrastructureConfigurationDetailArgs extends com.pu
     private JobRunJobInfrastructureConfigurationDetailArgs(JobRunJobInfrastructureConfigurationDetailArgs $) {
         this.blockStorageSizeInGbs = $.blockStorageSizeInGbs;
         this.jobInfrastructureType = $.jobInfrastructureType;
+        this.jobShapeConfigDetails = $.jobShapeConfigDetails;
         this.shapeName = $.shapeName;
         this.subnetId = $.subnetId;
     }
@@ -143,6 +161,37 @@ public final class JobRunJobInfrastructureConfigurationDetailArgs extends com.pu
          */
         public Builder jobInfrastructureType(String jobInfrastructureType) {
             return jobInfrastructureType(Output.of(jobInfrastructureType));
+        }
+
+        /**
+         * @param jobShapeConfigDetails Details for the job run shape configuration. Specify only when a flex shape is selected.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobShapeConfigDetails(@Nullable Output<List<JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs>> jobShapeConfigDetails) {
+            $.jobShapeConfigDetails = jobShapeConfigDetails;
+            return this;
+        }
+
+        /**
+         * @param jobShapeConfigDetails Details for the job run shape configuration. Specify only when a flex shape is selected.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobShapeConfigDetails(List<JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs> jobShapeConfigDetails) {
+            return jobShapeConfigDetails(Output.of(jobShapeConfigDetails));
+        }
+
+        /**
+         * @param jobShapeConfigDetails Details for the job run shape configuration. Specify only when a flex shape is selected.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobShapeConfigDetails(JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs... jobShapeConfigDetails) {
+            return jobShapeConfigDetails(List.of(jobShapeConfigDetails));
         }
 
         /**

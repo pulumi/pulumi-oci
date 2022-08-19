@@ -21,22 +21,20 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPublicationPackages = Oci.Marketplace.GetPublicationPackages.Invoke(new()
         ///     {
-        ///         var testPublicationPackages = Output.Create(Oci.Marketplace.GetPublicationPackages.InvokeAsync(new Oci.Marketplace.GetPublicationPackagesArgs
-        ///         {
-        ///             PublicationId = oci_marketplace_publication.Test_publication.Id,
-        ///             PackageType = @var.Publication_package_package_type,
-        ///             PackageVersion = @var.Publication_package_package_version,
-        ///         }));
-        ///     }
+        ///         PublicationId = oci_marketplace_publication.Test_publication.Id,
+        ///         PackageType = @var.Publication_package_package_type,
+        ///         PackageVersion = @var.Publication_package_package_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPublicationPackages = Oci.Marketplace.GetPublicationPackages.Invoke(new()
         ///     {
-        ///         var testPublicationPackages = Output.Create(Oci.Marketplace.GetPublicationPackages.InvokeAsync(new Oci.Marketplace.GetPublicationPackagesArgs
-        ///         {
-        ///             PublicationId = oci_marketplace_publication.Test_publication.Id,
-        ///             PackageType = @var.Publication_package_package_type,
-        ///             PackageVersion = @var.Publication_package_package_version,
-        ///         }));
-        ///     }
+        ///         PublicationId = oci_marketplace_publication.Test_publication.Id,
+        ///         PackageType = @var.Publication_package_package_type,
+        ///         PackageVersion = @var.Publication_package_package_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Marketplace
     }
 
 
-    public sealed class GetPublicationPackagesArgs : Pulumi.InvokeArgs
+    public sealed class GetPublicationPackagesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetPublicationPackagesFilterArgs>? _filters;
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.Marketplace
         public GetPublicationPackagesArgs()
         {
         }
+        public static new GetPublicationPackagesArgs Empty => new GetPublicationPackagesArgs();
     }
 
-    public sealed class GetPublicationPackagesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPublicationPackagesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetPublicationPackagesFilterInputArgs>? _filters;
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.Marketplace
         public GetPublicationPackagesInvokeArgs()
         {
         }
+        public static new GetPublicationPackagesInvokeArgs Empty => new GetPublicationPackagesInvokeArgs();
     }
 
 

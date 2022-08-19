@@ -26,20 +26,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAvailabilityDomains = Oci.Identity.GetAvailabilityDomains.Invoke(new()
         ///     {
-        ///         var testAvailabilityDomains = Output.Create(Oci.Identity.GetAvailabilityDomains.InvokeAsync(new Oci.Identity.GetAvailabilityDomainsArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,20 +60,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAvailabilityDomains = Oci.Identity.GetAvailabilityDomains.Invoke(new()
         ///     {
-        ///         var testAvailabilityDomains = Output.Create(Oci.Identity.GetAvailabilityDomains.InvokeAsync(new Oci.Identity.GetAvailabilityDomainsArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetAvailabilityDomainsArgs : Pulumi.InvokeArgs
+    public sealed class GetAvailabilityDomainsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.Identity
         public GetAvailabilityDomainsArgs()
         {
         }
+        public static new GetAvailabilityDomainsArgs Empty => new GetAvailabilityDomainsArgs();
     }
 
-    public sealed class GetAvailabilityDomainsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAvailabilityDomainsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -125,6 +122,7 @@ namespace Pulumi.Oci.Identity
         public GetAvailabilityDomainsInvokeArgs()
         {
         }
+        public static new GetAvailabilityDomainsInvokeArgs Empty => new GetAvailabilityDomainsInvokeArgs();
     }
 
 

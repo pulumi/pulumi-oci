@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualCircuit = Oci.Core.GetVirtualCircuit.Invoke(new()
         ///     {
-        ///         var testVirtualCircuit = Output.Create(Oci.Core.GetVirtualCircuit.InvokeAsync(new Oci.Core.GetVirtualCircuitArgs
-        ///         {
-        ///             VirtualCircuitId = oci_core_virtual_circuit.Test_virtual_circuit.Id,
-        ///         }));
-        ///     }
+        ///         VirtualCircuitId = oci_core_virtual_circuit.Test_virtual_circuit.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualCircuit = Oci.Core.GetVirtualCircuit.Invoke(new()
         ///     {
-        ///         var testVirtualCircuit = Output.Create(Oci.Core.GetVirtualCircuit.InvokeAsync(new Oci.Core.GetVirtualCircuitArgs
-        ///         {
-        ///             VirtualCircuitId = oci_core_virtual_circuit.Test_virtual_circuit.Id,
-        ///         }));
-        ///     }
+        ///         VirtualCircuitId = oci_core_virtual_circuit.Test_virtual_circuit.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVirtualCircuitArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualCircuitArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetVirtualCircuitArgs()
         {
         }
+        public static new GetVirtualCircuitArgs Empty => new GetVirtualCircuitArgs();
     }
 
-    public sealed class GetVirtualCircuitInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualCircuitInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetVirtualCircuitInvokeArgs()
         {
         }
+        public static new GetVirtualCircuitInvokeArgs Empty => new GetVirtualCircuitInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class ConfigConfigurationRequestQueryParamGetArgs : Pulumi.ResourceArgs
+    public sealed class ConfigConfigurationRequestQueryParamGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the parameter.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public ConfigConfigurationRequestQueryParamGetArgs()
         {
         }
+        public static new ConfigConfigurationRequestQueryParamGetArgs Empty => new ConfigConfigurationRequestQueryParamGetArgs();
     }
 }

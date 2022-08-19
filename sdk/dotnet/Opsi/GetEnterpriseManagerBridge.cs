@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEnterpriseManagerBridge = Oci.Opsi.GetEnterpriseManagerBridge.Invoke(new()
         ///     {
-        ///         var testEnterpriseManagerBridge = Output.Create(Oci.Opsi.GetEnterpriseManagerBridge.InvokeAsync(new Oci.Opsi.GetEnterpriseManagerBridgeArgs
-        ///         {
-        ///             EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///         }));
-        ///     }
+        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEnterpriseManagerBridge = Oci.Opsi.GetEnterpriseManagerBridge.Invoke(new()
         ///     {
-        ///         var testEnterpriseManagerBridge = Output.Create(Oci.Opsi.GetEnterpriseManagerBridge.InvokeAsync(new Oci.Opsi.GetEnterpriseManagerBridgeArgs
-        ///         {
-        ///             EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///         }));
-        ///     }
+        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetEnterpriseManagerBridgeArgs : Pulumi.InvokeArgs
+    public sealed class GetEnterpriseManagerBridgeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Enterprise Manager bridge identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Opsi
         public GetEnterpriseManagerBridgeArgs()
         {
         }
+        public static new GetEnterpriseManagerBridgeArgs Empty => new GetEnterpriseManagerBridgeArgs();
     }
 
-    public sealed class GetEnterpriseManagerBridgeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEnterpriseManagerBridgeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Enterprise Manager bridge identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Opsi
         public GetEnterpriseManagerBridgeInvokeArgs()
         {
         }
+        public static new GetEnterpriseManagerBridgeInvokeArgs Empty => new GetEnterpriseManagerBridgeInvokeArgs();
     }
 
 

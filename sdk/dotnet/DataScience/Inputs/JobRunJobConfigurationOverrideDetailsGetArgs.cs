@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class JobRunJobConfigurationOverrideDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class JobRunJobConfigurationOverrideDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The arguments to pass to the job.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public JobRunJobConfigurationOverrideDetailsGetArgs()
         {
         }
+        public static new JobRunJobConfigurationOverrideDetailsGetArgs Empty => new JobRunJobConfigurationOverrideDetailsGetArgs();
     }
 }

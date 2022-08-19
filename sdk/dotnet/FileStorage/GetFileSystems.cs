@@ -22,26 +22,24 @@ namespace Pulumi.Oci.FileStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFileSystems = Oci.FileStorage.GetFileSystems.Invoke(new()
         ///     {
-        ///         var testFileSystems = Output.Create(Oci.FileStorage.GetFileSystems.InvokeAsync(new Oci.FileStorage.GetFileSystemsArgs
-        ///         {
-        ///             AvailabilityDomain = @var.File_system_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.File_system_display_name,
-        ///             Id = @var.File_system_id,
-        ///             ParentFileSystemId = oci_file_storage_file_system.Test_file_system.Id,
-        ///             SourceSnapshotId = oci_file_storage_snapshot.Test_snapshot.Id,
-        ///             State = @var.File_system_state,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.File_system_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.File_system_display_name,
+        ///         Id = @var.File_system_id,
+        ///         ParentFileSystemId = oci_file_storage_file_system.Test_file_system.Id,
+        ///         SourceSnapshotId = oci_file_storage_snapshot.Test_snapshot.Id,
+        ///         State = @var.File_system_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,26 +58,24 @@ namespace Pulumi.Oci.FileStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFileSystems = Oci.FileStorage.GetFileSystems.Invoke(new()
         ///     {
-        ///         var testFileSystems = Output.Create(Oci.FileStorage.GetFileSystems.InvokeAsync(new Oci.FileStorage.GetFileSystemsArgs
-        ///         {
-        ///             AvailabilityDomain = @var.File_system_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.File_system_display_name,
-        ///             Id = @var.File_system_id,
-        ///             ParentFileSystemId = oci_file_storage_file_system.Test_file_system.Id,
-        ///             SourceSnapshotId = oci_file_storage_snapshot.Test_snapshot.Id,
-        ///             State = @var.File_system_state,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.File_system_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.File_system_display_name,
+        ///         Id = @var.File_system_id,
+        ///         ParentFileSystemId = oci_file_storage_file_system.Test_file_system.Id,
+        ///         SourceSnapshotId = oci_file_storage_snapshot.Test_snapshot.Id,
+        ///         State = @var.File_system_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.FileStorage
     }
 
 
-    public sealed class GetFileSystemsArgs : Pulumi.InvokeArgs
+    public sealed class GetFileSystemsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -144,9 +140,10 @@ namespace Pulumi.Oci.FileStorage
         public GetFileSystemsArgs()
         {
         }
+        public static new GetFileSystemsArgs Empty => new GetFileSystemsArgs();
     }
 
-    public sealed class GetFileSystemsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFileSystemsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -201,6 +198,7 @@ namespace Pulumi.Oci.FileStorage
         public GetFileSystemsInvokeArgs()
         {
         }
+        public static new GetFileSystemsInvokeArgs Empty => new GetFileSystemsInvokeArgs();
     }
 
 

@@ -23,7 +23,7 @@ namespace Pulumi.Oci.OspGateway
     /// ```
     /// </summary>
     [OciResourceType("oci:OspGateway/subscription:Subscription")]
-    public partial class Subscription : Pulumi.CustomResource
+    public partial class Subscription : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Bill to customer Account id.
@@ -207,7 +207,7 @@ namespace Pulumi.Oci.OspGateway
         }
     }
 
-    public sealed class SubscriptionArgs : Pulumi.ResourceArgs
+    public sealed class SubscriptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -242,9 +242,10 @@ namespace Pulumi.Oci.OspGateway
         public SubscriptionArgs()
         {
         }
+        public static new SubscriptionArgs Empty => new SubscriptionArgs();
     }
 
-    public sealed class SubscriptionState : Pulumi.ResourceArgs
+    public sealed class SubscriptionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Bill to customer Account id.
@@ -411,5 +412,6 @@ namespace Pulumi.Oci.OspGateway
         public SubscriptionState()
         {
         }
+        public static new SubscriptionState Empty => new SubscriptionState();
     }
 }

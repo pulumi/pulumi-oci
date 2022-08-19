@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement.Inputs
 {
 
-    public sealed class CertificateCertificateConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class CertificateCertificateConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the profile used to create the certificate, which depends on the type of certificate you need.
@@ -81,5 +81,6 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public CertificateCertificateConfigGetArgs()
         {
         }
+        public static new CertificateCertificateConfigGetArgs Empty => new CertificateCertificateConfigGetArgs();
     }
 }

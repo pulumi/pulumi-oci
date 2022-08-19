@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Defines whether or not to uphold SSL verification.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs()
         {
         }
+        public static new DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs Empty => new DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs();
     }
 }

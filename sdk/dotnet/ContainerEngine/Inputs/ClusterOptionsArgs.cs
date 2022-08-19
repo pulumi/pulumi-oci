@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class ClusterOptionsArgs : Pulumi.ResourceArgs
+    public sealed class ClusterOptionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Configurable cluster add-ons
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public ClusterOptionsArgs()
         {
         }
+        public static new ClusterOptionsArgs Empty => new ClusterOptionsArgs();
     }
 }

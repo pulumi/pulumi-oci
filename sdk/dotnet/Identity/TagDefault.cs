@@ -24,23 +24,21 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testTagDefault = new Oci.Identity.TagDefault("testTagDefault", new()
     ///     {
-    ///         var testTagDefault = new Oci.Identity.TagDefault("testTagDefault", new Oci.Identity.TagDefaultArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             TagDefinitionId = oci_identity_tag_definition.Test_tag_definition.Id,
-    ///             Value = @var.Tag_default_value,
-    ///             IsRequired = @var.Tag_default_is_required,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         TagDefinitionId = oci_identity_tag_definition.Test_tag_definition.Id,
+    ///         Value = @var.Tag_default_value,
+    ///         IsRequired = @var.Tag_default_is_required,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/tagDefault:TagDefault")]
-    public partial class TagDefault : Pulumi.CustomResource
+    public partial class TagDefault : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
@@ -148,7 +146,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class TagDefaultArgs : Pulumi.ResourceArgs
+    public sealed class TagDefaultArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
@@ -179,9 +177,10 @@ namespace Pulumi.Oci.Identity
         public TagDefaultArgs()
         {
         }
+        public static new TagDefaultArgs Empty => new TagDefaultArgs();
     }
 
-    public sealed class TagDefaultState : Pulumi.ResourceArgs
+    public sealed class TagDefaultState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
@@ -236,5 +235,6 @@ namespace Pulumi.Oci.Identity
         public TagDefaultState()
         {
         }
+        public static new TagDefaultState Empty => new TagDefaultState();
     }
 }

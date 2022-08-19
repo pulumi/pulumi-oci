@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer.Inputs
 {
 
-    public sealed class ProfileTargetTagsItemArgs : Pulumi.ResourceArgs
+    public sealed class ProfileTargetTagsItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The name you use to refer to the tag, also known as the tag key.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Optimizer.Inputs
         public ProfileTargetTagsItemArgs()
         {
         }
+        public static new ProfileTargetTagsItemArgs Empty => new ProfileTargetTagsItemArgs();
     }
 }

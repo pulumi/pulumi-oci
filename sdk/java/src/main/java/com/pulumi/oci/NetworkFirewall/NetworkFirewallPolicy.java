@@ -31,6 +31,86 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.NetworkFirewall.NetworkFirewallPolicy;
+ * import com.pulumi.oci.NetworkFirewall.NetworkFirewallPolicyArgs;
+ * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionProfileArgs;
+ * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionRuleArgs;
+ * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionRuleConditionArgs;
+ * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyMappedSecretArgs;
+ * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicySecurityRuleArgs;
+ * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicySecurityRuleConditionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNetworkFirewallPolicy = new NetworkFirewallPolicy(&#34;testNetworkFirewallPolicy&#34;, NetworkFirewallPolicyArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .applicationLists(var_.network_firewall_policy_application_lists())
+ *             .decryptionProfiles(NetworkFirewallPolicyDecryptionProfileArgs.builder()
+ *                 .isOutOfCapacityBlocked(var_.network_firewall_policy_decryption_profiles_is_out_of_capacity_blocked())
+ *                 .isUnsupportedCipherBlocked(var_.network_firewall_policy_decryption_profiles_is_unsupported_cipher_blocked())
+ *                 .isUnsupportedVersionBlocked(var_.network_firewall_policy_decryption_profiles_is_unsupported_version_blocked())
+ *                 .type(var_.network_firewall_policy_decryption_profiles_type())
+ *                 .areCertificateExtensionsRestricted(var_.network_firewall_policy_decryption_profiles_are_certificate_extensions_restricted())
+ *                 .isAutoIncludeAltName(var_.network_firewall_policy_decryption_profiles_is_auto_include_alt_name())
+ *                 .isExpiredCertificateBlocked(var_.network_firewall_policy_decryption_profiles_is_expired_certificate_blocked())
+ *                 .isRevocationStatusTimeoutBlocked(var_.network_firewall_policy_decryption_profiles_is_revocation_status_timeout_blocked())
+ *                 .isUnknownRevocationStatusBlocked(var_.network_firewall_policy_decryption_profiles_is_unknown_revocation_status_blocked())
+ *                 .isUntrustedIssuerBlocked(var_.network_firewall_policy_decryption_profiles_is_untrusted_issuer_blocked())
+ *                 .build())
+ *             .decryptionRules(NetworkFirewallPolicyDecryptionRuleArgs.builder()
+ *                 .action(var_.network_firewall_policy_decryption_rules_action())
+ *                 .condition(NetworkFirewallPolicyDecryptionRuleConditionArgs.builder()
+ *                     .destinations(var_.network_firewall_policy_decryption_rules_condition_destinations())
+ *                     .sources(var_.network_firewall_policy_decryption_rules_condition_sources())
+ *                     .build())
+ *                 .name(var_.network_firewall_policy_decryption_rules_name())
+ *                 .decryptionProfile(var_.network_firewall_policy_decryption_rules_decryption_profile())
+ *                 .secret(var_.network_firewall_policy_decryption_rules_secret())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .displayName(var_.network_firewall_policy_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .ipAddressLists(var_.network_firewall_policy_ip_address_lists())
+ *             .mappedSecrets(NetworkFirewallPolicyMappedSecretArgs.builder()
+ *                 .source(var_.network_firewall_policy_mapped_secrets_source())
+ *                 .type(var_.network_firewall_policy_mapped_secrets_type())
+ *                 .vaultSecretId(oci_vault_secret.test_secret().id())
+ *                 .versionNumber(var_.network_firewall_policy_mapped_secrets_version_number())
+ *                 .build())
+ *             .securityRules(NetworkFirewallPolicySecurityRuleArgs.builder()
+ *                 .action(var_.network_firewall_policy_security_rules_action())
+ *                 .condition(NetworkFirewallPolicySecurityRuleConditionArgs.builder()
+ *                     .applications(var_.network_firewall_policy_security_rules_condition_applications())
+ *                     .destinations(var_.network_firewall_policy_security_rules_condition_destinations())
+ *                     .sources(var_.network_firewall_policy_security_rules_condition_sources())
+ *                     .urls(var_.network_firewall_policy_security_rules_condition_urls())
+ *                     .build())
+ *                 .name(var_.network_firewall_policy_security_rules_name())
+ *                 .inspection(var_.network_firewall_policy_security_rules_inspection())
+ *                 .build())
+ *             .urlLists(var_.network_firewall_policy_url_lists())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * 
  * ## Import
  * 
  * NetworkFirewallPolicies can be imported using the `id`, e.g.

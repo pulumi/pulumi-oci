@@ -22,6 +22,42 @@ import javax.annotation.Nullable;
  * Create a new index on the table identified by tableNameOrId.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Nosql.Index;
+ * import com.pulumi.oci.Nosql.IndexArgs;
+ * import com.pulumi.oci.Nosql.inputs.IndexKeyArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testIndex = new Index(&#34;testIndex&#34;, IndexArgs.builder()        
+ *             .keys(IndexKeyArgs.builder()
+ *                 .columnName(var_.index_keys_column_name())
+ *                 .jsonFieldType(var_.index_keys_json_field_type())
+ *                 .jsonPath(var_.index_keys_json_path())
+ *                 .build())
+ *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
+ *             .compartmentId(var_.compartment_id())
+ *             .isIfNotExists(var_.index_is_if_not_exists())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

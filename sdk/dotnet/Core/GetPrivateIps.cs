@@ -37,55 +37,49 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateIpsBySubnet = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
-        ///         var testPrivateIpsBySubnet = Output.Create(Oci.Core.GetPrivateIps.InvokeAsync(new Oci.Core.GetPrivateIpsArgs
-        ///         {
-        ///             SubnetId = @var.Private_ip_subnet_id,
-        ///         }));
-        ///     }
+        ///         SubnetId = @var.Private_ip_subnet_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateIpsByVnic = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
-        ///         var testPrivateIpsByVnic = Output.Create(Oci.Core.GetPrivateIps.InvokeAsync(new Oci.Core.GetPrivateIpsArgs
-        ///         {
-        ///             VnicId = oci_core_vnic.Test_vnic.Id,
-        ///         }));
-        ///     }
+        ///         VnicId = oci_core_vnic.Test_vnic.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateIpsByIpAddress = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
-        ///         var testPrivateIpsByIpAddress = Output.Create(Oci.Core.GetPrivateIps.InvokeAsync(new Oci.Core.GetPrivateIpsArgs
-        ///         {
-        ///             IpAddress = @var.Private_ip_ip_address,
-        ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-        ///             VlanId = oci_core_vlan.Test_vlan.Id,
-        ///             VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
-        ///         }));
-        ///     }
+        ///         IpAddress = @var.Private_ip_ip_address,
+        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+        ///         VlanId = oci_core_vlan.Test_vlan.Id,
+        ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -119,55 +113,49 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateIpsBySubnet = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
-        ///         var testPrivateIpsBySubnet = Output.Create(Oci.Core.GetPrivateIps.InvokeAsync(new Oci.Core.GetPrivateIpsArgs
-        ///         {
-        ///             SubnetId = @var.Private_ip_subnet_id,
-        ///         }));
-        ///     }
+        ///         SubnetId = @var.Private_ip_subnet_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateIpsByVnic = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
-        ///         var testPrivateIpsByVnic = Output.Create(Oci.Core.GetPrivateIps.InvokeAsync(new Oci.Core.GetPrivateIpsArgs
-        ///         {
-        ///             VnicId = oci_core_vnic.Test_vnic.Id,
-        ///         }));
-        ///     }
+        ///         VnicId = oci_core_vnic.Test_vnic.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateIpsByIpAddress = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
-        ///         var testPrivateIpsByIpAddress = Output.Create(Oci.Core.GetPrivateIps.InvokeAsync(new Oci.Core.GetPrivateIpsArgs
-        ///         {
-        ///             IpAddress = @var.Private_ip_ip_address,
-        ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-        ///             VlanId = oci_core_vlan.Test_vlan.Id,
-        ///             VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
-        ///         }));
-        ///     }
+        ///         IpAddress = @var.Private_ip_ip_address,
+        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+        ///         VlanId = oci_core_vlan.Test_vlan.Id,
+        ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -177,7 +165,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetPrivateIpsArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateIpsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetPrivateIpsFilterArgs>? _filters;
@@ -214,9 +202,10 @@ namespace Pulumi.Oci.Core
         public GetPrivateIpsArgs()
         {
         }
+        public static new GetPrivateIpsArgs Empty => new GetPrivateIpsArgs();
     }
 
-    public sealed class GetPrivateIpsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateIpsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetPrivateIpsFilterInputArgs>? _filters;
@@ -253,6 +242,7 @@ namespace Pulumi.Oci.Core
         public GetPrivateIpsInvokeArgs()
         {
         }
+        public static new GetPrivateIpsInvokeArgs Empty => new GetPrivateIpsInvokeArgs();
     }
 
 

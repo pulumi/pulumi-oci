@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class DatabaseDbBackupConfigBackupDestinationDetailArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseDbBackupConfigBackupDestinationDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
@@ -30,5 +30,6 @@ namespace Pulumi.Oci.Database.Inputs
         public DatabaseDbBackupConfigBackupDestinationDetailArgs()
         {
         }
+        public static new DatabaseDbBackupConfigBackupDestinationDetailArgs Empty => new DatabaseDbBackupConfigBackupDestinationDetailArgs();
     }
 }

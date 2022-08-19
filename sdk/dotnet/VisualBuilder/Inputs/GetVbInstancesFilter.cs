@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.VisualBuilder.Inputs
 {
 
-    public sealed class GetVbInstancesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetVbInstancesFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.VisualBuilder.Inputs
         public GetVbInstancesFilterArgs()
         {
         }
+        public static new GetVbInstancesFilterArgs Empty => new GetVbInstancesFilterArgs();
     }
 }

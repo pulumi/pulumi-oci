@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class ConnectionPrivateEndpointArgs : Pulumi.ResourceArgs
+    public sealed class ConnectionPrivateEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) OCID of the compartment where the secret containing the credentials will be created.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public ConnectionPrivateEndpointArgs()
         {
         }
+        public static new ConnectionPrivateEndpointArgs Empty => new ConnectionPrivateEndpointArgs();
     }
 }

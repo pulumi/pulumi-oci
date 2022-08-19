@@ -22,20 +22,18 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOrganizationSubscriptions = Oci.OneSubsription.GetOrganizationSubscriptions.Invoke(new()
         ///     {
-        ///         var testOrganizationSubscriptions = Output.Create(Oci.OneSubsription.GetOrganizationSubscriptions.InvokeAsync(new Oci.OneSubsription.GetOrganizationSubscriptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOrganizationSubscriptions = Oci.OneSubsription.GetOrganizationSubscriptions.Invoke(new()
         ///     {
-        ///         var testOrganizationSubscriptions = Output.Create(Oci.OneSubsription.GetOrganizationSubscriptions.InvokeAsync(new Oci.OneSubsription.GetOrganizationSubscriptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.OneSubsription
     }
 
 
-    public sealed class GetOrganizationSubscriptionsArgs : Pulumi.InvokeArgs
+    public sealed class GetOrganizationSubscriptionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the root compartment.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.OneSubsription
         public GetOrganizationSubscriptionsArgs()
         {
         }
+        public static new GetOrganizationSubscriptionsArgs Empty => new GetOrganizationSubscriptionsArgs();
     }
 
-    public sealed class GetOrganizationSubscriptionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOrganizationSubscriptionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the root compartment.
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.OneSubsription
         public GetOrganizationSubscriptionsInvokeArgs()
         {
         }
+        public static new GetOrganizationSubscriptionsInvokeArgs Empty => new GetOrganizationSubscriptionsInvokeArgs();
     }
 
 

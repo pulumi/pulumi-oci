@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaintenanceRun = Oci.Database.GetMaintenanceRun.Invoke(new()
         ///     {
-        ///         var testMaintenanceRun = Output.Create(Oci.Database.GetMaintenanceRun.InvokeAsync(new Oci.Database.GetMaintenanceRunArgs
-        ///         {
-        ///             MaintenanceRunId = oci_database_maintenance_run.Test_maintenance_run.Id,
-        ///         }));
-        ///     }
+        ///         MaintenanceRunId = oci_database_maintenance_run.Test_maintenance_run.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaintenanceRun = Oci.Database.GetMaintenanceRun.Invoke(new()
         ///     {
-        ///         var testMaintenanceRun = Output.Create(Oci.Database.GetMaintenanceRun.InvokeAsync(new Oci.Database.GetMaintenanceRunArgs
-        ///         {
-        ///             MaintenanceRunId = oci_database_maintenance_run.Test_maintenance_run.Id,
-        ///         }));
-        ///     }
+        ///         MaintenanceRunId = oci_database_maintenance_run.Test_maintenance_run.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetMaintenanceRunArgs : Pulumi.InvokeArgs
+    public sealed class GetMaintenanceRunArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The maintenance run OCID.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Database
         public GetMaintenanceRunArgs()
         {
         }
+        public static new GetMaintenanceRunArgs Empty => new GetMaintenanceRunArgs();
     }
 
-    public sealed class GetMaintenanceRunInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMaintenanceRunInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The maintenance run OCID.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Database
         public GetMaintenanceRunInvokeArgs()
         {
         }
+        public static new GetMaintenanceRunInvokeArgs Empty => new GetMaintenanceRunInvokeArgs();
     }
 
 

@@ -27,6 +27,51 @@ import javax.annotation.Nullable;
  * Creates a new Vb Instance.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.VisualBuilder.VbInstance;
+ * import com.pulumi.oci.VisualBuilder.VbInstanceArgs;
+ * import com.pulumi.oci.VisualBuilder.inputs.VbInstanceAlternateCustomEndpointArgs;
+ * import com.pulumi.oci.VisualBuilder.inputs.VbInstanceCustomEndpointArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVbInstance = new VbInstance(&#34;testVbInstance&#34;, VbInstanceArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.vb_instance_display_name())
+ *             .nodeCount(var_.vb_instance_node_count())
+ *             .alternateCustomEndpoints(VbInstanceAlternateCustomEndpointArgs.builder()
+ *                 .hostname(var_.vb_instance_alternate_custom_endpoints_hostname())
+ *                 .certificateSecretId(oci_vault_secret.test_secret().id())
+ *                 .build())
+ *             .consumptionModel(var_.vb_instance_consumption_model())
+ *             .customEndpoint(VbInstanceCustomEndpointArgs.builder()
+ *                 .hostname(var_.vb_instance_custom_endpoint_hostname())
+ *                 .certificateSecretId(oci_vault_secret.test_secret().id())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .idcsOpenId(oci_visual_builder_idcs_open.test_idcs_open().id())
+ *             .isVisualBuilderEnabled(var_.vb_instance_is_visual_builder_enabled())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

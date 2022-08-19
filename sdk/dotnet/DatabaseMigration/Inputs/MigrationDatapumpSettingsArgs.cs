@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationDatapumpSettingsArgs : Pulumi.ResourceArgs
+    public sealed class MigrationDatapumpSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationDatapumpSettingsArgs()
         {
         }
+        public static new MigrationDatapumpSettingsArgs Empty => new MigrationDatapumpSettingsArgs();
     }
 }

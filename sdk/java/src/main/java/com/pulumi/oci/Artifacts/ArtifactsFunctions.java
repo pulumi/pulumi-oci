@@ -50,6 +50,34 @@ public final class ArtifactsFunctions {
      * Get container configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerConfiguration = ArtifactsFunctions.getContainerConfiguration(GetContainerConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerConfigurationResult> getContainerConfiguration(GetContainerConfigurationArgs args) {
@@ -61,6 +89,34 @@ public final class ArtifactsFunctions {
      * Get container configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerConfiguration = ArtifactsFunctions.getContainerConfiguration(GetContainerConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerConfigurationResult> getContainerConfigurationPlain(GetContainerConfigurationPlainArgs args) {
@@ -72,6 +128,34 @@ public final class ArtifactsFunctions {
      * Get container configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerConfiguration = ArtifactsFunctions.getContainerConfiguration(GetContainerConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerConfigurationResult> getContainerConfiguration(GetContainerConfigurationArgs args, InvokeOptions options) {
@@ -83,6 +167,34 @@ public final class ArtifactsFunctions {
      * Get container configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerConfiguration = ArtifactsFunctions.getContainerConfiguration(GetContainerConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerConfigurationResult> getContainerConfigurationPlain(GetContainerConfigurationPlainArgs args, InvokeOptions options) {
@@ -94,6 +206,34 @@ public final class ArtifactsFunctions {
      * Get container image metadata.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImage = ArtifactsFunctions.getContainerImage(GetContainerImageArgs.builder()
+     *             .imageId(var_.container_image_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerImageResult> getContainerImage(GetContainerImageArgs args) {
@@ -105,6 +245,34 @@ public final class ArtifactsFunctions {
      * Get container image metadata.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImage = ArtifactsFunctions.getContainerImage(GetContainerImageArgs.builder()
+     *             .imageId(var_.container_image_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerImageResult> getContainerImagePlain(GetContainerImagePlainArgs args) {
@@ -116,6 +284,34 @@ public final class ArtifactsFunctions {
      * Get container image metadata.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImage = ArtifactsFunctions.getContainerImage(GetContainerImageArgs.builder()
+     *             .imageId(var_.container_image_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerImageResult> getContainerImage(GetContainerImageArgs args, InvokeOptions options) {
@@ -127,6 +323,34 @@ public final class ArtifactsFunctions {
      * Get container image metadata.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImage = ArtifactsFunctions.getContainerImage(GetContainerImageArgs.builder()
+     *             .imageId(var_.container_image_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerImageResult> getContainerImagePlain(GetContainerImagePlainArgs args, InvokeOptions options) {
@@ -138,6 +362,34 @@ public final class ArtifactsFunctions {
      * Get container image signature metadata.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImageSignatureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImageSignature = ArtifactsFunctions.getContainerImageSignature(GetContainerImageSignatureArgs.builder()
+     *             .imageSignatureId(oci_artifacts_image_signature.test_image_signature().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerImageSignatureResult> getContainerImageSignature(GetContainerImageSignatureArgs args) {
@@ -149,6 +401,34 @@ public final class ArtifactsFunctions {
      * Get container image signature metadata.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImageSignatureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImageSignature = ArtifactsFunctions.getContainerImageSignature(GetContainerImageSignatureArgs.builder()
+     *             .imageSignatureId(oci_artifacts_image_signature.test_image_signature().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerImageSignatureResult> getContainerImageSignaturePlain(GetContainerImageSignaturePlainArgs args) {
@@ -160,6 +440,34 @@ public final class ArtifactsFunctions {
      * Get container image signature metadata.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImageSignatureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImageSignature = ArtifactsFunctions.getContainerImageSignature(GetContainerImageSignatureArgs.builder()
+     *             .imageSignatureId(oci_artifacts_image_signature.test_image_signature().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerImageSignatureResult> getContainerImageSignature(GetContainerImageSignatureArgs args, InvokeOptions options) {
@@ -171,6 +479,34 @@ public final class ArtifactsFunctions {
      * Get container image signature metadata.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImageSignatureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImageSignature = ArtifactsFunctions.getContainerImageSignature(GetContainerImageSignatureArgs.builder()
+     *             .imageSignatureId(oci_artifacts_image_signature.test_image_signature().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerImageSignatureResult> getContainerImageSignaturePlain(GetContainerImageSignaturePlainArgs args, InvokeOptions options) {
@@ -182,6 +518,42 @@ public final class ArtifactsFunctions {
      * List container images in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImages = ArtifactsFunctions.getContainerImages(GetContainerImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.container_image_compartment_id_in_subtree())
+     *             .displayName(var_.container_image_display_name())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .isVersioned(var_.container_image_is_versioned())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryName(oci_artifacts_repository.test_repository().name())
+     *             .state(var_.container_image_state())
+     *             .version(var_.container_image_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerImagesResult> getContainerImages(GetContainerImagesArgs args) {
@@ -193,6 +565,42 @@ public final class ArtifactsFunctions {
      * List container images in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImages = ArtifactsFunctions.getContainerImages(GetContainerImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.container_image_compartment_id_in_subtree())
+     *             .displayName(var_.container_image_display_name())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .isVersioned(var_.container_image_is_versioned())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryName(oci_artifacts_repository.test_repository().name())
+     *             .state(var_.container_image_state())
+     *             .version(var_.container_image_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerImagesResult> getContainerImagesPlain(GetContainerImagesPlainArgs args) {
@@ -204,6 +612,42 @@ public final class ArtifactsFunctions {
      * List container images in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImages = ArtifactsFunctions.getContainerImages(GetContainerImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.container_image_compartment_id_in_subtree())
+     *             .displayName(var_.container_image_display_name())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .isVersioned(var_.container_image_is_versioned())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryName(oci_artifacts_repository.test_repository().name())
+     *             .state(var_.container_image_state())
+     *             .version(var_.container_image_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerImagesResult> getContainerImages(GetContainerImagesArgs args, InvokeOptions options) {
@@ -215,6 +659,42 @@ public final class ArtifactsFunctions {
      * List container images in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImages = ArtifactsFunctions.getContainerImages(GetContainerImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.container_image_compartment_id_in_subtree())
+     *             .displayName(var_.container_image_display_name())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .isVersioned(var_.container_image_is_versioned())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryName(oci_artifacts_repository.test_repository().name())
+     *             .state(var_.container_image_state())
+     *             .version(var_.container_image_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerImagesResult> getContainerImagesPlain(GetContainerImagesPlainArgs args, InvokeOptions options) {
@@ -226,6 +706,39 @@ public final class ArtifactsFunctions {
      * List container repositories in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerRepositories = ArtifactsFunctions.getContainerRepositories(GetContainerRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.container_repository_compartment_id_in_subtree())
+     *             .displayName(var_.container_repository_display_name())
+     *             .isPublic(var_.container_repository_is_public())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .state(var_.container_repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerRepositoriesResult> getContainerRepositories(GetContainerRepositoriesArgs args) {
@@ -237,6 +750,39 @@ public final class ArtifactsFunctions {
      * List container repositories in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerRepositories = ArtifactsFunctions.getContainerRepositories(GetContainerRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.container_repository_compartment_id_in_subtree())
+     *             .displayName(var_.container_repository_display_name())
+     *             .isPublic(var_.container_repository_is_public())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .state(var_.container_repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerRepositoriesResult> getContainerRepositoriesPlain(GetContainerRepositoriesPlainArgs args) {
@@ -248,6 +794,39 @@ public final class ArtifactsFunctions {
      * List container repositories in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerRepositories = ArtifactsFunctions.getContainerRepositories(GetContainerRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.container_repository_compartment_id_in_subtree())
+     *             .displayName(var_.container_repository_display_name())
+     *             .isPublic(var_.container_repository_is_public())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .state(var_.container_repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerRepositoriesResult> getContainerRepositories(GetContainerRepositoriesArgs args, InvokeOptions options) {
@@ -259,6 +838,39 @@ public final class ArtifactsFunctions {
      * List container repositories in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerRepositories = ArtifactsFunctions.getContainerRepositories(GetContainerRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.container_repository_compartment_id_in_subtree())
+     *             .displayName(var_.container_repository_display_name())
+     *             .isPublic(var_.container_repository_is_public())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .state(var_.container_repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerRepositoriesResult> getContainerRepositoriesPlain(GetContainerRepositoriesPlainArgs args, InvokeOptions options) {
@@ -270,6 +882,34 @@ public final class ArtifactsFunctions {
      * Get container repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerRepository = ArtifactsFunctions.getContainerRepository(GetContainerRepositoryArgs.builder()
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerRepositoryResult> getContainerRepository(GetContainerRepositoryArgs args) {
@@ -281,6 +921,34 @@ public final class ArtifactsFunctions {
      * Get container repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerRepository = ArtifactsFunctions.getContainerRepository(GetContainerRepositoryArgs.builder()
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerRepositoryResult> getContainerRepositoryPlain(GetContainerRepositoryPlainArgs args) {
@@ -292,6 +960,34 @@ public final class ArtifactsFunctions {
      * Get container repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerRepository = ArtifactsFunctions.getContainerRepository(GetContainerRepositoryArgs.builder()
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerRepositoryResult> getContainerRepository(GetContainerRepositoryArgs args, InvokeOptions options) {
@@ -303,6 +999,34 @@ public final class ArtifactsFunctions {
      * Get container repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerRepository = ArtifactsFunctions.getContainerRepository(GetContainerRepositoryArgs.builder()
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerRepositoryResult> getContainerRepositoryPlain(GetContainerRepositoryPlainArgs args, InvokeOptions options) {
@@ -314,6 +1038,43 @@ public final class ArtifactsFunctions {
      * List container image signatures in an image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerSignaturesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImageSignatures = ArtifactsFunctions.getContainerSignatures(GetContainerSignaturesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.container_image_signature_compartment_id_in_subtree())
+     *             .displayName(var_.container_image_signature_display_name())
+     *             .imageDigest(var_.container_image_signature_image_digest())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .kmsKeyId(oci_kms_key.test_key().id())
+     *             .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryName(oci_artifacts_repository.test_repository().name())
+     *             .signingAlgorithm(var_.container_image_signature_signing_algorithm())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerSignaturesResult> getContainerSignatures(GetContainerSignaturesArgs args) {
@@ -325,6 +1086,43 @@ public final class ArtifactsFunctions {
      * List container image signatures in an image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerSignaturesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImageSignatures = ArtifactsFunctions.getContainerSignatures(GetContainerSignaturesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.container_image_signature_compartment_id_in_subtree())
+     *             .displayName(var_.container_image_signature_display_name())
+     *             .imageDigest(var_.container_image_signature_image_digest())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .kmsKeyId(oci_kms_key.test_key().id())
+     *             .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryName(oci_artifacts_repository.test_repository().name())
+     *             .signingAlgorithm(var_.container_image_signature_signing_algorithm())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerSignaturesResult> getContainerSignaturesPlain(GetContainerSignaturesPlainArgs args) {
@@ -336,6 +1134,43 @@ public final class ArtifactsFunctions {
      * List container image signatures in an image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerSignaturesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImageSignatures = ArtifactsFunctions.getContainerSignatures(GetContainerSignaturesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.container_image_signature_compartment_id_in_subtree())
+     *             .displayName(var_.container_image_signature_display_name())
+     *             .imageDigest(var_.container_image_signature_image_digest())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .kmsKeyId(oci_kms_key.test_key().id())
+     *             .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryName(oci_artifacts_repository.test_repository().name())
+     *             .signingAlgorithm(var_.container_image_signature_signing_algorithm())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetContainerSignaturesResult> getContainerSignatures(GetContainerSignaturesArgs args, InvokeOptions options) {
@@ -347,6 +1182,43 @@ public final class ArtifactsFunctions {
      * List container image signatures in an image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetContainerSignaturesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testContainerImageSignatures = ArtifactsFunctions.getContainerSignatures(GetContainerSignaturesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.container_image_signature_compartment_id_in_subtree())
+     *             .displayName(var_.container_image_signature_display_name())
+     *             .imageDigest(var_.container_image_signature_image_digest())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .kmsKeyId(oci_kms_key.test_key().id())
+     *             .kmsKeyVersionId(oci_kms_key_version.test_key_version().id())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .repositoryName(oci_artifacts_repository.test_repository().name())
+     *             .signingAlgorithm(var_.container_image_signature_signing_algorithm())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetContainerSignaturesResult> getContainerSignaturesPlain(GetContainerSignaturesPlainArgs args, InvokeOptions options) {
@@ -358,6 +1230,34 @@ public final class ArtifactsFunctions {
      * Gets information about an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifact = ArtifactsFunctions.getGenericArtifact(GetGenericArtifactArgs.builder()
+     *             .artifactId(oci_artifacts_artifact.test_artifact().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGenericArtifactResult> getGenericArtifact(GetGenericArtifactArgs args) {
@@ -369,6 +1269,34 @@ public final class ArtifactsFunctions {
      * Gets information about an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifact = ArtifactsFunctions.getGenericArtifact(GetGenericArtifactArgs.builder()
+     *             .artifactId(oci_artifacts_artifact.test_artifact().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGenericArtifactResult> getGenericArtifactPlain(GetGenericArtifactPlainArgs args) {
@@ -380,6 +1308,34 @@ public final class ArtifactsFunctions {
      * Gets information about an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifact = ArtifactsFunctions.getGenericArtifact(GetGenericArtifactArgs.builder()
+     *             .artifactId(oci_artifacts_artifact.test_artifact().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGenericArtifactResult> getGenericArtifact(GetGenericArtifactArgs args, InvokeOptions options) {
@@ -391,6 +1347,34 @@ public final class ArtifactsFunctions {
      * Gets information about an artifact with a specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifact = ArtifactsFunctions.getGenericArtifact(GetGenericArtifactArgs.builder()
+     *             .artifactId(oci_artifacts_artifact.test_artifact().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGenericArtifactResult> getGenericArtifactPlain(GetGenericArtifactPlainArgs args, InvokeOptions options) {
@@ -402,6 +1386,41 @@ public final class ArtifactsFunctions {
      * Lists artifacts in the specified repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifacts = ArtifactsFunctions.getGenericArtifacts(GetGenericArtifactsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .artifactPath(var_.generic_artifact_artifact_path())
+     *             .displayName(var_.generic_artifact_display_name())
+     *             .id(var_.generic_artifact_id())
+     *             .sha256(var_.generic_artifact_sha256())
+     *             .state(var_.generic_artifact_state())
+     *             .version(var_.generic_artifact_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGenericArtifactsResult> getGenericArtifacts(GetGenericArtifactsArgs args) {
@@ -413,6 +1432,41 @@ public final class ArtifactsFunctions {
      * Lists artifacts in the specified repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifacts = ArtifactsFunctions.getGenericArtifacts(GetGenericArtifactsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .artifactPath(var_.generic_artifact_artifact_path())
+     *             .displayName(var_.generic_artifact_display_name())
+     *             .id(var_.generic_artifact_id())
+     *             .sha256(var_.generic_artifact_sha256())
+     *             .state(var_.generic_artifact_state())
+     *             .version(var_.generic_artifact_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGenericArtifactsResult> getGenericArtifactsPlain(GetGenericArtifactsPlainArgs args) {
@@ -424,6 +1478,41 @@ public final class ArtifactsFunctions {
      * Lists artifacts in the specified repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifacts = ArtifactsFunctions.getGenericArtifacts(GetGenericArtifactsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .artifactPath(var_.generic_artifact_artifact_path())
+     *             .displayName(var_.generic_artifact_display_name())
+     *             .id(var_.generic_artifact_id())
+     *             .sha256(var_.generic_artifact_sha256())
+     *             .state(var_.generic_artifact_state())
+     *             .version(var_.generic_artifact_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGenericArtifactsResult> getGenericArtifacts(GetGenericArtifactsArgs args, InvokeOptions options) {
@@ -435,6 +1524,41 @@ public final class ArtifactsFunctions {
      * Lists artifacts in the specified repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetGenericArtifactsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenericArtifacts = ArtifactsFunctions.getGenericArtifacts(GetGenericArtifactsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .artifactPath(var_.generic_artifact_artifact_path())
+     *             .displayName(var_.generic_artifact_display_name())
+     *             .id(var_.generic_artifact_id())
+     *             .sha256(var_.generic_artifact_sha256())
+     *             .state(var_.generic_artifact_state())
+     *             .version(var_.generic_artifact_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGenericArtifactsResult> getGenericArtifactsPlain(GetGenericArtifactsPlainArgs args, InvokeOptions options) {
@@ -446,6 +1570,38 @@ public final class ArtifactsFunctions {
      * Lists repositories in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositories = ArtifactsFunctions.getRepositories(GetRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.repository_display_name())
+     *             .id(var_.repository_id())
+     *             .isImmutable(var_.repository_is_immutable())
+     *             .state(var_.repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoriesResult> getRepositories(GetRepositoriesArgs args) {
@@ -457,6 +1613,38 @@ public final class ArtifactsFunctions {
      * Lists repositories in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositories = ArtifactsFunctions.getRepositories(GetRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.repository_display_name())
+     *             .id(var_.repository_id())
+     *             .isImmutable(var_.repository_is_immutable())
+     *             .state(var_.repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoriesResult> getRepositoriesPlain(GetRepositoriesPlainArgs args) {
@@ -468,6 +1656,38 @@ public final class ArtifactsFunctions {
      * Lists repositories in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositories = ArtifactsFunctions.getRepositories(GetRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.repository_display_name())
+     *             .id(var_.repository_id())
+     *             .isImmutable(var_.repository_is_immutable())
+     *             .state(var_.repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoriesResult> getRepositories(GetRepositoriesArgs args, InvokeOptions options) {
@@ -479,6 +1699,38 @@ public final class ArtifactsFunctions {
      * Lists repositories in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositories = ArtifactsFunctions.getRepositories(GetRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.repository_display_name())
+     *             .id(var_.repository_id())
+     *             .isImmutable(var_.repository_is_immutable())
+     *             .state(var_.repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoriesResult> getRepositoriesPlain(GetRepositoriesPlainArgs args, InvokeOptions options) {
@@ -490,6 +1742,34 @@ public final class ArtifactsFunctions {
      * Gets the specified repository&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepository = ArtifactsFunctions.getRepository(GetRepositoryArgs.builder()
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryResult> getRepository(GetRepositoryArgs args) {
@@ -501,6 +1781,34 @@ public final class ArtifactsFunctions {
      * Gets the specified repository&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepository = ArtifactsFunctions.getRepository(GetRepositoryArgs.builder()
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryResult> getRepositoryPlain(GetRepositoryPlainArgs args) {
@@ -512,6 +1820,34 @@ public final class ArtifactsFunctions {
      * Gets the specified repository&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepository = ArtifactsFunctions.getRepository(GetRepositoryArgs.builder()
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryResult> getRepository(GetRepositoryArgs args, InvokeOptions options) {
@@ -523,6 +1859,34 @@ public final class ArtifactsFunctions {
      * Gets the specified repository&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Artifacts.ArtifactsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepository = ArtifactsFunctions.getRepository(GetRepositoryArgs.builder()
+     *             .repositoryId(oci_artifacts_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryResult> getRepositoryPlain(GetRepositoryPlainArgs args, InvokeOptions options) {

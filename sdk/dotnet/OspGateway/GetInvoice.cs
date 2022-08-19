@@ -21,22 +21,20 @@ namespace Pulumi.Oci.OspGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInvoice = Oci.OspGateway.GetInvoice.Invoke(new()
         ///     {
-        ///         var testInvoice = Output.Create(Oci.OspGateway.GetInvoice.InvokeAsync(new Oci.OspGateway.GetInvoiceArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             InternalInvoiceId = oci_osp_gateway_invoice.Test_invoice.Id,
-        ///             OspHomeRegion = @var.Invoice_osp_home_region,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         InternalInvoiceId = oci_osp_gateway_invoice.Test_invoice.Id,
+        ///         OspHomeRegion = @var.Invoice_osp_home_region,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.OspGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInvoice = Oci.OspGateway.GetInvoice.Invoke(new()
         ///     {
-        ///         var testInvoice = Output.Create(Oci.OspGateway.GetInvoice.InvokeAsync(new Oci.OspGateway.GetInvoiceArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             InternalInvoiceId = oci_osp_gateway_invoice.Test_invoice.Id,
-        ///             OspHomeRegion = @var.Invoice_osp_home_region,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         InternalInvoiceId = oci_osp_gateway_invoice.Test_invoice.Id,
+        ///         OspHomeRegion = @var.Invoice_osp_home_region,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.OspGateway
     }
 
 
-    public sealed class GetInvoiceArgs : Pulumi.InvokeArgs
+    public sealed class GetInvoiceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.OspGateway
         public GetInvoiceArgs()
         {
         }
+        public static new GetInvoiceArgs Empty => new GetInvoiceArgs();
     }
 
-    public sealed class GetInvoiceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInvoiceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.OspGateway
         public GetInvoiceInvokeArgs()
         {
         }
+        public static new GetInvoiceInvokeArgs Empty => new GetInvoiceInvokeArgs();
     }
 
 

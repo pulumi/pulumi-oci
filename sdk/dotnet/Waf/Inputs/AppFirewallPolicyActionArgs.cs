@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class AppFirewallPolicyActionArgs : Pulumi.ResourceArgs
+    public sealed class AppFirewallPolicyActionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Type of returned HTTP response body.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public AppFirewallPolicyActionArgs()
         {
         }
+        public static new AppFirewallPolicyActionArgs Empty => new AppFirewallPolicyActionArgs();
     }
 }

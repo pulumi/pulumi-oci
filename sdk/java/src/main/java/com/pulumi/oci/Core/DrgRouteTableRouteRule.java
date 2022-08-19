@@ -22,6 +22,37 @@ import javax.annotation.Nullable;
  * Adds one static route rule to the specified DRG route table.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.DrgRouteTableRouteRule;
+ * import com.pulumi.oci.Core.DrgRouteTableRouteRuleArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDrgRouteTableRouteRule = new DrgRouteTableRouteRule(&#34;testDrgRouteTableRouteRule&#34;, DrgRouteTableRouteRuleArgs.builder()        
+ *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+ *             .destination(var_.drg_route_table_route_rule_route_rules_destination())
+ *             .destinationType(var_.drg_route_table_route_rule_route_rules_destination_type())
+ *             .nextHopDrgAttachmentId(oci_core_drg_attachment.test_drg_attachment().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

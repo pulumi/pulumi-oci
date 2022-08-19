@@ -21,23 +21,21 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousExadataInfrastructures = Oci.Database.GetAutonomousExadataInfrastructures.Invoke(new()
         ///     {
-        ///         var testAutonomousExadataInfrastructures = Output.Create(Oci.Database.GetAutonomousExadataInfrastructures.InvokeAsync(new Oci.Database.GetAutonomousExadataInfrastructuresArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Autonomous_exadata_infrastructure_availability_domain,
-        ///             DisplayName = @var.Autonomous_exadata_infrastructure_display_name,
-        ///             State = @var.Autonomous_exadata_infrastructure_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Autonomous_exadata_infrastructure_availability_domain,
+        ///         DisplayName = @var.Autonomous_exadata_infrastructure_display_name,
+        ///         State = @var.Autonomous_exadata_infrastructure_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,23 +53,21 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousExadataInfrastructures = Oci.Database.GetAutonomousExadataInfrastructures.Invoke(new()
         ///     {
-        ///         var testAutonomousExadataInfrastructures = Output.Create(Oci.Database.GetAutonomousExadataInfrastructures.InvokeAsync(new Oci.Database.GetAutonomousExadataInfrastructuresArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Autonomous_exadata_infrastructure_availability_domain,
-        ///             DisplayName = @var.Autonomous_exadata_infrastructure_display_name,
-        ///             State = @var.Autonomous_exadata_infrastructure_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Autonomous_exadata_infrastructure_availability_domain,
+        ///         DisplayName = @var.Autonomous_exadata_infrastructure_display_name,
+        ///         State = @var.Autonomous_exadata_infrastructure_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousExadataInfrastructuresArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousExadataInfrastructuresArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given availability domain exactly.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousExadataInfrastructuresArgs()
         {
         }
+        public static new GetAutonomousExadataInfrastructuresArgs Empty => new GetAutonomousExadataInfrastructuresArgs();
     }
 
-    public sealed class GetAutonomousExadataInfrastructuresInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousExadataInfrastructuresInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given availability domain exactly.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousExadataInfrastructuresInvokeArgs()
         {
         }
+        public static new GetAutonomousExadataInfrastructuresInvokeArgs Empty => new GetAutonomousExadataInfrastructuresInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OneSubsription.Inputs
 {
 
-    public sealed class GetInvoicesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetInvoicesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Payment Term name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.OneSubsription.Inputs
         public GetInvoicesFilterInputArgs()
         {
         }
+        public static new GetInvoicesFilterInputArgs Empty => new GetInvoicesFilterInputArgs();
     }
 }

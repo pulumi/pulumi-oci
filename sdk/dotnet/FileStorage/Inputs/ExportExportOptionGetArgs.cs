@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FileStorage.Inputs
 {
 
-    public sealed class ExportExportOptionGetArgs : Pulumi.ResourceArgs
+    public sealed class ExportExportOptionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.FileStorage.Inputs
         public ExportExportOptionGetArgs()
         {
         }
+        public static new ExportExportOptionGetArgs Empty => new ExportExportOptionGetArgs();
     }
 }

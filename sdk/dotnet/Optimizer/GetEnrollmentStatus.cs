@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEnrollmentStatus = Oci.Optimizer.GetEnrollmentStatus.Invoke(new()
         ///     {
-        ///         var testEnrollmentStatus = Output.Create(Oci.Optimizer.GetEnrollmentStatus.InvokeAsync(new Oci.Optimizer.GetEnrollmentStatusArgs
-        ///         {
-        ///             EnrollmentStatusId = oci_optimizer_enrollment_status.Test_enrollment_status.Id,
-        ///         }));
-        ///     }
+        ///         EnrollmentStatusId = oci_optimizer_enrollment_status.Test_enrollment_status.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEnrollmentStatus = Oci.Optimizer.GetEnrollmentStatus.Invoke(new()
         ///     {
-        ///         var testEnrollmentStatus = Output.Create(Oci.Optimizer.GetEnrollmentStatus.InvokeAsync(new Oci.Optimizer.GetEnrollmentStatusArgs
-        ///         {
-        ///             EnrollmentStatusId = oci_optimizer_enrollment_status.Test_enrollment_status.Id,
-        ///         }));
-        ///     }
+        ///         EnrollmentStatusId = oci_optimizer_enrollment_status.Test_enrollment_status.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Optimizer
     }
 
 
-    public sealed class GetEnrollmentStatusArgs : Pulumi.InvokeArgs
+    public sealed class GetEnrollmentStatusArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID associated with the enrollment status.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Optimizer
         public GetEnrollmentStatusArgs()
         {
         }
+        public static new GetEnrollmentStatusArgs Empty => new GetEnrollmentStatusArgs();
     }
 
-    public sealed class GetEnrollmentStatusInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEnrollmentStatusInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID associated with the enrollment status.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Optimizer
         public GetEnrollmentStatusInvokeArgs()
         {
         }
+        public static new GetEnrollmentStatusInvokeArgs Empty => new GetEnrollmentStatusInvokeArgs();
     }
 
 

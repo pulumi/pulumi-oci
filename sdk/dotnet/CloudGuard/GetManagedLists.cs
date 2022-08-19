@@ -35,26 +35,24 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedLists = Oci.CloudGuard.GetManagedLists.Invoke(new()
         ///     {
-        ///         var testManagedLists = Output.Create(Oci.CloudGuard.GetManagedLists.InvokeAsync(new Oci.CloudGuard.GetManagedListsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Managed_list_access_level,
-        ///             CompartmentIdInSubtree = @var.Managed_list_compartment_id_in_subtree,
-        ///             DisplayName = @var.Managed_list_display_name,
-        ///             ListType = @var.Managed_list_list_type,
-        ///             ResourceMetadataOnly = @var.Managed_list_resource_metadata_only,
-        ///             State = @var.Managed_list_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Managed_list_access_level,
+        ///         CompartmentIdInSubtree = @var.Managed_list_compartment_id_in_subtree,
+        ///         DisplayName = @var.Managed_list_display_name,
+        ///         ListType = @var.Managed_list_list_type,
+        ///         ResourceMetadataOnly = @var.Managed_list_resource_metadata_only,
+        ///         State = @var.Managed_list_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -86,26 +84,24 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedLists = Oci.CloudGuard.GetManagedLists.Invoke(new()
         ///     {
-        ///         var testManagedLists = Output.Create(Oci.CloudGuard.GetManagedLists.InvokeAsync(new Oci.CloudGuard.GetManagedListsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Managed_list_access_level,
-        ///             CompartmentIdInSubtree = @var.Managed_list_compartment_id_in_subtree,
-        ///             DisplayName = @var.Managed_list_display_name,
-        ///             ListType = @var.Managed_list_list_type,
-        ///             ResourceMetadataOnly = @var.Managed_list_resource_metadata_only,
-        ///             State = @var.Managed_list_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Managed_list_access_level,
+        ///         CompartmentIdInSubtree = @var.Managed_list_compartment_id_in_subtree,
+        ///         DisplayName = @var.Managed_list_display_name,
+        ///         ListType = @var.Managed_list_list_type,
+        ///         ResourceMetadataOnly = @var.Managed_list_resource_metadata_only,
+        ///         State = @var.Managed_list_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -115,7 +111,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetManagedListsArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedListsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
@@ -170,9 +166,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetManagedListsArgs()
         {
         }
+        public static new GetManagedListsArgs Empty => new GetManagedListsArgs();
     }
 
-    public sealed class GetManagedListsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedListsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
@@ -227,6 +224,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetManagedListsInvokeArgs()
         {
         }
+        public static new GetManagedListsInvokeArgs Empty => new GetManagedListsInvokeArgs();
     }
 
 

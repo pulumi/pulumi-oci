@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class VirtualDeploymentListenerArgs : Pulumi.ResourceArgs
+    public sealed class VirtualDeploymentListenerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Port in which virtual deployment is running.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public VirtualDeploymentListenerArgs()
         {
         }
+        public static new VirtualDeploymentListenerArgs Empty => new VirtualDeploymentListenerArgs();
     }
 }

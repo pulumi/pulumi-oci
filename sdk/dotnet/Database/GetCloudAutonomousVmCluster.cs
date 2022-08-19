@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCloudAutonomousVmCluster = Oci.Database.GetCloudAutonomousVmCluster.Invoke(new()
         ///     {
-        ///         var testCloudAutonomousVmCluster = Output.Create(Oci.Database.GetCloudAutonomousVmCluster.InvokeAsync(new Oci.Database.GetCloudAutonomousVmClusterArgs
-        ///         {
-        ///             CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
-        ///         }));
-        ///     }
+        ///         CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCloudAutonomousVmCluster = Oci.Database.GetCloudAutonomousVmCluster.Invoke(new()
         ///     {
-        ///         var testCloudAutonomousVmCluster = Output.Create(Oci.Database.GetCloudAutonomousVmCluster.InvokeAsync(new Oci.Database.GetCloudAutonomousVmClusterArgs
-        ///         {
-        ///             CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
-        ///         }));
-        ///     }
+        ///         CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetCloudAutonomousVmClusterArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudAutonomousVmClusterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Database
         public GetCloudAutonomousVmClusterArgs()
         {
         }
+        public static new GetCloudAutonomousVmClusterArgs Empty => new GetCloudAutonomousVmClusterArgs();
     }
 
-    public sealed class GetCloudAutonomousVmClusterInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudAutonomousVmClusterInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Database
         public GetCloudAutonomousVmClusterInvokeArgs()
         {
         }
+        public static new GetCloudAutonomousVmClusterInvokeArgs Empty => new GetCloudAutonomousVmClusterInvokeArgs();
     }
 
 

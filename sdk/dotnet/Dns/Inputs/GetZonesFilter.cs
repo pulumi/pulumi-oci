@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class GetZonesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetZonesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public GetZonesFilterArgs()
         {
         }
+        public static new GetZonesFilterArgs Empty => new GetZonesFilterArgs();
     }
 }

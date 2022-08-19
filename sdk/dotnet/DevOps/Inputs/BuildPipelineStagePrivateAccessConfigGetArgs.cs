@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildPipelineStagePrivateAccessConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class BuildPipelineStagePrivateAccessConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Network channel type.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildPipelineStagePrivateAccessConfigGetArgs()
         {
         }
+        public static new BuildPipelineStagePrivateAccessConfigGetArgs Empty => new BuildPipelineStagePrivateAccessConfigGetArgs();
     }
 }

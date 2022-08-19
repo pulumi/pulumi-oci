@@ -29,6 +29,87 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.CertificatesManagement.Certificate;
+ * import com.pulumi.oci.CertificatesManagement.CertificateArgs;
+ * import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigArgs;
+ * import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigSubjectArgs;
+ * import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigValidityArgs;
+ * import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateRuleArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCertificate = new Certificate(&#34;testCertificate&#34;, CertificateArgs.builder()        
+ *             .certificateConfig(CertificateCertificateConfigArgs.builder()
+ *                 .configType(var_.certificate_certificate_config_config_type())
+ *                 .certChainPem(var_.certificate_certificate_config_cert_chain_pem())
+ *                 .certificatePem(var_.certificate_certificate_config_certificate_pem())
+ *                 .certificateProfileType(var_.certificate_certificate_config_certificate_profile_type())
+ *                 .csrPem(var_.certificate_certificate_config_csr_pem())
+ *                 .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+ *                 .keyAlgorithm(var_.certificate_certificate_config_key_algorithm())
+ *                 .privateKeyPem(var_.certificate_certificate_config_private_key_pem())
+ *                 .privateKeyPemPassphrase(var_.certificate_certificate_config_private_key_pem_passphrase())
+ *                 .signatureAlgorithm(var_.certificate_certificate_config_signature_algorithm())
+ *                 .subject(CertificateCertificateConfigSubjectArgs.builder()
+ *                     .commonName(var_.certificate_certificate_config_subject_common_name())
+ *                     .country(var_.certificate_certificate_config_subject_country())
+ *                     .distinguishedNameQualifier(var_.certificate_certificate_config_subject_distinguished_name_qualifier())
+ *                     .domainComponent(var_.certificate_certificate_config_subject_domain_component())
+ *                     .generationQualifier(var_.certificate_certificate_config_subject_generation_qualifier())
+ *                     .givenName(var_.certificate_certificate_config_subject_given_name())
+ *                     .initials(var_.certificate_certificate_config_subject_initials())
+ *                     .localityName(var_.certificate_certificate_config_subject_locality_name())
+ *                     .organization(var_.certificate_certificate_config_subject_organization())
+ *                     .organizationalUnit(var_.certificate_certificate_config_subject_organizational_unit())
+ *                     .pseudonym(var_.certificate_certificate_config_subject_pseudonym())
+ *                     .serialNumber(var_.certificate_certificate_config_subject_serial_number())
+ *                     .stateOrProvinceName(var_.certificate_certificate_config_subject_state_or_province_name())
+ *                     .street(var_.certificate_certificate_config_subject_street())
+ *                     .surname(var_.certificate_certificate_config_subject_surname())
+ *                     .title(var_.certificate_certificate_config_subject_title())
+ *                     .userId(oci_identity_user.test_user().id())
+ *                     .build())
+ *                 .subjectAlternativeNames(CertificateCertificateConfigSubjectAlternativeNameArgs.builder()
+ *                     .type(var_.certificate_certificate_config_subject_alternative_names_type())
+ *                     .value(var_.certificate_certificate_config_subject_alternative_names_value())
+ *                     .build())
+ *                 .validity(CertificateCertificateConfigValidityArgs.builder()
+ *                     .timeOfValidityNotAfter(var_.certificate_certificate_config_validity_time_of_validity_not_after())
+ *                     .timeOfValidityNotBefore(var_.certificate_certificate_config_validity_time_of_validity_not_before())
+ *                     .build())
+ *                 .versionName(var_.certificate_certificate_config_version_name())
+ *                 .build())
+ *             .compartmentId(var_.compartment_id())
+ *             .certificateRules(CertificateCertificateRuleArgs.builder()
+ *                 .advanceRenewalPeriod(var_.certificate_certificate_rules_advance_renewal_period())
+ *                 .renewalInterval(var_.certificate_certificate_rules_renewal_interval())
+ *                 .ruleType(var_.certificate_certificate_rules_rule_type())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.certificate_description())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * 
  * ## Import
  * 
  * Certificates can be imported using the `id`, e.g.

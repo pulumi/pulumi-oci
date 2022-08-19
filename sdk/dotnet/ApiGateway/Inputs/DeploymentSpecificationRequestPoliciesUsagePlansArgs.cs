@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRequestPoliciesUsagePlansArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRequestPoliciesUsagePlansArgs : global::Pulumi.ResourceArgs
     {
         [Input("tokenLocations", required: true)]
         private InputList<string>? _tokenLocations;
@@ -31,5 +31,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRequestPoliciesUsagePlansArgs()
         {
         }
+        public static new DeploymentSpecificationRequestPoliciesUsagePlansArgs Empty => new DeploymentSpecificationRequestPoliciesUsagePlansArgs();
     }
 }

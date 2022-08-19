@@ -21,6 +21,42 @@ import javax.annotation.Nullable;
  * Adds one route distribution statement to the specified route distribution.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.DrgRouteDistributionStatement;
+ * import com.pulumi.oci.Core.DrgRouteDistributionStatementArgs;
+ * import com.pulumi.oci.Core.inputs.DrgRouteDistributionStatementMatchCriteriaArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDrgRouteDistributionStatement = new DrgRouteDistributionStatement(&#34;testDrgRouteDistributionStatement&#34;, DrgRouteDistributionStatementArgs.builder()        
+ *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+ *             .action(var_.drg_route_distribution_statement_statements_action())
+ *             .matchCriteria(DrgRouteDistributionStatementMatchCriteriaArgs.builder()
+ *                 .matchType(var_.drg_route_distribution_statement_statements_match_criteria_match_type())
+ *                 .attachmentType(var_.drg_route_distribution_statement_statements_match_criteria_attachment_type())
+ *                 .drgAttachmentId(oci_core_drg_attachment.test_drg_attachment().id())
+ *                 .build())
+ *             .priority(var_.drg_route_distribution_statement_statements_priority())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

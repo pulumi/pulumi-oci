@@ -17,71 +17,69 @@ namespace Pulumi.Oci.StackMonitoring
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMonitoredResource = new Oci.StackMonitoring.MonitoredResource("testMonitoredResource", new()
     ///     {
-    ///         var testMonitoredResource = new Oci.StackMonitoring.MonitoredResource("testMonitoredResource", new Oci.StackMonitoring.MonitoredResourceArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Type = @var.Monitored_resource_type,
+    ///         Aliases = new Oci.StackMonitoring.Inputs.MonitoredResourceAliasesArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Type = @var.Monitored_resource_type,
-    ///             Aliases = new Oci.StackMonitoring.Inputs.MonitoredResourceAliasesArgs
+    ///             Credential = new Oci.StackMonitoring.Inputs.MonitoredResourceAliasesCredentialArgs
     ///             {
-    ///                 Credential = new Oci.StackMonitoring.Inputs.MonitoredResourceAliasesCredentialArgs
-    ///                 {
-    ///                     Name = @var.Monitored_resource_aliases_credential_name,
-    ///                     Service = @var.Monitored_resource_aliases_credential_service,
-    ///                     Source = @var.Monitored_resource_aliases_credential_source,
-    ///                 },
-    ///                 Name = @var.Monitored_resource_aliases_name,
-    ///                 Source = @var.Monitored_resource_aliases_source,
+    ///                 Name = @var.Monitored_resource_aliases_credential_name,
+    ///                 Service = @var.Monitored_resource_aliases_credential_service,
+    ///                 Source = @var.Monitored_resource_aliases_credential_source,
     ///             },
-    ///             Credentials = new Oci.StackMonitoring.Inputs.MonitoredResourceCredentialsArgs
+    ///             Name = @var.Monitored_resource_aliases_name,
+    ///             Source = @var.Monitored_resource_aliases_source,
+    ///         },
+    ///         Credentials = new Oci.StackMonitoring.Inputs.MonitoredResourceCredentialsArgs
+    ///         {
+    ///             CredentialType = @var.Monitored_resource_credentials_credential_type,
+    ///             Description = @var.Monitored_resource_credentials_description,
+    ///             KeyId = @var.Monitored_resource_credentials_key_id,
+    ///             Name = @var.Monitored_resource_credentials_name,
+    ///             Properties = new[]
     ///             {
-    ///                 CredentialType = @var.Monitored_resource_credentials_credential_type,
-    ///                 Description = @var.Monitored_resource_credentials_description,
-    ///                 KeyId = @var.Monitored_resource_credentials_key_id,
-    ///                 Name = @var.Monitored_resource_credentials_name,
-    ///                 Properties = 
+    ///                 new Oci.StackMonitoring.Inputs.MonitoredResourceCredentialsPropertyArgs
     ///                 {
-    ///                     new Oci.StackMonitoring.Inputs.MonitoredResourceCredentialsPropertyArgs
-    ///                     {
-    ///                         Name = @var.Monitored_resource_credentials_properties_name,
-    ///                         Value = @var.Monitored_resource_credentials_properties_value,
-    ///                     },
-    ///                 },
-    ///                 Source = @var.Monitored_resource_credentials_source,
-    ///                 Type = @var.Monitored_resource_credentials_type,
-    ///             },
-    ///             DatabaseConnectionDetails = new Oci.StackMonitoring.Inputs.MonitoredResourceDatabaseConnectionDetailsArgs
-    ///             {
-    ///                 Port = @var.Monitored_resource_database_connection_details_port,
-    ///                 Protocol = @var.Monitored_resource_database_connection_details_protocol,
-    ///                 ServiceName = @var.Monitored_resource_database_service_name,
-    ///                 ConnectorId = @var.Monitored_resource_database_connector_id,
-    ///                 DbId = @var.Monitored_resource_database_id,
-    ///                 DbUniqueName = @var.Monitored_resource_database_connection_details_db_unique_name,
-    ///             },
-    ///             DisplayName = @var.Monitored_resource_display_name,
-    ///             ExternalResourceId = @var.Monitored_resource_external_resource_id,
-    ///             HostName = @var.Monitored_resource_host_name,
-    ///             ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
-    ///             Properties = 
-    ///             {
-    ///                 new Oci.StackMonitoring.Inputs.MonitoredResourcePropertyArgs
-    ///                 {
-    ///                     Name = @var.Monitored_resource_properties_name,
-    ///                     Value = @var.Monitored_resource_properties_value,
+    ///                     Name = @var.Monitored_resource_credentials_properties_name,
+    ///                     Value = @var.Monitored_resource_credentials_properties_value,
     ///                 },
     ///             },
-    ///             ResourceTimeZone = @var.Monitored_resource_resource_time_zone,
-    ///         });
-    ///     }
+    ///             Source = @var.Monitored_resource_credentials_source,
+    ///             Type = @var.Monitored_resource_credentials_type,
+    ///         },
+    ///         DatabaseConnectionDetails = new Oci.StackMonitoring.Inputs.MonitoredResourceDatabaseConnectionDetailsArgs
+    ///         {
+    ///             Port = @var.Monitored_resource_database_connection_details_port,
+    ///             Protocol = @var.Monitored_resource_database_connection_details_protocol,
+    ///             ServiceName = @var.Monitored_resource_database_service_name,
+    ///             ConnectorId = @var.Monitored_resource_database_connector_id,
+    ///             DbId = @var.Monitored_resource_database_id,
+    ///             DbUniqueName = @var.Monitored_resource_database_connection_details_db_unique_name,
+    ///         },
+    ///         DisplayName = @var.Monitored_resource_display_name,
+    ///         ExternalResourceId = @var.Monitored_resource_external_resource_id,
+    ///         HostName = @var.Monitored_resource_host_name,
+    ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+    ///         Properties = new[]
+    ///         {
+    ///             new Oci.StackMonitoring.Inputs.MonitoredResourcePropertyArgs
+    ///             {
+    ///                 Name = @var.Monitored_resource_properties_name,
+    ///                 Value = @var.Monitored_resource_properties_value,
+    ///             },
+    ///         },
+    ///         ResourceTimeZone = @var.Monitored_resource_resource_time_zone,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -93,7 +91,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// ```
     /// </summary>
     [OciResourceType("oci:StackMonitoring/monitoredResource:MonitoredResource")]
-    public partial class MonitoredResource : Pulumi.CustomResource
+    public partial class MonitoredResource : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Monitored Resource Alias Credential Details
@@ -253,7 +251,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
     }
 
-    public sealed class MonitoredResourceArgs : Pulumi.ResourceArgs
+    public sealed class MonitoredResourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Monitored Resource Alias Credential Details
@@ -336,9 +334,10 @@ namespace Pulumi.Oci.StackMonitoring
         public MonitoredResourceArgs()
         {
         }
+        public static new MonitoredResourceArgs Empty => new MonitoredResourceArgs();
     }
 
-    public sealed class MonitoredResourceState : Pulumi.ResourceArgs
+    public sealed class MonitoredResourceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Monitored Resource Alias Credential Details
@@ -481,5 +480,6 @@ namespace Pulumi.Oci.StackMonitoring
         public MonitoredResourceState()
         {
         }
+        public static new MonitoredResourceState Empty => new MonitoredResourceState();
     }
 }

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTenancy = Oci.Identity.GetTenancy.Invoke(new()
         ///     {
-        ///         var testTenancy = Output.Create(Oci.Identity.GetTenancy.InvokeAsync(new Oci.Identity.GetTenancyArgs
-        ///         {
-        ///             TenancyId = @var.Tenancy_ocid,
-        ///         }));
-        ///     }
+        ///         TenancyId = @var.Tenancy_ocid,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTenancy = Oci.Identity.GetTenancy.Invoke(new()
         ///     {
-        ///         var testTenancy = Output.Create(Oci.Identity.GetTenancy.InvokeAsync(new Oci.Identity.GetTenancyArgs
-        ///         {
-        ///             TenancyId = @var.Tenancy_ocid,
-        ///         }));
-        ///     }
+        ///         TenancyId = @var.Tenancy_ocid,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetTenancyArgs : Pulumi.InvokeArgs
+    public sealed class GetTenancyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the tenancy.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Identity
         public GetTenancyArgs()
         {
         }
+        public static new GetTenancyArgs Empty => new GetTenancyArgs();
     }
 
-    public sealed class GetTenancyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTenancyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the tenancy.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Identity
         public GetTenancyInvokeArgs()
         {
         }
+        public static new GetTenancyInvokeArgs Empty => new GetTenancyInvokeArgs();
     }
 
 

@@ -23,6 +23,44 @@ import javax.annotation.Nullable;
  * create database software image in the specified compartment.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.DatabaseSoftwareImage;
+ * import com.pulumi.oci.Database.DatabaseSoftwareImageArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDatabaseSoftwareImage = new DatabaseSoftwareImage(&#34;testDatabaseSoftwareImage&#34;, DatabaseSoftwareImageArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.database_software_image_display_name())
+ *             .databaseSoftwareImageOneOffPatches(var_.database_software_image_database_software_image_one_off_patches())
+ *             .databaseVersion(var_.database_software_image_database_version())
+ *             .definedTags(var_.database_software_image_defined_tags())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .imageShapeFamily(var_.database_software_image_image_shape_family())
+ *             .imageType(var_.database_software_image_image_type())
+ *             .lsInventory(var_.database_software_image_ls_inventory())
+ *             .patchSet(var_.database_software_image_patch_set())
+ *             .sourceDbHomeId(oci_database_db_home.test_db_home().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

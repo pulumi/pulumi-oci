@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class GetFirewallsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetFirewallsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public GetFirewallsFilterInputArgs()
         {
         }
+        public static new GetFirewallsFilterInputArgs Empty => new GetFirewallsFilterInputArgs();
     }
 }

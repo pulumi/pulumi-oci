@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DataLabellingService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatasets = Oci.DataLabellingService.GetDatasets.Invoke(new()
         ///     {
-        ///         var testDatasets = Output.Create(Oci.DataLabellingService.GetDatasets.InvokeAsync(new Oci.DataLabellingService.GetDatasetsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AnnotationFormat = @var.Dataset_annotation_format,
-        ///             DisplayName = @var.Dataset_display_name,
-        ///             Id = @var.Dataset_id,
-        ///             State = @var.Dataset_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AnnotationFormat = @var.Dataset_annotation_format,
+        ///         DisplayName = @var.Dataset_display_name,
+        ///         Id = @var.Dataset_id,
+        ///         State = @var.Dataset_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DataLabellingService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatasets = Oci.DataLabellingService.GetDatasets.Invoke(new()
         ///     {
-        ///         var testDatasets = Output.Create(Oci.DataLabellingService.GetDatasets.InvokeAsync(new Oci.DataLabellingService.GetDatasetsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AnnotationFormat = @var.Dataset_annotation_format,
-        ///             DisplayName = @var.Dataset_display_name,
-        ///             Id = @var.Dataset_id,
-        ///             State = @var.Dataset_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AnnotationFormat = @var.Dataset_annotation_format,
+        ///         DisplayName = @var.Dataset_display_name,
+        ///         Id = @var.Dataset_id,
+        ///         State = @var.Dataset_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DataLabellingService
     }
 
 
-    public sealed class GetDatasetsArgs : Pulumi.InvokeArgs
+    public sealed class GetDatasetsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire annotation format given.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.DataLabellingService
         public GetDatasetsArgs()
         {
         }
+        public static new GetDatasetsArgs Empty => new GetDatasetsArgs();
     }
 
-    public sealed class GetDatasetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatasetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire annotation format given.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.DataLabellingService
         public GetDatasetsInvokeArgs()
         {
         }
+        public static new GetDatasetsInvokeArgs Empty => new GetDatasetsInvokeArgs();
     }
 
 

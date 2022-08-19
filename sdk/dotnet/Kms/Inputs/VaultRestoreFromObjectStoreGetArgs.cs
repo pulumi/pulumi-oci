@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Kms.Inputs
 {
 
-    public sealed class VaultRestoreFromObjectStoreGetArgs : Pulumi.ResourceArgs
+    public sealed class VaultRestoreFromObjectStoreGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the bucket where vault was backed up
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Kms.Inputs
         public VaultRestoreFromObjectStoreGetArgs()
         {
         }
+        public static new VaultRestoreFromObjectStoreGetArgs Empty => new VaultRestoreFromObjectStoreGetArgs();
     }
 }

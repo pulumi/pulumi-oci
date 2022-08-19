@@ -23,23 +23,21 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExternalPluggableDatabases = Oci.Database.GetExternalPluggableDatabases.Invoke(new()
         ///     {
-        ///         var testExternalPluggableDatabases = Output.Create(Oci.Database.GetExternalPluggableDatabases.InvokeAsync(new Oci.Database.GetExternalPluggableDatabasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.External_pluggable_database_display_name,
-        ///             ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
-        ///             State = @var.External_pluggable_database_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.External_pluggable_database_display_name,
+        ///         ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
+        ///         State = @var.External_pluggable_database_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,23 +57,21 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExternalPluggableDatabases = Oci.Database.GetExternalPluggableDatabases.Invoke(new()
         ///     {
-        ///         var testExternalPluggableDatabases = Output.Create(Oci.Database.GetExternalPluggableDatabases.InvokeAsync(new Oci.Database.GetExternalPluggableDatabasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.External_pluggable_database_display_name,
-        ///             ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
-        ///             State = @var.External_pluggable_database_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.External_pluggable_database_display_name,
+        ///         ExternalContainerDatabaseId = oci_database_external_container_database.Test_external_container_database.Id,
+        ///         State = @var.External_pluggable_database_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetExternalPluggableDatabasesArgs : Pulumi.InvokeArgs
+    public sealed class GetExternalPluggableDatabasesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -122,9 +118,10 @@ namespace Pulumi.Oci.Database
         public GetExternalPluggableDatabasesArgs()
         {
         }
+        public static new GetExternalPluggableDatabasesArgs Empty => new GetExternalPluggableDatabasesArgs();
     }
 
-    public sealed class GetExternalPluggableDatabasesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetExternalPluggableDatabasesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -161,6 +158,7 @@ namespace Pulumi.Oci.Database
         public GetExternalPluggableDatabasesInvokeArgs()
         {
         }
+        public static new GetExternalPluggableDatabasesInvokeArgs Empty => new GetExternalPluggableDatabasesInvokeArgs();
     }
 
 

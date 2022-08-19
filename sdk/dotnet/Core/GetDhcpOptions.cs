@@ -25,23 +25,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDhcpOptions = Oci.Core.GetDhcpOptions.Invoke(new()
         ///     {
-        ///         var testDhcpOptions = Output.Create(Oci.Core.GetDhcpOptions.InvokeAsync(new Oci.Core.GetDhcpOptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Dhcp_options_display_name,
-        ///             State = @var.Dhcp_options_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Dhcp_options_display_name,
+        ///         State = @var.Dhcp_options_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,23 +61,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDhcpOptions = Oci.Core.GetDhcpOptions.Invoke(new()
         ///     {
-        ///         var testDhcpOptions = Output.Create(Oci.Core.GetDhcpOptions.InvokeAsync(new Oci.Core.GetDhcpOptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Dhcp_options_display_name,
-        ///             State = @var.Dhcp_options_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Dhcp_options_display_name,
+        ///         State = @var.Dhcp_options_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetDhcpOptionsArgs : Pulumi.InvokeArgs
+    public sealed class GetDhcpOptionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.Core
         public GetDhcpOptionsArgs()
         {
         }
+        public static new GetDhcpOptionsArgs Empty => new GetDhcpOptionsArgs();
     }
 
-    public sealed class GetDhcpOptionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDhcpOptionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -165,6 +162,7 @@ namespace Pulumi.Oci.Core
         public GetDhcpOptionsInvokeArgs()
         {
         }
+        public static new GetDhcpOptionsInvokeArgs Empty => new GetDhcpOptionsInvokeArgs();
     }
 
 

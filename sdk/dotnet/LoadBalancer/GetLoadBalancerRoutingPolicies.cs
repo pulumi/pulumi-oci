@@ -21,20 +21,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLoadBalancerRoutingPolicies = Oci.LoadBalancer.GetLoadBalancerRoutingPolicies.Invoke(new()
         ///     {
-        ///         var testLoadBalancerRoutingPolicies = Output.Create(Oci.LoadBalancer.GetLoadBalancerRoutingPolicies.InvokeAsync(new Oci.LoadBalancer.GetLoadBalancerRoutingPoliciesArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLoadBalancerRoutingPolicies = Oci.LoadBalancer.GetLoadBalancerRoutingPolicies.Invoke(new()
         ///     {
-        ///         var testLoadBalancerRoutingPolicies = Output.Create(Oci.LoadBalancer.GetLoadBalancerRoutingPolicies.InvokeAsync(new Oci.LoadBalancer.GetLoadBalancerRoutingPoliciesArgs
-        ///         {
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetLoadBalancerRoutingPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetLoadBalancerRoutingPoliciesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetLoadBalancerRoutingPoliciesFilterArgs>? _filters;
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetLoadBalancerRoutingPoliciesArgs()
         {
         }
+        public static new GetLoadBalancerRoutingPoliciesArgs Empty => new GetLoadBalancerRoutingPoliciesArgs();
     }
 
-    public sealed class GetLoadBalancerRoutingPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLoadBalancerRoutingPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetLoadBalancerRoutingPoliciesFilterInputArgs>? _filters;
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetLoadBalancerRoutingPoliciesInvokeArgs()
         {
         }
+        public static new GetLoadBalancerRoutingPoliciesInvokeArgs Empty => new GetLoadBalancerRoutingPoliciesInvokeArgs();
     }
 
 

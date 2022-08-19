@@ -36,64 +36,62 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMaskingPoliciesMaskingColumn = new Oci.DataSafe.MaskingPoliciesMaskingColumn("testMaskingPoliciesMaskingColumn", new()
     ///     {
-    ///         var testMaskingPoliciesMaskingColumn = new Oci.DataSafe.MaskingPoliciesMaskingColumn("testMaskingPoliciesMaskingColumn", new Oci.DataSafe.MaskingPoliciesMaskingColumnArgs
+    ///         ColumnName = @var.Masking_policies_masking_column_column_name,
+    ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
+    ///         Object = @var.Masking_policies_masking_column_object,
+    ///         SchemaName = @var.Masking_policies_masking_column_schema_name,
+    ///         IsMaskingEnabled = @var.Masking_policies_masking_column_is_masking_enabled,
+    ///         MaskingColumnGroup = @var.Masking_policies_masking_column_masking_column_group,
+    ///         MaskingFormats = new[]
     ///         {
-    ///             ColumnName = @var.Masking_policies_masking_column_column_name,
-    ///             MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-    ///             Object = @var.Masking_policies_masking_column_object,
-    ///             SchemaName = @var.Masking_policies_masking_column_schema_name,
-    ///             IsMaskingEnabled = @var.Masking_policies_masking_column_is_masking_enabled,
-    ///             MaskingColumnGroup = @var.Masking_policies_masking_column_masking_column_group,
-    ///             MaskingFormats = 
+    ///             new Oci.DataSafe.Inputs.MaskingPoliciesMaskingColumnMaskingFormatArgs
     ///             {
-    ///                 new Oci.DataSafe.Inputs.MaskingPoliciesMaskingColumnMaskingFormatArgs
+    ///                 FormatEntries = new[]
     ///                 {
-    ///                     FormatEntries = 
+    ///                     new Oci.DataSafe.Inputs.MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs
     ///                     {
-    ///                         new Oci.DataSafe.Inputs.MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs
-    ///                         {
-    ///                             Type = @var.Masking_policies_masking_column_masking_formats_format_entries_type,
-    ///                             ColumnName = @var.Masking_policies_masking_column_masking_formats_format_entries_column_name,
-    ///                             Description = @var.Masking_policies_masking_column_masking_formats_format_entries_description,
-    ///                             EndDate = @var.Masking_policies_masking_column_masking_formats_format_entries_end_date,
-    ///                             EndLength = @var.Masking_policies_masking_column_masking_formats_format_entries_end_length,
-    ///                             EndValue = @var.Masking_policies_masking_column_masking_formats_format_entries_end_value,
-    ///                             FixedNumber = @var.Masking_policies_masking_column_masking_formats_format_entries_fixed_number,
-    ///                             FixedString = @var.Masking_policies_masking_column_masking_formats_format_entries_fixed_string,
-    ///                             GroupingColumns = @var.Masking_policies_masking_column_masking_formats_format_entries_grouping_columns,
-    ///                             Length = @var.Masking_policies_masking_column_masking_formats_format_entries_length,
-    ///                             LibraryMaskingFormatId = oci_data_safe_library_masking_format.Test_library_masking_format.Id,
-    ///                             PostProcessingFunction = @var.Masking_policies_masking_column_masking_formats_format_entries_post_processing_function,
-    ///                             RandomLists = @var.Masking_policies_masking_column_masking_formats_format_entries_random_list,
-    ///                             RegularExpression = @var.Masking_policies_masking_column_masking_formats_format_entries_regular_expression,
-    ///                             ReplaceWith = @var.Masking_policies_masking_column_masking_formats_format_entries_replace_with,
-    ///                             SchemaName = @var.Masking_policies_masking_column_masking_formats_format_entries_schema_name,
-    ///                             SqlExpression = @var.Masking_policies_masking_column_masking_formats_format_entries_sql_expression,
-    ///                             StartDate = @var.Masking_policies_masking_column_masking_formats_format_entries_start_date,
-    ///                             StartLength = @var.Masking_policies_masking_column_masking_formats_format_entries_start_length,
-    ///                             StartPosition = @var.Masking_policies_masking_column_masking_formats_format_entries_start_position,
-    ///                             StartValue = @var.Masking_policies_masking_column_masking_formats_format_entries_start_value,
-    ///                             TableName = oci_nosql_table.Test_table.Name,
-    ///                             UserDefinedFunction = @var.Masking_policies_masking_column_masking_formats_format_entries_user_defined_function,
-    ///                         },
+    ///                         Type = @var.Masking_policies_masking_column_masking_formats_format_entries_type,
+    ///                         ColumnName = @var.Masking_policies_masking_column_masking_formats_format_entries_column_name,
+    ///                         Description = @var.Masking_policies_masking_column_masking_formats_format_entries_description,
+    ///                         EndDate = @var.Masking_policies_masking_column_masking_formats_format_entries_end_date,
+    ///                         EndLength = @var.Masking_policies_masking_column_masking_formats_format_entries_end_length,
+    ///                         EndValue = @var.Masking_policies_masking_column_masking_formats_format_entries_end_value,
+    ///                         FixedNumber = @var.Masking_policies_masking_column_masking_formats_format_entries_fixed_number,
+    ///                         FixedString = @var.Masking_policies_masking_column_masking_formats_format_entries_fixed_string,
+    ///                         GroupingColumns = @var.Masking_policies_masking_column_masking_formats_format_entries_grouping_columns,
+    ///                         Length = @var.Masking_policies_masking_column_masking_formats_format_entries_length,
+    ///                         LibraryMaskingFormatId = oci_data_safe_library_masking_format.Test_library_masking_format.Id,
+    ///                         PostProcessingFunction = @var.Masking_policies_masking_column_masking_formats_format_entries_post_processing_function,
+    ///                         RandomLists = @var.Masking_policies_masking_column_masking_formats_format_entries_random_list,
+    ///                         RegularExpression = @var.Masking_policies_masking_column_masking_formats_format_entries_regular_expression,
+    ///                         ReplaceWith = @var.Masking_policies_masking_column_masking_formats_format_entries_replace_with,
+    ///                         SchemaName = @var.Masking_policies_masking_column_masking_formats_format_entries_schema_name,
+    ///                         SqlExpression = @var.Masking_policies_masking_column_masking_formats_format_entries_sql_expression,
+    ///                         StartDate = @var.Masking_policies_masking_column_masking_formats_format_entries_start_date,
+    ///                         StartLength = @var.Masking_policies_masking_column_masking_formats_format_entries_start_length,
+    ///                         StartPosition = @var.Masking_policies_masking_column_masking_formats_format_entries_start_position,
+    ///                         StartValue = @var.Masking_policies_masking_column_masking_formats_format_entries_start_value,
+    ///                         TableName = oci_nosql_table.Test_table.Name,
+    ///                         UserDefinedFunction = @var.Masking_policies_masking_column_masking_formats_format_entries_user_defined_function,
     ///                     },
-    ///                     Condition = @var.Masking_policies_masking_column_masking_formats_condition,
-    ///                     Description = @var.Masking_policies_masking_column_masking_formats_description,
     ///                 },
+    ///                 Condition = @var.Masking_policies_masking_column_masking_formats_condition,
+    ///                 Description = @var.Masking_policies_masking_column_masking_formats_description,
     ///             },
-    ///             ObjectType = @var.Masking_policies_masking_column_object_type,
-    ///             SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-    ///         });
-    ///     }
+    ///         },
+    ///         ObjectType = @var.Masking_policies_masking_column_object_type,
+    ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -105,7 +103,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn")]
-    public partial class MaskingPoliciesMaskingColumn : Pulumi.CustomResource
+    public partial class MaskingPoliciesMaskingColumn : global::Pulumi.CustomResource
     {
         /// <summary>
         /// An array of child columns that are in referential relationship with the masking column.
@@ -247,7 +245,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class MaskingPoliciesMaskingColumnArgs : Pulumi.ResourceArgs
+    public sealed class MaskingPoliciesMaskingColumnArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The name of the substitution column.
@@ -312,9 +310,10 @@ namespace Pulumi.Oci.DataSafe
         public MaskingPoliciesMaskingColumnArgs()
         {
         }
+        public static new MaskingPoliciesMaskingColumnArgs Empty => new MaskingPoliciesMaskingColumnArgs();
     }
 
-    public sealed class MaskingPoliciesMaskingColumnState : Pulumi.ResourceArgs
+    public sealed class MaskingPoliciesMaskingColumnState : global::Pulumi.ResourceArgs
     {
         [Input("childColumns")]
         private InputList<string>? _childColumns;
@@ -427,5 +426,6 @@ namespace Pulumi.Oci.DataSafe
         public MaskingPoliciesMaskingColumnState()
         {
         }
+        public static new MaskingPoliciesMaskingColumnState Empty => new MaskingPoliciesMaskingColumnState();
     }
 }

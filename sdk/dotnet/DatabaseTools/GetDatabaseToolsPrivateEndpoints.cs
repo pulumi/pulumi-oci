@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseToolsPrivateEndpoints = Oci.DatabaseTools.GetDatabaseToolsPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testDatabaseToolsPrivateEndpoints = Output.Create(Oci.DatabaseTools.GetDatabaseToolsPrivateEndpoints.InvokeAsync(new Oci.DatabaseTools.GetDatabaseToolsPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Database_tools_private_endpoint_display_name,
-        ///             EndpointServiceId = oci_core_service.Test_service.Id,
-        ///             State = @var.Database_tools_private_endpoint_state,
-        ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Database_tools_private_endpoint_display_name,
+        ///         EndpointServiceId = oci_core_service.Test_service.Id,
+        ///         State = @var.Database_tools_private_endpoint_state,
+        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseToolsPrivateEndpoints = Oci.DatabaseTools.GetDatabaseToolsPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testDatabaseToolsPrivateEndpoints = Output.Create(Oci.DatabaseTools.GetDatabaseToolsPrivateEndpoints.InvokeAsync(new Oci.DatabaseTools.GetDatabaseToolsPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Database_tools_private_endpoint_display_name,
-        ///             EndpointServiceId = oci_core_service.Test_service.Id,
-        ///             State = @var.Database_tools_private_endpoint_state,
-        ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Database_tools_private_endpoint_display_name,
+        ///         EndpointServiceId = oci_core_service.Test_service.Id,
+        ///         State = @var.Database_tools_private_endpoint_state,
+        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DatabaseTools
     }
 
 
-    public sealed class GetDatabaseToolsPrivateEndpointsArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseToolsPrivateEndpointsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.DatabaseTools
         public GetDatabaseToolsPrivateEndpointsArgs()
         {
         }
+        public static new GetDatabaseToolsPrivateEndpointsArgs Empty => new GetDatabaseToolsPrivateEndpointsArgs();
     }
 
-    public sealed class GetDatabaseToolsPrivateEndpointsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseToolsPrivateEndpointsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.DatabaseTools
         public GetDatabaseToolsPrivateEndpointsInvokeArgs()
         {
         }
+        public static new GetDatabaseToolsPrivateEndpointsInvokeArgs Empty => new GetDatabaseToolsPrivateEndpointsInvokeArgs();
     }
 
 

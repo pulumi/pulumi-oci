@@ -33,8 +33,58 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * #### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
+     *             .opensearchClusterId(oci_opensearch_opensearch_cluster.test_opensearch_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOpensearchClusterResult> getOpensearchCluster(GetOpensearchClusterArgs args) {
@@ -50,8 +100,58 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * #### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
+     *             .opensearchClusterId(oci_opensearch_opensearch_cluster.test_opensearch_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOpensearchClusterResult> getOpensearchClusterPlain(GetOpensearchClusterPlainArgs args) {
@@ -67,8 +167,58 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * #### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
+     *             .opensearchClusterId(oci_opensearch_opensearch_cluster.test_opensearch_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOpensearchClusterResult> getOpensearchCluster(GetOpensearchClusterArgs args, InvokeOptions options) {
@@ -84,8 +234,58 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * #### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
+     *             .opensearchClusterId(oci_opensearch_opensearch_cluster.test_opensearch_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOpensearchClusterResult> getOpensearchClusterPlain(GetOpensearchClusterPlainArgs args, InvokeOptions options) {
@@ -101,8 +301,61 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusters = OpensearchFunctions.getOpensearchClusters(GetOpensearchClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.opensearch_cluster_display_name())
+     *             .id(var_.opensearch_cluster_id())
+     *             .state(var_.opensearch_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOpensearchClustersResult> getOpensearchClusters(GetOpensearchClustersArgs args) {
@@ -118,8 +371,61 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusters = OpensearchFunctions.getOpensearchClusters(GetOpensearchClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.opensearch_cluster_display_name())
+     *             .id(var_.opensearch_cluster_id())
+     *             .state(var_.opensearch_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOpensearchClustersResult> getOpensearchClustersPlain(GetOpensearchClustersPlainArgs args) {
@@ -135,8 +441,61 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusters = OpensearchFunctions.getOpensearchClusters(GetOpensearchClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.opensearch_cluster_display_name())
+     *             .id(var_.opensearch_cluster_id())
+     *             .state(var_.opensearch_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOpensearchClustersResult> getOpensearchClusters(GetOpensearchClustersArgs args, InvokeOptions options) {
@@ -152,8 +511,61 @@ public final class OpensearchFunctions {
      * The below policies must be created in compartment before creating OpensearchCluster
      * 
      * ##### {Compartment-Name} - Name of  your compartment
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *     }
+     * }
+     * ```
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchClusters = OpensearchFunctions.getOpensearchClusters(GetOpensearchClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.opensearch_cluster_display_name())
+     *             .id(var_.opensearch_cluster_id())
+     *             .state(var_.opensearch_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOpensearchClustersResult> getOpensearchClustersPlain(GetOpensearchClustersPlainArgs args, InvokeOptions options) {
@@ -165,6 +577,34 @@ public final class OpensearchFunctions {
      * Lists the supported Opensearch versions
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchVersion = OpensearchFunctions.getOpensearchVersion(GetOpensearchVersionArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOpensearchVersionResult> getOpensearchVersion(GetOpensearchVersionArgs args) {
@@ -176,6 +616,34 @@ public final class OpensearchFunctions {
      * Lists the supported Opensearch versions
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchVersion = OpensearchFunctions.getOpensearchVersion(GetOpensearchVersionArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOpensearchVersionResult> getOpensearchVersionPlain(GetOpensearchVersionPlainArgs args) {
@@ -187,6 +655,34 @@ public final class OpensearchFunctions {
      * Lists the supported Opensearch versions
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchVersion = OpensearchFunctions.getOpensearchVersion(GetOpensearchVersionArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOpensearchVersionResult> getOpensearchVersion(GetOpensearchVersionArgs args, InvokeOptions options) {
@@ -198,6 +694,34 @@ public final class OpensearchFunctions {
      * Lists the supported Opensearch versions
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchVersion = OpensearchFunctions.getOpensearchVersion(GetOpensearchVersionArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOpensearchVersionResult> getOpensearchVersionPlain(GetOpensearchVersionPlainArgs args, InvokeOptions options) {
@@ -209,6 +733,34 @@ public final class OpensearchFunctions {
      * Lists the supported Opensearch versions
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchVersions = OpensearchFunctions.getOpensearchVersions(GetOpensearchVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOpensearchVersionsResult> getOpensearchVersions(GetOpensearchVersionsArgs args) {
@@ -220,6 +772,34 @@ public final class OpensearchFunctions {
      * Lists the supported Opensearch versions
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchVersions = OpensearchFunctions.getOpensearchVersions(GetOpensearchVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOpensearchVersionsResult> getOpensearchVersionsPlain(GetOpensearchVersionsPlainArgs args) {
@@ -231,6 +811,34 @@ public final class OpensearchFunctions {
      * Lists the supported Opensearch versions
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchVersions = OpensearchFunctions.getOpensearchVersions(GetOpensearchVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOpensearchVersionsResult> getOpensearchVersions(GetOpensearchVersionsArgs args, InvokeOptions options) {
@@ -242,6 +850,34 @@ public final class OpensearchFunctions {
      * Lists the supported Opensearch versions
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opensearch.OpensearchFunctions;
+     * import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOpensearchVersions = OpensearchFunctions.getOpensearchVersions(GetOpensearchVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOpensearchVersionsResult> getOpensearchVersionsPlain(GetOpensearchVersionsPlainArgs args, InvokeOptions options) {

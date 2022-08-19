@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeploymentDeploymentExecutionProgressGetArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentDeploymentExecutionProgressGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("deployStageExecutionProgress")]
         private InputMap<object>? _deployStageExecutionProgress;
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeploymentDeploymentExecutionProgressGetArgs()
         {
         }
+        public static new DeploymentDeploymentExecutionProgressGetArgs Empty => new DeploymentDeploymentExecutionProgressGetArgs();
     }
 }

@@ -22,20 +22,18 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRunLogs = Oci.DataFlow.GetRunLogs.Invoke(new()
         ///     {
-        ///         var testRunLogs = Output.Create(Oci.DataFlow.GetRunLogs.InvokeAsync(new Oci.DataFlow.GetRunLogsArgs
-        ///         {
-        ///             RunId = oci_dataflow_run.Test_run.Id,
-        ///         }));
-        ///     }
+        ///         RunId = oci_dataflow_run.Test_run.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRunLogs = Oci.DataFlow.GetRunLogs.Invoke(new()
         ///     {
-        ///         var testRunLogs = Output.Create(Oci.DataFlow.GetRunLogs.InvokeAsync(new Oci.DataFlow.GetRunLogsArgs
-        ///         {
-        ///             RunId = oci_dataflow_run.Test_run.Id,
-        ///         }));
-        ///     }
+        ///         RunId = oci_dataflow_run.Test_run.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DataFlow
     }
 
 
-    public sealed class GetRunLogsArgs : Pulumi.InvokeArgs
+    public sealed class GetRunLogsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetRunLogsFilterArgs>? _filters;
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.DataFlow
         public GetRunLogsArgs()
         {
         }
+        public static new GetRunLogsArgs Empty => new GetRunLogsArgs();
     }
 
-    public sealed class GetRunLogsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRunLogsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetRunLogsFilterInputArgs>? _filters;
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.DataFlow
         public GetRunLogsInvokeArgs()
         {
         }
+        public static new GetRunLogsInvokeArgs Empty => new GetRunLogsInvokeArgs();
     }
 
 

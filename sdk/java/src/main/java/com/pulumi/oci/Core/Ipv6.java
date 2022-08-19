@@ -21,6 +21,39 @@ import javax.annotation.Nullable;
  * Creates an IPv6 for the specified VNIC.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.Ipv6;
+ * import com.pulumi.oci.Core.Ipv6Args;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testIpv6 = new Ipv6(&#34;testIpv6&#34;, Ipv6Args.builder()        
+ *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.ipv6_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .ipAddress(var_.ipv6_ip_address())
+ *             .ipv6subnetCidr(var_.ipv6_ipv6subnet_cidr())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -23,6 +23,43 @@ import javax.annotation.Nullable;
  * Creates a new subscriber.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ApiGateway.Subscriber;
+ * import com.pulumi.oci.ApiGateway.SubscriberArgs;
+ * import com.pulumi.oci.ApiGateway.inputs.SubscriberClientArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSubscriber = new Subscriber(&#34;testSubscriber&#34;, SubscriberArgs.builder()        
+ *             .clients(SubscriberClientArgs.builder()
+ *                 .name(var_.subscriber_clients_name())
+ *                 .token(var_.subscriber_clients_token())
+ *                 .build())
+ *             .compartmentId(var_.compartment_id())
+ *             .usagePlans(var_.subscriber_usage_plans())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.subscriber_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

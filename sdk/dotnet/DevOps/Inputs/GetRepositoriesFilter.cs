@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class GetRepositoriesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoriesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire name given.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public GetRepositoriesFilterArgs()
         {
         }
+        public static new GetRepositoriesFilterArgs Empty => new GetRepositoriesFilterArgs();
     }
 }

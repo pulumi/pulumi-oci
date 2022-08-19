@@ -27,6 +27,61 @@ import javax.annotation.Nullable;
  * Creates a publication of the specified listing type with an optional default package.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Marketplace.Publication;
+ * import com.pulumi.oci.Marketplace.PublicationArgs;
+ * import com.pulumi.oci.Marketplace.inputs.PublicationPackageDetailsArgs;
+ * import com.pulumi.oci.Marketplace.inputs.PublicationPackageDetailsOperatingSystemArgs;
+ * import com.pulumi.oci.Marketplace.inputs.PublicationSupportContactArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPublication = new Publication(&#34;testPublication&#34;, PublicationArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .isAgreementAcknowledged(var_.publication_is_agreement_acknowledged())
+ *             .listingType(var_.publication_listing_type())
+ *             .packageDetails(PublicationPackageDetailsArgs.builder()
+ *                 .eulas(PublicationPackageDetailsEulaArgs.builder()
+ *                     .eulaType(var_.publication_package_details_eula_eula_type())
+ *                     .licenseText(var_.publication_package_details_eula_license_text())
+ *                     .build())
+ *                 .operatingSystem(PublicationPackageDetailsOperatingSystemArgs.builder()
+ *                     .name(var_.publication_package_details_operating_system_name())
+ *                     .build())
+ *                 .packageType(var_.publication_package_details_package_type())
+ *                 .packageVersion(var_.publication_package_details_package_version())
+ *                 .imageId(oci_core_image.test_image().id())
+ *                 .build())
+ *             .shortDescription(var_.publication_short_description())
+ *             .supportContacts(PublicationSupportContactArgs.builder()
+ *                 .email(var_.publication_support_contacts_email())
+ *                 .name(var_.publication_support_contacts_name())
+ *                 .phone(var_.publication_support_contacts_phone())
+ *                 .subject(var_.publication_support_contacts_subject())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .longDescription(var_.publication_long_description())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

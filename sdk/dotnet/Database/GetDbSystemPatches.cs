@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystemPatches = Oci.Database.GetDbSystemPatches.Invoke(new()
         ///     {
-        ///         var testDbSystemPatches = Output.Create(Oci.Database.GetDbSystemPatches.InvokeAsync(new Oci.Database.GetDbSystemPatchesArgs
-        ///         {
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystemPatches = Oci.Database.GetDbSystemPatches.Invoke(new()
         ///     {
-        ///         var testDbSystemPatches = Output.Create(Oci.Database.GetDbSystemPatches.InvokeAsync(new Oci.Database.GetDbSystemPatchesArgs
-        ///         {
-        ///             DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbSystemPatchesArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemPatchesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Database
         public GetDbSystemPatchesArgs()
         {
         }
+        public static new GetDbSystemPatchesArgs Empty => new GetDbSystemPatchesArgs();
     }
 
-    public sealed class GetDbSystemPatchesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemPatchesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Database
         public GetDbSystemPatchesInvokeArgs()
         {
         }
+        public static new GetDbSystemPatchesInvokeArgs Empty => new GetDbSystemPatchesInvokeArgs();
     }
 
 

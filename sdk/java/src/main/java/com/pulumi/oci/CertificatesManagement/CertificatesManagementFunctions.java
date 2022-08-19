@@ -53,6 +53,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
+     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAssociationResult> getAssociation(GetAssociationArgs args) {
@@ -64,6 +92,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
+     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAssociationResult> getAssociationPlain(GetAssociationPlainArgs args) {
@@ -75,6 +131,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
+     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAssociationResult> getAssociation(GetAssociationArgs args, InvokeOptions options) {
@@ -86,6 +170,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssociation = CertificatesManagementFunctions.getAssociation(GetAssociationArgs.builder()
+     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAssociationResult> getAssociationPlain(GetAssociationPlainArgs args, InvokeOptions options) {
@@ -98,6 +210,39 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
+     *             .associatedResourceId(oci_certificates_management_associated_resource.test_associated_resource().id())
+     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .associationType(var_.association_association_type())
+     *             .certificatesResourceId(oci_certificates_management_certificates_resource.test_certificates_resource().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.association_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAssociationsResult> getAssociations() {
@@ -110,6 +255,39 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
+     *             .associatedResourceId(oci_certificates_management_associated_resource.test_associated_resource().id())
+     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .associationType(var_.association_association_type())
+     *             .certificatesResourceId(oci_certificates_management_certificates_resource.test_certificates_resource().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.association_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAssociationsResult> getAssociationsPlain() {
@@ -122,6 +300,39 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
+     *             .associatedResourceId(oci_certificates_management_associated_resource.test_associated_resource().id())
+     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .associationType(var_.association_association_type())
+     *             .certificatesResourceId(oci_certificates_management_certificates_resource.test_certificates_resource().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.association_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAssociationsResult> getAssociations(GetAssociationsArgs args) {
@@ -134,6 +345,39 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
+     *             .associatedResourceId(oci_certificates_management_associated_resource.test_associated_resource().id())
+     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .associationType(var_.association_association_type())
+     *             .certificatesResourceId(oci_certificates_management_certificates_resource.test_certificates_resource().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.association_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAssociationsResult> getAssociationsPlain(GetAssociationsPlainArgs args) {
@@ -146,6 +390,39 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
+     *             .associatedResourceId(oci_certificates_management_associated_resource.test_associated_resource().id())
+     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .associationType(var_.association_association_type())
+     *             .certificatesResourceId(oci_certificates_management_certificates_resource.test_certificates_resource().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.association_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAssociationsResult> getAssociations(GetAssociationsArgs args, InvokeOptions options) {
@@ -158,6 +435,39 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssociations = CertificatesManagementFunctions.getAssociations(GetAssociationsArgs.builder()
+     *             .associatedResourceId(oci_certificates_management_associated_resource.test_associated_resource().id())
+     *             .associationId(oci_certificates_management_association.test_association().id())
+     *             .associationType(var_.association_association_type())
+     *             .certificatesResourceId(oci_certificates_management_certificates_resource.test_certificates_resource().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.association_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAssociationsResult> getAssociationsPlain(GetAssociationsPlainArgs args, InvokeOptions options) {
@@ -169,6 +479,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified CA bundle.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
+     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCaBundleResult> getCaBundle(GetCaBundleArgs args) {
@@ -180,6 +518,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified CA bundle.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
+     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCaBundleResult> getCaBundlePlain(GetCaBundlePlainArgs args) {
@@ -191,6 +557,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified CA bundle.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
+     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCaBundleResult> getCaBundle(GetCaBundleArgs args, InvokeOptions options) {
@@ -202,6 +596,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified CA bundle.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaBundle = CertificatesManagementFunctions.getCaBundle(GetCaBundleArgs.builder()
+     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCaBundleResult> getCaBundlePlain(GetCaBundlePlainArgs args, InvokeOptions options) {
@@ -214,6 +636,37 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
+     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.ca_bundle_name())
+     *             .state(var_.ca_bundle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCaBundlesResult> getCaBundles() {
@@ -226,6 +679,37 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
+     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.ca_bundle_name())
+     *             .state(var_.ca_bundle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCaBundlesResult> getCaBundlesPlain() {
@@ -238,6 +722,37 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
+     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.ca_bundle_name())
+     *             .state(var_.ca_bundle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCaBundlesResult> getCaBundles(GetCaBundlesArgs args) {
@@ -250,6 +765,37 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
+     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.ca_bundle_name())
+     *             .state(var_.ca_bundle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCaBundlesResult> getCaBundlesPlain(GetCaBundlesPlainArgs args) {
@@ -262,6 +808,37 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
+     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.ca_bundle_name())
+     *             .state(var_.ca_bundle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCaBundlesResult> getCaBundles(GetCaBundlesArgs args, InvokeOptions options) {
@@ -274,6 +851,37 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCaBundleIdQueryParam` to limit the result set to a single item that matches the specified CA bundle.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCaBundlesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCaBundles = CertificatesManagementFunctions.getCaBundles(GetCaBundlesArgs.builder()
+     *             .caBundleId(oci_certificates_management_ca_bundle.test_ca_bundle().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.ca_bundle_name())
+     *             .state(var_.ca_bundle_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCaBundlesResult> getCaBundlesPlain(GetCaBundlesPlainArgs args, InvokeOptions options) {
@@ -285,6 +893,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args) {
@@ -296,6 +932,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args) {
@@ -307,6 +971,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateResult> getCertificate(GetCertificateArgs args, InvokeOptions options) {
@@ -318,6 +1010,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificate = CertificatesManagementFunctions.getCertificate(GetCertificateArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateResult> getCertificatePlain(GetCertificatePlainArgs args, InvokeOptions options) {
@@ -330,6 +1050,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .name(var_.certificate_authority_name())
+     *             .state(var_.certificate_authority_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateAuthoritiesResult> getCertificateAuthorities() {
@@ -342,6 +1094,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .name(var_.certificate_authority_name())
+     *             .state(var_.certificate_authority_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateAuthoritiesResult> getCertificateAuthoritiesPlain() {
@@ -354,6 +1138,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .name(var_.certificate_authority_name())
+     *             .state(var_.certificate_authority_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateAuthoritiesResult> getCertificateAuthorities(GetCertificateAuthoritiesArgs args) {
@@ -366,6 +1182,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .name(var_.certificate_authority_name())
+     *             .state(var_.certificate_authority_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateAuthoritiesResult> getCertificateAuthoritiesPlain(GetCertificateAuthoritiesPlainArgs args) {
@@ -378,6 +1226,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .name(var_.certificate_authority_name())
+     *             .state(var_.certificate_authority_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateAuthoritiesResult> getCertificateAuthorities(GetCertificateAuthoritiesArgs args, InvokeOptions options) {
@@ -390,6 +1270,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateAuthorityIdQueryParam` to limit the results to a single item that matches the specified CA.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthoritiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorities = CertificatesManagementFunctions.getCertificateAuthorities(GetCertificateAuthoritiesArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .name(var_.certificate_authority_name())
+     *             .state(var_.certificate_authority_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateAuthoritiesResult> getCertificateAuthoritiesPlain(GetCertificateAuthoritiesPlainArgs args, InvokeOptions options) {
@@ -401,6 +1313,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate authority (CA).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateAuthorityResult> getCertificateAuthority(GetCertificateAuthorityArgs args) {
@@ -412,6 +1352,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate authority (CA).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityResult> getCertificateAuthorityPlain(GetCertificateAuthorityPlainArgs args) {
@@ -423,6 +1391,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate authority (CA).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateAuthorityResult> getCertificateAuthority(GetCertificateAuthorityArgs args, InvokeOptions options) {
@@ -434,6 +1430,34 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified certificate authority (CA).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthority = CertificatesManagementFunctions.getCertificateAuthority(GetCertificateAuthorityArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityResult> getCertificateAuthorityPlain(GetCertificateAuthorityPlainArgs args, InvokeOptions options) {
@@ -447,6 +1471,36 @@ public final class CertificatesManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
      */
     public static Output<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs args) {
         return getCertificateAuthorityVersion(args, InvokeOptions.Empty);
@@ -458,6 +1512,36 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersionPlain(GetCertificateAuthorityVersionPlainArgs args) {
@@ -471,6 +1555,36 @@ public final class CertificatesManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
      */
     public static Output<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", TypeShape.of(GetCertificateAuthorityVersionResult.class), args, Utilities.withVersion(options));
@@ -483,6 +1597,36 @@ public final class CertificatesManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
      */
     public static CompletableFuture<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersionPlain(GetCertificateAuthorityVersionPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", TypeShape.of(GetCertificateAuthorityVersionResult.class), args, Utilities.withVersion(options));
@@ -494,6 +1638,35 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateAuthorityVersionsResult> getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs args) {
@@ -506,6 +1679,35 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityVersionsResult> getCertificateAuthorityVersionsPlain(GetCertificateAuthorityVersionsPlainArgs args) {
@@ -518,6 +1720,35 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateAuthorityVersionsResult> getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs args, InvokeOptions options) {
@@ -530,6 +1761,35 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersions = CertificatesManagementFunctions.getCertificateAuthorityVersions(GetCertificateAuthorityVersionsArgs.builder()
+     *             .certificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .versionNumber(var_.certificate_authority_version_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityVersionsResult> getCertificateAuthorityVersionsPlain(GetCertificateAuthorityVersionsPlainArgs args, InvokeOptions options) {
@@ -541,6 +1801,35 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified version of a certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .certificateVersionNumber(var_.certificate_version_certificate_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateVersionResult> getCertificateVersion(GetCertificateVersionArgs args) {
@@ -552,6 +1841,35 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified version of a certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .certificateVersionNumber(var_.certificate_version_certificate_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateVersionResult> getCertificateVersionPlain(GetCertificateVersionPlainArgs args) {
@@ -563,6 +1881,35 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified version of a certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .certificateVersionNumber(var_.certificate_version_certificate_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateVersionResult> getCertificateVersion(GetCertificateVersionArgs args, InvokeOptions options) {
@@ -574,6 +1921,35 @@ public final class CertificatesManagementFunctions {
      * Gets details about the specified version of a certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateVersion = CertificatesManagementFunctions.getCertificateVersion(GetCertificateVersionArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .certificateVersionNumber(var_.certificate_version_certificate_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateVersionResult> getCertificateVersionPlain(GetCertificateVersionPlainArgs args, InvokeOptions options) {
@@ -586,6 +1962,35 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .versionNumber(var_.certificate_version_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateVersionsResult> getCertificateVersions(GetCertificateVersionsArgs args) {
@@ -598,6 +2003,35 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .versionNumber(var_.certificate_version_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateVersionsResult> getCertificateVersionsPlain(GetCertificateVersionsPlainArgs args) {
@@ -610,6 +2044,35 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .versionNumber(var_.certificate_version_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificateVersionsResult> getCertificateVersions(GetCertificateVersionsArgs args, InvokeOptions options) {
@@ -622,6 +2085,35 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateVersions = CertificatesManagementFunctions.getCertificateVersions(GetCertificateVersionsArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .versionNumber(var_.certificate_version_version_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificateVersionsResult> getCertificateVersionsPlain(GetCertificateVersionsPlainArgs args, InvokeOptions options) {
@@ -634,6 +2126,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .name(var_.certificate_name())
+     *             .state(var_.certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificatesResult> getCertificates() {
@@ -646,6 +2170,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .name(var_.certificate_name())
+     *             .state(var_.certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain() {
@@ -658,6 +2214,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .name(var_.certificate_name())
+     *             .state(var_.certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args) {
@@ -670,6 +2258,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .name(var_.certificate_name())
+     *             .state(var_.certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args) {
@@ -682,6 +2302,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .name(var_.certificate_name())
+     *             .state(var_.certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCertificatesResult> getCertificates(GetCertificatesArgs args, InvokeOptions options) {
@@ -694,6 +2346,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByCertificateIdQueryParam` to limit the result set to a single item that matches the specified certificate.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificates = CertificatesManagementFunctions.getCertificates(GetCertificatesArgs.builder()
+     *             .certificateId(oci_certificates_management_certificate.test_certificate().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .issuerCertificateAuthorityId(oci_certificates_management_certificate_authority.test_certificate_authority().id())
+     *             .name(var_.certificate_name())
+     *             .state(var_.certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCertificatesResult> getCertificatesPlain(GetCertificatesPlainArgs args, InvokeOptions options) {

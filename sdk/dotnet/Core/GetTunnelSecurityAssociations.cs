@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTunnelSecurityAssociations = Oci.Core.GetTunnelSecurityAssociations.Invoke(new()
         ///     {
-        ///         var testTunnelSecurityAssociations = Output.Create(Oci.Core.GetTunnelSecurityAssociations.InvokeAsync(new Oci.Core.GetTunnelSecurityAssociationsArgs
-        ///         {
-        ///             IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///             TunnelId = oci_core_tunnel.Test_tunnel.Id,
-        ///         }));
-        ///     }
+        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
+        ///         TunnelId = oci_core_tunnel.Test_tunnel.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTunnelSecurityAssociations = Oci.Core.GetTunnelSecurityAssociations.Invoke(new()
         ///     {
-        ///         var testTunnelSecurityAssociations = Output.Create(Oci.Core.GetTunnelSecurityAssociations.InvokeAsync(new Oci.Core.GetTunnelSecurityAssociationsArgs
-        ///         {
-        ///             IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///             TunnelId = oci_core_tunnel.Test_tunnel.Id,
-        ///         }));
-        ///     }
+        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
+        ///         TunnelId = oci_core_tunnel.Test_tunnel.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetTunnelSecurityAssociationsArgs : Pulumi.InvokeArgs
+    public sealed class GetTunnelSecurityAssociationsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetTunnelSecurityAssociationsFilterArgs>? _filters;
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.Core
         public GetTunnelSecurityAssociationsArgs()
         {
         }
+        public static new GetTunnelSecurityAssociationsArgs Empty => new GetTunnelSecurityAssociationsArgs();
     }
 
-    public sealed class GetTunnelSecurityAssociationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTunnelSecurityAssociationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetTunnelSecurityAssociationsFilterInputArgs>? _filters;
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.Core
         public GetTunnelSecurityAssociationsInvokeArgs()
         {
         }
+        public static new GetTunnelSecurityAssociationsInvokeArgs Empty => new GetTunnelSecurityAssociationsInvokeArgs();
     }
 
 

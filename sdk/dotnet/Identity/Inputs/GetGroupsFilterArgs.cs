@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class GetGroupsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetGroupsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A filter to only return resources that match the given name exactly.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public GetGroupsFilterInputArgs()
         {
         }
+        public static new GetGroupsFilterInputArgs Empty => new GetGroupsFilterInputArgs();
     }
 }

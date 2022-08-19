@@ -19,32 +19,30 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSecurityAssessment = new Oci.DataSafe.SecurityAssessment("testSecurityAssessment", new()
     ///     {
-    ///         var testSecurityAssessment = new Oci.DataSafe.SecurityAssessment("testSecurityAssessment", new Oci.DataSafe.SecurityAssessmentArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Security_assessment_description,
-    ///             DisplayName = @var.Security_assessment_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             Schedule = @var.Security_assessment_schedule,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Security_assessment_description,
+    ///         DisplayName = @var.Security_assessment_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         Schedule = @var.Security_assessment_schedule,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -56,7 +54,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/securityAssessment:SecurityAssessment")]
-    public partial class SecurityAssessment : Pulumi.CustomResource
+    public partial class SecurityAssessment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the security assessment.
@@ -246,7 +244,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class SecurityAssessmentArgs : Pulumi.ResourceArgs
+    public sealed class SecurityAssessmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the security assessment.
@@ -305,9 +303,10 @@ namespace Pulumi.Oci.DataSafe
         public SecurityAssessmentArgs()
         {
         }
+        public static new SecurityAssessmentArgs Empty => new SecurityAssessmentArgs();
     }
 
-    public sealed class SecurityAssessmentState : Pulumi.ResourceArgs
+    public sealed class SecurityAssessmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the security assessment.
@@ -498,5 +497,6 @@ namespace Pulumi.Oci.DataSafe
         public SecurityAssessmentState()
         {
         }
+        public static new SecurityAssessmentState Empty => new SecurityAssessmentState();
     }
 }

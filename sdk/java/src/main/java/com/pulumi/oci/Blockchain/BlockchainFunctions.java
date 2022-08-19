@@ -38,6 +38,34 @@ public final class BlockchainFunctions {
      * Gets information about a Blockchain Platform identified by the specific id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockchainPlatform = BlockchainFunctions.getBlockchainPlatform(GetBlockchainPlatformArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBlockchainPlatformResult> getBlockchainPlatform(GetBlockchainPlatformArgs args) {
@@ -49,6 +77,34 @@ public final class BlockchainFunctions {
      * Gets information about a Blockchain Platform identified by the specific id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockchainPlatform = BlockchainFunctions.getBlockchainPlatform(GetBlockchainPlatformArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBlockchainPlatformResult> getBlockchainPlatformPlain(GetBlockchainPlatformPlainArgs args) {
@@ -60,6 +116,34 @@ public final class BlockchainFunctions {
      * Gets information about a Blockchain Platform identified by the specific id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockchainPlatform = BlockchainFunctions.getBlockchainPlatform(GetBlockchainPlatformArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBlockchainPlatformResult> getBlockchainPlatform(GetBlockchainPlatformArgs args, InvokeOptions options) {
@@ -71,6 +155,34 @@ public final class BlockchainFunctions {
      * Gets information about a Blockchain Platform identified by the specific id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockchainPlatform = BlockchainFunctions.getBlockchainPlatform(GetBlockchainPlatformArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBlockchainPlatformResult> getBlockchainPlatformPlain(GetBlockchainPlatformPlainArgs args, InvokeOptions options) {
@@ -82,6 +194,34 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Patches
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockchainPlatformPatches = BlockchainFunctions.getBlockchainPlatformPatches(GetBlockchainPlatformPatchesArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBlockchainPlatformPatchesResult> getBlockchainPlatformPatches(GetBlockchainPlatformPatchesArgs args) {
@@ -93,6 +233,34 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Patches
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockchainPlatformPatches = BlockchainFunctions.getBlockchainPlatformPatches(GetBlockchainPlatformPatchesArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBlockchainPlatformPatchesResult> getBlockchainPlatformPatchesPlain(GetBlockchainPlatformPatchesPlainArgs args) {
@@ -104,6 +272,34 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Patches
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockchainPlatformPatches = BlockchainFunctions.getBlockchainPlatformPatches(GetBlockchainPlatformPatchesArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBlockchainPlatformPatchesResult> getBlockchainPlatformPatches(GetBlockchainPlatformPatchesArgs args, InvokeOptions options) {
@@ -115,6 +311,34 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Patches
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockchainPlatformPatches = BlockchainFunctions.getBlockchainPlatformPatches(GetBlockchainPlatformPatchesArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBlockchainPlatformPatchesResult> getBlockchainPlatformPatchesPlain(GetBlockchainPlatformPatchesPlainArgs args, InvokeOptions options) {
@@ -126,6 +350,36 @@ public final class BlockchainFunctions {
      * Returns a list Blockchain Platform Instances in a compartment
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockchainPlatforms = BlockchainFunctions.getBlockchainPlatforms(GetBlockchainPlatformsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.blockchain_platform_display_name())
+     *             .state(var_.blockchain_platform_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBlockchainPlatformsResult> getBlockchainPlatforms(GetBlockchainPlatformsArgs args) {
@@ -137,6 +391,36 @@ public final class BlockchainFunctions {
      * Returns a list Blockchain Platform Instances in a compartment
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockchainPlatforms = BlockchainFunctions.getBlockchainPlatforms(GetBlockchainPlatformsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.blockchain_platform_display_name())
+     *             .state(var_.blockchain_platform_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBlockchainPlatformsResult> getBlockchainPlatformsPlain(GetBlockchainPlatformsPlainArgs args) {
@@ -148,6 +432,36 @@ public final class BlockchainFunctions {
      * Returns a list Blockchain Platform Instances in a compartment
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockchainPlatforms = BlockchainFunctions.getBlockchainPlatforms(GetBlockchainPlatformsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.blockchain_platform_display_name())
+     *             .state(var_.blockchain_platform_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBlockchainPlatformsResult> getBlockchainPlatforms(GetBlockchainPlatformsArgs args, InvokeOptions options) {
@@ -159,6 +473,36 @@ public final class BlockchainFunctions {
      * Returns a list Blockchain Platform Instances in a compartment
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetBlockchainPlatformsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBlockchainPlatforms = BlockchainFunctions.getBlockchainPlatforms(GetBlockchainPlatformsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.blockchain_platform_display_name())
+     *             .state(var_.blockchain_platform_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBlockchainPlatformsResult> getBlockchainPlatformsPlain(GetBlockchainPlatformsPlainArgs args, InvokeOptions options) {
@@ -170,6 +514,35 @@ public final class BlockchainFunctions {
      * Gets information about an OSN identified by the specific id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetOsnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOsn = BlockchainFunctions.getOsn(GetOsnArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .osnId(oci_blockchain_osn.test_osn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOsnResult> getOsn(GetOsnArgs args) {
@@ -181,6 +554,35 @@ public final class BlockchainFunctions {
      * Gets information about an OSN identified by the specific id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetOsnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOsn = BlockchainFunctions.getOsn(GetOsnArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .osnId(oci_blockchain_osn.test_osn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOsnResult> getOsnPlain(GetOsnPlainArgs args) {
@@ -192,6 +594,35 @@ public final class BlockchainFunctions {
      * Gets information about an OSN identified by the specific id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetOsnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOsn = BlockchainFunctions.getOsn(GetOsnArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .osnId(oci_blockchain_osn.test_osn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOsnResult> getOsn(GetOsnArgs args, InvokeOptions options) {
@@ -203,6 +634,35 @@ public final class BlockchainFunctions {
      * Gets information about an OSN identified by the specific id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetOsnArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOsn = BlockchainFunctions.getOsn(GetOsnArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .osnId(oci_blockchain_osn.test_osn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOsnResult> getOsnPlain(GetOsnPlainArgs args, InvokeOptions options) {
@@ -214,6 +674,35 @@ public final class BlockchainFunctions {
      * List Blockchain Platform OSNs
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetOsnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOsns = BlockchainFunctions.getOsns(GetOsnsArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .displayName(var_.osn_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOsnsResult> getOsns(GetOsnsArgs args) {
@@ -225,6 +714,35 @@ public final class BlockchainFunctions {
      * List Blockchain Platform OSNs
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetOsnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOsns = BlockchainFunctions.getOsns(GetOsnsArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .displayName(var_.osn_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOsnsResult> getOsnsPlain(GetOsnsPlainArgs args) {
@@ -236,6 +754,35 @@ public final class BlockchainFunctions {
      * List Blockchain Platform OSNs
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetOsnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOsns = BlockchainFunctions.getOsns(GetOsnsArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .displayName(var_.osn_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOsnsResult> getOsns(GetOsnsArgs args, InvokeOptions options) {
@@ -247,6 +794,35 @@ public final class BlockchainFunctions {
      * List Blockchain Platform OSNs
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetOsnsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOsns = BlockchainFunctions.getOsns(GetOsnsArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .displayName(var_.osn_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOsnsResult> getOsnsPlain(GetOsnsPlainArgs args, InvokeOptions options) {
@@ -258,6 +834,35 @@ public final class BlockchainFunctions {
      * Gets information about a peer identified by the specific id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetPeerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeer = BlockchainFunctions.getPeer(GetPeerArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .peerId(oci_blockchain_peer.test_peer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPeerResult> getPeer(GetPeerArgs args) {
@@ -269,6 +874,35 @@ public final class BlockchainFunctions {
      * Gets information about a peer identified by the specific id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetPeerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeer = BlockchainFunctions.getPeer(GetPeerArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .peerId(oci_blockchain_peer.test_peer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPeerResult> getPeerPlain(GetPeerPlainArgs args) {
@@ -280,6 +914,35 @@ public final class BlockchainFunctions {
      * Gets information about a peer identified by the specific id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetPeerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeer = BlockchainFunctions.getPeer(GetPeerArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .peerId(oci_blockchain_peer.test_peer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPeerResult> getPeer(GetPeerArgs args, InvokeOptions options) {
@@ -291,6 +954,35 @@ public final class BlockchainFunctions {
      * Gets information about a peer identified by the specific id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetPeerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeer = BlockchainFunctions.getPeer(GetPeerArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .peerId(oci_blockchain_peer.test_peer().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPeerResult> getPeerPlain(GetPeerPlainArgs args, InvokeOptions options) {
@@ -302,6 +994,35 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Peers
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetPeersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeers = BlockchainFunctions.getPeers(GetPeersArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .displayName(var_.peer_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPeersResult> getPeers(GetPeersArgs args) {
@@ -313,6 +1034,35 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Peers
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetPeersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeers = BlockchainFunctions.getPeers(GetPeersArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .displayName(var_.peer_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPeersResult> getPeersPlain(GetPeersPlainArgs args) {
@@ -324,6 +1074,35 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Peers
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetPeersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeers = BlockchainFunctions.getPeers(GetPeersArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .displayName(var_.peer_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPeersResult> getPeers(GetPeersArgs args, InvokeOptions options) {
@@ -335,6 +1114,35 @@ public final class BlockchainFunctions {
      * List Blockchain Platform Peers
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Blockchain.BlockchainFunctions;
+     * import com.pulumi.oci.Blockchain.inputs.GetPeersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPeers = BlockchainFunctions.getPeers(GetPeersArgs.builder()
+     *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+     *             .displayName(var_.peer_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPeersResult> getPeersPlain(GetPeersPlainArgs args, InvokeOptions options) {

@@ -41,6 +41,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a specific private reverse connection by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiPrivateEndpoint = AiAnomalyDetectionFunctions.getAiPrivateEndpoint(GetAiPrivateEndpointArgs.builder()
+     *             .aiPrivateEndpointId(oci_ai_anomaly_detection_ai_private_endpoint.test_ai_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAiPrivateEndpointResult> getAiPrivateEndpoint(GetAiPrivateEndpointArgs args) {
@@ -52,6 +80,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a specific private reverse connection by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiPrivateEndpoint = AiAnomalyDetectionFunctions.getAiPrivateEndpoint(GetAiPrivateEndpointArgs.builder()
+     *             .aiPrivateEndpointId(oci_ai_anomaly_detection_ai_private_endpoint.test_ai_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAiPrivateEndpointResult> getAiPrivateEndpointPlain(GetAiPrivateEndpointPlainArgs args) {
@@ -63,6 +119,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a specific private reverse connection by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiPrivateEndpoint = AiAnomalyDetectionFunctions.getAiPrivateEndpoint(GetAiPrivateEndpointArgs.builder()
+     *             .aiPrivateEndpointId(oci_ai_anomaly_detection_ai_private_endpoint.test_ai_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAiPrivateEndpointResult> getAiPrivateEndpoint(GetAiPrivateEndpointArgs args, InvokeOptions options) {
@@ -74,6 +158,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a specific private reverse connection by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiPrivateEndpoint = AiAnomalyDetectionFunctions.getAiPrivateEndpoint(GetAiPrivateEndpointArgs.builder()
+     *             .aiPrivateEndpointId(oci_ai_anomaly_detection_ai_private_endpoint.test_ai_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAiPrivateEndpointResult> getAiPrivateEndpointPlain(GetAiPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -85,6 +197,37 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of all the AI private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiPrivateEndpoints = AiAnomalyDetectionFunctions.getAiPrivateEndpoints(GetAiPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.ai_private_endpoint_display_name())
+     *             .id(var_.ai_private_endpoint_id())
+     *             .state(var_.ai_private_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAiPrivateEndpointsResult> getAiPrivateEndpoints(GetAiPrivateEndpointsArgs args) {
@@ -96,6 +239,37 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of all the AI private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiPrivateEndpoints = AiAnomalyDetectionFunctions.getAiPrivateEndpoints(GetAiPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.ai_private_endpoint_display_name())
+     *             .id(var_.ai_private_endpoint_id())
+     *             .state(var_.ai_private_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAiPrivateEndpointsResult> getAiPrivateEndpointsPlain(GetAiPrivateEndpointsPlainArgs args) {
@@ -107,6 +281,37 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of all the AI private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiPrivateEndpoints = AiAnomalyDetectionFunctions.getAiPrivateEndpoints(GetAiPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.ai_private_endpoint_display_name())
+     *             .id(var_.ai_private_endpoint_id())
+     *             .state(var_.ai_private_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAiPrivateEndpointsResult> getAiPrivateEndpoints(GetAiPrivateEndpointsArgs args, InvokeOptions options) {
@@ -118,6 +323,37 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of all the AI private endpoints in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetAiPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiPrivateEndpoints = AiAnomalyDetectionFunctions.getAiPrivateEndpoints(GetAiPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.ai_private_endpoint_display_name())
+     *             .id(var_.ai_private_endpoint_id())
+     *             .state(var_.ai_private_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAiPrivateEndpointsResult> getAiPrivateEndpointsPlain(GetAiPrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -129,6 +365,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a DataAsset by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionDataAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAsset = AiAnomalyDetectionFunctions.getDetectionDataAsset(GetDetectionDataAssetArgs.builder()
+     *             .dataAssetId(oci_ai_anomaly_detection_data_asset.test_data_asset().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectionDataAssetResult> getDetectionDataAsset(GetDetectionDataAssetArgs args) {
@@ -140,6 +404,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a DataAsset by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionDataAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAsset = AiAnomalyDetectionFunctions.getDetectionDataAsset(GetDetectionDataAssetArgs.builder()
+     *             .dataAssetId(oci_ai_anomaly_detection_data_asset.test_data_asset().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectionDataAssetResult> getDetectionDataAssetPlain(GetDetectionDataAssetPlainArgs args) {
@@ -151,6 +443,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a DataAsset by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionDataAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAsset = AiAnomalyDetectionFunctions.getDetectionDataAsset(GetDetectionDataAssetArgs.builder()
+     *             .dataAssetId(oci_ai_anomaly_detection_data_asset.test_data_asset().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectionDataAssetResult> getDetectionDataAsset(GetDetectionDataAssetArgs args, InvokeOptions options) {
@@ -162,6 +482,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a DataAsset by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionDataAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAsset = AiAnomalyDetectionFunctions.getDetectionDataAsset(GetDetectionDataAssetArgs.builder()
+     *             .dataAssetId(oci_ai_anomaly_detection_data_asset.test_data_asset().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectionDataAssetResult> getDetectionDataAssetPlain(GetDetectionDataAssetPlainArgs args, InvokeOptions options) {
@@ -173,6 +521,37 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of DataAssets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionDataAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAssets = AiAnomalyDetectionFunctions.getDetectionDataAssets(GetDetectionDataAssetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.data_asset_display_name())
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .state(var_.data_asset_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectionDataAssetsResult> getDetectionDataAssets(GetDetectionDataAssetsArgs args) {
@@ -184,6 +563,37 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of DataAssets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionDataAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAssets = AiAnomalyDetectionFunctions.getDetectionDataAssets(GetDetectionDataAssetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.data_asset_display_name())
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .state(var_.data_asset_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectionDataAssetsResult> getDetectionDataAssetsPlain(GetDetectionDataAssetsPlainArgs args) {
@@ -195,6 +605,37 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of DataAssets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionDataAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAssets = AiAnomalyDetectionFunctions.getDetectionDataAssets(GetDetectionDataAssetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.data_asset_display_name())
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .state(var_.data_asset_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectionDataAssetsResult> getDetectionDataAssets(GetDetectionDataAssetsArgs args, InvokeOptions options) {
@@ -206,6 +647,37 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of DataAssets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionDataAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAssets = AiAnomalyDetectionFunctions.getDetectionDataAssets(GetDetectionDataAssetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.data_asset_display_name())
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .state(var_.data_asset_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectionDataAssetsResult> getDetectionDataAssetsPlain(GetDetectionDataAssetsPlainArgs args, InvokeOptions options) {
@@ -217,6 +689,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Model by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = AiAnomalyDetectionFunctions.getDetectionModel(GetDetectionModelArgs.builder()
+     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectionModelResult> getDetectionModel(GetDetectionModelArgs args) {
@@ -228,6 +728,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Model by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = AiAnomalyDetectionFunctions.getDetectionModel(GetDetectionModelArgs.builder()
+     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectionModelResult> getDetectionModelPlain(GetDetectionModelPlainArgs args) {
@@ -239,6 +767,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Model by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = AiAnomalyDetectionFunctions.getDetectionModel(GetDetectionModelArgs.builder()
+     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectionModelResult> getDetectionModel(GetDetectionModelArgs args, InvokeOptions options) {
@@ -250,6 +806,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Model by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = AiAnomalyDetectionFunctions.getDetectionModel(GetDetectionModelArgs.builder()
+     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectionModelResult> getDetectionModelPlain(GetDetectionModelPlainArgs args, InvokeOptions options) {
@@ -261,6 +845,37 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = AiAnomalyDetectionFunctions.getDetectionModels(GetDetectionModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.model_display_name())
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectionModelsResult> getDetectionModels(GetDetectionModelsArgs args) {
@@ -272,6 +887,37 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = AiAnomalyDetectionFunctions.getDetectionModels(GetDetectionModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.model_display_name())
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectionModelsResult> getDetectionModelsPlain(GetDetectionModelsPlainArgs args) {
@@ -283,6 +929,37 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = AiAnomalyDetectionFunctions.getDetectionModels(GetDetectionModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.model_display_name())
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectionModelsResult> getDetectionModels(GetDetectionModelsArgs args, InvokeOptions options) {
@@ -294,6 +971,37 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = AiAnomalyDetectionFunctions.getDetectionModels(GetDetectionModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.model_display_name())
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectionModelsResult> getDetectionModelsPlain(GetDetectionModelsPlainArgs args, InvokeOptions options) {
@@ -305,6 +1013,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Project by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = AiAnomalyDetectionFunctions.getDetectionProject(GetDetectionProjectArgs.builder()
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectionProjectResult> getDetectionProject(GetDetectionProjectArgs args) {
@@ -316,6 +1052,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Project by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = AiAnomalyDetectionFunctions.getDetectionProject(GetDetectionProjectArgs.builder()
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectionProjectResult> getDetectionProjectPlain(GetDetectionProjectPlainArgs args) {
@@ -327,6 +1091,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Project by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = AiAnomalyDetectionFunctions.getDetectionProject(GetDetectionProjectArgs.builder()
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectionProjectResult> getDetectionProject(GetDetectionProjectArgs args, InvokeOptions options) {
@@ -338,6 +1130,34 @@ public final class AiAnomalyDetectionFunctions {
      * Gets a Project by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = AiAnomalyDetectionFunctions.getDetectionProject(GetDetectionProjectArgs.builder()
+     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectionProjectResult> getDetectionProjectPlain(GetDetectionProjectPlainArgs args, InvokeOptions options) {
@@ -349,6 +1169,36 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of  Projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = AiAnomalyDetectionFunctions.getDetectionProjects(GetDetectionProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.project_display_name())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectionProjectsResult> getDetectionProjects(GetDetectionProjectsArgs args) {
@@ -360,6 +1210,36 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of  Projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = AiAnomalyDetectionFunctions.getDetectionProjects(GetDetectionProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.project_display_name())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectionProjectsResult> getDetectionProjectsPlain(GetDetectionProjectsPlainArgs args) {
@@ -371,6 +1251,36 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of  Projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = AiAnomalyDetectionFunctions.getDetectionProjects(GetDetectionProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.project_display_name())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectionProjectsResult> getDetectionProjects(GetDetectionProjectsArgs args, InvokeOptions options) {
@@ -382,6 +1292,36 @@ public final class AiAnomalyDetectionFunctions {
      * Returns a list of  Projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiAnomalyDetection.AiAnomalyDetectionFunctions;
+     * import com.pulumi.oci.AiAnomalyDetection.inputs.GetDetectionProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = AiAnomalyDetectionFunctions.getDetectionProjects(GetDetectionProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.project_display_name())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectionProjectsResult> getDetectionProjectsPlain(GetDetectionProjectsPlainArgs args, InvokeOptions options) {

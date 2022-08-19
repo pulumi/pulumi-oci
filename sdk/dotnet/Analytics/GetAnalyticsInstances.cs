@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Analytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAnalyticsInstances = Oci.Analytics.GetAnalyticsInstances.Invoke(new()
         ///     {
-        ///         var testAnalyticsInstances = Output.Create(Oci.Analytics.GetAnalyticsInstances.InvokeAsync(new Oci.Analytics.GetAnalyticsInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CapacityType = @var.Analytics_instance_capacity_type,
-        ///             FeatureSet = @var.Analytics_instance_feature_set,
-        ///             Name = @var.Analytics_instance_name,
-        ///             State = @var.Analytics_instance_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CapacityType = @var.Analytics_instance_capacity_type,
+        ///         FeatureSet = @var.Analytics_instance_feature_set,
+        ///         Name = @var.Analytics_instance_name,
+        ///         State = @var.Analytics_instance_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Analytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAnalyticsInstances = Oci.Analytics.GetAnalyticsInstances.Invoke(new()
         ///     {
-        ///         var testAnalyticsInstances = Output.Create(Oci.Analytics.GetAnalyticsInstances.InvokeAsync(new Oci.Analytics.GetAnalyticsInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CapacityType = @var.Analytics_instance_capacity_type,
-        ///             FeatureSet = @var.Analytics_instance_feature_set,
-        ///             Name = @var.Analytics_instance_name,
-        ///             State = @var.Analytics_instance_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CapacityType = @var.Analytics_instance_capacity_type,
+        ///         FeatureSet = @var.Analytics_instance_feature_set,
+        ///         Name = @var.Analytics_instance_name,
+        ///         State = @var.Analytics_instance_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Analytics
     }
 
 
-    public sealed class GetAnalyticsInstancesArgs : Pulumi.InvokeArgs
+    public sealed class GetAnalyticsInstancesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to only return resources matching the capacity type enum. Values are case-insensitive.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.Analytics
         public GetAnalyticsInstancesArgs()
         {
         }
+        public static new GetAnalyticsInstancesArgs Empty => new GetAnalyticsInstancesArgs();
     }
 
-    public sealed class GetAnalyticsInstancesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAnalyticsInstancesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to only return resources matching the capacity type enum. Values are case-insensitive.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.Analytics
         public GetAnalyticsInstancesInvokeArgs()
         {
         }
+        public static new GetAnalyticsInstancesInvokeArgs Empty => new GetAnalyticsInstancesInvokeArgs();
     }
 
 

@@ -19,21 +19,19 @@ namespace Pulumi.Oci.AnnouncementsService
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAnnouncementSubscriptionsActionsChangeCompartment = new Oci.AnnouncementsService.AnnouncementSubscriptionsActionsChangeCompartment("testAnnouncementSubscriptionsActionsChangeCompartment", new()
     ///     {
-    ///         var testAnnouncementSubscriptionsActionsChangeCompartment = new Oci.AnnouncementsService.AnnouncementSubscriptionsActionsChangeCompartment("testAnnouncementSubscriptionsActionsChangeCompartment", new Oci.AnnouncementsService.AnnouncementSubscriptionsActionsChangeCompartmentArgs
-    ///         {
-    ///             AnnouncementSubscriptionId = oci_announcements_service_announcement_subscription.Test_announcement_subscription.Id,
-    ///             CompartmentId = @var.Compartment_id,
-    ///         });
-    ///     }
+    ///         AnnouncementSubscriptionId = oci_announcements_service_announcement_subscription.Test_announcement_subscription.Id,
+    ///         CompartmentId = @var.Compartment_id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -45,7 +43,7 @@ namespace Pulumi.Oci.AnnouncementsService
     /// ```
     /// </summary>
     [OciResourceType("oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment")]
-    public partial class AnnouncementSubscriptionsActionsChangeCompartment : Pulumi.CustomResource
+    public partial class AnnouncementSubscriptionsActionsChangeCompartment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the announcement subscription.
@@ -103,7 +101,7 @@ namespace Pulumi.Oci.AnnouncementsService
         }
     }
 
-    public sealed class AnnouncementSubscriptionsActionsChangeCompartmentArgs : Pulumi.ResourceArgs
+    public sealed class AnnouncementSubscriptionsActionsChangeCompartmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the announcement subscription.
@@ -120,9 +118,10 @@ namespace Pulumi.Oci.AnnouncementsService
         public AnnouncementSubscriptionsActionsChangeCompartmentArgs()
         {
         }
+        public static new AnnouncementSubscriptionsActionsChangeCompartmentArgs Empty => new AnnouncementSubscriptionsActionsChangeCompartmentArgs();
     }
 
-    public sealed class AnnouncementSubscriptionsActionsChangeCompartmentState : Pulumi.ResourceArgs
+    public sealed class AnnouncementSubscriptionsActionsChangeCompartmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the announcement subscription.
@@ -139,5 +138,6 @@ namespace Pulumi.Oci.AnnouncementsService
         public AnnouncementSubscriptionsActionsChangeCompartmentState()
         {
         }
+        public static new AnnouncementSubscriptionsActionsChangeCompartmentState Empty => new AnnouncementSubscriptionsActionsChangeCompartmentState();
     }
 }

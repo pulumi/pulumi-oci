@@ -17,25 +17,23 @@ namespace Pulumi.Oci.ObjectStorage
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPreauthenticatedRequest = new Oci.ObjectStorage.Preauthrequest("testPreauthenticatedRequest", new()
     ///     {
-    ///         var testPreauthenticatedRequest = new Oci.ObjectStorage.Preauthrequest("testPreauthenticatedRequest", new Oci.ObjectStorage.PreauthrequestArgs
-    ///         {
-    ///             AccessType = @var.Preauthenticated_request_access_type,
-    ///             Bucket = @var.Preauthenticated_request_bucket,
-    ///             Namespace = @var.Preauthenticated_request_namespace,
-    ///             TimeExpires = @var.Preauthenticated_request_time_expires,
-    ///             BucketListingAction = @var.Preauthenticated_request_bucket_listing_action,
-    ///             Object = @var.Preauthenticated_request_object,
-    ///         });
-    ///     }
+    ///         AccessType = @var.Preauthenticated_request_access_type,
+    ///         Bucket = @var.Preauthenticated_request_bucket,
+    ///         Namespace = @var.Preauthenticated_request_namespace,
+    ///         TimeExpires = @var.Preauthenticated_request_time_expires,
+    ///         BucketListingAction = @var.Preauthenticated_request_bucket_listing_action,
+    ///         Object = @var.Preauthenticated_request_object,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -47,7 +45,7 @@ namespace Pulumi.Oci.ObjectStorage
     /// ```
     /// </summary>
     [OciResourceType("oci:ObjectStorage/preauthrequest:Preauthrequest")]
-    public partial class Preauthrequest : Pulumi.CustomResource
+    public partial class Preauthrequest : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
@@ -159,7 +157,7 @@ namespace Pulumi.Oci.ObjectStorage
         }
     }
 
-    public sealed class PreauthrequestArgs : Pulumi.ResourceArgs
+    public sealed class PreauthrequestArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
@@ -212,9 +210,10 @@ namespace Pulumi.Oci.ObjectStorage
         public PreauthrequestArgs()
         {
         }
+        public static new PreauthrequestArgs Empty => new PreauthrequestArgs();
     }
 
-    public sealed class PreauthrequestState : Pulumi.ResourceArgs
+    public sealed class PreauthrequestState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
@@ -285,5 +284,6 @@ namespace Pulumi.Oci.ObjectStorage
         public PreauthrequestState()
         {
         }
+        public static new PreauthrequestState Empty => new PreauthrequestState();
     }
 }

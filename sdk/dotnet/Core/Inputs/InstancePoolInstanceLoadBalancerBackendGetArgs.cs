@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstancePoolInstanceLoadBalancerBackendGetArgs : Pulumi.ResourceArgs
+    public sealed class InstancePoolInstanceLoadBalancerBackendGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The health of the backend as observed by the load balancer.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstancePoolInstanceLoadBalancerBackendGetArgs()
         {
         }
+        public static new InstancePoolInstanceLoadBalancerBackendGetArgs Empty => new InstancePoolInstanceLoadBalancerBackendGetArgs();
     }
 }

@@ -17,31 +17,29 @@ namespace Pulumi.Oci.CloudGuard
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSecurityZone = new Oci.CloudGuard.SecurityZone("testSecurityZone", new()
     ///     {
-    ///         var testSecurityZone = new Oci.CloudGuard.SecurityZone("testSecurityZone", new Oci.CloudGuard.SecurityZoneArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Security_zone_display_name,
+    ///         SecurityZoneRecipeId = oci_cloud_guard_security_zone_recipe.Test_security_zone_recipe.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Security_zone_display_name,
-    ///             SecurityZoneRecipeId = oci_cloud_guard_security_zone_recipe.Test_security_zone_recipe.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Security_zone_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Security_zone_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.CloudGuard
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudGuard/securityZone:SecurityZone")]
-    public partial class SecurityZone : Pulumi.CustomResource
+    public partial class SecurityZone : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment for the security zone
@@ -177,7 +175,7 @@ namespace Pulumi.Oci.CloudGuard
         }
     }
 
-    public sealed class SecurityZoneArgs : Pulumi.ResourceArgs
+    public sealed class SecurityZoneArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment for the security zone
@@ -230,9 +228,10 @@ namespace Pulumi.Oci.CloudGuard
         public SecurityZoneArgs()
         {
         }
+        public static new SecurityZoneArgs Empty => new SecurityZoneArgs();
     }
 
-    public sealed class SecurityZoneState : Pulumi.ResourceArgs
+    public sealed class SecurityZoneState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment for the security zone
@@ -339,5 +338,6 @@ namespace Pulumi.Oci.CloudGuard
         public SecurityZoneState()
         {
         }
+        public static new SecurityZoneState Empty => new SecurityZoneState();
     }
 }

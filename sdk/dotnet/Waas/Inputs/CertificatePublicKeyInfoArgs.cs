@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class CertificatePublicKeyInfoArgs : Pulumi.ResourceArgs
+    public sealed class CertificatePublicKeyInfoArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The algorithm identifier and parameters for the public key.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public CertificatePublicKeyInfoArgs()
         {
         }
+        public static new CertificatePublicKeyInfoArgs Empty => new CertificatePublicKeyInfoArgs();
     }
 }

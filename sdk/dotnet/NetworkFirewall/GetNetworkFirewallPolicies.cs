@@ -22,23 +22,21 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkFirewallPolicies = Oci.NetworkFirewall.GetNetworkFirewallPolicies.Invoke(new()
         ///     {
-        ///         var testNetworkFirewallPolicies = Output.Create(Oci.NetworkFirewall.GetNetworkFirewallPolicies.InvokeAsync(new Oci.NetworkFirewall.GetNetworkFirewallPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Network_firewall_policy_display_name,
-        ///             Id = @var.Network_firewall_policy_id,
-        ///             State = @var.Network_firewall_policy_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Network_firewall_policy_display_name,
+        ///         Id = @var.Network_firewall_policy_id,
+        ///         State = @var.Network_firewall_policy_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkFirewallPolicies = Oci.NetworkFirewall.GetNetworkFirewallPolicies.Invoke(new()
         ///     {
-        ///         var testNetworkFirewallPolicies = Output.Create(Oci.NetworkFirewall.GetNetworkFirewallPolicies.InvokeAsync(new Oci.NetworkFirewall.GetNetworkFirewallPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Network_firewall_policy_display_name,
-        ///             Id = @var.Network_firewall_policy_id,
-        ///             State = @var.Network_firewall_policy_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Network_firewall_policy_display_name,
+        ///         Id = @var.Network_firewall_policy_id,
+        ///         State = @var.Network_firewall_policy_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.NetworkFirewall
     }
 
 
-    public sealed class GetNetworkFirewallPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkFirewallPoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.NetworkFirewall
         public GetNetworkFirewallPoliciesArgs()
         {
         }
+        public static new GetNetworkFirewallPoliciesArgs Empty => new GetNetworkFirewallPoliciesArgs();
     }
 
-    public sealed class GetNetworkFirewallPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkFirewallPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public GetNetworkFirewallPoliciesInvokeArgs()
         {
         }
+        public static new GetNetworkFirewallPoliciesInvokeArgs Empty => new GetNetworkFirewallPoliciesInvokeArgs();
     }
 
 

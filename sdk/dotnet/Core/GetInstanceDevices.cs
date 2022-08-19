@@ -21,22 +21,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstanceDevices = Oci.Core.GetInstanceDevices.Invoke(new()
         ///     {
-        ///         var testInstanceDevices = Output.Create(Oci.Core.GetInstanceDevices.InvokeAsync(new Oci.Core.GetInstanceDevicesArgs
-        ///         {
-        ///             InstanceId = oci_core_instance.Test_instance.Id,
-        ///             IsAvailable = @var.Instance_device_is_available,
-        ///             Name = @var.Instance_device_name,
-        ///         }));
-        ///     }
+        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         IsAvailable = @var.Instance_device_is_available,
+        ///         Name = @var.Instance_device_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstanceDevices = Oci.Core.GetInstanceDevices.Invoke(new()
         ///     {
-        ///         var testInstanceDevices = Output.Create(Oci.Core.GetInstanceDevices.InvokeAsync(new Oci.Core.GetInstanceDevicesArgs
-        ///         {
-        ///             InstanceId = oci_core_instance.Test_instance.Id,
-        ///             IsAvailable = @var.Instance_device_is_available,
-        ///             Name = @var.Instance_device_name,
-        ///         }));
-        ///     }
+        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         IsAvailable = @var.Instance_device_is_available,
+        ///         Name = @var.Instance_device_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetInstanceDevicesArgs : Pulumi.InvokeArgs
+    public sealed class GetInstanceDevicesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetInstanceDevicesFilterArgs>? _filters;
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.Core
         public GetInstanceDevicesArgs()
         {
         }
+        public static new GetInstanceDevicesArgs Empty => new GetInstanceDevicesArgs();
     }
 
-    public sealed class GetInstanceDevicesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInstanceDevicesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetInstanceDevicesFilterInputArgs>? _filters;
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.Core
         public GetInstanceDevicesInvokeArgs()
         {
         }
+        public static new GetInstanceDevicesInvokeArgs Empty => new GetInstanceDevicesInvokeArgs();
     }
 
 

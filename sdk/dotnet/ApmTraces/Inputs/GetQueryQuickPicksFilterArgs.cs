@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmTraces.Inputs
 {
 
-    public sealed class GetQueryQuickPicksFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetQueryQuickPicksFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.ApmTraces.Inputs
         public GetQueryQuickPicksFilterInputArgs()
         {
         }
+        public static new GetQueryQuickPicksFilterInputArgs Empty => new GetQueryQuickPicksFilterInputArgs();
     }
 }

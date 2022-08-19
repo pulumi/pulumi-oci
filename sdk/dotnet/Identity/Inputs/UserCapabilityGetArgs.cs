@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class UserCapabilityGetArgs : Pulumi.ResourceArgs
+    public sealed class UserCapabilityGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Indicates if the user can use API keys.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public UserCapabilityGetArgs()
         {
         }
+        public static new UserCapabilityGetArgs Empty => new UserCapabilityGetArgs();
     }
 }

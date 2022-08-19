@@ -26,6 +26,39 @@ import javax.annotation.Nullable;
  * In the response, the `lifecycleState` parameter of the [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream/) object tells you its current state.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Streaming.Stream;
+ * import com.pulumi.oci.Streaming.StreamArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testStream = new Stream(&#34;testStream&#34;, StreamArgs.builder()        
+ *             .partitions(var_.stream_partitions())
+ *             .compartmentId(var_.compartment_id())
+ *             .definedTags(var_.stream_defined_tags())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .retentionInHours(var_.stream_retention_in_hours())
+ *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

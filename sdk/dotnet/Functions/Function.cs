@@ -17,43 +17,41 @@ namespace Pulumi.Oci.Functions
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testFunction = new Oci.Functions.Function("testFunction", new()
     ///     {
-    ///         var testFunction = new Oci.Functions.Function("testFunction", new Oci.Functions.FunctionArgs
+    ///         ApplicationId = oci_functions_application.Test_application.Id,
+    ///         DisplayName = @var.Function_display_name,
+    ///         Image = @var.Function_image,
+    ///         MemoryInMbs = @var.Function_memory_in_mbs,
+    ///         Config = @var.Function_config,
+    ///         DefinedTags = 
     ///         {
-    ///             ApplicationId = oci_functions_application.Test_application.Id,
-    ///             DisplayName = @var.Function_display_name,
-    ///             Image = @var.Function_image,
-    ///             MemoryInMbs = @var.Function_memory_in_mbs,
-    ///             Config = @var.Function_config,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             ImageDigest = @var.Function_image_digest,
-    ///             ProvisionedConcurrencyConfig = new Oci.Functions.Inputs.FunctionProvisionedConcurrencyConfigArgs
-    ///             {
-    ///                 Strategy = @var.Function_provisioned_concurrency_config_strategy,
-    ///                 Count = @var.Function_provisioned_concurrency_config_count,
-    ///             },
-    ///             TimeoutInSeconds = @var.Function_timeout_in_seconds,
-    ///             TraceConfig = new Oci.Functions.Inputs.FunctionTraceConfigArgs
-    ///             {
-    ///                 IsEnabled = @var.Function_trace_config_is_enabled,
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         ImageDigest = @var.Function_image_digest,
+    ///         ProvisionedConcurrencyConfig = new Oci.Functions.Inputs.FunctionProvisionedConcurrencyConfigArgs
+    ///         {
+    ///             Strategy = @var.Function_provisioned_concurrency_config_strategy,
+    ///             Count = @var.Function_provisioned_concurrency_config_count,
+    ///         },
+    ///         TimeoutInSeconds = @var.Function_timeout_in_seconds,
+    ///         TraceConfig = new Oci.Functions.Inputs.FunctionTraceConfigArgs
+    ///         {
+    ///             IsEnabled = @var.Function_trace_config_is_enabled,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -65,7 +63,7 @@ namespace Pulumi.Oci.Functions
     /// ```
     /// </summary>
     [OciResourceType("oci:Functions/function:Function")]
-    public partial class Function : Pulumi.CustomResource
+    public partial class Function : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the application this function belongs to.
@@ -207,7 +205,7 @@ namespace Pulumi.Oci.Functions
         }
     }
 
-    public sealed class FunctionArgs : Pulumi.ResourceArgs
+    public sealed class FunctionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the application this function belongs to.
@@ -296,9 +294,10 @@ namespace Pulumi.Oci.Functions
         public FunctionArgs()
         {
         }
+        public static new FunctionArgs Empty => new FunctionArgs();
     }
 
-    public sealed class FunctionState : Pulumi.ResourceArgs
+    public sealed class FunctionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the application this function belongs to.
@@ -417,5 +416,6 @@ namespace Pulumi.Oci.Functions
         public FunctionState()
         {
         }
+        public static new FunctionState Empty => new FunctionState();
     }
 }

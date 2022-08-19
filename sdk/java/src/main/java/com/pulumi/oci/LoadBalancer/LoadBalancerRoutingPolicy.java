@@ -22,6 +22,44 @@ import javax.annotation.Nullable;
  * [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LoadBalancer.LoadBalancerRoutingPolicy;
+ * import com.pulumi.oci.LoadBalancer.LoadBalancerRoutingPolicyArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.LoadBalancerRoutingPolicyRuleArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testLoadBalancerRoutingPolicy = new LoadBalancerRoutingPolicy(&#34;testLoadBalancerRoutingPolicy&#34;, LoadBalancerRoutingPolicyArgs.builder()        
+ *             .conditionLanguageVersion(var_.load_balancer_routing_policy_condition_language_version())
+ *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *             .rules(LoadBalancerRoutingPolicyRuleArgs.builder()
+ *                 .actions(LoadBalancerRoutingPolicyRuleActionArgs.builder()
+ *                     .name(var_.load_balancer_routing_policy_rules_actions_name())
+ *                     .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
+ *                     .build())
+ *                 .condition(var_.load_balancer_routing_policy_rules_condition())
+ *                 .name(var_.load_balancer_routing_policy_rules_name())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

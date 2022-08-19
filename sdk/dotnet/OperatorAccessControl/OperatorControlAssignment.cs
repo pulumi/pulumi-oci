@@ -17,36 +17,34 @@ namespace Pulumi.Oci.OperatorAccessControl
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testOperatorControlAssignment = new Oci.OperatorAccessControl.OperatorControlAssignment("testOperatorControlAssignment", new()
     ///     {
-    ///         var testOperatorControlAssignment = new Oci.OperatorAccessControl.OperatorControlAssignment("testOperatorControlAssignment", new Oci.OperatorAccessControl.OperatorControlAssignmentArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             IsEnforcedAlways = @var.Operator_control_assignment_is_enforced_always,
-    ///             OperatorControlId = oci_operator_access_control_operator_control.Test_operator_control.Id,
-    ///             ResourceCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///             ResourceId = oci_operator_access_control_resource.Test_resource.Id,
-    ///             ResourceName = @var.Operator_control_assignment_resource_name,
-    ///             ResourceType = @var.Operator_control_assignment_resource_type,
-    ///             Comment = @var.Operator_control_assignment_comment,
-    ///             DefinedTags = @var.Operator_control_assignment_defined_tags,
-    ///             FreeformTags = @var.Operator_control_assignment_freeform_tags,
-    ///             IsAutoApproveDuringMaintenance = @var.Operator_control_assignment_is_auto_approve_during_maintenance,
-    ///             IsLogForwarded = @var.Operator_control_assignment_is_log_forwarded,
-    ///             RemoteSyslogServerAddress = @var.Operator_control_assignment_remote_syslog_server_address,
-    ///             RemoteSyslogServerCaCert = @var.Operator_control_assignment_remote_syslog_server_ca_cert,
-    ///             RemoteSyslogServerPort = @var.Operator_control_assignment_remote_syslog_server_port,
-    ///             TimeAssignmentFrom = @var.Operator_control_assignment_time_assignment_from,
-    ///             TimeAssignmentTo = @var.Operator_control_assignment_time_assignment_to,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         IsEnforcedAlways = @var.Operator_control_assignment_is_enforced_always,
+    ///         OperatorControlId = oci_operator_access_control_operator_control.Test_operator_control.Id,
+    ///         ResourceCompartmentId = oci_identity_compartment.Test_compartment.Id,
+    ///         ResourceId = oci_operator_access_control_resource.Test_resource.Id,
+    ///         ResourceName = @var.Operator_control_assignment_resource_name,
+    ///         ResourceType = @var.Operator_control_assignment_resource_type,
+    ///         Comment = @var.Operator_control_assignment_comment,
+    ///         DefinedTags = @var.Operator_control_assignment_defined_tags,
+    ///         FreeformTags = @var.Operator_control_assignment_freeform_tags,
+    ///         IsAutoApproveDuringMaintenance = @var.Operator_control_assignment_is_auto_approve_during_maintenance,
+    ///         IsLogForwarded = @var.Operator_control_assignment_is_log_forwarded,
+    ///         RemoteSyslogServerAddress = @var.Operator_control_assignment_remote_syslog_server_address,
+    ///         RemoteSyslogServerCaCert = @var.Operator_control_assignment_remote_syslog_server_ca_cert,
+    ///         RemoteSyslogServerPort = @var.Operator_control_assignment_remote_syslog_server_port,
+    ///         TimeAssignmentFrom = @var.Operator_control_assignment_time_assignment_from,
+    ///         TimeAssignmentTo = @var.Operator_control_assignment_time_assignment_to,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -58,7 +56,7 @@ namespace Pulumi.Oci.OperatorAccessControl
     /// ```
     /// </summary>
     [OciResourceType("oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment")]
-    public partial class OperatorControlAssignment : Pulumi.CustomResource
+    public partial class OperatorControlAssignment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the user who created this operator control assignment.
@@ -260,7 +258,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         }
     }
 
-    public sealed class OperatorControlAssignmentArgs : Pulumi.ResourceArgs
+    public sealed class OperatorControlAssignmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Comment about the assignment of the operator control to this target resource.
@@ -379,9 +377,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         public OperatorControlAssignmentArgs()
         {
         }
+        public static new OperatorControlAssignmentArgs Empty => new OperatorControlAssignmentArgs();
     }
 
-    public sealed class OperatorControlAssignmentState : Pulumi.ResourceArgs
+    public sealed class OperatorControlAssignmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the user who created this operator control assignment.
@@ -554,5 +553,6 @@ namespace Pulumi.Oci.OperatorAccessControl
         public OperatorControlAssignmentState()
         {
         }
+        public static new OperatorControlAssignmentState Empty => new OperatorControlAssignmentState();
     }
 }

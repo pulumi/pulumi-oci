@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseSqlTuningAdvisorTask = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTask.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseSqlTuningAdvisorTask = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTask.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTaskArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             Name = @var.Managed_database_sql_tuning_advisor_task_name,
-        ///             Status = @var.Managed_database_sql_tuning_advisor_task_status,
-        ///             TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
-        ///             TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         Name = @var.Managed_database_sql_tuning_advisor_task_name,
+        ///         Status = @var.Managed_database_sql_tuning_advisor_task_status,
+        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
+        ///         TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseSqlTuningAdvisorTask = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTask.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseSqlTuningAdvisorTask = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTask.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTaskArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             Name = @var.Managed_database_sql_tuning_advisor_task_name,
-        ///             Status = @var.Managed_database_sql_tuning_advisor_task_status,
-        ///             TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
-        ///             TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         Name = @var.Managed_database_sql_tuning_advisor_task_name,
+        ///         Status = @var.Managed_database_sql_tuning_advisor_task_status,
+        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
+        ///         TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseSqlTuningAdvisorTaskArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseSqlTuningAdvisorTaskArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseSqlTuningAdvisorTaskArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningAdvisorTaskArgs Empty => new GetManagedDatabaseSqlTuningAdvisorTaskArgs();
     }
 
-    public sealed class GetManagedDatabaseSqlTuningAdvisorTaskInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseSqlTuningAdvisorTaskInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseSqlTuningAdvisorTaskInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningAdvisorTaskInvokeArgs Empty => new GetManagedDatabaseSqlTuningAdvisorTaskInvokeArgs();
     }
 
 

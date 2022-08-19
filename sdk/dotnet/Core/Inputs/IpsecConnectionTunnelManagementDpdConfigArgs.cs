@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class IpsecConnectionTunnelManagementDpdConfigArgs : Pulumi.ResourceArgs
+    public sealed class IpsecConnectionTunnelManagementDpdConfigArgs : global::Pulumi.ResourceArgs
     {
         [Input("dpdMode")]
         public Input<string>? DpdMode { get; set; }
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Core.Inputs
         public IpsecConnectionTunnelManagementDpdConfigArgs()
         {
         }
+        public static new IpsecConnectionTunnelManagementDpdConfigArgs Empty => new IpsecConnectionTunnelManagementDpdConfigArgs();
     }
 }

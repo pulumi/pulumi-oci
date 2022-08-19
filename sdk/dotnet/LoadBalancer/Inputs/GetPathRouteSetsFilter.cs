@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class GetPathRouteSetsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetPathRouteSetsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public GetPathRouteSetsFilterArgs()
         {
         }
+        public static new GetPathRouteSetsFilterArgs Empty => new GetPathRouteSetsFilterArgs();
     }
 }

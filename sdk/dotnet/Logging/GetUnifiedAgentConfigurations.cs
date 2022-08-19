@@ -21,25 +21,23 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUnifiedAgentConfigurations = Oci.Logging.GetUnifiedAgentConfigurations.Invoke(new()
         ///     {
-        ///         var testUnifiedAgentConfigurations = Output.Create(Oci.Logging.GetUnifiedAgentConfigurations.InvokeAsync(new Oci.Logging.GetUnifiedAgentConfigurationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Unified_agent_configuration_display_name,
-        ///             GroupId = oci_identity_group.Test_group.Id,
-        ///             IsCompartmentIdInSubtree = @var.Unified_agent_configuration_is_compartment_id_in_subtree,
-        ///             LogId = oci_logging_log.Test_log.Id,
-        ///             State = @var.Unified_agent_configuration_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Unified_agent_configuration_display_name,
+        ///         GroupId = oci_identity_group.Test_group.Id,
+        ///         IsCompartmentIdInSubtree = @var.Unified_agent_configuration_is_compartment_id_in_subtree,
+        ///         LogId = oci_logging_log.Test_log.Id,
+        ///         State = @var.Unified_agent_configuration_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUnifiedAgentConfigurations = Oci.Logging.GetUnifiedAgentConfigurations.Invoke(new()
         ///     {
-        ///         var testUnifiedAgentConfigurations = Output.Create(Oci.Logging.GetUnifiedAgentConfigurations.InvokeAsync(new Oci.Logging.GetUnifiedAgentConfigurationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Unified_agent_configuration_display_name,
-        ///             GroupId = oci_identity_group.Test_group.Id,
-        ///             IsCompartmentIdInSubtree = @var.Unified_agent_configuration_is_compartment_id_in_subtree,
-        ///             LogId = oci_logging_log.Test_log.Id,
-        ///             State = @var.Unified_agent_configuration_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Unified_agent_configuration_display_name,
+        ///         GroupId = oci_identity_group.Test_group.Id,
+        ///         IsCompartmentIdInSubtree = @var.Unified_agent_configuration_is_compartment_id_in_subtree,
+        ///         LogId = oci_logging_log.Test_log.Id,
+        ///         State = @var.Unified_agent_configuration_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Logging
     }
 
 
-    public sealed class GetUnifiedAgentConfigurationsArgs : Pulumi.InvokeArgs
+    public sealed class GetUnifiedAgentConfigurationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.Logging
         public GetUnifiedAgentConfigurationsArgs()
         {
         }
+        public static new GetUnifiedAgentConfigurationsArgs Empty => new GetUnifiedAgentConfigurationsArgs();
     }
 
-    public sealed class GetUnifiedAgentConfigurationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUnifiedAgentConfigurationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.Logging
         public GetUnifiedAgentConfigurationsInvokeArgs()
         {
         }
+        public static new GetUnifiedAgentConfigurationsInvokeArgs Empty => new GetUnifiedAgentConfigurationsInvokeArgs();
     }
 
 

@@ -35,6 +35,34 @@ public final class AdmFunctions {
      * Returns the details of the specified Knowledge Base.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetKnowledgebaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBase = AdmFunctions.getKnowledgebase(GetKnowledgebaseArgs.builder()
+     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKnowledgebaseResult> getKnowledgebase(GetKnowledgebaseArgs args) {
@@ -46,6 +74,34 @@ public final class AdmFunctions {
      * Returns the details of the specified Knowledge Base.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetKnowledgebaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBase = AdmFunctions.getKnowledgebase(GetKnowledgebaseArgs.builder()
+     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKnowledgebaseResult> getKnowledgebasePlain(GetKnowledgebasePlainArgs args) {
@@ -57,6 +113,34 @@ public final class AdmFunctions {
      * Returns the details of the specified Knowledge Base.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetKnowledgebaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBase = AdmFunctions.getKnowledgebase(GetKnowledgebaseArgs.builder()
+     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKnowledgebaseResult> getKnowledgebase(GetKnowledgebaseArgs args, InvokeOptions options) {
@@ -68,6 +152,34 @@ public final class AdmFunctions {
      * Returns the details of the specified Knowledge Base.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetKnowledgebaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBase = AdmFunctions.getKnowledgebase(GetKnowledgebaseArgs.builder()
+     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKnowledgebaseResult> getKnowledgebasePlain(GetKnowledgebasePlainArgs args, InvokeOptions options) {
@@ -80,6 +192,37 @@ public final class AdmFunctions {
      * At least id or compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBases = AdmFunctions.getKnowledgebases(GetKnowledgebasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.knowledge_base_display_name())
+     *             .id(var_.knowledge_base_id())
+     *             .state(var_.knowledge_base_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKnowledgebasesResult> getKnowledgebases() {
@@ -92,6 +235,37 @@ public final class AdmFunctions {
      * At least id or compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBases = AdmFunctions.getKnowledgebases(GetKnowledgebasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.knowledge_base_display_name())
+     *             .id(var_.knowledge_base_id())
+     *             .state(var_.knowledge_base_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKnowledgebasesResult> getKnowledgebasesPlain() {
@@ -104,6 +278,37 @@ public final class AdmFunctions {
      * At least id or compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBases = AdmFunctions.getKnowledgebases(GetKnowledgebasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.knowledge_base_display_name())
+     *             .id(var_.knowledge_base_id())
+     *             .state(var_.knowledge_base_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKnowledgebasesResult> getKnowledgebases(GetKnowledgebasesArgs args) {
@@ -116,6 +321,37 @@ public final class AdmFunctions {
      * At least id or compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBases = AdmFunctions.getKnowledgebases(GetKnowledgebasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.knowledge_base_display_name())
+     *             .id(var_.knowledge_base_id())
+     *             .state(var_.knowledge_base_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKnowledgebasesResult> getKnowledgebasesPlain(GetKnowledgebasesPlainArgs args) {
@@ -128,6 +364,37 @@ public final class AdmFunctions {
      * At least id or compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBases = AdmFunctions.getKnowledgebases(GetKnowledgebasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.knowledge_base_display_name())
+     *             .id(var_.knowledge_base_id())
+     *             .state(var_.knowledge_base_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKnowledgebasesResult> getKnowledgebases(GetKnowledgebasesArgs args, InvokeOptions options) {
@@ -140,6 +407,37 @@ public final class AdmFunctions {
      * At least id or compartmentId query parameter must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetKnowledgebasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKnowledgeBases = AdmFunctions.getKnowledgebases(GetKnowledgebasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.knowledge_base_display_name())
+     *             .id(var_.knowledge_base_id())
+     *             .state(var_.knowledge_base_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKnowledgebasesResult> getKnowledgebasesPlain(GetKnowledgebasesPlainArgs args, InvokeOptions options) {
@@ -151,6 +449,34 @@ public final class AdmFunctions {
      * Returns the details of the specified Vulnerability Audit.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAudit = AdmFunctions.getVulnerabilityAudit(GetVulnerabilityAuditArgs.builder()
+     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVulnerabilityAuditResult> getVulnerabilityAudit(GetVulnerabilityAuditArgs args) {
@@ -162,6 +488,34 @@ public final class AdmFunctions {
      * Returns the details of the specified Vulnerability Audit.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAudit = AdmFunctions.getVulnerabilityAudit(GetVulnerabilityAuditArgs.builder()
+     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditResult> getVulnerabilityAuditPlain(GetVulnerabilityAuditPlainArgs args) {
@@ -173,6 +527,34 @@ public final class AdmFunctions {
      * Returns the details of the specified Vulnerability Audit.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAudit = AdmFunctions.getVulnerabilityAudit(GetVulnerabilityAuditArgs.builder()
+     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVulnerabilityAuditResult> getVulnerabilityAudit(GetVulnerabilityAuditArgs args, InvokeOptions options) {
@@ -184,6 +566,34 @@ public final class AdmFunctions {
      * Returns the details of the specified Vulnerability Audit.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAudit = AdmFunctions.getVulnerabilityAudit(GetVulnerabilityAuditArgs.builder()
+     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditResult> getVulnerabilityAuditPlain(GetVulnerabilityAuditPlainArgs args, InvokeOptions options) {
@@ -195,6 +605,38 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAuditApplicationDependencyVulnerabilities = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs.builder()
+     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
+     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult> getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs args) {
@@ -206,6 +648,38 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAuditApplicationDependencyVulnerabilities = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs.builder()
+     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
+     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult> getVulnerabilityAuditApplicationDependencyVulnerabilitiesPlain(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesPlainArgs args) {
@@ -217,6 +691,38 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAuditApplicationDependencyVulnerabilities = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs.builder()
+     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
+     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult> getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs args, InvokeOptions options) {
@@ -228,6 +734,38 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAuditApplicationDependencyVulnerabilities = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs.builder()
+     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
+     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult> getVulnerabilityAuditApplicationDependencyVulnerabilitiesPlain(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesPlainArgs args, InvokeOptions options) {
@@ -239,6 +777,38 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAuditApplicationDependencyVulnerability = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs.builder()
+     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
+     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVulnerabilityAuditApplicationDependencyVulnerabilityResult> getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs args) {
@@ -250,6 +820,38 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAuditApplicationDependencyVulnerability = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs.builder()
+     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
+     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditApplicationDependencyVulnerabilityResult> getVulnerabilityAuditApplicationDependencyVulnerabilityPlain(GetVulnerabilityAuditApplicationDependencyVulnerabilityPlainArgs args) {
@@ -261,6 +863,38 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAuditApplicationDependencyVulnerability = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs.builder()
+     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
+     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVulnerabilityAuditApplicationDependencyVulnerabilityResult> getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs args, InvokeOptions options) {
@@ -272,6 +906,38 @@ public final class AdmFunctions {
      * Returns a list of Application Dependencies with their associated vulnerabilities.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAuditApplicationDependencyVulnerability = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs.builder()
+     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
+     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
+     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
+     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditApplicationDependencyVulnerabilityResult> getVulnerabilityAuditApplicationDependencyVulnerabilityPlain(GetVulnerabilityAuditApplicationDependencyVulnerabilityPlainArgs args, InvokeOptions options) {
@@ -284,6 +950,39 @@ public final class AdmFunctions {
      * At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAudits = AdmFunctions.getVulnerabilityAudits(GetVulnerabilityAuditsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vulnerability_audit_display_name())
+     *             .id(var_.vulnerability_audit_id())
+     *             .isSuccess(var_.vulnerability_audit_is_success())
+     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .state(var_.vulnerability_audit_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVulnerabilityAuditsResult> getVulnerabilityAudits() {
@@ -296,6 +995,39 @@ public final class AdmFunctions {
      * At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAudits = AdmFunctions.getVulnerabilityAudits(GetVulnerabilityAuditsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vulnerability_audit_display_name())
+     *             .id(var_.vulnerability_audit_id())
+     *             .isSuccess(var_.vulnerability_audit_is_success())
+     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .state(var_.vulnerability_audit_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditsResult> getVulnerabilityAuditsPlain() {
@@ -308,6 +1040,39 @@ public final class AdmFunctions {
      * At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAudits = AdmFunctions.getVulnerabilityAudits(GetVulnerabilityAuditsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vulnerability_audit_display_name())
+     *             .id(var_.vulnerability_audit_id())
+     *             .isSuccess(var_.vulnerability_audit_is_success())
+     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .state(var_.vulnerability_audit_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVulnerabilityAuditsResult> getVulnerabilityAudits(GetVulnerabilityAuditsArgs args) {
@@ -320,6 +1085,39 @@ public final class AdmFunctions {
      * At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAudits = AdmFunctions.getVulnerabilityAudits(GetVulnerabilityAuditsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vulnerability_audit_display_name())
+     *             .id(var_.vulnerability_audit_id())
+     *             .isSuccess(var_.vulnerability_audit_is_success())
+     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .state(var_.vulnerability_audit_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditsResult> getVulnerabilityAuditsPlain(GetVulnerabilityAuditsPlainArgs args) {
@@ -332,6 +1130,39 @@ public final class AdmFunctions {
      * At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAudits = AdmFunctions.getVulnerabilityAudits(GetVulnerabilityAuditsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vulnerability_audit_display_name())
+     *             .id(var_.vulnerability_audit_id())
+     *             .isSuccess(var_.vulnerability_audit_is_success())
+     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .state(var_.vulnerability_audit_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVulnerabilityAuditsResult> getVulnerabilityAudits(GetVulnerabilityAuditsArgs args, InvokeOptions options) {
@@ -344,6 +1175,39 @@ public final class AdmFunctions {
      * At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Adm.AdmFunctions;
+     * import com.pulumi.oci.Adm.inputs.GetVulnerabilityAuditsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerabilityAudits = AdmFunctions.getVulnerabilityAudits(GetVulnerabilityAuditsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vulnerability_audit_display_name())
+     *             .id(var_.vulnerability_audit_id())
+     *             .isSuccess(var_.vulnerability_audit_is_success())
+     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .state(var_.vulnerability_audit_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVulnerabilityAuditsResult> getVulnerabilityAuditsPlain(GetVulnerabilityAuditsPlainArgs args, InvokeOptions options) {

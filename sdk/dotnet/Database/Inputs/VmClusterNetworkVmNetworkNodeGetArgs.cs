@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class VmClusterNetworkVmNetworkNodeGetArgs : Pulumi.ResourceArgs
+    public sealed class VmClusterNetworkVmNetworkNodeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The node host name.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Database.Inputs
         public VmClusterNetworkVmNetworkNodeGetArgs()
         {
         }
+        public static new VmClusterNetworkVmNetworkNodeGetArgs Empty => new VmClusterNetworkVmNetworkNodeGetArgs();
     }
 }

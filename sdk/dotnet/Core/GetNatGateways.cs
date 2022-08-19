@@ -23,23 +23,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNatGateways = Oci.Core.GetNatGateways.Invoke(new()
         ///     {
-        ///         var testNatGateways = Output.Create(Oci.Core.GetNatGateways.InvokeAsync(new Oci.Core.GetNatGatewaysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Nat_gateway_display_name,
-        ///             State = @var.Nat_gateway_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Nat_gateway_display_name,
+        ///         State = @var.Nat_gateway_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,23 +57,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNatGateways = Oci.Core.GetNatGateways.Invoke(new()
         ///     {
-        ///         var testNatGateways = Output.Create(Oci.Core.GetNatGateways.InvokeAsync(new Oci.Core.GetNatGatewaysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Nat_gateway_display_name,
-        ///             State = @var.Nat_gateway_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Nat_gateway_display_name,
+        ///         State = @var.Nat_gateway_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetNatGatewaysArgs : Pulumi.InvokeArgs
+    public sealed class GetNatGatewaysArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -122,9 +118,10 @@ namespace Pulumi.Oci.Core
         public GetNatGatewaysArgs()
         {
         }
+        public static new GetNatGatewaysArgs Empty => new GetNatGatewaysArgs();
     }
 
-    public sealed class GetNatGatewaysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNatGatewaysInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -161,6 +158,7 @@ namespace Pulumi.Oci.Core
         public GetNatGatewaysInvokeArgs()
         {
         }
+        public static new GetNatGatewaysInvokeArgs Empty => new GetNatGatewaysInvokeArgs();
     }
 
 

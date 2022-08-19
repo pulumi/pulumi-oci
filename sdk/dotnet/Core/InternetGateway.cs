@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/internetGateway:InternetGateway")]
-    public partial class InternetGateway : Pulumi.CustomResource
+    public partial class InternetGateway : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the internet gateway.
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class InternetGatewayArgs : Pulumi.ResourceArgs
+    public sealed class InternetGatewayArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the internet gateway.
@@ -201,9 +201,10 @@ namespace Pulumi.Oci.Core
         public InternetGatewayArgs()
         {
         }
+        public static new InternetGatewayArgs Empty => new InternetGatewayArgs();
     }
 
-    public sealed class InternetGatewayState : Pulumi.ResourceArgs
+    public sealed class InternetGatewayState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the internet gateway.
@@ -274,5 +275,6 @@ namespace Pulumi.Oci.Core
         public InternetGatewayState()
         {
         }
+        public static new InternetGatewayState Empty => new InternetGatewayState();
     }
 }

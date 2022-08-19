@@ -22,23 +22,21 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsResourceCategoriesList = Oci.LogAnalytics.GetLogAnalyticsResourceCategoriesList.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsResourceCategoriesList = Output.Create(Oci.LogAnalytics.GetLogAnalyticsResourceCategoriesList.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsResourceCategoriesListArgs
-        ///         {
-        ///             Namespace = @var.Log_analytics_resource_categories_list_namespace,
-        ///             ResourceIds = @var.Log_analytics_resource_categories_list_resource_ids,
-        ///             ResourceTypes = @var.Log_analytics_resource_categories_list_resource_types,
-        ///             ResourceCategories = @var.Log_analytics_resource_categories_list_resource_categories,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Log_analytics_resource_categories_list_namespace,
+        ///         ResourceIds = @var.Log_analytics_resource_categories_list_resource_ids,
+        ///         ResourceTypes = @var.Log_analytics_resource_categories_list_resource_types,
+        ///         ResourceCategories = @var.Log_analytics_resource_categories_list_resource_categories,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsResourceCategoriesList = Oci.LogAnalytics.GetLogAnalyticsResourceCategoriesList.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsResourceCategoriesList = Output.Create(Oci.LogAnalytics.GetLogAnalyticsResourceCategoriesList.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsResourceCategoriesListArgs
-        ///         {
-        ///             Namespace = @var.Log_analytics_resource_categories_list_namespace,
-        ///             ResourceIds = @var.Log_analytics_resource_categories_list_resource_ids,
-        ///             ResourceTypes = @var.Log_analytics_resource_categories_list_resource_types,
-        ///             ResourceCategories = @var.Log_analytics_resource_categories_list_resource_categories,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Log_analytics_resource_categories_list_namespace,
+        ///         ResourceIds = @var.Log_analytics_resource_categories_list_resource_ids,
+        ///         ResourceTypes = @var.Log_analytics_resource_categories_list_resource_types,
+        ///         ResourceCategories = @var.Log_analytics_resource_categories_list_resource_categories,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.LogAnalytics
     }
 
 
-    public sealed class GetLogAnalyticsResourceCategoriesListArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsResourceCategoriesListArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsResourceCategoriesListArgs()
         {
         }
+        public static new GetLogAnalyticsResourceCategoriesListArgs Empty => new GetLogAnalyticsResourceCategoriesListArgs();
     }
 
-    public sealed class GetLogAnalyticsResourceCategoriesListInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsResourceCategoriesListInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsResourceCategoriesListInvokeArgs()
         {
         }
+        public static new GetLogAnalyticsResourceCategoriesListInvokeArgs Empty => new GetLogAnalyticsResourceCategoriesListInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class ChannelSourceGetArgs : Pulumi.ResourceArgs
+    public sealed class ChannelSourceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The network address of the MySQL instance.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public ChannelSourceGetArgs()
         {
         }
+        public static new ChannelSourceGetArgs Empty => new ChannelSourceGetArgs();
     }
 }

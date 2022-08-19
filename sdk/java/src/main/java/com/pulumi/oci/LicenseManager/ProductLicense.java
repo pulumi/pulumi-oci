@@ -26,6 +26,45 @@ import javax.annotation.Nullable;
  * Creates a new product license.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LicenseManager.ProductLicense;
+ * import com.pulumi.oci.LicenseManager.ProductLicenseArgs;
+ * import com.pulumi.oci.LicenseManager.inputs.ProductLicenseImageArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testProductLicense = new ProductLicense(&#34;testProductLicense&#34;, ProductLicenseArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.product_license_display_name())
+ *             .isVendorOracle(var_.product_license_is_vendor_oracle())
+ *             .licenseUnit(var_.product_license_license_unit())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .images(ProductLicenseImageArgs.builder()
+ *                 .listingId(oci_marketplace_listing.test_listing().id())
+ *                 .packageVersion(var_.product_license_images_package_version())
+ *                 .build())
+ *             .vendorName(var_.product_license_vendor_name())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

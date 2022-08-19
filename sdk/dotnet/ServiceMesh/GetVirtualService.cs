@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualService = Oci.ServiceMesh.GetVirtualService.Invoke(new()
         ///     {
-        ///         var testVirtualService = Output.Create(Oci.ServiceMesh.GetVirtualService.InvokeAsync(new Oci.ServiceMesh.GetVirtualServiceArgs
-        ///         {
-        ///             VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
-        ///         }));
-        ///     }
+        ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualService = Oci.ServiceMesh.GetVirtualService.Invoke(new()
         ///     {
-        ///         var testVirtualService = Output.Create(Oci.ServiceMesh.GetVirtualService.InvokeAsync(new Oci.ServiceMesh.GetVirtualServiceArgs
-        ///         {
-        ///             VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
-        ///         }));
-        ///     }
+        ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetVirtualServiceArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualServiceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique VirtualService identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetVirtualServiceArgs()
         {
         }
+        public static new GetVirtualServiceArgs Empty => new GetVirtualServiceArgs();
     }
 
-    public sealed class GetVirtualServiceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualServiceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique VirtualService identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetVirtualServiceInvokeArgs()
         {
         }
+        public static new GetVirtualServiceInvokeArgs Empty => new GetVirtualServiceInvokeArgs();
     }
 
 

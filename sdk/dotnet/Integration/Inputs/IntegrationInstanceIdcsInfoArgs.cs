@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Integration.Inputs
 {
 
-    public sealed class IntegrationInstanceIdcsInfoArgs : Pulumi.ResourceArgs
+    public sealed class IntegrationInstanceIdcsInfoArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The IDCS application display name associated with the instance
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Integration.Inputs
         public IntegrationInstanceIdcsInfoArgs()
         {
         }
+        public static new IntegrationInstanceIdcsInfoArgs Empty => new IntegrationInstanceIdcsInfoArgs();
     }
 }

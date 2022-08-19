@@ -17,74 +17,72 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testReportDefinition = new Oci.DataSafe.ReportDefinition("testReportDefinition", new()
     ///     {
-    ///         var testReportDefinition = new Oci.DataSafe.ReportDefinition("testReportDefinition", new Oci.DataSafe.ReportDefinitionArgs
+    ///         ColumnFilters = new[]
     ///         {
-    ///             ColumnFilters = 
+    ///             new Oci.DataSafe.Inputs.ReportDefinitionColumnFilterArgs
     ///             {
-    ///                 new Oci.DataSafe.Inputs.ReportDefinitionColumnFilterArgs
-    ///                 {
-    ///                     Expressions = @var.Report_definition_column_filters_expressions,
-    ///                     FieldName = @var.Report_definition_column_filters_field_name,
-    ///                     IsEnabled = @var.Report_definition_column_filters_is_enabled,
-    ///                     IsHidden = @var.Report_definition_column_filters_is_hidden,
-    ///                     Operator = @var.Report_definition_column_filters_operator,
-    ///                 },
+    ///                 Expressions = @var.Report_definition_column_filters_expressions,
+    ///                 FieldName = @var.Report_definition_column_filters_field_name,
+    ///                 IsEnabled = @var.Report_definition_column_filters_is_enabled,
+    ///                 IsHidden = @var.Report_definition_column_filters_is_hidden,
+    ///                 Operator = @var.Report_definition_column_filters_operator,
     ///             },
-    ///             ColumnInfos = 
+    ///         },
+    ///         ColumnInfos = new[]
+    ///         {
+    ///             new Oci.DataSafe.Inputs.ReportDefinitionColumnInfoArgs
     ///             {
-    ///                 new Oci.DataSafe.Inputs.ReportDefinitionColumnInfoArgs
-    ///                 {
-    ///                     DisplayName = @var.Report_definition_column_info_display_name,
-    ///                     DisplayOrder = @var.Report_definition_column_info_display_order,
-    ///                     FieldName = @var.Report_definition_column_info_field_name,
-    ///                     IsHidden = @var.Report_definition_column_info_is_hidden,
-    ///                     DataType = @var.Report_definition_column_info_data_type,
-    ///                 },
+    ///                 DisplayName = @var.Report_definition_column_info_display_name,
+    ///                 DisplayOrder = @var.Report_definition_column_info_display_order,
+    ///                 FieldName = @var.Report_definition_column_info_field_name,
+    ///                 IsHidden = @var.Report_definition_column_info_is_hidden,
+    ///                 DataType = @var.Report_definition_column_info_data_type,
     ///             },
-    ///             ColumnSortings = 
+    ///         },
+    ///         ColumnSortings = new[]
+    ///         {
+    ///             new Oci.DataSafe.Inputs.ReportDefinitionColumnSortingArgs
     ///             {
-    ///                 new Oci.DataSafe.Inputs.ReportDefinitionColumnSortingArgs
-    ///                 {
-    ///                     FieldName = @var.Report_definition_column_sortings_field_name,
-    ///                     IsAscending = @var.Report_definition_column_sortings_is_ascending,
-    ///                     SortingOrder = @var.Report_definition_column_sortings_sorting_order,
-    ///                 },
+    ///                 FieldName = @var.Report_definition_column_sortings_field_name,
+    ///                 IsAscending = @var.Report_definition_column_sortings_is_ascending,
+    ///                 SortingOrder = @var.Report_definition_column_sortings_sorting_order,
     ///             },
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Report_definition_display_name,
-    ///             ParentId = oci_data_safe_parent.Test_parent.Id,
-    ///             Summaries = 
+    ///         },
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Report_definition_display_name,
+    ///         ParentId = oci_data_safe_parent.Test_parent.Id,
+    ///         Summaries = new[]
+    ///         {
+    ///             new Oci.DataSafe.Inputs.ReportDefinitionSummaryArgs
     ///             {
-    ///                 new Oci.DataSafe.Inputs.ReportDefinitionSummaryArgs
-    ///                 {
-    ///                     DisplayOrder = @var.Report_definition_summary_display_order,
-    ///                     Name = @var.Report_definition_summary_name,
-    ///                     CountOf = @var.Report_definition_summary_count_of,
-    ///                     GroupByFieldName = @var.Report_definition_summary_group_by_field_name,
-    ///                     IsHidden = @var.Report_definition_summary_is_hidden,
-    ///                     ScimFilter = @var.Report_definition_summary_scim_filter,
-    ///                 },
+    ///                 DisplayOrder = @var.Report_definition_summary_display_order,
+    ///                 Name = @var.Report_definition_summary_name,
+    ///                 CountOf = @var.Report_definition_summary_count_of,
+    ///                 GroupByFieldName = @var.Report_definition_summary_group_by_field_name,
+    ///                 IsHidden = @var.Report_definition_summary_is_hidden,
+    ///                 ScimFilter = @var.Report_definition_summary_scim_filter,
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Report_definition_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Report_definition_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -96,7 +94,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/reportDefinition:ReportDefinition")]
-    public partial class ReportDefinition : Pulumi.CustomResource
+    public partial class ReportDefinition : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Specifies the name of the category that this report belongs to.
@@ -256,7 +254,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class ReportDefinitionArgs : Pulumi.ResourceArgs
+    public sealed class ReportDefinitionArgs : global::Pulumi.ResourceArgs
     {
         [Input("columnFilters", required: true)]
         private InputList<Inputs.ReportDefinitionColumnFilterArgs>? _columnFilters;
@@ -357,9 +355,10 @@ namespace Pulumi.Oci.DataSafe
         public ReportDefinitionArgs()
         {
         }
+        public static new ReportDefinitionArgs Empty => new ReportDefinitionArgs();
     }
 
-    public sealed class ReportDefinitionState : Pulumi.ResourceArgs
+    public sealed class ReportDefinitionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Specifies the name of the category that this report belongs to.
@@ -520,5 +519,6 @@ namespace Pulumi.Oci.DataSafe
         public ReportDefinitionState()
         {
         }
+        public static new ReportDefinitionState Empty => new ReportDefinitionState();
     }
 }

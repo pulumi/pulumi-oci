@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class JobJobInfrastructureConfigurationDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class JobJobInfrastructureConfigurationDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The size of the block storage volume to attach to the instance running the job
@@ -23,6 +23,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         /// </summary>
         [Input("jobInfrastructureType", required: true)]
         public Input<string> JobInfrastructureType { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
+        /// </summary>
+        [Input("jobShapeConfigDetails")]
+        public Input<Inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsGetArgs>? JobShapeConfigDetails { get; set; }
 
         /// <summary>
         /// (Updatable) The shape used to launch the job run instances.
@@ -39,5 +45,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public JobJobInfrastructureConfigurationDetailsGetArgs()
         {
         }
+        public static new JobJobInfrastructureConfigurationDetailsGetArgs Empty => new JobJobInfrastructureConfigurationDetailsGetArgs();
     }
 }

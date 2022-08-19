@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployStageBlueBackendIpsArgs : Pulumi.ResourceArgs
+    public sealed class DeployStageBlueBackendIpsArgs : global::Pulumi.ResourceArgs
     {
         [Input("items")]
         private InputList<string>? _items;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployStageBlueBackendIpsArgs()
         {
         }
+        public static new DeployStageBlueBackendIpsArgs Empty => new DeployStageBlueBackendIpsArgs();
     }
 }

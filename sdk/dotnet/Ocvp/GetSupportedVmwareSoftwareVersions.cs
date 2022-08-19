@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Ocvp
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSupportedVmwareSoftwareVersions = Oci.Ocvp.GetSupportedVmwareSoftwareVersions.Invoke(new()
         ///     {
-        ///         var testSupportedVmwareSoftwareVersions = Output.Create(Oci.Ocvp.GetSupportedVmwareSoftwareVersions.InvokeAsync(new Oci.Ocvp.GetSupportedVmwareSoftwareVersionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Ocvp
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSupportedVmwareSoftwareVersions = Oci.Ocvp.GetSupportedVmwareSoftwareVersions.Invoke(new()
         ///     {
-        ///         var testSupportedVmwareSoftwareVersions = Output.Create(Oci.Ocvp.GetSupportedVmwareSoftwareVersions.InvokeAsync(new Oci.Ocvp.GetSupportedVmwareSoftwareVersionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Ocvp
     }
 
 
-    public sealed class GetSupportedVmwareSoftwareVersionsArgs : Pulumi.InvokeArgs
+    public sealed class GetSupportedVmwareSoftwareVersionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.Ocvp
         public GetSupportedVmwareSoftwareVersionsArgs()
         {
         }
+        public static new GetSupportedVmwareSoftwareVersionsArgs Empty => new GetSupportedVmwareSoftwareVersionsArgs();
     }
 
-    public sealed class GetSupportedVmwareSoftwareVersionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSupportedVmwareSoftwareVersionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.Ocvp
         public GetSupportedVmwareSoftwareVersionsInvokeArgs()
         {
         }
+        public static new GetSupportedVmwareSoftwareVersionsInvokeArgs Empty => new GetSupportedVmwareSoftwareVersionsInvokeArgs();
     }
 
 

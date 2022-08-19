@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testUserCapabilitiesManagement = new oci.identity.UserCapabilitiesManagement("testUserCapabilitiesManagement", {
  *     userId: oci_identity_user.user1.id,
- *     canUseApiKeys: "true",
- *     canUseAuthTokens: "true",
- *     canUseConsolePassword: "false",
- *     canUseCustomerSecretKeys: "true",
- *     canUseSmtpCredentials: "true",
+ *     canUseApiKeys: true,
+ *     canUseAuthTokens: true,
+ *     canUseConsolePassword: false,
+ *     canUseCustomerSecretKeys: true,
+ *     canUseSmtpCredentials: true,
  * });
  * ```
  *

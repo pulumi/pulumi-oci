@@ -17,37 +17,35 @@ namespace Pulumi.Oci.Budget
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBudget = new Oci.Budget.Budget("testBudget", new()
     ///     {
-    ///         var testBudget = new Oci.Budget.Budget("testBudget", new Oci.Budget.BudgetArgs
+    ///         Amount = @var.Budget_amount,
+    ///         CompartmentId = @var.Tenancy_ocid,
+    ///         ResetPeriod = @var.Budget_reset_period,
+    ///         BudgetProcessingPeriodStartOffset = @var.Budget_budget_processing_period_start_offset,
+    ///         DefinedTags = 
     ///         {
-    ///             Amount = @var.Budget_amount,
-    ///             CompartmentId = @var.Tenancy_ocid,
-    ///             ResetPeriod = @var.Budget_reset_period,
-    ///             BudgetProcessingPeriodStartOffset = @var.Budget_budget_processing_period_start_offset,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Budget_description,
-    ///             DisplayName = @var.Budget_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             ProcessingPeriodType = @var.Budget_processing_period_type,
-    ///             TargetCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///             TargetType = @var.Budget_target_type,
-    ///             Targets = @var.Budget_targets,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Budget_description,
+    ///         DisplayName = @var.Budget_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         ProcessingPeriodType = @var.Budget_processing_period_type,
+    ///         TargetCompartmentId = oci_identity_compartment.Test_compartment.Id,
+    ///         TargetType = @var.Budget_target_type,
+    ///         Targets = @var.Budget_targets,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -59,7 +57,7 @@ namespace Pulumi.Oci.Budget
     /// ```
     /// </summary>
     [OciResourceType("oci:Budget/budget:Budget")]
-    public partial class Budget : Pulumi.CustomResource
+    public partial class Budget : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The actual spend in currency for the current budget cycle.
@@ -225,7 +223,7 @@ namespace Pulumi.Oci.Budget
         }
     }
 
-    public sealed class BudgetArgs : Pulumi.ResourceArgs
+    public sealed class BudgetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
@@ -320,9 +318,10 @@ namespace Pulumi.Oci.Budget
         public BudgetArgs()
         {
         }
+        public static new BudgetArgs Empty => new BudgetArgs();
     }
 
-    public sealed class BudgetState : Pulumi.ResourceArgs
+    public sealed class BudgetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The actual spend in currency for the current budget cycle.
@@ -465,5 +464,6 @@ namespace Pulumi.Oci.Budget
         public BudgetState()
         {
         }
+        public static new BudgetState Empty => new BudgetState();
     }
 }

@@ -23,6 +23,41 @@ import javax.annotation.Nullable;
  * this operation.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.AuditArchiveRetrieval;
+ * import com.pulumi.oci.DataSafe.AuditArchiveRetrievalArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAuditArchiveRetrieval = new AuditArchiveRetrieval(&#34;testAuditArchiveRetrieval&#34;, AuditArchiveRetrievalArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .endDate(var_.audit_archive_retrieval_end_date())
+ *             .startDate(var_.audit_archive_retrieval_start_date())
+ *             .targetId(oci_cloud_guard_target.test_target().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.audit_archive_retrieval_description())
+ *             .displayName(var_.audit_archive_retrieval_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

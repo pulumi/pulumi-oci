@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs : Pulumi.ResourceArgs
+    public sealed class CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable)
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs()
         {
         }
+        public static new CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs Empty => new CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs();
     }
 }

@@ -24,6 +24,246 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataConnectivity.RegistryFolder;
+ * import com.pulumi.oci.DataConnectivity.RegistryFolderArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetDefaultConnectionArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetDefaultConnectionMetadataArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetMetadataArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetMetadataAggregatorArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetNativeTypeSystemArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetNativeTypeSystemParentRefArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderDataAssetRegistryMetadataArgs;
+ * import com.pulumi.oci.DataConnectivity.inputs.RegistryFolderParentRefArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testRegistryFolder = new RegistryFolder(&#34;testRegistryFolder&#34;, RegistryFolderArgs.builder()        
+ *             .identifier(var_.registry_folder_identifier())
+ *             .registryId(oci_data_connectivity_registry.test_registry().id())
+ *             .dataAssets(RegistryFolderDataAssetArgs.builder()
+ *                 .identifier(var_.registry_folder_data_assets_identifier())
+ *                 .key(var_.registry_folder_data_assets_key())
+ *                 .name(var_.registry_folder_data_assets_name())
+ *                 .assetProperties(var_.registry_folder_data_assets_asset_properties())
+ *                 .defaultConnection(RegistryFolderDataAssetDefaultConnectionArgs.builder()
+ *                     .identifier(var_.registry_folder_data_assets_default_connection_identifier())
+ *                     .key(var_.registry_folder_data_assets_default_connection_key())
+ *                     .name(var_.registry_folder_data_assets_default_connection_name())
+ *                     .connectionProperties(RegistryFolderDataAssetDefaultConnectionConnectionPropertyArgs.builder()
+ *                         .name(var_.registry_folder_data_assets_default_connection_connection_properties_name())
+ *                         .value(var_.registry_folder_data_assets_default_connection_connection_properties_value())
+ *                         .build())
+ *                     .description(var_.registry_folder_data_assets_default_connection_description())
+ *                     .isDefault(var_.registry_folder_data_assets_default_connection_is_default())
+ *                     .metadata(RegistryFolderDataAssetDefaultConnectionMetadataArgs.builder()
+ *                         .aggregator(RegistryFolderDataAssetDefaultConnectionMetadataAggregatorArgs.builder()
+ *                             .description(var_.registry_folder_data_assets_default_connection_metadata_aggregator_description())
+ *                             .identifier(var_.registry_folder_data_assets_default_connection_metadata_aggregator_identifier())
+ *                             .key(var_.registry_folder_data_assets_default_connection_metadata_aggregator_key())
+ *                             .name(var_.registry_folder_data_assets_default_connection_metadata_aggregator_name())
+ *                             .type(var_.registry_folder_data_assets_default_connection_metadata_aggregator_type())
+ *                             .build())
+ *                         .aggregatorKey(var_.registry_folder_data_assets_default_connection_metadata_aggregator_key())
+ *                         .createdBy(var_.registry_folder_data_assets_default_connection_metadata_created_by())
+ *                         .createdByName(var_.registry_folder_data_assets_default_connection_metadata_created_by_name())
+ *                         .identifierPath(var_.registry_folder_data_assets_default_connection_metadata_identifier_path())
+ *                         .infoFields(var_.registry_folder_data_assets_default_connection_metadata_info_fields())
+ *                         .isFavorite(var_.registry_folder_data_assets_default_connection_metadata_is_favorite())
+ *                         .labels(var_.registry_folder_data_assets_default_connection_metadata_labels())
+ *                         .registryVersion(var_.registry_folder_data_assets_default_connection_metadata_registry_version())
+ *                         .timeCreated(var_.registry_folder_data_assets_default_connection_metadata_time_created())
+ *                         .timeUpdated(var_.registry_folder_data_assets_default_connection_metadata_time_updated())
+ *                         .updatedBy(var_.registry_folder_data_assets_default_connection_metadata_updated_by())
+ *                         .updatedByName(var_.registry_folder_data_assets_default_connection_metadata_updated_by_name())
+ *                         .build())
+ *                     .modelType(var_.registry_folder_data_assets_default_connection_model_type())
+ *                     .modelVersion(var_.registry_folder_data_assets_default_connection_model_version())
+ *                     .objectStatus(var_.registry_folder_data_assets_default_connection_object_status())
+ *                     .objectVersion(var_.registry_folder_data_assets_default_connection_object_version())
+ *                     .primarySchema(RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs.builder()
+ *                         .identifier(var_.registry_folder_data_assets_default_connection_primary_schema_identifier())
+ *                         .key(var_.registry_folder_data_assets_default_connection_primary_schema_key())
+ *                         .modelType(var_.registry_folder_data_assets_default_connection_primary_schema_model_type())
+ *                         .name(var_.registry_folder_data_assets_default_connection_primary_schema_name())
+ *                         .defaultConnection(var_.registry_folder_data_assets_default_connection_primary_schema_default_connection())
+ *                         .description(var_.registry_folder_data_assets_default_connection_primary_schema_description())
+ *                         .externalKey(var_.registry_folder_data_assets_default_connection_primary_schema_external_key())
+ *                         .isHasContainers(var_.registry_folder_data_assets_default_connection_primary_schema_is_has_containers())
+ *                         .metadata(RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataArgs.builder()
+ *                             .aggregator(RegistryFolderDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs.builder()
+ *                                 .description(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_aggregator_description())
+ *                                 .identifier(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_aggregator_identifier())
+ *                                 .key(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_aggregator_key())
+ *                                 .name(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_aggregator_name())
+ *                                 .type(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_aggregator_type())
+ *                                 .build())
+ *                             .aggregatorKey(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_aggregator_key())
+ *                             .createdBy(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_created_by())
+ *                             .createdByName(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_created_by_name())
+ *                             .identifierPath(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_identifier_path())
+ *                             .infoFields(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_info_fields())
+ *                             .isFavorite(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_is_favorite())
+ *                             .labels(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_labels())
+ *                             .registryVersion(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_registry_version())
+ *                             .timeCreated(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_time_created())
+ *                             .timeUpdated(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_time_updated())
+ *                             .updatedBy(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_updated_by())
+ *                             .updatedByName(var_.registry_folder_data_assets_default_connection_primary_schema_metadata_updated_by_name())
+ *                             .build())
+ *                         .modelVersion(var_.registry_folder_data_assets_default_connection_primary_schema_model_version())
+ *                         .objectStatus(var_.registry_folder_data_assets_default_connection_primary_schema_object_status())
+ *                         .objectVersion(var_.registry_folder_data_assets_default_connection_primary_schema_object_version())
+ *                         .parentRef(RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefArgs.builder()
+ *                             .parent(var_.registry_folder_data_assets_default_connection_primary_schema_parent_ref_parent())
+ *                             .build())
+ *                         .resourceName(var_.registry_folder_data_assets_default_connection_primary_schema_resource_name())
+ *                         .build())
+ *                     .properties(var_.registry_folder_data_assets_default_connection_properties())
+ *                     .registryMetadata(RegistryFolderDataAssetDefaultConnectionRegistryMetadataArgs.builder()
+ *                         .aggregatorKey(var_.registry_folder_data_assets_default_connection_registry_metadata_aggregator_key())
+ *                         .createdByUserId(oci_identity_user.test_user().id())
+ *                         .createdByUserName(oci_identity_user.test_user().name())
+ *                         .isFavorite(var_.registry_folder_data_assets_default_connection_registry_metadata_is_favorite())
+ *                         .key(var_.registry_folder_data_assets_default_connection_registry_metadata_key())
+ *                         .labels(var_.registry_folder_data_assets_default_connection_registry_metadata_labels())
+ *                         .registryVersion(var_.registry_folder_data_assets_default_connection_registry_metadata_registry_version())
+ *                         .timeCreated(var_.registry_folder_data_assets_default_connection_registry_metadata_time_created())
+ *                         .timeUpdated(var_.registry_folder_data_assets_default_connection_registry_metadata_time_updated())
+ *                         .updatedByUserId(oci_identity_user.test_user().id())
+ *                         .updatedByUserName(oci_identity_user.test_user().name())
+ *                         .build())
+ *                     .type(var_.registry_folder_data_assets_default_connection_type())
+ *                     .build())
+ *                 .description(var_.registry_folder_data_assets_description())
+ *                 .endPoints(var_.registry_folder_data_assets_end_points())
+ *                 .externalKey(var_.registry_folder_data_assets_external_key())
+ *                 .metadata(RegistryFolderDataAssetMetadataArgs.builder()
+ *                     .aggregator(RegistryFolderDataAssetMetadataAggregatorArgs.builder()
+ *                         .description(var_.registry_folder_data_assets_metadata_aggregator_description())
+ *                         .identifier(var_.registry_folder_data_assets_metadata_aggregator_identifier())
+ *                         .key(var_.registry_folder_data_assets_metadata_aggregator_key())
+ *                         .name(var_.registry_folder_data_assets_metadata_aggregator_name())
+ *                         .type(var_.registry_folder_data_assets_metadata_aggregator_type())
+ *                         .build())
+ *                     .aggregatorKey(var_.registry_folder_data_assets_metadata_aggregator_key())
+ *                     .createdBy(var_.registry_folder_data_assets_metadata_created_by())
+ *                     .createdByName(var_.registry_folder_data_assets_metadata_created_by_name())
+ *                     .identifierPath(var_.registry_folder_data_assets_metadata_identifier_path())
+ *                     .infoFields(var_.registry_folder_data_assets_metadata_info_fields())
+ *                     .isFavorite(var_.registry_folder_data_assets_metadata_is_favorite())
+ *                     .labels(var_.registry_folder_data_assets_metadata_labels())
+ *                     .registryVersion(var_.registry_folder_data_assets_metadata_registry_version())
+ *                     .timeCreated(var_.registry_folder_data_assets_metadata_time_created())
+ *                     .timeUpdated(var_.registry_folder_data_assets_metadata_time_updated())
+ *                     .updatedBy(var_.registry_folder_data_assets_metadata_updated_by())
+ *                     .updatedByName(var_.registry_folder_data_assets_metadata_updated_by_name())
+ *                     .build())
+ *                 .modelType(var_.registry_folder_data_assets_model_type())
+ *                 .modelVersion(var_.registry_folder_data_assets_model_version())
+ *                 .nativeTypeSystem(RegistryFolderDataAssetNativeTypeSystemArgs.builder()
+ *                     .description(var_.registry_folder_data_assets_native_type_system_description())
+ *                     .identifier(var_.registry_folder_data_assets_native_type_system_identifier())
+ *                     .key(var_.registry_folder_data_assets_native_type_system_key())
+ *                     .modelType(var_.registry_folder_data_assets_native_type_system_model_type())
+ *                     .modelVersion(var_.registry_folder_data_assets_native_type_system_model_version())
+ *                     .name(var_.registry_folder_data_assets_native_type_system_name())
+ *                     .objectStatus(var_.registry_folder_data_assets_native_type_system_object_status())
+ *                     .objectVersion(var_.registry_folder_data_assets_native_type_system_object_version())
+ *                     .parentRef(RegistryFolderDataAssetNativeTypeSystemParentRefArgs.builder()
+ *                         .parent(var_.registry_folder_data_assets_native_type_system_parent_ref_parent())
+ *                         .build())
+ *                     .typeMappingFrom(var_.registry_folder_data_assets_native_type_system_type_mapping_from())
+ *                     .typeMappingTo(var_.registry_folder_data_assets_native_type_system_type_mapping_to())
+ *                     .types(RegistryFolderDataAssetNativeTypeSystemTypeArgs.builder()
+ *                         .modelType(var_.registry_folder_data_assets_native_type_system_types_model_type())
+ *                         .configDefinition(RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionArgs.builder()
+ *                             .configParameterDefinitions(Map.ofEntries(
+ *                                 Map.entry(&#34;classFieldName&#34;, var_.registry_folder_data_assets_native_type_system_types_config_definition_config_parameter_definitions_class_field_name()),
+ *                                 Map.entry(&#34;defaultValue&#34;, var_.registry_folder_data_assets_native_type_system_types_config_definition_config_parameter_definitions_default_value()),
+ *                                 Map.entry(&#34;description&#34;, var_.registry_folder_data_assets_native_type_system_types_config_definition_config_parameter_definitions_description()),
+ *                                 Map.entry(&#34;isClassFieldValue&#34;, var_.registry_folder_data_assets_native_type_system_types_config_definition_config_parameter_definitions_is_class_field_value()),
+ *                                 Map.entry(&#34;isStatic&#34;, var_.registry_folder_data_assets_native_type_system_types_config_definition_config_parameter_definitions_is_static()),
+ *                                 Map.entry(&#34;parameterName&#34;, var_.registry_folder_data_assets_native_type_system_types_config_definition_config_parameter_definitions_parameter_name()),
+ *                                 Map.entry(&#34;parameterType&#34;, var_.registry_folder_data_assets_native_type_system_types_config_definition_config_parameter_definitions_parameter_type())
+ *                             ))
+ *                             .isContained(var_.registry_folder_data_assets_native_type_system_types_config_definition_is_contained())
+ *                             .key(var_.registry_folder_data_assets_native_type_system_types_config_definition_key())
+ *                             .modelType(var_.registry_folder_data_assets_native_type_system_types_config_definition_model_type())
+ *                             .modelVersion(var_.registry_folder_data_assets_native_type_system_types_config_definition_model_version())
+ *                             .name(var_.registry_folder_data_assets_native_type_system_types_config_definition_name())
+ *                             .objectStatus(var_.registry_folder_data_assets_native_type_system_types_config_definition_object_status())
+ *                             .parentRef(RegistryFolderDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs.builder()
+ *                                 .parent(var_.registry_folder_data_assets_native_type_system_types_config_definition_parent_ref_parent())
+ *                                 .build())
+ *                             .build())
+ *                         .description(var_.registry_folder_data_assets_native_type_system_types_description())
+ *                         .dtType(var_.registry_folder_data_assets_native_type_system_types_dt_type())
+ *                         .key(var_.registry_folder_data_assets_native_type_system_types_key())
+ *                         .modelVersion(var_.registry_folder_data_assets_native_type_system_types_model_version())
+ *                         .name(var_.registry_folder_data_assets_native_type_system_types_name())
+ *                         .objectStatus(var_.registry_folder_data_assets_native_type_system_types_object_status())
+ *                         .parentRef(RegistryFolderDataAssetNativeTypeSystemTypeParentRefArgs.builder()
+ *                             .parent(var_.registry_folder_data_assets_native_type_system_types_parent_ref_parent())
+ *                             .build())
+ *                         .typeSystemName(var_.registry_folder_data_assets_native_type_system_types_type_system_name())
+ *                         .build())
+ *                     .build())
+ *                 .objectStatus(var_.registry_folder_data_assets_object_status())
+ *                 .objectVersion(var_.registry_folder_data_assets_object_version())
+ *                 .properties(var_.registry_folder_data_assets_properties())
+ *                 .registryMetadata(RegistryFolderDataAssetRegistryMetadataArgs.builder()
+ *                     .aggregatorKey(var_.registry_folder_data_assets_registry_metadata_aggregator_key())
+ *                     .createdByUserId(oci_identity_user.test_user().id())
+ *                     .createdByUserName(oci_identity_user.test_user().name())
+ *                     .isFavorite(var_.registry_folder_data_assets_registry_metadata_is_favorite())
+ *                     .key(var_.registry_folder_data_assets_registry_metadata_key())
+ *                     .labels(var_.registry_folder_data_assets_registry_metadata_labels())
+ *                     .registryVersion(var_.registry_folder_data_assets_registry_metadata_registry_version())
+ *                     .timeCreated(var_.registry_folder_data_assets_registry_metadata_time_created())
+ *                     .timeUpdated(var_.registry_folder_data_assets_registry_metadata_time_updated())
+ *                     .updatedByUserId(oci_identity_user.test_user().id())
+ *                     .updatedByUserName(oci_identity_user.test_user().name())
+ *                     .build())
+ *                 .type(var_.registry_folder_data_assets_type())
+ *                 .build())
+ *             .description(var_.registry_folder_description())
+ *             .key(var_.registry_folder_key())
+ *             .modelType(var_.registry_folder_model_type())
+ *             .modelVersion(var_.registry_folder_model_version())
+ *             .objectStatus(var_.registry_folder_object_status())
+ *             .objectVersion(var_.registry_folder_object_version())
+ *             .parentRef(RegistryFolderParentRefArgs.builder()
+ *                 .parent(var_.registry_folder_parent_ref_parent())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * 
  * ## Import
  * 
  * RegistryFolders can be imported using the `id`, e.g.

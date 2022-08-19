@@ -21,6 +21,38 @@ import javax.annotation.Nullable;
  * Create a new data asset.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataCatalog.DataAsset;
+ * import com.pulumi.oci.DataCatalog.DataAssetArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDataAsset = new DataAsset(&#34;testDataAsset&#34;, DataAssetArgs.builder()        
+ *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
+ *             .displayName(var_.data_asset_display_name())
+ *             .typeKey(var_.data_asset_type_key())
+ *             .description(var_.data_asset_description())
+ *             .properties(var_.data_asset_properties())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

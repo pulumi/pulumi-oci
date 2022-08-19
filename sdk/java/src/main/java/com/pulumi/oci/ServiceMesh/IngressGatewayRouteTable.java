@@ -24,6 +24,58 @@ import javax.annotation.Nullable;
  * Creates a new IngressGatewayRouteTable.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ServiceMesh.IngressGatewayRouteTable;
+ * import com.pulumi.oci.ServiceMesh.IngressGatewayRouteTableArgs;
+ * import com.pulumi.oci.ServiceMesh.inputs.IngressGatewayRouteTableRouteRuleArgs;
+ * import com.pulumi.oci.ServiceMesh.inputs.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testIngressGatewayRouteTable = new IngressGatewayRouteTable(&#34;testIngressGatewayRouteTable&#34;, IngressGatewayRouteTableArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+ *             .routeRules(IngressGatewayRouteTableRouteRuleArgs.builder()
+ *                 .destinations(IngressGatewayRouteTableRouteRuleDestinationArgs.builder()
+ *                     .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+ *                     .port(var_.ingress_gateway_route_table_route_rules_destinations_port())
+ *                     .weight(var_.ingress_gateway_route_table_route_rules_destinations_weight())
+ *                     .build())
+ *                 .type(var_.ingress_gateway_route_table_route_rules_type())
+ *                 .ingressGatewayHost(IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs.builder()
+ *                     .name(var_.ingress_gateway_route_table_route_rules_ingress_gateway_host_name())
+ *                     .port(var_.ingress_gateway_route_table_route_rules_ingress_gateway_host_port())
+ *                     .build())
+ *                 .isGrpc(var_.ingress_gateway_route_table_route_rules_is_grpc())
+ *                 .isHostRewriteEnabled(var_.ingress_gateway_route_table_route_rules_is_host_rewrite_enabled())
+ *                 .isPathRewriteEnabled(var_.ingress_gateway_route_table_route_rules_is_path_rewrite_enabled())
+ *                 .path(var_.ingress_gateway_route_table_route_rules_path())
+ *                 .pathType(var_.ingress_gateway_route_table_route_rules_path_type())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.ingress_gateway_route_table_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .priority(var_.ingress_gateway_route_table_priority())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Marketplace.Inputs
 {
 
-    public sealed class GetPublicationPackagesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetPublicationPackagesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the variable.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Marketplace.Inputs
         public GetPublicationPackagesFilterArgs()
         {
         }
+        public static new GetPublicationPackagesFilterArgs Empty => new GetPublicationPackagesFilterArgs();
     }
 }

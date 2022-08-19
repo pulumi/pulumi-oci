@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Waf
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkAddressLists = Oci.Waf.GetNetworkAddressLists.Invoke(new()
         ///     {
-        ///         var testNetworkAddressLists = Output.Create(Oci.Waf.GetNetworkAddressLists.InvokeAsync(new Oci.Waf.GetNetworkAddressListsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Network_address_list_display_name,
-        ///             Id = @var.Network_address_list_id,
-        ///             States = @var.Network_address_list_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Network_address_list_display_name,
+        ///         Id = @var.Network_address_list_id,
+        ///         States = @var.Network_address_list_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Waf
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkAddressLists = Oci.Waf.GetNetworkAddressLists.Invoke(new()
         ///     {
-        ///         var testNetworkAddressLists = Output.Create(Oci.Waf.GetNetworkAddressLists.InvokeAsync(new Oci.Waf.GetNetworkAddressListsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Network_address_list_display_name,
-        ///             Id = @var.Network_address_list_id,
-        ///             States = @var.Network_address_list_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Network_address_list_display_name,
+        ///         Id = @var.Network_address_list_id,
+        ///         States = @var.Network_address_list_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Waf
     }
 
 
-    public sealed class GetNetworkAddressListsArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkAddressListsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.Waf
         public GetNetworkAddressListsArgs()
         {
         }
+        public static new GetNetworkAddressListsArgs Empty => new GetNetworkAddressListsArgs();
     }
 
-    public sealed class GetNetworkAddressListsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkAddressListsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -171,6 +168,7 @@ namespace Pulumi.Oci.Waf
         public GetNetworkAddressListsInvokeArgs()
         {
         }
+        public static new GetNetworkAddressListsInvokeArgs Empty => new GetNetworkAddressListsInvokeArgs();
     }
 
 

@@ -68,6 +68,7 @@ import * as utilities from "../utilities";
  *     definedTags: _var.bds_instance_defined_tags,
  *     freeformTags: _var.bds_instance_freeform_tags,
  *     kerberosRealmName: _var.bds_instance_kerberos_realm_name,
+ *     kmsKeyId: _var.bds_instance_kms_key_id,
  *     networkConfig: {
  *         cidrBlock: _var.bds_instance_network_config_cidr_block,
  *         isNatGatewayRequired: _var.bds_instance_network_config_is_nat_gateway_required,
@@ -173,6 +174,10 @@ export class BdsInstance extends pulumi.CustomResource {
      */
     public readonly kerberosRealmName!: pulumi.Output<string>;
     /**
+     * (Updatable) The OCID of the Key Management master encryption key.
+     */
+    public readonly kmsKeyId!: pulumi.Output<string>;
+    /**
      * The master node in the BDS instance
      */
     public readonly masterNode!: pulumi.Output<outputs.BigDataService.BdsInstanceMasterNode>;
@@ -235,6 +240,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["isHighAvailability"] = state ? state.isHighAvailability : undefined;
             resourceInputs["isSecure"] = state ? state.isSecure : undefined;
             resourceInputs["kerberosRealmName"] = state ? state.kerberosRealmName : undefined;
+            resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["masterNode"] = state ? state.masterNode : undefined;
             resourceInputs["networkConfig"] = state ? state.networkConfig : undefined;
             resourceInputs["nodes"] = state ? state.nodes : undefined;
@@ -290,6 +296,7 @@ export class BdsInstance extends pulumi.CustomResource {
             resourceInputs["isHighAvailability"] = args ? args.isHighAvailability : undefined;
             resourceInputs["isSecure"] = args ? args.isSecure : undefined;
             resourceInputs["kerberosRealmName"] = args ? args.kerberosRealmName : undefined;
+            resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["masterNode"] = args ? args.masterNode : undefined;
             resourceInputs["networkConfig"] = args ? args.networkConfig : undefined;
             resourceInputs["utilNode"] = args ? args.utilNode : undefined;
@@ -372,6 +379,10 @@ export interface BdsInstanceState {
      * The user-defined kerberos realm name.
      */
     kerberosRealmName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The OCID of the Key Management master encryption key.
+     */
+    kmsKeyId?: pulumi.Input<string>;
     /**
      * The master node in the BDS instance
      */
@@ -464,6 +475,10 @@ export interface BdsInstanceArgs {
      * The user-defined kerberos realm name.
      */
     kerberosRealmName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The OCID of the Key Management master encryption key.
+     */
+    kmsKeyId?: pulumi.Input<string>;
     /**
      * The master node in the BDS instance
      */

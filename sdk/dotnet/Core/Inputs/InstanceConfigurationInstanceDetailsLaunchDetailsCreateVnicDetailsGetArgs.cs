@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
@@ -93,5 +93,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsGetArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsGetArgs Empty => new InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsGetArgs();
     }
 }

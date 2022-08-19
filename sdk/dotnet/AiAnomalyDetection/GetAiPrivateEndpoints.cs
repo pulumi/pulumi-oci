@@ -22,23 +22,21 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAiPrivateEndpoints = Oci.AiAnomalyDetection.GetAiPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testAiPrivateEndpoints = Output.Create(Oci.AiAnomalyDetection.GetAiPrivateEndpoints.InvokeAsync(new Oci.AiAnomalyDetection.GetAiPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Ai_private_endpoint_display_name,
-        ///             Id = @var.Ai_private_endpoint_id,
-        ///             State = @var.Ai_private_endpoint_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Ai_private_endpoint_display_name,
+        ///         Id = @var.Ai_private_endpoint_id,
+        ///         State = @var.Ai_private_endpoint_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAiPrivateEndpoints = Oci.AiAnomalyDetection.GetAiPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testAiPrivateEndpoints = Output.Create(Oci.AiAnomalyDetection.GetAiPrivateEndpoints.InvokeAsync(new Oci.AiAnomalyDetection.GetAiPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Ai_private_endpoint_display_name,
-        ///             Id = @var.Ai_private_endpoint_id,
-        ///             State = @var.Ai_private_endpoint_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Ai_private_endpoint_display_name,
+        ///         Id = @var.Ai_private_endpoint_id,
+        ///         State = @var.Ai_private_endpoint_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
     }
 
 
-    public sealed class GetAiPrivateEndpointsArgs : Pulumi.InvokeArgs
+    public sealed class GetAiPrivateEndpointsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public GetAiPrivateEndpointsArgs()
         {
         }
+        public static new GetAiPrivateEndpointsArgs Empty => new GetAiPrivateEndpointsArgs();
     }
 
-    public sealed class GetAiPrivateEndpointsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAiPrivateEndpointsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public GetAiPrivateEndpointsInvokeArgs()
         {
         }
+        public static new GetAiPrivateEndpointsInvokeArgs Empty => new GetAiPrivateEndpointsInvokeArgs();
     }
 
 

@@ -47,6 +47,34 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the inventory of a given agent id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentResult> getManagementAgent(GetManagementAgentArgs args) {
@@ -58,6 +86,34 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the inventory of a given agent id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentResult> getManagementAgentPlain(GetManagementAgentPlainArgs args) {
@@ -69,6 +125,34 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the inventory of a given agent id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentResult> getManagementAgent(GetManagementAgentArgs args, InvokeOptions options) {
@@ -80,6 +164,34 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the inventory of a given agent id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgent = ManagementAgentFunctions.getManagementAgent(GetManagementAgentArgs.builder()
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentResult> getManagementAgentPlain(GetManagementAgentPlainArgs args, InvokeOptions options) {
@@ -91,6 +203,36 @@ public final class ManagementAgentFunctions {
      * Lists the availability history records of Management Agent
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .timeAvailabilityStatusEndedGreaterThan(var_.management_agent_available_history_time_availability_status_ended_greater_than())
+     *             .timeAvailabilityStatusStartedLessThan(var_.management_agent_available_history_time_availability_status_started_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentAvailableHistoriesResult> getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs args) {
@@ -102,6 +244,36 @@ public final class ManagementAgentFunctions {
      * Lists the availability history records of Management Agent
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .timeAvailabilityStatusEndedGreaterThan(var_.management_agent_available_history_time_availability_status_ended_greater_than())
+     *             .timeAvailabilityStatusStartedLessThan(var_.management_agent_available_history_time_availability_status_started_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentAvailableHistoriesResult> getManagementAgentAvailableHistoriesPlain(GetManagementAgentAvailableHistoriesPlainArgs args) {
@@ -113,6 +285,36 @@ public final class ManagementAgentFunctions {
      * Lists the availability history records of Management Agent
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .timeAvailabilityStatusEndedGreaterThan(var_.management_agent_available_history_time_availability_status_ended_greater_than())
+     *             .timeAvailabilityStatusStartedLessThan(var_.management_agent_available_history_time_availability_status_started_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentAvailableHistoriesResult> getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs args, InvokeOptions options) {
@@ -124,6 +326,36 @@ public final class ManagementAgentFunctions {
      * Lists the availability history records of Management Agent
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentAvailableHistories = ManagementAgentFunctions.getManagementAgentAvailableHistories(GetManagementAgentAvailableHistoriesArgs.builder()
+     *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
+     *             .timeAvailabilityStatusEndedGreaterThan(var_.management_agent_available_history_time_availability_status_ended_greater_than())
+     *             .timeAvailabilityStatusStartedLessThan(var_.management_agent_available_history_time_availability_status_started_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentAvailableHistoriesResult> getManagementAgentAvailableHistoriesPlain(GetManagementAgentAvailableHistoriesPlainArgs args, InvokeOptions options) {
@@ -136,6 +368,37 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameters: availabilityStatus, platformType, version
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentCount = ManagementAgentFunctions.getManagementAgentCount(GetManagementAgentCountArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .groupBies(var_.management_agent_count_group_by())
+     *             .hasPlugins(var_.management_agent_count_has_plugins())
+     *             .installType(var_.management_agent_count_install_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentCountResult> getManagementAgentCount(GetManagementAgentCountArgs args) {
@@ -148,6 +411,37 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameters: availabilityStatus, platformType, version
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentCount = ManagementAgentFunctions.getManagementAgentCount(GetManagementAgentCountArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .groupBies(var_.management_agent_count_group_by())
+     *             .hasPlugins(var_.management_agent_count_has_plugins())
+     *             .installType(var_.management_agent_count_install_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentCountResult> getManagementAgentCountPlain(GetManagementAgentCountPlainArgs args) {
@@ -160,6 +454,37 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameters: availabilityStatus, platformType, version
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentCount = ManagementAgentFunctions.getManagementAgentCount(GetManagementAgentCountArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .groupBies(var_.management_agent_count_group_by())
+     *             .hasPlugins(var_.management_agent_count_has_plugins())
+     *             .installType(var_.management_agent_count_install_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentCountResult> getManagementAgentCount(GetManagementAgentCountArgs args, InvokeOptions options) {
@@ -172,6 +497,37 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameters: availabilityStatus, platformType, version
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentCount = ManagementAgentFunctions.getManagementAgentCount(GetManagementAgentCountArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .groupBies(var_.management_agent_count_group_by())
+     *             .hasPlugins(var_.management_agent_count_has_plugins())
+     *             .installType(var_.management_agent_count_install_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentCountResult> getManagementAgentCountPlain(GetManagementAgentCountPlainArgs args, InvokeOptions options) {
@@ -184,6 +540,34 @@ public final class ManagementAgentFunctions {
      * The supplied compartmentId must be a tenancy root.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentGetAutoUpgradableConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentGetAutoUpgradableConfig = ManagementAgentFunctions.getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentGetAutoUpgradableConfigResult> getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs args) {
@@ -196,6 +580,34 @@ public final class ManagementAgentFunctions {
      * The supplied compartmentId must be a tenancy root.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentGetAutoUpgradableConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentGetAutoUpgradableConfig = ManagementAgentFunctions.getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentGetAutoUpgradableConfigResult> getManagementAgentGetAutoUpgradableConfigPlain(GetManagementAgentGetAutoUpgradableConfigPlainArgs args) {
@@ -208,6 +620,34 @@ public final class ManagementAgentFunctions {
      * The supplied compartmentId must be a tenancy root.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentGetAutoUpgradableConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentGetAutoUpgradableConfig = ManagementAgentFunctions.getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentGetAutoUpgradableConfigResult> getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs args, InvokeOptions options) {
@@ -220,6 +660,34 @@ public final class ManagementAgentFunctions {
      * The supplied compartmentId must be a tenancy root.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentGetAutoUpgradableConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentGetAutoUpgradableConfig = ManagementAgentFunctions.getManagementAgentGetAutoUpgradableConfig(GetManagementAgentGetAutoUpgradableConfigArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentGetAutoUpgradableConfigResult> getManagementAgentGetAutoUpgradableConfigPlain(GetManagementAgentGetAutoUpgradableConfigPlainArgs args, InvokeOptions options) {
@@ -231,6 +699,37 @@ public final class ManagementAgentFunctions {
      * Get supported agent image information
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentImages = ManagementAgentFunctions.getManagementAgentImages(GetManagementAgentImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .installType(var_.management_agent_image_install_type())
+     *             .name(var_.management_agent_image_name())
+     *             .state(var_.management_agent_image_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentImagesResult> getManagementAgentImages(GetManagementAgentImagesArgs args) {
@@ -242,6 +741,37 @@ public final class ManagementAgentFunctions {
      * Get supported agent image information
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentImages = ManagementAgentFunctions.getManagementAgentImages(GetManagementAgentImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .installType(var_.management_agent_image_install_type())
+     *             .name(var_.management_agent_image_name())
+     *             .state(var_.management_agent_image_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentImagesResult> getManagementAgentImagesPlain(GetManagementAgentImagesPlainArgs args) {
@@ -253,6 +783,37 @@ public final class ManagementAgentFunctions {
      * Get supported agent image information
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentImages = ManagementAgentFunctions.getManagementAgentImages(GetManagementAgentImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .installType(var_.management_agent_image_install_type())
+     *             .name(var_.management_agent_image_name())
+     *             .state(var_.management_agent_image_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentImagesResult> getManagementAgentImages(GetManagementAgentImagesArgs args, InvokeOptions options) {
@@ -264,6 +825,37 @@ public final class ManagementAgentFunctions {
      * Get supported agent image information
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentImages = ManagementAgentFunctions.getManagementAgentImages(GetManagementAgentImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .installType(var_.management_agent_image_install_type())
+     *             .name(var_.management_agent_image_name())
+     *             .state(var_.management_agent_image_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentImagesResult> getManagementAgentImagesPlain(GetManagementAgentImagesPlainArgs args, InvokeOptions options) {
@@ -275,6 +867,34 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the Agent install Key for a given key id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
+     *             .managementAgentInstallKeyId(oci_management_agent_management_agent_install_key.test_management_agent_install_key().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentInstallKeyResult> getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs args) {
@@ -286,6 +906,34 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the Agent install Key for a given key id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
+     *             .managementAgentInstallKeyId(oci_management_agent_management_agent_install_key.test_management_agent_install_key().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentInstallKeyResult> getManagementAgentInstallKeyPlain(GetManagementAgentInstallKeyPlainArgs args) {
@@ -297,6 +945,34 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the Agent install Key for a given key id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
+     *             .managementAgentInstallKeyId(oci_management_agent_management_agent_install_key.test_management_agent_install_key().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentInstallKeyResult> getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs args, InvokeOptions options) {
@@ -308,6 +984,34 @@ public final class ManagementAgentFunctions {
      * Gets complete details of the Agent install Key for a given key id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentInstallKey = ManagementAgentFunctions.getManagementAgentInstallKey(GetManagementAgentInstallKeyArgs.builder()
+     *             .managementAgentInstallKeyId(oci_management_agent_management_agent_install_key.test_management_agent_install_key().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentInstallKeyResult> getManagementAgentInstallKeyPlain(GetManagementAgentInstallKeyPlainArgs args, InvokeOptions options) {
@@ -319,6 +1023,38 @@ public final class ManagementAgentFunctions {
      * Returns a list of Management Agent installed Keys.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentInstallKeys = ManagementAgentFunctions.getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.management_agent_install_key_access_level())
+     *             .compartmentIdInSubtree(var_.management_agent_install_key_compartment_id_in_subtree())
+     *             .displayName(var_.management_agent_install_key_display_name())
+     *             .state(var_.management_agent_install_key_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentInstallKeysResult> getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs args) {
@@ -330,6 +1066,38 @@ public final class ManagementAgentFunctions {
      * Returns a list of Management Agent installed Keys.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentInstallKeys = ManagementAgentFunctions.getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.management_agent_install_key_access_level())
+     *             .compartmentIdInSubtree(var_.management_agent_install_key_compartment_id_in_subtree())
+     *             .displayName(var_.management_agent_install_key_display_name())
+     *             .state(var_.management_agent_install_key_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentInstallKeysResult> getManagementAgentInstallKeysPlain(GetManagementAgentInstallKeysPlainArgs args) {
@@ -341,6 +1109,38 @@ public final class ManagementAgentFunctions {
      * Returns a list of Management Agent installed Keys.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentInstallKeys = ManagementAgentFunctions.getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.management_agent_install_key_access_level())
+     *             .compartmentIdInSubtree(var_.management_agent_install_key_compartment_id_in_subtree())
+     *             .displayName(var_.management_agent_install_key_display_name())
+     *             .state(var_.management_agent_install_key_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentInstallKeysResult> getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs args, InvokeOptions options) {
@@ -352,6 +1152,38 @@ public final class ManagementAgentFunctions {
      * Returns a list of Management Agent installed Keys.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentInstallKeys = ManagementAgentFunctions.getManagementAgentInstallKeys(GetManagementAgentInstallKeysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.management_agent_install_key_access_level())
+     *             .compartmentIdInSubtree(var_.management_agent_install_key_compartment_id_in_subtree())
+     *             .displayName(var_.management_agent_install_key_display_name())
+     *             .state(var_.management_agent_install_key_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentInstallKeysResult> getManagementAgentInstallKeysPlain(GetManagementAgentInstallKeysPlainArgs args, InvokeOptions options) {
@@ -364,6 +1196,35 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameter: pluginName
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentPluginCount = ManagementAgentFunctions.getManagementAgentPluginCount(GetManagementAgentPluginCountArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .groupBy(var_.management_agent_plugin_count_group_by())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentPluginCountResult> getManagementAgentPluginCount(GetManagementAgentPluginCountArgs args) {
@@ -376,6 +1237,35 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameter: pluginName
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentPluginCount = ManagementAgentFunctions.getManagementAgentPluginCount(GetManagementAgentPluginCountArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .groupBy(var_.management_agent_plugin_count_group_by())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentPluginCountResult> getManagementAgentPluginCountPlain(GetManagementAgentPluginCountPlainArgs args) {
@@ -388,6 +1278,35 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameter: pluginName
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentPluginCount = ManagementAgentFunctions.getManagementAgentPluginCount(GetManagementAgentPluginCountArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .groupBy(var_.management_agent_plugin_count_group_by())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentPluginCountResult> getManagementAgentPluginCount(GetManagementAgentPluginCountArgs args, InvokeOptions options) {
@@ -400,6 +1319,35 @@ public final class ManagementAgentFunctions {
      * Supported groupBy parameter: pluginName
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentPluginCount = ManagementAgentFunctions.getManagementAgentPluginCount(GetManagementAgentPluginCountArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .groupBy(var_.management_agent_plugin_count_group_by())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentPluginCountResult> getManagementAgentPluginCountPlain(GetManagementAgentPluginCountPlainArgs args, InvokeOptions options) {
@@ -411,6 +1359,38 @@ public final class ManagementAgentFunctions {
      * Returns a list of managementAgentPlugins.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentPlugins = ManagementAgentFunctions.getManagementAgentPlugins(GetManagementAgentPluginsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .agentId(var_.management_agent_id())
+     *             .displayName(var_.management_agent_plugin_display_name())
+     *             .platformTypes(var_.management_agent_plugin_platform_type())
+     *             .state(var_.management_agent_plugin_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentPluginsResult> getManagementAgentPlugins(GetManagementAgentPluginsArgs args) {
@@ -422,6 +1402,38 @@ public final class ManagementAgentFunctions {
      * Returns a list of managementAgentPlugins.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentPlugins = ManagementAgentFunctions.getManagementAgentPlugins(GetManagementAgentPluginsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .agentId(var_.management_agent_id())
+     *             .displayName(var_.management_agent_plugin_display_name())
+     *             .platformTypes(var_.management_agent_plugin_platform_type())
+     *             .state(var_.management_agent_plugin_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentPluginsResult> getManagementAgentPluginsPlain(GetManagementAgentPluginsPlainArgs args) {
@@ -433,6 +1445,38 @@ public final class ManagementAgentFunctions {
      * Returns a list of managementAgentPlugins.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentPlugins = ManagementAgentFunctions.getManagementAgentPlugins(GetManagementAgentPluginsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .agentId(var_.management_agent_id())
+     *             .displayName(var_.management_agent_plugin_display_name())
+     *             .platformTypes(var_.management_agent_plugin_platform_type())
+     *             .state(var_.management_agent_plugin_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentPluginsResult> getManagementAgentPlugins(GetManagementAgentPluginsArgs args, InvokeOptions options) {
@@ -444,6 +1488,38 @@ public final class ManagementAgentFunctions {
      * Returns a list of managementAgentPlugins.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentPlugins = ManagementAgentFunctions.getManagementAgentPlugins(GetManagementAgentPluginsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .agentId(var_.management_agent_id())
+     *             .displayName(var_.management_agent_plugin_display_name())
+     *             .platformTypes(var_.management_agent_plugin_platform_type())
+     *             .state(var_.management_agent_plugin_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentPluginsResult> getManagementAgentPluginsPlain(GetManagementAgentPluginsPlainArgs args, InvokeOptions options) {
@@ -457,6 +1533,45 @@ public final class ManagementAgentFunctions {
      * The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgents = ManagementAgentFunctions.getManagementAgents(GetManagementAgentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.management_agent_access_level())
+     *             .availabilityStatus(var_.management_agent_availability_status())
+     *             .compartmentIdInSubtree(var_.management_agent_compartment_id_in_subtree())
+     *             .displayName(var_.management_agent_display_name())
+     *             .hostId(oci_management_agent_host.test_host().id())
+     *             .installType(var_.management_agent_install_type())
+     *             .isCustomerDeployed(var_.management_agent_is_customer_deployed())
+     *             .platformTypes(var_.management_agent_platform_type())
+     *             .pluginNames(var_.management_agent_plugin_name())
+     *             .state(var_.management_agent_state())
+     *             .versions(var_.management_agent_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentsResult> getManagementAgents(GetManagementAgentsArgs args) {
@@ -470,6 +1585,45 @@ public final class ManagementAgentFunctions {
      * The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgents = ManagementAgentFunctions.getManagementAgents(GetManagementAgentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.management_agent_access_level())
+     *             .availabilityStatus(var_.management_agent_availability_status())
+     *             .compartmentIdInSubtree(var_.management_agent_compartment_id_in_subtree())
+     *             .displayName(var_.management_agent_display_name())
+     *             .hostId(oci_management_agent_host.test_host().id())
+     *             .installType(var_.management_agent_install_type())
+     *             .isCustomerDeployed(var_.management_agent_is_customer_deployed())
+     *             .platformTypes(var_.management_agent_platform_type())
+     *             .pluginNames(var_.management_agent_plugin_name())
+     *             .state(var_.management_agent_state())
+     *             .versions(var_.management_agent_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentsResult> getManagementAgentsPlain(GetManagementAgentsPlainArgs args) {
@@ -483,6 +1637,45 @@ public final class ManagementAgentFunctions {
      * The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgents = ManagementAgentFunctions.getManagementAgents(GetManagementAgentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.management_agent_access_level())
+     *             .availabilityStatus(var_.management_agent_availability_status())
+     *             .compartmentIdInSubtree(var_.management_agent_compartment_id_in_subtree())
+     *             .displayName(var_.management_agent_display_name())
+     *             .hostId(oci_management_agent_host.test_host().id())
+     *             .installType(var_.management_agent_install_type())
+     *             .isCustomerDeployed(var_.management_agent_is_customer_deployed())
+     *             .platformTypes(var_.management_agent_platform_type())
+     *             .pluginNames(var_.management_agent_plugin_name())
+     *             .state(var_.management_agent_state())
+     *             .versions(var_.management_agent_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagementAgentsResult> getManagementAgents(GetManagementAgentsArgs args, InvokeOptions options) {
@@ -496,6 +1689,45 @@ public final class ManagementAgentFunctions {
      * The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgents = ManagementAgentFunctions.getManagementAgents(GetManagementAgentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.management_agent_access_level())
+     *             .availabilityStatus(var_.management_agent_availability_status())
+     *             .compartmentIdInSubtree(var_.management_agent_compartment_id_in_subtree())
+     *             .displayName(var_.management_agent_display_name())
+     *             .hostId(oci_management_agent_host.test_host().id())
+     *             .installType(var_.management_agent_install_type())
+     *             .isCustomerDeployed(var_.management_agent_is_customer_deployed())
+     *             .platformTypes(var_.management_agent_platform_type())
+     *             .pluginNames(var_.management_agent_plugin_name())
+     *             .state(var_.management_agent_state())
+     *             .versions(var_.management_agent_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagementAgentsResult> getManagementAgentsPlain(GetManagementAgentsPlainArgs args, InvokeOptions options) {

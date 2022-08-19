@@ -23,22 +23,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testByoipRanges = Oci.Core.GetByoipRanges.Invoke(new()
         ///     {
-        ///         var testByoipRanges = Output.Create(Oci.Core.GetByoipRanges.InvokeAsync(new Oci.Core.GetByoipRangesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Byoip_range_display_name,
-        ///             State = @var.Byoip_range_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Byoip_range_display_name,
+        ///         State = @var.Byoip_range_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,22 +56,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testByoipRanges = Oci.Core.GetByoipRanges.Invoke(new()
         ///     {
-        ///         var testByoipRanges = Output.Create(Oci.Core.GetByoipRanges.InvokeAsync(new Oci.Core.GetByoipRangesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Byoip_range_display_name,
-        ///             State = @var.Byoip_range_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Byoip_range_display_name,
+        ///         State = @var.Byoip_range_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetByoipRangesArgs : Pulumi.InvokeArgs
+    public sealed class GetByoipRangesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -114,9 +110,10 @@ namespace Pulumi.Oci.Core
         public GetByoipRangesArgs()
         {
         }
+        public static new GetByoipRangesArgs Empty => new GetByoipRangesArgs();
     }
 
-    public sealed class GetByoipRangesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetByoipRangesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -147,6 +144,7 @@ namespace Pulumi.Oci.Core
         public GetByoipRangesInvokeArgs()
         {
         }
+        public static new GetByoipRangesInvokeArgs Empty => new GetByoipRangesInvokeArgs();
     }
 
 

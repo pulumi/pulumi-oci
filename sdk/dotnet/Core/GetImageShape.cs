@@ -21,21 +21,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testImageShape = Oci.Core.GetImageShape.Invoke(new()
         ///     {
-        ///         var testImageShape = Output.Create(Oci.Core.GetImageShape.InvokeAsync(new Oci.Core.GetImageShapeArgs
-        ///         {
-        ///             ImageId = oci_core_image.Test_image.Id,
-        ///             ShapeName = oci_core_shape.Test_shape.Name,
-        ///         }));
-        ///     }
+        ///         ImageId = oci_core_image.Test_image.Id,
+        ///         ShapeName = oci_core_shape.Test_shape.Name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testImageShape = Oci.Core.GetImageShape.Invoke(new()
         ///     {
-        ///         var testImageShape = Output.Create(Oci.Core.GetImageShape.InvokeAsync(new Oci.Core.GetImageShapeArgs
-        ///         {
-        ///             ImageId = oci_core_image.Test_image.Id,
-        ///             ShapeName = oci_core_shape.Test_shape.Name,
-        ///         }));
-        ///     }
+        ///         ImageId = oci_core_image.Test_image.Id,
+        ///         ShapeName = oci_core_shape.Test_shape.Name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetImageShapeArgs : Pulumi.InvokeArgs
+    public sealed class GetImageShapeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Core
         public GetImageShapeArgs()
         {
         }
+        public static new GetImageShapeArgs Empty => new GetImageShapeArgs();
     }
 
-    public sealed class GetImageShapeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetImageShapeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.Core
         public GetImageShapeInvokeArgs()
         {
         }
+        public static new GetImageShapeInvokeArgs Empty => new GetImageShapeInvokeArgs();
     }
 
 

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Opsi
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/databaseInsight:DatabaseInsight")]
-    public partial class DatabaseInsight : Pulumi.CustomResource
+    public partial class DatabaseInsight : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Compartment Identifier of database
@@ -257,7 +257,7 @@ namespace Pulumi.Oci.Opsi
         }
     }
 
-    public sealed class DatabaseInsightArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseInsightArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier of database
@@ -388,9 +388,10 @@ namespace Pulumi.Oci.Opsi
         public DatabaseInsightArgs()
         {
         }
+        public static new DatabaseInsightArgs Empty => new DatabaseInsightArgs();
     }
 
-    public sealed class DatabaseInsightState : Pulumi.ResourceArgs
+    public sealed class DatabaseInsightState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier of database
@@ -605,5 +606,6 @@ namespace Pulumi.Oci.Opsi
         public DatabaseInsightState()
         {
         }
+        public static new DatabaseInsightState Empty => new DatabaseInsightState();
     }
 }

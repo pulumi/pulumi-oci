@@ -22,21 +22,19 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryMirrorRecord = Oci.DevOps.GetRepositoryMirrorRecord.Invoke(new()
         ///     {
-        ///         var testRepositoryMirrorRecord = Output.Create(Oci.DevOps.GetRepositoryMirrorRecord.InvokeAsync(new Oci.DevOps.GetRepositoryMirrorRecordArgs
-        ///         {
-        ///             MirrorRecordType = @var.Repository_mirror_record_mirror_record_type,
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         }));
-        ///     }
+        ///         MirrorRecordType = @var.Repository_mirror_record_mirror_record_type,
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryMirrorRecord = Oci.DevOps.GetRepositoryMirrorRecord.Invoke(new()
         ///     {
-        ///         var testRepositoryMirrorRecord = Output.Create(Oci.DevOps.GetRepositoryMirrorRecord.InvokeAsync(new Oci.DevOps.GetRepositoryMirrorRecordArgs
-        ///         {
-        ///             MirrorRecordType = @var.Repository_mirror_record_mirror_record_type,
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         }));
-        ///     }
+        ///         MirrorRecordType = @var.Repository_mirror_record_mirror_record_type,
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetRepositoryMirrorRecordArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryMirrorRecordArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The field of mirror record type. Only one mirror record type can be provided: current - The current mirror record. lastSuccessful - The last successful mirror record.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryMirrorRecordArgs()
         {
         }
+        public static new GetRepositoryMirrorRecordArgs Empty => new GetRepositoryMirrorRecordArgs();
     }
 
-    public sealed class GetRepositoryMirrorRecordInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryMirrorRecordInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The field of mirror record type. Only one mirror record type can be provided: current - The current mirror record. lastSuccessful - The last successful mirror record.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryMirrorRecordInvokeArgs()
         {
         }
+        public static new GetRepositoryMirrorRecordInvokeArgs Empty => new GetRepositoryMirrorRecordInvokeArgs();
     }
 
 

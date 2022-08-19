@@ -21,22 +21,20 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentAvailableHistories = Oci.ManagementAgent.GetManagementAgentAvailableHistories.Invoke(new()
         ///     {
-        ///         var testManagementAgentAvailableHistories = Output.Create(Oci.ManagementAgent.GetManagementAgentAvailableHistories.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentAvailableHistoriesArgs
-        ///         {
-        ///             ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
-        ///             TimeAvailabilityStatusEndedGreaterThan = @var.Management_agent_available_history_time_availability_status_ended_greater_than,
-        ///             TimeAvailabilityStatusStartedLessThan = @var.Management_agent_available_history_time_availability_status_started_less_than,
-        ///         }));
-        ///     }
+        ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+        ///         TimeAvailabilityStatusEndedGreaterThan = @var.Management_agent_available_history_time_availability_status_ended_greater_than,
+        ///         TimeAvailabilityStatusStartedLessThan = @var.Management_agent_available_history_time_availability_status_started_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentAvailableHistories = Oci.ManagementAgent.GetManagementAgentAvailableHistories.Invoke(new()
         ///     {
-        ///         var testManagementAgentAvailableHistories = Output.Create(Oci.ManagementAgent.GetManagementAgentAvailableHistories.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentAvailableHistoriesArgs
-        ///         {
-        ///             ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
-        ///             TimeAvailabilityStatusEndedGreaterThan = @var.Management_agent_available_history_time_availability_status_ended_greater_than,
-        ///             TimeAvailabilityStatusStartedLessThan = @var.Management_agent_available_history_time_availability_status_started_less_than,
-        ///         }));
-        ///     }
+        ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+        ///         TimeAvailabilityStatusEndedGreaterThan = @var.Management_agent_available_history_time_availability_status_ended_greater_than,
+        ///         TimeAvailabilityStatusStartedLessThan = @var.Management_agent_available_history_time_availability_status_started_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ManagementAgent
     }
 
 
-    public sealed class GetManagementAgentAvailableHistoriesArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentAvailableHistoriesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetManagementAgentAvailableHistoriesFilterArgs>? _filters;
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentAvailableHistoriesArgs()
         {
         }
+        public static new GetManagementAgentAvailableHistoriesArgs Empty => new GetManagementAgentAvailableHistoriesArgs();
     }
 
-    public sealed class GetManagementAgentAvailableHistoriesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentAvailableHistoriesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetManagementAgentAvailableHistoriesFilterInputArgs>? _filters;
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentAvailableHistoriesInvokeArgs()
         {
         }
+        public static new GetManagementAgentAvailableHistoriesInvokeArgs Empty => new GetManagementAgentAvailableHistoriesInvokeArgs();
     }
 
 

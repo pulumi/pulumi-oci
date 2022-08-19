@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Monitoring.Inputs
 {
 
-    public sealed class GetMetricDataFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetMetricDataFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the metric.  Example: `CpuUtilization`
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Monitoring.Inputs
         public GetMetricDataFilterArgs()
         {
         }
+        public static new GetMetricDataFilterArgs Empty => new GetMetricDataFilterArgs();
     }
 }

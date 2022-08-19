@@ -25,6 +25,66 @@ import javax.annotation.Nullable;
  * Creates a new Database Tools connection.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DatabaseTools.DatabaseToolsConnection;
+ * import com.pulumi.oci.DatabaseTools.DatabaseToolsConnectionArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionKeyStoreArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionKeyStoreKeyStoreContentArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionRelatedResourceArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionUserPasswordArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDatabaseToolsConnection = new DatabaseToolsConnection(&#34;testDatabaseToolsConnection&#34;, DatabaseToolsConnectionArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.database_tools_connection_display_name())
+ *             .type(var_.database_tools_connection_type())
+ *             .advancedProperties(var_.database_tools_connection_advanced_properties())
+ *             .connectionString(var_.database_tools_connection_connection_string())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .keyStores(DatabaseToolsConnectionKeyStoreArgs.builder()
+ *                 .keyStoreContent(DatabaseToolsConnectionKeyStoreKeyStoreContentArgs.builder()
+ *                     .valueType(var_.database_tools_connection_key_stores_key_store_content_value_type())
+ *                     .secretId(oci_vault_secret.test_secret().id())
+ *                     .build())
+ *                 .keyStorePassword(DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs.builder()
+ *                     .valueType(var_.database_tools_connection_key_stores_key_store_password_value_type())
+ *                     .secretId(oci_vault_secret.test_secret().id())
+ *                     .build())
+ *                 .keyStoreType(var_.database_tools_connection_key_stores_key_store_type())
+ *                 .build())
+ *             .privateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+ *             .relatedResource(DatabaseToolsConnectionRelatedResourceArgs.builder()
+ *                 .entityType(var_.database_tools_connection_related_resource_entity_type())
+ *                 .identifier(var_.database_tools_connection_related_resource_identifier())
+ *                 .build())
+ *             .userName(oci_identity_user.test_user().name())
+ *             .userPassword(DatabaseToolsConnectionUserPasswordArgs.builder()
+ *                 .secretId(oci_vault_secret.test_secret().id())
+ *                 .valueType(var_.database_tools_connection_user_password_value_type())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard.Inputs
 {
 
-    public sealed class TargetTargetDetailGetArgs : Pulumi.ResourceArgs
+    public sealed class TargetTargetDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the security zone to associate this compartment with.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public TargetTargetDetailGetArgs()
         {
         }
+        public static new TargetTargetDetailGetArgs Empty => new TargetTargetDetailGetArgs();
     }
 }

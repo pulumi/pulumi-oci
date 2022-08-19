@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseToolsConnection = Oci.DatabaseTools.GetDatabaseToolsConnection.Invoke(new()
         ///     {
-        ///         var testDatabaseToolsConnection = Output.Create(Oci.DatabaseTools.GetDatabaseToolsConnection.InvokeAsync(new Oci.DatabaseTools.GetDatabaseToolsConnectionArgs
-        ///         {
-        ///             DatabaseToolsConnectionId = oci_database_tools_database_tools_connection.Test_database_tools_connection.Id,
-        ///         }));
-        ///     }
+        ///         DatabaseToolsConnectionId = oci_database_tools_database_tools_connection.Test_database_tools_connection.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseToolsConnection = Oci.DatabaseTools.GetDatabaseToolsConnection.Invoke(new()
         ///     {
-        ///         var testDatabaseToolsConnection = Output.Create(Oci.DatabaseTools.GetDatabaseToolsConnection.InvokeAsync(new Oci.DatabaseTools.GetDatabaseToolsConnectionArgs
-        ///         {
-        ///             DatabaseToolsConnectionId = oci_database_tools_database_tools_connection.Test_database_tools_connection.Id,
-        ///         }));
-        ///     }
+        ///         DatabaseToolsConnectionId = oci_database_tools_database_tools_connection.Test_database_tools_connection.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DatabaseTools
     }
 
 
-    public sealed class GetDatabaseToolsConnectionArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseToolsConnectionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DatabaseTools
         public GetDatabaseToolsConnectionArgs()
         {
         }
+        public static new GetDatabaseToolsConnectionArgs Empty => new GetDatabaseToolsConnectionArgs();
     }
 
-    public sealed class GetDatabaseToolsConnectionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseToolsConnectionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DatabaseTools
         public GetDatabaseToolsConnectionInvokeArgs()
         {
         }
+        public static new GetDatabaseToolsConnectionInvokeArgs Empty => new GetDatabaseToolsConnectionInvokeArgs();
     }
 
 

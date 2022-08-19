@@ -9,27 +9,6 @@ import * as utilities from "../utilities";
  * This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
  *
  * Returns a list of data assets within a data catalog.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testDataAssets = oci.DataCatalog.getDataAssets({
- *     catalogId: oci_datacatalog_catalog.test_catalog.id,
- *     createdById: oci_datacatalog_created_by.test_created_by.id,
- *     displayName: _var.data_asset_display_name,
- *     displayNameContains: _var.data_asset_display_name_contains,
- *     externalKey: _var.data_asset_external_key,
- *     fields: _var.data_asset_fields,
- *     state: _var.data_asset_state,
- *     timeCreated: _var.data_asset_time_created,
- *     timeUpdated: _var.data_asset_time_updated,
- *     typeKey: _var.data_asset_type_key,
- *     updatedById: oci_datacatalog_updated_by.test_updated_by.id,
- * });
- * ```
  */
 export function getDataAssets(args: GetDataAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetDataAssetsResult> {
     if (!opts) {

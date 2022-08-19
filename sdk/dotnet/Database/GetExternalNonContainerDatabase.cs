@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExternalNonContainerDatabase = Oci.Database.GetExternalNonContainerDatabase.Invoke(new()
         ///     {
-        ///         var testExternalNonContainerDatabase = Output.Create(Oci.Database.GetExternalNonContainerDatabase.InvokeAsync(new Oci.Database.GetExternalNonContainerDatabaseArgs
-        ///         {
-        ///             ExternalNonContainerDatabaseId = oci_database_external_non_container_database.Test_external_non_container_database.Id,
-        ///         }));
-        ///     }
+        ///         ExternalNonContainerDatabaseId = oci_database_external_non_container_database.Test_external_non_container_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExternalNonContainerDatabase = Oci.Database.GetExternalNonContainerDatabase.Invoke(new()
         ///     {
-        ///         var testExternalNonContainerDatabase = Output.Create(Oci.Database.GetExternalNonContainerDatabase.InvokeAsync(new Oci.Database.GetExternalNonContainerDatabaseArgs
-        ///         {
-        ///             ExternalNonContainerDatabaseId = oci_database_external_non_container_database.Test_external_non_container_database.Id,
-        ///         }));
-        ///     }
+        ///         ExternalNonContainerDatabaseId = oci_database_external_non_container_database.Test_external_non_container_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetExternalNonContainerDatabaseArgs : Pulumi.InvokeArgs
+    public sealed class GetExternalNonContainerDatabaseArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Database
         public GetExternalNonContainerDatabaseArgs()
         {
         }
+        public static new GetExternalNonContainerDatabaseArgs Empty => new GetExternalNonContainerDatabaseArgs();
     }
 
-    public sealed class GetExternalNonContainerDatabaseInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetExternalNonContainerDatabaseInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Database
         public GetExternalNonContainerDatabaseInvokeArgs()
         {
         }
+        public static new GetExternalNonContainerDatabaseInvokeArgs Empty => new GetExternalNonContainerDatabaseInvokeArgs();
     }
 
 

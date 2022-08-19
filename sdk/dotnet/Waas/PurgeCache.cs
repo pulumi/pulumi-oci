@@ -18,21 +18,19 @@ namespace Pulumi.Oci.Waas
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPurgeCache = new Oci.Waas.PurgeCache("testPurgeCache", new()
     ///     {
-    ///         var testPurgeCache = new Oci.Waas.PurgeCache("testPurgeCache", new Oci.Waas.PurgeCacheArgs
-    ///         {
-    ///             WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
-    ///             Resources = @var.Purge_cache_resources,
-    ///         });
-    ///     }
+    ///         WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
+    ///         Resources = @var.Purge_cache_resources,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -40,7 +38,7 @@ namespace Pulumi.Oci.Waas
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Waas/purgeCache:PurgeCache")]
-    public partial class PurgeCache : Pulumi.CustomResource
+    public partial class PurgeCache : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
@@ -98,7 +96,7 @@ namespace Pulumi.Oci.Waas
         }
     }
 
-    public sealed class PurgeCacheArgs : Pulumi.ResourceArgs
+    public sealed class PurgeCacheArgs : global::Pulumi.ResourceArgs
     {
         [Input("resources")]
         private InputList<string>? _resources;
@@ -121,9 +119,10 @@ namespace Pulumi.Oci.Waas
         public PurgeCacheArgs()
         {
         }
+        public static new PurgeCacheArgs Empty => new PurgeCacheArgs();
     }
 
-    public sealed class PurgeCacheState : Pulumi.ResourceArgs
+    public sealed class PurgeCacheState : global::Pulumi.ResourceArgs
     {
         [Input("resources")]
         private InputList<string>? _resources;
@@ -146,5 +145,6 @@ namespace Pulumi.Oci.Waas
         public PurgeCacheState()
         {
         }
+        public static new PurgeCacheState Empty => new PurgeCacheState();
     }
 }

@@ -17,57 +17,55 @@ namespace Pulumi.Oci.DataLabellingService
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDataset = new Oci.DataLabellingService.Dataset("testDataset", new()
     ///     {
-    ///         var testDataset = new Oci.DataLabellingService.Dataset("testDataset", new Oci.DataLabellingService.DatasetArgs
+    ///         AnnotationFormat = @var.Dataset_annotation_format,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DatasetFormatDetails = new Oci.DataLabellingService.Inputs.DatasetDatasetFormatDetailsArgs
     ///         {
-    ///             AnnotationFormat = @var.Dataset_annotation_format,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DatasetFormatDetails = new Oci.DataLabellingService.Inputs.DatasetDatasetFormatDetailsArgs
+    ///             FormatType = @var.Dataset_dataset_format_details_format_type,
+    ///             TextFileTypeMetadata = new Oci.DataLabellingService.Inputs.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs
     ///             {
-    ///                 FormatType = @var.Dataset_dataset_format_details_format_type,
-    ///                 TextFileTypeMetadata = new Oci.DataLabellingService.Inputs.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs
+    ///                 ColumnIndex = @var.Dataset_dataset_format_details_text_file_type_metadata_column_index,
+    ///                 FormatType = @var.Dataset_dataset_format_details_text_file_type_metadata_format_type,
+    ///                 ColumnDelimiter = @var.Dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
+    ///                 ColumnName = @var.Dataset_dataset_format_details_text_file_type_metadata_column_name,
+    ///                 EscapeCharacter = @var.Dataset_dataset_format_details_text_file_type_metadata_escape_character,
+    ///                 LineDelimiter = @var.Dataset_dataset_format_details_text_file_type_metadata_line_delimiter,
+    ///             },
+    ///         },
+    ///         DatasetSourceDetails = new Oci.DataLabellingService.Inputs.DatasetDatasetSourceDetailsArgs
+    ///         {
+    ///             Bucket = @var.Dataset_dataset_source_details_bucket,
+    ///             Namespace = @var.Dataset_dataset_source_details_namespace,
+    ///             SourceType = @var.Dataset_dataset_source_details_source_type,
+    ///             Prefix = @var.Dataset_dataset_source_details_prefix,
+    ///         },
+    ///         LabelSet = new Oci.DataLabellingService.Inputs.DatasetLabelSetArgs
+    ///         {
+    ///             Items = new[]
+    ///             {
+    ///                 new Oci.DataLabellingService.Inputs.DatasetLabelSetItemArgs
     ///                 {
-    ///                     ColumnIndex = @var.Dataset_dataset_format_details_text_file_type_metadata_column_index,
-    ///                     FormatType = @var.Dataset_dataset_format_details_text_file_type_metadata_format_type,
-    ///                     ColumnDelimiter = @var.Dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
-    ///                     ColumnName = @var.Dataset_dataset_format_details_text_file_type_metadata_column_name,
-    ///                     EscapeCharacter = @var.Dataset_dataset_format_details_text_file_type_metadata_escape_character,
-    ///                     LineDelimiter = @var.Dataset_dataset_format_details_text_file_type_metadata_line_delimiter,
+    ///                     Name = @var.Dataset_label_set_items_name,
     ///                 },
     ///             },
-    ///             DatasetSourceDetails = new Oci.DataLabellingService.Inputs.DatasetDatasetSourceDetailsArgs
-    ///             {
-    ///                 Bucket = @var.Dataset_dataset_source_details_bucket,
-    ///                 Namespace = @var.Dataset_dataset_source_details_namespace,
-    ///                 SourceType = @var.Dataset_dataset_source_details_source_type,
-    ///                 Prefix = @var.Dataset_dataset_source_details_prefix,
-    ///             },
-    ///             LabelSet = new Oci.DataLabellingService.Inputs.DatasetLabelSetArgs
-    ///             {
-    ///                 Items = 
-    ///                 {
-    ///                     new Oci.DataLabellingService.Inputs.DatasetLabelSetItemArgs
-    ///                     {
-    ///                         Name = @var.Dataset_label_set_items_name,
-    ///                     },
-    ///                 },
-    ///             },
-    ///             DefinedTags = @var.Dataset_defined_tags,
-    ///             Description = @var.Dataset_description,
-    ///             DisplayName = @var.Dataset_display_name,
-    ///             FreeformTags = @var.Dataset_freeform_tags,
-    ///             InitialRecordGenerationConfiguration = ,
-    ///             LabelingInstructions = @var.Dataset_labeling_instructions,
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = @var.Dataset_defined_tags,
+    ///         Description = @var.Dataset_description,
+    ///         DisplayName = @var.Dataset_display_name,
+    ///         FreeformTags = @var.Dataset_freeform_tags,
+    ///         InitialRecordGenerationConfiguration = ,
+    ///         LabelingInstructions = @var.Dataset_labeling_instructions,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -79,7 +77,7 @@ namespace Pulumi.Oci.DataLabellingService
     /// ```
     /// </summary>
     [OciResourceType("oci:DataLabellingService/dataset:Dataset")]
-    public partial class Dataset : Pulumi.CustomResource
+    public partial class Dataset : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The annotation format name required for labeling records.
@@ -215,7 +213,7 @@ namespace Pulumi.Oci.DataLabellingService
         }
     }
 
-    public sealed class DatasetArgs : Pulumi.ResourceArgs
+    public sealed class DatasetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The annotation format name required for labeling records.
@@ -298,9 +296,10 @@ namespace Pulumi.Oci.DataLabellingService
         public DatasetArgs()
         {
         }
+        public static new DatasetArgs Empty => new DatasetArgs();
     }
 
-    public sealed class DatasetState : Pulumi.ResourceArgs
+    public sealed class DatasetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The annotation format name required for labeling records.
@@ -407,5 +406,6 @@ namespace Pulumi.Oci.DataLabellingService
         public DatasetState()
         {
         }
+        public static new DatasetState Empty => new DatasetState();
     }
 }

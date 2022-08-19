@@ -21,22 +21,20 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testArtifactByPath = Oci.GenericArtifactsContent.GetArtifactByPath.Invoke(new()
         ///     {
-        ///         var testArtifactByPath = Output.Create(Oci.GenericArtifactsContent.GetArtifactByPath.InvokeAsync(new Oci.GenericArtifactsContent.GetArtifactByPathArgs
-        ///         {
-        ///             ArtifactPath = @var.Artifact_by_path_artifact_path,
-        ///             RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///             Version = @var.Artifact_by_path_version,
-        ///         }));
-        ///     }
+        ///         ArtifactPath = @var.Artifact_by_path_artifact_path,
+        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
+        ///         Version = @var.Artifact_by_path_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testArtifactByPath = Oci.GenericArtifactsContent.GetArtifactByPath.Invoke(new()
         ///     {
-        ///         var testArtifactByPath = Output.Create(Oci.GenericArtifactsContent.GetArtifactByPath.InvokeAsync(new Oci.GenericArtifactsContent.GetArtifactByPathArgs
-        ///         {
-        ///             ArtifactPath = @var.Artifact_by_path_artifact_path,
-        ///             RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///             Version = @var.Artifact_by_path_version,
-        ///         }));
-        ///     }
+        ///         ArtifactPath = @var.Artifact_by_path_artifact_path,
+        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
+        ///         Version = @var.Artifact_by_path_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
     }
 
 
-    public sealed class GetArtifactByPathArgs : Pulumi.InvokeArgs
+    public sealed class GetArtifactByPathArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The generic artifact path.  Example: `foo/bar/baz`
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.GenericArtifactsContent
         public GetArtifactByPathArgs()
         {
         }
+        public static new GetArtifactByPathArgs Empty => new GetArtifactByPathArgs();
     }
 
-    public sealed class GetArtifactByPathInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetArtifactByPathInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The generic artifact path.  Example: `foo/bar/baz`
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
         public GetArtifactByPathInvokeArgs()
         {
         }
+        public static new GetArtifactByPathInvokeArgs Empty => new GetArtifactByPathInvokeArgs();
     }
 
 

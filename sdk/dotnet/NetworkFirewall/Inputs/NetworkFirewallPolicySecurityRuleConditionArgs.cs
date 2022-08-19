@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall.Inputs
 {
 
-    public sealed class NetworkFirewallPolicySecurityRuleConditionArgs : Pulumi.ResourceArgs
+    public sealed class NetworkFirewallPolicySecurityRuleConditionArgs : global::Pulumi.ResourceArgs
     {
         [Input("applications")]
         private InputList<string>? _applications;
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
         public NetworkFirewallPolicySecurityRuleConditionArgs()
         {
         }
+        public static new NetworkFirewallPolicySecurityRuleConditionArgs Empty => new NetworkFirewallPolicySecurityRuleConditionArgs();
     }
 }

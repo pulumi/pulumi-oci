@@ -21,21 +21,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsObjectCollectionRule = Oci.LogAnalytics.GetLogAnalyticsObjectCollectionRule.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsObjectCollectionRule = Output.Create(Oci.LogAnalytics.GetLogAnalyticsObjectCollectionRule.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsObjectCollectionRuleArgs
-        ///         {
-        ///             LogAnalyticsObjectCollectionRuleId = oci_log_analytics_log_analytics_object_collection_rule.Test_log_analytics_object_collection_rule.Id,
-        ///             Namespace = @var.Log_analytics_object_collection_rule_namespace,
-        ///         }));
-        ///     }
+        ///         LogAnalyticsObjectCollectionRuleId = oci_log_analytics_log_analytics_object_collection_rule.Test_log_analytics_object_collection_rule.Id,
+        ///         Namespace = @var.Log_analytics_object_collection_rule_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsObjectCollectionRule = Oci.LogAnalytics.GetLogAnalyticsObjectCollectionRule.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsObjectCollectionRule = Output.Create(Oci.LogAnalytics.GetLogAnalyticsObjectCollectionRule.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsObjectCollectionRuleArgs
-        ///         {
-        ///             LogAnalyticsObjectCollectionRuleId = oci_log_analytics_log_analytics_object_collection_rule.Test_log_analytics_object_collection_rule.Id,
-        ///             Namespace = @var.Log_analytics_object_collection_rule_namespace,
-        ///         }));
-        ///     }
+        ///         LogAnalyticsObjectCollectionRuleId = oci_log_analytics_log_analytics_object_collection_rule.Test_log_analytics_object_collection_rule.Id,
+        ///         Namespace = @var.Log_analytics_object_collection_rule_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.LogAnalytics
     }
 
 
-    public sealed class GetLogAnalyticsObjectCollectionRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsObjectCollectionRuleArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsObjectCollectionRuleArgs()
         {
         }
+        public static new GetLogAnalyticsObjectCollectionRuleArgs Empty => new GetLogAnalyticsObjectCollectionRuleArgs();
     }
 
-    public sealed class GetLogAnalyticsObjectCollectionRuleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsObjectCollectionRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsObjectCollectionRuleInvokeArgs()
         {
         }
+        public static new GetLogAnalyticsObjectCollectionRuleInvokeArgs Empty => new GetLogAnalyticsObjectCollectionRuleInvokeArgs();
     }
 
 

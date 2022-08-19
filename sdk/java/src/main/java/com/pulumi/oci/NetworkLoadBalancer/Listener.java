@@ -20,6 +20,38 @@ import javax.annotation.Nullable;
  * Adds a listener to a network load balancer.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.NetworkLoadBalancer.Listener;
+ * import com.pulumi.oci.NetworkLoadBalancer.ListenerArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testListener = new Listener(&#34;testListener&#34;, ListenerArgs.builder()        
+ *             .defaultBackendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
+ *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+ *             .port(var_.listener_port())
+ *             .protocol(var_.listener_protocol())
+ *             .ipVersion(var_.listener_ip_version())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

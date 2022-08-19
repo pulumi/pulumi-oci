@@ -21,20 +21,18 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGenericArtifactsContent = Oci.GenericArtifactsContent.GetGenericArtifactsContent.Invoke(new()
         ///     {
-        ///         var testGenericArtifactsContent = Output.Create(Oci.GenericArtifactsContent.GetGenericArtifactsContent.InvokeAsync(new Oci.GenericArtifactsContent.GetGenericArtifactsContentArgs
-        ///         {
-        ///             ArtifactId = oci_generic_artifacts_content_artifact.Test_artifact.Id,
-        ///         }));
-        ///     }
+        ///         ArtifactId = oci_generic_artifacts_content_artifact.Test_artifact.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGenericArtifactsContent = Oci.GenericArtifactsContent.GetGenericArtifactsContent.Invoke(new()
         ///     {
-        ///         var testGenericArtifactsContent = Output.Create(Oci.GenericArtifactsContent.GetGenericArtifactsContent.InvokeAsync(new Oci.GenericArtifactsContent.GetGenericArtifactsContentArgs
-        ///         {
-        ///             ArtifactId = oci_generic_artifacts_content_artifact.Test_artifact.Id,
-        ///         }));
-        ///     }
+        ///         ArtifactId = oci_generic_artifacts_content_artifact.Test_artifact.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
     }
 
 
-    public sealed class GetGenericArtifactsContentArgs : Pulumi.InvokeArgs
+    public sealed class GetGenericArtifactsContentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.GenericArtifactsContent
         public GetGenericArtifactsContentArgs()
         {
         }
+        public static new GetGenericArtifactsContentArgs Empty => new GetGenericArtifactsContentArgs();
     }
 
-    public sealed class GetGenericArtifactsContentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetGenericArtifactsContentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
         public GetGenericArtifactsContentInvokeArgs()
         {
         }
+        public static new GetGenericArtifactsContentInvokeArgs Empty => new GetGenericArtifactsContentInvokeArgs();
     }
 
 

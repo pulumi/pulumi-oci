@@ -21,21 +21,19 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbManagementPrivateEndpointAssociatedDatabases = Oci.DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabases.Invoke(new()
         ///     {
-        ///         var testDbManagementPrivateEndpointAssociatedDatabases = Output.Create(Oci.DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabases.InvokeAsync(new Oci.DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DbManagementPrivateEndpointId = oci_database_management_db_management_private_endpoint.Test_db_management_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DbManagementPrivateEndpointId = oci_database_management_db_management_private_endpoint.Test_db_management_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbManagementPrivateEndpointAssociatedDatabases = Oci.DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabases.Invoke(new()
         ///     {
-        ///         var testDbManagementPrivateEndpointAssociatedDatabases = Output.Create(Oci.DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabases.InvokeAsync(new Oci.DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DbManagementPrivateEndpointId = oci_database_management_db_management_private_endpoint.Test_db_management_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DbManagementPrivateEndpointId = oci_database_management_db_management_private_endpoint.Test_db_management_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetDbManagementPrivateEndpointAssociatedDatabasesArgs : Pulumi.InvokeArgs
+    public sealed class GetDbManagementPrivateEndpointAssociatedDatabasesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetDbManagementPrivateEndpointAssociatedDatabasesArgs()
         {
         }
+        public static new GetDbManagementPrivateEndpointAssociatedDatabasesArgs Empty => new GetDbManagementPrivateEndpointAssociatedDatabasesArgs();
     }
 
-    public sealed class GetDbManagementPrivateEndpointAssociatedDatabasesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbManagementPrivateEndpointAssociatedDatabasesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetDbManagementPrivateEndpointAssociatedDatabasesInvokeArgs()
         {
         }
+        public static new GetDbManagementPrivateEndpointAssociatedDatabasesInvokeArgs Empty => new GetDbManagementPrivateEndpointAssociatedDatabasesInvokeArgs();
     }
 
 

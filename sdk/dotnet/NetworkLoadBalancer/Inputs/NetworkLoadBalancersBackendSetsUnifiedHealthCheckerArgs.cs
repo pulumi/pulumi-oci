@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
 {
 
-    public sealed class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs : Pulumi.ResourceArgs
+    public sealed class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The interval between health checks, in milliseconds. The default value is 10000 (10 seconds).  Example: `10000`
@@ -75,5 +75,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
         public NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs()
         {
         }
+        public static new NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs Empty => new NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs();
     }
 }

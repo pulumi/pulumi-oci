@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class GetSteeringPolicyAttachmentsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetSteeringPolicyAttachmentsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public GetSteeringPolicyAttachmentsFilterArgs()
         {
         }
+        public static new GetSteeringPolicyAttachmentsFilterArgs Empty => new GetSteeringPolicyAttachmentsFilterArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsGetArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Filter parameters from the query string as they pass through the gateway.  The gateway applies filters after other transformations, so any parameters set or renamed must also be listed here when using an ALLOW type policy.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsGetArgs()
         {
         }
+        public static new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsGetArgs Empty => new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsGetArgs();
     }
 }

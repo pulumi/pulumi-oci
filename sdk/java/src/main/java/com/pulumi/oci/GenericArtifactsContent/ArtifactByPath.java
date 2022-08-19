@@ -25,6 +25,37 @@ import javax.annotation.Nullable;
  * In order to delete generic artifact, you can use `oci.Artifacts.GenericArtifact`
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.GenericArtifactsContent.ArtifactByPath;
+ * import com.pulumi.oci.GenericArtifactsContent.ArtifactByPathArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testArtifactByPath = new ArtifactByPath(&#34;testArtifactByPath&#34;, ArtifactByPathArgs.builder()        
+ *             .artifactPath(var_.artifact_path())
+ *             .repositoryId(oci_artifacts_repository.test_repository().id())
+ *             .version(var_.version())
+ *             .source(var_.source())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  */
 @ResourceType(type="oci:GenericArtifactsContent/artifactByPath:ArtifactByPath")

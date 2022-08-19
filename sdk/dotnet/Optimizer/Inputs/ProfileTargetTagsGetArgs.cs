@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer.Inputs
 {
 
-    public sealed class ProfileTargetTagsGetArgs : Pulumi.ResourceArgs
+    public sealed class ProfileTargetTagsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("items", required: true)]
         private InputList<Inputs.ProfileTargetTagsItemGetArgs>? _items;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Optimizer.Inputs
         public ProfileTargetTagsGetArgs()
         {
         }
+        public static new ProfileTargetTagsGetArgs Empty => new ProfileTargetTagsGetArgs();
     }
 }

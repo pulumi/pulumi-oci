@@ -25,20 +25,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateIp = Oci.Core.GetPrivateIp.Invoke(new()
         ///     {
-        ///         var testPrivateIp = Output.Create(Oci.Core.GetPrivateIp.InvokeAsync(new Oci.Core.GetPrivateIpArgs
-        ///         {
-        ///             PrivateIpId = oci_core_private_ip.Test_private_ip.Id,
-        ///         }));
-        ///     }
+        ///         PrivateIpId = oci_core_private_ip.Test_private_ip.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,20 +58,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateIp = Oci.Core.GetPrivateIp.Invoke(new()
         ///     {
-        ///         var testPrivateIp = Output.Create(Oci.Core.GetPrivateIp.InvokeAsync(new Oci.Core.GetPrivateIpArgs
-        ///         {
-        ///             PrivateIpId = oci_core_private_ip.Test_private_ip.Id,
-        ///         }));
-        ///     }
+        ///         PrivateIpId = oci_core_private_ip.Test_private_ip.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetPrivateIpArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateIpArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP or IPv6.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Core
         public GetPrivateIpArgs()
         {
         }
+        public static new GetPrivateIpArgs Empty => new GetPrivateIpArgs();
     }
 
-    public sealed class GetPrivateIpInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateIpInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP or IPv6.
@@ -107,6 +104,7 @@ namespace Pulumi.Oci.Core
         public GetPrivateIpInvokeArgs()
         {
         }
+        public static new GetPrivateIpInvokeArgs Empty => new GetPrivateIpInvokeArgs();
     }
 
 

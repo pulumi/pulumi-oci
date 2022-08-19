@@ -21,20 +21,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCloudGuardConfiguration = Oci.CloudGuard.GetCloudGuardConfiguration.Invoke(new()
         ///     {
-        ///         var testCloudGuardConfiguration = Output.Create(Oci.CloudGuard.GetCloudGuardConfiguration.InvokeAsync(new Oci.CloudGuard.GetCloudGuardConfigurationArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCloudGuardConfiguration = Oci.CloudGuard.GetCloudGuardConfiguration.Invoke(new()
         ///     {
-        ///         var testCloudGuardConfiguration = Output.Create(Oci.CloudGuard.GetCloudGuardConfiguration.InvokeAsync(new Oci.CloudGuard.GetCloudGuardConfigurationArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetCloudGuardConfigurationArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudGuardConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetCloudGuardConfigurationArgs()
         {
         }
+        public static new GetCloudGuardConfigurationArgs Empty => new GetCloudGuardConfigurationArgs();
     }
 
-    public sealed class GetCloudGuardConfigurationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudGuardConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetCloudGuardConfigurationInvokeArgs()
         {
         }
+        public static new GetCloudGuardConfigurationInvokeArgs Empty => new GetCloudGuardConfigurationInvokeArgs();
     }
 
 

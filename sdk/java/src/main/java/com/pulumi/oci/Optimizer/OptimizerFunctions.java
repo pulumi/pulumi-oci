@@ -62,6 +62,37 @@ public final class OptimizerFunctions {
      * Lists the supported Cloud Advisor categories.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategories = OptimizerFunctions.getCategories(GetCategoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.category_compartment_id_in_subtree())
+     *             .name(var_.category_name())
+     *             .state(var_.category_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCategoriesResult> getCategories(GetCategoriesArgs args) {
@@ -73,6 +104,37 @@ public final class OptimizerFunctions {
      * Lists the supported Cloud Advisor categories.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategories = OptimizerFunctions.getCategories(GetCategoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.category_compartment_id_in_subtree())
+     *             .name(var_.category_name())
+     *             .state(var_.category_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCategoriesResult> getCategoriesPlain(GetCategoriesPlainArgs args) {
@@ -84,6 +146,37 @@ public final class OptimizerFunctions {
      * Lists the supported Cloud Advisor categories.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategories = OptimizerFunctions.getCategories(GetCategoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.category_compartment_id_in_subtree())
+     *             .name(var_.category_name())
+     *             .state(var_.category_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCategoriesResult> getCategories(GetCategoriesArgs args, InvokeOptions options) {
@@ -95,6 +188,37 @@ public final class OptimizerFunctions {
      * Lists the supported Cloud Advisor categories.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategories = OptimizerFunctions.getCategories(GetCategoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.category_compartment_id_in_subtree())
+     *             .name(var_.category_name())
+     *             .state(var_.category_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCategoriesResult> getCategoriesPlain(GetCategoriesPlainArgs args, InvokeOptions options) {
@@ -106,6 +230,34 @@ public final class OptimizerFunctions {
      * Gets the category that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetCategoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategory = OptimizerFunctions.getCategory(GetCategoryArgs.builder()
+     *             .categoryId(oci_optimizer_category.test_category().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCategoryResult> getCategory(GetCategoryArgs args) {
@@ -117,6 +269,34 @@ public final class OptimizerFunctions {
      * Gets the category that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetCategoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategory = OptimizerFunctions.getCategory(GetCategoryArgs.builder()
+     *             .categoryId(oci_optimizer_category.test_category().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCategoryResult> getCategoryPlain(GetCategoryPlainArgs args) {
@@ -128,6 +308,34 @@ public final class OptimizerFunctions {
      * Gets the category that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetCategoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategory = OptimizerFunctions.getCategory(GetCategoryArgs.builder()
+     *             .categoryId(oci_optimizer_category.test_category().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCategoryResult> getCategory(GetCategoryArgs args, InvokeOptions options) {
@@ -139,6 +347,34 @@ public final class OptimizerFunctions {
      * Gets the category that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetCategoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategory = OptimizerFunctions.getCategory(GetCategoryArgs.builder()
+     *             .categoryId(oci_optimizer_category.test_category().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCategoryResult> getCategoryPlain(GetCategoryPlainArgs args, InvokeOptions options) {
@@ -150,6 +386,34 @@ public final class OptimizerFunctions {
      * Gets the Cloud Advisor enrollment status.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnrollmentStatus = OptimizerFunctions.getEnrollmentStatus(GetEnrollmentStatusArgs.builder()
+     *             .enrollmentStatusId(oci_optimizer_enrollment_status.test_enrollment_status().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEnrollmentStatusResult> getEnrollmentStatus(GetEnrollmentStatusArgs args) {
@@ -161,6 +425,34 @@ public final class OptimizerFunctions {
      * Gets the Cloud Advisor enrollment status.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnrollmentStatus = OptimizerFunctions.getEnrollmentStatus(GetEnrollmentStatusArgs.builder()
+     *             .enrollmentStatusId(oci_optimizer_enrollment_status.test_enrollment_status().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEnrollmentStatusResult> getEnrollmentStatusPlain(GetEnrollmentStatusPlainArgs args) {
@@ -172,6 +464,34 @@ public final class OptimizerFunctions {
      * Gets the Cloud Advisor enrollment status.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnrollmentStatus = OptimizerFunctions.getEnrollmentStatus(GetEnrollmentStatusArgs.builder()
+     *             .enrollmentStatusId(oci_optimizer_enrollment_status.test_enrollment_status().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEnrollmentStatusResult> getEnrollmentStatus(GetEnrollmentStatusArgs args, InvokeOptions options) {
@@ -183,6 +503,34 @@ public final class OptimizerFunctions {
      * Gets the Cloud Advisor enrollment status.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnrollmentStatus = OptimizerFunctions.getEnrollmentStatus(GetEnrollmentStatusArgs.builder()
+     *             .enrollmentStatusId(oci_optimizer_enrollment_status.test_enrollment_status().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEnrollmentStatusResult> getEnrollmentStatusPlain(GetEnrollmentStatusPlainArgs args, InvokeOptions options) {
@@ -194,6 +542,36 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor enrollment statuses.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnrollmentStatuses = OptimizerFunctions.getEnrollmentStatuses(GetEnrollmentStatusesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.enrollment_status_state())
+     *             .status(var_.enrollment_status_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEnrollmentStatusesResult> getEnrollmentStatuses(GetEnrollmentStatusesArgs args) {
@@ -205,6 +583,36 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor enrollment statuses.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnrollmentStatuses = OptimizerFunctions.getEnrollmentStatuses(GetEnrollmentStatusesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.enrollment_status_state())
+     *             .status(var_.enrollment_status_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEnrollmentStatusesResult> getEnrollmentStatusesPlain(GetEnrollmentStatusesPlainArgs args) {
@@ -216,6 +624,36 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor enrollment statuses.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnrollmentStatuses = OptimizerFunctions.getEnrollmentStatuses(GetEnrollmentStatusesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.enrollment_status_state())
+     *             .status(var_.enrollment_status_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEnrollmentStatusesResult> getEnrollmentStatuses(GetEnrollmentStatusesArgs args, InvokeOptions options) {
@@ -227,6 +665,36 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor enrollment statuses.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetEnrollmentStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnrollmentStatuses = OptimizerFunctions.getEnrollmentStatuses(GetEnrollmentStatusesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .state(var_.enrollment_status_state())
+     *             .status(var_.enrollment_status_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEnrollmentStatusesResult> getEnrollmentStatusesPlain(GetEnrollmentStatusesPlainArgs args, InvokeOptions options) {
@@ -239,6 +707,41 @@ public final class OptimizerFunctions {
      * For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHistories = OptimizerFunctions.getHistories(GetHistoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.history_compartment_id_in_subtree())
+     *             .name(var_.history_name())
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .resourceType(var_.history_resource_type())
+     *             .state(var_.history_state())
+     *             .status(var_.history_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHistoriesResult> getHistories(GetHistoriesArgs args) {
@@ -251,6 +754,41 @@ public final class OptimizerFunctions {
      * For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHistories = OptimizerFunctions.getHistories(GetHistoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.history_compartment_id_in_subtree())
+     *             .name(var_.history_name())
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .resourceType(var_.history_resource_type())
+     *             .state(var_.history_state())
+     *             .status(var_.history_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHistoriesResult> getHistoriesPlain(GetHistoriesPlainArgs args) {
@@ -263,6 +801,41 @@ public final class OptimizerFunctions {
      * For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHistories = OptimizerFunctions.getHistories(GetHistoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.history_compartment_id_in_subtree())
+     *             .name(var_.history_name())
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .resourceType(var_.history_resource_type())
+     *             .state(var_.history_state())
+     *             .status(var_.history_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHistoriesResult> getHistories(GetHistoriesArgs args, InvokeOptions options) {
@@ -275,6 +848,41 @@ public final class OptimizerFunctions {
      * For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHistories = OptimizerFunctions.getHistories(GetHistoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.history_compartment_id_in_subtree())
+     *             .name(var_.history_name())
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .resourceType(var_.history_resource_type())
+     *             .state(var_.history_state())
+     *             .status(var_.history_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHistoriesResult> getHistoriesPlain(GetHistoriesPlainArgs args, InvokeOptions options) {
@@ -286,6 +894,34 @@ public final class OptimizerFunctions {
      * Gets the specified profile&#39;s information. Uses the profile&#39;s OCID to determine which profile to retrieve.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfile = OptimizerFunctions.getProfile(GetProfileArgs.builder()
+     *             .profileId(oci_optimizer_profile.test_profile().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProfileResult> getProfile(GetProfileArgs args) {
@@ -297,6 +933,34 @@ public final class OptimizerFunctions {
      * Gets the specified profile&#39;s information. Uses the profile&#39;s OCID to determine which profile to retrieve.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfile = OptimizerFunctions.getProfile(GetProfileArgs.builder()
+     *             .profileId(oci_optimizer_profile.test_profile().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProfileResult> getProfilePlain(GetProfilePlainArgs args) {
@@ -308,6 +972,34 @@ public final class OptimizerFunctions {
      * Gets the specified profile&#39;s information. Uses the profile&#39;s OCID to determine which profile to retrieve.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfile = OptimizerFunctions.getProfile(GetProfileArgs.builder()
+     *             .profileId(oci_optimizer_profile.test_profile().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProfileResult> getProfile(GetProfileArgs args, InvokeOptions options) {
@@ -319,6 +1011,34 @@ public final class OptimizerFunctions {
      * Gets the specified profile&#39;s information. Uses the profile&#39;s OCID to determine which profile to retrieve.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfile = OptimizerFunctions.getProfile(GetProfileArgs.builder()
+     *             .profileId(oci_optimizer_profile.test_profile().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProfileResult> getProfilePlain(GetProfilePlainArgs args, InvokeOptions options) {
@@ -330,6 +1050,37 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileLevel = OptimizerFunctions.getProfileLevel(GetProfileLevelArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.profile_level_compartment_id_in_subtree())
+     *             .name(var_.profile_level_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProfileLevelResult> getProfileLevel(GetProfileLevelArgs args) {
@@ -341,6 +1092,37 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileLevel = OptimizerFunctions.getProfileLevel(GetProfileLevelArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.profile_level_compartment_id_in_subtree())
+     *             .name(var_.profile_level_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProfileLevelResult> getProfileLevelPlain(GetProfileLevelPlainArgs args) {
@@ -352,6 +1134,37 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileLevel = OptimizerFunctions.getProfileLevel(GetProfileLevelArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.profile_level_compartment_id_in_subtree())
+     *             .name(var_.profile_level_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProfileLevelResult> getProfileLevel(GetProfileLevelArgs args, InvokeOptions options) {
@@ -363,6 +1176,37 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileLevel = OptimizerFunctions.getProfileLevel(GetProfileLevelArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.profile_level_compartment_id_in_subtree())
+     *             .name(var_.profile_level_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProfileLevelResult> getProfileLevelPlain(GetProfileLevelPlainArgs args, InvokeOptions options) {
@@ -374,6 +1218,37 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileLevels = OptimizerFunctions.getProfileLevels(GetProfileLevelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.profile_level_compartment_id_in_subtree())
+     *             .name(var_.profile_level_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProfileLevelsResult> getProfileLevels(GetProfileLevelsArgs args) {
@@ -385,6 +1260,37 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileLevels = OptimizerFunctions.getProfileLevels(GetProfileLevelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.profile_level_compartment_id_in_subtree())
+     *             .name(var_.profile_level_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProfileLevelsResult> getProfileLevelsPlain(GetProfileLevelsPlainArgs args) {
@@ -396,6 +1302,37 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileLevels = OptimizerFunctions.getProfileLevels(GetProfileLevelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.profile_level_compartment_id_in_subtree())
+     *             .name(var_.profile_level_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProfileLevelsResult> getProfileLevels(GetProfileLevelsArgs args, InvokeOptions options) {
@@ -407,6 +1344,37 @@ public final class OptimizerFunctions {
      * Lists the existing profile levels.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfileLevelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfileLevels = OptimizerFunctions.getProfileLevels(GetProfileLevelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.profile_level_compartment_id_in_subtree())
+     *             .name(var_.profile_level_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProfileLevelsResult> getProfileLevelsPlain(GetProfileLevelsPlainArgs args, InvokeOptions options) {
@@ -418,6 +1386,36 @@ public final class OptimizerFunctions {
      * Lists the existing profiles.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfiles = OptimizerFunctions.getProfiles(GetProfilesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.profile_name())
+     *             .state(var_.profile_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProfilesResult> getProfiles(GetProfilesArgs args) {
@@ -429,6 +1427,36 @@ public final class OptimizerFunctions {
      * Lists the existing profiles.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfiles = OptimizerFunctions.getProfiles(GetProfilesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.profile_name())
+     *             .state(var_.profile_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProfilesResult> getProfilesPlain(GetProfilesPlainArgs args) {
@@ -440,6 +1468,36 @@ public final class OptimizerFunctions {
      * Lists the existing profiles.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfiles = OptimizerFunctions.getProfiles(GetProfilesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.profile_name())
+     *             .state(var_.profile_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProfilesResult> getProfiles(GetProfilesArgs args, InvokeOptions options) {
@@ -451,6 +1509,36 @@ public final class OptimizerFunctions {
      * Lists the existing profiles.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProfiles = OptimizerFunctions.getProfiles(GetProfilesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.profile_name())
+     *             .state(var_.profile_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProfilesResult> getProfilesPlain(GetProfilesPlainArgs args, InvokeOptions options) {
@@ -462,6 +1550,34 @@ public final class OptimizerFunctions {
      * Gets the recommendation for the specified OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendation = OptimizerFunctions.getRecommendation(GetRecommendationArgs.builder()
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRecommendationResult> getRecommendation(GetRecommendationArgs args) {
@@ -473,6 +1589,34 @@ public final class OptimizerFunctions {
      * Gets the recommendation for the specified OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendation = OptimizerFunctions.getRecommendation(GetRecommendationArgs.builder()
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRecommendationResult> getRecommendationPlain(GetRecommendationPlainArgs args) {
@@ -484,6 +1628,34 @@ public final class OptimizerFunctions {
      * Gets the recommendation for the specified OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendation = OptimizerFunctions.getRecommendation(GetRecommendationArgs.builder()
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRecommendationResult> getRecommendation(GetRecommendationArgs args, InvokeOptions options) {
@@ -495,6 +1667,34 @@ public final class OptimizerFunctions {
      * Gets the recommendation for the specified OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendation = OptimizerFunctions.getRecommendation(GetRecommendationArgs.builder()
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRecommendationResult> getRecommendationPlain(GetRecommendationPlainArgs args, InvokeOptions options) {
@@ -506,6 +1706,37 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendationStrategies = OptimizerFunctions.getRecommendationStrategies(GetRecommendationStrategiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.recommendation_strategy_compartment_id_in_subtree())
+     *             .name(var_.recommendation_strategy_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRecommendationStrategiesResult> getRecommendationStrategies(GetRecommendationStrategiesArgs args) {
@@ -517,6 +1748,37 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendationStrategies = OptimizerFunctions.getRecommendationStrategies(GetRecommendationStrategiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.recommendation_strategy_compartment_id_in_subtree())
+     *             .name(var_.recommendation_strategy_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRecommendationStrategiesResult> getRecommendationStrategiesPlain(GetRecommendationStrategiesPlainArgs args) {
@@ -528,6 +1790,37 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendationStrategies = OptimizerFunctions.getRecommendationStrategies(GetRecommendationStrategiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.recommendation_strategy_compartment_id_in_subtree())
+     *             .name(var_.recommendation_strategy_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRecommendationStrategiesResult> getRecommendationStrategies(GetRecommendationStrategiesArgs args, InvokeOptions options) {
@@ -539,6 +1832,37 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendationStrategies = OptimizerFunctions.getRecommendationStrategies(GetRecommendationStrategiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.recommendation_strategy_compartment_id_in_subtree())
+     *             .name(var_.recommendation_strategy_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRecommendationStrategiesResult> getRecommendationStrategiesPlain(GetRecommendationStrategiesPlainArgs args, InvokeOptions options) {
@@ -550,6 +1874,37 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendationStrategy = OptimizerFunctions.getRecommendationStrategy(GetRecommendationStrategyArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.recommendation_strategy_compartment_id_in_subtree())
+     *             .name(var_.recommendation_strategy_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRecommendationStrategyResult> getRecommendationStrategy(GetRecommendationStrategyArgs args) {
@@ -561,6 +1916,37 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendationStrategy = OptimizerFunctions.getRecommendationStrategy(GetRecommendationStrategyArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.recommendation_strategy_compartment_id_in_subtree())
+     *             .name(var_.recommendation_strategy_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRecommendationStrategyResult> getRecommendationStrategyPlain(GetRecommendationStrategyPlainArgs args) {
@@ -572,6 +1958,37 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendationStrategy = OptimizerFunctions.getRecommendationStrategy(GetRecommendationStrategyArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.recommendation_strategy_compartment_id_in_subtree())
+     *             .name(var_.recommendation_strategy_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRecommendationStrategyResult> getRecommendationStrategy(GetRecommendationStrategyArgs args, InvokeOptions options) {
@@ -583,6 +2000,37 @@ public final class OptimizerFunctions {
      * Lists the existing strategies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationStrategyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendationStrategy = OptimizerFunctions.getRecommendationStrategy(GetRecommendationStrategyArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.recommendation_strategy_compartment_id_in_subtree())
+     *             .name(var_.recommendation_strategy_name())
+     *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRecommendationStrategyResult> getRecommendationStrategyPlain(GetRecommendationStrategyPlainArgs args, InvokeOptions options) {
@@ -594,6 +2042,39 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor recommendations that are currently supported in the specified category.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
+     *             .categoryId(oci_optimizer_category.test_category().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.recommendation_compartment_id_in_subtree())
+     *             .name(var_.recommendation_name())
+     *             .state(var_.recommendation_state())
+     *             .status(var_.recommendation_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRecommendationsResult> getRecommendations(GetRecommendationsArgs args) {
@@ -605,6 +2086,39 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor recommendations that are currently supported in the specified category.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
+     *             .categoryId(oci_optimizer_category.test_category().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.recommendation_compartment_id_in_subtree())
+     *             .name(var_.recommendation_name())
+     *             .state(var_.recommendation_state())
+     *             .status(var_.recommendation_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRecommendationsResult> getRecommendationsPlain(GetRecommendationsPlainArgs args) {
@@ -616,6 +2130,39 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor recommendations that are currently supported in the specified category.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
+     *             .categoryId(oci_optimizer_category.test_category().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.recommendation_compartment_id_in_subtree())
+     *             .name(var_.recommendation_name())
+     *             .state(var_.recommendation_state())
+     *             .status(var_.recommendation_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRecommendationsResult> getRecommendations(GetRecommendationsArgs args, InvokeOptions options) {
@@ -627,6 +2174,39 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor recommendations that are currently supported in the specified category.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
+     *             .categoryId(oci_optimizer_category.test_category().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.recommendation_compartment_id_in_subtree())
+     *             .name(var_.recommendation_name())
+     *             .state(var_.recommendation_state())
+     *             .status(var_.recommendation_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRecommendationsResult> getRecommendationsPlain(GetRecommendationsPlainArgs args, InvokeOptions options) {
@@ -638,6 +2218,34 @@ public final class OptimizerFunctions {
      * Gets the resource action that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetResourceActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
+     *             .resourceActionId(oci_optimizer_resource_action.test_resource_action().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResourceActionResult> getResourceAction(GetResourceActionArgs args) {
@@ -649,6 +2257,34 @@ public final class OptimizerFunctions {
      * Gets the resource action that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetResourceActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
+     *             .resourceActionId(oci_optimizer_resource_action.test_resource_action().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResourceActionResult> getResourceActionPlain(GetResourceActionPlainArgs args) {
@@ -660,6 +2296,34 @@ public final class OptimizerFunctions {
      * Gets the resource action that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetResourceActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
+     *             .resourceActionId(oci_optimizer_resource_action.test_resource_action().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResourceActionResult> getResourceAction(GetResourceActionArgs args, InvokeOptions options) {
@@ -671,6 +2335,34 @@ public final class OptimizerFunctions {
      * Gets the resource action that corresponds to the specified OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetResourceActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
+     *             .resourceActionId(oci_optimizer_resource_action.test_resource_action().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResourceActionResult> getResourceActionPlain(GetResourceActionPlainArgs args, InvokeOptions options) {
@@ -682,6 +2374,40 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetResourceActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceActions = OptimizerFunctions.getResourceActions(GetResourceActionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.resource_action_compartment_id_in_subtree())
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .name(var_.resource_action_name())
+     *             .resourceType(var_.resource_action_resource_type())
+     *             .state(var_.resource_action_state())
+     *             .status(var_.resource_action_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResourceActionsResult> getResourceActions(GetResourceActionsArgs args) {
@@ -693,6 +2419,40 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetResourceActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceActions = OptimizerFunctions.getResourceActions(GetResourceActionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.resource_action_compartment_id_in_subtree())
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .name(var_.resource_action_name())
+     *             .resourceType(var_.resource_action_resource_type())
+     *             .state(var_.resource_action_state())
+     *             .status(var_.resource_action_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResourceActionsResult> getResourceActionsPlain(GetResourceActionsPlainArgs args) {
@@ -704,6 +2464,40 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetResourceActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceActions = OptimizerFunctions.getResourceActions(GetResourceActionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.resource_action_compartment_id_in_subtree())
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .name(var_.resource_action_name())
+     *             .resourceType(var_.resource_action_resource_type())
+     *             .state(var_.resource_action_state())
+     *             .status(var_.resource_action_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResourceActionsResult> getResourceActions(GetResourceActionsArgs args, InvokeOptions options) {
@@ -715,6 +2509,40 @@ public final class OptimizerFunctions {
      * Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Optimizer.OptimizerFunctions;
+     * import com.pulumi.oci.Optimizer.inputs.GetResourceActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceActions = OptimizerFunctions.getResourceActions(GetResourceActionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.resource_action_compartment_id_in_subtree())
+     *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
+     *             .name(var_.resource_action_name())
+     *             .resourceType(var_.resource_action_resource_type())
+     *             .state(var_.resource_action_state())
+     *             .status(var_.resource_action_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResourceActionsResult> getResourceActionsPlain(GetResourceActionsPlainArgs args, InvokeOptions options) {

@@ -47,6 +47,37 @@ public final class DataConnectivityFunctions {
      * Returns a list of Data Connectivity Management Registries.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistries = DataConnectivityFunctions.getRegistries(GetRegistriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isDeepLookup(var_.registry_is_deep_lookup())
+     *             .name(var_.registry_name())
+     *             .state(var_.registry_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistriesResult> getRegistries(GetRegistriesArgs args) {
@@ -58,6 +89,37 @@ public final class DataConnectivityFunctions {
      * Returns a list of Data Connectivity Management Registries.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistries = DataConnectivityFunctions.getRegistries(GetRegistriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isDeepLookup(var_.registry_is_deep_lookup())
+     *             .name(var_.registry_name())
+     *             .state(var_.registry_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistriesResult> getRegistriesPlain(GetRegistriesPlainArgs args) {
@@ -69,6 +131,37 @@ public final class DataConnectivityFunctions {
      * Returns a list of Data Connectivity Management Registries.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistries = DataConnectivityFunctions.getRegistries(GetRegistriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isDeepLookup(var_.registry_is_deep_lookup())
+     *             .name(var_.registry_name())
+     *             .state(var_.registry_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistriesResult> getRegistries(GetRegistriesArgs args, InvokeOptions options) {
@@ -80,6 +173,37 @@ public final class DataConnectivityFunctions {
      * Returns a list of Data Connectivity Management Registries.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistries = DataConnectivityFunctions.getRegistries(GetRegistriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isDeepLookup(var_.registry_is_deep_lookup())
+     *             .name(var_.registry_name())
+     *             .state(var_.registry_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistriesResult> getRegistriesPlain(GetRegistriesPlainArgs args, InvokeOptions options) {
@@ -91,6 +215,34 @@ public final class DataConnectivityFunctions {
      * Gets a Data Connectivity Management Registry by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistry = DataConnectivityFunctions.getRegistry(GetRegistryArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryResult> getRegistry(GetRegistryArgs args) {
@@ -102,6 +254,34 @@ public final class DataConnectivityFunctions {
      * Gets a Data Connectivity Management Registry by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistry = DataConnectivityFunctions.getRegistry(GetRegistryArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryResult> getRegistryPlain(GetRegistryPlainArgs args) {
@@ -113,6 +293,34 @@ public final class DataConnectivityFunctions {
      * Gets a Data Connectivity Management Registry by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistry = DataConnectivityFunctions.getRegistry(GetRegistryArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryResult> getRegistry(GetRegistryArgs args, InvokeOptions options) {
@@ -124,6 +332,34 @@ public final class DataConnectivityFunctions {
      * Gets a Data Connectivity Management Registry by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistry = DataConnectivityFunctions.getRegistry(GetRegistryArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryResult> getRegistryPlain(GetRegistryPlainArgs args, InvokeOptions options) {
@@ -135,6 +371,35 @@ public final class DataConnectivityFunctions {
      * Retrieves the connection details using the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryConnection = DataConnectivityFunctions.getRegistryConnection(GetRegistryConnectionArgs.builder()
+     *             .connectionKey(var_.registry_connection_connection_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryConnectionResult> getRegistryConnection(GetRegistryConnectionArgs args) {
@@ -146,6 +411,35 @@ public final class DataConnectivityFunctions {
      * Retrieves the connection details using the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryConnection = DataConnectivityFunctions.getRegistryConnection(GetRegistryConnectionArgs.builder()
+     *             .connectionKey(var_.registry_connection_connection_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryConnectionResult> getRegistryConnectionPlain(GetRegistryConnectionPlainArgs args) {
@@ -157,6 +451,35 @@ public final class DataConnectivityFunctions {
      * Retrieves the connection details using the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryConnection = DataConnectivityFunctions.getRegistryConnection(GetRegistryConnectionArgs.builder()
+     *             .connectionKey(var_.registry_connection_connection_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryConnectionResult> getRegistryConnection(GetRegistryConnectionArgs args, InvokeOptions options) {
@@ -168,6 +491,35 @@ public final class DataConnectivityFunctions {
      * Retrieves the connection details using the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryConnection = DataConnectivityFunctions.getRegistryConnection(GetRegistryConnectionArgs.builder()
+     *             .connectionKey(var_.registry_connection_connection_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryConnectionResult> getRegistryConnectionPlain(GetRegistryConnectionPlainArgs args, InvokeOptions options) {
@@ -179,6 +531,39 @@ public final class DataConnectivityFunctions {
      * Retrieves a list of all connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryConnections = DataConnectivityFunctions.getRegistryConnections(GetRegistryConnectionsArgs.builder()
+     *             .dataAssetKey(var_.registry_connection_data_asset_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .favoritesQueryParam(var_.registry_connection_favorites_query_param())
+     *             .fields(var_.registry_connection_fields())
+     *             .name(var_.registry_connection_name())
+     *             .type(var_.registry_connection_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryConnectionsResult> getRegistryConnections(GetRegistryConnectionsArgs args) {
@@ -190,6 +575,39 @@ public final class DataConnectivityFunctions {
      * Retrieves a list of all connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryConnections = DataConnectivityFunctions.getRegistryConnections(GetRegistryConnectionsArgs.builder()
+     *             .dataAssetKey(var_.registry_connection_data_asset_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .favoritesQueryParam(var_.registry_connection_favorites_query_param())
+     *             .fields(var_.registry_connection_fields())
+     *             .name(var_.registry_connection_name())
+     *             .type(var_.registry_connection_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryConnectionsResult> getRegistryConnectionsPlain(GetRegistryConnectionsPlainArgs args) {
@@ -201,6 +619,39 @@ public final class DataConnectivityFunctions {
      * Retrieves a list of all connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryConnections = DataConnectivityFunctions.getRegistryConnections(GetRegistryConnectionsArgs.builder()
+     *             .dataAssetKey(var_.registry_connection_data_asset_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .favoritesQueryParam(var_.registry_connection_favorites_query_param())
+     *             .fields(var_.registry_connection_fields())
+     *             .name(var_.registry_connection_name())
+     *             .type(var_.registry_connection_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryConnectionsResult> getRegistryConnections(GetRegistryConnectionsArgs args, InvokeOptions options) {
@@ -212,6 +663,39 @@ public final class DataConnectivityFunctions {
      * Retrieves a list of all connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryConnections = DataConnectivityFunctions.getRegistryConnections(GetRegistryConnectionsArgs.builder()
+     *             .dataAssetKey(var_.registry_connection_data_asset_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .favoritesQueryParam(var_.registry_connection_favorites_query_param())
+     *             .fields(var_.registry_connection_fields())
+     *             .name(var_.registry_connection_name())
+     *             .type(var_.registry_connection_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryConnectionsResult> getRegistryConnectionsPlain(GetRegistryConnectionsPlainArgs args, InvokeOptions options) {
@@ -223,6 +707,35 @@ public final class DataConnectivityFunctions {
      * Retrieves details of a data asset using the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryDataAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryDataAsset = DataConnectivityFunctions.getRegistryDataAsset(GetRegistryDataAssetArgs.builder()
+     *             .dataAssetKey(var_.registry_data_asset_data_asset_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryDataAssetResult> getRegistryDataAsset(GetRegistryDataAssetArgs args) {
@@ -234,6 +747,35 @@ public final class DataConnectivityFunctions {
      * Retrieves details of a data asset using the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryDataAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryDataAsset = DataConnectivityFunctions.getRegistryDataAsset(GetRegistryDataAssetArgs.builder()
+     *             .dataAssetKey(var_.registry_data_asset_data_asset_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryDataAssetResult> getRegistryDataAssetPlain(GetRegistryDataAssetPlainArgs args) {
@@ -245,6 +787,35 @@ public final class DataConnectivityFunctions {
      * Retrieves details of a data asset using the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryDataAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryDataAsset = DataConnectivityFunctions.getRegistryDataAsset(GetRegistryDataAssetArgs.builder()
+     *             .dataAssetKey(var_.registry_data_asset_data_asset_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryDataAssetResult> getRegistryDataAsset(GetRegistryDataAssetArgs args, InvokeOptions options) {
@@ -256,6 +827,35 @@ public final class DataConnectivityFunctions {
      * Retrieves details of a data asset using the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryDataAssetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryDataAsset = DataConnectivityFunctions.getRegistryDataAsset(GetRegistryDataAssetArgs.builder()
+     *             .dataAssetKey(var_.registry_data_asset_data_asset_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryDataAssetResult> getRegistryDataAssetPlain(GetRegistryDataAssetPlainArgs args, InvokeOptions options) {
@@ -267,6 +867,42 @@ public final class DataConnectivityFunctions {
      * Retrieves a list of all data asset summaries.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryDataAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryDataAssets = DataConnectivityFunctions.getRegistryDataAssets(GetRegistryDataAssetsArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .endpointIds(var_.registry_data_asset_endpoint_ids())
+     *             .excludeEndpointIds(var_.registry_data_asset_exclude_endpoint_ids())
+     *             .excludeTypes(var_.registry_data_asset_exclude_types())
+     *             .favoritesQueryParam(var_.registry_data_asset_favorites_query_param())
+     *             .fields(var_.registry_data_asset_fields())
+     *             .folderId(oci_data_connectivity_folder.test_folder().id())
+     *             .includeTypes(var_.registry_data_asset_include_types())
+     *             .name(var_.registry_data_asset_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryDataAssetsResult> getRegistryDataAssets(GetRegistryDataAssetsArgs args) {
@@ -278,6 +914,42 @@ public final class DataConnectivityFunctions {
      * Retrieves a list of all data asset summaries.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryDataAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryDataAssets = DataConnectivityFunctions.getRegistryDataAssets(GetRegistryDataAssetsArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .endpointIds(var_.registry_data_asset_endpoint_ids())
+     *             .excludeEndpointIds(var_.registry_data_asset_exclude_endpoint_ids())
+     *             .excludeTypes(var_.registry_data_asset_exclude_types())
+     *             .favoritesQueryParam(var_.registry_data_asset_favorites_query_param())
+     *             .fields(var_.registry_data_asset_fields())
+     *             .folderId(oci_data_connectivity_folder.test_folder().id())
+     *             .includeTypes(var_.registry_data_asset_include_types())
+     *             .name(var_.registry_data_asset_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryDataAssetsResult> getRegistryDataAssetsPlain(GetRegistryDataAssetsPlainArgs args) {
@@ -289,6 +961,42 @@ public final class DataConnectivityFunctions {
      * Retrieves a list of all data asset summaries.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryDataAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryDataAssets = DataConnectivityFunctions.getRegistryDataAssets(GetRegistryDataAssetsArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .endpointIds(var_.registry_data_asset_endpoint_ids())
+     *             .excludeEndpointIds(var_.registry_data_asset_exclude_endpoint_ids())
+     *             .excludeTypes(var_.registry_data_asset_exclude_types())
+     *             .favoritesQueryParam(var_.registry_data_asset_favorites_query_param())
+     *             .fields(var_.registry_data_asset_fields())
+     *             .folderId(oci_data_connectivity_folder.test_folder().id())
+     *             .includeTypes(var_.registry_data_asset_include_types())
+     *             .name(var_.registry_data_asset_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryDataAssetsResult> getRegistryDataAssets(GetRegistryDataAssetsArgs args, InvokeOptions options) {
@@ -300,6 +1008,42 @@ public final class DataConnectivityFunctions {
      * Retrieves a list of all data asset summaries.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryDataAssetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryDataAssets = DataConnectivityFunctions.getRegistryDataAssets(GetRegistryDataAssetsArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .endpointIds(var_.registry_data_asset_endpoint_ids())
+     *             .excludeEndpointIds(var_.registry_data_asset_exclude_endpoint_ids())
+     *             .excludeTypes(var_.registry_data_asset_exclude_types())
+     *             .favoritesQueryParam(var_.registry_data_asset_favorites_query_param())
+     *             .fields(var_.registry_data_asset_fields())
+     *             .folderId(oci_data_connectivity_folder.test_folder().id())
+     *             .includeTypes(var_.registry_data_asset_include_types())
+     *             .name(var_.registry_data_asset_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryDataAssetsResult> getRegistryDataAssetsPlain(GetRegistryDataAssetsPlainArgs args, InvokeOptions options) {
@@ -311,6 +1055,35 @@ public final class DataConnectivityFunctions {
      * Retrieves the folder details using the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryFolderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryFolder = DataConnectivityFunctions.getRegistryFolder(GetRegistryFolderArgs.builder()
+     *             .folderKey(var_.registry_folder_folder_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryFolderResult> getRegistryFolder(GetRegistryFolderArgs args) {
@@ -322,6 +1095,35 @@ public final class DataConnectivityFunctions {
      * Retrieves the folder details using the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryFolderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryFolder = DataConnectivityFunctions.getRegistryFolder(GetRegistryFolderArgs.builder()
+     *             .folderKey(var_.registry_folder_folder_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryFolderResult> getRegistryFolderPlain(GetRegistryFolderPlainArgs args) {
@@ -333,6 +1135,35 @@ public final class DataConnectivityFunctions {
      * Retrieves the folder details using the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryFolderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryFolder = DataConnectivityFunctions.getRegistryFolder(GetRegistryFolderArgs.builder()
+     *             .folderKey(var_.registry_folder_folder_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryFolderResult> getRegistryFolder(GetRegistryFolderArgs args, InvokeOptions options) {
@@ -344,6 +1175,35 @@ public final class DataConnectivityFunctions {
      * Retrieves the folder details using the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryFolderArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryFolder = DataConnectivityFunctions.getRegistryFolder(GetRegistryFolderArgs.builder()
+     *             .folderKey(var_.registry_folder_folder_key())
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryFolderResult> getRegistryFolderPlain(GetRegistryFolderPlainArgs args, InvokeOptions options) {
@@ -355,6 +1215,38 @@ public final class DataConnectivityFunctions {
      * Retrieves a list of all folders.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryFoldersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryFolders = DataConnectivityFunctions.getRegistryFolders(GetRegistryFoldersArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .favoritesQueryParam(var_.registry_folder_favorites_query_param())
+     *             .fields(var_.registry_folder_fields())
+     *             .name(var_.registry_folder_name())
+     *             .type(var_.registry_folder_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryFoldersResult> getRegistryFolders(GetRegistryFoldersArgs args) {
@@ -366,6 +1258,38 @@ public final class DataConnectivityFunctions {
      * Retrieves a list of all folders.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryFoldersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryFolders = DataConnectivityFunctions.getRegistryFolders(GetRegistryFoldersArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .favoritesQueryParam(var_.registry_folder_favorites_query_param())
+     *             .fields(var_.registry_folder_fields())
+     *             .name(var_.registry_folder_name())
+     *             .type(var_.registry_folder_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryFoldersResult> getRegistryFoldersPlain(GetRegistryFoldersPlainArgs args) {
@@ -377,6 +1301,38 @@ public final class DataConnectivityFunctions {
      * Retrieves a list of all folders.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryFoldersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryFolders = DataConnectivityFunctions.getRegistryFolders(GetRegistryFoldersArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .favoritesQueryParam(var_.registry_folder_favorites_query_param())
+     *             .fields(var_.registry_folder_fields())
+     *             .name(var_.registry_folder_name())
+     *             .type(var_.registry_folder_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryFoldersResult> getRegistryFolders(GetRegistryFoldersArgs args, InvokeOptions options) {
@@ -388,6 +1344,38 @@ public final class DataConnectivityFunctions {
      * Retrieves a list of all folders.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryFoldersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryFolders = DataConnectivityFunctions.getRegistryFolders(GetRegistryFoldersArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .favoritesQueryParam(var_.registry_folder_favorites_query_param())
+     *             .fields(var_.registry_folder_fields())
+     *             .name(var_.registry_folder_name())
+     *             .type(var_.registry_folder_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryFoldersResult> getRegistryFoldersPlain(GetRegistryFoldersPlainArgs args, InvokeOptions options) {
@@ -399,6 +1387,36 @@ public final class DataConnectivityFunctions {
      * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryType = DataConnectivityFunctions.getRegistryType(GetRegistryTypeArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .typeKey(var_.registry_type_type_key())
+     *             .fields(var_.registry_type_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryTypeResult> getRegistryType(GetRegistryTypeArgs args) {
@@ -410,6 +1428,36 @@ public final class DataConnectivityFunctions {
      * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryType = DataConnectivityFunctions.getRegistryType(GetRegistryTypeArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .typeKey(var_.registry_type_type_key())
+     *             .fields(var_.registry_type_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryTypeResult> getRegistryTypePlain(GetRegistryTypePlainArgs args) {
@@ -421,6 +1469,36 @@ public final class DataConnectivityFunctions {
      * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryType = DataConnectivityFunctions.getRegistryType(GetRegistryTypeArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .typeKey(var_.registry_type_type_key())
+     *             .fields(var_.registry_type_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryTypeResult> getRegistryType(GetRegistryTypeArgs args, InvokeOptions options) {
@@ -432,6 +1510,36 @@ public final class DataConnectivityFunctions {
      * This endpoint retrieves dataAsset and connection attributes from DataAssetRegistry
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryType = DataConnectivityFunctions.getRegistryType(GetRegistryTypeArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .typeKey(var_.registry_type_type_key())
+     *             .fields(var_.registry_type_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryTypeResult> getRegistryTypePlain(GetRegistryTypePlainArgs args, InvokeOptions options) {
@@ -443,6 +1551,36 @@ public final class DataConnectivityFunctions {
      * This endpoint retrieves list of all the supported connector types
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryTypes = DataConnectivityFunctions.getRegistryTypes(GetRegistryTypesArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .name(var_.registry_type_name())
+     *             .type(var_.registry_type_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryTypesResult> getRegistryTypes(GetRegistryTypesArgs args) {
@@ -454,6 +1592,36 @@ public final class DataConnectivityFunctions {
      * This endpoint retrieves list of all the supported connector types
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryTypes = DataConnectivityFunctions.getRegistryTypes(GetRegistryTypesArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .name(var_.registry_type_name())
+     *             .type(var_.registry_type_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryTypesResult> getRegistryTypesPlain(GetRegistryTypesPlainArgs args) {
@@ -465,6 +1633,36 @@ public final class DataConnectivityFunctions {
      * This endpoint retrieves list of all the supported connector types
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryTypes = DataConnectivityFunctions.getRegistryTypes(GetRegistryTypesArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .name(var_.registry_type_name())
+     *             .type(var_.registry_type_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRegistryTypesResult> getRegistryTypes(GetRegistryTypesArgs args, InvokeOptions options) {
@@ -476,6 +1674,36 @@ public final class DataConnectivityFunctions {
      * This endpoint retrieves list of all the supported connector types
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataConnectivity.DataConnectivityFunctions;
+     * import com.pulumi.oci.DataConnectivity.inputs.GetRegistryTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRegistryTypes = DataConnectivityFunctions.getRegistryTypes(GetRegistryTypesArgs.builder()
+     *             .registryId(oci_data_connectivity_registry.test_registry().id())
+     *             .name(var_.registry_type_name())
+     *             .type(var_.registry_type_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRegistryTypesResult> getRegistryTypesPlain(GetRegistryTypesPlainArgs args, InvokeOptions options) {

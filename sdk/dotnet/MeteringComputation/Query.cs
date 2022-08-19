@@ -17,58 +17,56 @@ namespace Pulumi.Oci.MeteringComputation
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testQuery = new Oci.MeteringComputation.Query("testQuery", new()
     ///     {
-    ///         var testQuery = new Oci.MeteringComputation.Query("testQuery", new Oci.MeteringComputation.QueryArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         QueryDefinition = new Oci.MeteringComputation.Inputs.QueryQueryDefinitionArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             QueryDefinition = new Oci.MeteringComputation.Inputs.QueryQueryDefinitionArgs
+    ///             CostAnalysisUi = new Oci.MeteringComputation.Inputs.QueryQueryDefinitionCostAnalysisUiArgs
     ///             {
-    ///                 CostAnalysisUi = new Oci.MeteringComputation.Inputs.QueryQueryDefinitionCostAnalysisUiArgs
-    ///                 {
-    ///                     Graph = @var.Query_query_definition_cost_analysis_ui_graph,
-    ///                     IsCumulativeGraph = @var.Query_query_definition_cost_analysis_ui_is_cumulative_graph,
-    ///                 },
-    ///                 DisplayName = @var.Query_query_definition_display_name,
-    ///                 ReportQuery = new Oci.MeteringComputation.Inputs.QueryQueryDefinitionReportQueryArgs
-    ///                 {
-    ///                     Granularity = @var.Query_query_definition_report_query_granularity,
-    ///                     TenantId = oci_metering_computation_tenant.Test_tenant.Id,
-    ///                     CompartmentDepth = @var.Query_query_definition_report_query_compartment_depth,
-    ///                     DateRangeName = @var.Query_query_definition_report_query_date_range_name,
-    ///                     Filter = @var.Query_query_definition_report_query_filter,
-    ///                     Forecast = new Oci.MeteringComputation.Inputs.QueryQueryDefinitionReportQueryForecastArgs
-    ///                     {
-    ///                         TimeForecastEnded = @var.Query_query_definition_report_query_forecast_time_forecast_ended,
-    ///                         ForecastType = @var.Query_query_definition_report_query_forecast_forecast_type,
-    ///                         TimeForecastStarted = @var.Query_query_definition_report_query_forecast_time_forecast_started,
-    ///                     },
-    ///                     GroupBies = @var.Query_query_definition_report_query_group_by,
-    ///                     GroupByTags = 
-    ///                     {
-    ///                         new Oci.MeteringComputation.Inputs.QueryQueryDefinitionReportQueryGroupByTagArgs
-    ///                         {
-    ///                             Key = @var.Query_query_definition_report_query_group_by_tag_key,
-    ///                             Namespace = @var.Query_query_definition_report_query_group_by_tag_namespace,
-    ///                             Value = @var.Query_query_definition_report_query_group_by_tag_value,
-    ///                         },
-    ///                     },
-    ///                     IsAggregateByTime = @var.Query_query_definition_report_query_is_aggregate_by_time,
-    ///                     QueryType = @var.Query_query_definition_report_query_query_type,
-    ///                     TimeUsageEnded = @var.Query_query_definition_report_query_time_usage_ended,
-    ///                     TimeUsageStarted = @var.Query_query_definition_report_query_time_usage_started,
-    ///                 },
-    ///                 Version = @var.Query_query_definition_version,
+    ///                 Graph = @var.Query_query_definition_cost_analysis_ui_graph,
+    ///                 IsCumulativeGraph = @var.Query_query_definition_cost_analysis_ui_is_cumulative_graph,
     ///             },
-    ///         });
-    ///     }
+    ///             DisplayName = @var.Query_query_definition_display_name,
+    ///             ReportQuery = new Oci.MeteringComputation.Inputs.QueryQueryDefinitionReportQueryArgs
+    ///             {
+    ///                 Granularity = @var.Query_query_definition_report_query_granularity,
+    ///                 TenantId = oci_metering_computation_tenant.Test_tenant.Id,
+    ///                 CompartmentDepth = @var.Query_query_definition_report_query_compartment_depth,
+    ///                 DateRangeName = @var.Query_query_definition_report_query_date_range_name,
+    ///                 Filter = @var.Query_query_definition_report_query_filter,
+    ///                 Forecast = new Oci.MeteringComputation.Inputs.QueryQueryDefinitionReportQueryForecastArgs
+    ///                 {
+    ///                     TimeForecastEnded = @var.Query_query_definition_report_query_forecast_time_forecast_ended,
+    ///                     ForecastType = @var.Query_query_definition_report_query_forecast_forecast_type,
+    ///                     TimeForecastStarted = @var.Query_query_definition_report_query_forecast_time_forecast_started,
+    ///                 },
+    ///                 GroupBies = @var.Query_query_definition_report_query_group_by,
+    ///                 GroupByTags = new[]
+    ///                 {
+    ///                     new Oci.MeteringComputation.Inputs.QueryQueryDefinitionReportQueryGroupByTagArgs
+    ///                     {
+    ///                         Key = @var.Query_query_definition_report_query_group_by_tag_key,
+    ///                         Namespace = @var.Query_query_definition_report_query_group_by_tag_namespace,
+    ///                         Value = @var.Query_query_definition_report_query_group_by_tag_value,
+    ///                     },
+    ///                 },
+    ///                 IsAggregateByTime = @var.Query_query_definition_report_query_is_aggregate_by_time,
+    ///                 QueryType = @var.Query_query_definition_report_query_query_type,
+    ///                 TimeUsageEnded = @var.Query_query_definition_report_query_time_usage_ended,
+    ///                 TimeUsageStarted = @var.Query_query_definition_report_query_time_usage_started,
+    ///             },
+    ///             Version = @var.Query_query_definition_version,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -80,7 +78,7 @@ namespace Pulumi.Oci.MeteringComputation
     /// ```
     /// </summary>
     [OciResourceType("oci:MeteringComputation/query:Query")]
-    public partial class Query : Pulumi.CustomResource
+    public partial class Query : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The compartment OCID.
@@ -138,7 +136,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
     }
 
-    public sealed class QueryArgs : Pulumi.ResourceArgs
+    public sealed class QueryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The compartment OCID.
@@ -155,9 +153,10 @@ namespace Pulumi.Oci.MeteringComputation
         public QueryArgs()
         {
         }
+        public static new QueryArgs Empty => new QueryArgs();
     }
 
-    public sealed class QueryState : Pulumi.ResourceArgs
+    public sealed class QueryState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The compartment OCID.
@@ -174,5 +173,6 @@ namespace Pulumi.Oci.MeteringComputation
         public QueryState()
         {
         }
+        public static new QueryState Empty => new QueryState();
     }
 }

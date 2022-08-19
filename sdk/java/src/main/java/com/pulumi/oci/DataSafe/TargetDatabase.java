@@ -26,6 +26,69 @@ import javax.annotation.Nullable;
  * Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.TargetDatabase;
+ * import com.pulumi.oci.DataSafe.TargetDatabaseArgs;
+ * import com.pulumi.oci.DataSafe.inputs.TargetDatabaseDatabaseDetailsArgs;
+ * import com.pulumi.oci.DataSafe.inputs.TargetDatabaseConnectionOptionArgs;
+ * import com.pulumi.oci.DataSafe.inputs.TargetDatabaseCredentialsArgs;
+ * import com.pulumi.oci.DataSafe.inputs.TargetDatabaseTlsConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testTargetDatabase = new TargetDatabase(&#34;testTargetDatabase&#34;, TargetDatabaseArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .databaseDetails(TargetDatabaseDatabaseDetailsArgs.builder()
+ *                 .databaseType(var_.target_database_database_details_database_type())
+ *                 .infrastructureType(var_.target_database_database_details_infrastructure_type())
+ *                 .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+ *                 .dbSystemId(oci_database_db_system.test_db_system().id())
+ *                 .instanceId(oci_core_instance.test_instance().id())
+ *                 .ipAddresses(var_.target_database_database_details_ip_addresses())
+ *                 .listenerPort(var_.target_database_database_details_listener_port())
+ *                 .serviceName(oci_core_service.test_service().name())
+ *                 .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+ *                 .build())
+ *             .connectionOption(TargetDatabaseConnectionOptionArgs.builder()
+ *                 .connectionType(var_.target_database_connection_option_connection_type())
+ *                 .datasafePrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+ *                 .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
+ *                 .build())
+ *             .credentials(TargetDatabaseCredentialsArgs.builder()
+ *                 .password(var_.target_database_credentials_password())
+ *                 .userName(oci_identity_user.test_user().name())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.target_database_description())
+ *             .displayName(var_.target_database_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .tlsConfig(TargetDatabaseTlsConfigArgs.builder()
+ *                 .status(var_.target_database_tls_config_status())
+ *                 .certificateStoreType(var_.target_database_tls_config_certificate_store_type())
+ *                 .keyStoreContent(var_.target_database_tls_config_key_store_content())
+ *                 .storePassword(var_.target_database_tls_config_store_password())
+ *                 .trustStoreContent(var_.target_database_tls_config_trust_store_content())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

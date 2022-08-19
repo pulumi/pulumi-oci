@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpsecConnectionTunnelError = Oci.Core.GetIpsecConnectionTunnelError.Invoke(new()
         ///     {
-        ///         var testIpsecConnectionTunnelError = Output.Create(Oci.Core.GetIpsecConnectionTunnelError.InvokeAsync(new Oci.Core.GetIpsecConnectionTunnelErrorArgs
-        ///         {
-        ///             IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///             TunnelId = oci_core_tunnel.Test_tunnel.Id,
-        ///         }));
-        ///     }
+        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
+        ///         TunnelId = oci_core_tunnel.Test_tunnel.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpsecConnectionTunnelError = Oci.Core.GetIpsecConnectionTunnelError.Invoke(new()
         ///     {
-        ///         var testIpsecConnectionTunnelError = Output.Create(Oci.Core.GetIpsecConnectionTunnelError.InvokeAsync(new Oci.Core.GetIpsecConnectionTunnelErrorArgs
-        ///         {
-        ///             IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///             TunnelId = oci_core_tunnel.Test_tunnel.Id,
-        ///         }));
-        ///     }
+        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
+        ///         TunnelId = oci_core_tunnel.Test_tunnel.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetIpsecConnectionTunnelErrorArgs : Pulumi.InvokeArgs
+    public sealed class GetIpsecConnectionTunnelErrorArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Core
         public GetIpsecConnectionTunnelErrorArgs()
         {
         }
+        public static new GetIpsecConnectionTunnelErrorArgs Empty => new GetIpsecConnectionTunnelErrorArgs();
     }
 
-    public sealed class GetIpsecConnectionTunnelErrorInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIpsecConnectionTunnelErrorInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Core
         public GetIpsecConnectionTunnelErrorInvokeArgs()
         {
         }
+        public static new GetIpsecConnectionTunnelErrorInvokeArgs Empty => new GetIpsecConnectionTunnelErrorInvokeArgs();
     }
 
 

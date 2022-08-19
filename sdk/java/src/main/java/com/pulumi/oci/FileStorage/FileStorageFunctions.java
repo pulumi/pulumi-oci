@@ -35,6 +35,38 @@ public final class FileStorageFunctions {
      * Lists the export set resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetExportSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExportSets = FileStorageFunctions.getExportSets(GetExportSetsArgs.builder()
+     *             .availabilityDomain(var_.export_set_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.export_set_display_name())
+     *             .id(var_.export_set_id())
+     *             .state(var_.export_set_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExportSetsResult> getExportSets(GetExportSetsArgs args) {
@@ -46,6 +78,38 @@ public final class FileStorageFunctions {
      * Lists the export set resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetExportSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExportSets = FileStorageFunctions.getExportSets(GetExportSetsArgs.builder()
+     *             .availabilityDomain(var_.export_set_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.export_set_display_name())
+     *             .id(var_.export_set_id())
+     *             .state(var_.export_set_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExportSetsResult> getExportSetsPlain(GetExportSetsPlainArgs args) {
@@ -57,6 +121,38 @@ public final class FileStorageFunctions {
      * Lists the export set resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetExportSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExportSets = FileStorageFunctions.getExportSets(GetExportSetsArgs.builder()
+     *             .availabilityDomain(var_.export_set_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.export_set_display_name())
+     *             .id(var_.export_set_id())
+     *             .state(var_.export_set_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExportSetsResult> getExportSets(GetExportSetsArgs args, InvokeOptions options) {
@@ -68,6 +164,38 @@ public final class FileStorageFunctions {
      * Lists the export set resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetExportSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExportSets = FileStorageFunctions.getExportSets(GetExportSetsArgs.builder()
+     *             .availabilityDomain(var_.export_set_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.export_set_display_name())
+     *             .id(var_.export_set_id())
+     *             .state(var_.export_set_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExportSetsResult> getExportSetsPlain(GetExportSetsPlainArgs args, InvokeOptions options) {
@@ -81,6 +209,38 @@ public final class FileStorageFunctions {
      * / or a compartment ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetExportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exportSetId(oci_file_storage_export_set.test_export_set().id())
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.export_id())
+     *             .state(var_.export_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExportsResult> getExports() {
@@ -94,6 +254,38 @@ public final class FileStorageFunctions {
      * / or a compartment ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetExportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exportSetId(oci_file_storage_export_set.test_export_set().id())
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.export_id())
+     *             .state(var_.export_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExportsResult> getExportsPlain() {
@@ -107,6 +299,38 @@ public final class FileStorageFunctions {
      * / or a compartment ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetExportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exportSetId(oci_file_storage_export_set.test_export_set().id())
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.export_id())
+     *             .state(var_.export_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExportsResult> getExports(GetExportsArgs args) {
@@ -120,6 +344,38 @@ public final class FileStorageFunctions {
      * / or a compartment ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetExportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exportSetId(oci_file_storage_export_set.test_export_set().id())
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.export_id())
+     *             .state(var_.export_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExportsResult> getExportsPlain(GetExportsPlainArgs args) {
@@ -133,6 +389,38 @@ public final class FileStorageFunctions {
      * / or a compartment ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetExportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exportSetId(oci_file_storage_export_set.test_export_set().id())
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.export_id())
+     *             .state(var_.export_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExportsResult> getExports(GetExportsArgs args, InvokeOptions options) {
@@ -146,6 +434,38 @@ public final class FileStorageFunctions {
      * / or a compartment ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetExportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exportSetId(oci_file_storage_export_set.test_export_set().id())
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.export_id())
+     *             .state(var_.export_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExportsResult> getExportsPlain(GetExportsPlainArgs args, InvokeOptions options) {
@@ -157,6 +477,40 @@ public final class FileStorageFunctions {
      * Lists the file system resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystems = FileStorageFunctions.getFileSystems(GetFileSystemsArgs.builder()
+     *             .availabilityDomain(var_.file_system_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.file_system_display_name())
+     *             .id(var_.file_system_id())
+     *             .parentFileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .sourceSnapshotId(oci_file_storage_snapshot.test_snapshot().id())
+     *             .state(var_.file_system_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFileSystemsResult> getFileSystems(GetFileSystemsArgs args) {
@@ -168,6 +522,40 @@ public final class FileStorageFunctions {
      * Lists the file system resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystems = FileStorageFunctions.getFileSystems(GetFileSystemsArgs.builder()
+     *             .availabilityDomain(var_.file_system_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.file_system_display_name())
+     *             .id(var_.file_system_id())
+     *             .parentFileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .sourceSnapshotId(oci_file_storage_snapshot.test_snapshot().id())
+     *             .state(var_.file_system_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFileSystemsResult> getFileSystemsPlain(GetFileSystemsPlainArgs args) {
@@ -179,6 +567,40 @@ public final class FileStorageFunctions {
      * Lists the file system resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystems = FileStorageFunctions.getFileSystems(GetFileSystemsArgs.builder()
+     *             .availabilityDomain(var_.file_system_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.file_system_display_name())
+     *             .id(var_.file_system_id())
+     *             .parentFileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .sourceSnapshotId(oci_file_storage_snapshot.test_snapshot().id())
+     *             .state(var_.file_system_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFileSystemsResult> getFileSystems(GetFileSystemsArgs args, InvokeOptions options) {
@@ -190,6 +612,40 @@ public final class FileStorageFunctions {
      * Lists the file system resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetFileSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFileSystems = FileStorageFunctions.getFileSystems(GetFileSystemsArgs.builder()
+     *             .availabilityDomain(var_.file_system_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.file_system_display_name())
+     *             .id(var_.file_system_id())
+     *             .parentFileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .sourceSnapshotId(oci_file_storage_snapshot.test_snapshot().id())
+     *             .state(var_.file_system_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFileSystemsResult> getFileSystemsPlain(GetFileSystemsPlainArgs args, InvokeOptions options) {
@@ -201,6 +657,39 @@ public final class FileStorageFunctions {
      * Lists the mount target resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetMountTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMountTargets = FileStorageFunctions.getMountTargets(GetMountTargetsArgs.builder()
+     *             .availabilityDomain(var_.mount_target_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.mount_target_display_name())
+     *             .exportSetId(oci_file_storage_export_set.test_export_set().id())
+     *             .id(var_.mount_target_id())
+     *             .state(var_.mount_target_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMountTargetsResult> getMountTargets(GetMountTargetsArgs args) {
@@ -212,6 +701,39 @@ public final class FileStorageFunctions {
      * Lists the mount target resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetMountTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMountTargets = FileStorageFunctions.getMountTargets(GetMountTargetsArgs.builder()
+     *             .availabilityDomain(var_.mount_target_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.mount_target_display_name())
+     *             .exportSetId(oci_file_storage_export_set.test_export_set().id())
+     *             .id(var_.mount_target_id())
+     *             .state(var_.mount_target_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMountTargetsResult> getMountTargetsPlain(GetMountTargetsPlainArgs args) {
@@ -223,6 +745,39 @@ public final class FileStorageFunctions {
      * Lists the mount target resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetMountTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMountTargets = FileStorageFunctions.getMountTargets(GetMountTargetsArgs.builder()
+     *             .availabilityDomain(var_.mount_target_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.mount_target_display_name())
+     *             .exportSetId(oci_file_storage_export_set.test_export_set().id())
+     *             .id(var_.mount_target_id())
+     *             .state(var_.mount_target_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMountTargetsResult> getMountTargets(GetMountTargetsArgs args, InvokeOptions options) {
@@ -234,6 +789,39 @@ public final class FileStorageFunctions {
      * Lists the mount target resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetMountTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMountTargets = FileStorageFunctions.getMountTargets(GetMountTargetsArgs.builder()
+     *             .availabilityDomain(var_.mount_target_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.mount_target_display_name())
+     *             .exportSetId(oci_file_storage_export_set.test_export_set().id())
+     *             .id(var_.mount_target_id())
+     *             .state(var_.mount_target_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMountTargetsResult> getMountTargetsPlain(GetMountTargetsPlainArgs args, InvokeOptions options) {
@@ -245,6 +833,34 @@ public final class FileStorageFunctions {
      * Gets the specified snapshot&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSnapshot = FileStorageFunctions.getSnapshot(GetSnapshotArgs.builder()
+     *             .snapshotId(oci_file_storage_snapshot.test_snapshot().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSnapshotResult> getSnapshot(GetSnapshotArgs args) {
@@ -256,6 +872,34 @@ public final class FileStorageFunctions {
      * Gets the specified snapshot&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSnapshot = FileStorageFunctions.getSnapshot(GetSnapshotArgs.builder()
+     *             .snapshotId(oci_file_storage_snapshot.test_snapshot().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSnapshotResult> getSnapshotPlain(GetSnapshotPlainArgs args) {
@@ -267,6 +911,34 @@ public final class FileStorageFunctions {
      * Gets the specified snapshot&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSnapshot = FileStorageFunctions.getSnapshot(GetSnapshotArgs.builder()
+     *             .snapshotId(oci_file_storage_snapshot.test_snapshot().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSnapshotResult> getSnapshot(GetSnapshotArgs args, InvokeOptions options) {
@@ -278,6 +950,34 @@ public final class FileStorageFunctions {
      * Gets the specified snapshot&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSnapshot = FileStorageFunctions.getSnapshot(GetSnapshotArgs.builder()
+     *             .snapshotId(oci_file_storage_snapshot.test_snapshot().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSnapshotResult> getSnapshotPlain(GetSnapshotPlainArgs args, InvokeOptions options) {
@@ -289,6 +989,36 @@ public final class FileStorageFunctions {
      * Lists snapshots of the specified file system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.snapshot_id())
+     *             .state(var_.snapshot_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSnapshotsResult> getSnapshots(GetSnapshotsArgs args) {
@@ -300,6 +1030,36 @@ public final class FileStorageFunctions {
      * Lists snapshots of the specified file system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.snapshot_id())
+     *             .state(var_.snapshot_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSnapshotsResult> getSnapshotsPlain(GetSnapshotsPlainArgs args) {
@@ -311,6 +1071,36 @@ public final class FileStorageFunctions {
      * Lists snapshots of the specified file system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.snapshot_id())
+     *             .state(var_.snapshot_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSnapshotsResult> getSnapshots(GetSnapshotsArgs args, InvokeOptions options) {
@@ -322,6 +1112,36 @@ public final class FileStorageFunctions {
      * Lists snapshots of the specified file system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.snapshot_id())
+     *             .state(var_.snapshot_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSnapshotsResult> getSnapshotsPlain(GetSnapshotsPlainArgs args, InvokeOptions options) {

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi.Inputs
 {
 
-    public sealed class DatabaseInsightConnectionDetailsHostGetArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseInsightConnectionDetailsHostGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Host IP used for connection requests for Cloud DB resource.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Opsi.Inputs
         public DatabaseInsightConnectionDetailsHostGetArgs()
         {
         }
+        public static new DatabaseInsightConnectionDetailsHostGetArgs Empty => new DatabaseInsightConnectionDetailsHostGetArgs();
     }
 }

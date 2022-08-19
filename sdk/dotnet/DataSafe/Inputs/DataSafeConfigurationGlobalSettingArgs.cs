@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class DataSafeConfigurationGlobalSettingArgs : Pulumi.ResourceArgs
+    public sealed class DataSafeConfigurationGlobalSettingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The paid usage option chosen by the customer admin.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public DataSafeConfigurationGlobalSettingArgs()
         {
         }
+        public static new DataSafeConfigurationGlobalSettingArgs Empty => new DataSafeConfigurationGlobalSettingArgs();
     }
 }

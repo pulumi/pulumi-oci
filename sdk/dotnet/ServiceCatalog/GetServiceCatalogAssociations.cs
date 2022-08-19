@@ -21,23 +21,21 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServiceCatalogAssociations = Oci.ServiceCatalog.GetServiceCatalogAssociations.Invoke(new()
         ///     {
-        ///         var testServiceCatalogAssociations = Output.Create(Oci.ServiceCatalog.GetServiceCatalogAssociations.InvokeAsync(new Oci.ServiceCatalog.GetServiceCatalogAssociationsArgs
-        ///         {
-        ///             EntityId = oci_service_catalog_entity.Test_entity.Id,
-        ///             EntityType = @var.Service_catalog_association_entity_type,
-        ///             ServiceCatalogAssociationId = oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id,
-        ///             ServiceCatalogId = oci_service_catalog_service_catalog.Test_service_catalog.Id,
-        ///         }));
-        ///     }
+        ///         EntityId = oci_service_catalog_entity.Test_entity.Id,
+        ///         EntityType = @var.Service_catalog_association_entity_type,
+        ///         ServiceCatalogAssociationId = oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id,
+        ///         ServiceCatalogId = oci_service_catalog_service_catalog.Test_service_catalog.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,23 +53,21 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServiceCatalogAssociations = Oci.ServiceCatalog.GetServiceCatalogAssociations.Invoke(new()
         ///     {
-        ///         var testServiceCatalogAssociations = Output.Create(Oci.ServiceCatalog.GetServiceCatalogAssociations.InvokeAsync(new Oci.ServiceCatalog.GetServiceCatalogAssociationsArgs
-        ///         {
-        ///             EntityId = oci_service_catalog_entity.Test_entity.Id,
-        ///             EntityType = @var.Service_catalog_association_entity_type,
-        ///             ServiceCatalogAssociationId = oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id,
-        ///             ServiceCatalogId = oci_service_catalog_service_catalog.Test_service_catalog.Id,
-        ///         }));
-        ///     }
+        ///         EntityId = oci_service_catalog_entity.Test_entity.Id,
+        ///         EntityType = @var.Service_catalog_association_entity_type,
+        ///         ServiceCatalogAssociationId = oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id,
+        ///         ServiceCatalogId = oci_service_catalog_service_catalog.Test_service_catalog.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.ServiceCatalog
     }
 
 
-    public sealed class GetServiceCatalogAssociationsArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceCatalogAssociationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier of the entity associated with service catalog.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.ServiceCatalog
         public GetServiceCatalogAssociationsArgs()
         {
         }
+        public static new GetServiceCatalogAssociationsArgs Empty => new GetServiceCatalogAssociationsArgs();
     }
 
-    public sealed class GetServiceCatalogAssociationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceCatalogAssociationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier of the entity associated with service catalog.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.ServiceCatalog
         public GetServiceCatalogAssociationsInvokeArgs()
         {
         }
+        public static new GetServiceCatalogAssociationsInvokeArgs Empty => new GetServiceCatalogAssociationsInvokeArgs();
     }
 
 

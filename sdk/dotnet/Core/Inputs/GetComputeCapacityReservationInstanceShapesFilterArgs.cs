@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetComputeCapacityReservationInstanceShapesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetComputeCapacityReservationInstanceShapesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetComputeCapacityReservationInstanceShapesFilterInputArgs()
         {
         }
+        public static new GetComputeCapacityReservationInstanceShapesFilterInputArgs Empty => new GetComputeCapacityReservationInstanceShapesFilterInputArgs();
     }
 }

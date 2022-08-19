@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class BdsInstanceWorkerNodeShapeConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class BdsInstanceWorkerNodeShapeConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The total amount of memory available to the node, in gigabytes
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public BdsInstanceWorkerNodeShapeConfigGetArgs()
         {
         }
+        public static new BdsInstanceWorkerNodeShapeConfigGetArgs Empty => new BdsInstanceWorkerNodeShapeConfigGetArgs();
     }
 }

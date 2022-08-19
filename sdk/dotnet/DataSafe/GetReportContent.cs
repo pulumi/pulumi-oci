@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReportContent = Oci.DataSafe.GetReportContent.Invoke(new()
         ///     {
-        ///         var testReportContent = Output.Create(Oci.DataSafe.GetReportContent.InvokeAsync(new Oci.DataSafe.GetReportContentArgs
-        ///         {
-        ///             ReportId = oci_data_safe_report.Test_report.Id,
-        ///         }));
-        ///     }
+        ///         ReportId = oci_data_safe_report.Test_report.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReportContent = Oci.DataSafe.GetReportContent.Invoke(new()
         ///     {
-        ///         var testReportContent = Output.Create(Oci.DataSafe.GetReportContent.InvokeAsync(new Oci.DataSafe.GetReportContentArgs
-        ///         {
-        ///             ReportId = oci_data_safe_report.Test_report.Id,
-        ///         }));
-        ///     }
+        ///         ReportId = oci_data_safe_report.Test_report.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetReportContentArgs : Pulumi.InvokeArgs
+    public sealed class GetReportContentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique report identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetReportContentArgs()
         {
         }
+        public static new GetReportContentArgs Empty => new GetReportContentArgs();
     }
 
-    public sealed class GetReportContentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetReportContentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique report identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetReportContentInvokeArgs()
         {
         }
+        public static new GetReportContentInvokeArgs Empty => new GetReportContentInvokeArgs();
     }
 
 

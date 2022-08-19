@@ -19,21 +19,19 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDbNodeConsoleConnection = new Oci.Database.DbNodeConsoleConnection("testDbNodeConsoleConnection", new()
     ///     {
-    ///         var testDbNodeConsoleConnection = new Oci.Database.DbNodeConsoleConnection("testDbNodeConsoleConnection", new Oci.Database.DbNodeConsoleConnectionArgs
-    ///         {
-    ///             DbNodeId = oci_database_db_node.Test_db_node.Id,
-    ///             PublicKey = @var.Db_node_console_connection_public_key,
-    ///         });
-    ///     }
+    ///         DbNodeId = oci_database_db_node.Test_db_node.Id,
+    ///         PublicKey = @var.Db_node_console_connection_public_key,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -45,7 +43,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection")]
-    public partial class DbNodeConsoleConnection : Pulumi.CustomResource
+    public partial class DbNodeConsoleConnection : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment to contain the console connection.
@@ -127,7 +125,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class DbNodeConsoleConnectionArgs : Pulumi.ResourceArgs
+    public sealed class DbNodeConsoleConnectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -144,9 +142,10 @@ namespace Pulumi.Oci.Database
         public DbNodeConsoleConnectionArgs()
         {
         }
+        public static new DbNodeConsoleConnectionArgs Empty => new DbNodeConsoleConnectionArgs();
     }
 
-    public sealed class DbNodeConsoleConnectionState : Pulumi.ResourceArgs
+    public sealed class DbNodeConsoleConnectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment to contain the console connection.
@@ -187,5 +186,6 @@ namespace Pulumi.Oci.Database
         public DbNodeConsoleConnectionState()
         {
         }
+        public static new DbNodeConsoleConnectionState Empty => new DbNodeConsoleConnectionState();
     }
 }

@@ -36,21 +36,19 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testListing = Oci.Marketplace.GetListing.Invoke(new()
         ///     {
-        ///         var testListing = Output.Create(Oci.Marketplace.GetListing.InvokeAsync(new Oci.Marketplace.GetListingArgs
-        ///         {
-        ///             ListingId = oci_marketplace_listing.Test_listing.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         ListingId = oci_marketplace_listing.Test_listing.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,21 +81,19 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testListing = Oci.Marketplace.GetListing.Invoke(new()
         ///     {
-        ///         var testListing = Output.Create(Oci.Marketplace.GetListing.InvokeAsync(new Oci.Marketplace.GetListingArgs
-        ///         {
-        ///             ListingId = oci_marketplace_listing.Test_listing.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         ListingId = oci_marketplace_listing.Test_listing.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -107,7 +103,7 @@ namespace Pulumi.Oci.Marketplace
     }
 
 
-    public sealed class GetListingArgs : Pulumi.InvokeArgs
+    public sealed class GetListingArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the compartment.
@@ -124,9 +120,10 @@ namespace Pulumi.Oci.Marketplace
         public GetListingArgs()
         {
         }
+        public static new GetListingArgs Empty => new GetListingArgs();
     }
 
-    public sealed class GetListingInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetListingInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the compartment.
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.Marketplace
         public GetListingInvokeArgs()
         {
         }
+        public static new GetListingInvokeArgs Empty => new GetListingInvokeArgs();
     }
 
 

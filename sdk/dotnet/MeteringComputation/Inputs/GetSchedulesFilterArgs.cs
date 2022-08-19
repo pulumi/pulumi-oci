@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class GetSchedulesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetSchedulesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Query parameter for filtering by name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public GetSchedulesFilterInputArgs()
         {
         }
+        public static new GetSchedulesFilterInputArgs Empty => new GetSchedulesFilterInputArgs();
     }
 }

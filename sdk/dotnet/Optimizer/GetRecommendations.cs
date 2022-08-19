@@ -22,25 +22,23 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRecommendations = Oci.Optimizer.GetRecommendations.Invoke(new()
         ///     {
-        ///         var testRecommendations = Output.Create(Oci.Optimizer.GetRecommendations.InvokeAsync(new Oci.Optimizer.GetRecommendationsArgs
-        ///         {
-        ///             CategoryId = oci_optimizer_category.Test_category.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Recommendation_compartment_id_in_subtree,
-        ///             Name = @var.Recommendation_name,
-        ///             State = @var.Recommendation_state,
-        ///             Status = @var.Recommendation_status,
-        ///         }));
-        ///     }
+        ///         CategoryId = oci_optimizer_category.Test_category.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Recommendation_compartment_id_in_subtree,
+        ///         Name = @var.Recommendation_name,
+        ///         State = @var.Recommendation_state,
+        ///         Status = @var.Recommendation_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRecommendations = Oci.Optimizer.GetRecommendations.Invoke(new()
         ///     {
-        ///         var testRecommendations = Output.Create(Oci.Optimizer.GetRecommendations.InvokeAsync(new Oci.Optimizer.GetRecommendationsArgs
-        ///         {
-        ///             CategoryId = oci_optimizer_category.Test_category.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Recommendation_compartment_id_in_subtree,
-        ///             Name = @var.Recommendation_name,
-        ///             State = @var.Recommendation_state,
-        ///             Status = @var.Recommendation_status,
-        ///         }));
-        ///     }
+        ///         CategoryId = oci_optimizer_category.Test_category.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Recommendation_compartment_id_in_subtree,
+        ///         Name = @var.Recommendation_name,
+        ///         State = @var.Recommendation_state,
+        ///         Status = @var.Recommendation_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Optimizer
     }
 
 
-    public sealed class GetRecommendationsArgs : Pulumi.InvokeArgs
+    public sealed class GetRecommendationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID associated with the category.
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.Optimizer
         public GetRecommendationsArgs()
         {
         }
+        public static new GetRecommendationsArgs Empty => new GetRecommendationsArgs();
     }
 
-    public sealed class GetRecommendationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRecommendationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique OCID associated with the category.
@@ -187,6 +184,7 @@ namespace Pulumi.Oci.Optimizer
         public GetRecommendationsInvokeArgs()
         {
         }
+        public static new GetRecommendationsInvokeArgs Empty => new GetRecommendationsInvokeArgs();
     }
 
 

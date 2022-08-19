@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUserAssessment = Oci.DataSafe.GetUserAssessment.Invoke(new()
         ///     {
-        ///         var testUserAssessment = Output.Create(Oci.DataSafe.GetUserAssessment.InvokeAsync(new Oci.DataSafe.GetUserAssessmentArgs
-        ///         {
-        ///             UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-        ///         }));
-        ///     }
+        ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUserAssessment = Oci.DataSafe.GetUserAssessment.Invoke(new()
         ///     {
-        ///         var testUserAssessment = Output.Create(Oci.DataSafe.GetUserAssessment.InvokeAsync(new Oci.DataSafe.GetUserAssessmentArgs
-        ///         {
-        ///             UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-        ///         }));
-        ///     }
+        ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetUserAssessmentArgs : Pulumi.InvokeArgs
+    public sealed class GetUserAssessmentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the user assessment.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetUserAssessmentArgs()
         {
         }
+        public static new GetUserAssessmentArgs Empty => new GetUserAssessmentArgs();
     }
 
-    public sealed class GetUserAssessmentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUserAssessmentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the user assessment.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetUserAssessmentInvokeArgs()
         {
         }
+        public static new GetUserAssessmentInvokeArgs Empty => new GetUserAssessmentInvokeArgs();
     }
 
 

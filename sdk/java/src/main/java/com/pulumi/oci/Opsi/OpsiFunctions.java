@@ -89,6 +89,34 @@ public final class OpsiFunctions {
      * Gets details of an AWR hub.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHub = OpsiFunctions.getAwrHub(GetAwrHubArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAwrHubResult> getAwrHub(GetAwrHubArgs args) {
@@ -100,6 +128,34 @@ public final class OpsiFunctions {
      * Gets details of an AWR hub.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHub = OpsiFunctions.getAwrHub(GetAwrHubArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAwrHubResult> getAwrHubPlain(GetAwrHubPlainArgs args) {
@@ -111,6 +167,34 @@ public final class OpsiFunctions {
      * Gets details of an AWR hub.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHub = OpsiFunctions.getAwrHub(GetAwrHubArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAwrHubResult> getAwrHub(GetAwrHubArgs args, InvokeOptions options) {
@@ -122,6 +206,34 @@ public final class OpsiFunctions {
      * Gets details of an AWR hub.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHub = OpsiFunctions.getAwrHub(GetAwrHubArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAwrHubResult> getAwrHubPlain(GetAwrHubPlainArgs args, InvokeOptions options) {
@@ -134,6 +246,37 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSnapshot = OpsiFunctions.getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .awrSourceDatabaseIdentifier(var_.awr_hub_awr_snapshot_awr_source_database_identifier())
+     *             .timeGreaterThanOrEqualTo(var_.awr_hub_awr_snapshot_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.awr_hub_awr_snapshot_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAwrHubAwrSnapshotResult> getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs args) {
@@ -146,6 +289,37 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSnapshot = OpsiFunctions.getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .awrSourceDatabaseIdentifier(var_.awr_hub_awr_snapshot_awr_source_database_identifier())
+     *             .timeGreaterThanOrEqualTo(var_.awr_hub_awr_snapshot_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.awr_hub_awr_snapshot_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAwrHubAwrSnapshotResult> getAwrHubAwrSnapshotPlain(GetAwrHubAwrSnapshotPlainArgs args) {
@@ -158,6 +332,37 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSnapshot = OpsiFunctions.getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .awrSourceDatabaseIdentifier(var_.awr_hub_awr_snapshot_awr_source_database_identifier())
+     *             .timeGreaterThanOrEqualTo(var_.awr_hub_awr_snapshot_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.awr_hub_awr_snapshot_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAwrHubAwrSnapshotResult> getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs args, InvokeOptions options) {
@@ -170,6 +375,37 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSnapshot = OpsiFunctions.getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .awrSourceDatabaseIdentifier(var_.awr_hub_awr_snapshot_awr_source_database_identifier())
+     *             .timeGreaterThanOrEqualTo(var_.awr_hub_awr_snapshot_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.awr_hub_awr_snapshot_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAwrHubAwrSnapshotResult> getAwrHubAwrSnapshotPlain(GetAwrHubAwrSnapshotPlainArgs args, InvokeOptions options) {
@@ -182,6 +418,37 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSnapshots = OpsiFunctions.getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .awrSourceDatabaseIdentifier(var_.awr_hub_awr_snapshot_awr_source_database_identifier())
+     *             .timeGreaterThanOrEqualTo(var_.awr_hub_awr_snapshot_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.awr_hub_awr_snapshot_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAwrHubAwrSnapshotsResult> getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs args) {
@@ -194,6 +461,37 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSnapshots = OpsiFunctions.getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .awrSourceDatabaseIdentifier(var_.awr_hub_awr_snapshot_awr_source_database_identifier())
+     *             .timeGreaterThanOrEqualTo(var_.awr_hub_awr_snapshot_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.awr_hub_awr_snapshot_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAwrHubAwrSnapshotsResult> getAwrHubAwrSnapshotsPlain(GetAwrHubAwrSnapshotsPlainArgs args) {
@@ -206,6 +504,37 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSnapshots = OpsiFunctions.getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .awrSourceDatabaseIdentifier(var_.awr_hub_awr_snapshot_awr_source_database_identifier())
+     *             .timeGreaterThanOrEqualTo(var_.awr_hub_awr_snapshot_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.awr_hub_awr_snapshot_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAwrHubAwrSnapshotsResult> getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs args, InvokeOptions options) {
@@ -218,6 +547,37 @@ public final class OpsiFunctions {
      * The timeGreaterThanOrEqualTo &amp; timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSnapshots = OpsiFunctions.getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .awrSourceDatabaseIdentifier(var_.awr_hub_awr_snapshot_awr_source_database_identifier())
+     *             .timeGreaterThanOrEqualTo(var_.awr_hub_awr_snapshot_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.awr_hub_awr_snapshot_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAwrHubAwrSnapshotsResult> getAwrHubAwrSnapshotsPlain(GetAwrHubAwrSnapshotsPlainArgs args, InvokeOptions options) {
@@ -229,6 +589,36 @@ public final class OpsiFunctions {
      * Gets a list of summary of AWR Sources.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSourcesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSourcesSummary = OpsiFunctions.getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.awr_hub_awr_sources_summary_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAwrHubAwrSourcesSummaryResult> getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs args) {
@@ -240,6 +630,36 @@ public final class OpsiFunctions {
      * Gets a list of summary of AWR Sources.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSourcesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSourcesSummary = OpsiFunctions.getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.awr_hub_awr_sources_summary_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAwrHubAwrSourcesSummaryResult> getAwrHubAwrSourcesSummaryPlain(GetAwrHubAwrSourcesSummaryPlainArgs args) {
@@ -251,6 +671,36 @@ public final class OpsiFunctions {
      * Gets a list of summary of AWR Sources.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSourcesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSourcesSummary = OpsiFunctions.getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.awr_hub_awr_sources_summary_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAwrHubAwrSourcesSummaryResult> getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs args, InvokeOptions options) {
@@ -262,6 +712,36 @@ public final class OpsiFunctions {
      * Gets a list of summary of AWR Sources.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSourcesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubAwrSourcesSummary = OpsiFunctions.getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.awr_hub_awr_sources_summary_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAwrHubAwrSourcesSummaryResult> getAwrHubAwrSourcesSummaryPlain(GetAwrHubAwrSourcesSummaryPlainArgs args, InvokeOptions options) {
@@ -273,6 +753,38 @@ public final class OpsiFunctions {
      * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubs = OpsiFunctions.getAwrHubs(GetAwrHubsArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.awr_hub_display_name())
+     *             .id(var_.awr_hub_id())
+     *             .states(var_.awr_hub_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAwrHubsResult> getAwrHubs(GetAwrHubsArgs args) {
@@ -284,6 +796,38 @@ public final class OpsiFunctions {
      * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubs = OpsiFunctions.getAwrHubs(GetAwrHubsArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.awr_hub_display_name())
+     *             .id(var_.awr_hub_id())
+     *             .states(var_.awr_hub_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAwrHubsResult> getAwrHubsPlain(GetAwrHubsPlainArgs args) {
@@ -295,6 +839,38 @@ public final class OpsiFunctions {
      * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubs = OpsiFunctions.getAwrHubs(GetAwrHubsArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.awr_hub_display_name())
+     *             .id(var_.awr_hub_id())
+     *             .states(var_.awr_hub_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAwrHubsResult> getAwrHubs(GetAwrHubsArgs args, InvokeOptions options) {
@@ -306,6 +882,38 @@ public final class OpsiFunctions {
      * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubs = OpsiFunctions.getAwrHubs(GetAwrHubsArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.awr_hub_display_name())
+     *             .id(var_.awr_hub_id())
+     *             .states(var_.awr_hub_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAwrHubsResult> getAwrHubsPlain(GetAwrHubsPlainArgs args, InvokeOptions options) {
@@ -317,6 +925,34 @@ public final class OpsiFunctions {
      * Gets details of a database insight.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseInsight = OpsiFunctions.getDatabaseInsight(GetDatabaseInsightArgs.builder()
+     *             .databaseInsightId(oci_opsi_database_insight.test_database_insight().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseInsightResult> getDatabaseInsight(GetDatabaseInsightArgs args) {
@@ -328,6 +964,34 @@ public final class OpsiFunctions {
      * Gets details of a database insight.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseInsight = OpsiFunctions.getDatabaseInsight(GetDatabaseInsightArgs.builder()
+     *             .databaseInsightId(oci_opsi_database_insight.test_database_insight().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseInsightResult> getDatabaseInsightPlain(GetDatabaseInsightPlainArgs args) {
@@ -339,6 +1003,34 @@ public final class OpsiFunctions {
      * Gets details of a database insight.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseInsight = OpsiFunctions.getDatabaseInsight(GetDatabaseInsightArgs.builder()
+     *             .databaseInsightId(oci_opsi_database_insight.test_database_insight().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseInsightResult> getDatabaseInsight(GetDatabaseInsightArgs args, InvokeOptions options) {
@@ -350,6 +1042,34 @@ public final class OpsiFunctions {
      * Gets details of a database insight.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseInsight = OpsiFunctions.getDatabaseInsight(GetDatabaseInsightArgs.builder()
+     *             .databaseInsightId(oci_opsi_database_insight.test_database_insight().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseInsightResult> getDatabaseInsightPlain(GetDatabaseInsightPlainArgs args, InvokeOptions options) {
@@ -362,6 +1082,44 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.database_insight_compartment_id_in_subtree())
+     *             .databaseIds(oci_database_database.test_database().id())
+     *             .databaseTypes(var_.database_insight_database_type())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .fields(var_.database_insight_fields())
+     *             .id(var_.database_insight_id())
+     *             .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .states(var_.database_insight_state())
+     *             .statuses(var_.database_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseInsightsResult> getDatabaseInsights() {
@@ -374,6 +1132,44 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.database_insight_compartment_id_in_subtree())
+     *             .databaseIds(oci_database_database.test_database().id())
+     *             .databaseTypes(var_.database_insight_database_type())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .fields(var_.database_insight_fields())
+     *             .id(var_.database_insight_id())
+     *             .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .states(var_.database_insight_state())
+     *             .statuses(var_.database_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseInsightsResult> getDatabaseInsightsPlain() {
@@ -386,6 +1182,44 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.database_insight_compartment_id_in_subtree())
+     *             .databaseIds(oci_database_database.test_database().id())
+     *             .databaseTypes(var_.database_insight_database_type())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .fields(var_.database_insight_fields())
+     *             .id(var_.database_insight_id())
+     *             .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .states(var_.database_insight_state())
+     *             .statuses(var_.database_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseInsightsResult> getDatabaseInsights(GetDatabaseInsightsArgs args) {
@@ -398,6 +1232,44 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.database_insight_compartment_id_in_subtree())
+     *             .databaseIds(oci_database_database.test_database().id())
+     *             .databaseTypes(var_.database_insight_database_type())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .fields(var_.database_insight_fields())
+     *             .id(var_.database_insight_id())
+     *             .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .states(var_.database_insight_state())
+     *             .statuses(var_.database_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseInsightsResult> getDatabaseInsightsPlain(GetDatabaseInsightsPlainArgs args) {
@@ -410,6 +1282,44 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.database_insight_compartment_id_in_subtree())
+     *             .databaseIds(oci_database_database.test_database().id())
+     *             .databaseTypes(var_.database_insight_database_type())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .fields(var_.database_insight_fields())
+     *             .id(var_.database_insight_id())
+     *             .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .states(var_.database_insight_state())
+     *             .statuses(var_.database_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseInsightsResult> getDatabaseInsights(GetDatabaseInsightsArgs args, InvokeOptions options) {
@@ -422,6 +1332,44 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.database_insight_compartment_id_in_subtree())
+     *             .databaseIds(oci_database_database.test_database().id())
+     *             .databaseTypes(var_.database_insight_database_type())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .fields(var_.database_insight_fields())
+     *             .id(var_.database_insight_id())
+     *             .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .states(var_.database_insight_state())
+     *             .statuses(var_.database_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseInsightsResult> getDatabaseInsightsPlain(GetDatabaseInsightsPlainArgs args, InvokeOptions options) {
@@ -433,6 +1381,34 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Enterprise Manager bridge.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnterpriseManagerBridge = OpsiFunctions.getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs.builder()
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEnterpriseManagerBridgeResult> getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs args) {
@@ -444,6 +1420,34 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Enterprise Manager bridge.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnterpriseManagerBridge = OpsiFunctions.getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs.builder()
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEnterpriseManagerBridgeResult> getEnterpriseManagerBridgePlain(GetEnterpriseManagerBridgePlainArgs args) {
@@ -455,6 +1459,34 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Enterprise Manager bridge.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnterpriseManagerBridge = OpsiFunctions.getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs.builder()
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEnterpriseManagerBridgeResult> getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs args, InvokeOptions options) {
@@ -466,6 +1498,34 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Enterprise Manager bridge.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnterpriseManagerBridge = OpsiFunctions.getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs.builder()
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEnterpriseManagerBridgeResult> getEnterpriseManagerBridgePlain(GetEnterpriseManagerBridgePlainArgs args, InvokeOptions options) {
@@ -478,6 +1538,38 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnterpriseManagerBridges = OpsiFunctions.getEnterpriseManagerBridges(GetEnterpriseManagerBridgesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.enterprise_manager_bridge_compartment_id_in_subtree())
+     *             .displayName(var_.enterprise_manager_bridge_display_name())
+     *             .id(var_.enterprise_manager_bridge_id())
+     *             .states(var_.enterprise_manager_bridge_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridges() {
@@ -490,6 +1582,38 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnterpriseManagerBridges = OpsiFunctions.getEnterpriseManagerBridges(GetEnterpriseManagerBridgesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.enterprise_manager_bridge_compartment_id_in_subtree())
+     *             .displayName(var_.enterprise_manager_bridge_display_name())
+     *             .id(var_.enterprise_manager_bridge_id())
+     *             .states(var_.enterprise_manager_bridge_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridgesPlain() {
@@ -502,6 +1626,38 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnterpriseManagerBridges = OpsiFunctions.getEnterpriseManagerBridges(GetEnterpriseManagerBridgesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.enterprise_manager_bridge_compartment_id_in_subtree())
+     *             .displayName(var_.enterprise_manager_bridge_display_name())
+     *             .id(var_.enterprise_manager_bridge_id())
+     *             .states(var_.enterprise_manager_bridge_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridges(GetEnterpriseManagerBridgesArgs args) {
@@ -514,6 +1670,38 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnterpriseManagerBridges = OpsiFunctions.getEnterpriseManagerBridges(GetEnterpriseManagerBridgesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.enterprise_manager_bridge_compartment_id_in_subtree())
+     *             .displayName(var_.enterprise_manager_bridge_display_name())
+     *             .id(var_.enterprise_manager_bridge_id())
+     *             .states(var_.enterprise_manager_bridge_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridgesPlain(GetEnterpriseManagerBridgesPlainArgs args) {
@@ -526,6 +1714,38 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnterpriseManagerBridges = OpsiFunctions.getEnterpriseManagerBridges(GetEnterpriseManagerBridgesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.enterprise_manager_bridge_compartment_id_in_subtree())
+     *             .displayName(var_.enterprise_manager_bridge_display_name())
+     *             .id(var_.enterprise_manager_bridge_id())
+     *             .states(var_.enterprise_manager_bridge_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridges(GetEnterpriseManagerBridgesArgs args, InvokeOptions options) {
@@ -538,6 +1758,38 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetEnterpriseManagerBridgesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEnterpriseManagerBridges = OpsiFunctions.getEnterpriseManagerBridges(GetEnterpriseManagerBridgesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.enterprise_manager_bridge_compartment_id_in_subtree())
+     *             .displayName(var_.enterprise_manager_bridge_display_name())
+     *             .id(var_.enterprise_manager_bridge_id())
+     *             .states(var_.enterprise_manager_bridge_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEnterpriseManagerBridgesResult> getEnterpriseManagerBridgesPlain(GetEnterpriseManagerBridgesPlainArgs args, InvokeOptions options) {
@@ -549,6 +1801,34 @@ public final class OpsiFunctions {
      * Gets details of an Exadata insight.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetExadataInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInsight = OpsiFunctions.getExadataInsight(GetExadataInsightArgs.builder()
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExadataInsightResult> getExadataInsight(GetExadataInsightArgs args) {
@@ -560,6 +1840,34 @@ public final class OpsiFunctions {
      * Gets details of an Exadata insight.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetExadataInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInsight = OpsiFunctions.getExadataInsight(GetExadataInsightArgs.builder()
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExadataInsightResult> getExadataInsightPlain(GetExadataInsightPlainArgs args) {
@@ -571,6 +1879,34 @@ public final class OpsiFunctions {
      * Gets details of an Exadata insight.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetExadataInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInsight = OpsiFunctions.getExadataInsight(GetExadataInsightArgs.builder()
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExadataInsightResult> getExadataInsight(GetExadataInsightArgs args, InvokeOptions options) {
@@ -582,6 +1918,34 @@ public final class OpsiFunctions {
      * Gets details of an Exadata insight.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetExadataInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInsight = OpsiFunctions.getExadataInsight(GetExadataInsightArgs.builder()
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExadataInsightResult> getExadataInsightPlain(GetExadataInsightPlainArgs args, InvokeOptions options) {
@@ -594,6 +1958,40 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.exadata_insight_compartment_id_in_subtree())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataTypes(var_.exadata_insight_exadata_type())
+     *             .id(var_.exadata_insight_id())
+     *             .states(var_.exadata_insight_state())
+     *             .statuses(var_.exadata_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExadataInsightsResult> getExadataInsights() {
@@ -606,6 +2004,40 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.exadata_insight_compartment_id_in_subtree())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataTypes(var_.exadata_insight_exadata_type())
+     *             .id(var_.exadata_insight_id())
+     *             .states(var_.exadata_insight_state())
+     *             .statuses(var_.exadata_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExadataInsightsResult> getExadataInsightsPlain() {
@@ -618,6 +2050,40 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.exadata_insight_compartment_id_in_subtree())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataTypes(var_.exadata_insight_exadata_type())
+     *             .id(var_.exadata_insight_id())
+     *             .states(var_.exadata_insight_state())
+     *             .statuses(var_.exadata_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExadataInsightsResult> getExadataInsights(GetExadataInsightsArgs args) {
@@ -630,6 +2096,40 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.exadata_insight_compartment_id_in_subtree())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataTypes(var_.exadata_insight_exadata_type())
+     *             .id(var_.exadata_insight_id())
+     *             .states(var_.exadata_insight_state())
+     *             .statuses(var_.exadata_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExadataInsightsResult> getExadataInsightsPlain(GetExadataInsightsPlainArgs args) {
@@ -642,6 +2142,40 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.exadata_insight_compartment_id_in_subtree())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataTypes(var_.exadata_insight_exadata_type())
+     *             .id(var_.exadata_insight_id())
+     *             .states(var_.exadata_insight_state())
+     *             .statuses(var_.exadata_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExadataInsightsResult> getExadataInsights(GetExadataInsightsArgs args, InvokeOptions options) {
@@ -654,6 +2188,40 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetExadataInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.exadata_insight_compartment_id_in_subtree())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataTypes(var_.exadata_insight_exadata_type())
+     *             .id(var_.exadata_insight_id())
+     *             .states(var_.exadata_insight_state())
+     *             .statuses(var_.exadata_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExadataInsightsResult> getExadataInsightsPlain(GetExadataInsightsPlainArgs args, InvokeOptions options) {
@@ -665,6 +2233,34 @@ public final class OpsiFunctions {
      * Gets details of a host insight.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetHostInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostInsight = OpsiFunctions.getHostInsight(GetHostInsightArgs.builder()
+     *             .hostInsightId(oci_opsi_host_insight.test_host_insight().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHostInsightResult> getHostInsight(GetHostInsightArgs args) {
@@ -676,6 +2272,34 @@ public final class OpsiFunctions {
      * Gets details of a host insight.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetHostInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostInsight = OpsiFunctions.getHostInsight(GetHostInsightArgs.builder()
+     *             .hostInsightId(oci_opsi_host_insight.test_host_insight().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHostInsightResult> getHostInsightPlain(GetHostInsightPlainArgs args) {
@@ -687,6 +2311,34 @@ public final class OpsiFunctions {
      * Gets details of a host insight.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetHostInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostInsight = OpsiFunctions.getHostInsight(GetHostInsightArgs.builder()
+     *             .hostInsightId(oci_opsi_host_insight.test_host_insight().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHostInsightResult> getHostInsight(GetHostInsightArgs args, InvokeOptions options) {
@@ -698,6 +2350,34 @@ public final class OpsiFunctions {
      * Gets details of a host insight.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetHostInsightArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostInsight = OpsiFunctions.getHostInsight(GetHostInsightArgs.builder()
+     *             .hostInsightId(oci_opsi_host_insight.test_host_insight().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHostInsightResult> getHostInsightPlain(GetHostInsightPlainArgs args, InvokeOptions options) {
@@ -710,6 +2390,41 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.host_insight_compartment_id_in_subtree())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .hostTypes(var_.host_insight_host_type())
+     *             .id(var_.host_insight_id())
+     *             .states(var_.host_insight_state())
+     *             .statuses(var_.host_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHostInsightsResult> getHostInsights() {
@@ -722,6 +2437,41 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.host_insight_compartment_id_in_subtree())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .hostTypes(var_.host_insight_host_type())
+     *             .id(var_.host_insight_id())
+     *             .states(var_.host_insight_state())
+     *             .statuses(var_.host_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHostInsightsResult> getHostInsightsPlain() {
@@ -734,6 +2484,41 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.host_insight_compartment_id_in_subtree())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .hostTypes(var_.host_insight_host_type())
+     *             .id(var_.host_insight_id())
+     *             .states(var_.host_insight_state())
+     *             .statuses(var_.host_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHostInsightsResult> getHostInsights(GetHostInsightsArgs args) {
@@ -746,6 +2531,41 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.host_insight_compartment_id_in_subtree())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .hostTypes(var_.host_insight_host_type())
+     *             .id(var_.host_insight_id())
+     *             .states(var_.host_insight_state())
+     *             .statuses(var_.host_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHostInsightsResult> getHostInsightsPlain(GetHostInsightsPlainArgs args) {
@@ -758,6 +2578,41 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.host_insight_compartment_id_in_subtree())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .hostTypes(var_.host_insight_host_type())
+     *             .id(var_.host_insight_id())
+     *             .states(var_.host_insight_state())
+     *             .statuses(var_.host_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHostInsightsResult> getHostInsights(GetHostInsightsArgs args, InvokeOptions options) {
@@ -770,6 +2625,41 @@ public final class OpsiFunctions {
      * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetHostInsightsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.host_insight_compartment_id_in_subtree())
+     *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+     *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+     *             .hostTypes(var_.host_insight_host_type())
+     *             .id(var_.host_insight_id())
+     *             .states(var_.host_insight_state())
+     *             .statuses(var_.host_insight_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHostInsightsResult> getHostInsightsPlain(GetHostInsightsPlainArgs args, InvokeOptions options) {
@@ -785,6 +2675,34 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableAgentEntities = OpsiFunctions.getImportableAgentEntities(GetImportableAgentEntitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImportableAgentEntitiesResult> getImportableAgentEntities(GetImportableAgentEntitiesArgs args) {
@@ -800,6 +2718,34 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableAgentEntities = OpsiFunctions.getImportableAgentEntities(GetImportableAgentEntitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImportableAgentEntitiesResult> getImportableAgentEntitiesPlain(GetImportableAgentEntitiesPlainArgs args) {
@@ -815,6 +2761,34 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableAgentEntities = OpsiFunctions.getImportableAgentEntities(GetImportableAgentEntitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImportableAgentEntitiesResult> getImportableAgentEntities(GetImportableAgentEntitiesArgs args, InvokeOptions options) {
@@ -830,6 +2804,34 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableAgentEntities = OpsiFunctions.getImportableAgentEntities(GetImportableAgentEntitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImportableAgentEntitiesResult> getImportableAgentEntitiesPlain(GetImportableAgentEntitiesPlainArgs args, InvokeOptions options) {
@@ -845,6 +2847,34 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableAgentEntity = OpsiFunctions.getImportableAgentEntity(GetImportableAgentEntityArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImportableAgentEntityResult> getImportableAgentEntity(GetImportableAgentEntityArgs args) {
@@ -860,6 +2890,34 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableAgentEntity = OpsiFunctions.getImportableAgentEntity(GetImportableAgentEntityArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImportableAgentEntityResult> getImportableAgentEntityPlain(GetImportableAgentEntityPlainArgs args) {
@@ -875,6 +2933,34 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableAgentEntity = OpsiFunctions.getImportableAgentEntity(GetImportableAgentEntityArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImportableAgentEntityResult> getImportableAgentEntity(GetImportableAgentEntityArgs args, InvokeOptions options) {
@@ -890,6 +2976,34 @@ public final class OpsiFunctions {
      *    3.  The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableAgentEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableAgentEntity = OpsiFunctions.getImportableAgentEntity(GetImportableAgentEntityArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImportableAgentEntityResult> getImportableAgentEntityPlain(GetImportableAgentEntityPlainArgs args, InvokeOptions options) {
@@ -907,6 +3021,34 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableComputeEntities = OpsiFunctions.getImportableComputeEntities(GetImportableComputeEntitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImportableComputeEntitiesResult> getImportableComputeEntities(GetImportableComputeEntitiesArgs args) {
@@ -924,6 +3066,34 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableComputeEntities = OpsiFunctions.getImportableComputeEntities(GetImportableComputeEntitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImportableComputeEntitiesResult> getImportableComputeEntitiesPlain(GetImportableComputeEntitiesPlainArgs args) {
@@ -941,6 +3111,34 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableComputeEntities = OpsiFunctions.getImportableComputeEntities(GetImportableComputeEntitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImportableComputeEntitiesResult> getImportableComputeEntities(GetImportableComputeEntitiesArgs args, InvokeOptions options) {
@@ -958,6 +3156,34 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableComputeEntities = OpsiFunctions.getImportableComputeEntities(GetImportableComputeEntitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImportableComputeEntitiesResult> getImportableComputeEntitiesPlain(GetImportableComputeEntitiesPlainArgs args, InvokeOptions options) {
@@ -975,6 +3201,34 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableComputeEntity = OpsiFunctions.getImportableComputeEntity(GetImportableComputeEntityArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImportableComputeEntityResult> getImportableComputeEntity(GetImportableComputeEntityArgs args) {
@@ -992,6 +3246,34 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableComputeEntity = OpsiFunctions.getImportableComputeEntity(GetImportableComputeEntityArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImportableComputeEntityResult> getImportableComputeEntityPlain(GetImportableComputeEntityPlainArgs args) {
@@ -1009,6 +3291,34 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableComputeEntity = OpsiFunctions.getImportableComputeEntity(GetImportableComputeEntityArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetImportableComputeEntityResult> getImportableComputeEntity(GetImportableComputeEntityArgs args, InvokeOptions options) {
@@ -1026,6 +3336,34 @@ public final class OpsiFunctions {
      *       2.3 The agent lifecycleState = &#39;ACTIVE&#39;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetImportableComputeEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportableComputeEntity = OpsiFunctions.getImportableComputeEntity(GetImportableComputeEntityArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetImportableComputeEntityResult> getImportableComputeEntityPlain(GetImportableComputeEntityPlainArgs args, InvokeOptions options) {
@@ -1037,6 +3375,34 @@ public final class OpsiFunctions {
      * Gets the details of the specified private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsPrivateEndpoint = OpsiFunctions.getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs.builder()
+     *             .operationsInsightsPrivateEndpointId(oci_opsi_operations_insights_private_endpoint.test_operations_insights_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsPrivateEndpointResult> getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs args) {
@@ -1048,6 +3414,34 @@ public final class OpsiFunctions {
      * Gets the details of the specified private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsPrivateEndpoint = OpsiFunctions.getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs.builder()
+     *             .operationsInsightsPrivateEndpointId(oci_opsi_operations_insights_private_endpoint.test_operations_insights_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsPrivateEndpointResult> getOperationsInsightsPrivateEndpointPlain(GetOperationsInsightsPrivateEndpointPlainArgs args) {
@@ -1059,6 +3453,34 @@ public final class OpsiFunctions {
      * Gets the details of the specified private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsPrivateEndpoint = OpsiFunctions.getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs.builder()
+     *             .operationsInsightsPrivateEndpointId(oci_opsi_operations_insights_private_endpoint.test_operations_insights_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsPrivateEndpointResult> getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs args, InvokeOptions options) {
@@ -1070,6 +3492,34 @@ public final class OpsiFunctions {
      * Gets the details of the specified private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsPrivateEndpoint = OpsiFunctions.getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs.builder()
+     *             .operationsInsightsPrivateEndpointId(oci_opsi_operations_insights_private_endpoint.test_operations_insights_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsPrivateEndpointResult> getOperationsInsightsPrivateEndpointPlain(GetOperationsInsightsPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -1081,6 +3531,40 @@ public final class OpsiFunctions {
      * Gets a list of Operation Insights private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsPrivateEndpoints = OpsiFunctions.getOperationsInsightsPrivateEndpoints(GetOperationsInsightsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.operations_insights_private_endpoint_compartment_id_in_subtree())
+     *             .displayName(var_.operations_insights_private_endpoint_display_name())
+     *             .isUsedForRacDbs(var_.operations_insights_private_endpoint_is_used_for_rac_dbs())
+     *             .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .states(var_.operations_insights_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpoints() {
@@ -1092,6 +3576,40 @@ public final class OpsiFunctions {
      * Gets a list of Operation Insights private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsPrivateEndpoints = OpsiFunctions.getOperationsInsightsPrivateEndpoints(GetOperationsInsightsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.operations_insights_private_endpoint_compartment_id_in_subtree())
+     *             .displayName(var_.operations_insights_private_endpoint_display_name())
+     *             .isUsedForRacDbs(var_.operations_insights_private_endpoint_is_used_for_rac_dbs())
+     *             .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .states(var_.operations_insights_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpointsPlain() {
@@ -1103,6 +3621,40 @@ public final class OpsiFunctions {
      * Gets a list of Operation Insights private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsPrivateEndpoints = OpsiFunctions.getOperationsInsightsPrivateEndpoints(GetOperationsInsightsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.operations_insights_private_endpoint_compartment_id_in_subtree())
+     *             .displayName(var_.operations_insights_private_endpoint_display_name())
+     *             .isUsedForRacDbs(var_.operations_insights_private_endpoint_is_used_for_rac_dbs())
+     *             .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .states(var_.operations_insights_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpoints(GetOperationsInsightsPrivateEndpointsArgs args) {
@@ -1114,6 +3666,40 @@ public final class OpsiFunctions {
      * Gets a list of Operation Insights private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsPrivateEndpoints = OpsiFunctions.getOperationsInsightsPrivateEndpoints(GetOperationsInsightsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.operations_insights_private_endpoint_compartment_id_in_subtree())
+     *             .displayName(var_.operations_insights_private_endpoint_display_name())
+     *             .isUsedForRacDbs(var_.operations_insights_private_endpoint_is_used_for_rac_dbs())
+     *             .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .states(var_.operations_insights_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpointsPlain(GetOperationsInsightsPrivateEndpointsPlainArgs args) {
@@ -1125,6 +3711,40 @@ public final class OpsiFunctions {
      * Gets a list of Operation Insights private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsPrivateEndpoints = OpsiFunctions.getOperationsInsightsPrivateEndpoints(GetOperationsInsightsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.operations_insights_private_endpoint_compartment_id_in_subtree())
+     *             .displayName(var_.operations_insights_private_endpoint_display_name())
+     *             .isUsedForRacDbs(var_.operations_insights_private_endpoint_is_used_for_rac_dbs())
+     *             .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .states(var_.operations_insights_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpoints(GetOperationsInsightsPrivateEndpointsArgs args, InvokeOptions options) {
@@ -1136,6 +3756,40 @@ public final class OpsiFunctions {
      * Gets a list of Operation Insights private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsPrivateEndpoints = OpsiFunctions.getOperationsInsightsPrivateEndpoints(GetOperationsInsightsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .compartmentIdInSubtree(var_.operations_insights_private_endpoint_compartment_id_in_subtree())
+     *             .displayName(var_.operations_insights_private_endpoint_display_name())
+     *             .isUsedForRacDbs(var_.operations_insights_private_endpoint_is_used_for_rac_dbs())
+     *             .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+     *             .states(var_.operations_insights_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsPrivateEndpointsResult> getOperationsInsightsPrivateEndpointsPlain(GetOperationsInsightsPrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -1148,6 +3802,34 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouse = OpsiFunctions.getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsWarehouseResult> getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs args) {
@@ -1160,6 +3842,34 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouse = OpsiFunctions.getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseResult> getOperationsInsightsWarehousePlain(GetOperationsInsightsWarehousePlainArgs args) {
@@ -1172,6 +3882,34 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouse = OpsiFunctions.getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsWarehouseResult> getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs args, InvokeOptions options) {
@@ -1184,6 +3922,34 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouse = OpsiFunctions.getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseResult> getOperationsInsightsWarehousePlain(GetOperationsInsightsWarehousePlainArgs args, InvokeOptions options) {
@@ -1196,6 +3962,34 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseResourceUsageSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseResourceUsageSummary = OpsiFunctions.getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsWarehouseResourceUsageSummaryResult> getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs args) {
@@ -1208,6 +4002,34 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseResourceUsageSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseResourceUsageSummary = OpsiFunctions.getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseResourceUsageSummaryResult> getOperationsInsightsWarehouseResourceUsageSummaryPlain(GetOperationsInsightsWarehouseResourceUsageSummaryPlainArgs args) {
@@ -1220,6 +4042,34 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseResourceUsageSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseResourceUsageSummary = OpsiFunctions.getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsWarehouseResourceUsageSummaryResult> getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs args, InvokeOptions options) {
@@ -1232,6 +4082,34 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseResourceUsageSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseResourceUsageSummary = OpsiFunctions.getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseResourceUsageSummaryResult> getOperationsInsightsWarehouseResourceUsageSummaryPlain(GetOperationsInsightsWarehouseResourceUsageSummaryPlainArgs args, InvokeOptions options) {
@@ -1243,6 +4121,34 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Warehouse User.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseUser = OpsiFunctions.getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs.builder()
+     *             .operationsInsightsWarehouseUserId(oci_opsi_operations_insights_warehouse_user.test_operations_insights_warehouse_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsWarehouseUserResult> getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs args) {
@@ -1254,6 +4160,34 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Warehouse User.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseUser = OpsiFunctions.getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs.builder()
+     *             .operationsInsightsWarehouseUserId(oci_opsi_operations_insights_warehouse_user.test_operations_insights_warehouse_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseUserResult> getOperationsInsightsWarehouseUserPlain(GetOperationsInsightsWarehouseUserPlainArgs args) {
@@ -1265,6 +4199,34 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Warehouse User.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseUser = OpsiFunctions.getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs.builder()
+     *             .operationsInsightsWarehouseUserId(oci_opsi_operations_insights_warehouse_user.test_operations_insights_warehouse_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsWarehouseUserResult> getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs args, InvokeOptions options) {
@@ -1276,6 +4238,34 @@ public final class OpsiFunctions {
      * Gets details of an Operations Insights Warehouse User.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseUser = OpsiFunctions.getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs.builder()
+     *             .operationsInsightsWarehouseUserId(oci_opsi_operations_insights_warehouse_user.test_operations_insights_warehouse_user().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseUserResult> getOperationsInsightsWarehouseUserPlain(GetOperationsInsightsWarehouseUserPlainArgs args, InvokeOptions options) {
@@ -1287,6 +4277,38 @@ public final class OpsiFunctions {
      * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseUsers = OpsiFunctions.getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operations_insights_warehouse_user_display_name())
+     *             .id(var_.operations_insights_warehouse_user_id())
+     *             .states(var_.operations_insights_warehouse_user_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsWarehouseUsersResult> getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs args) {
@@ -1298,6 +4320,38 @@ public final class OpsiFunctions {
      * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseUsers = OpsiFunctions.getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operations_insights_warehouse_user_display_name())
+     *             .id(var_.operations_insights_warehouse_user_id())
+     *             .states(var_.operations_insights_warehouse_user_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseUsersResult> getOperationsInsightsWarehouseUsersPlain(GetOperationsInsightsWarehouseUsersPlainArgs args) {
@@ -1309,6 +4363,38 @@ public final class OpsiFunctions {
      * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseUsers = OpsiFunctions.getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operations_insights_warehouse_user_display_name())
+     *             .id(var_.operations_insights_warehouse_user_id())
+     *             .states(var_.operations_insights_warehouse_user_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsWarehouseUsersResult> getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs args, InvokeOptions options) {
@@ -1320,6 +4406,38 @@ public final class OpsiFunctions {
      * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehouseUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouseUsers = OpsiFunctions.getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs.builder()
+     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operations_insights_warehouse_user_display_name())
+     *             .id(var_.operations_insights_warehouse_user_id())
+     *             .states(var_.operations_insights_warehouse_user_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehouseUsersResult> getOperationsInsightsWarehouseUsersPlain(GetOperationsInsightsWarehouseUsersPlainArgs args, InvokeOptions options) {
@@ -1332,6 +4450,37 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouses = OpsiFunctions.getOperationsInsightsWarehouses(GetOperationsInsightsWarehousesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operations_insights_warehouse_display_name())
+     *             .id(var_.operations_insights_warehouse_id())
+     *             .states(var_.operations_insights_warehouse_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehouses() {
@@ -1344,6 +4493,37 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouses = OpsiFunctions.getOperationsInsightsWarehouses(GetOperationsInsightsWarehousesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operations_insights_warehouse_display_name())
+     *             .id(var_.operations_insights_warehouse_id())
+     *             .states(var_.operations_insights_warehouse_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehousesPlain() {
@@ -1356,6 +4536,37 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouses = OpsiFunctions.getOperationsInsightsWarehouses(GetOperationsInsightsWarehousesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operations_insights_warehouse_display_name())
+     *             .id(var_.operations_insights_warehouse_id())
+     *             .states(var_.operations_insights_warehouse_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehouses(GetOperationsInsightsWarehousesArgs args) {
@@ -1368,6 +4579,37 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouses = OpsiFunctions.getOperationsInsightsWarehouses(GetOperationsInsightsWarehousesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operations_insights_warehouse_display_name())
+     *             .id(var_.operations_insights_warehouse_id())
+     *             .states(var_.operations_insights_warehouse_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehousesPlain(GetOperationsInsightsWarehousesPlainArgs args) {
@@ -1380,6 +4622,37 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouses = OpsiFunctions.getOperationsInsightsWarehouses(GetOperationsInsightsWarehousesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operations_insights_warehouse_display_name())
+     *             .id(var_.operations_insights_warehouse_id())
+     *             .states(var_.operations_insights_warehouse_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehouses(GetOperationsInsightsWarehousesArgs args, InvokeOptions options) {
@@ -1392,6 +4665,37 @@ public final class OpsiFunctions {
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetOperationsInsightsWarehousesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperationsInsightsWarehouses = OpsiFunctions.getOperationsInsightsWarehouses(GetOperationsInsightsWarehousesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operations_insights_warehouse_display_name())
+     *             .id(var_.operations_insights_warehouse_id())
+     *             .states(var_.operations_insights_warehouse_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOperationsInsightsWarehousesResult> getOperationsInsightsWarehousesPlain(GetOperationsInsightsWarehousesPlainArgs args, InvokeOptions options) {

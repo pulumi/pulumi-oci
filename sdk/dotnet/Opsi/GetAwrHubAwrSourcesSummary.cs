@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAwrHubAwrSourcesSummary = Oci.Opsi.GetAwrHubAwrSourcesSummary.Invoke(new()
         ///     {
-        ///         var testAwrHubAwrSourcesSummary = Output.Create(Oci.Opsi.GetAwrHubAwrSourcesSummary.InvokeAsync(new Oci.Opsi.GetAwrHubAwrSourcesSummaryArgs
-        ///         {
-        ///             AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Awr_hub_awr_sources_summary_name,
-        ///         }));
-        ///     }
+        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Awr_hub_awr_sources_summary_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAwrHubAwrSourcesSummary = Oci.Opsi.GetAwrHubAwrSourcesSummary.Invoke(new()
         ///     {
-        ///         var testAwrHubAwrSourcesSummary = Output.Create(Oci.Opsi.GetAwrHubAwrSourcesSummary.InvokeAsync(new Oci.Opsi.GetAwrHubAwrSourcesSummaryArgs
-        ///         {
-        ///             AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Awr_hub_awr_sources_summary_name,
-        ///         }));
-        ///     }
+        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Awr_hub_awr_sources_summary_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetAwrHubAwrSourcesSummaryArgs : Pulumi.InvokeArgs
+    public sealed class GetAwrHubAwrSourcesSummaryArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Awr Hub identifier
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.Opsi
         public GetAwrHubAwrSourcesSummaryArgs()
         {
         }
+        public static new GetAwrHubAwrSourcesSummaryArgs Empty => new GetAwrHubAwrSourcesSummaryArgs();
     }
 
-    public sealed class GetAwrHubAwrSourcesSummaryInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAwrHubAwrSourcesSummaryInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Awr Hub identifier
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.Opsi
         public GetAwrHubAwrSourcesSummaryInvokeArgs()
         {
         }
+        public static new GetAwrHubAwrSourcesSummaryInvokeArgs Empty => new GetAwrHubAwrSourcesSummaryInvokeArgs();
     }
 
 

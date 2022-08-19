@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class GetClustersFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetClustersFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name to filter on.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public GetClustersFilterArgs()
         {
         }
+        public static new GetClustersFilterArgs Empty => new GetClustersFilterArgs();
     }
 }

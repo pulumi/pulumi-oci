@@ -41,6 +41,35 @@ public final class LoggingFunctions {
      * Gets the log object configuration for the log object OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLog = LoggingFunctions.getLog(GetLogArgs.builder()
+     *             .logGroupId(oci_logging_log_group.test_log_group().id())
+     *             .logId(oci_logging_log.test_log().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogResult> getLog(GetLogArgs args) {
@@ -52,6 +81,35 @@ public final class LoggingFunctions {
      * Gets the log object configuration for the log object OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLog = LoggingFunctions.getLog(GetLogArgs.builder()
+     *             .logGroupId(oci_logging_log_group.test_log_group().id())
+     *             .logId(oci_logging_log.test_log().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogResult> getLogPlain(GetLogPlainArgs args) {
@@ -63,6 +121,35 @@ public final class LoggingFunctions {
      * Gets the log object configuration for the log object OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLog = LoggingFunctions.getLog(GetLogArgs.builder()
+     *             .logGroupId(oci_logging_log_group.test_log_group().id())
+     *             .logId(oci_logging_log.test_log().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogResult> getLog(GetLogArgs args, InvokeOptions options) {
@@ -74,6 +161,35 @@ public final class LoggingFunctions {
      * Gets the log object configuration for the log object OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLog = LoggingFunctions.getLog(GetLogArgs.builder()
+     *             .logGroupId(oci_logging_log_group.test_log_group().id())
+     *             .logId(oci_logging_log.test_log().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogResult> getLogPlain(GetLogPlainArgs args, InvokeOptions options) {
@@ -85,6 +201,34 @@ public final class LoggingFunctions {
      * Get the specified log group&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogGroup = LoggingFunctions.getLogGroup(GetLogGroupArgs.builder()
+     *             .logGroupId(oci_logging_log_group.test_log_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogGroupResult> getLogGroup(GetLogGroupArgs args) {
@@ -96,6 +240,34 @@ public final class LoggingFunctions {
      * Get the specified log group&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogGroup = LoggingFunctions.getLogGroup(GetLogGroupArgs.builder()
+     *             .logGroupId(oci_logging_log_group.test_log_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogGroupResult> getLogGroupPlain(GetLogGroupPlainArgs args) {
@@ -107,6 +279,34 @@ public final class LoggingFunctions {
      * Get the specified log group&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogGroup = LoggingFunctions.getLogGroup(GetLogGroupArgs.builder()
+     *             .logGroupId(oci_logging_log_group.test_log_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogGroupResult> getLogGroup(GetLogGroupArgs args, InvokeOptions options) {
@@ -118,6 +318,34 @@ public final class LoggingFunctions {
      * Get the specified log group&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogGroup = LoggingFunctions.getLogGroup(GetLogGroupArgs.builder()
+     *             .logGroupId(oci_logging_log_group.test_log_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogGroupResult> getLogGroupPlain(GetLogGroupPlainArgs args, InvokeOptions options) {
@@ -129,6 +357,36 @@ public final class LoggingFunctions {
      * Lists all log groups for the specified compartment or tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogGroups = LoggingFunctions.getLogGroups(GetLogGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.log_group_display_name())
+     *             .isCompartmentIdInSubtree(var_.log_group_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogGroupsResult> getLogGroups(GetLogGroupsArgs args) {
@@ -140,6 +398,36 @@ public final class LoggingFunctions {
      * Lists all log groups for the specified compartment or tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogGroups = LoggingFunctions.getLogGroups(GetLogGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.log_group_display_name())
+     *             .isCompartmentIdInSubtree(var_.log_group_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogGroupsResult> getLogGroupsPlain(GetLogGroupsPlainArgs args) {
@@ -151,6 +439,36 @@ public final class LoggingFunctions {
      * Lists all log groups for the specified compartment or tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogGroups = LoggingFunctions.getLogGroups(GetLogGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.log_group_display_name())
+     *             .isCompartmentIdInSubtree(var_.log_group_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogGroupsResult> getLogGroups(GetLogGroupsArgs args, InvokeOptions options) {
@@ -162,6 +480,36 @@ public final class LoggingFunctions {
      * Lists all log groups for the specified compartment or tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogGroups = LoggingFunctions.getLogGroups(GetLogGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.log_group_display_name())
+     *             .isCompartmentIdInSubtree(var_.log_group_is_compartment_id_in_subtree())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogGroupsResult> getLogGroupsPlain(GetLogGroupsPlainArgs args, InvokeOptions options) {
@@ -173,6 +521,34 @@ public final class LoggingFunctions {
      * Retrieves a log saved search.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSavedSearch = LoggingFunctions.getLogSavedSearch(GetLogSavedSearchArgs.builder()
+     *             .logSavedSearchId(oci_logging_log_saved_search.test_log_saved_search().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogSavedSearchResult> getLogSavedSearch(GetLogSavedSearchArgs args) {
@@ -184,6 +560,34 @@ public final class LoggingFunctions {
      * Retrieves a log saved search.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSavedSearch = LoggingFunctions.getLogSavedSearch(GetLogSavedSearchArgs.builder()
+     *             .logSavedSearchId(oci_logging_log_saved_search.test_log_saved_search().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogSavedSearchResult> getLogSavedSearchPlain(GetLogSavedSearchPlainArgs args) {
@@ -195,6 +599,34 @@ public final class LoggingFunctions {
      * Retrieves a log saved search.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSavedSearch = LoggingFunctions.getLogSavedSearch(GetLogSavedSearchArgs.builder()
+     *             .logSavedSearchId(oci_logging_log_saved_search.test_log_saved_search().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogSavedSearchResult> getLogSavedSearch(GetLogSavedSearchArgs args, InvokeOptions options) {
@@ -206,6 +638,34 @@ public final class LoggingFunctions {
      * Retrieves a log saved search.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSavedSearch = LoggingFunctions.getLogSavedSearch(GetLogSavedSearchArgs.builder()
+     *             .logSavedSearchId(oci_logging_log_saved_search.test_log_saved_search().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogSavedSearchResult> getLogSavedSearchPlain(GetLogSavedSearchPlainArgs args, InvokeOptions options) {
@@ -217,6 +677,36 @@ public final class LoggingFunctions {
      * Lists Logging Saved Searches for this compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSavedSearches = LoggingFunctions.getLogSavedSearches(GetLogSavedSearchesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .logSavedSearchId(oci_logging_log_saved_search.test_log_saved_search().id())
+     *             .name(var_.log_saved_search_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogSavedSearchesResult> getLogSavedSearches(GetLogSavedSearchesArgs args) {
@@ -228,6 +718,36 @@ public final class LoggingFunctions {
      * Lists Logging Saved Searches for this compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSavedSearches = LoggingFunctions.getLogSavedSearches(GetLogSavedSearchesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .logSavedSearchId(oci_logging_log_saved_search.test_log_saved_search().id())
+     *             .name(var_.log_saved_search_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogSavedSearchesResult> getLogSavedSearchesPlain(GetLogSavedSearchesPlainArgs args) {
@@ -239,6 +759,36 @@ public final class LoggingFunctions {
      * Lists Logging Saved Searches for this compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSavedSearches = LoggingFunctions.getLogSavedSearches(GetLogSavedSearchesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .logSavedSearchId(oci_logging_log_saved_search.test_log_saved_search().id())
+     *             .name(var_.log_saved_search_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogSavedSearchesResult> getLogSavedSearches(GetLogSavedSearchesArgs args, InvokeOptions options) {
@@ -250,6 +800,36 @@ public final class LoggingFunctions {
      * Lists Logging Saved Searches for this compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSavedSearches = LoggingFunctions.getLogSavedSearches(GetLogSavedSearchesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .logSavedSearchId(oci_logging_log_saved_search.test_log_saved_search().id())
+     *             .name(var_.log_saved_search_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogSavedSearchesResult> getLogSavedSearchesPlain(GetLogSavedSearchesPlainArgs args, InvokeOptions options) {
@@ -261,6 +841,39 @@ public final class LoggingFunctions {
      * Lists the specified log group&#39;s log objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogs = LoggingFunctions.getLogs(GetLogsArgs.builder()
+     *             .logGroupId(oci_logging_log_group.test_log_group().id())
+     *             .displayName(var_.log_display_name())
+     *             .logType(var_.log_log_type())
+     *             .sourceResource(var_.log_source_resource())
+     *             .sourceService(var_.log_source_service())
+     *             .state(var_.log_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogsResult> getLogs(GetLogsArgs args) {
@@ -272,6 +885,39 @@ public final class LoggingFunctions {
      * Lists the specified log group&#39;s log objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogs = LoggingFunctions.getLogs(GetLogsArgs.builder()
+     *             .logGroupId(oci_logging_log_group.test_log_group().id())
+     *             .displayName(var_.log_display_name())
+     *             .logType(var_.log_log_type())
+     *             .sourceResource(var_.log_source_resource())
+     *             .sourceService(var_.log_source_service())
+     *             .state(var_.log_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogsResult> getLogsPlain(GetLogsPlainArgs args) {
@@ -283,6 +929,39 @@ public final class LoggingFunctions {
      * Lists the specified log group&#39;s log objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogs = LoggingFunctions.getLogs(GetLogsArgs.builder()
+     *             .logGroupId(oci_logging_log_group.test_log_group().id())
+     *             .displayName(var_.log_display_name())
+     *             .logType(var_.log_log_type())
+     *             .sourceResource(var_.log_source_resource())
+     *             .sourceService(var_.log_source_service())
+     *             .state(var_.log_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogsResult> getLogs(GetLogsArgs args, InvokeOptions options) {
@@ -294,6 +973,39 @@ public final class LoggingFunctions {
      * Lists the specified log group&#39;s log objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogs = LoggingFunctions.getLogs(GetLogsArgs.builder()
+     *             .logGroupId(oci_logging_log_group.test_log_group().id())
+     *             .displayName(var_.log_display_name())
+     *             .logType(var_.log_log_type())
+     *             .sourceResource(var_.log_source_resource())
+     *             .sourceService(var_.log_source_service())
+     *             .state(var_.log_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogsResult> getLogsPlain(GetLogsPlainArgs args, InvokeOptions options) {
@@ -305,6 +1017,34 @@ public final class LoggingFunctions {
      * Get the unified agent configuration for an ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAgentConfiguration = LoggingFunctions.getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs.builder()
+     *             .unifiedAgentConfigurationId(oci_logging_unified_agent_configuration.test_unified_agent_configuration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUnifiedAgentConfigurationResult> getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs args) {
@@ -316,6 +1056,34 @@ public final class LoggingFunctions {
      * Get the unified agent configuration for an ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAgentConfiguration = LoggingFunctions.getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs.builder()
+     *             .unifiedAgentConfigurationId(oci_logging_unified_agent_configuration.test_unified_agent_configuration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUnifiedAgentConfigurationResult> getUnifiedAgentConfigurationPlain(GetUnifiedAgentConfigurationPlainArgs args) {
@@ -327,6 +1095,34 @@ public final class LoggingFunctions {
      * Get the unified agent configuration for an ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAgentConfiguration = LoggingFunctions.getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs.builder()
+     *             .unifiedAgentConfigurationId(oci_logging_unified_agent_configuration.test_unified_agent_configuration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUnifiedAgentConfigurationResult> getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs args, InvokeOptions options) {
@@ -338,6 +1134,34 @@ public final class LoggingFunctions {
      * Get the unified agent configuration for an ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAgentConfiguration = LoggingFunctions.getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs.builder()
+     *             .unifiedAgentConfigurationId(oci_logging_unified_agent_configuration.test_unified_agent_configuration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUnifiedAgentConfigurationResult> getUnifiedAgentConfigurationPlain(GetUnifiedAgentConfigurationPlainArgs args, InvokeOptions options) {
@@ -349,6 +1173,39 @@ public final class LoggingFunctions {
      * Lists all unified agent configurations in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAgentConfigurations = LoggingFunctions.getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.unified_agent_configuration_display_name())
+     *             .groupId(oci_identity_group.test_group().id())
+     *             .isCompartmentIdInSubtree(var_.unified_agent_configuration_is_compartment_id_in_subtree())
+     *             .logId(oci_logging_log.test_log().id())
+     *             .state(var_.unified_agent_configuration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUnifiedAgentConfigurationsResult> getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs args) {
@@ -360,6 +1217,39 @@ public final class LoggingFunctions {
      * Lists all unified agent configurations in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAgentConfigurations = LoggingFunctions.getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.unified_agent_configuration_display_name())
+     *             .groupId(oci_identity_group.test_group().id())
+     *             .isCompartmentIdInSubtree(var_.unified_agent_configuration_is_compartment_id_in_subtree())
+     *             .logId(oci_logging_log.test_log().id())
+     *             .state(var_.unified_agent_configuration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUnifiedAgentConfigurationsResult> getUnifiedAgentConfigurationsPlain(GetUnifiedAgentConfigurationsPlainArgs args) {
@@ -371,6 +1261,39 @@ public final class LoggingFunctions {
      * Lists all unified agent configurations in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAgentConfigurations = LoggingFunctions.getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.unified_agent_configuration_display_name())
+     *             .groupId(oci_identity_group.test_group().id())
+     *             .isCompartmentIdInSubtree(var_.unified_agent_configuration_is_compartment_id_in_subtree())
+     *             .logId(oci_logging_log.test_log().id())
+     *             .state(var_.unified_agent_configuration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetUnifiedAgentConfigurationsResult> getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs args, InvokeOptions options) {
@@ -382,6 +1305,39 @@ public final class LoggingFunctions {
      * Lists all unified agent configurations in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Logging.LoggingFunctions;
+     * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUnifiedAgentConfigurations = LoggingFunctions.getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.unified_agent_configuration_display_name())
+     *             .groupId(oci_identity_group.test_group().id())
+     *             .isCompartmentIdInSubtree(var_.unified_agent_configuration_is_compartment_id_in_subtree())
+     *             .logId(oci_logging_log.test_log().id())
+     *             .state(var_.unified_agent_configuration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetUnifiedAgentConfigurationsResult> getUnifiedAgentConfigurationsPlain(GetUnifiedAgentConfigurationsPlainArgs args, InvokeOptions options) {

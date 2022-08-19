@@ -22,25 +22,23 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBdsInstanceMetastoreConfigs = Oci.BigDataService.GetBdsInstanceMetastoreConfigs.Invoke(new()
         ///     {
-        ///         var testBdsInstanceMetastoreConfigs = Output.Create(Oci.BigDataService.GetBdsInstanceMetastoreConfigs.InvokeAsync(new Oci.BigDataService.GetBdsInstanceMetastoreConfigsArgs
-        ///         {
-        ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///             BdsApiKeyId = oci_identity_api_key.Test_api_key.Id,
-        ///             DisplayName = @var.Bds_instance_metastore_config_display_name,
-        ///             MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
-        ///             MetastoreType = @var.Bds_instance_metastore_config_metastore_type,
-        ///             State = @var.Bds_instance_metastore_config_state,
-        ///         }));
-        ///     }
+        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///         BdsApiKeyId = oci_identity_api_key.Test_api_key.Id,
+        ///         DisplayName = @var.Bds_instance_metastore_config_display_name,
+        ///         MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
+        ///         MetastoreType = @var.Bds_instance_metastore_config_metastore_type,
+        ///         State = @var.Bds_instance_metastore_config_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.BigDataService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBdsInstanceMetastoreConfigs = Oci.BigDataService.GetBdsInstanceMetastoreConfigs.Invoke(new()
         ///     {
-        ///         var testBdsInstanceMetastoreConfigs = Output.Create(Oci.BigDataService.GetBdsInstanceMetastoreConfigs.InvokeAsync(new Oci.BigDataService.GetBdsInstanceMetastoreConfigsArgs
-        ///         {
-        ///             BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-        ///             BdsApiKeyId = oci_identity_api_key.Test_api_key.Id,
-        ///             DisplayName = @var.Bds_instance_metastore_config_display_name,
-        ///             MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
-        ///             MetastoreType = @var.Bds_instance_metastore_config_metastore_type,
-        ///             State = @var.Bds_instance_metastore_config_state,
-        ///         }));
-        ///     }
+        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///         BdsApiKeyId = oci_identity_api_key.Test_api_key.Id,
+        ///         DisplayName = @var.Bds_instance_metastore_config_display_name,
+        ///         MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
+        ///         MetastoreType = @var.Bds_instance_metastore_config_metastore_type,
+        ///         State = @var.Bds_instance_metastore_config_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.BigDataService
     }
 
 
-    public sealed class GetBdsInstanceMetastoreConfigsArgs : Pulumi.InvokeArgs
+    public sealed class GetBdsInstanceMetastoreConfigsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the API key that is associated with the external metastore in the metastore configuration
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.BigDataService
         public GetBdsInstanceMetastoreConfigsArgs()
         {
         }
+        public static new GetBdsInstanceMetastoreConfigsArgs Empty => new GetBdsInstanceMetastoreConfigsArgs();
     }
 
-    public sealed class GetBdsInstanceMetastoreConfigsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBdsInstanceMetastoreConfigsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the API key that is associated with the external metastore in the metastore configuration
@@ -187,6 +184,7 @@ namespace Pulumi.Oci.BigDataService
         public GetBdsInstanceMetastoreConfigsInvokeArgs()
         {
         }
+        public static new GetBdsInstanceMetastoreConfigsInvokeArgs Empty => new GetBdsInstanceMetastoreConfigsInvokeArgs();
     }
 
 

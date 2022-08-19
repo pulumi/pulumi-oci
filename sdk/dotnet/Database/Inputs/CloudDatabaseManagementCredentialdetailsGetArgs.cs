@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class CloudDatabaseManagementCredentialdetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class CloudDatabaseManagementCredentialdetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Database.Inputs
         public CloudDatabaseManagementCredentialdetailsGetArgs()
         {
         }
+        public static new CloudDatabaseManagementCredentialdetailsGetArgs Empty => new CloudDatabaseManagementCredentialdetailsGetArgs();
     }
 }

@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKeyStore = Oci.Database.GetKeyStore.Invoke(new()
         ///     {
-        ///         var testKeyStore = Output.Create(Oci.Database.GetKeyStore.InvokeAsync(new Oci.Database.GetKeyStoreArgs
-        ///         {
-        ///             KeyStoreId = oci_database_key_store.Test_key_store.Id,
-        ///         }));
-        ///     }
+        ///         KeyStoreId = oci_database_key_store.Test_key_store.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKeyStore = Oci.Database.GetKeyStore.Invoke(new()
         ///     {
-        ///         var testKeyStore = Output.Create(Oci.Database.GetKeyStore.InvokeAsync(new Oci.Database.GetKeyStoreArgs
-        ///         {
-        ///             KeyStoreId = oci_database_key_store.Test_key_store.Id,
-        ///         }));
-        ///     }
+        ///         KeyStoreId = oci_database_key_store.Test_key_store.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetKeyStoreArgs : Pulumi.InvokeArgs
+    public sealed class GetKeyStoreArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Database
         public GetKeyStoreArgs()
         {
         }
+        public static new GetKeyStoreArgs Empty => new GetKeyStoreArgs();
     }
 
-    public sealed class GetKeyStoreInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetKeyStoreInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Database
         public GetKeyStoreInvokeArgs()
         {
         }
+        public static new GetKeyStoreInvokeArgs Empty => new GetKeyStoreInvokeArgs();
     }
 
 

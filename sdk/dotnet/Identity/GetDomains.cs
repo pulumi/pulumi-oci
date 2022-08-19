@@ -23,28 +23,26 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDomains = Oci.Identity.GetDomains.Invoke(new()
         ///     {
-        ///         var testDomains = Output.Create(Oci.Identity.GetDomains.InvokeAsync(new Oci.Identity.GetDomainsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Domain_display_name,
-        ///             HomeRegionUrl = @var.Domain_home_region_url,
-        ///             IsHiddenOnLogin = @var.Domain_is_hidden_on_login,
-        ///             LicenseType = @var.Domain_license_type,
-        ///             Name = @var.Domain_name,
-        ///             State = @var.Domain_state,
-        ///             Type = @var.Domain_type,
-        ///             Url = @var.Domain_url,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Domain_display_name,
+        ///         HomeRegionUrl = @var.Domain_home_region_url,
+        ///         IsHiddenOnLogin = @var.Domain_is_hidden_on_login,
+        ///         LicenseType = @var.Domain_license_type,
+        ///         Name = @var.Domain_name,
+        ///         State = @var.Domain_state,
+        ///         Type = @var.Domain_type,
+        ///         Url = @var.Domain_url,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -64,28 +62,26 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDomains = Oci.Identity.GetDomains.Invoke(new()
         ///     {
-        ///         var testDomains = Output.Create(Oci.Identity.GetDomains.InvokeAsync(new Oci.Identity.GetDomainsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Domain_display_name,
-        ///             HomeRegionUrl = @var.Domain_home_region_url,
-        ///             IsHiddenOnLogin = @var.Domain_is_hidden_on_login,
-        ///             LicenseType = @var.Domain_license_type,
-        ///             Name = @var.Domain_name,
-        ///             State = @var.Domain_state,
-        ///             Type = @var.Domain_type,
-        ///             Url = @var.Domain_url,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Domain_display_name,
+        ///         HomeRegionUrl = @var.Domain_home_region_url,
+        ///         IsHiddenOnLogin = @var.Domain_is_hidden_on_login,
+        ///         LicenseType = @var.Domain_license_type,
+        ///         Name = @var.Domain_name,
+        ///         State = @var.Domain_state,
+        ///         Type = @var.Domain_type,
+        ///         Url = @var.Domain_url,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetDomainsArgs : Pulumi.InvokeArgs
+    public sealed class GetDomainsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -162,9 +158,10 @@ namespace Pulumi.Oci.Identity
         public GetDomainsArgs()
         {
         }
+        public static new GetDomainsArgs Empty => new GetDomainsArgs();
     }
 
-    public sealed class GetDomainsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDomainsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -231,6 +228,7 @@ namespace Pulumi.Oci.Identity
         public GetDomainsInvokeArgs()
         {
         }
+        public static new GetDomainsInvokeArgs Empty => new GetDomainsInvokeArgs();
     }
 
 

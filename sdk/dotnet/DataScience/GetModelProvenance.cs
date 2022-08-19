@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testModelProvenance = Oci.DataScience.GetModelProvenance.Invoke(new()
         ///     {
-        ///         var testModelProvenance = Output.Create(Oci.DataScience.GetModelProvenance.InvokeAsync(new Oci.DataScience.GetModelProvenanceArgs
-        ///         {
-        ///             ModelId = oci_datascience_model.Test_model.Id,
-        ///         }));
-        ///     }
+        ///         ModelId = oci_datascience_model.Test_model.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testModelProvenance = Oci.DataScience.GetModelProvenance.Invoke(new()
         ///     {
-        ///         var testModelProvenance = Output.Create(Oci.DataScience.GetModelProvenance.InvokeAsync(new Oci.DataScience.GetModelProvenanceArgs
-        ///         {
-        ///             ModelId = oci_datascience_model.Test_model.Id,
-        ///         }));
-        ///     }
+        ///         ModelId = oci_datascience_model.Test_model.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataScience
     }
 
 
-    public sealed class GetModelProvenanceArgs : Pulumi.InvokeArgs
+    public sealed class GetModelProvenanceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataScience
         public GetModelProvenanceArgs()
         {
         }
+        public static new GetModelProvenanceArgs Empty => new GetModelProvenanceArgs();
     }
 
-    public sealed class GetModelProvenanceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetModelProvenanceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataScience
         public GetModelProvenanceInvokeArgs()
         {
         }
+        public static new GetModelProvenanceInvokeArgs Empty => new GetModelProvenanceInvokeArgs();
     }
 
 

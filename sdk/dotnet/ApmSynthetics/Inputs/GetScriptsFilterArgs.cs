@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class GetScriptsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetScriptsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public GetScriptsFilterInputArgs()
         {
         }
+        public static new GetScriptsFilterInputArgs Empty => new GetScriptsFilterInputArgs();
     }
 }

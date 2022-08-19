@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Analytics.Inputs
 {
 
-    public sealed class AnalyticsInstanceCapacityArgs : Pulumi.ResourceArgs
+    public sealed class AnalyticsInstanceCapacityArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The capacity model to use.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Analytics.Inputs
         public AnalyticsInstanceCapacityArgs()
         {
         }
+        public static new AnalyticsInstanceCapacityArgs Empty => new AnalyticsInstanceCapacityArgs();
     }
 }

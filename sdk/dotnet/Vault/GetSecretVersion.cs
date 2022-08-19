@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Vault
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecretVersion = Oci.Vault.GetSecretVersion.Invoke(new()
         ///     {
-        ///         var testSecretVersion = Output.Create(Oci.Vault.GetSecretVersion.InvokeAsync(new Oci.Vault.GetSecretVersionArgs
-        ///         {
-        ///             SecretId = oci_vault_secret.Test_secret.Id,
-        ///             SecretVersionNumber = @var.Secret_version_secret_version_number,
-        ///         }));
-        ///     }
+        ///         SecretId = oci_vault_secret.Test_secret.Id,
+        ///         SecretVersionNumber = @var.Secret_version_secret_version_number,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Vault
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecretVersion = Oci.Vault.GetSecretVersion.Invoke(new()
         ///     {
-        ///         var testSecretVersion = Output.Create(Oci.Vault.GetSecretVersion.InvokeAsync(new Oci.Vault.GetSecretVersionArgs
-        ///         {
-        ///             SecretId = oci_vault_secret.Test_secret.Id,
-        ///             SecretVersionNumber = @var.Secret_version_secret_version_number,
-        ///         }));
-        ///     }
+        ///         SecretId = oci_vault_secret.Test_secret.Id,
+        ///         SecretVersionNumber = @var.Secret_version_secret_version_number,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Vault
     }
 
 
-    public sealed class GetSecretVersionArgs : Pulumi.InvokeArgs
+    public sealed class GetSecretVersionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the secret.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Vault
         public GetSecretVersionArgs()
         {
         }
+        public static new GetSecretVersionArgs Empty => new GetSecretVersionArgs();
     }
 
-    public sealed class GetSecretVersionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecretVersionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the secret.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Vault
         public GetSecretVersionInvokeArgs()
         {
         }
+        public static new GetSecretVersionInvokeArgs Empty => new GetSecretVersionInvokeArgs();
     }
 
 

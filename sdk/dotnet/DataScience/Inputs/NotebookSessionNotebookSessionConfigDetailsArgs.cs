@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class NotebookSessionNotebookSessionConfigDetailsArgs : Pulumi.ResourceArgs
+    public sealed class NotebookSessionNotebookSessionConfigDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public NotebookSessionNotebookSessionConfigDetailsArgs()
         {
         }
+        public static new NotebookSessionNotebookSessionConfigDetailsArgs Empty => new NotebookSessionNotebookSessionConfigDetailsArgs();
     }
 }

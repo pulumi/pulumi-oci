@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testClusterNetwork = Oci.Core.GetClusterNetwork.Invoke(new()
         ///     {
-        ///         var testClusterNetwork = Output.Create(Oci.Core.GetClusterNetwork.InvokeAsync(new Oci.Core.GetClusterNetworkArgs
-        ///         {
-        ///             ClusterNetworkId = oci_core_cluster_network.Test_cluster_network.Id,
-        ///         }));
-        ///     }
+        ///         ClusterNetworkId = oci_core_cluster_network.Test_cluster_network.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testClusterNetwork = Oci.Core.GetClusterNetwork.Invoke(new()
         ///     {
-        ///         var testClusterNetwork = Output.Create(Oci.Core.GetClusterNetwork.InvokeAsync(new Oci.Core.GetClusterNetworkArgs
-        ///         {
-        ///             ClusterNetworkId = oci_core_cluster_network.Test_cluster_network.Id,
-        ///         }));
-        ///     }
+        ///         ClusterNetworkId = oci_core_cluster_network.Test_cluster_network.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetClusterNetworkArgs : Pulumi.InvokeArgs
+    public sealed class GetClusterNetworkArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetClusterNetworkArgs()
         {
         }
+        public static new GetClusterNetworkArgs Empty => new GetClusterNetworkArgs();
     }
 
-    public sealed class GetClusterNetworkInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetClusterNetworkInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetClusterNetworkInvokeArgs()
         {
         }
+        public static new GetClusterNetworkInvokeArgs Empty => new GetClusterNetworkInvokeArgs();
     }
 
 

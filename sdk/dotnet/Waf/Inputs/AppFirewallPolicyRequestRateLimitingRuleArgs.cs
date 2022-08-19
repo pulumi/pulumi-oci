@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class AppFirewallPolicyRequestRateLimitingRuleArgs : Pulumi.ResourceArgs
+    public sealed class AppFirewallPolicyRequestRateLimitingRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
@@ -58,5 +58,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public AppFirewallPolicyRequestRateLimitingRuleArgs()
         {
         }
+        public static new AppFirewallPolicyRequestRateLimitingRuleArgs Empty => new AppFirewallPolicyRequestRateLimitingRuleArgs();
     }
 }

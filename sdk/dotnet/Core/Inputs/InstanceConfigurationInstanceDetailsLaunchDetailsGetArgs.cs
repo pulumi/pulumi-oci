@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Configuration options for the Oracle Cloud Agent software running on the instance.
@@ -180,5 +180,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsLaunchDetailsGetArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsLaunchDetailsGetArgs Empty => new InstanceConfigurationInstanceDetailsLaunchDetailsGetArgs();
     }
 }

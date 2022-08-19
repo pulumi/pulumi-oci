@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class VirtualServiceMtlsArgs : Pulumi.ResourceArgs
+    public sealed class VirtualServiceMtlsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public VirtualServiceMtlsArgs()
         {
         }
+        public static new VirtualServiceMtlsArgs Empty => new VirtualServiceMtlsArgs();
     }
 }

@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Bastion
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSessions = Oci.Bastion.GetSessions.Invoke(new()
         ///     {
-        ///         var testSessions = Output.Create(Oci.Bastion.GetSessions.InvokeAsync(new Oci.Bastion.GetSessionsArgs
-        ///         {
-        ///             BastionId = oci_bastion_bastion.Test_bastion.Id,
-        ///             DisplayName = @var.Session_display_name,
-        ///             SessionId = oci_bastion_session.Test_session.Id,
-        ///             SessionLifecycleState = @var.Session_session_lifecycle_state,
-        ///         }));
-        ///     }
+        ///         BastionId = oci_bastion_bastion.Test_bastion.Id,
+        ///         DisplayName = @var.Session_display_name,
+        ///         SessionId = oci_bastion_session.Test_session.Id,
+        ///         SessionLifecycleState = @var.Session_session_lifecycle_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Bastion
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSessions = Oci.Bastion.GetSessions.Invoke(new()
         ///     {
-        ///         var testSessions = Output.Create(Oci.Bastion.GetSessions.InvokeAsync(new Oci.Bastion.GetSessionsArgs
-        ///         {
-        ///             BastionId = oci_bastion_bastion.Test_bastion.Id,
-        ///             DisplayName = @var.Session_display_name,
-        ///             SessionId = oci_bastion_session.Test_session.Id,
-        ///             SessionLifecycleState = @var.Session_session_lifecycle_state,
-        ///         }));
-        ///     }
+        ///         BastionId = oci_bastion_bastion.Test_bastion.Id,
+        ///         DisplayName = @var.Session_display_name,
+        ///         SessionId = oci_bastion_session.Test_session.Id,
+        ///         SessionLifecycleState = @var.Session_session_lifecycle_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Bastion
     }
 
 
-    public sealed class GetSessionsArgs : Pulumi.InvokeArgs
+    public sealed class GetSessionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier (OCID) of the bastion in which to list sessions.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.Bastion
         public GetSessionsArgs()
         {
         }
+        public static new GetSessionsArgs Empty => new GetSessionsArgs();
     }
 
-    public sealed class GetSessionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSessionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier (OCID) of the bastion in which to list sessions.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.Bastion
         public GetSessionsInvokeArgs()
         {
         }
+        public static new GetSessionsInvokeArgs Empty => new GetSessionsInvokeArgs();
     }
 
 

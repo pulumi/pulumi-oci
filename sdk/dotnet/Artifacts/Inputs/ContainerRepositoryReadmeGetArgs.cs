@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Artifacts.Inputs
 {
 
-    public sealed class ContainerRepositoryReadmeGetArgs : Pulumi.ResourceArgs
+    public sealed class ContainerRepositoryReadmeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Readme content. Avoid entering confidential information.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Artifacts.Inputs
         public ContainerRepositoryReadmeGetArgs()
         {
         }
+        public static new ContainerRepositoryReadmeGetArgs Empty => new ContainerRepositoryReadmeGetArgs();
     }
 }

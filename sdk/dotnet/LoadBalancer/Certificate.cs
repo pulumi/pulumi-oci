@@ -13,25 +13,23 @@ namespace Pulumi.Oci.LoadBalancer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCertificate = new Oci.LoadBalancer.Certificate("testCertificate", new()
     ///     {
-    ///         var testCertificate = new Oci.LoadBalancer.Certificate("testCertificate", new Oci.LoadBalancer.CertificateArgs
-    ///         {
-    ///             CertificateName = @var.Certificate_certificate_name,
-    ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///             CaCertificate = @var.Certificate_ca_certificate,
-    ///             Passphrase = @var.Certificate_passphrase,
-    ///             PrivateKey = @var.Certificate_private_key,
-    ///             PublicCertificate = @var.Certificate_public_certificate,
-    ///         });
-    ///     }
+    ///         CertificateName = @var.Certificate_certificate_name,
+    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         CaCertificate = @var.Certificate_ca_certificate,
+    ///         Passphrase = @var.Certificate_passphrase,
+    ///         PrivateKey = @var.Certificate_private_key,
+    ///         PublicCertificate = @var.Certificate_public_certificate,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/certificate:Certificate")]
-    public partial class Certificate : Pulumi.CustomResource
+    public partial class Certificate : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
@@ -128,7 +126,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
     }
 
-    public sealed class CertificateArgs : Pulumi.ResourceArgs
+    public sealed class CertificateArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
@@ -169,9 +167,10 @@ namespace Pulumi.Oci.LoadBalancer
         public CertificateArgs()
         {
         }
+        public static new CertificateArgs Empty => new CertificateArgs();
     }
 
-    public sealed class CertificateState : Pulumi.ResourceArgs
+    public sealed class CertificateState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
@@ -215,5 +214,6 @@ namespace Pulumi.Oci.LoadBalancer
         public CertificateState()
         {
         }
+        public static new CertificateState Empty => new CertificateState();
     }
 }

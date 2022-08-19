@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Integration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIntegrationInstance = Oci.Integration.GetIntegrationInstance.Invoke(new()
         ///     {
-        ///         var testIntegrationInstance = Output.Create(Oci.Integration.GetIntegrationInstance.InvokeAsync(new Oci.Integration.GetIntegrationInstanceArgs
-        ///         {
-        ///             IntegrationInstanceId = oci_integration_integration_instance.Test_integration_instance.Id,
-        ///         }));
-        ///     }
+        ///         IntegrationInstanceId = oci_integration_integration_instance.Test_integration_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Integration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIntegrationInstance = Oci.Integration.GetIntegrationInstance.Invoke(new()
         ///     {
-        ///         var testIntegrationInstance = Output.Create(Oci.Integration.GetIntegrationInstance.InvokeAsync(new Oci.Integration.GetIntegrationInstanceArgs
-        ///         {
-        ///             IntegrationInstanceId = oci_integration_integration_instance.Test_integration_instance.Id,
-        ///         }));
-        ///     }
+        ///         IntegrationInstanceId = oci_integration_integration_instance.Test_integration_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Integration
     }
 
 
-    public sealed class GetIntegrationInstanceArgs : Pulumi.InvokeArgs
+    public sealed class GetIntegrationInstanceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Integration Instance identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Integration
         public GetIntegrationInstanceArgs()
         {
         }
+        public static new GetIntegrationInstanceArgs Empty => new GetIntegrationInstanceArgs();
     }
 
-    public sealed class GetIntegrationInstanceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIntegrationInstanceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Integration Instance identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Integration
         public GetIntegrationInstanceInvokeArgs()
         {
         }
+        public static new GetIntegrationInstanceInvokeArgs Empty => new GetIntegrationInstanceInvokeArgs();
     }
 
 

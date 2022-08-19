@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExternalDatabaseConnectors = Oci.Database.GetExternalDatabaseConnectors.Invoke(new()
         ///     {
-        ///         var testExternalDatabaseConnectors = Output.Create(Oci.Database.GetExternalDatabaseConnectors.InvokeAsync(new Oci.Database.GetExternalDatabaseConnectorsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ExternalDatabaseId = oci_database_database.Test_database.Id,
-        ///             DisplayName = @var.External_database_connector_display_name,
-        ///             State = @var.External_database_connector_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ExternalDatabaseId = oci_database_database.Test_database.Id,
+        ///         DisplayName = @var.External_database_connector_display_name,
+        ///         State = @var.External_database_connector_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExternalDatabaseConnectors = Oci.Database.GetExternalDatabaseConnectors.Invoke(new()
         ///     {
-        ///         var testExternalDatabaseConnectors = Output.Create(Oci.Database.GetExternalDatabaseConnectors.InvokeAsync(new Oci.Database.GetExternalDatabaseConnectorsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ExternalDatabaseId = oci_database_database.Test_database.Id,
-        ///             DisplayName = @var.External_database_connector_display_name,
-        ///             State = @var.External_database_connector_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ExternalDatabaseId = oci_database_database.Test_database.Id,
+        ///         DisplayName = @var.External_database_connector_display_name,
+        ///         State = @var.External_database_connector_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetExternalDatabaseConnectorsArgs : Pulumi.InvokeArgs
+    public sealed class GetExternalDatabaseConnectorsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.Database
         public GetExternalDatabaseConnectorsArgs()
         {
         }
+        public static new GetExternalDatabaseConnectorsArgs Empty => new GetExternalDatabaseConnectorsArgs();
     }
 
-    public sealed class GetExternalDatabaseConnectorsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetExternalDatabaseConnectorsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.Database
         public GetExternalDatabaseConnectorsInvokeArgs()
         {
         }
+        public static new GetExternalDatabaseConnectorsInvokeArgs Empty => new GetExternalDatabaseConnectorsInvokeArgs();
     }
 
 

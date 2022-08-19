@@ -143,6 +143,34 @@ public final class DevOpsFunctions {
      * Retrieves a build pipeline by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipeline = DevOpsFunctions.getBuildPipeline(GetBuildPipelineArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildPipelineResult> getBuildPipeline(GetBuildPipelineArgs args) {
@@ -154,6 +182,34 @@ public final class DevOpsFunctions {
      * Retrieves a build pipeline by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipeline = DevOpsFunctions.getBuildPipeline(GetBuildPipelineArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildPipelineResult> getBuildPipelinePlain(GetBuildPipelinePlainArgs args) {
@@ -165,6 +221,34 @@ public final class DevOpsFunctions {
      * Retrieves a build pipeline by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipeline = DevOpsFunctions.getBuildPipeline(GetBuildPipelineArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildPipelineResult> getBuildPipeline(GetBuildPipelineArgs args, InvokeOptions options) {
@@ -176,6 +260,34 @@ public final class DevOpsFunctions {
      * Retrieves a build pipeline by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipeline = DevOpsFunctions.getBuildPipeline(GetBuildPipelineArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildPipelineResult> getBuildPipelinePlain(GetBuildPipelinePlainArgs args, InvokeOptions options) {
@@ -187,6 +299,34 @@ public final class DevOpsFunctions {
      * Retrieves a stage based on the stage ID provided in the request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelineStage = DevOpsFunctions.getBuildPipelineStage(GetBuildPipelineStageArgs.builder()
+     *             .buildPipelineStageId(oci_devops_build_pipeline_stage.test_build_pipeline_stage().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildPipelineStageResult> getBuildPipelineStage(GetBuildPipelineStageArgs args) {
@@ -198,6 +338,34 @@ public final class DevOpsFunctions {
      * Retrieves a stage based on the stage ID provided in the request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelineStage = DevOpsFunctions.getBuildPipelineStage(GetBuildPipelineStageArgs.builder()
+     *             .buildPipelineStageId(oci_devops_build_pipeline_stage.test_build_pipeline_stage().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildPipelineStageResult> getBuildPipelineStagePlain(GetBuildPipelineStagePlainArgs args) {
@@ -209,6 +377,34 @@ public final class DevOpsFunctions {
      * Retrieves a stage based on the stage ID provided in the request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelineStage = DevOpsFunctions.getBuildPipelineStage(GetBuildPipelineStageArgs.builder()
+     *             .buildPipelineStageId(oci_devops_build_pipeline_stage.test_build_pipeline_stage().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildPipelineStageResult> getBuildPipelineStage(GetBuildPipelineStageArgs args, InvokeOptions options) {
@@ -220,6 +416,34 @@ public final class DevOpsFunctions {
      * Retrieves a stage based on the stage ID provided in the request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelineStage = DevOpsFunctions.getBuildPipelineStage(GetBuildPipelineStageArgs.builder()
+     *             .buildPipelineStageId(oci_devops_build_pipeline_stage.test_build_pipeline_stage().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildPipelineStageResult> getBuildPipelineStagePlain(GetBuildPipelineStagePlainArgs args, InvokeOptions options) {
@@ -231,6 +455,38 @@ public final class DevOpsFunctions {
      * Returns a list of all stages in a compartment or build pipeline.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_pipeline_stage_display_name())
+     *             .id(var_.build_pipeline_stage_id())
+     *             .state(var_.build_pipeline_stage_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildPipelineStagesResult> getBuildPipelineStages() {
@@ -242,6 +498,38 @@ public final class DevOpsFunctions {
      * Returns a list of all stages in a compartment or build pipeline.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_pipeline_stage_display_name())
+     *             .id(var_.build_pipeline_stage_id())
+     *             .state(var_.build_pipeline_stage_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildPipelineStagesResult> getBuildPipelineStagesPlain() {
@@ -253,6 +541,38 @@ public final class DevOpsFunctions {
      * Returns a list of all stages in a compartment or build pipeline.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_pipeline_stage_display_name())
+     *             .id(var_.build_pipeline_stage_id())
+     *             .state(var_.build_pipeline_stage_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildPipelineStagesResult> getBuildPipelineStages(GetBuildPipelineStagesArgs args) {
@@ -264,6 +584,38 @@ public final class DevOpsFunctions {
      * Returns a list of all stages in a compartment or build pipeline.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_pipeline_stage_display_name())
+     *             .id(var_.build_pipeline_stage_id())
+     *             .state(var_.build_pipeline_stage_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildPipelineStagesResult> getBuildPipelineStagesPlain(GetBuildPipelineStagesPlainArgs args) {
@@ -275,6 +627,38 @@ public final class DevOpsFunctions {
      * Returns a list of all stages in a compartment or build pipeline.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_pipeline_stage_display_name())
+     *             .id(var_.build_pipeline_stage_id())
+     *             .state(var_.build_pipeline_stage_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildPipelineStagesResult> getBuildPipelineStages(GetBuildPipelineStagesArgs args, InvokeOptions options) {
@@ -286,6 +670,38 @@ public final class DevOpsFunctions {
      * Returns a list of all stages in a compartment or build pipeline.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_pipeline_stage_display_name())
+     *             .id(var_.build_pipeline_stage_id())
+     *             .state(var_.build_pipeline_stage_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildPipelineStagesResult> getBuildPipelineStagesPlain(GetBuildPipelineStagesPlainArgs args, InvokeOptions options) {
@@ -297,6 +713,38 @@ public final class DevOpsFunctions {
      * Returns a list of build pipelines.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelines = DevOpsFunctions.getBuildPipelines(GetBuildPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_pipeline_display_name())
+     *             .id(var_.build_pipeline_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.build_pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildPipelinesResult> getBuildPipelines() {
@@ -308,6 +756,38 @@ public final class DevOpsFunctions {
      * Returns a list of build pipelines.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelines = DevOpsFunctions.getBuildPipelines(GetBuildPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_pipeline_display_name())
+     *             .id(var_.build_pipeline_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.build_pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildPipelinesResult> getBuildPipelinesPlain() {
@@ -319,6 +799,38 @@ public final class DevOpsFunctions {
      * Returns a list of build pipelines.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelines = DevOpsFunctions.getBuildPipelines(GetBuildPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_pipeline_display_name())
+     *             .id(var_.build_pipeline_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.build_pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildPipelinesResult> getBuildPipelines(GetBuildPipelinesArgs args) {
@@ -330,6 +842,38 @@ public final class DevOpsFunctions {
      * Returns a list of build pipelines.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelines = DevOpsFunctions.getBuildPipelines(GetBuildPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_pipeline_display_name())
+     *             .id(var_.build_pipeline_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.build_pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildPipelinesResult> getBuildPipelinesPlain(GetBuildPipelinesPlainArgs args) {
@@ -341,6 +885,38 @@ public final class DevOpsFunctions {
      * Returns a list of build pipelines.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelines = DevOpsFunctions.getBuildPipelines(GetBuildPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_pipeline_display_name())
+     *             .id(var_.build_pipeline_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.build_pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildPipelinesResult> getBuildPipelines(GetBuildPipelinesArgs args, InvokeOptions options) {
@@ -352,6 +928,38 @@ public final class DevOpsFunctions {
      * Returns a list of build pipelines.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildPipelines = DevOpsFunctions.getBuildPipelines(GetBuildPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_pipeline_display_name())
+     *             .id(var_.build_pipeline_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.build_pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildPipelinesResult> getBuildPipelinesPlain(GetBuildPipelinesPlainArgs args, InvokeOptions options) {
@@ -363,6 +971,34 @@ public final class DevOpsFunctions {
      * Returns the details of a build run for a given build run ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildRun = DevOpsFunctions.getBuildRun(GetBuildRunArgs.builder()
+     *             .buildRunId(oci_devops_build_run.test_build_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildRunResult> getBuildRun(GetBuildRunArgs args) {
@@ -374,6 +1010,34 @@ public final class DevOpsFunctions {
      * Returns the details of a build run for a given build run ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildRun = DevOpsFunctions.getBuildRun(GetBuildRunArgs.builder()
+     *             .buildRunId(oci_devops_build_run.test_build_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildRunResult> getBuildRunPlain(GetBuildRunPlainArgs args) {
@@ -385,6 +1049,34 @@ public final class DevOpsFunctions {
      * Returns the details of a build run for a given build run ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildRun = DevOpsFunctions.getBuildRun(GetBuildRunArgs.builder()
+     *             .buildRunId(oci_devops_build_run.test_build_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildRunResult> getBuildRun(GetBuildRunArgs args, InvokeOptions options) {
@@ -396,6 +1088,34 @@ public final class DevOpsFunctions {
      * Returns the details of a build run for a given build run ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildRun = DevOpsFunctions.getBuildRun(GetBuildRunArgs.builder()
+     *             .buildRunId(oci_devops_build_run.test_build_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildRunResult> getBuildRunPlain(GetBuildRunPlainArgs args, InvokeOptions options) {
@@ -407,6 +1127,39 @@ public final class DevOpsFunctions {
      * Returns a list of build run summary.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_run_display_name())
+     *             .id(var_.build_run_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.build_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildRunsResult> getBuildRuns() {
@@ -418,6 +1171,39 @@ public final class DevOpsFunctions {
      * Returns a list of build run summary.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_run_display_name())
+     *             .id(var_.build_run_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.build_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildRunsResult> getBuildRunsPlain() {
@@ -429,6 +1215,39 @@ public final class DevOpsFunctions {
      * Returns a list of build run summary.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_run_display_name())
+     *             .id(var_.build_run_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.build_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildRunsResult> getBuildRuns(GetBuildRunsArgs args) {
@@ -440,6 +1259,39 @@ public final class DevOpsFunctions {
      * Returns a list of build run summary.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_run_display_name())
+     *             .id(var_.build_run_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.build_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildRunsResult> getBuildRunsPlain(GetBuildRunsPlainArgs args) {
@@ -451,6 +1303,39 @@ public final class DevOpsFunctions {
      * Returns a list of build run summary.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_run_display_name())
+     *             .id(var_.build_run_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.build_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBuildRunsResult> getBuildRuns(GetBuildRunsArgs args, InvokeOptions options) {
@@ -462,6 +1347,39 @@ public final class DevOpsFunctions {
      * Returns a list of build run summary.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
+     *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.build_run_display_name())
+     *             .id(var_.build_run_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.build_run_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBuildRunsResult> getBuildRunsPlain(GetBuildRunsPlainArgs args, InvokeOptions options) {
@@ -473,6 +1391,34 @@ public final class DevOpsFunctions {
      * Retrieves a connection by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnection = DevOpsFunctions.getConnection(GetConnectionArgs.builder()
+     *             .connectionId(oci_devops_connection.test_connection().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args) {
@@ -484,6 +1430,34 @@ public final class DevOpsFunctions {
      * Retrieves a connection by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnection = DevOpsFunctions.getConnection(GetConnectionArgs.builder()
+     *             .connectionId(oci_devops_connection.test_connection().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args) {
@@ -495,6 +1469,34 @@ public final class DevOpsFunctions {
      * Retrieves a connection by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnection = DevOpsFunctions.getConnection(GetConnectionArgs.builder()
+     *             .connectionId(oci_devops_connection.test_connection().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOptions options) {
@@ -506,6 +1508,34 @@ public final class DevOpsFunctions {
      * Retrieves a connection by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnection = DevOpsFunctions.getConnection(GetConnectionArgs.builder()
+     *             .connectionId(oci_devops_connection.test_connection().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args, InvokeOptions options) {
@@ -517,6 +1547,39 @@ public final class DevOpsFunctions {
      * Returns a list of connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = DevOpsFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .connectionType(var_.connection_connection_type())
+     *             .displayName(var_.connection_display_name())
+     *             .id(var_.connection_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.connection_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConnectionsResult> getConnections() {
@@ -528,6 +1591,39 @@ public final class DevOpsFunctions {
      * Returns a list of connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = DevOpsFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .connectionType(var_.connection_connection_type())
+     *             .displayName(var_.connection_display_name())
+     *             .id(var_.connection_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.connection_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain() {
@@ -539,6 +1635,39 @@ public final class DevOpsFunctions {
      * Returns a list of connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = DevOpsFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .connectionType(var_.connection_connection_type())
+     *             .displayName(var_.connection_display_name())
+     *             .id(var_.connection_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.connection_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args) {
@@ -550,6 +1679,39 @@ public final class DevOpsFunctions {
      * Returns a list of connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = DevOpsFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .connectionType(var_.connection_connection_type())
+     *             .displayName(var_.connection_display_name())
+     *             .id(var_.connection_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.connection_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args) {
@@ -561,6 +1723,39 @@ public final class DevOpsFunctions {
      * Returns a list of connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = DevOpsFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .connectionType(var_.connection_connection_type())
+     *             .displayName(var_.connection_display_name())
+     *             .id(var_.connection_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.connection_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args, InvokeOptions options) {
@@ -572,6 +1767,39 @@ public final class DevOpsFunctions {
      * Returns a list of connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = DevOpsFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .connectionType(var_.connection_connection_type())
+     *             .displayName(var_.connection_display_name())
+     *             .id(var_.connection_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.connection_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args, InvokeOptions options) {
@@ -583,6 +1811,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment artifact by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployArtifact = DevOpsFunctions.getDeployArtifact(GetDeployArtifactArgs.builder()
+     *             .deployArtifactId(oci_devops_deploy_artifact.test_deploy_artifact().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployArtifactResult> getDeployArtifact(GetDeployArtifactArgs args) {
@@ -594,6 +1850,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment artifact by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployArtifact = DevOpsFunctions.getDeployArtifact(GetDeployArtifactArgs.builder()
+     *             .deployArtifactId(oci_devops_deploy_artifact.test_deploy_artifact().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployArtifactResult> getDeployArtifactPlain(GetDeployArtifactPlainArgs args) {
@@ -605,6 +1889,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment artifact by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployArtifact = DevOpsFunctions.getDeployArtifact(GetDeployArtifactArgs.builder()
+     *             .deployArtifactId(oci_devops_deploy_artifact.test_deploy_artifact().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployArtifactResult> getDeployArtifact(GetDeployArtifactArgs args, InvokeOptions options) {
@@ -616,6 +1928,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment artifact by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployArtifact = DevOpsFunctions.getDeployArtifact(GetDeployArtifactArgs.builder()
+     *             .deployArtifactId(oci_devops_deploy_artifact.test_deploy_artifact().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployArtifactResult> getDeployArtifactPlain(GetDeployArtifactPlainArgs args, InvokeOptions options) {
@@ -627,6 +1967,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment artifacts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployArtifacts = DevOpsFunctions.getDeployArtifacts(GetDeployArtifactsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_artifact_display_name())
+     *             .id(var_.deploy_artifact_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_artifact_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployArtifactsResult> getDeployArtifacts() {
@@ -638,6 +2010,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment artifacts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployArtifacts = DevOpsFunctions.getDeployArtifacts(GetDeployArtifactsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_artifact_display_name())
+     *             .id(var_.deploy_artifact_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_artifact_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployArtifactsResult> getDeployArtifactsPlain() {
@@ -649,6 +2053,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment artifacts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployArtifacts = DevOpsFunctions.getDeployArtifacts(GetDeployArtifactsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_artifact_display_name())
+     *             .id(var_.deploy_artifact_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_artifact_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployArtifactsResult> getDeployArtifacts(GetDeployArtifactsArgs args) {
@@ -660,6 +2096,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment artifacts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployArtifacts = DevOpsFunctions.getDeployArtifacts(GetDeployArtifactsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_artifact_display_name())
+     *             .id(var_.deploy_artifact_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_artifact_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployArtifactsResult> getDeployArtifactsPlain(GetDeployArtifactsPlainArgs args) {
@@ -671,6 +2139,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment artifacts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployArtifacts = DevOpsFunctions.getDeployArtifacts(GetDeployArtifactsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_artifact_display_name())
+     *             .id(var_.deploy_artifact_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_artifact_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployArtifactsResult> getDeployArtifacts(GetDeployArtifactsArgs args, InvokeOptions options) {
@@ -682,6 +2182,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment artifacts.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployArtifacts = DevOpsFunctions.getDeployArtifacts(GetDeployArtifactsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_artifact_display_name())
+     *             .id(var_.deploy_artifact_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_artifact_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployArtifactsResult> getDeployArtifactsPlain(GetDeployArtifactsPlainArgs args, InvokeOptions options) {
@@ -693,6 +2225,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment environment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployEnvironment = DevOpsFunctions.getDeployEnvironment(GetDeployEnvironmentArgs.builder()
+     *             .deployEnvironmentId(oci_devops_deploy_environment.test_deploy_environment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployEnvironmentResult> getDeployEnvironment(GetDeployEnvironmentArgs args) {
@@ -704,6 +2264,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment environment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployEnvironment = DevOpsFunctions.getDeployEnvironment(GetDeployEnvironmentArgs.builder()
+     *             .deployEnvironmentId(oci_devops_deploy_environment.test_deploy_environment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployEnvironmentResult> getDeployEnvironmentPlain(GetDeployEnvironmentPlainArgs args) {
@@ -715,6 +2303,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment environment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployEnvironment = DevOpsFunctions.getDeployEnvironment(GetDeployEnvironmentArgs.builder()
+     *             .deployEnvironmentId(oci_devops_deploy_environment.test_deploy_environment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployEnvironmentResult> getDeployEnvironment(GetDeployEnvironmentArgs args, InvokeOptions options) {
@@ -726,6 +2342,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment environment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployEnvironment = DevOpsFunctions.getDeployEnvironment(GetDeployEnvironmentArgs.builder()
+     *             .deployEnvironmentId(oci_devops_deploy_environment.test_deploy_environment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployEnvironmentResult> getDeployEnvironmentPlain(GetDeployEnvironmentPlainArgs args, InvokeOptions options) {
@@ -737,6 +2381,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment environments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployEnvironments = DevOpsFunctions.getDeployEnvironments(GetDeployEnvironmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_environment_display_name())
+     *             .id(var_.deploy_environment_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_environment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployEnvironmentsResult> getDeployEnvironments() {
@@ -748,6 +2424,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment environments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployEnvironments = DevOpsFunctions.getDeployEnvironments(GetDeployEnvironmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_environment_display_name())
+     *             .id(var_.deploy_environment_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_environment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployEnvironmentsResult> getDeployEnvironmentsPlain() {
@@ -759,6 +2467,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment environments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployEnvironments = DevOpsFunctions.getDeployEnvironments(GetDeployEnvironmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_environment_display_name())
+     *             .id(var_.deploy_environment_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_environment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployEnvironmentsResult> getDeployEnvironments(GetDeployEnvironmentsArgs args) {
@@ -770,6 +2510,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment environments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployEnvironments = DevOpsFunctions.getDeployEnvironments(GetDeployEnvironmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_environment_display_name())
+     *             .id(var_.deploy_environment_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_environment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployEnvironmentsResult> getDeployEnvironmentsPlain(GetDeployEnvironmentsPlainArgs args) {
@@ -781,6 +2553,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment environments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployEnvironments = DevOpsFunctions.getDeployEnvironments(GetDeployEnvironmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_environment_display_name())
+     *             .id(var_.deploy_environment_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_environment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployEnvironmentsResult> getDeployEnvironments(GetDeployEnvironmentsArgs args, InvokeOptions options) {
@@ -792,6 +2596,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment environments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployEnvironments = DevOpsFunctions.getDeployEnvironments(GetDeployEnvironmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_environment_display_name())
+     *             .id(var_.deploy_environment_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_environment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployEnvironmentsResult> getDeployEnvironmentsPlain(GetDeployEnvironmentsPlainArgs args, InvokeOptions options) {
@@ -803,6 +2639,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment pipeline by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployPipeline = DevOpsFunctions.getDeployPipeline(GetDeployPipelineArgs.builder()
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployPipelineResult> getDeployPipeline(GetDeployPipelineArgs args) {
@@ -814,6 +2678,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment pipeline by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployPipeline = DevOpsFunctions.getDeployPipeline(GetDeployPipelineArgs.builder()
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployPipelineResult> getDeployPipelinePlain(GetDeployPipelinePlainArgs args) {
@@ -825,6 +2717,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment pipeline by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployPipeline = DevOpsFunctions.getDeployPipeline(GetDeployPipelineArgs.builder()
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployPipelineResult> getDeployPipeline(GetDeployPipelineArgs args, InvokeOptions options) {
@@ -836,6 +2756,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment pipeline by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployPipelineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployPipeline = DevOpsFunctions.getDeployPipeline(GetDeployPipelineArgs.builder()
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployPipelineResult> getDeployPipelinePlain(GetDeployPipelinePlainArgs args, InvokeOptions options) {
@@ -847,6 +2795,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment pipelines.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployPipelines = DevOpsFunctions.getDeployPipelines(GetDeployPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_pipeline_display_name())
+     *             .id(var_.deploy_pipeline_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployPipelinesResult> getDeployPipelines() {
@@ -858,6 +2838,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment pipelines.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployPipelines = DevOpsFunctions.getDeployPipelines(GetDeployPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_pipeline_display_name())
+     *             .id(var_.deploy_pipeline_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployPipelinesResult> getDeployPipelinesPlain() {
@@ -869,6 +2881,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment pipelines.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployPipelines = DevOpsFunctions.getDeployPipelines(GetDeployPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_pipeline_display_name())
+     *             .id(var_.deploy_pipeline_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployPipelinesResult> getDeployPipelines(GetDeployPipelinesArgs args) {
@@ -880,6 +2924,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment pipelines.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployPipelines = DevOpsFunctions.getDeployPipelines(GetDeployPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_pipeline_display_name())
+     *             .id(var_.deploy_pipeline_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployPipelinesResult> getDeployPipelinesPlain(GetDeployPipelinesPlainArgs args) {
@@ -891,6 +2967,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment pipelines.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployPipelines = DevOpsFunctions.getDeployPipelines(GetDeployPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_pipeline_display_name())
+     *             .id(var_.deploy_pipeline_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployPipelinesResult> getDeployPipelines(GetDeployPipelinesArgs args, InvokeOptions options) {
@@ -902,6 +3010,38 @@ public final class DevOpsFunctions {
      * Returns a list of deployment pipelines.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployPipelines = DevOpsFunctions.getDeployPipelines(GetDeployPipelinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deploy_pipeline_display_name())
+     *             .id(var_.deploy_pipeline_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deploy_pipeline_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployPipelinesResult> getDeployPipelinesPlain(GetDeployPipelinesPlainArgs args, InvokeOptions options) {
@@ -913,6 +3053,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment stage by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployStage = DevOpsFunctions.getDeployStage(GetDeployStageArgs.builder()
+     *             .deployStageId(oci_devops_deploy_stage.test_deploy_stage().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployStageResult> getDeployStage(GetDeployStageArgs args) {
@@ -924,6 +3092,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment stage by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployStage = DevOpsFunctions.getDeployStage(GetDeployStageArgs.builder()
+     *             .deployStageId(oci_devops_deploy_stage.test_deploy_stage().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployStageResult> getDeployStagePlain(GetDeployStagePlainArgs args) {
@@ -935,6 +3131,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment stage by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployStage = DevOpsFunctions.getDeployStage(GetDeployStageArgs.builder()
+     *             .deployStageId(oci_devops_deploy_stage.test_deploy_stage().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployStageResult> getDeployStage(GetDeployStageArgs args, InvokeOptions options) {
@@ -946,6 +3170,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment stage by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployStageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployStage = DevOpsFunctions.getDeployStage(GetDeployStageArgs.builder()
+     *             .deployStageId(oci_devops_deploy_stage.test_deploy_stage().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployStageResult> getDeployStagePlain(GetDeployStagePlainArgs args, InvokeOptions options) {
@@ -957,6 +3209,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of deployment stages.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .displayName(var_.deploy_stage_display_name())
+     *             .id(var_.deploy_stage_id())
+     *             .state(var_.deploy_stage_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployStagesResult> getDeployStages() {
@@ -968,6 +3252,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of deployment stages.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .displayName(var_.deploy_stage_display_name())
+     *             .id(var_.deploy_stage_id())
+     *             .state(var_.deploy_stage_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployStagesResult> getDeployStagesPlain() {
@@ -979,6 +3295,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of deployment stages.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .displayName(var_.deploy_stage_display_name())
+     *             .id(var_.deploy_stage_id())
+     *             .state(var_.deploy_stage_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployStagesResult> getDeployStages(GetDeployStagesArgs args) {
@@ -990,6 +3338,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of deployment stages.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .displayName(var_.deploy_stage_display_name())
+     *             .id(var_.deploy_stage_id())
+     *             .state(var_.deploy_stage_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployStagesResult> getDeployStagesPlain(GetDeployStagesPlainArgs args) {
@@ -1001,6 +3381,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of deployment stages.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .displayName(var_.deploy_stage_display_name())
+     *             .id(var_.deploy_stage_id())
+     *             .state(var_.deploy_stage_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeployStagesResult> getDeployStages(GetDeployStagesArgs args, InvokeOptions options) {
@@ -1012,6 +3424,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of deployment stages.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .displayName(var_.deploy_stage_display_name())
+     *             .id(var_.deploy_stage_id())
+     *             .state(var_.deploy_stage_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeployStagesResult> getDeployStagesPlain(GetDeployStagesPlainArgs args, InvokeOptions options) {
@@ -1023,6 +3467,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = DevOpsFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(oci_devops_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args) {
@@ -1034,6 +3506,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = DevOpsFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(oci_devops_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentResult> getDeploymentPlain(GetDeploymentPlainArgs args) {
@@ -1045,6 +3545,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = DevOpsFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(oci_devops_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args, InvokeOptions options) {
@@ -1056,6 +3584,34 @@ public final class DevOpsFunctions {
      * Retrieves a deployment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = DevOpsFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(oci_devops_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentResult> getDeploymentPlain(GetDeploymentPlainArgs args, InvokeOptions options) {
@@ -1067,6 +3623,41 @@ public final class DevOpsFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .displayName(var_.deployment_display_name())
+     *             .id(var_.deployment_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deployment_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.deployment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.deployment_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments() {
@@ -1078,6 +3669,41 @@ public final class DevOpsFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .displayName(var_.deployment_display_name())
+     *             .id(var_.deployment_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deployment_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.deployment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.deployment_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain() {
@@ -1089,6 +3715,41 @@ public final class DevOpsFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .displayName(var_.deployment_display_name())
+     *             .id(var_.deployment_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deployment_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.deployment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.deployment_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args) {
@@ -1100,6 +3761,41 @@ public final class DevOpsFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .displayName(var_.deployment_display_name())
+     *             .id(var_.deployment_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deployment_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.deployment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.deployment_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args) {
@@ -1111,6 +3807,41 @@ public final class DevOpsFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .displayName(var_.deployment_display_name())
+     *             .id(var_.deployment_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deployment_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.deployment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.deployment_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args, InvokeOptions options) {
@@ -1122,6 +3853,41 @@ public final class DevOpsFunctions {
      * Returns a list of deployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+     *             .displayName(var_.deployment_display_name())
+     *             .id(var_.deployment_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.deployment_state())
+     *             .timeCreatedGreaterThanOrEqualTo(var_.deployment_time_created_greater_than_or_equal_to())
+     *             .timeCreatedLessThan(var_.deployment_time_created_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args, InvokeOptions options) {
@@ -1133,6 +3899,34 @@ public final class DevOpsFunctions {
      * Retrieves a project by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = DevOpsFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args) {
@@ -1144,6 +3938,34 @@ public final class DevOpsFunctions {
      * Retrieves a project by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = DevOpsFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args) {
@@ -1155,6 +3977,34 @@ public final class DevOpsFunctions {
      * Retrieves a project by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = DevOpsFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOptions options) {
@@ -1166,6 +4016,34 @@ public final class DevOpsFunctions {
      * Retrieves a project by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = DevOpsFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args, InvokeOptions options) {
@@ -1177,6 +4055,37 @@ public final class DevOpsFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = DevOpsFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.project_id())
+     *             .name(var_.project_name())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args) {
@@ -1188,6 +4097,37 @@ public final class DevOpsFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = DevOpsFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.project_id())
+     *             .name(var_.project_name())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args) {
@@ -1199,6 +4139,37 @@ public final class DevOpsFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = DevOpsFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.project_id())
+     *             .name(var_.project_name())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOptions options) {
@@ -1210,6 +4181,37 @@ public final class DevOpsFunctions {
      * Returns a list of projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = DevOpsFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.project_id())
+     *             .name(var_.project_name())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args, InvokeOptions options) {
@@ -1221,6 +4223,37 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepoFileLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepoFileLine = DevOpsFunctions.getRepoFileLine(GetRepoFileLineArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .revision(var_.repo_file_line_revision())
+     *             .filePath(var_.repo_file_line_file_path())
+     *             .startLineNumber(var_.repo_file_line_start_line_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepoFileLineResult> getRepoFileLine(GetRepoFileLineArgs args) {
@@ -1232,6 +4265,37 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepoFileLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepoFileLine = DevOpsFunctions.getRepoFileLine(GetRepoFileLineArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .revision(var_.repo_file_line_revision())
+     *             .filePath(var_.repo_file_line_file_path())
+     *             .startLineNumber(var_.repo_file_line_start_line_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepoFileLineResult> getRepoFileLinePlain(GetRepoFileLinePlainArgs args) {
@@ -1243,6 +4307,37 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepoFileLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepoFileLine = DevOpsFunctions.getRepoFileLine(GetRepoFileLineArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .revision(var_.repo_file_line_revision())
+     *             .filePath(var_.repo_file_line_file_path())
+     *             .startLineNumber(var_.repo_file_line_start_line_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepoFileLineResult> getRepoFileLine(GetRepoFileLineArgs args, InvokeOptions options) {
@@ -1254,6 +4349,37 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepoFileLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepoFileLine = DevOpsFunctions.getRepoFileLine(GetRepoFileLineArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .revision(var_.repo_file_line_revision())
+     *             .filePath(var_.repo_file_line_file_path())
+     *             .startLineNumber(var_.repo_file_line_start_line_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepoFileLineResult> getRepoFileLinePlain(GetRepoFileLinePlainArgs args, InvokeOptions options) {
@@ -1265,6 +4391,38 @@ public final class DevOpsFunctions {
      * Returns a list of repositories given a compartment ID or a project ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.repository_name())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .state(var_.repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoriesResult> getRepositories() {
@@ -1276,6 +4434,38 @@ public final class DevOpsFunctions {
      * Returns a list of repositories given a compartment ID or a project ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.repository_name())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .state(var_.repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoriesResult> getRepositoriesPlain() {
@@ -1287,6 +4477,38 @@ public final class DevOpsFunctions {
      * Returns a list of repositories given a compartment ID or a project ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.repository_name())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .state(var_.repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoriesResult> getRepositories(GetRepositoriesArgs args) {
@@ -1298,6 +4520,38 @@ public final class DevOpsFunctions {
      * Returns a list of repositories given a compartment ID or a project ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.repository_name())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .state(var_.repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoriesResult> getRepositoriesPlain(GetRepositoriesPlainArgs args) {
@@ -1309,6 +4563,38 @@ public final class DevOpsFunctions {
      * Returns a list of repositories given a compartment ID or a project ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.repository_name())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .state(var_.repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoriesResult> getRepositories(GetRepositoriesArgs args, InvokeOptions options) {
@@ -1320,6 +4606,38 @@ public final class DevOpsFunctions {
      * Returns a list of repositories given a compartment ID or a project ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.repository_name())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .state(var_.repository_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoriesResult> getRepositoriesPlain(GetRepositoriesPlainArgs args, InvokeOptions options) {
@@ -1331,6 +4649,35 @@ public final class DevOpsFunctions {
      * Retrieves a repository by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepository = DevOpsFunctions.getRepository(GetRepositoryArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .fields(var_.repository_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryResult> getRepository(GetRepositoryArgs args) {
@@ -1342,6 +4689,35 @@ public final class DevOpsFunctions {
      * Retrieves a repository by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepository = DevOpsFunctions.getRepository(GetRepositoryArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .fields(var_.repository_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryResult> getRepositoryPlain(GetRepositoryPlainArgs args) {
@@ -1353,6 +4729,35 @@ public final class DevOpsFunctions {
      * Retrieves a repository by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepository = DevOpsFunctions.getRepository(GetRepositoryArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .fields(var_.repository_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryResult> getRepository(GetRepositoryArgs args, InvokeOptions options) {
@@ -1364,6 +4769,35 @@ public final class DevOpsFunctions {
      * Retrieves a repository by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.Artifacts.inputs.GetRepositoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepository = DevOpsFunctions.getRepository(GetRepositoryArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .fields(var_.repository_fields())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryResult> getRepositoryPlain(GetRepositoryPlainArgs args, InvokeOptions options) {
@@ -1375,6 +4809,36 @@ public final class DevOpsFunctions {
      * Returns the archived repository information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryArchiveContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryArchiveContent = DevOpsFunctions.getRepositoryArchiveContent(GetRepositoryArchiveContentArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .format(var_.repository_archive_content_format())
+     *             .refName(var_.repository_archive_content_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryArchiveContentResult> getRepositoryArchiveContent(GetRepositoryArchiveContentArgs args) {
@@ -1386,6 +4850,36 @@ public final class DevOpsFunctions {
      * Returns the archived repository information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryArchiveContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryArchiveContent = DevOpsFunctions.getRepositoryArchiveContent(GetRepositoryArchiveContentArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .format(var_.repository_archive_content_format())
+     *             .refName(var_.repository_archive_content_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryArchiveContentResult> getRepositoryArchiveContentPlain(GetRepositoryArchiveContentPlainArgs args) {
@@ -1397,6 +4891,36 @@ public final class DevOpsFunctions {
      * Returns the archived repository information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryArchiveContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryArchiveContent = DevOpsFunctions.getRepositoryArchiveContent(GetRepositoryArchiveContentArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .format(var_.repository_archive_content_format())
+     *             .refName(var_.repository_archive_content_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryArchiveContentResult> getRepositoryArchiveContent(GetRepositoryArchiveContentArgs args, InvokeOptions options) {
@@ -1408,6 +4932,36 @@ public final class DevOpsFunctions {
      * Returns the archived repository information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryArchiveContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryArchiveContent = DevOpsFunctions.getRepositoryArchiveContent(GetRepositoryArchiveContentArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .format(var_.repository_archive_content_format())
+     *             .refName(var_.repository_archive_content_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryArchiveContentResult> getRepositoryArchiveContentPlain(GetRepositoryArchiveContentPlainArgs args, InvokeOptions options) {
@@ -1419,6 +4973,35 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryAuthor = DevOpsFunctions.getRepositoryAuthor(GetRepositoryAuthorArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .refName(var_.repository_author_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryAuthorResult> getRepositoryAuthor(GetRepositoryAuthorArgs args) {
@@ -1430,6 +5013,35 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryAuthor = DevOpsFunctions.getRepositoryAuthor(GetRepositoryAuthorArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .refName(var_.repository_author_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryAuthorResult> getRepositoryAuthorPlain(GetRepositoryAuthorPlainArgs args) {
@@ -1441,6 +5053,35 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryAuthor = DevOpsFunctions.getRepositoryAuthor(GetRepositoryAuthorArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .refName(var_.repository_author_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryAuthorResult> getRepositoryAuthor(GetRepositoryAuthorArgs args, InvokeOptions options) {
@@ -1452,6 +5093,35 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryAuthor = DevOpsFunctions.getRepositoryAuthor(GetRepositoryAuthorArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .refName(var_.repository_author_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryAuthorResult> getRepositoryAuthorPlain(GetRepositoryAuthorPlainArgs args, InvokeOptions options) {
@@ -1463,6 +5133,35 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryAuthors = DevOpsFunctions.getRepositoryAuthors(GetRepositoryAuthorsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .refName(var_.repository_author_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryAuthorsResult> getRepositoryAuthors(GetRepositoryAuthorsArgs args) {
@@ -1474,6 +5173,35 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryAuthors = DevOpsFunctions.getRepositoryAuthors(GetRepositoryAuthorsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .refName(var_.repository_author_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryAuthorsResult> getRepositoryAuthorsPlain(GetRepositoryAuthorsPlainArgs args) {
@@ -1485,6 +5213,35 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryAuthors = DevOpsFunctions.getRepositoryAuthors(GetRepositoryAuthorsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .refName(var_.repository_author_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryAuthorsResult> getRepositoryAuthors(GetRepositoryAuthorsArgs args, InvokeOptions options) {
@@ -1496,6 +5253,35 @@ public final class DevOpsFunctions {
      * Retrieve a list of all the authors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryAuthors = DevOpsFunctions.getRepositoryAuthors(GetRepositoryAuthorsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .refName(var_.repository_author_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryAuthorsResult> getRepositoryAuthorsPlain(GetRepositoryAuthorsPlainArgs args, InvokeOptions options) {
@@ -1507,6 +5293,35 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s commit by commit ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryCommit = DevOpsFunctions.getRepositoryCommit(GetRepositoryCommitArgs.builder()
+     *             .commitId(oci_devops_commit.test_commit().id())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryCommitResult> getRepositoryCommit(GetRepositoryCommitArgs args) {
@@ -1518,6 +5333,35 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s commit by commit ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryCommit = DevOpsFunctions.getRepositoryCommit(GetRepositoryCommitArgs.builder()
+     *             .commitId(oci_devops_commit.test_commit().id())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryCommitResult> getRepositoryCommitPlain(GetRepositoryCommitPlainArgs args) {
@@ -1529,6 +5373,35 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s commit by commit ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryCommit = DevOpsFunctions.getRepositoryCommit(GetRepositoryCommitArgs.builder()
+     *             .commitId(oci_devops_commit.test_commit().id())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryCommitResult> getRepositoryCommit(GetRepositoryCommitArgs args, InvokeOptions options) {
@@ -1540,6 +5413,35 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s commit by commit ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryCommit = DevOpsFunctions.getRepositoryCommit(GetRepositoryCommitArgs.builder()
+     *             .commitId(oci_devops_commit.test_commit().id())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryCommitResult> getRepositoryCommitPlain(GetRepositoryCommitPlainArgs args, InvokeOptions options) {
@@ -1551,6 +5453,41 @@ public final class DevOpsFunctions {
      * Returns a list of commits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryCommits = DevOpsFunctions.getRepositoryCommits(GetRepositoryCommitsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .authorName(var_.repository_commit_author_name())
+     *             .commitMessage(var_.repository_commit_commit_message())
+     *             .excludeRefName(var_.repository_commit_exclude_ref_name())
+     *             .filePath(var_.repository_commit_file_path())
+     *             .refName(var_.repository_commit_ref_name())
+     *             .timestampGreaterThanOrEqualTo(var_.repository_commit_timestamp_greater_than_or_equal_to())
+     *             .timestampLessThanOrEqualTo(var_.repository_commit_timestamp_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryCommitsResult> getRepositoryCommits(GetRepositoryCommitsArgs args) {
@@ -1562,6 +5499,41 @@ public final class DevOpsFunctions {
      * Returns a list of commits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryCommits = DevOpsFunctions.getRepositoryCommits(GetRepositoryCommitsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .authorName(var_.repository_commit_author_name())
+     *             .commitMessage(var_.repository_commit_commit_message())
+     *             .excludeRefName(var_.repository_commit_exclude_ref_name())
+     *             .filePath(var_.repository_commit_file_path())
+     *             .refName(var_.repository_commit_ref_name())
+     *             .timestampGreaterThanOrEqualTo(var_.repository_commit_timestamp_greater_than_or_equal_to())
+     *             .timestampLessThanOrEqualTo(var_.repository_commit_timestamp_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryCommitsResult> getRepositoryCommitsPlain(GetRepositoryCommitsPlainArgs args) {
@@ -1573,6 +5545,41 @@ public final class DevOpsFunctions {
      * Returns a list of commits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryCommits = DevOpsFunctions.getRepositoryCommits(GetRepositoryCommitsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .authorName(var_.repository_commit_author_name())
+     *             .commitMessage(var_.repository_commit_commit_message())
+     *             .excludeRefName(var_.repository_commit_exclude_ref_name())
+     *             .filePath(var_.repository_commit_file_path())
+     *             .refName(var_.repository_commit_ref_name())
+     *             .timestampGreaterThanOrEqualTo(var_.repository_commit_timestamp_greater_than_or_equal_to())
+     *             .timestampLessThanOrEqualTo(var_.repository_commit_timestamp_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryCommitsResult> getRepositoryCommits(GetRepositoryCommitsArgs args, InvokeOptions options) {
@@ -1584,6 +5591,41 @@ public final class DevOpsFunctions {
      * Returns a list of commits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryCommits = DevOpsFunctions.getRepositoryCommits(GetRepositoryCommitsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .authorName(var_.repository_commit_author_name())
+     *             .commitMessage(var_.repository_commit_commit_message())
+     *             .excludeRefName(var_.repository_commit_exclude_ref_name())
+     *             .filePath(var_.repository_commit_file_path())
+     *             .refName(var_.repository_commit_ref_name())
+     *             .timestampGreaterThanOrEqualTo(var_.repository_commit_timestamp_greater_than_or_equal_to())
+     *             .timestampLessThanOrEqualTo(var_.repository_commit_timestamp_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryCommitsResult> getRepositoryCommitsPlain(GetRepositoryCommitsPlainArgs args, InvokeOptions options) {
@@ -1595,6 +5637,38 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/diffs&#34;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryDiff = DevOpsFunctions.getRepositoryDiff(GetRepositoryDiffArgs.builder()
+     *             .baseVersion(var_.repository_diff_base_version())
+     *             .filePath(var_.repository_diff_file_path())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .targetVersion(var_.repository_diff_target_version())
+     *             .isComparisonFromMergeBase(var_.repository_diff_is_comparison_from_merge_base())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryDiffResult> getRepositoryDiff(GetRepositoryDiffArgs args) {
@@ -1606,6 +5680,38 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/diffs&#34;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryDiff = DevOpsFunctions.getRepositoryDiff(GetRepositoryDiffArgs.builder()
+     *             .baseVersion(var_.repository_diff_base_version())
+     *             .filePath(var_.repository_diff_file_path())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .targetVersion(var_.repository_diff_target_version())
+     *             .isComparisonFromMergeBase(var_.repository_diff_is_comparison_from_merge_base())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryDiffResult> getRepositoryDiffPlain(GetRepositoryDiffPlainArgs args) {
@@ -1617,6 +5723,38 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/diffs&#34;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryDiff = DevOpsFunctions.getRepositoryDiff(GetRepositoryDiffArgs.builder()
+     *             .baseVersion(var_.repository_diff_base_version())
+     *             .filePath(var_.repository_diff_file_path())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .targetVersion(var_.repository_diff_target_version())
+     *             .isComparisonFromMergeBase(var_.repository_diff_is_comparison_from_merge_base())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryDiffResult> getRepositoryDiff(GetRepositoryDiffArgs args, InvokeOptions options) {
@@ -1628,6 +5766,38 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/diffs&#34;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryDiff = DevOpsFunctions.getRepositoryDiff(GetRepositoryDiffArgs.builder()
+     *             .baseVersion(var_.repository_diff_base_version())
+     *             .filePath(var_.repository_diff_file_path())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .targetVersion(var_.repository_diff_target_version())
+     *             .isComparisonFromMergeBase(var_.repository_diff_is_comparison_from_merge_base())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryDiffResult> getRepositoryDiffPlain(GetRepositoryDiffPlainArgs args, InvokeOptions options) {
@@ -1639,6 +5809,37 @@ public final class DevOpsFunctions {
      * Compares two revisions and lists the differences. Supports comparison between two references or commits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryDiffs = DevOpsFunctions.getRepositoryDiffs(GetRepositoryDiffsArgs.builder()
+     *             .baseVersion(var_.repository_diff_base_version())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .targetVersion(var_.repository_diff_target_version())
+     *             .isComparisonFromMergeBase(var_.repository_diff_is_comparison_from_merge_base())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryDiffsResult> getRepositoryDiffs(GetRepositoryDiffsArgs args) {
@@ -1650,6 +5851,37 @@ public final class DevOpsFunctions {
      * Compares two revisions and lists the differences. Supports comparison between two references or commits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryDiffs = DevOpsFunctions.getRepositoryDiffs(GetRepositoryDiffsArgs.builder()
+     *             .baseVersion(var_.repository_diff_base_version())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .targetVersion(var_.repository_diff_target_version())
+     *             .isComparisonFromMergeBase(var_.repository_diff_is_comparison_from_merge_base())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryDiffsResult> getRepositoryDiffsPlain(GetRepositoryDiffsPlainArgs args) {
@@ -1661,6 +5893,37 @@ public final class DevOpsFunctions {
      * Compares two revisions and lists the differences. Supports comparison between two references or commits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryDiffs = DevOpsFunctions.getRepositoryDiffs(GetRepositoryDiffsArgs.builder()
+     *             .baseVersion(var_.repository_diff_base_version())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .targetVersion(var_.repository_diff_target_version())
+     *             .isComparisonFromMergeBase(var_.repository_diff_is_comparison_from_merge_base())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryDiffsResult> getRepositoryDiffs(GetRepositoryDiffsArgs args, InvokeOptions options) {
@@ -1672,6 +5935,37 @@ public final class DevOpsFunctions {
      * Compares two revisions and lists the differences. Supports comparison between two references or commits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryDiffs = DevOpsFunctions.getRepositoryDiffs(GetRepositoryDiffsArgs.builder()
+     *             .baseVersion(var_.repository_diff_base_version())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .targetVersion(var_.repository_diff_target_version())
+     *             .isComparisonFromMergeBase(var_.repository_diff_is_comparison_from_merge_base())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryDiffsResult> getRepositoryDiffsPlain(GetRepositoryDiffsPlainArgs args, InvokeOptions options) {
@@ -1683,6 +5977,38 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileDiffArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryFileDiff = DevOpsFunctions.getRepositoryFileDiff(GetRepositoryFileDiffArgs.builder()
+     *             .baseVersion(var_.repository_file_diff_base_version())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .targetVersion(var_.repository_file_diff_target_version())
+     *             .filePath(var_.repository_file_diff_file_path())
+     *             .isComparisonFromMergeBase(var_.repository_file_diff_is_comparison_from_merge_base())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryFileDiffResult> getRepositoryFileDiff(GetRepositoryFileDiffArgs args) {
@@ -1694,6 +6020,38 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileDiffArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryFileDiff = DevOpsFunctions.getRepositoryFileDiff(GetRepositoryFileDiffArgs.builder()
+     *             .baseVersion(var_.repository_file_diff_base_version())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .targetVersion(var_.repository_file_diff_target_version())
+     *             .filePath(var_.repository_file_diff_file_path())
+     *             .isComparisonFromMergeBase(var_.repository_file_diff_is_comparison_from_merge_base())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryFileDiffResult> getRepositoryFileDiffPlain(GetRepositoryFileDiffPlainArgs args) {
@@ -1705,6 +6063,38 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileDiffArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryFileDiff = DevOpsFunctions.getRepositoryFileDiff(GetRepositoryFileDiffArgs.builder()
+     *             .baseVersion(var_.repository_file_diff_base_version())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .targetVersion(var_.repository_file_diff_target_version())
+     *             .filePath(var_.repository_file_diff_file_path())
+     *             .isComparisonFromMergeBase(var_.repository_file_diff_is_comparison_from_merge_base())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryFileDiffResult> getRepositoryFileDiff(GetRepositoryFileDiffArgs args, InvokeOptions options) {
@@ -1716,6 +6106,38 @@ public final class DevOpsFunctions {
      * Gets the line-by-line difference between file on different commits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileDiffArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryFileDiff = DevOpsFunctions.getRepositoryFileDiff(GetRepositoryFileDiffArgs.builder()
+     *             .baseVersion(var_.repository_file_diff_base_version())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .targetVersion(var_.repository_file_diff_target_version())
+     *             .filePath(var_.repository_file_diff_file_path())
+     *             .isComparisonFromMergeBase(var_.repository_file_diff_is_comparison_from_merge_base())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryFileDiffResult> getRepositoryFileDiffPlain(GetRepositoryFileDiffPlainArgs args, InvokeOptions options) {
@@ -1727,6 +6149,37 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/lines&#34;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryFileLine = DevOpsFunctions.getRepositoryFileLine(GetRepositoryFileLineArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .revision(var_.repository_file_line_revision())
+     *             .filePath(var_.repository_file_line_file_path())
+     *             .startLineNumber(var_.repository_file_line_start_line_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryFileLineResult> getRepositoryFileLine(GetRepositoryFileLineArgs args) {
@@ -1738,6 +6191,37 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/lines&#34;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryFileLine = DevOpsFunctions.getRepositoryFileLine(GetRepositoryFileLineArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .revision(var_.repository_file_line_revision())
+     *             .filePath(var_.repository_file_line_file_path())
+     *             .startLineNumber(var_.repository_file_line_start_line_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryFileLineResult> getRepositoryFileLinePlain(GetRepositoryFileLinePlainArgs args) {
@@ -1749,6 +6233,37 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/lines&#34;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryFileLine = DevOpsFunctions.getRepositoryFileLine(GetRepositoryFileLineArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .revision(var_.repository_file_line_revision())
+     *             .filePath(var_.repository_file_line_file_path())
+     *             .startLineNumber(var_.repository_file_line_start_line_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryFileLineResult> getRepositoryFileLine(GetRepositoryFileLineArgs args, InvokeOptions options) {
@@ -1760,6 +6275,37 @@ public final class DevOpsFunctions {
      * Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has &#39;/&#39;. This will be replaced by &#34;/repositories/{repositoryId}/file/lines&#34;
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryFileLine = DevOpsFunctions.getRepositoryFileLine(GetRepositoryFileLineArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .revision(var_.repository_file_line_revision())
+     *             .filePath(var_.repository_file_line_file_path())
+     *             .startLineNumber(var_.repository_file_line_start_line_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryFileLineResult> getRepositoryFileLinePlain(GetRepositoryFileLinePlainArgs args, InvokeOptions options) {
@@ -1771,6 +6317,35 @@ public final class DevOpsFunctions {
      * Returns either current mirror record or last successful mirror record for a specific mirror repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryMirrorRecord = DevOpsFunctions.getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs.builder()
+     *             .mirrorRecordType(var_.repository_mirror_record_mirror_record_type())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryMirrorRecordResult> getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs args) {
@@ -1782,6 +6357,35 @@ public final class DevOpsFunctions {
      * Returns either current mirror record or last successful mirror record for a specific mirror repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryMirrorRecord = DevOpsFunctions.getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs.builder()
+     *             .mirrorRecordType(var_.repository_mirror_record_mirror_record_type())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryMirrorRecordResult> getRepositoryMirrorRecordPlain(GetRepositoryMirrorRecordPlainArgs args) {
@@ -1793,6 +6397,35 @@ public final class DevOpsFunctions {
      * Returns either current mirror record or last successful mirror record for a specific mirror repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryMirrorRecord = DevOpsFunctions.getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs.builder()
+     *             .mirrorRecordType(var_.repository_mirror_record_mirror_record_type())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryMirrorRecordResult> getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs args, InvokeOptions options) {
@@ -1804,6 +6437,35 @@ public final class DevOpsFunctions {
      * Returns either current mirror record or last successful mirror record for a specific mirror repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryMirrorRecord = DevOpsFunctions.getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs.builder()
+     *             .mirrorRecordType(var_.repository_mirror_record_mirror_record_type())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryMirrorRecordResult> getRepositoryMirrorRecordPlain(GetRepositoryMirrorRecordPlainArgs args, InvokeOptions options) {
@@ -1815,6 +6477,34 @@ public final class DevOpsFunctions {
      * Returns a list of mirror entry in history within 30 days.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryMirrorRecords = DevOpsFunctions.getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryMirrorRecordsResult> getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs args) {
@@ -1826,6 +6516,34 @@ public final class DevOpsFunctions {
      * Returns a list of mirror entry in history within 30 days.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryMirrorRecords = DevOpsFunctions.getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryMirrorRecordsResult> getRepositoryMirrorRecordsPlain(GetRepositoryMirrorRecordsPlainArgs args) {
@@ -1837,6 +6555,34 @@ public final class DevOpsFunctions {
      * Returns a list of mirror entry in history within 30 days.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryMirrorRecords = DevOpsFunctions.getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryMirrorRecordsResult> getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs args, InvokeOptions options) {
@@ -1848,6 +6594,34 @@ public final class DevOpsFunctions {
      * Returns a list of mirror entry in history within 30 days.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryMirrorRecords = DevOpsFunctions.getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryMirrorRecordsResult> getRepositoryMirrorRecordsPlain(GetRepositoryMirrorRecordsPlainArgs args, InvokeOptions options) {
@@ -1859,6 +6633,36 @@ public final class DevOpsFunctions {
      * Retrieves blob of specific branch name/commit ID and file path.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryObject = DevOpsFunctions.getRepositoryObject(GetRepositoryObjectArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .filePath(var_.repository_object_file_path())
+     *             .refName(var_.repository_object_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryObjectResult> getRepositoryObject(GetRepositoryObjectArgs args) {
@@ -1870,6 +6674,36 @@ public final class DevOpsFunctions {
      * Retrieves blob of specific branch name/commit ID and file path.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryObject = DevOpsFunctions.getRepositoryObject(GetRepositoryObjectArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .filePath(var_.repository_object_file_path())
+     *             .refName(var_.repository_object_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryObjectResult> getRepositoryObjectPlain(GetRepositoryObjectPlainArgs args) {
@@ -1881,6 +6715,36 @@ public final class DevOpsFunctions {
      * Retrieves blob of specific branch name/commit ID and file path.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryObject = DevOpsFunctions.getRepositoryObject(GetRepositoryObjectArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .filePath(var_.repository_object_file_path())
+     *             .refName(var_.repository_object_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryObjectResult> getRepositoryObject(GetRepositoryObjectArgs args, InvokeOptions options) {
@@ -1892,6 +6756,36 @@ public final class DevOpsFunctions {
      * Retrieves blob of specific branch name/commit ID and file path.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryObject = DevOpsFunctions.getRepositoryObject(GetRepositoryObjectArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .filePath(var_.repository_object_file_path())
+     *             .refName(var_.repository_object_ref_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryObjectResult> getRepositoryObjectPlain(GetRepositoryObjectPlainArgs args, InvokeOptions options) {
@@ -1903,6 +6797,36 @@ public final class DevOpsFunctions {
      * Retrieve contents of a specified object.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryObjectContent = DevOpsFunctions.getRepositoryObjectContent(GetRepositoryObjectContentArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .sha(var_.repository_object_content_sha())
+     *             .filePath(var_.repository_object_content_file_path())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryObjectContentResult> getRepositoryObjectContent(GetRepositoryObjectContentArgs args) {
@@ -1914,6 +6838,36 @@ public final class DevOpsFunctions {
      * Retrieve contents of a specified object.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryObjectContent = DevOpsFunctions.getRepositoryObjectContent(GetRepositoryObjectContentArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .sha(var_.repository_object_content_sha())
+     *             .filePath(var_.repository_object_content_file_path())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryObjectContentResult> getRepositoryObjectContentPlain(GetRepositoryObjectContentPlainArgs args) {
@@ -1925,6 +6879,36 @@ public final class DevOpsFunctions {
      * Retrieve contents of a specified object.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryObjectContent = DevOpsFunctions.getRepositoryObjectContent(GetRepositoryObjectContentArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .sha(var_.repository_object_content_sha())
+     *             .filePath(var_.repository_object_content_file_path())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryObjectContentResult> getRepositoryObjectContent(GetRepositoryObjectContentArgs args, InvokeOptions options) {
@@ -1936,6 +6920,36 @@ public final class DevOpsFunctions {
      * Retrieve contents of a specified object.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryObjectContent = DevOpsFunctions.getRepositoryObjectContent(GetRepositoryObjectContentArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .sha(var_.repository_object_content_sha())
+     *             .filePath(var_.repository_object_content_file_path())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryObjectContentResult> getRepositoryObjectContentPlain(GetRepositoryObjectContentPlainArgs args, InvokeOptions options) {
@@ -1947,6 +6961,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryPath = DevOpsFunctions.getRepositoryPath(GetRepositoryPathArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .displayName(var_.repository_path_display_name())
+     *             .folderPath(var_.repository_path_folder_path())
+     *             .pathsInSubtree(var_.repository_path_paths_in_subtree())
+     *             .ref(var_.repository_path_ref())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryPathResult> getRepositoryPath(GetRepositoryPathArgs args) {
@@ -1958,6 +7004,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryPath = DevOpsFunctions.getRepositoryPath(GetRepositoryPathArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .displayName(var_.repository_path_display_name())
+     *             .folderPath(var_.repository_path_folder_path())
+     *             .pathsInSubtree(var_.repository_path_paths_in_subtree())
+     *             .ref(var_.repository_path_ref())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryPathResult> getRepositoryPathPlain(GetRepositoryPathPlainArgs args) {
@@ -1969,6 +7047,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryPath = DevOpsFunctions.getRepositoryPath(GetRepositoryPathArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .displayName(var_.repository_path_display_name())
+     *             .folderPath(var_.repository_path_folder_path())
+     *             .pathsInSubtree(var_.repository_path_paths_in_subtree())
+     *             .ref(var_.repository_path_ref())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryPathResult> getRepositoryPath(GetRepositoryPathArgs args, InvokeOptions options) {
@@ -1980,6 +7090,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryPath = DevOpsFunctions.getRepositoryPath(GetRepositoryPathArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .displayName(var_.repository_path_display_name())
+     *             .folderPath(var_.repository_path_folder_path())
+     *             .pathsInSubtree(var_.repository_path_paths_in_subtree())
+     *             .ref(var_.repository_path_ref())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryPathResult> getRepositoryPathPlain(GetRepositoryPathPlainArgs args, InvokeOptions options) {
@@ -1991,6 +7133,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryPaths = DevOpsFunctions.getRepositoryPaths(GetRepositoryPathsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .displayName(var_.repository_path_display_name())
+     *             .folderPath(var_.repository_path_folder_path())
+     *             .pathsInSubtree(var_.repository_path_paths_in_subtree())
+     *             .ref(var_.repository_path_ref())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryPathsResult> getRepositoryPaths(GetRepositoryPathsArgs args) {
@@ -2002,6 +7176,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryPaths = DevOpsFunctions.getRepositoryPaths(GetRepositoryPathsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .displayName(var_.repository_path_display_name())
+     *             .folderPath(var_.repository_path_folder_path())
+     *             .pathsInSubtree(var_.repository_path_paths_in_subtree())
+     *             .ref(var_.repository_path_ref())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryPathsResult> getRepositoryPathsPlain(GetRepositoryPathsPlainArgs args) {
@@ -2013,6 +7219,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryPaths = DevOpsFunctions.getRepositoryPaths(GetRepositoryPathsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .displayName(var_.repository_path_display_name())
+     *             .folderPath(var_.repository_path_folder_path())
+     *             .pathsInSubtree(var_.repository_path_paths_in_subtree())
+     *             .ref(var_.repository_path_ref())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryPathsResult> getRepositoryPaths(GetRepositoryPathsArgs args, InvokeOptions options) {
@@ -2024,6 +7262,38 @@ public final class DevOpsFunctions {
      * Retrieves a list of files and directories in a repository.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryPaths = DevOpsFunctions.getRepositoryPaths(GetRepositoryPathsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .displayName(var_.repository_path_display_name())
+     *             .folderPath(var_.repository_path_folder_path())
+     *             .pathsInSubtree(var_.repository_path_paths_in_subtree())
+     *             .ref(var_.repository_path_ref())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryPathsResult> getRepositoryPathsPlain(GetRepositoryPathsPlainArgs args, InvokeOptions options) {
@@ -2035,6 +7305,35 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryRef = DevOpsFunctions.getRepositoryRef(GetRepositoryRefArgs.builder()
+     *             .refName(var_.repository_ref_ref_name())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryRefResult> getRepositoryRef(GetRepositoryRefArgs args) {
@@ -2046,6 +7345,35 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryRef = DevOpsFunctions.getRepositoryRef(GetRepositoryRefArgs.builder()
+     *             .refName(var_.repository_ref_ref_name())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryRefResult> getRepositoryRefPlain(GetRepositoryRefPlainArgs args) {
@@ -2057,6 +7385,35 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryRef = DevOpsFunctions.getRepositoryRef(GetRepositoryRefArgs.builder()
+     *             .refName(var_.repository_ref_ref_name())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryRefResult> getRepositoryRef(GetRepositoryRefArgs args, InvokeOptions options) {
@@ -2068,6 +7425,35 @@ public final class DevOpsFunctions {
      * Retrieves a repository&#39;s reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like &#34;heads/&lt;name&gt;&#34; or &#34;tags/&lt;name&gt;&#34;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryRef = DevOpsFunctions.getRepositoryRef(GetRepositoryRefArgs.builder()
+     *             .refName(var_.repository_ref_ref_name())
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryRefResult> getRepositoryRefPlain(GetRepositoryRefPlainArgs args, InvokeOptions options) {
@@ -2079,6 +7465,37 @@ public final class DevOpsFunctions {
      * Returns a list of references.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryRefs = DevOpsFunctions.getRepositoryRefs(GetRepositoryRefsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .commitId(oci_devops_commit.test_commit().id())
+     *             .refName(var_.repository_ref_ref_name())
+     *             .refType(var_.repository_ref_ref_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryRefsResult> getRepositoryRefs(GetRepositoryRefsArgs args) {
@@ -2090,6 +7507,37 @@ public final class DevOpsFunctions {
      * Returns a list of references.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryRefs = DevOpsFunctions.getRepositoryRefs(GetRepositoryRefsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .commitId(oci_devops_commit.test_commit().id())
+     *             .refName(var_.repository_ref_ref_name())
+     *             .refType(var_.repository_ref_ref_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryRefsResult> getRepositoryRefsPlain(GetRepositoryRefsPlainArgs args) {
@@ -2101,6 +7549,37 @@ public final class DevOpsFunctions {
      * Returns a list of references.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryRefs = DevOpsFunctions.getRepositoryRefs(GetRepositoryRefsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .commitId(oci_devops_commit.test_commit().id())
+     *             .refName(var_.repository_ref_ref_name())
+     *             .refType(var_.repository_ref_ref_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetRepositoryRefsResult> getRepositoryRefs(GetRepositoryRefsArgs args, InvokeOptions options) {
@@ -2112,6 +7591,37 @@ public final class DevOpsFunctions {
      * Returns a list of references.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRepositoryRefs = DevOpsFunctions.getRepositoryRefs(GetRepositoryRefsArgs.builder()
+     *             .repositoryId(oci_devops_repository.test_repository().id())
+     *             .commitId(oci_devops_commit.test_commit().id())
+     *             .refName(var_.repository_ref_ref_name())
+     *             .refType(var_.repository_ref_ref_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetRepositoryRefsResult> getRepositoryRefsPlain(GetRepositoryRefsPlainArgs args, InvokeOptions options) {
@@ -2123,6 +7633,34 @@ public final class DevOpsFunctions {
      * Retrieves a trigger by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetTriggerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrigger = DevOpsFunctions.getTrigger(GetTriggerArgs.builder()
+     *             .triggerId(oci_devops_trigger.test_trigger().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTriggerResult> getTrigger(GetTriggerArgs args) {
@@ -2134,6 +7672,34 @@ public final class DevOpsFunctions {
      * Retrieves a trigger by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetTriggerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrigger = DevOpsFunctions.getTrigger(GetTriggerArgs.builder()
+     *             .triggerId(oci_devops_trigger.test_trigger().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTriggerResult> getTriggerPlain(GetTriggerPlainArgs args) {
@@ -2145,6 +7711,34 @@ public final class DevOpsFunctions {
      * Retrieves a trigger by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetTriggerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrigger = DevOpsFunctions.getTrigger(GetTriggerArgs.builder()
+     *             .triggerId(oci_devops_trigger.test_trigger().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTriggerResult> getTrigger(GetTriggerArgs args, InvokeOptions options) {
@@ -2156,6 +7750,34 @@ public final class DevOpsFunctions {
      * Retrieves a trigger by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetTriggerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTrigger = DevOpsFunctions.getTrigger(GetTriggerArgs.builder()
+     *             .triggerId(oci_devops_trigger.test_trigger().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTriggerResult> getTriggerPlain(GetTriggerPlainArgs args, InvokeOptions options) {
@@ -2167,6 +7789,38 @@ public final class DevOpsFunctions {
      * Returns a list of triggers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTriggers = DevOpsFunctions.getTriggers(GetTriggersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.trigger_display_name())
+     *             .id(var_.trigger_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.trigger_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTriggersResult> getTriggers() {
@@ -2178,6 +7832,38 @@ public final class DevOpsFunctions {
      * Returns a list of triggers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTriggers = DevOpsFunctions.getTriggers(GetTriggersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.trigger_display_name())
+     *             .id(var_.trigger_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.trigger_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTriggersResult> getTriggersPlain() {
@@ -2189,6 +7875,38 @@ public final class DevOpsFunctions {
      * Returns a list of triggers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTriggers = DevOpsFunctions.getTriggers(GetTriggersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.trigger_display_name())
+     *             .id(var_.trigger_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.trigger_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTriggersResult> getTriggers(GetTriggersArgs args) {
@@ -2200,6 +7918,38 @@ public final class DevOpsFunctions {
      * Returns a list of triggers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTriggers = DevOpsFunctions.getTriggers(GetTriggersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.trigger_display_name())
+     *             .id(var_.trigger_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.trigger_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTriggersResult> getTriggersPlain(GetTriggersPlainArgs args) {
@@ -2211,6 +7961,38 @@ public final class DevOpsFunctions {
      * Returns a list of triggers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTriggers = DevOpsFunctions.getTriggers(GetTriggersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.trigger_display_name())
+     *             .id(var_.trigger_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.trigger_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTriggersResult> getTriggers(GetTriggersArgs args, InvokeOptions options) {
@@ -2222,6 +8004,38 @@ public final class DevOpsFunctions {
      * Returns a list of triggers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DevOps.DevOpsFunctions;
+     * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTriggers = DevOpsFunctions.getTriggers(GetTriggersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.trigger_display_name())
+     *             .id(var_.trigger_id())
+     *             .projectId(oci_devops_project.test_project().id())
+     *             .state(var_.trigger_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTriggersResult> getTriggersPlain(GetTriggersPlainArgs args, InvokeOptions options) {

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Functions
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApplication = Oci.Functions.GetApplication.Invoke(new()
         ///     {
-        ///         var testApplication = Output.Create(Oci.Functions.GetApplication.InvokeAsync(new Oci.Functions.GetApplicationArgs
-        ///         {
-        ///             ApplicationId = oci_functions_application.Test_application.Id,
-        ///         }));
-        ///     }
+        ///         ApplicationId = oci_functions_application.Test_application.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Functions
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApplication = Oci.Functions.GetApplication.Invoke(new()
         ///     {
-        ///         var testApplication = Output.Create(Oci.Functions.GetApplication.InvokeAsync(new Oci.Functions.GetApplicationArgs
-        ///         {
-        ///             ApplicationId = oci_functions_application.Test_application.Id,
-        ///         }));
-        ///     }
+        ///         ApplicationId = oci_functions_application.Test_application.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Functions
     }
 
 
-    public sealed class GetApplicationArgs : Pulumi.InvokeArgs
+    public sealed class GetApplicationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this application.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Functions
         public GetApplicationArgs()
         {
         }
+        public static new GetApplicationArgs Empty => new GetApplicationArgs();
     }
 
-    public sealed class GetApplicationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetApplicationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this application.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Functions
         public GetApplicationInvokeArgs()
         {
         }
+        public static new GetApplicationInvokeArgs Empty => new GetApplicationInvokeArgs();
     }
 
 

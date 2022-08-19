@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.VnMonitoring.Inputs
 {
 
-    public sealed class PathAnalyzerTestQueryOptionsArgs : Pulumi.ResourceArgs
+    public sealed class PathAnalyzerTestQueryOptionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) If true, a path analysis is done for both the forward and reverse routes.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.VnMonitoring.Inputs
         public PathAnalyzerTestQueryOptionsArgs()
         {
         }
+        public static new PathAnalyzerTestQueryOptionsArgs Empty => new PathAnalyzerTestQueryOptionsArgs();
     }
 }

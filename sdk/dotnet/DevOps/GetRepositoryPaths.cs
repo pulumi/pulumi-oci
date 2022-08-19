@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryPaths = Oci.DevOps.GetRepositoryPaths.Invoke(new()
         ///     {
-        ///         var testRepositoryPaths = Output.Create(Oci.DevOps.GetRepositoryPaths.InvokeAsync(new Oci.DevOps.GetRepositoryPathsArgs
-        ///         {
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             DisplayName = @var.Repository_path_display_name,
-        ///             FolderPath = @var.Repository_path_folder_path,
-        ///             PathsInSubtree = @var.Repository_path_paths_in_subtree,
-        ///             Ref = @var.Repository_path_ref,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         DisplayName = @var.Repository_path_display_name,
+        ///         FolderPath = @var.Repository_path_folder_path,
+        ///         PathsInSubtree = @var.Repository_path_paths_in_subtree,
+        ///         Ref = @var.Repository_path_ref,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryPaths = Oci.DevOps.GetRepositoryPaths.Invoke(new()
         ///     {
-        ///         var testRepositoryPaths = Output.Create(Oci.DevOps.GetRepositoryPaths.InvokeAsync(new Oci.DevOps.GetRepositoryPathsArgs
-        ///         {
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             DisplayName = @var.Repository_path_display_name,
-        ///             FolderPath = @var.Repository_path_folder_path,
-        ///             PathsInSubtree = @var.Repository_path_paths_in_subtree,
-        ///             Ref = @var.Repository_path_ref,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         DisplayName = @var.Repository_path_display_name,
+        ///         FolderPath = @var.Repository_path_folder_path,
+        ///         PathsInSubtree = @var.Repository_path_paths_in_subtree,
+        ///         Ref = @var.Repository_path_ref,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetRepositoryPathsArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryPathsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryPathsArgs()
         {
         }
+        public static new GetRepositoryPathsArgs Empty => new GetRepositoryPathsArgs();
     }
 
-    public sealed class GetRepositoryPathsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryPathsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryPathsInvokeArgs()
         {
         }
+        public static new GetRepositoryPathsInvokeArgs Empty => new GetRepositoryPathsInvokeArgs();
     }
 
 

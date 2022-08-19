@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class BackupDestinationMountTypeDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class BackupDestinationMountTypeDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Database.Inputs
         public BackupDestinationMountTypeDetailsGetArgs()
         {
         }
+        public static new BackupDestinationMountTypeDetailsGetArgs Empty => new BackupDestinationMountTypeDetailsGetArgs();
     }
 }

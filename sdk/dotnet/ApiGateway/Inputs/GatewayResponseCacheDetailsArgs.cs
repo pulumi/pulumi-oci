@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class GatewayResponseCacheDetailsArgs : Pulumi.ResourceArgs
+    public sealed class GatewayResponseCacheDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Vault Service secret resource.
@@ -75,5 +75,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public GatewayResponseCacheDetailsArgs()
         {
         }
+        public static new GatewayResponseCacheDetailsArgs Empty => new GatewayResponseCacheDetailsArgs();
     }
 }

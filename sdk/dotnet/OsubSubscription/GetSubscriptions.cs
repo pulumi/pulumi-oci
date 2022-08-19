@@ -25,26 +25,24 @@ namespace Pulumi.Oci.OsubSubscription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscriptions = Oci.OsubSubscription.GetSubscriptions.Invoke(new()
         ///     {
-        ///         var testSubscriptions = Output.Create(Oci.OsubSubscription.GetSubscriptions.InvokeAsync(new Oci.OsubSubscription.GetSubscriptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             BuyerEmail = @var.Subscription_buyer_email,
-        ///             IsCommitInfoRequired = @var.Subscription_is_commit_info_required,
-        ///             PlanNumber = @var.Subscription_plan_number,
-        ///             SubscriptionId = oci_osub_subscription_subscription.Test_subscription.Id,
-        ///             XOneGatewaySubscriptionId = @var.Subscription_x_one_gateway_subscription_id,
-        ///             XOneOriginRegion = @var.Subscription_x_one_origin_region,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         BuyerEmail = @var.Subscription_buyer_email,
+        ///         IsCommitInfoRequired = @var.Subscription_is_commit_info_required,
+        ///         PlanNumber = @var.Subscription_plan_number,
+        ///         SubscriptionId = oci_osub_subscription_subscription.Test_subscription.Id,
+        ///         XOneGatewaySubscriptionId = @var.Subscription_x_one_gateway_subscription_id,
+        ///         XOneOriginRegion = @var.Subscription_x_one_origin_region,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -66,26 +64,24 @@ namespace Pulumi.Oci.OsubSubscription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSubscriptions = Oci.OsubSubscription.GetSubscriptions.Invoke(new()
         ///     {
-        ///         var testSubscriptions = Output.Create(Oci.OsubSubscription.GetSubscriptions.InvokeAsync(new Oci.OsubSubscription.GetSubscriptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             BuyerEmail = @var.Subscription_buyer_email,
-        ///             IsCommitInfoRequired = @var.Subscription_is_commit_info_required,
-        ///             PlanNumber = @var.Subscription_plan_number,
-        ///             SubscriptionId = oci_osub_subscription_subscription.Test_subscription.Id,
-        ///             XOneGatewaySubscriptionId = @var.Subscription_x_one_gateway_subscription_id,
-        ///             XOneOriginRegion = @var.Subscription_x_one_origin_region,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         BuyerEmail = @var.Subscription_buyer_email,
+        ///         IsCommitInfoRequired = @var.Subscription_is_commit_info_required,
+        ///         PlanNumber = @var.Subscription_plan_number,
+        ///         SubscriptionId = oci_osub_subscription_subscription.Test_subscription.Id,
+        ///         XOneGatewaySubscriptionId = @var.Subscription_x_one_gateway_subscription_id,
+        ///         XOneOriginRegion = @var.Subscription_x_one_origin_region,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.OsubSubscription
     }
 
 
-    public sealed class GetSubscriptionsArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Buyer Email Id
@@ -150,9 +146,10 @@ namespace Pulumi.Oci.OsubSubscription
         public GetSubscriptionsArgs()
         {
         }
+        public static new GetSubscriptionsArgs Empty => new GetSubscriptionsArgs();
     }
 
-    public sealed class GetSubscriptionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSubscriptionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Buyer Email Id
@@ -207,6 +204,7 @@ namespace Pulumi.Oci.OsubSubscription
         public GetSubscriptionsInvokeArgs()
         {
         }
+        public static new GetSubscriptionsInvokeArgs Empty => new GetSubscriptionsInvokeArgs();
     }
 
 

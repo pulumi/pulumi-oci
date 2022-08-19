@@ -17,41 +17,39 @@ namespace Pulumi.Oci.Waa
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testWebAppAccelerationPolicy = new Oci.Waa.AppAccelerationPolicy("testWebAppAccelerationPolicy", new()
     ///     {
-    ///         var testWebAppAccelerationPolicy = new Oci.Waa.AppAccelerationPolicy("testWebAppAccelerationPolicy", new Oci.Waa.AppAccelerationPolicyArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Web_app_acceleration_policy_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         ResponseCachingPolicy = new Oci.Waa.Inputs.AppAccelerationPolicyResponseCachingPolicyArgs
+    ///         {
+    ///             IsResponseHeaderBasedCachingEnabled = @var.Web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled,
+    ///         },
+    ///         ResponseCompressionPolicy = new Oci.Waa.Inputs.AppAccelerationPolicyResponseCompressionPolicyArgs
+    ///         {
+    ///             GzipCompression = new Oci.Waa.Inputs.AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
+    ///                 IsEnabled = @var.Web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled,
     ///             },
-    ///             DisplayName = @var.Web_app_acceleration_policy_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             ResponseCachingPolicy = new Oci.Waa.Inputs.AppAccelerationPolicyResponseCachingPolicyArgs
-    ///             {
-    ///                 IsResponseHeaderBasedCachingEnabled = @var.Web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled,
-    ///             },
-    ///             ResponseCompressionPolicy = new Oci.Waa.Inputs.AppAccelerationPolicyResponseCompressionPolicyArgs
-    ///             {
-    ///                 GzipCompression = new Oci.Waa.Inputs.AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs
-    ///                 {
-    ///                     IsEnabled = @var.Web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled,
-    ///                 },
-    ///             },
-    ///             SystemTags = @var.Web_app_acceleration_policy_system_tags,
-    ///         });
-    ///     }
+    ///         },
+    ///         SystemTags = @var.Web_app_acceleration_policy_system_tags,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -63,7 +61,7 @@ namespace Pulumi.Oci.Waa
     /// ```
     /// </summary>
     [OciResourceType("oci:Waa/appAccelerationPolicy:AppAccelerationPolicy")]
-    public partial class AppAccelerationPolicy : Pulumi.CustomResource
+    public partial class AppAccelerationPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -175,7 +173,7 @@ namespace Pulumi.Oci.Waa
         }
     }
 
-    public sealed class AppAccelerationPolicyArgs : Pulumi.ResourceArgs
+    public sealed class AppAccelerationPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -240,9 +238,10 @@ namespace Pulumi.Oci.Waa
         public AppAccelerationPolicyArgs()
         {
         }
+        public static new AppAccelerationPolicyArgs Empty => new AppAccelerationPolicyArgs();
     }
 
-    public sealed class AppAccelerationPolicyState : Pulumi.ResourceArgs
+    public sealed class AppAccelerationPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -331,5 +330,6 @@ namespace Pulumi.Oci.Waa
         public AppAccelerationPolicyState()
         {
         }
+        public static new AppAccelerationPolicyState Empty => new AppAccelerationPolicyState();
     }
 }

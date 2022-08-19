@@ -23,23 +23,21 @@ namespace Pulumi.Oci.Ocvp
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSddcs = Oci.Ocvp.GetSddcs.Invoke(new()
         ///     {
-        ///         var testSddcs = Output.Create(Oci.Ocvp.GetSddcs.InvokeAsync(new Oci.Ocvp.GetSddcsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ComputeAvailabilityDomain = @var.Sddc_compute_availability_domain,
-        ///             DisplayName = @var.Sddc_display_name,
-        ///             State = @var.Sddc_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ComputeAvailabilityDomain = @var.Sddc_compute_availability_domain,
+        ///         DisplayName = @var.Sddc_display_name,
+        ///         State = @var.Sddc_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,23 +57,21 @@ namespace Pulumi.Oci.Ocvp
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSddcs = Oci.Ocvp.GetSddcs.Invoke(new()
         ///     {
-        ///         var testSddcs = Output.Create(Oci.Ocvp.GetSddcs.InvokeAsync(new Oci.Ocvp.GetSddcsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ComputeAvailabilityDomain = @var.Sddc_compute_availability_domain,
-        ///             DisplayName = @var.Sddc_display_name,
-        ///             State = @var.Sddc_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ComputeAvailabilityDomain = @var.Sddc_compute_availability_domain,
+        ///         DisplayName = @var.Sddc_display_name,
+        ///         State = @var.Sddc_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Ocvp
     }
 
 
-    public sealed class GetSddcsArgs : Pulumi.InvokeArgs
+    public sealed class GetSddcsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -122,9 +118,10 @@ namespace Pulumi.Oci.Ocvp
         public GetSddcsArgs()
         {
         }
+        public static new GetSddcsArgs Empty => new GetSddcsArgs();
     }
 
-    public sealed class GetSddcsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSddcsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -161,6 +158,7 @@ namespace Pulumi.Oci.Ocvp
         public GetSddcsInvokeArgs()
         {
         }
+        public static new GetSddcsInvokeArgs Empty => new GetSddcsInvokeArgs();
     }
 
 

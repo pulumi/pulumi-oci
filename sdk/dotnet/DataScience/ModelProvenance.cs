@@ -17,26 +17,24 @@ namespace Pulumi.Oci.DataScience
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testModelProvenance = new Oci.DataScience.ModelProvenance("testModelProvenance", new()
     ///     {
-    ///         var testModelProvenance = new Oci.DataScience.ModelProvenance("testModelProvenance", new Oci.DataScience.ModelProvenanceArgs
-    ///         {
-    ///             ModelId = oci_datascience_model.Test_model.Id,
-    ///             GitBranch = @var.Model_provenance_git_branch,
-    ///             GitCommit = @var.Model_provenance_git_commit,
-    ///             RepositoryUrl = @var.Model_provenance_repository_url,
-    ///             ScriptDir = @var.Model_provenance_script_dir,
-    ///             TrainingId = oci_datascience_training.Test_training.Id,
-    ///             TrainingScript = @var.Model_provenance_training_script,
-    ///         });
-    ///     }
+    ///         ModelId = oci_datascience_model.Test_model.Id,
+    ///         GitBranch = @var.Model_provenance_git_branch,
+    ///         GitCommit = @var.Model_provenance_git_commit,
+    ///         RepositoryUrl = @var.Model_provenance_repository_url,
+    ///         ScriptDir = @var.Model_provenance_script_dir,
+    ///         TrainingId = oci_datascience_training.Test_training.Id,
+    ///         TrainingScript = @var.Model_provenance_training_script,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -48,7 +46,7 @@ namespace Pulumi.Oci.DataScience
     /// ```
     /// </summary>
     [OciResourceType("oci:DataScience/modelProvenance:ModelProvenance")]
-    public partial class ModelProvenance : Pulumi.CustomResource
+    public partial class ModelProvenance : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
@@ -136,7 +134,7 @@ namespace Pulumi.Oci.DataScience
         }
     }
 
-    public sealed class ModelProvenanceArgs : Pulumi.ResourceArgs
+    public sealed class ModelProvenanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
@@ -183,9 +181,10 @@ namespace Pulumi.Oci.DataScience
         public ModelProvenanceArgs()
         {
         }
+        public static new ModelProvenanceArgs Empty => new ModelProvenanceArgs();
     }
 
-    public sealed class ModelProvenanceState : Pulumi.ResourceArgs
+    public sealed class ModelProvenanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
@@ -232,5 +231,6 @@ namespace Pulumi.Oci.DataScience
         public ModelProvenanceState()
         {
         }
+        public static new ModelProvenanceState Empty => new ModelProvenanceState();
     }
 }

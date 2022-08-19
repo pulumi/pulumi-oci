@@ -6,42 +6,6 @@ import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
 /**
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testDatabaseInsight = new oci.opsi.DatabaseInsight("testDatabaseInsight", {
- *     compartmentId: _var.compartment_id,
- *     entitySource: _var.database_insight_entity_source,
- *     credentialDetails: {
- *         credentialType: _var.database_insight_credential_details_credential_type,
- *         credentialSourceName: _var.database_insight_credential_details_credential_source_name,
- *         passwordSecretId: oci_vault_secret.test_secret.id,
- *         role: _var.database_insight_credential_details_role,
- *         userName: oci_identity_user.test_user.name,
- *     },
- *     databaseId: oci_database_database.test_database.id,
- *     databaseResourceType: _var.database_insight_database_resource_type,
- *     dbmPrivateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
- *     deploymentType: _var.database_insight_deployment_type,
- *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
- *     enterpriseManagerEntityIdentifier: _var.database_insight_enterprise_manager_entity_identifier,
- *     enterpriseManagerIdentifier: _var.database_insight_enterprise_manager_identifier,
- *     exadataInsightId: oci_opsi_exadata_insight.test_exadata_insight.id,
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
- *     opsiPrivateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
- *     serviceName: oci_core_service.test_service.name,
- *     systemTags: _var.database_insight_system_tags,
- * });
- * ```
- *
  * ## Import
  *
  * DatabaseInsights can be imported using the `id`, e.g.

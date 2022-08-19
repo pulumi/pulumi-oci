@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.HealthChecks.Inputs
 {
 
-    public sealed class GetHttpProbeResultsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetHttpProbeResultsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.HealthChecks.Inputs
         public GetHttpProbeResultsFilterInputArgs()
         {
         }
+        public static new GetHttpProbeResultsFilterInputArgs Empty => new GetHttpProbeResultsFilterInputArgs();
     }
 }

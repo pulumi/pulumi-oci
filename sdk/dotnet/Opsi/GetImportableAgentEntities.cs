@@ -26,20 +26,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testImportableAgentEntities = Oci.Opsi.GetImportableAgentEntities.Invoke(new()
         ///     {
-        ///         var testImportableAgentEntities = Output.Create(Oci.Opsi.GetImportableAgentEntities.InvokeAsync(new Oci.Opsi.GetImportableAgentEntitiesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,20 +60,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testImportableAgentEntities = Oci.Opsi.GetImportableAgentEntities.Invoke(new()
         ///     {
-        ///         var testImportableAgentEntities = Output.Create(Oci.Opsi.GetImportableAgentEntities.InvokeAsync(new Oci.Opsi.GetImportableAgentEntitiesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetImportableAgentEntitiesArgs : Pulumi.InvokeArgs
+    public sealed class GetImportableAgentEntitiesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Opsi
         public GetImportableAgentEntitiesArgs()
         {
         }
+        public static new GetImportableAgentEntitiesArgs Empty => new GetImportableAgentEntitiesArgs();
     }
 
-    public sealed class GetImportableAgentEntitiesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetImportableAgentEntitiesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -109,6 +106,7 @@ namespace Pulumi.Oci.Opsi
         public GetImportableAgentEntitiesInvokeArgs()
         {
         }
+        public static new GetImportableAgentEntitiesInvokeArgs Empty => new GetImportableAgentEntitiesInvokeArgs();
     }
 
 

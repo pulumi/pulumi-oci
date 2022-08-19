@@ -26,20 +26,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIamWorkRequest = Oci.Identity.GetIamWorkRequest.Invoke(new()
         ///     {
-        ///         var testIamWorkRequest = Output.Create(Oci.Identity.GetIamWorkRequest.InvokeAsync(new Oci.Identity.GetIamWorkRequestArgs
-        ///         {
-        ///             IamWorkRequestId = oci_identity_iam_work_request.Test_iam_work_request.Id,
-        ///         }));
-        ///     }
+        ///         IamWorkRequestId = oci_identity_iam_work_request.Test_iam_work_request.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,20 +60,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIamWorkRequest = Oci.Identity.GetIamWorkRequest.Invoke(new()
         ///     {
-        ///         var testIamWorkRequest = Output.Create(Oci.Identity.GetIamWorkRequest.InvokeAsync(new Oci.Identity.GetIamWorkRequestArgs
-        ///         {
-        ///             IamWorkRequestId = oci_identity_iam_work_request.Test_iam_work_request.Id,
-        ///         }));
-        ///     }
+        ///         IamWorkRequestId = oci_identity_iam_work_request.Test_iam_work_request.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetIamWorkRequestArgs : Pulumi.InvokeArgs
+    public sealed class GetIamWorkRequestArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the IAM work request.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Identity
         public GetIamWorkRequestArgs()
         {
         }
+        public static new GetIamWorkRequestArgs Empty => new GetIamWorkRequestArgs();
     }
 
-    public sealed class GetIamWorkRequestInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIamWorkRequestInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the IAM work request.
@@ -109,6 +106,7 @@ namespace Pulumi.Oci.Identity
         public GetIamWorkRequestInvokeArgs()
         {
         }
+        public static new GetIamWorkRequestInvokeArgs Empty => new GetIamWorkRequestInvokeArgs();
     }
 
 

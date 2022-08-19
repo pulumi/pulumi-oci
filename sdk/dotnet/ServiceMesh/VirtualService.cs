@@ -17,40 +17,38 @@ namespace Pulumi.Oci.ServiceMesh
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVirtualService = new Oci.ServiceMesh.VirtualService("testVirtualService", new()
     ///     {
-    ///         var testVirtualService = new Oci.ServiceMesh.VirtualService("testVirtualService", new Oci.ServiceMesh.VirtualServiceArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+    ///         DefaultRoutingPolicy = new Oci.ServiceMesh.Inputs.VirtualServiceDefaultRoutingPolicyArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-    ///             DefaultRoutingPolicy = new Oci.ServiceMesh.Inputs.VirtualServiceDefaultRoutingPolicyArgs
-    ///             {
-    ///                 Type = @var.Virtual_service_default_routing_policy_type,
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Virtual_service_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             Hosts = @var.Virtual_service_hosts,
-    ///             Mtls = new Oci.ServiceMesh.Inputs.VirtualServiceMtlsArgs
-    ///             {
-    ///                 Mode = @var.Virtual_service_mtls_mode,
-    ///                 MaximumValidity = @var.Virtual_service_mtls_maximum_validity,
-    ///             },
-    ///         });
-    ///     }
+    ///             Type = @var.Virtual_service_default_routing_policy_type,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Virtual_service_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         Hosts = @var.Virtual_service_hosts,
+    ///         Mtls = new Oci.ServiceMesh.Inputs.VirtualServiceMtlsArgs
+    ///         {
+    ///             Mode = @var.Virtual_service_mtls_mode,
+    ///             MaximumValidity = @var.Virtual_service_mtls_maximum_validity,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -62,7 +60,7 @@ namespace Pulumi.Oci.ServiceMesh
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceMesh/virtualService:VirtualService")]
-    public partial class VirtualService : Pulumi.CustomResource
+    public partial class VirtualService : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -192,7 +190,7 @@ namespace Pulumi.Oci.ServiceMesh
         }
     }
 
-    public sealed class VirtualServiceArgs : Pulumi.ResourceArgs
+    public sealed class VirtualServiceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -269,9 +267,10 @@ namespace Pulumi.Oci.ServiceMesh
         public VirtualServiceArgs()
         {
         }
+        public static new VirtualServiceArgs Empty => new VirtualServiceArgs();
     }
 
-    public sealed class VirtualServiceState : Pulumi.ResourceArgs
+    public sealed class VirtualServiceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -384,5 +383,6 @@ namespace Pulumi.Oci.ServiceMesh
         public VirtualServiceState()
         {
         }
+        public static new VirtualServiceState Empty => new VirtualServiceState();
     }
 }

@@ -22,21 +22,19 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServiceEnvironment = Oci.ServiceManagerProxy.GetServiceEnvironment.Invoke(new()
         ///     {
-        ///         var testServiceEnvironment = Output.Create(Oci.ServiceManagerProxy.GetServiceEnvironment.InvokeAsync(new Oci.ServiceManagerProxy.GetServiceEnvironmentArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ServiceEnvironmentId = oci_service_manager_proxy_service_environment.Test_service_environment.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ServiceEnvironmentId = oci_service_manager_proxy_service_environment.Test_service_environment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServiceEnvironment = Oci.ServiceManagerProxy.GetServiceEnvironment.Invoke(new()
         ///     {
-        ///         var testServiceEnvironment = Output.Create(Oci.ServiceManagerProxy.GetServiceEnvironment.InvokeAsync(new Oci.ServiceManagerProxy.GetServiceEnvironmentArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ServiceEnvironmentId = oci_service_manager_proxy_service_environment.Test_service_environment.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ServiceEnvironmentId = oci_service_manager_proxy_service_environment.Test_service_environment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ServiceManagerProxy
     }
 
 
-    public sealed class GetServiceEnvironmentArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceEnvironmentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.ServiceManagerProxy
         public GetServiceEnvironmentArgs()
         {
         }
+        public static new GetServiceEnvironmentArgs Empty => new GetServiceEnvironmentArgs();
     }
 
-    public sealed class GetServiceEnvironmentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceEnvironmentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.ServiceManagerProxy
         public GetServiceEnvironmentInvokeArgs()
         {
         }
+        public static new GetServiceEnvironmentInvokeArgs Empty => new GetServiceEnvironmentInvokeArgs();
     }
 
 

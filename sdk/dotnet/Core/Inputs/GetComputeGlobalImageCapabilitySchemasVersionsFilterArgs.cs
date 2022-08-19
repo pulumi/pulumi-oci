@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetComputeGlobalImageCapabilitySchemasVersionsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetComputeGlobalImageCapabilitySchemasVersionsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the compute global image capability schema version
@@ -36,5 +36,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetComputeGlobalImageCapabilitySchemasVersionsFilterInputArgs()
         {
         }
+        public static new GetComputeGlobalImageCapabilitySchemasVersionsFilterInputArgs Empty => new GetComputeGlobalImageCapabilitySchemasVersionsFilterInputArgs();
     }
 }

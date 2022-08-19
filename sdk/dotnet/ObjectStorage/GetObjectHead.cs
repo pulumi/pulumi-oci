@@ -21,22 +21,20 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testObjectHead = Oci.ObjectStorage.GetObjectHead.Invoke(new()
         ///     {
-        ///         var testObjectHead = Output.Create(Oci.ObjectStorage.GetObjectHead.InvokeAsync(new Oci.ObjectStorage.GetObjectHeadArgs
-        ///         {
-        ///             Bucket = @var.Object_bucket,
-        ///             Namespace = @var.Object_namespace,
-        ///             Object = @var.Object_object,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Object_bucket,
+        ///         Namespace = @var.Object_namespace,
+        ///         Object = @var.Object_object,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testObjectHead = Oci.ObjectStorage.GetObjectHead.Invoke(new()
         ///     {
-        ///         var testObjectHead = Output.Create(Oci.ObjectStorage.GetObjectHead.InvokeAsync(new Oci.ObjectStorage.GetObjectHeadArgs
-        ///         {
-        ///             Bucket = @var.Object_bucket,
-        ///             Namespace = @var.Object_namespace,
-        ///             Object = @var.Object_object,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Object_bucket,
+        ///         Namespace = @var.Object_namespace,
+        ///         Object = @var.Object_object,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ObjectStorage
     }
 
 
-    public sealed class GetObjectHeadArgs : Pulumi.InvokeArgs
+    public sealed class GetObjectHeadArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.ObjectStorage
         public GetObjectHeadArgs()
         {
         }
+        public static new GetObjectHeadArgs Empty => new GetObjectHeadArgs();
     }
 
-    public sealed class GetObjectHeadInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetObjectHeadInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.ObjectStorage
         public GetObjectHeadInvokeArgs()
         {
         }
+        public static new GetObjectHeadInvokeArgs Empty => new GetObjectHeadInvokeArgs();
     }
 
 

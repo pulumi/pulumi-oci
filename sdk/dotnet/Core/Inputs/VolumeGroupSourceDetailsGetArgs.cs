@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class VolumeGroupSourceDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class VolumeGroupSourceDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type can be one of these values: `volumeGroupBackupId`, `volumeGroupId`, `volumeGroupReplicaId`, `volumeIds`
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.Core.Inputs
         public VolumeGroupSourceDetailsGetArgs()
         {
         }
+        public static new VolumeGroupSourceDetailsGetArgs Empty => new VolumeGroupSourceDetailsGetArgs();
     }
 }

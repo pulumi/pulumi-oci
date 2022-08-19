@@ -23,6 +23,62 @@ import javax.annotation.Nullable;
  * API to create discovery Job and submit discovery Details to agent.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.StackMonitoring.DiscoveryJob;
+ * import com.pulumi.oci.StackMonitoring.DiscoveryJobArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsPropertiesArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsCredentialsArgs;
+ * import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsTagsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDiscoveryJob = new DiscoveryJob(&#34;testDiscoveryJob&#34;, DiscoveryJobArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .discoveryDetails(DiscoveryJobDiscoveryDetailsArgs.builder()
+ *                 .agentId(var_.management_agent_id())
+ *                 .properties(DiscoveryJobDiscoveryDetailsPropertiesArgs.builder()
+ *                     .propertiesMap(var_.discovery_job_discovery_details_properties_properties_map())
+ *                     .build())
+ *                 .resourceName(var_.discovery_job_discovery_details_resource_name())
+ *                 .resourceType(var_.discovery_job_discovery_details_resource_type())
+ *                 .credentials(DiscoveryJobDiscoveryDetailsCredentialsArgs.builder()
+ *                     .items(DiscoveryJobDiscoveryDetailsCredentialsItemArgs.builder()
+ *                         .credentialName(var_.discovery_job_discovery_details_credentials_items_credential_name())
+ *                         .credentialType(var_.discovery_job_discovery_details_credentials_items_credential_type())
+ *                         .properties(DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs.builder()
+ *                             .propertiesMap(var_.discovery_job_discovery_details_credentials_items_properties_properties_map())
+ *                             .build())
+ *                         .build())
+ *                     .build())
+ *                 .tags(DiscoveryJobDiscoveryDetailsTagsArgs.builder()
+ *                     .propertiesMap(var_.discovery_job_discovery_details_tags_properties_map())
+ *                     .build())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .discoveryClient(var_.discovery_job_discovery_client())
+ *             .discoveryType(var_.discovery_job_discovery_type())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

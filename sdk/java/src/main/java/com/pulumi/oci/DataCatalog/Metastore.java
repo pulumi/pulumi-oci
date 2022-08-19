@@ -21,6 +21,39 @@ import javax.annotation.Nullable;
  * Creates a new metastore.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataCatalog.Metastore;
+ * import com.pulumi.oci.DataCatalog.MetastoreArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMetastore = new Metastore(&#34;testMetastore&#34;, MetastoreArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .defaultExternalTableLocation(var_.metastore_default_external_table_location())
+ *             .defaultManagedTableLocation(var_.metastore_default_managed_table_location())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .displayName(var_.metastore_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -33,6 +33,45 @@ import javax.annotation.Nullable;
  * requests per second for a given tenancy.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Kms.Key;
+ * import com.pulumi.oci.Kms.KeyArgs;
+ * import com.pulumi.oci.Kms.inputs.KeyKeyShapeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testKey = new Key(&#34;testKey&#34;, KeyArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.key_display_name())
+ *             .keyShape(KeyKeyShapeArgs.builder()
+ *                 .algorithm(var_.key_key_shape_algorithm())
+ *                 .length(var_.key_key_shape_length())
+ *                 .curveId(oci_kms_curve.test_curve().id())
+ *                 .build())
+ *             .managementEndpoint(var_.key_management_endpoint())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .protectionMode(var_.key_protection_mode())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

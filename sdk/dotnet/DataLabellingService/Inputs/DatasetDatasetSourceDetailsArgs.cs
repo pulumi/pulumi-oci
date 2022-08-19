@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataLabellingService.Inputs
 {
 
-    public sealed class DatasetDatasetSourceDetailsArgs : Pulumi.ResourceArgs
+    public sealed class DatasetDatasetSourceDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The object storage bucket that contains the dataset data source.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DataLabellingService.Inputs
         public DatasetDatasetSourceDetailsArgs()
         {
         }
+        public static new DatasetDatasetSourceDetailsArgs Empty => new DatasetDatasetSourceDetailsArgs();
     }
 }

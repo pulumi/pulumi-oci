@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Streaming.Inputs
 {
 
-    public sealed class GetStreamsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetStreamsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given name exactly.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Streaming.Inputs
         public GetStreamsFilterInputArgs()
         {
         }
+        public static new GetStreamsFilterInputArgs Empty => new GetStreamsFilterInputArgs();
     }
 }

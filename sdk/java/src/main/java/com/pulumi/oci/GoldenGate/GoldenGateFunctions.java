@@ -41,6 +41,34 @@ public final class GoldenGateFunctions {
      * Retrieves a DatabaseRegistration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
+     *             .databaseRegistrationId(oci_golden_gate_database_registration.test_database_registration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseRegistrationResult> getDatabaseRegistration(GetDatabaseRegistrationArgs args) {
@@ -52,6 +80,34 @@ public final class GoldenGateFunctions {
      * Retrieves a DatabaseRegistration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
+     *             .databaseRegistrationId(oci_golden_gate_database_registration.test_database_registration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseRegistrationResult> getDatabaseRegistrationPlain(GetDatabaseRegistrationPlainArgs args) {
@@ -63,6 +119,34 @@ public final class GoldenGateFunctions {
      * Retrieves a DatabaseRegistration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
+     *             .databaseRegistrationId(oci_golden_gate_database_registration.test_database_registration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseRegistrationResult> getDatabaseRegistration(GetDatabaseRegistrationArgs args, InvokeOptions options) {
@@ -74,6 +158,34 @@ public final class GoldenGateFunctions {
      * Retrieves a DatabaseRegistration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseRegistration = GoldenGateFunctions.getDatabaseRegistration(GetDatabaseRegistrationArgs.builder()
+     *             .databaseRegistrationId(oci_golden_gate_database_registration.test_database_registration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseRegistrationResult> getDatabaseRegistrationPlain(GetDatabaseRegistrationPlainArgs args, InvokeOptions options) {
@@ -85,6 +197,36 @@ public final class GoldenGateFunctions {
      * Lists the DatabaseRegistrations in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseRegistrations = GoldenGateFunctions.getDatabaseRegistrations(GetDatabaseRegistrationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_registration_display_name())
+     *             .state(var_.database_registration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseRegistrationsResult> getDatabaseRegistrations(GetDatabaseRegistrationsArgs args) {
@@ -96,6 +238,36 @@ public final class GoldenGateFunctions {
      * Lists the DatabaseRegistrations in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseRegistrations = GoldenGateFunctions.getDatabaseRegistrations(GetDatabaseRegistrationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_registration_display_name())
+     *             .state(var_.database_registration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseRegistrationsResult> getDatabaseRegistrationsPlain(GetDatabaseRegistrationsPlainArgs args) {
@@ -107,6 +279,36 @@ public final class GoldenGateFunctions {
      * Lists the DatabaseRegistrations in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseRegistrations = GoldenGateFunctions.getDatabaseRegistrations(GetDatabaseRegistrationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_registration_display_name())
+     *             .state(var_.database_registration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseRegistrationsResult> getDatabaseRegistrations(GetDatabaseRegistrationsArgs args, InvokeOptions options) {
@@ -118,6 +320,36 @@ public final class GoldenGateFunctions {
      * Lists the DatabaseRegistrations in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDatabaseRegistrationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseRegistrations = GoldenGateFunctions.getDatabaseRegistrations(GetDatabaseRegistrationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_registration_display_name())
+     *             .state(var_.database_registration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseRegistrationsResult> getDatabaseRegistrationsPlain(GetDatabaseRegistrationsPlainArgs args, InvokeOptions options) {
@@ -129,6 +361,34 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args) {
@@ -140,6 +400,34 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentResult> getDeploymentPlain(GetDeploymentPlainArgs args) {
@@ -151,6 +439,34 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentResult> getDeployment(GetDeploymentArgs args, InvokeOptions options) {
@@ -162,6 +478,34 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployment = GoldenGateFunctions.getDeployment(GetDeploymentArgs.builder()
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentResult> getDeploymentPlain(GetDeploymentPlainArgs args, InvokeOptions options) {
@@ -173,6 +517,34 @@ public final class GoldenGateFunctions {
      * Retrieves a DeploymentBackup.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
+     *             .deploymentBackupId(oci_golden_gate_deployment_backup.test_deployment_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentBackupResult> getDeploymentBackup(GetDeploymentBackupArgs args) {
@@ -184,6 +556,34 @@ public final class GoldenGateFunctions {
      * Retrieves a DeploymentBackup.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
+     *             .deploymentBackupId(oci_golden_gate_deployment_backup.test_deployment_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentBackupResult> getDeploymentBackupPlain(GetDeploymentBackupPlainArgs args) {
@@ -195,6 +595,34 @@ public final class GoldenGateFunctions {
      * Retrieves a DeploymentBackup.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
+     *             .deploymentBackupId(oci_golden_gate_deployment_backup.test_deployment_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentBackupResult> getDeploymentBackup(GetDeploymentBackupArgs args, InvokeOptions options) {
@@ -206,6 +634,34 @@ public final class GoldenGateFunctions {
      * Retrieves a DeploymentBackup.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentBackup = GoldenGateFunctions.getDeploymentBackup(GetDeploymentBackupArgs.builder()
+     *             .deploymentBackupId(oci_golden_gate_deployment_backup.test_deployment_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentBackupResult> getDeploymentBackupPlain(GetDeploymentBackupPlainArgs args, InvokeOptions options) {
@@ -217,6 +673,37 @@ public final class GoldenGateFunctions {
      * Lists the Backups in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .displayName(var_.deployment_backup_display_name())
+     *             .state(var_.deployment_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentBackupsResult> getDeploymentBackups(GetDeploymentBackupsArgs args) {
@@ -228,6 +715,37 @@ public final class GoldenGateFunctions {
      * Lists the Backups in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .displayName(var_.deployment_backup_display_name())
+     *             .state(var_.deployment_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentBackupsResult> getDeploymentBackupsPlain(GetDeploymentBackupsPlainArgs args) {
@@ -239,6 +757,37 @@ public final class GoldenGateFunctions {
      * Lists the Backups in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .displayName(var_.deployment_backup_display_name())
+     *             .state(var_.deployment_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentBackupsResult> getDeploymentBackups(GetDeploymentBackupsArgs args, InvokeOptions options) {
@@ -250,6 +799,37 @@ public final class GoldenGateFunctions {
      * Lists the Backups in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentBackups = GoldenGateFunctions.getDeploymentBackups(GetDeploymentBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .displayName(var_.deployment_backup_display_name())
+     *             .state(var_.deployment_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentBackupsResult> getDeploymentBackupsPlain(GetDeploymentBackupsPlainArgs args, InvokeOptions options) {
@@ -261,6 +841,34 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment upgrade.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
+     *             .deploymentUpgradeId(oci_golden_gate_deployment_upgrade.test_deployment_upgrade().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentUpgradeResult> getDeploymentUpgrade(GetDeploymentUpgradeArgs args) {
@@ -272,6 +880,34 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment upgrade.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
+     *             .deploymentUpgradeId(oci_golden_gate_deployment_upgrade.test_deployment_upgrade().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentUpgradeResult> getDeploymentUpgradePlain(GetDeploymentUpgradePlainArgs args) {
@@ -283,6 +919,34 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment upgrade.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
+     *             .deploymentUpgradeId(oci_golden_gate_deployment_upgrade.test_deployment_upgrade().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentUpgradeResult> getDeploymentUpgrade(GetDeploymentUpgradeArgs args, InvokeOptions options) {
@@ -294,6 +958,34 @@ public final class GoldenGateFunctions {
      * Retrieves a deployment upgrade.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentUpgrade = GoldenGateFunctions.getDeploymentUpgrade(GetDeploymentUpgradeArgs.builder()
+     *             .deploymentUpgradeId(oci_golden_gate_deployment_upgrade.test_deployment_upgrade().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentUpgradeResult> getDeploymentUpgradePlain(GetDeploymentUpgradePlainArgs args, InvokeOptions options) {
@@ -305,6 +997,37 @@ public final class GoldenGateFunctions {
      * Lists the Deployment Upgrades in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .displayName(var_.deployment_upgrade_display_name())
+     *             .state(var_.deployment_upgrade_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentUpgradesResult> getDeploymentUpgrades(GetDeploymentUpgradesArgs args) {
@@ -316,6 +1039,37 @@ public final class GoldenGateFunctions {
      * Lists the Deployment Upgrades in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .displayName(var_.deployment_upgrade_display_name())
+     *             .state(var_.deployment_upgrade_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentUpgradesResult> getDeploymentUpgradesPlain(GetDeploymentUpgradesPlainArgs args) {
@@ -327,6 +1081,37 @@ public final class GoldenGateFunctions {
      * Lists the Deployment Upgrades in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .displayName(var_.deployment_upgrade_display_name())
+     *             .state(var_.deployment_upgrade_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentUpgradesResult> getDeploymentUpgrades(GetDeploymentUpgradesArgs args, InvokeOptions options) {
@@ -338,6 +1123,37 @@ public final class GoldenGateFunctions {
      * Lists the Deployment Upgrades in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentUpgradesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentUpgrades = GoldenGateFunctions.getDeploymentUpgrades(GetDeploymentUpgradesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .displayName(var_.deployment_upgrade_display_name())
+     *             .state(var_.deployment_upgrade_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentUpgradesResult> getDeploymentUpgradesPlain(GetDeploymentUpgradesPlainArgs args, InvokeOptions options) {
@@ -349,6 +1165,38 @@ public final class GoldenGateFunctions {
      * Lists the Deployments in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deployment_display_name())
+     *             .fqdn(var_.deployment_fqdn())
+     *             .lifecycleSubState(var_.deployment_lifecycle_sub_state())
+     *             .state(var_.deployment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args) {
@@ -360,6 +1208,38 @@ public final class GoldenGateFunctions {
      * Lists the Deployments in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deployment_display_name())
+     *             .fqdn(var_.deployment_fqdn())
+     *             .lifecycleSubState(var_.deployment_lifecycle_sub_state())
+     *             .state(var_.deployment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args) {
@@ -371,6 +1251,38 @@ public final class GoldenGateFunctions {
      * Lists the Deployments in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deployment_display_name())
+     *             .fqdn(var_.deployment_fqdn())
+     *             .lifecycleSubState(var_.deployment_lifecycle_sub_state())
+     *             .state(var_.deployment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDeploymentsResult> getDeployments(GetDeploymentsArgs args, InvokeOptions options) {
@@ -382,6 +1294,38 @@ public final class GoldenGateFunctions {
      * Lists the Deployments in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.ApiGateway.inputs.GetDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeployments = GoldenGateFunctions.getDeployments(GetDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.deployment_display_name())
+     *             .fqdn(var_.deployment_fqdn())
+     *             .lifecycleSubState(var_.deployment_lifecycle_sub_state())
+     *             .state(var_.deployment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDeploymentsResult> getDeploymentsPlain(GetDeploymentsPlainArgs args, InvokeOptions options) {

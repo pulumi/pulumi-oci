@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class GetDbSystemHistoryEntriesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemHistoryEntriesFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Database.Inputs
         public GetDbSystemHistoryEntriesFilterArgs()
         {
         }
+        public static new GetDbSystemHistoryEntriesFilterArgs Empty => new GetDbSystemHistoryEntriesFilterArgs();
     }
 }

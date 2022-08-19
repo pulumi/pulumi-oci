@@ -53,6 +53,34 @@ public final class OsManagementFunctions {
      * Returns a specific Managed Instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstance = OsManagementFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstanceResult> getManagedInstance(GetManagedInstanceArgs args) {
@@ -64,6 +92,34 @@ public final class OsManagementFunctions {
      * Returns a specific Managed Instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstance = OsManagementFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstanceResult> getManagedInstancePlain(GetManagedInstancePlainArgs args) {
@@ -75,6 +131,34 @@ public final class OsManagementFunctions {
      * Returns a specific Managed Instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstance = OsManagementFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstanceResult> getManagedInstance(GetManagedInstanceArgs args, InvokeOptions options) {
@@ -86,6 +170,34 @@ public final class OsManagementFunctions {
      * Returns a specific Managed Instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstance = OsManagementFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstanceResult> getManagedInstancePlain(GetManagedInstancePlainArgs args, InvokeOptions options) {
@@ -97,6 +209,37 @@ public final class OsManagementFunctions {
      * Get summary information about events on this instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceEventReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceEventReport = OsManagementFunctions.getManagedInstanceEventReport(GetManagedInstanceEventReportArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .latestTimestampGreaterThanOrEqualTo(var_.managed_instance_event_report_latest_timestamp_greater_than_or_equal_to())
+     *             .latestTimestampLessThan(var_.managed_instance_event_report_latest_timestamp_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstanceEventReportResult> getManagedInstanceEventReport(GetManagedInstanceEventReportArgs args) {
@@ -108,6 +251,37 @@ public final class OsManagementFunctions {
      * Get summary information about events on this instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceEventReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceEventReport = OsManagementFunctions.getManagedInstanceEventReport(GetManagedInstanceEventReportArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .latestTimestampGreaterThanOrEqualTo(var_.managed_instance_event_report_latest_timestamp_greater_than_or_equal_to())
+     *             .latestTimestampLessThan(var_.managed_instance_event_report_latest_timestamp_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstanceEventReportResult> getManagedInstanceEventReportPlain(GetManagedInstanceEventReportPlainArgs args) {
@@ -119,6 +293,37 @@ public final class OsManagementFunctions {
      * Get summary information about events on this instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceEventReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceEventReport = OsManagementFunctions.getManagedInstanceEventReport(GetManagedInstanceEventReportArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .latestTimestampGreaterThanOrEqualTo(var_.managed_instance_event_report_latest_timestamp_greater_than_or_equal_to())
+     *             .latestTimestampLessThan(var_.managed_instance_event_report_latest_timestamp_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstanceEventReportResult> getManagedInstanceEventReport(GetManagedInstanceEventReportArgs args, InvokeOptions options) {
@@ -130,6 +335,37 @@ public final class OsManagementFunctions {
      * Get summary information about events on this instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceEventReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceEventReport = OsManagementFunctions.getManagedInstanceEventReport(GetManagedInstanceEventReportArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .latestTimestampGreaterThanOrEqualTo(var_.managed_instance_event_report_latest_timestamp_greater_than_or_equal_to())
+     *             .latestTimestampLessThan(var_.managed_instance_event_report_latest_timestamp_less_than())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstanceEventReportResult> getManagedInstanceEventReportPlain(GetManagedInstanceEventReportPlainArgs args, InvokeOptions options) {
@@ -141,6 +377,34 @@ public final class OsManagementFunctions {
      * Returns a specific Managed Instance Group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroup = OsManagementFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
+     *             .managedInstanceGroupId(oci_osmanagement_managed_instance_group.test_managed_instance_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstanceGroupResult> getManagedInstanceGroup(GetManagedInstanceGroupArgs args) {
@@ -152,6 +416,34 @@ public final class OsManagementFunctions {
      * Returns a specific Managed Instance Group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroup = OsManagementFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
+     *             .managedInstanceGroupId(oci_osmanagement_managed_instance_group.test_managed_instance_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupResult> getManagedInstanceGroupPlain(GetManagedInstanceGroupPlainArgs args) {
@@ -163,6 +455,34 @@ public final class OsManagementFunctions {
      * Returns a specific Managed Instance Group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroup = OsManagementFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
+     *             .managedInstanceGroupId(oci_osmanagement_managed_instance_group.test_managed_instance_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstanceGroupResult> getManagedInstanceGroup(GetManagedInstanceGroupArgs args, InvokeOptions options) {
@@ -174,6 +494,34 @@ public final class OsManagementFunctions {
      * Returns a specific Managed Instance Group.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroup = OsManagementFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
+     *             .managedInstanceGroupId(oci_osmanagement_managed_instance_group.test_managed_instance_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupResult> getManagedInstanceGroupPlain(GetManagedInstanceGroupPlainArgs args, InvokeOptions options) {
@@ -185,6 +533,37 @@ public final class OsManagementFunctions {
      * Returns a list of all Managed Instance Groups.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroups = OsManagementFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.managed_instance_group_display_name())
+     *             .osFamily(var_.managed_instance_group_os_family())
+     *             .state(var_.managed_instance_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstanceGroupsResult> getManagedInstanceGroups(GetManagedInstanceGroupsArgs args) {
@@ -196,6 +575,37 @@ public final class OsManagementFunctions {
      * Returns a list of all Managed Instance Groups.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroups = OsManagementFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.managed_instance_group_display_name())
+     *             .osFamily(var_.managed_instance_group_os_family())
+     *             .state(var_.managed_instance_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupsResult> getManagedInstanceGroupsPlain(GetManagedInstanceGroupsPlainArgs args) {
@@ -207,6 +617,37 @@ public final class OsManagementFunctions {
      * Returns a list of all Managed Instance Groups.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroups = OsManagementFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.managed_instance_group_display_name())
+     *             .osFamily(var_.managed_instance_group_os_family())
+     *             .state(var_.managed_instance_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstanceGroupsResult> getManagedInstanceGroups(GetManagedInstanceGroupsArgs args, InvokeOptions options) {
@@ -218,6 +659,37 @@ public final class OsManagementFunctions {
      * Returns a list of all Managed Instance Groups.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceGroups = OsManagementFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.managed_instance_group_display_name())
+     *             .osFamily(var_.managed_instance_group_os_family())
+     *             .state(var_.managed_instance_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstanceGroupsResult> getManagedInstanceGroupsPlain(GetManagedInstanceGroupsPlainArgs args, InvokeOptions options) {
@@ -249,6 +721,38 @@ public final class OsManagementFunctions {
      * by the module name and then by the stream name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceModuleStreamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceModuleStreams = OsManagementFunctions.getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs.builder()
+     *             .managedInstanceId(var_.managed_instance_id())
+     *             .compartmentId(var_.compartment_id())
+     *             .moduleName(var_.managed_instance_module_name())
+     *             .streamName(var_.managed_instance_module_stream_name())
+     *             .streamStatus(var_.managed_instance_module_stream_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstanceModuleStreamsResult> getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs args) {
@@ -280,6 +784,38 @@ public final class OsManagementFunctions {
      * by the module name and then by the stream name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceModuleStreamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceModuleStreams = OsManagementFunctions.getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs.builder()
+     *             .managedInstanceId(var_.managed_instance_id())
+     *             .compartmentId(var_.compartment_id())
+     *             .moduleName(var_.managed_instance_module_name())
+     *             .streamName(var_.managed_instance_module_stream_name())
+     *             .streamStatus(var_.managed_instance_module_stream_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstanceModuleStreamsResult> getManagedInstanceModuleStreamsPlain(GetManagedInstanceModuleStreamsPlainArgs args) {
@@ -311,6 +847,38 @@ public final class OsManagementFunctions {
      * by the module name and then by the stream name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceModuleStreamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceModuleStreams = OsManagementFunctions.getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs.builder()
+     *             .managedInstanceId(var_.managed_instance_id())
+     *             .compartmentId(var_.compartment_id())
+     *             .moduleName(var_.managed_instance_module_name())
+     *             .streamName(var_.managed_instance_module_stream_name())
+     *             .streamStatus(var_.managed_instance_module_stream_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstanceModuleStreamsResult> getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs args, InvokeOptions options) {
@@ -342,6 +910,38 @@ public final class OsManagementFunctions {
      * by the module name and then by the stream name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceModuleStreamsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceModuleStreams = OsManagementFunctions.getManagedInstanceModuleStreams(GetManagedInstanceModuleStreamsArgs.builder()
+     *             .managedInstanceId(var_.managed_instance_id())
+     *             .compartmentId(var_.compartment_id())
+     *             .moduleName(var_.managed_instance_module_name())
+     *             .streamName(var_.managed_instance_module_stream_name())
+     *             .streamStatus(var_.managed_instance_module_stream_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstanceModuleStreamsResult> getManagedInstanceModuleStreamsPlain(GetManagedInstanceModuleStreamsPlainArgs args, InvokeOptions options) {
@@ -376,6 +976,39 @@ public final class OsManagementFunctions {
      * module name, then by stream name, and finally by profile name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceStreamProfiles = OsManagementFunctions.getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs.builder()
+     *             .managedInstanceId(var_.managed_instance_id())
+     *             .compartmentId(var_.compartment_id())
+     *             .moduleName(var_.managed_instance_module_name())
+     *             .profileName(var_.managed_instance_module_stream_profile_name())
+     *             .profileStatus(var_.managed_instance_profile_status())
+     *             .streamName(var_.managed_instance_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstanceStreamProfileResult> getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs args) {
@@ -410,6 +1043,39 @@ public final class OsManagementFunctions {
      * module name, then by stream name, and finally by profile name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceStreamProfiles = OsManagementFunctions.getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs.builder()
+     *             .managedInstanceId(var_.managed_instance_id())
+     *             .compartmentId(var_.compartment_id())
+     *             .moduleName(var_.managed_instance_module_name())
+     *             .profileName(var_.managed_instance_module_stream_profile_name())
+     *             .profileStatus(var_.managed_instance_profile_status())
+     *             .streamName(var_.managed_instance_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstanceStreamProfileResult> getManagedInstanceStreamProfilePlain(GetManagedInstanceStreamProfilePlainArgs args) {
@@ -444,6 +1110,39 @@ public final class OsManagementFunctions {
      * module name, then by stream name, and finally by profile name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceStreamProfiles = OsManagementFunctions.getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs.builder()
+     *             .managedInstanceId(var_.managed_instance_id())
+     *             .compartmentId(var_.compartment_id())
+     *             .moduleName(var_.managed_instance_module_name())
+     *             .profileName(var_.managed_instance_module_stream_profile_name())
+     *             .profileStatus(var_.managed_instance_profile_status())
+     *             .streamName(var_.managed_instance_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstanceStreamProfileResult> getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs args, InvokeOptions options) {
@@ -478,6 +1177,39 @@ public final class OsManagementFunctions {
      * module name, then by stream name, and finally by profile name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstanceStreamProfiles = OsManagementFunctions.getManagedInstanceStreamProfile(GetManagedInstanceStreamProfileArgs.builder()
+     *             .managedInstanceId(var_.managed_instance_id())
+     *             .compartmentId(var_.compartment_id())
+     *             .moduleName(var_.managed_instance_module_name())
+     *             .profileName(var_.managed_instance_module_stream_profile_name())
+     *             .profileStatus(var_.managed_instance_profile_status())
+     *             .streamName(var_.managed_instance_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstanceStreamProfileResult> getManagedInstanceStreamProfilePlain(GetManagedInstanceStreamProfilePlainArgs args, InvokeOptions options) {
@@ -489,6 +1221,36 @@ public final class OsManagementFunctions {
      * Returns a list of all Managed Instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstances = OsManagementFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.managed_instance_display_name())
+     *             .osFamily(var_.managed_instance_os_family())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstancesResult> getManagedInstances(GetManagedInstancesArgs args) {
@@ -500,6 +1262,36 @@ public final class OsManagementFunctions {
      * Returns a list of all Managed Instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstances = OsManagementFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.managed_instance_display_name())
+     *             .osFamily(var_.managed_instance_os_family())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstancesResult> getManagedInstancesPlain(GetManagedInstancesPlainArgs args) {
@@ -511,6 +1303,36 @@ public final class OsManagementFunctions {
      * Returns a list of all Managed Instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstances = OsManagementFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.managed_instance_display_name())
+     *             .osFamily(var_.managed_instance_os_family())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedInstancesResult> getManagedInstances(GetManagedInstancesArgs args, InvokeOptions options) {
@@ -522,6 +1344,36 @@ public final class OsManagementFunctions {
      * Returns a list of all Managed Instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedInstances = OsManagementFunctions.getManagedInstances(GetManagedInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.managed_instance_display_name())
+     *             .osFamily(var_.managed_instance_os_family())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedInstancesResult> getManagedInstancesPlain(GetManagedInstancesPlainArgs args, InvokeOptions options) {
@@ -533,6 +1385,34 @@ public final class OsManagementFunctions {
      * Returns a specific Software Source.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSource = OsManagementFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
+     *             .softwareSourceId(oci_osmanagement_software_source.test_software_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSoftwareSourceResult> getSoftwareSource(GetSoftwareSourceArgs args) {
@@ -544,6 +1424,34 @@ public final class OsManagementFunctions {
      * Returns a specific Software Source.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSource = OsManagementFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
+     *             .softwareSourceId(oci_osmanagement_software_source.test_software_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSoftwareSourceResult> getSoftwareSourcePlain(GetSoftwareSourcePlainArgs args) {
@@ -555,6 +1463,34 @@ public final class OsManagementFunctions {
      * Returns a specific Software Source.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSource = OsManagementFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
+     *             .softwareSourceId(oci_osmanagement_software_source.test_software_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSoftwareSourceResult> getSoftwareSource(GetSoftwareSourceArgs args, InvokeOptions options) {
@@ -566,6 +1502,34 @@ public final class OsManagementFunctions {
      * Returns a specific Software Source.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSource = OsManagementFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
+     *             .softwareSourceId(oci_osmanagement_software_source.test_software_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSoftwareSourceResult> getSoftwareSourcePlain(GetSoftwareSourcePlainArgs args, InvokeOptions options) {
@@ -577,6 +1541,36 @@ public final class OsManagementFunctions {
      * Retrieve a detailed description of a module stream from a software source.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceModuleStream = OsManagementFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
+     *             .moduleName(var_.software_source_module_stream_module_name())
+     *             .softwareSourceId(var_.software_source().id())
+     *             .streamName(var_.software_source_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs args) {
@@ -588,6 +1582,36 @@ public final class OsManagementFunctions {
      * Retrieve a detailed description of a module stream from a software source.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceModuleStream = OsManagementFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
+     *             .moduleName(var_.software_source_module_stream_module_name())
+     *             .softwareSourceId(var_.software_source().id())
+     *             .streamName(var_.software_source_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStreamPlain(GetSoftwareSourceModuleStreamPlainArgs args) {
@@ -599,6 +1623,36 @@ public final class OsManagementFunctions {
      * Retrieve a detailed description of a module stream from a software source.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceModuleStream = OsManagementFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
+     *             .moduleName(var_.software_source_module_stream_module_name())
+     *             .softwareSourceId(var_.software_source().id())
+     *             .streamName(var_.software_source_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs args, InvokeOptions options) {
@@ -610,6 +1664,36 @@ public final class OsManagementFunctions {
      * Retrieve a detailed description of a module stream from a software source.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceModuleStream = OsManagementFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
+     *             .moduleName(var_.software_source_module_stream_module_name())
+     *             .softwareSourceId(var_.software_source().id())
+     *             .streamName(var_.software_source_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSoftwareSourceModuleStreamResult> getSoftwareSourceModuleStreamPlain(GetSoftwareSourceModuleStreamPlainArgs args, InvokeOptions options) {
@@ -621,6 +1705,37 @@ public final class OsManagementFunctions {
      * Retrieve a detailed description of a module stream profile from a software source.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceModuleStreamProfile = OsManagementFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
+     *             .moduleName(var_.software_source_module_name())
+     *             .profileName(var_.software_source_module_stream_profile_name())
+     *             .softwareSourceId(var_.software_source().id())
+     *             .streamName(var_.software_source_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs args) {
@@ -632,6 +1747,37 @@ public final class OsManagementFunctions {
      * Retrieve a detailed description of a module stream profile from a software source.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceModuleStreamProfile = OsManagementFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
+     *             .moduleName(var_.software_source_module_name())
+     *             .profileName(var_.software_source_module_stream_profile_name())
+     *             .softwareSourceId(var_.software_source().id())
+     *             .streamName(var_.software_source_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfilePlain(GetSoftwareSourceModuleStreamProfilePlainArgs args) {
@@ -643,6 +1789,37 @@ public final class OsManagementFunctions {
      * Retrieve a detailed description of a module stream profile from a software source.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceModuleStreamProfile = OsManagementFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
+     *             .moduleName(var_.software_source_module_name())
+     *             .profileName(var_.software_source_module_stream_profile_name())
+     *             .softwareSourceId(var_.software_source().id())
+     *             .streamName(var_.software_source_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs args, InvokeOptions options) {
@@ -654,6 +1831,37 @@ public final class OsManagementFunctions {
      * Retrieve a detailed description of a module stream profile from a software source.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceModuleStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceModuleStreamProfile = OsManagementFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
+     *             .moduleName(var_.software_source_module_name())
+     *             .profileName(var_.software_source_module_stream_profile_name())
+     *             .softwareSourceId(var_.software_source().id())
+     *             .streamName(var_.software_source_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSoftwareSourceModuleStreamProfileResult> getSoftwareSourceModuleStreamProfilePlain(GetSoftwareSourceModuleStreamProfilePlainArgs args, InvokeOptions options) {
@@ -677,6 +1885,38 @@ public final class OsManagementFunctions {
      * without a &#34;streamName&#34;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceStreamProfiles = OsManagementFunctions.getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs.builder()
+     *             .softwareSourceId(var_.software_source().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .moduleName(var_.software_source_module_name())
+     *             .profileName(var_.software_source_module_stream_profile_name())
+     *             .streamName(var_.software_source_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSoftwareSourceStreamProfileResult> getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs args) {
@@ -700,6 +1940,38 @@ public final class OsManagementFunctions {
      * without a &#34;streamName&#34;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceStreamProfiles = OsManagementFunctions.getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs.builder()
+     *             .softwareSourceId(var_.software_source().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .moduleName(var_.software_source_module_name())
+     *             .profileName(var_.software_source_module_stream_profile_name())
+     *             .streamName(var_.software_source_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSoftwareSourceStreamProfileResult> getSoftwareSourceStreamProfilePlain(GetSoftwareSourceStreamProfilePlainArgs args) {
@@ -723,6 +1995,38 @@ public final class OsManagementFunctions {
      * without a &#34;streamName&#34;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceStreamProfiles = OsManagementFunctions.getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs.builder()
+     *             .softwareSourceId(var_.software_source().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .moduleName(var_.software_source_module_name())
+     *             .profileName(var_.software_source_module_stream_profile_name())
+     *             .streamName(var_.software_source_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSoftwareSourceStreamProfileResult> getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs args, InvokeOptions options) {
@@ -746,6 +2050,38 @@ public final class OsManagementFunctions {
      * without a &#34;streamName&#34;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourceStreamProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSourceStreamProfiles = OsManagementFunctions.getSoftwareSourceStreamProfile(GetSoftwareSourceStreamProfileArgs.builder()
+     *             .softwareSourceId(var_.software_source().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .moduleName(var_.software_source_module_name())
+     *             .profileName(var_.software_source_module_stream_profile_name())
+     *             .streamName(var_.software_source_module_stream_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSoftwareSourceStreamProfileResult> getSoftwareSourceStreamProfilePlain(GetSoftwareSourceStreamProfilePlainArgs args, InvokeOptions options) {
@@ -757,6 +2093,36 @@ public final class OsManagementFunctions {
      * Returns a list of all Software Sources.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSources = OsManagementFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.software_source_display_name())
+     *             .state(var_.software_source_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSoftwareSourcesResult> getSoftwareSources(GetSoftwareSourcesArgs args) {
@@ -768,6 +2134,36 @@ public final class OsManagementFunctions {
      * Returns a list of all Software Sources.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSources = OsManagementFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.software_source_display_name())
+     *             .state(var_.software_source_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSoftwareSourcesResult> getSoftwareSourcesPlain(GetSoftwareSourcesPlainArgs args) {
@@ -779,6 +2175,36 @@ public final class OsManagementFunctions {
      * Returns a list of all Software Sources.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSources = OsManagementFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.software_source_display_name())
+     *             .state(var_.software_source_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSoftwareSourcesResult> getSoftwareSources(GetSoftwareSourcesArgs args, InvokeOptions options) {
@@ -790,6 +2216,36 @@ public final class OsManagementFunctions {
      * Returns a list of all Software Sources.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsManagement.OsManagementFunctions;
+     * import com.pulumi.oci.OsManagement.inputs.GetSoftwareSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSoftwareSources = OsManagementFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.software_source_display_name())
+     *             .state(var_.software_source_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSoftwareSourcesResult> getSoftwareSourcesPlain(GetSoftwareSourcesPlainArgs args, InvokeOptions options) {

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class GetLoadBalancersFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetLoadBalancersFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A unique name for the routing policy rule. Avoid entering confidential information.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public GetLoadBalancersFilterInputArgs()
         {
         }
+        public static new GetLoadBalancersFilterInputArgs Empty => new GetLoadBalancersFilterInputArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationGoldenGateDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class MigrationGoldenGateDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationGoldenGateDetailsGetArgs()
         {
         }
+        public static new MigrationGoldenGateDetailsGetArgs Empty => new MigrationGoldenGateDetailsGetArgs();
     }
 }

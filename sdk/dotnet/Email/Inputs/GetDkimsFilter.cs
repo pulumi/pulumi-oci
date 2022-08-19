@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Email.Inputs
 {
 
-    public sealed class GetDkimsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetDkimsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to only return resources that match the given name exactly.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Email.Inputs
         public GetDkimsFilterArgs()
         {
         }
+        public static new GetDkimsFilterArgs Empty => new GetDkimsFilterArgs();
     }
 }

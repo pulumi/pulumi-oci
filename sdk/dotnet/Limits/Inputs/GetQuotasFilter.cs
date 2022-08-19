@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Limits.Inputs
 {
 
-    public sealed class GetQuotasFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetQuotasFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Limits.Inputs
         public GetQuotasFilterArgs()
         {
         }
+        public static new GetQuotasFilterArgs Empty => new GetQuotasFilterArgs();
     }
 }

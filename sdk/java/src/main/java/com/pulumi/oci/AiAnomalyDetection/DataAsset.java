@@ -22,6 +22,70 @@ import javax.annotation.Nullable;
  * Creates a new DataAsset.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.AiAnomalyDetection.DataAsset;
+ * import com.pulumi.oci.AiAnomalyDetection.DataAssetArgs;
+ * import com.pulumi.oci.AiAnomalyDetection.inputs.DataAssetDataSourceDetailsArgs;
+ * import com.pulumi.oci.AiAnomalyDetection.inputs.DataAssetDataSourceDetailsVersionSpecificDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDataAsset = new DataAsset(&#34;testDataAsset&#34;, DataAssetArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .dataSourceDetails(DataAssetDataSourceDetailsArgs.builder()
+ *                 .dataSourceType(var_.data_asset_data_source_details_data_source_type())
+ *                 .atpPasswordSecretId(oci_vault_secret.test_secret().id())
+ *                 .atpUserName(oci_identity_user.test_user().name())
+ *                 .bucket(var_.data_asset_data_source_details_bucket())
+ *                 .cwalletFileSecretId(oci_vault_secret.test_secret().id())
+ *                 .databaseName(oci_database_database.test_database().name())
+ *                 .ewalletFileSecretId(oci_vault_secret.test_secret().id())
+ *                 .keyStoreFileSecretId(oci_vault_secret.test_secret().id())
+ *                 .measurementName(var_.data_asset_data_source_details_measurement_name())
+ *                 .namespace(var_.data_asset_data_source_details_namespace())
+ *                 .object(var_.data_asset_data_source_details_object())
+ *                 .ojdbcFileSecretId(oci_vault_secret.test_secret().id())
+ *                 .passwordSecretId(oci_vault_secret.test_secret().id())
+ *                 .tableName(oci_nosql_table.test_table().name())
+ *                 .tnsnamesFileSecretId(oci_vault_secret.test_secret().id())
+ *                 .truststoreFileSecretId(oci_vault_secret.test_secret().id())
+ *                 .url(var_.data_asset_data_source_details_url())
+ *                 .userName(oci_identity_user.test_user().name())
+ *                 .versionSpecificDetails(DataAssetDataSourceDetailsVersionSpecificDetailsArgs.builder()
+ *                     .influxVersion(var_.data_asset_data_source_details_version_specific_details_influx_version())
+ *                     .bucket(var_.data_asset_data_source_details_version_specific_details_bucket())
+ *                     .databaseName(oci_database_database.test_database().name())
+ *                     .organizationName(var_.data_asset_data_source_details_version_specific_details_organization_name())
+ *                     .retentionPolicyName(oci_identity_policy.test_policy().name())
+ *                     .build())
+ *                 .walletPasswordSecretId(oci_vault_secret.test_secret().id())
+ *                 .build())
+ *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.data_asset_description())
+ *             .displayName(var_.data_asset_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .privateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

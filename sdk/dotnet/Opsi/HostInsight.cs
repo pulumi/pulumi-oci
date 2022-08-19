@@ -23,7 +23,7 @@ namespace Pulumi.Oci.Opsi
     /// ```
     /// </summary>
     [OciResourceType("oci:Opsi/hostInsight:HostInsight")]
-    public partial class HostInsight : Pulumi.CustomResource
+    public partial class HostInsight : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Compartment Identifier of host
@@ -225,7 +225,7 @@ namespace Pulumi.Oci.Opsi
         }
     }
 
-    public sealed class HostInsightArgs : Pulumi.ResourceArgs
+    public sealed class HostInsightArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier of host
@@ -308,9 +308,10 @@ namespace Pulumi.Oci.Opsi
         public HostInsightArgs()
         {
         }
+        public static new HostInsightArgs Empty => new HostInsightArgs();
     }
 
-    public sealed class HostInsightState : Pulumi.ResourceArgs
+    public sealed class HostInsightState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier of host
@@ -489,5 +490,6 @@ namespace Pulumi.Oci.Opsi
         public HostInsightState()
         {
         }
+        public static new HostInsightState Empty => new HostInsightState();
     }
 }

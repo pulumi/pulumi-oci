@@ -17,6 +17,35 @@ import javax.annotation.Nullable;
  * The `oci.Core.AppCatalogListingResourceVersionAgreement` resource creates AppCatalogListingResourceVersionAgreement for a particular resource version of a listing.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.AppCatalogListingResourceVersionAgreement;
+ * import com.pulumi.oci.Core.AppCatalogListingResourceVersionAgreementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAppCatalogListingResourceVersionAgreement = new AppCatalogListingResourceVersionAgreement(&#34;testAppCatalogListingResourceVersionAgreement&#34;, AppCatalogListingResourceVersionAgreementArgs.builder()        
+ *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+ *             .listingResourceVersion(var_.app_catalog_listing_resource_version_agreement_listing_resource_version())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  */
 @ResourceType(type="oci:Core/appCatalogListingResourceVersionAgreement:AppCatalogListingResourceVersionAgreement")

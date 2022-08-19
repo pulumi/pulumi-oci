@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class GetMonitorsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetMonitorsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the vantage point.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public GetMonitorsFilterInputArgs()
         {
         }
+        public static new GetMonitorsFilterInputArgs Empty => new GetMonitorsFilterInputArgs();
     }
 }

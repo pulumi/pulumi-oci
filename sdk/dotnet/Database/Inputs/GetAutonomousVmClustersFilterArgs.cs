@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class GetAutonomousVmClustersFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetAutonomousVmClustersFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the month of the year.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Database.Inputs
         public GetAutonomousVmClustersFilterInputArgs()
         {
         }
+        public static new GetAutonomousVmClustersFilterInputArgs Empty => new GetAutonomousVmClustersFilterInputArgs();
     }
 }

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPublication = Oci.Marketplace.GetPublication.Invoke(new()
         ///     {
-        ///         var testPublication = Output.Create(Oci.Marketplace.GetPublication.InvokeAsync(new Oci.Marketplace.GetPublicationArgs
-        ///         {
-        ///             PublicationId = oci_marketplace_publication.Test_publication.Id,
-        ///         }));
-        ///     }
+        ///         PublicationId = oci_marketplace_publication.Test_publication.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPublication = Oci.Marketplace.GetPublication.Invoke(new()
         ///     {
-        ///         var testPublication = Output.Create(Oci.Marketplace.GetPublication.InvokeAsync(new Oci.Marketplace.GetPublicationArgs
-        ///         {
-        ///             PublicationId = oci_marketplace_publication.Test_publication.Id,
-        ///         }));
-        ///     }
+        ///         PublicationId = oci_marketplace_publication.Test_publication.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Marketplace
     }
 
 
-    public sealed class GetPublicationArgs : Pulumi.InvokeArgs
+    public sealed class GetPublicationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the publication.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Marketplace
         public GetPublicationArgs()
         {
         }
+        public static new GetPublicationArgs Empty => new GetPublicationArgs();
     }
 
-    public sealed class GetPublicationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPublicationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the publication.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Marketplace
         public GetPublicationInvokeArgs()
         {
         }
+        public static new GetPublicationInvokeArgs Empty => new GetPublicationInvokeArgs();
     }
 
 

@@ -42,6 +42,51 @@ import javax.annotation.Nullable;
  * from the associated sensitive data model or target database.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.MaskingPolicy;
+ * import com.pulumi.oci.DataSafe.MaskingPolicyArgs;
+ * import com.pulumi.oci.DataSafe.inputs.MaskingPolicyColumnSourceArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMaskingPolicy = new MaskingPolicy(&#34;testMaskingPolicy&#34;, MaskingPolicyArgs.builder()        
+ *             .columnSources(MaskingPolicyColumnSourceArgs.builder()
+ *                 .columnSource(var_.masking_policy_column_source_column_source())
+ *                 .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+ *                 .targetId(oci_cloud_guard_target.test_target().id())
+ *                 .build())
+ *             .compartmentId(var_.compartment_id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.masking_policy_description())
+ *             .displayName(var_.masking_policy_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isDropTempTablesEnabled(var_.masking_policy_is_drop_temp_tables_enabled())
+ *             .isRedoLoggingEnabled(var_.masking_policy_is_redo_logging_enabled())
+ *             .isRefreshStatsEnabled(var_.masking_policy_is_refresh_stats_enabled())
+ *             .parallelDegree(var_.masking_policy_parallel_degree())
+ *             .postMaskingScript(var_.masking_policy_post_masking_script())
+ *             .preMaskingScript(var_.masking_policy_pre_masking_script())
+ *             .recompile(var_.masking_policy_recompile())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

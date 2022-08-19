@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseTools.Inputs
 {
 
-    public sealed class DatabaseToolsConnectionUserPasswordGetArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseToolsConnectionUserPasswordGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DatabaseTools.Inputs
         public DatabaseToolsConnectionUserPasswordGetArgs()
         {
         }
+        public static new DatabaseToolsConnectionUserPasswordGetArgs Empty => new DatabaseToolsConnectionUserPasswordGetArgs();
     }
 }

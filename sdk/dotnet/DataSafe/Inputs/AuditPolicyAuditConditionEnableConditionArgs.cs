@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class AuditPolicyAuditConditionEnableConditionArgs : Pulumi.ResourceArgs
+    public sealed class AuditPolicyAuditConditionEnableConditionArgs : global::Pulumi.ResourceArgs
     {
         [Input("entityNames")]
         private InputList<string>? _entityNames;
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public AuditPolicyAuditConditionEnableConditionArgs()
         {
         }
+        public static new AuditPolicyAuditConditionEnableConditionArgs Empty => new AuditPolicyAuditConditionEnableConditionArgs();
     }
 }

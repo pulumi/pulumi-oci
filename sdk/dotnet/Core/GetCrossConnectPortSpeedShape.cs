@@ -24,20 +24,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCrossConnectPortSpeedShapes = Oci.Core.GetCrossConnectPortSpeedShape.Invoke(new()
         ///     {
-        ///         var testCrossConnectPortSpeedShapes = Output.Create(Oci.Core.GetCrossConnectPortSpeedShape.InvokeAsync(new Oci.Core.GetCrossConnectPortSpeedShapeArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,20 +56,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCrossConnectPortSpeedShapes = Oci.Core.GetCrossConnectPortSpeedShape.Invoke(new()
         ///     {
-        ///         var testCrossConnectPortSpeedShapes = Output.Create(Oci.Core.GetCrossConnectPortSpeedShape.InvokeAsync(new Oci.Core.GetCrossConnectPortSpeedShapeArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetCrossConnectPortSpeedShapeArgs : Pulumi.InvokeArgs
+    public sealed class GetCrossConnectPortSpeedShapeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -100,9 +96,10 @@ namespace Pulumi.Oci.Core
         public GetCrossConnectPortSpeedShapeArgs()
         {
         }
+        public static new GetCrossConnectPortSpeedShapeArgs Empty => new GetCrossConnectPortSpeedShapeArgs();
     }
 
-    public sealed class GetCrossConnectPortSpeedShapeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCrossConnectPortSpeedShapeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -121,6 +118,7 @@ namespace Pulumi.Oci.Core
         public GetCrossConnectPortSpeedShapeInvokeArgs()
         {
         }
+        public static new GetCrossConnectPortSpeedShapeInvokeArgs Empty => new GetCrossConnectPortSpeedShapeInvokeArgs();
     }
 
 

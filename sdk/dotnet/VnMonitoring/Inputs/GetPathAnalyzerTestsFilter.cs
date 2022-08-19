@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.VnMonitoring.Inputs
 {
 
-    public sealed class GetPathAnalyzerTestsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetPathAnalyzerTestsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.VnMonitoring.Inputs
         public GetPathAnalyzerTestsFilterArgs()
         {
         }
+        public static new GetPathAnalyzerTestsFilterArgs Empty => new GetPathAnalyzerTestsFilterArgs();
     }
 }

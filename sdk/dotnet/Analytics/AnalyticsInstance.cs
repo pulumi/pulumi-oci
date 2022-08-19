@@ -18,54 +18,52 @@ namespace Pulumi.Oci.Analytics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAnalyticsInstance = new Oci.Analytics.AnalyticsInstance("testAnalyticsInstance", new()
     ///     {
-    ///         var testAnalyticsInstance = new Oci.Analytics.AnalyticsInstance("testAnalyticsInstance", new Oci.Analytics.AnalyticsInstanceArgs
+    ///         Capacity = new Oci.Analytics.Inputs.AnalyticsInstanceCapacityArgs
     ///         {
-    ///             Capacity = new Oci.Analytics.Inputs.AnalyticsInstanceCapacityArgs
+    ///             CapacityType = @var.Analytics_instance_capacity_capacity_type,
+    ///             CapacityValue = @var.Analytics_instance_capacity_capacity_value,
+    ///         },
+    ///         CompartmentId = @var.Compartment_id,
+    ///         FeatureSet = @var.Analytics_instance_feature_set,
+    ///         IdcsAccessToken = @var.Analytics_instance_idcs_access_token,
+    ///         LicenseType = @var.Analytics_instance_license_type,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Analytics_instance_description,
+    ///         EmailNotification = @var.Analytics_instance_email_notification,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         KmsKeyId = oci_kms_key.Test_key.Id,
+    ///         NetworkEndpointDetails = new Oci.Analytics.Inputs.AnalyticsInstanceNetworkEndpointDetailsArgs
+    ///         {
+    ///             NetworkEndpointType = @var.Analytics_instance_network_endpoint_details_network_endpoint_type,
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             VcnId = oci_core_vcn.Test_vcn.Id,
+    ///             WhitelistedIps = @var.Analytics_instance_network_endpoint_details_whitelisted_ips,
+    ///             WhitelistedVcns = new[]
     ///             {
-    ///                 CapacityType = @var.Analytics_instance_capacity_capacity_type,
-    ///                 CapacityValue = @var.Analytics_instance_capacity_capacity_value,
-    ///             },
-    ///             CompartmentId = @var.Compartment_id,
-    ///             FeatureSet = @var.Analytics_instance_feature_set,
-    ///             IdcsAccessToken = @var.Analytics_instance_idcs_access_token,
-    ///             LicenseType = @var.Analytics_instance_license_type,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Analytics_instance_description,
-    ///             EmailNotification = @var.Analytics_instance_email_notification,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             KmsKeyId = oci_kms_key.Test_key.Id,
-    ///             NetworkEndpointDetails = new Oci.Analytics.Inputs.AnalyticsInstanceNetworkEndpointDetailsArgs
-    ///             {
-    ///                 NetworkEndpointType = @var.Analytics_instance_network_endpoint_details_network_endpoint_type,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 VcnId = oci_core_vcn.Test_vcn.Id,
-    ///                 WhitelistedIps = @var.Analytics_instance_network_endpoint_details_whitelisted_ips,
-    ///                 WhitelistedVcns = 
+    ///                 new Oci.Analytics.Inputs.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs
     ///                 {
-    ///                     new Oci.Analytics.Inputs.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs
-    ///                     {
-    ///                         Id = @var.Analytics_instance_network_endpoint_details_whitelisted_vcns_id,
-    ///                         WhitelistedIps = @var.Analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips,
-    ///                     },
+    ///                     Id = @var.Analytics_instance_network_endpoint_details_whitelisted_vcns_id,
+    ///                     WhitelistedIps = @var.Analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips,
     ///                 },
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -77,7 +75,7 @@ namespace Pulumi.Oci.Analytics
     /// ```
     /// </summary>
     [OciResourceType("oci:Analytics/analyticsInstance:AnalyticsInstance")]
-    public partial class AnalyticsInstance : Pulumi.CustomResource
+    public partial class AnalyticsInstance : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
@@ -219,7 +217,7 @@ namespace Pulumi.Oci.Analytics
         }
     }
 
-    public sealed class AnalyticsInstanceArgs : Pulumi.ResourceArgs
+    public sealed class AnalyticsInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
@@ -314,9 +312,10 @@ namespace Pulumi.Oci.Analytics
         public AnalyticsInstanceArgs()
         {
         }
+        public static new AnalyticsInstanceArgs Empty => new AnalyticsInstanceArgs();
     }
 
-    public sealed class AnalyticsInstanceState : Pulumi.ResourceArgs
+    public sealed class AnalyticsInstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
@@ -429,5 +428,6 @@ namespace Pulumi.Oci.Analytics
         public AnalyticsInstanceState()
         {
         }
+        public static new AnalyticsInstanceState Empty => new AnalyticsInstanceState();
     }
 }

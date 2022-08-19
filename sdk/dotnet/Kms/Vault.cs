@@ -25,30 +25,28 @@ namespace Pulumi.Oci.Kms
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVault = new Oci.Kms.Vault("testVault", new()
     ///     {
-    ///         var testVault = new Oci.Kms.Vault("testVault", new Oci.Kms.VaultArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Vault_display_name,
+    ///         VaultType = @var.Vault_vault_type,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Vault_display_name,
-    ///             VaultType = @var.Vault_vault_type,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -60,7 +58,7 @@ namespace Pulumi.Oci.Kms
     /// ```
     /// </summary>
     [OciResourceType("oci:Kms/vault:Vault")]
-    public partial class Vault : Pulumi.CustomResource
+    public partial class Vault : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where you want to create this vault.
@@ -199,7 +197,7 @@ namespace Pulumi.Oci.Kms
         }
     }
 
-    public sealed class VaultArgs : Pulumi.ResourceArgs
+    public sealed class VaultArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where you want to create this vault.
@@ -267,9 +265,10 @@ namespace Pulumi.Oci.Kms
         public VaultArgs()
         {
         }
+        public static new VaultArgs Empty => new VaultArgs();
     }
 
-    public sealed class VaultState : Pulumi.ResourceArgs
+    public sealed class VaultState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where you want to create this vault.
@@ -385,5 +384,6 @@ namespace Pulumi.Oci.Kms
         public VaultState()
         {
         }
+        public static new VaultState Empty => new VaultState();
     }
 }

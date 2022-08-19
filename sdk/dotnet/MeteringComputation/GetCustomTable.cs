@@ -22,20 +22,18 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCustomTable = Oci.MeteringComputation.GetCustomTable.Invoke(new()
         ///     {
-        ///         var testCustomTable = Output.Create(Oci.MeteringComputation.GetCustomTable.InvokeAsync(new Oci.MeteringComputation.GetCustomTableArgs
-        ///         {
-        ///             CustomTableId = oci_metering_computation_custom_table.Test_custom_table.Id,
-        ///         }));
-        ///     }
+        ///         CustomTableId = oci_metering_computation_custom_table.Test_custom_table.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCustomTable = Oci.MeteringComputation.GetCustomTable.Invoke(new()
         ///     {
-        ///         var testCustomTable = Output.Create(Oci.MeteringComputation.GetCustomTable.InvokeAsync(new Oci.MeteringComputation.GetCustomTableArgs
-        ///         {
-        ///             CustomTableId = oci_metering_computation_custom_table.Test_custom_table.Id,
-        ///         }));
-        ///     }
+        ///         CustomTableId = oci_metering_computation_custom_table.Test_custom_table.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.MeteringComputation
     }
 
 
-    public sealed class GetCustomTableArgs : Pulumi.InvokeArgs
+    public sealed class GetCustomTableArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The custom table unique OCID.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.MeteringComputation
         public GetCustomTableArgs()
         {
         }
+        public static new GetCustomTableArgs Empty => new GetCustomTableArgs();
     }
 
-    public sealed class GetCustomTableInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCustomTableInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The custom table unique OCID.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.MeteringComputation
         public GetCustomTableInvokeArgs()
         {
         }
+        public static new GetCustomTableInvokeArgs Empty => new GetCustomTableInvokeArgs();
     }
 
 

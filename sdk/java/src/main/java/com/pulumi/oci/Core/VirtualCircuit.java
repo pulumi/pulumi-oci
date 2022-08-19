@@ -47,6 +47,63 @@ import javax.annotation.Nullable;
  * [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.VirtualCircuit;
+ * import com.pulumi.oci.Core.VirtualCircuitArgs;
+ * import com.pulumi.oci.Core.inputs.VirtualCircuitCrossConnectMappingArgs;
+ * import com.pulumi.oci.Core.inputs.VirtualCircuitPublicPrefixArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVirtualCircuit = new VirtualCircuit(&#34;testVirtualCircuit&#34;, VirtualCircuitArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .type(var_.virtual_circuit_type())
+ *             .bandwidthShapeName(var_.virtual_circuit_bandwidth_shape_name())
+ *             .bgpAdminState(var_.virtual_circuit_bgp_admin_state())
+ *             .crossConnectMappings(VirtualCircuitCrossConnectMappingArgs.builder()
+ *                 .bgpMd5authKey(var_.virtual_circuit_cross_connect_mappings_bgp_md5auth_key())
+ *                 .crossConnectOrCrossConnectGroupId(oci_core_cross_connect_or_cross_connect_group.test_cross_connect_or_cross_connect_group().id())
+ *                 .customerBgpPeeringIp(var_.virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip())
+ *                 .customerBgpPeeringIpv6(var_.virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6())
+ *                 .oracleBgpPeeringIp(var_.virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip())
+ *                 .oracleBgpPeeringIpv6(var_.virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6())
+ *                 .vlan(var_.virtual_circuit_cross_connect_mappings_vlan())
+ *                 .build())
+ *             .customerAsn(var_.virtual_circuit_customer_asn())
+ *             .customerBgpAsn(var_.virtual_circuit_customer_bgp_asn())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.virtual_circuit_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .ipMtu(var_.virtual_circuit_ip_mtu())
+ *             .isBfdEnabled(var_.virtual_circuit_is_bfd_enabled())
+ *             .gatewayId(oci_core_gateway.test_gateway().id())
+ *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+ *             .providerServiceKeyName(var_.virtual_circuit_provider_service_key_name())
+ *             .publicPrefixes(VirtualCircuitPublicPrefixArgs.builder()
+ *                 .cidrBlock(var_.virtual_circuit_public_prefixes_cidr_block())
+ *                 .build())
+ *             .region(var_.virtual_circuit_region())
+ *             .routingPolicies(var_.virtual_circuit_routing_policy())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmConfig.Inputs
 {
 
-    public sealed class ConfigDimensionGetArgs : Pulumi.ResourceArgs
+    public sealed class ConfigDimensionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The name of the metric. This must be a known metric name.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApmConfig.Inputs
         public ConfigDimensionGetArgs()
         {
         }
+        public static new ConfigDimensionGetArgs Empty => new ConfigDimensionGetArgs();
     }
 }

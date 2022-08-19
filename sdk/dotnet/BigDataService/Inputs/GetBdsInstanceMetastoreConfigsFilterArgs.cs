@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class GetBdsInstanceMetastoreConfigsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetBdsInstanceMetastoreConfigsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public GetBdsInstanceMetastoreConfigsFilterInputArgs()
         {
         }
+        public static new GetBdsInstanceMetastoreConfigsFilterInputArgs Empty => new GetBdsInstanceMetastoreConfigsFilterInputArgs();
     }
 }

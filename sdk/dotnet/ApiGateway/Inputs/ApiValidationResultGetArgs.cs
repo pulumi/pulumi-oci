@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class ApiValidationResultGetArgs : Pulumi.ResourceArgs
+    public sealed class ApiValidationResultGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the validation.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public ApiValidationResultGetArgs()
         {
         }
+        public static new ApiValidationResultGetArgs Empty => new ApiValidationResultGetArgs();
     }
 }

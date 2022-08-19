@@ -30,29 +30,27 @@ namespace Pulumi.Oci.Ons
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testNotificationTopic = new Oci.Ons.NotificationTopic("testNotificationTopic", new()
     ///     {
-    ///         var testNotificationTopic = new Oci.Ons.NotificationTopic("testNotificationTopic", new Oci.Ons.NotificationTopicArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Notification_topic_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Notification_topic_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -64,7 +62,7 @@ namespace Pulumi.Oci.Ons
     /// ```
     /// </summary>
     [OciResourceType("oci:Ons/notificationTopic:NotificationTopic")]
-    public partial class NotificationTopic : Pulumi.CustomResource
+    public partial class NotificationTopic : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The endpoint for managing subscriptions or publishing messages to the topic.
@@ -176,7 +174,7 @@ namespace Pulumi.Oci.Ons
         }
     }
 
-    public sealed class NotificationTopicArgs : Pulumi.ResourceArgs
+    public sealed class NotificationTopicArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the topic in.
@@ -223,9 +221,10 @@ namespace Pulumi.Oci.Ons
         public NotificationTopicArgs()
         {
         }
+        public static new NotificationTopicArgs Empty => new NotificationTopicArgs();
     }
 
-    public sealed class NotificationTopicState : Pulumi.ResourceArgs
+    public sealed class NotificationTopicState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The endpoint for managing subscriptions or publishing messages to the topic.
@@ -308,5 +307,6 @@ namespace Pulumi.Oci.Ons
         public NotificationTopicState()
         {
         }
+        public static new NotificationTopicState Empty => new NotificationTopicState();
     }
 }

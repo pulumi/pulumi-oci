@@ -22,20 +22,18 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApplication = Oci.DataFlow.GetApplication.Invoke(new()
         ///     {
-        ///         var testApplication = Output.Create(Oci.DataFlow.GetApplication.InvokeAsync(new Oci.DataFlow.GetApplicationArgs
-        ///         {
-        ///             ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///         }));
-        ///     }
+        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testApplication = Oci.DataFlow.GetApplication.Invoke(new()
         ///     {
-        ///         var testApplication = Output.Create(Oci.DataFlow.GetApplication.InvokeAsync(new Oci.DataFlow.GetApplicationArgs
-        ///         {
-        ///             ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///         }));
-        ///     }
+        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DataFlow
     }
 
 
-    public sealed class GetApplicationArgs : Pulumi.InvokeArgs
+    public sealed class GetApplicationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique ID for an application.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.DataFlow
         public GetApplicationArgs()
         {
         }
+        public static new GetApplicationArgs Empty => new GetApplicationArgs();
     }
 
-    public sealed class GetApplicationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetApplicationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique ID for an application.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.DataFlow
         public GetApplicationInvokeArgs()
         {
         }
+        public static new GetApplicationInvokeArgs Empty => new GetApplicationInvokeArgs();
     }
 
 
@@ -108,6 +106,10 @@ namespace Pulumi.Oci.DataFlow
     public sealed class GetApplicationResult
     {
         public readonly string ApplicationId;
+        /// <summary>
+        /// Logging details of Application logs for Data Flow Run.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetApplicationApplicationLogConfigResult> ApplicationLogConfigs;
         /// <summary>
         /// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
@@ -233,6 +235,8 @@ namespace Pulumi.Oci.DataFlow
         private GetApplicationResult(
             string applicationId,
 
+            ImmutableArray<Outputs.GetApplicationApplicationLogConfigResult> applicationLogConfigs,
+
             string archiveUri,
 
             ImmutableArray<string> arguments,
@@ -294,6 +298,7 @@ namespace Pulumi.Oci.DataFlow
             string warehouseBucketUri)
         {
             ApplicationId = applicationId;
+            ApplicationLogConfigs = applicationLogConfigs;
             ArchiveUri = archiveUri;
             Arguments = arguments;
             ClassName = className;

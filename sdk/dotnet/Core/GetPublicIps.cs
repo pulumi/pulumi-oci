@@ -41,24 +41,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPublicIps = Oci.Core.GetPublicIps.Invoke(new()
         ///     {
-        ///         var testPublicIps = Output.Create(Oci.Core.GetPublicIps.InvokeAsync(new Oci.Core.GetPublicIpsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Scope = @var.Public_ip_scope,
-        ///             AvailabilityDomain = @var.Public_ip_availability_domain,
-        ///             Lifetime = @var.Public_ip_lifetime,
-        ///             PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Scope = @var.Public_ip_scope,
+        ///         AvailabilityDomain = @var.Public_ip_availability_domain,
+        ///         Lifetime = @var.Public_ip_lifetime,
+        ///         PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -96,24 +94,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPublicIps = Oci.Core.GetPublicIps.Invoke(new()
         ///     {
-        ///         var testPublicIps = Output.Create(Oci.Core.GetPublicIps.InvokeAsync(new Oci.Core.GetPublicIpsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Scope = @var.Public_ip_scope,
-        ///             AvailabilityDomain = @var.Public_ip_availability_domain,
-        ///             Lifetime = @var.Public_ip_lifetime,
-        ///             PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Scope = @var.Public_ip_scope,
+        ///         AvailabilityDomain = @var.Public_ip_availability_domain,
+        ///         Lifetime = @var.Public_ip_lifetime,
+        ///         PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -123,7 +119,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetPublicIpsArgs : Pulumi.InvokeArgs
+    public sealed class GetPublicIpsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -168,9 +164,10 @@ namespace Pulumi.Oci.Core
         public GetPublicIpsArgs()
         {
         }
+        public static new GetPublicIpsArgs Empty => new GetPublicIpsArgs();
     }
 
-    public sealed class GetPublicIpsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPublicIpsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -215,6 +212,7 @@ namespace Pulumi.Oci.Core
         public GetPublicIpsInvokeArgs()
         {
         }
+        public static new GetPublicIpsInvokeArgs Empty => new GetPublicIpsInvokeArgs();
     }
 
 

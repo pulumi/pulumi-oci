@@ -17,23 +17,21 @@ namespace Pulumi.Oci.CloudGuard
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCloudGuardConfiguration = new Oci.CloudGuard.CloudGuardConfiguration("testCloudGuardConfiguration", new()
     ///     {
-    ///         var testCloudGuardConfiguration = new Oci.CloudGuard.CloudGuardConfiguration("testCloudGuardConfiguration", new Oci.CloudGuard.CloudGuardConfigurationArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ReportingRegion = @var.Cloud_guard_configuration_reporting_region,
-    ///             Status = @var.Cloud_guard_configuration_status,
-    ///             SelfManageResources = @var.Cloud_guard_configuration_self_manage_resources,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ReportingRegion = @var.Cloud_guard_configuration_reporting_region,
+    ///         Status = @var.Cloud_guard_configuration_status,
+    ///         SelfManageResources = @var.Cloud_guard_configuration_self_manage_resources,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -41,7 +39,7 @@ namespace Pulumi.Oci.CloudGuard
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration")]
-    public partial class CloudGuardConfiguration : Pulumi.CustomResource
+    public partial class CloudGuardConfiguration : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The ID of the compartment in which to list resources.
@@ -111,7 +109,7 @@ namespace Pulumi.Oci.CloudGuard
         }
     }
 
-    public sealed class CloudGuardConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class CloudGuardConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The ID of the compartment in which to list resources.
@@ -140,9 +138,10 @@ namespace Pulumi.Oci.CloudGuard
         public CloudGuardConfigurationArgs()
         {
         }
+        public static new CloudGuardConfigurationArgs Empty => new CloudGuardConfigurationArgs();
     }
 
-    public sealed class CloudGuardConfigurationState : Pulumi.ResourceArgs
+    public sealed class CloudGuardConfigurationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The ID of the compartment in which to list resources.
@@ -171,5 +170,6 @@ namespace Pulumi.Oci.CloudGuard
         public CloudGuardConfigurationState()
         {
         }
+        public static new CloudGuardConfigurationState Empty => new CloudGuardConfigurationState();
     }
 }

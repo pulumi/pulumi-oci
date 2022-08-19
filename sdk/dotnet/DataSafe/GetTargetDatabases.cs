@@ -22,28 +22,26 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetDatabases = Oci.DataSafe.GetTargetDatabases.Invoke(new()
         ///     {
-        ///         var testTargetDatabases = Output.Create(Oci.DataSafe.GetTargetDatabases.InvokeAsync(new Oci.DataSafe.GetTargetDatabasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Target_database_access_level,
-        ///             AssociatedResourceId = oci_data_safe_associated_resource.Test_associated_resource.Id,
-        ///             CompartmentIdInSubtree = @var.Target_database_compartment_id_in_subtree,
-        ///             DatabaseType = @var.Target_database_database_type,
-        ///             DisplayName = @var.Target_database_display_name,
-        ///             InfrastructureType = @var.Target_database_infrastructure_type,
-        ///             State = @var.Target_database_state,
-        ///             TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Target_database_access_level,
+        ///         AssociatedResourceId = oci_data_safe_associated_resource.Test_associated_resource.Id,
+        ///         CompartmentIdInSubtree = @var.Target_database_compartment_id_in_subtree,
+        ///         DatabaseType = @var.Target_database_database_type,
+        ///         DisplayName = @var.Target_database_display_name,
+        ///         InfrastructureType = @var.Target_database_infrastructure_type,
+        ///         State = @var.Target_database_state,
+        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,28 +60,26 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetDatabases = Oci.DataSafe.GetTargetDatabases.Invoke(new()
         ///     {
-        ///         var testTargetDatabases = Output.Create(Oci.DataSafe.GetTargetDatabases.InvokeAsync(new Oci.DataSafe.GetTargetDatabasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Target_database_access_level,
-        ///             AssociatedResourceId = oci_data_safe_associated_resource.Test_associated_resource.Id,
-        ///             CompartmentIdInSubtree = @var.Target_database_compartment_id_in_subtree,
-        ///             DatabaseType = @var.Target_database_database_type,
-        ///             DisplayName = @var.Target_database_display_name,
-        ///             InfrastructureType = @var.Target_database_infrastructure_type,
-        ///             State = @var.Target_database_state,
-        ///             TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Target_database_access_level,
+        ///         AssociatedResourceId = oci_data_safe_associated_resource.Test_associated_resource.Id,
+        ///         CompartmentIdInSubtree = @var.Target_database_compartment_id_in_subtree,
+        ///         DatabaseType = @var.Target_database_database_type,
+        ///         DisplayName = @var.Target_database_display_name,
+        ///         InfrastructureType = @var.Target_database_infrastructure_type,
+        ///         State = @var.Target_database_state,
+        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetTargetDatabasesArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabasesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -160,9 +156,10 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabasesArgs()
         {
         }
+        public static new GetTargetDatabasesArgs Empty => new GetTargetDatabasesArgs();
     }
 
-    public sealed class GetTargetDatabasesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabasesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -229,6 +226,7 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabasesInvokeArgs()
         {
         }
+        public static new GetTargetDatabasesInvokeArgs Empty => new GetTargetDatabasesInvokeArgs();
     }
 
 

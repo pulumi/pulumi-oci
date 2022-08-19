@@ -14,94 +14,6 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// Creates a new Network Firewall Policy.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var testNetworkFirewallPolicy = new Oci.NetworkFirewall.NetworkFirewallPolicy("testNetworkFirewallPolicy", new Oci.NetworkFirewall.NetworkFirewallPolicyArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ApplicationLists = @var.Network_firewall_policy_application_lists,
-    ///             DecryptionProfiles = 
-    ///             {
-    ///                 new Oci.NetworkFirewall.Inputs.NetworkFirewallPolicyDecryptionProfileArgs
-    ///                 {
-    ///                     IsOutOfCapacityBlocked = @var.Network_firewall_policy_decryption_profiles_is_out_of_capacity_blocked,
-    ///                     IsUnsupportedCipherBlocked = @var.Network_firewall_policy_decryption_profiles_is_unsupported_cipher_blocked,
-    ///                     IsUnsupportedVersionBlocked = @var.Network_firewall_policy_decryption_profiles_is_unsupported_version_blocked,
-    ///                     Type = @var.Network_firewall_policy_decryption_profiles_type,
-    ///                     AreCertificateExtensionsRestricted = @var.Network_firewall_policy_decryption_profiles_are_certificate_extensions_restricted,
-    ///                     IsAutoIncludeAltName = @var.Network_firewall_policy_decryption_profiles_is_auto_include_alt_name,
-    ///                     IsExpiredCertificateBlocked = @var.Network_firewall_policy_decryption_profiles_is_expired_certificate_blocked,
-    ///                     IsRevocationStatusTimeoutBlocked = @var.Network_firewall_policy_decryption_profiles_is_revocation_status_timeout_blocked,
-    ///                     IsUnknownRevocationStatusBlocked = @var.Network_firewall_policy_decryption_profiles_is_unknown_revocation_status_blocked,
-    ///                     IsUntrustedIssuerBlocked = @var.Network_firewall_policy_decryption_profiles_is_untrusted_issuer_blocked,
-    ///                 },
-    ///             },
-    ///             DecryptionRules = 
-    ///             {
-    ///                 new Oci.NetworkFirewall.Inputs.NetworkFirewallPolicyDecryptionRuleArgs
-    ///                 {
-    ///                     Action = @var.Network_firewall_policy_decryption_rules_action,
-    ///                     Condition = new Oci.NetworkFirewall.Inputs.NetworkFirewallPolicyDecryptionRuleConditionArgs
-    ///                     {
-    ///                         Destinations = @var.Network_firewall_policy_decryption_rules_condition_destinations,
-    ///                         Sources = @var.Network_firewall_policy_decryption_rules_condition_sources,
-    ///                     },
-    ///                     Name = @var.Network_firewall_policy_decryption_rules_name,
-    ///                     DecryptionProfile = @var.Network_firewall_policy_decryption_rules_decryption_profile,
-    ///                     Secret = @var.Network_firewall_policy_decryption_rules_secret,
-    ///                 },
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Network_firewall_policy_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IpAddressLists = @var.Network_firewall_policy_ip_address_lists,
-    ///             MappedSecrets = 
-    ///             {
-    ///                 new Oci.NetworkFirewall.Inputs.NetworkFirewallPolicyMappedSecretArgs
-    ///                 {
-    ///                     Source = @var.Network_firewall_policy_mapped_secrets_source,
-    ///                     Type = @var.Network_firewall_policy_mapped_secrets_type,
-    ///                     VaultSecretId = oci_vault_secret.Test_secret.Id,
-    ///                     VersionNumber = @var.Network_firewall_policy_mapped_secrets_version_number,
-    ///                 },
-    ///             },
-    ///             SecurityRules = 
-    ///             {
-    ///                 new Oci.NetworkFirewall.Inputs.NetworkFirewallPolicySecurityRuleArgs
-    ///                 {
-    ///                     Action = @var.Network_firewall_policy_security_rules_action,
-    ///                     Condition = new Oci.NetworkFirewall.Inputs.NetworkFirewallPolicySecurityRuleConditionArgs
-    ///                     {
-    ///                         Applications = @var.Network_firewall_policy_security_rules_condition_applications,
-    ///                         Destinations = @var.Network_firewall_policy_security_rules_condition_destinations,
-    ///                         Sources = @var.Network_firewall_policy_security_rules_condition_sources,
-    ///                         Urls = @var.Network_firewall_policy_security_rules_condition_urls,
-    ///                     },
-    ///                     Name = @var.Network_firewall_policy_security_rules_name,
-    ///                     Inspection = @var.Network_firewall_policy_security_rules_inspection,
-    ///                 },
-    ///             },
-    ///             UrlLists = @var.Network_firewall_policy_url_lists,
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// NetworkFirewallPolicies can be imported using the `id`, e.g.
@@ -111,7 +23,7 @@ namespace Pulumi.Oci.NetworkFirewall
     /// ```
     /// </summary>
     [OciResourceType("oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy")]
-    public partial class NetworkFirewallPolicy : Pulumi.CustomResource
+    public partial class NetworkFirewallPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
@@ -259,7 +171,7 @@ namespace Pulumi.Oci.NetworkFirewall
         }
     }
 
-    public sealed class NetworkFirewallPolicyArgs : Pulumi.ResourceArgs
+    public sealed class NetworkFirewallPolicyArgs : global::Pulumi.ResourceArgs
     {
         [Input("applicationLists")]
         private InputList<Inputs.NetworkFirewallPolicyApplicationListArgs>? _applicationLists;
@@ -384,9 +296,10 @@ namespace Pulumi.Oci.NetworkFirewall
         public NetworkFirewallPolicyArgs()
         {
         }
+        public static new NetworkFirewallPolicyArgs Empty => new NetworkFirewallPolicyArgs();
     }
 
-    public sealed class NetworkFirewallPolicyState : Pulumi.ResourceArgs
+    public sealed class NetworkFirewallPolicyState : global::Pulumi.ResourceArgs
     {
         [Input("applicationLists")]
         private InputList<Inputs.NetworkFirewallPolicyApplicationListGetArgs>? _applicationLists;
@@ -553,5 +466,6 @@ namespace Pulumi.Oci.NetworkFirewall
         public NetworkFirewallPolicyState()
         {
         }
+        public static new NetworkFirewallPolicyState Empty => new NetworkFirewallPolicyState();
     }
 }

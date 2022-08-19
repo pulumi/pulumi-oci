@@ -20,6 +20,34 @@ import javax.annotation.Nullable;
  * Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.UnsetSecurityAssessmentBaseline;
+ * import com.pulumi.oci.DataSafe.UnsetSecurityAssessmentBaselineArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testUnsetSecurityAssessmentBaseline = new UnsetSecurityAssessmentBaseline(&#34;testUnsetSecurityAssessmentBaseline&#34;, UnsetSecurityAssessmentBaselineArgs.builder()        
+ *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow.Inputs
 {
 
-    public sealed class ApplicationDriverShapeConfigArgs : Pulumi.ResourceArgs
+    public sealed class ApplicationDriverShapeConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The amount of memory used for the driver or executors.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataFlow.Inputs
         public ApplicationDriverShapeConfigArgs()
         {
         }
+        public static new ApplicationDriverShapeConfigArgs Empty => new ApplicationDriverShapeConfigArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlDbSystemChannelGetArgs : Pulumi.ResourceArgs
+    public sealed class MysqlDbSystemChannelGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -111,5 +111,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlDbSystemChannelGetArgs()
         {
         }
+        public static new MysqlDbSystemChannelGetArgs Empty => new MysqlDbSystemChannelGetArgs();
     }
 }

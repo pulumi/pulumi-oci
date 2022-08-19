@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class AutoScalingConfigurationPolicyRuleMetricArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationPolicyRuleMetricArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Allowed value is CPU_UTILIZATION.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public AutoScalingConfigurationPolicyRuleMetricArgs()
         {
         }
+        public static new AutoScalingConfigurationPolicyRuleMetricArgs Empty => new AutoScalingConfigurationPolicyRuleMetricArgs();
     }
 }

@@ -21,21 +21,19 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testListingTaxes = Oci.Marketplace.GetListingTaxes.Invoke(new()
         ///     {
-        ///         var testListingTaxes = Output.Create(Oci.Marketplace.GetListingTaxes.InvokeAsync(new Oci.Marketplace.GetListingTaxesArgs
-        ///         {
-        ///             ListingId = oci_marketplace_listing.Test_listing.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         ListingId = oci_marketplace_listing.Test_listing.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.Marketplace
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testListingTaxes = Oci.Marketplace.GetListingTaxes.Invoke(new()
         ///     {
-        ///         var testListingTaxes = Output.Create(Oci.Marketplace.GetListingTaxes.InvokeAsync(new Oci.Marketplace.GetListingTaxesArgs
-        ///         {
-        ///             ListingId = oci_marketplace_listing.Test_listing.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         ListingId = oci_marketplace_listing.Test_listing.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Marketplace
     }
 
 
-    public sealed class GetListingTaxesArgs : Pulumi.InvokeArgs
+    public sealed class GetListingTaxesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the compartment.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Marketplace
         public GetListingTaxesArgs()
         {
         }
+        public static new GetListingTaxesArgs Empty => new GetListingTaxesArgs();
     }
 
-    public sealed class GetListingTaxesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetListingTaxesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the compartment.
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.Marketplace
         public GetListingTaxesInvokeArgs()
         {
         }
+        public static new GetListingTaxesInvokeArgs Empty => new GetListingTaxesInvokeArgs();
     }
 
 

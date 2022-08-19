@@ -22,29 +22,27 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSteeringPolicyAttachments = Oci.Dns.GetSteeringPolicyAttachments.Invoke(new()
         ///     {
-        ///         var testSteeringPolicyAttachments = Output.Create(Oci.Dns.GetSteeringPolicyAttachments.InvokeAsync(new Oci.Dns.GetSteeringPolicyAttachmentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Steering_policy_attachment_display_name,
-        ///             Domain = @var.Steering_policy_attachment_domain,
-        ///             DomainContains = @var.Steering_policy_attachment_domain_contains,
-        ///             Id = @var.Steering_policy_attachment_id,
-        ///             State = @var.Steering_policy_attachment_state,
-        ///             SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Steering_policy_attachment_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Steering_policy_attachment_time_created_less_than,
-        ///             ZoneId = oci_dns_zone.Test_zone.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Steering_policy_attachment_display_name,
+        ///         Domain = @var.Steering_policy_attachment_domain,
+        ///         DomainContains = @var.Steering_policy_attachment_domain_contains,
+        ///         Id = @var.Steering_policy_attachment_id,
+        ///         State = @var.Steering_policy_attachment_state,
+        ///         SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Steering_policy_attachment_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Steering_policy_attachment_time_created_less_than,
+        ///         ZoneId = oci_dns_zone.Test_zone.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,29 +61,27 @@ namespace Pulumi.Oci.Dns
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSteeringPolicyAttachments = Oci.Dns.GetSteeringPolicyAttachments.Invoke(new()
         ///     {
-        ///         var testSteeringPolicyAttachments = Output.Create(Oci.Dns.GetSteeringPolicyAttachments.InvokeAsync(new Oci.Dns.GetSteeringPolicyAttachmentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Steering_policy_attachment_display_name,
-        ///             Domain = @var.Steering_policy_attachment_domain,
-        ///             DomainContains = @var.Steering_policy_attachment_domain_contains,
-        ///             Id = @var.Steering_policy_attachment_id,
-        ///             State = @var.Steering_policy_attachment_state,
-        ///             SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Steering_policy_attachment_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Steering_policy_attachment_time_created_less_than,
-        ///             ZoneId = oci_dns_zone.Test_zone.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Steering_policy_attachment_display_name,
+        ///         Domain = @var.Steering_policy_attachment_domain,
+        ///         DomainContains = @var.Steering_policy_attachment_domain_contains,
+        ///         Id = @var.Steering_policy_attachment_id,
+        ///         State = @var.Steering_policy_attachment_state,
+        ///         SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Steering_policy_attachment_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Steering_policy_attachment_time_created_less_than,
+        ///         ZoneId = oci_dns_zone.Test_zone.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.Dns
     }
 
 
-    public sealed class GetSteeringPolicyAttachmentsArgs : Pulumi.InvokeArgs
+    public sealed class GetSteeringPolicyAttachmentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
@@ -168,9 +164,10 @@ namespace Pulumi.Oci.Dns
         public GetSteeringPolicyAttachmentsArgs()
         {
         }
+        public static new GetSteeringPolicyAttachmentsArgs Empty => new GetSteeringPolicyAttachmentsArgs();
     }
 
-    public sealed class GetSteeringPolicyAttachmentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSteeringPolicyAttachmentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
@@ -243,6 +240,7 @@ namespace Pulumi.Oci.Dns
         public GetSteeringPolicyAttachmentsInvokeArgs()
         {
         }
+        public static new GetSteeringPolicyAttachmentsInvokeArgs Empty => new GetSteeringPolicyAttachmentsInvokeArgs();
     }
 
 

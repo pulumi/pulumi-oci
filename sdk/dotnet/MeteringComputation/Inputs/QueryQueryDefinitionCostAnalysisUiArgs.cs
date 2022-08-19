@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class QueryQueryDefinitionCostAnalysisUiArgs : Pulumi.ResourceArgs
+    public sealed class QueryQueryDefinitionCostAnalysisUiArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The graph type.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public QueryQueryDefinitionCostAnalysisUiArgs()
         {
         }
+        public static new QueryQueryDefinitionCostAnalysisUiArgs Empty => new QueryQueryDefinitionCostAnalysisUiArgs();
     }
 }

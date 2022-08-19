@@ -27,20 +27,18 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testUiPassword = new Oci.Identity.UiPassword("testUiPassword", new()
     ///     {
-    ///         var testUiPassword = new Oci.Identity.UiPassword("testUiPassword", new Oci.Identity.UiPasswordArgs
-    ///         {
-    ///             UserId = oci_identity_user.Test_user.Id,
-    ///         });
-    ///     }
+    ///         UserId = oci_identity_user.Test_user.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -48,7 +46,7 @@ namespace Pulumi.Oci.Identity
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Identity/uiPassword:UiPassword")]
-    public partial class UiPassword : Pulumi.CustomResource
+    public partial class UiPassword : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The detailed status of INACTIVE lifecycleState.
@@ -124,7 +122,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class UiPasswordArgs : Pulumi.ResourceArgs
+    public sealed class UiPasswordArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the user.
@@ -135,9 +133,10 @@ namespace Pulumi.Oci.Identity
         public UiPasswordArgs()
         {
         }
+        public static new UiPasswordArgs Empty => new UiPasswordArgs();
     }
 
-    public sealed class UiPasswordState : Pulumi.ResourceArgs
+    public sealed class UiPasswordState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The detailed status of INACTIVE lifecycleState.
@@ -172,5 +171,6 @@ namespace Pulumi.Oci.Identity
         public UiPasswordState()
         {
         }
+        public static new UiPasswordState Empty => new UiPasswordState();
     }
 }

@@ -25,6 +25,58 @@ import javax.annotation.Nullable;
  * and creates a new WorkRequest.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Analytics.AnalyticsInstance;
+ * import com.pulumi.oci.Analytics.AnalyticsInstanceArgs;
+ * import com.pulumi.oci.Analytics.inputs.AnalyticsInstanceCapacityArgs;
+ * import com.pulumi.oci.Analytics.inputs.AnalyticsInstanceNetworkEndpointDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAnalyticsInstance = new AnalyticsInstance(&#34;testAnalyticsInstance&#34;, AnalyticsInstanceArgs.builder()        
+ *             .capacity(AnalyticsInstanceCapacityArgs.builder()
+ *                 .capacityType(var_.analytics_instance_capacity_capacity_type())
+ *                 .capacityValue(var_.analytics_instance_capacity_capacity_value())
+ *                 .build())
+ *             .compartmentId(var_.compartment_id())
+ *             .featureSet(var_.analytics_instance_feature_set())
+ *             .idcsAccessToken(var_.analytics_instance_idcs_access_token())
+ *             .licenseType(var_.analytics_instance_license_type())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.analytics_instance_description())
+ *             .emailNotification(var_.analytics_instance_email_notification())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .kmsKeyId(oci_kms_key.test_key().id())
+ *             .networkEndpointDetails(AnalyticsInstanceNetworkEndpointDetailsArgs.builder()
+ *                 .networkEndpointType(var_.analytics_instance_network_endpoint_details_network_endpoint_type())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .vcnId(oci_core_vcn.test_vcn().id())
+ *                 .whitelistedIps(var_.analytics_instance_network_endpoint_details_whitelisted_ips())
+ *                 .whitelistedVcns(AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs.builder()
+ *                     .id(var_.analytics_instance_network_endpoint_details_whitelisted_vcns_id())
+ *                     .whitelistedIps(var_.analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips())
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

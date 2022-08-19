@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousExadataInfrastructureOcpu = Oci.Database.GetAutonomousExadataInfrastructureOcpu.Invoke(new()
         ///     {
-        ///         var testAutonomousExadataInfrastructureOcpu = Output.Create(Oci.Database.GetAutonomousExadataInfrastructureOcpu.InvokeAsync(new Oci.Database.GetAutonomousExadataInfrastructureOcpuArgs
-        ///         {
-        ///             AutonomousExadataInfrastructureId = oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id,
-        ///         }));
-        ///     }
+        ///         AutonomousExadataInfrastructureId = oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousExadataInfrastructureOcpu = Oci.Database.GetAutonomousExadataInfrastructureOcpu.Invoke(new()
         ///     {
-        ///         var testAutonomousExadataInfrastructureOcpu = Output.Create(Oci.Database.GetAutonomousExadataInfrastructureOcpu.InvokeAsync(new Oci.Database.GetAutonomousExadataInfrastructureOcpuArgs
-        ///         {
-        ///             AutonomousExadataInfrastructureId = oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id,
-        ///         }));
-        ///     }
+        ///         AutonomousExadataInfrastructureId = oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousExadataInfrastructureOcpuArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousExadataInfrastructureOcpuArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousExadataInfrastructureOcpuArgs()
         {
         }
+        public static new GetAutonomousExadataInfrastructureOcpuArgs Empty => new GetAutonomousExadataInfrastructureOcpuArgs();
     }
 
-    public sealed class GetAutonomousExadataInfrastructureOcpuInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousExadataInfrastructureOcpuInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousExadataInfrastructureOcpuInvokeArgs()
         {
         }
+        public static new GetAutonomousExadataInfrastructureOcpuInvokeArgs Empty => new GetAutonomousExadataInfrastructureOcpuInvokeArgs();
     }
 
 

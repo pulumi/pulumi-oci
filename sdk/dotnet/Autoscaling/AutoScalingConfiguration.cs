@@ -17,83 +17,81 @@ namespace Pulumi.Oci.Autoscaling
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAutoScalingConfiguration = new Oci.Autoscaling.AutoScalingConfiguration("testAutoScalingConfiguration", new()
     ///     {
-    ///         var testAutoScalingConfiguration = new Oci.Autoscaling.AutoScalingConfiguration("testAutoScalingConfiguration", new Oci.Autoscaling.AutoScalingConfigurationArgs
+    ///         AutoScalingResources = new Oci.Autoscaling.Inputs.AutoScalingConfigurationAutoScalingResourcesArgs
     ///         {
-    ///             AutoScalingResources = new Oci.Autoscaling.Inputs.AutoScalingConfigurationAutoScalingResourcesArgs
+    ///             Id = @var.Auto_scaling_configuration_auto_scaling_resources_id,
+    ///             Type = @var.Auto_scaling_configuration_auto_scaling_resources_type,
+    ///         },
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Policies = new[]
+    ///         {
+    ///             new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyArgs
     ///             {
-    ///                 Id = @var.Auto_scaling_configuration_auto_scaling_resources_id,
-    ///                 Type = @var.Auto_scaling_configuration_auto_scaling_resources_type,
-    ///             },
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Policies = 
-    ///             {
-    ///                 new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyArgs
+    ///                 PolicyType = @var.Auto_scaling_configuration_policies_policy_type,
+    ///                 Capacity = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyCapacityArgs
     ///                 {
-    ///                     PolicyType = @var.Auto_scaling_configuration_policies_policy_type,
-    ///                     Capacity = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyCapacityArgs
+    ///                     Initial = @var.Auto_scaling_configuration_policies_capacity_initial,
+    ///                     Max = @var.Auto_scaling_configuration_policies_capacity_max,
+    ///                     Min = @var.Auto_scaling_configuration_policies_capacity_min,
+    ///                 },
+    ///                 DisplayName = @var.Auto_scaling_configuration_policies_display_name,
+    ///                 ExecutionSchedule = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyExecutionScheduleArgs
+    ///                 {
+    ///                     Expression = @var.Auto_scaling_configuration_policies_execution_schedule_expression,
+    ///                     Timezone = @var.Auto_scaling_configuration_policies_execution_schedule_timezone,
+    ///                     Type = @var.Auto_scaling_configuration_policies_execution_schedule_type,
+    ///                 },
+    ///                 IsEnabled = @var.Auto_scaling_configuration_policies_is_enabled,
+    ///                 ResourceAction = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyResourceActionArgs
+    ///                 {
+    ///                     Action = @var.Auto_scaling_configuration_policies_resource_action_action,
+    ///                     ActionType = @var.Auto_scaling_configuration_policies_resource_action_action_type,
+    ///                 },
+    ///                 Rules = new[]
+    ///                 {
+    ///                     new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyRuleArgs
     ///                     {
-    ///                         Initial = @var.Auto_scaling_configuration_policies_capacity_initial,
-    ///                         Max = @var.Auto_scaling_configuration_policies_capacity_max,
-    ///                         Min = @var.Auto_scaling_configuration_policies_capacity_min,
-    ///                     },
-    ///                     DisplayName = @var.Auto_scaling_configuration_policies_display_name,
-    ///                     ExecutionSchedule = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyExecutionScheduleArgs
-    ///                     {
-    ///                         Expression = @var.Auto_scaling_configuration_policies_execution_schedule_expression,
-    ///                         Timezone = @var.Auto_scaling_configuration_policies_execution_schedule_timezone,
-    ///                         Type = @var.Auto_scaling_configuration_policies_execution_schedule_type,
-    ///                     },
-    ///                     IsEnabled = @var.Auto_scaling_configuration_policies_is_enabled,
-    ///                     ResourceAction = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyResourceActionArgs
-    ///                     {
-    ///                         Action = @var.Auto_scaling_configuration_policies_resource_action_action,
-    ///                         ActionType = @var.Auto_scaling_configuration_policies_resource_action_action_type,
-    ///                     },
-    ///                     Rules = 
-    ///                     {
-    ///                         new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyRuleArgs
+    ///                         Action = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyRuleActionArgs
     ///                         {
-    ///                             Action = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyRuleActionArgs
+    ///                             Type = @var.Auto_scaling_configuration_policies_rules_action_type,
+    ///                             Value = @var.Auto_scaling_configuration_policies_rules_action_value,
+    ///                         },
+    ///                         DisplayName = @var.Auto_scaling_configuration_policies_rules_display_name,
+    ///                         Metric = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyRuleMetricArgs
+    ///                         {
+    ///                             MetricType = @var.Auto_scaling_configuration_policies_rules_metric_metric_type,
+    ///                             Threshold = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyRuleMetricThresholdArgs
     ///                             {
-    ///                                 Type = @var.Auto_scaling_configuration_policies_rules_action_type,
-    ///                                 Value = @var.Auto_scaling_configuration_policies_rules_action_value,
-    ///                             },
-    ///                             DisplayName = @var.Auto_scaling_configuration_policies_rules_display_name,
-    ///                             Metric = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyRuleMetricArgs
-    ///                             {
-    ///                                 MetricType = @var.Auto_scaling_configuration_policies_rules_metric_metric_type,
-    ///                                 Threshold = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyRuleMetricThresholdArgs
-    ///                                 {
-    ///                                     Operator = @var.Auto_scaling_configuration_policies_rules_metric_threshold_operator,
-    ///                                     Value = @var.Auto_scaling_configuration_policies_rules_metric_threshold_value,
-    ///                                 },
+    ///                                 Operator = @var.Auto_scaling_configuration_policies_rules_metric_threshold_operator,
+    ///                                 Value = @var.Auto_scaling_configuration_policies_rules_metric_threshold_value,
     ///                             },
     ///                         },
     ///                     },
     ///                 },
     ///             },
-    ///             CoolDownInSeconds = @var.Auto_scaling_configuration_cool_down_in_seconds,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Auto_scaling_configuration_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsEnabled = @var.Auto_scaling_configuration_is_enabled,
-    ///         });
-    ///     }
+    ///         },
+    ///         CoolDownInSeconds = @var.Auto_scaling_configuration_cool_down_in_seconds,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Auto_scaling_configuration_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsEnabled = @var.Auto_scaling_configuration_is_enabled,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -105,7 +103,7 @@ namespace Pulumi.Oci.Autoscaling
     /// ```
     /// </summary>
     [OciResourceType("oci:Autoscaling/autoScalingConfiguration:AutoScalingConfiguration")]
-    public partial class AutoScalingConfiguration : Pulumi.CustomResource
+    public partial class AutoScalingConfiguration : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
@@ -217,7 +215,7 @@ namespace Pulumi.Oci.Autoscaling
         }
     }
 
-    public sealed class AutoScalingConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
@@ -288,9 +286,10 @@ namespace Pulumi.Oci.Autoscaling
         public AutoScalingConfigurationArgs()
         {
         }
+        public static new AutoScalingConfigurationArgs Empty => new AutoScalingConfigurationArgs();
     }
 
-    public sealed class AutoScalingConfigurationState : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A resource that is managed by an autoscaling configuration. The only supported type is `instancePool`.
@@ -379,5 +378,6 @@ namespace Pulumi.Oci.Autoscaling
         public AutoScalingConfigurationState()
         {
         }
+        public static new AutoScalingConfigurationState Empty => new AutoScalingConfigurationState();
     }
 }

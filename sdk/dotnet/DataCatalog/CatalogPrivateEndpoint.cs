@@ -17,31 +17,29 @@ namespace Pulumi.Oci.DataCatalog
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCatalogPrivateEndpoint = new Oci.DataCatalog.CatalogPrivateEndpoint("testCatalogPrivateEndpoint", new()
     ///     {
-    ///         var testCatalogPrivateEndpoint = new Oci.DataCatalog.CatalogPrivateEndpoint("testCatalogPrivateEndpoint", new Oci.DataCatalog.CatalogPrivateEndpointArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DnsZones = @var.Catalog_private_endpoint_dns_zones,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DnsZones = @var.Catalog_private_endpoint_dns_zones,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Catalog_private_endpoint_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Catalog_private_endpoint_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.DataCatalog
     /// ```
     /// </summary>
     [OciResourceType("oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint")]
-    public partial class CatalogPrivateEndpoint : Pulumi.CustomResource
+    public partial class CatalogPrivateEndpoint : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The list of catalogs using the private reverse connection endpoint
@@ -165,7 +163,7 @@ namespace Pulumi.Oci.DataCatalog
         }
     }
 
-    public sealed class CatalogPrivateEndpointArgs : Pulumi.ResourceArgs
+    public sealed class CatalogPrivateEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment identifier.
@@ -224,9 +222,10 @@ namespace Pulumi.Oci.DataCatalog
         public CatalogPrivateEndpointArgs()
         {
         }
+        public static new CatalogPrivateEndpointArgs Empty => new CatalogPrivateEndpointArgs();
     }
 
-    public sealed class CatalogPrivateEndpointState : Pulumi.ResourceArgs
+    public sealed class CatalogPrivateEndpointState : global::Pulumi.ResourceArgs
     {
         [Input("attachedCatalogs")]
         private InputList<string>? _attachedCatalogs;
@@ -321,5 +320,6 @@ namespace Pulumi.Oci.DataCatalog
         public CatalogPrivateEndpointState()
         {
         }
+        public static new CatalogPrivateEndpointState Empty => new CatalogPrivateEndpointState();
     }
 }

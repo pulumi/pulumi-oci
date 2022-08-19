@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetTargetDatabaseRoleArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabaseRoleArgs : global::Pulumi.InvokeArgs
     {
         [Input("authenticationType")]
         public string? AuthenticationType { get; set; }
@@ -52,9 +52,10 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabaseRoleArgs()
         {
         }
+        public static new GetTargetDatabaseRoleArgs Empty => new GetTargetDatabaseRoleArgs();
     }
 
-    public sealed class GetTargetDatabaseRoleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabaseRoleInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("authenticationType")]
         public Input<string>? AuthenticationType { get; set; }
@@ -87,6 +88,7 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabaseRoleInvokeArgs()
         {
         }
+        public static new GetTargetDatabaseRoleInvokeArgs Empty => new GetTargetDatabaseRoleInvokeArgs();
     }
 
 

@@ -26,20 +26,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGroup = Oci.Identity.GetGroup.Invoke(new()
         ///     {
-        ///         var testGroup = Output.Create(Oci.Identity.GetGroup.InvokeAsync(new Oci.Identity.GetGroupArgs
-        ///         {
-        ///             GroupId = oci_identity_group.Test_group.Id,
-        ///         }));
-        ///     }
+        ///         GroupId = oci_identity_group.Test_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,20 +60,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGroup = Oci.Identity.GetGroup.Invoke(new()
         ///     {
-        ///         var testGroup = Output.Create(Oci.Identity.GetGroup.InvokeAsync(new Oci.Identity.GetGroupArgs
-        ///         {
-        ///             GroupId = oci_identity_group.Test_group.Id,
-        ///         }));
-        ///     }
+        ///         GroupId = oci_identity_group.Test_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetGroupArgs : Pulumi.InvokeArgs
+    public sealed class GetGroupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the group.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Identity
         public GetGroupArgs()
         {
         }
+        public static new GetGroupArgs Empty => new GetGroupArgs();
     }
 
-    public sealed class GetGroupInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the group.
@@ -109,6 +106,7 @@ namespace Pulumi.Oci.Identity
         public GetGroupInvokeArgs()
         {
         }
+        public static new GetGroupInvokeArgs Empty => new GetGroupInvokeArgs();
     }
 
 

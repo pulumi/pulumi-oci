@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class VolumeGroupBackupSourceDetailsArgs : Pulumi.ResourceArgs
+    public sealed class VolumeGroupBackupSourceDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Core.Inputs
         public VolumeGroupBackupSourceDetailsArgs()
         {
         }
+        public static new VolumeGroupBackupSourceDetailsArgs Empty => new VolumeGroupBackupSourceDetailsArgs();
     }
 }

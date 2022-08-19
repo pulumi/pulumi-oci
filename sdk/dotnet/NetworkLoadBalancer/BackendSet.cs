@@ -17,36 +17,34 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBackendSet = new Oci.NetworkLoadBalancer.BackendSet("testBackendSet", new()
     ///     {
-    ///         var testBackendSet = new Oci.NetworkLoadBalancer.BackendSet("testBackendSet", new Oci.NetworkLoadBalancer.BackendSetArgs
+    ///         HealthChecker = new Oci.NetworkLoadBalancer.Inputs.BackendSetHealthCheckerArgs
     ///         {
-    ///             HealthChecker = new Oci.NetworkLoadBalancer.Inputs.BackendSetHealthCheckerArgs
-    ///             {
-    ///                 Protocol = @var.Backend_set_health_checker_protocol,
-    ///                 IntervalInMillis = @var.Backend_set_health_checker_interval_in_millis,
-    ///                 Port = @var.Backend_set_health_checker_port,
-    ///                 RequestData = @var.Backend_set_health_checker_request_data,
-    ///                 ResponseBodyRegex = @var.Backend_set_health_checker_response_body_regex,
-    ///                 ResponseData = @var.Backend_set_health_checker_response_data,
-    ///                 Retries = @var.Backend_set_health_checker_retries,
-    ///                 ReturnCode = @var.Backend_set_health_checker_return_code,
-    ///                 TimeoutInMillis = @var.Backend_set_health_checker_timeout_in_millis,
-    ///                 UrlPath = @var.Backend_set_health_checker_url_path,
-    ///             },
-    ///             NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-    ///             Policy = @var.Backend_set_policy,
-    ///             IpVersion = @var.Backend_set_ip_version,
-    ///             IsPreserveSource = @var.Backend_set_is_preserve_source,
-    ///         });
-    ///     }
+    ///             Protocol = @var.Backend_set_health_checker_protocol,
+    ///             IntervalInMillis = @var.Backend_set_health_checker_interval_in_millis,
+    ///             Port = @var.Backend_set_health_checker_port,
+    ///             RequestData = @var.Backend_set_health_checker_request_data,
+    ///             ResponseBodyRegex = @var.Backend_set_health_checker_response_body_regex,
+    ///             ResponseData = @var.Backend_set_health_checker_response_data,
+    ///             Retries = @var.Backend_set_health_checker_retries,
+    ///             ReturnCode = @var.Backend_set_health_checker_return_code,
+    ///             TimeoutInMillis = @var.Backend_set_health_checker_timeout_in_millis,
+    ///             UrlPath = @var.Backend_set_health_checker_url_path,
+    ///         },
+    ///         NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+    ///         Policy = @var.Backend_set_policy,
+    ///         IpVersion = @var.Backend_set_ip_version,
+    ///         IsPreserveSource = @var.Backend_set_is_preserve_source,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -58,7 +56,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     /// ```
     /// </summary>
     [OciResourceType("oci:NetworkLoadBalancer/backendSet:BackendSet")]
-    public partial class BackendSet : Pulumi.CustomResource
+    public partial class BackendSet : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Array of backends.
@@ -146,7 +144,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         }
     }
 
-    public sealed class BackendSetArgs : Pulumi.ResourceArgs
+    public sealed class BackendSetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
@@ -187,9 +185,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public BackendSetArgs()
         {
         }
+        public static new BackendSetArgs Empty => new BackendSetArgs();
     }
 
-    public sealed class BackendSetState : Pulumi.ResourceArgs
+    public sealed class BackendSetState : global::Pulumi.ResourceArgs
     {
         [Input("backends")]
         private InputList<Inputs.BackendSetBackendGetArgs>? _backends;
@@ -242,5 +241,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public BackendSetState()
         {
         }
+        public static new BackendSetState Empty => new BackendSetState();
     }
 }

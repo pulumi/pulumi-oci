@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTagStandardTagNamespaceTemplate = Oci.Identity.GetTagStandardTagNamespaceTemplate.Invoke(new()
         ///     {
-        ///         var testTagStandardTagNamespaceTemplate = Output.Create(Oci.Identity.GetTagStandardTagNamespaceTemplate.InvokeAsync(new Oci.Identity.GetTagStandardTagNamespaceTemplateArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             StandardTagNamespaceName = oci_identity_tag_namespace.Test_tag_namespace.Name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         StandardTagNamespaceName = oci_identity_tag_namespace.Test_tag_namespace.Name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTagStandardTagNamespaceTemplate = Oci.Identity.GetTagStandardTagNamespaceTemplate.Invoke(new()
         ///     {
-        ///         var testTagStandardTagNamespaceTemplate = Output.Create(Oci.Identity.GetTagStandardTagNamespaceTemplate.InvokeAsync(new Oci.Identity.GetTagStandardTagNamespaceTemplateArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             StandardTagNamespaceName = oci_identity_tag_namespace.Test_tag_namespace.Name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         StandardTagNamespaceName = oci_identity_tag_namespace.Test_tag_namespace.Name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetTagStandardTagNamespaceTemplateArgs : Pulumi.InvokeArgs
+    public sealed class GetTagStandardTagNamespaceTemplateArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Identity
         public GetTagStandardTagNamespaceTemplateArgs()
         {
         }
+        public static new GetTagStandardTagNamespaceTemplateArgs Empty => new GetTagStandardTagNamespaceTemplateArgs();
     }
 
-    public sealed class GetTagStandardTagNamespaceTemplateInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTagStandardTagNamespaceTemplateInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Identity
         public GetTagStandardTagNamespaceTemplateInvokeArgs()
         {
         }
+        public static new GetTagStandardTagNamespaceTemplateInvokeArgs Empty => new GetTagStandardTagNamespaceTemplateInvokeArgs();
     }
 
 

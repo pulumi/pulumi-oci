@@ -17,58 +17,56 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDatabase = new Oci.Database.Database("testDatabase", new()
     ///     {
-    ///         var testDatabase = new Oci.Database.Database("testDatabase", new Oci.Database.DatabaseArgs
+    ///         DatabaseName = new Oci.Database.Inputs.DatabaseDatabaseArgs
     ///         {
-    ///             Database = new Oci.Database.Inputs.DatabaseDatabaseArgs
+    ///             AdminPassword = @var.Database_database_admin_password,
+    ///             DbName = @var.Database_database_db_name,
+    ///             BackupId = oci_database_backup.Test_backup.Id,
+    ///             BackupTdePassword = @var.Database_database_backup_tde_password,
+    ///             CharacterSet = @var.Database_database_character_set,
+    ///             DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
+    ///             DbBackupConfig = new Oci.Database.Inputs.DatabaseDatabaseDbBackupConfigArgs
     ///             {
-    ///                 AdminPassword = @var.Database_database_admin_password,
-    ///                 DbName = @var.Database_database_db_name,
-    ///                 BackupId = oci_database_backup.Test_backup.Id,
-    ///                 BackupTdePassword = @var.Database_database_backup_tde_password,
-    ///                 CharacterSet = @var.Database_database_character_set,
-    ///                 DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
-    ///                 DbBackupConfig = new Oci.Database.Inputs.DatabaseDatabaseDbBackupConfigArgs
+    ///                 AutoBackupEnabled = @var.Database_database_db_backup_config_auto_backup_enabled,
+    ///                 AutoBackupWindow = @var.Database_database_db_backup_config_auto_backup_window,
+    ///                 BackupDestinationDetails = new[]
     ///                 {
-    ///                     AutoBackupEnabled = @var.Database_database_db_backup_config_auto_backup_enabled,
-    ///                     AutoBackupWindow = @var.Database_database_db_backup_config_auto_backup_window,
-    ///                     BackupDestinationDetails = 
+    ///                     new Oci.Database.Inputs.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs
     ///                     {
-    ///                         new Oci.Database.Inputs.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs
-    ///                         {
-    ///                             Id = @var.Database_database_db_backup_config_backup_destination_details_id,
-    ///                             Type = @var.Database_database_db_backup_config_backup_destination_details_type,
-    ///                         },
+    ///                         Id = @var.Database_database_db_backup_config_backup_destination_details_id,
+    ///                         Type = @var.Database_database_db_backup_config_backup_destination_details_type,
     ///                     },
-    ///                     RecoveryWindowInDays = @var.Database_database_db_backup_config_recovery_window_in_days,
     ///                 },
-    ///                 DbUniqueName = @var.Database_database_db_unique_name,
-    ///                 DbWorkload = @var.Database_database_db_workload,
-    ///                 DefinedTags = @var.Database_database_defined_tags,
-    ///                 FreeformTags = @var.Database_database_freeform_tags,
-    ///                 KmsKeyId = oci_kms_key.Test_key.Id,
-    ///                 KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
-    ///                 NcharacterSet = @var.Database_database_ncharacter_set,
-    ///                 PdbName = @var.Database_database_pdb_name,
-    ///                 SidPrefix = @var.Database_database_sid_prefix,
-    ///                 TdeWalletPassword = @var.Database_database_tde_wallet_password,
-    ///                 VaultId = oci_kms_vault.Test_vault.Id,
+    ///                 RecoveryWindowInDays = @var.Database_database_db_backup_config_recovery_window_in_days,
     ///             },
-    ///             DbHomeId = oci_database_db_home.Test_db_home.Id,
-    ///             Source = @var.Database_source,
-    ///             DbVersion = @var.Database_db_version,
+    ///             DbUniqueName = @var.Database_database_db_unique_name,
+    ///             DbWorkload = @var.Database_database_db_workload,
+    ///             DefinedTags = @var.Database_database_defined_tags,
+    ///             FreeformTags = @var.Database_database_freeform_tags,
     ///             KmsKeyId = oci_kms_key.Test_key.Id,
     ///             KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
-    ///         });
-    ///     }
+    ///             NcharacterSet = @var.Database_database_ncharacter_set,
+    ///             PdbName = @var.Database_database_pdb_name,
+    ///             SidPrefix = @var.Database_database_sid_prefix,
+    ///             TdeWalletPassword = @var.Database_database_tde_wallet_password,
+    ///             VaultId = oci_kms_vault.Test_vault.Id,
+    ///         },
+    ///         DbHomeId = oci_database_db_home.Test_db_home.Id,
+    ///         Source = @var.Database_source,
+    ///         DbVersion = @var.Database_db_version,
+    ///         KmsKeyId = oci_kms_key.Test_key.Id,
+    ///         KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -80,7 +78,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/database:Database")]
-    public partial class Database : Pulumi.CustomResource
+    public partial class Database : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The character set for the database.  The default is AL32UTF8. Allowed values are:
@@ -312,7 +310,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class DatabaseArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Details for creating a database.
@@ -371,9 +369,10 @@ namespace Pulumi.Oci.Database
         public DatabaseArgs()
         {
         }
+        public static new DatabaseArgs Empty => new DatabaseArgs();
     }
 
-    public sealed class DatabaseState : Pulumi.ResourceArgs
+    public sealed class DatabaseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The character set for the database.  The default is AL32UTF8. Allowed values are:
@@ -594,5 +593,6 @@ namespace Pulumi.Oci.Database
         public DatabaseState()
         {
         }
+        public static new DatabaseState Empty => new DatabaseState();
     }
 }

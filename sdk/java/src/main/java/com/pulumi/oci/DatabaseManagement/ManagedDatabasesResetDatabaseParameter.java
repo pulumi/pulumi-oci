@@ -21,6 +21,43 @@ import javax.annotation.Nullable;
  * Resets database parameter values to their default or startup values.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DatabaseManagement.ManagedDatabasesResetDatabaseParameter;
+ * import com.pulumi.oci.DatabaseManagement.ManagedDatabasesResetDatabaseParameterArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesResetDatabaseParameterCredentialsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testManagedDatabasesResetDatabaseParameter = new ManagedDatabasesResetDatabaseParameter(&#34;testManagedDatabasesResetDatabaseParameter&#34;, ManagedDatabasesResetDatabaseParameterArgs.builder()        
+ *             .credentials(ManagedDatabasesResetDatabaseParameterCredentialsArgs.builder()
+ *                 .password(var_.managed_databases_reset_database_parameter_credentials_password())
+ *                 .role(var_.managed_databases_reset_database_parameter_credentials_role())
+ *                 .secretId(oci_vault_secret.test_secret().id())
+ *                 .userName(oci_identity_user.test_user().name())
+ *                 .build())
+ *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+ *             .parameters(var_.managed_databases_reset_database_parameter_parameters())
+ *             .scope(var_.managed_databases_reset_database_parameter_scope())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

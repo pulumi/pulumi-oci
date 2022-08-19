@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class ScheduleQueryPropertiesDateRangeArgs : Pulumi.ResourceArgs
+    public sealed class ScheduleQueryPropertiesDateRangeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Defines whether the schedule date range is STATIC or DYNAMIC
@@ -36,5 +36,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public ScheduleQueryPropertiesDateRangeArgs()
         {
         }
+        public static new ScheduleQueryPropertiesDateRangeArgs Empty => new ScheduleQueryPropertiesDateRangeArgs();
     }
 }

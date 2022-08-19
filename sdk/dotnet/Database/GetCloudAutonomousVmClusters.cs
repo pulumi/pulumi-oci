@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCloudAutonomousVmClusters = Oci.Database.GetCloudAutonomousVmClusters.Invoke(new()
         ///     {
-        ///         var testCloudAutonomousVmClusters = Output.Create(Oci.Database.GetCloudAutonomousVmClusters.InvokeAsync(new Oci.Database.GetCloudAutonomousVmClustersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Cloud_autonomous_vm_cluster_availability_domain,
-        ///             CloudExadataInfrastructureId = oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
-        ///             DisplayName = @var.Cloud_autonomous_vm_cluster_display_name,
-        ///             State = @var.Cloud_autonomous_vm_cluster_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Cloud_autonomous_vm_cluster_availability_domain,
+        ///         CloudExadataInfrastructureId = oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
+        ///         DisplayName = @var.Cloud_autonomous_vm_cluster_display_name,
+        ///         State = @var.Cloud_autonomous_vm_cluster_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCloudAutonomousVmClusters = Oci.Database.GetCloudAutonomousVmClusters.Invoke(new()
         ///     {
-        ///         var testCloudAutonomousVmClusters = Output.Create(Oci.Database.GetCloudAutonomousVmClusters.InvokeAsync(new Oci.Database.GetCloudAutonomousVmClustersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Cloud_autonomous_vm_cluster_availability_domain,
-        ///             CloudExadataInfrastructureId = oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
-        ///             DisplayName = @var.Cloud_autonomous_vm_cluster_display_name,
-        ///             State = @var.Cloud_autonomous_vm_cluster_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Cloud_autonomous_vm_cluster_availability_domain,
+        ///         CloudExadataInfrastructureId = oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
+        ///         DisplayName = @var.Cloud_autonomous_vm_cluster_display_name,
+        ///         State = @var.Cloud_autonomous_vm_cluster_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetCloudAutonomousVmClustersArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudAutonomousVmClustersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given availability domain exactly.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.Database
         public GetCloudAutonomousVmClustersArgs()
         {
         }
+        public static new GetCloudAutonomousVmClustersArgs Empty => new GetCloudAutonomousVmClustersArgs();
     }
 
-    public sealed class GetCloudAutonomousVmClustersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudAutonomousVmClustersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given availability domain exactly.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.Database
         public GetCloudAutonomousVmClustersInvokeArgs()
         {
         }
+        public static new GetCloudAutonomousVmClustersInvokeArgs Empty => new GetCloudAutonomousVmClustersInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildRunBuildRunSourceTriggerInfoGetArgs : Pulumi.ResourceArgs
+    public sealed class BuildRunBuildRunSourceTriggerInfoGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("actions")]
         private InputList<Inputs.BuildRunBuildRunSourceTriggerInfoActionGetArgs>? _actions;
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildRunBuildRunSourceTriggerInfoGetArgs()
         {
         }
+        public static new BuildRunBuildRunSourceTriggerInfoGetArgs Empty => new BuildRunBuildRunSourceTriggerInfoGetArgs();
     }
 }

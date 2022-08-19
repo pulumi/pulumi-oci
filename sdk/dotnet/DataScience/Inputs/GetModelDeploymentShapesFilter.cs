@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class GetModelDeploymentShapesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetModelDeploymentShapesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the model deployment shape.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public GetModelDeploymentShapesFilterArgs()
         {
         }
+        public static new GetModelDeploymentShapesFilterArgs Empty => new GetModelDeploymentShapesFilterArgs();
     }
 }

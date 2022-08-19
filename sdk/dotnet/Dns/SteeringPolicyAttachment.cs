@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Dns
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSteeringPolicyAttachment = new Oci.Dns.SteeringPolicyAttachment("testSteeringPolicyAttachment", new()
     ///     {
-    ///         var testSteeringPolicyAttachment = new Oci.Dns.SteeringPolicyAttachment("testSteeringPolicyAttachment", new Oci.Dns.SteeringPolicyAttachmentArgs
-    ///         {
-    ///             DomainName = @var.Steering_policy_attachment_domain_name,
-    ///             SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
-    ///             ZoneId = oci_dns_zone.Test_zone.Id,
-    ///             DisplayName = @var.Steering_policy_attachment_display_name,
-    ///         });
-    ///     }
+    ///         DomainName = @var.Steering_policy_attachment_domain_name,
+    ///         SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
+    ///         ZoneId = oci_dns_zone.Test_zone.Id,
+    ///         DisplayName = @var.Steering_policy_attachment_display_name,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -50,7 +48,7 @@ namespace Pulumi.Oci.Dns
     /// ```
     /// </summary>
     [OciResourceType("oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment")]
-    public partial class SteeringPolicyAttachment : Pulumi.CustomResource
+    public partial class SteeringPolicyAttachment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment containing the steering policy attachment.
@@ -150,7 +148,7 @@ namespace Pulumi.Oci.Dns
         }
     }
 
-    public sealed class SteeringPolicyAttachmentArgs : Pulumi.ResourceArgs
+    public sealed class SteeringPolicyAttachmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
@@ -179,9 +177,10 @@ namespace Pulumi.Oci.Dns
         public SteeringPolicyAttachmentArgs()
         {
         }
+        public static new SteeringPolicyAttachmentArgs Empty => new SteeringPolicyAttachmentArgs();
     }
 
-    public sealed class SteeringPolicyAttachmentState : Pulumi.ResourceArgs
+    public sealed class SteeringPolicyAttachmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment containing the steering policy attachment.
@@ -246,5 +245,6 @@ namespace Pulumi.Oci.Dns
         public SteeringPolicyAttachmentState()
         {
         }
+        public static new SteeringPolicyAttachmentState Empty => new SteeringPolicyAttachmentState();
     }
 }

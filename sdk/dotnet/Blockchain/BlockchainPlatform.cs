@@ -17,37 +17,35 @@ namespace Pulumi.Oci.Blockchain
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBlockchainPlatform = new Oci.Blockchain.BlockchainPlatform("testBlockchainPlatform", new()
     ///     {
-    ///         var testBlockchainPlatform = new Oci.Blockchain.BlockchainPlatform("testBlockchainPlatform", new Oci.Blockchain.BlockchainPlatformArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ComputeShape = @var.Blockchain_platform_compute_shape,
+    ///         DisplayName = @var.Blockchain_platform_display_name,
+    ///         IdcsAccessToken = @var.Blockchain_platform_idcs_access_token,
+    ///         PlatformRole = @var.Blockchain_platform_platform_role,
+    ///         CaCertArchiveText = @var.Blockchain_platform_ca_cert_archive_text,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ComputeShape = @var.Blockchain_platform_compute_shape,
-    ///             DisplayName = @var.Blockchain_platform_display_name,
-    ///             IdcsAccessToken = @var.Blockchain_platform_idcs_access_token,
-    ///             PlatformRole = @var.Blockchain_platform_platform_role,
-    ///             CaCertArchiveText = @var.Blockchain_platform_ca_cert_archive_text,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Blockchain_platform_description,
-    ///             FederatedUserId = oci_identity_user.Test_user.Id,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IsByol = @var.Blockchain_platform_is_byol,
-    ///             PlatformVersion = @var.Blockchain_platform_platform_version,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Blockchain_platform_description,
+    ///         FederatedUserId = oci_identity_user.Test_user.Id,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         IsByol = @var.Blockchain_platform_is_byol,
+    ///         PlatformVersion = @var.Blockchain_platform_platform_version,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -59,7 +57,7 @@ namespace Pulumi.Oci.Blockchain
     /// ```
     /// </summary>
     [OciResourceType("oci:Blockchain/blockchainPlatform:BlockchainPlatform")]
-    public partial class BlockchainPlatform : Pulumi.CustomResource
+    public partial class BlockchainPlatform : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
@@ -267,7 +265,7 @@ namespace Pulumi.Oci.Blockchain
         }
     }
 
-    public sealed class BlockchainPlatformArgs : Pulumi.ResourceArgs
+    public sealed class BlockchainPlatformArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
@@ -380,9 +378,10 @@ namespace Pulumi.Oci.Blockchain
         public BlockchainPlatformArgs()
         {
         }
+        public static new BlockchainPlatformArgs Empty => new BlockchainPlatformArgs();
     }
 
-    public sealed class BlockchainPlatformState : Pulumi.ResourceArgs
+    public sealed class BlockchainPlatformState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
@@ -573,5 +572,6 @@ namespace Pulumi.Oci.Blockchain
         public BlockchainPlatformState()
         {
         }
+        public static new BlockchainPlatformState Empty => new BlockchainPlatformState();
     }
 }

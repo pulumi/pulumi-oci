@@ -22,23 +22,21 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGateways = Oci.ApiGateway.GetGateways.Invoke(new()
         ///     {
-        ///         var testGateways = Output.Create(Oci.ApiGateway.GetGateways.InvokeAsync(new Oci.ApiGateway.GetGatewaysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CertificateId = @var.Oci_apigateway_certificate.Test_certificate.Id,
-        ///             DisplayName = @var.Gateway_display_name,
-        ///             State = @var.Gateway_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CertificateId = @var.Oci_apigateway_certificate.Test_certificate.Id,
+        ///         DisplayName = @var.Gateway_display_name,
+        ///         State = @var.Gateway_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGateways = Oci.ApiGateway.GetGateways.Invoke(new()
         ///     {
-        ///         var testGateways = Output.Create(Oci.ApiGateway.GetGateways.InvokeAsync(new Oci.ApiGateway.GetGatewaysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CertificateId = @var.Oci_apigateway_certificate.Test_certificate.Id,
-        ///             DisplayName = @var.Gateway_display_name,
-        ///             State = @var.Gateway_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CertificateId = @var.Oci_apigateway_certificate.Test_certificate.Id,
+        ///         DisplayName = @var.Gateway_display_name,
+        ///         State = @var.Gateway_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.ApiGateway
     }
 
 
-    public sealed class GetGatewaysArgs : Pulumi.InvokeArgs
+    public sealed class GetGatewaysArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Filter gateways by the certificate ocid.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.ApiGateway
         public GetGatewaysArgs()
         {
         }
+        public static new GetGatewaysArgs Empty => new GetGatewaysArgs();
     }
 
-    public sealed class GetGatewaysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetGatewaysInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Filter gateways by the certificate ocid.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.ApiGateway
         public GetGatewaysInvokeArgs()
         {
         }
+        public static new GetGatewaysInvokeArgs Empty => new GetGatewaysInvokeArgs();
     }
 
 

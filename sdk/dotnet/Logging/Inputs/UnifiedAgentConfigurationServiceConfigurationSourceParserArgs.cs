@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging.Inputs
 {
 
-    public sealed class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs : Pulumi.ResourceArgs
+    public sealed class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable)
@@ -189,5 +189,6 @@ namespace Pulumi.Oci.Logging.Inputs
         public UnifiedAgentConfigurationServiceConfigurationSourceParserArgs()
         {
         }
+        public static new UnifiedAgentConfigurationServiceConfigurationSourceParserArgs Empty => new UnifiedAgentConfigurationServiceConfigurationSourceParserArgs();
     }
 }

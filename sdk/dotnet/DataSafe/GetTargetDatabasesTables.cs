@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetDatabasesTables = Oci.DataSafe.GetTargetDatabasesTables.Invoke(new()
         ///     {
-        ///         var testTargetDatabasesTables = Output.Create(Oci.DataSafe.GetTargetDatabasesTables.InvokeAsync(new Oci.DataSafe.GetTargetDatabasesTablesArgs
-        ///         {
-        ///             TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///             SchemaNames = @var.Target_databases_table_schema_name,
-        ///             SchemaNameContains = @var.Target_databases_table_schema_name_contains,
-        ///             TableNames = oci_nosql_table.Test_table.Name,
-        ///             TableNameContains = @var.Target_databases_table_table_name_contains,
-        ///         }));
-        ///     }
+        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///         SchemaNames = @var.Target_databases_table_schema_name,
+        ///         SchemaNameContains = @var.Target_databases_table_schema_name_contains,
+        ///         TableNames = oci_nosql_table.Test_table.Name,
+        ///         TableNameContains = @var.Target_databases_table_table_name_contains,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetDatabasesTables = Oci.DataSafe.GetTargetDatabasesTables.Invoke(new()
         ///     {
-        ///         var testTargetDatabasesTables = Output.Create(Oci.DataSafe.GetTargetDatabasesTables.InvokeAsync(new Oci.DataSafe.GetTargetDatabasesTablesArgs
-        ///         {
-        ///             TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///             SchemaNames = @var.Target_databases_table_schema_name,
-        ///             SchemaNameContains = @var.Target_databases_table_schema_name_contains,
-        ///             TableNames = oci_nosql_table.Test_table.Name,
-        ///             TableNameContains = @var.Target_databases_table_table_name_contains,
-        ///         }));
-        ///     }
+        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///         SchemaNames = @var.Target_databases_table_schema_name,
+        ///         SchemaNameContains = @var.Target_databases_table_schema_name_contains,
+        ///         TableNames = oci_nosql_table.Test_table.Name,
+        ///         TableNameContains = @var.Target_databases_table_table_name_contains,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetTargetDatabasesTablesArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabasesTablesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetTargetDatabasesTablesFilterArgs>? _filters;
@@ -140,9 +136,10 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabasesTablesArgs()
         {
         }
+        public static new GetTargetDatabasesTablesArgs Empty => new GetTargetDatabasesTablesArgs();
     }
 
-    public sealed class GetTargetDatabasesTablesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabasesTablesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetTargetDatabasesTablesFilterInputArgs>? _filters;
@@ -197,6 +194,7 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabasesTablesInvokeArgs()
         {
         }
+        public static new GetTargetDatabasesTablesInvokeArgs Empty => new GetTargetDatabasesTablesInvokeArgs();
     }
 
 

@@ -23,6 +23,61 @@ import javax.annotation.Nullable;
  * Adds a backend set to a network load balancer.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancersBackendSetsUnified;
+ * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancersBackendSetsUnifiedArgs;
+ * import com.pulumi.oci.NetworkLoadBalancer.inputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs;
+ * import com.pulumi.oci.NetworkLoadBalancer.inputs.NetworkLoadBalancersBackendSetsUnifiedBackendArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNetworkLoadBalancersBackendSetsUnified = new NetworkLoadBalancersBackendSetsUnified(&#34;testNetworkLoadBalancersBackendSetsUnified&#34;, NetworkLoadBalancersBackendSetsUnifiedArgs.builder()        
+ *             .healthChecker(NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs.builder()
+ *                 .protocol(var_.network_load_balancers_backend_sets_unified_health_checker_protocol())
+ *                 .intervalInMillis(var_.network_load_balancers_backend_sets_unified_health_checker_interval_in_millis())
+ *                 .port(var_.network_load_balancers_backend_sets_unified_health_checker_port())
+ *                 .requestData(var_.network_load_balancers_backend_sets_unified_health_checker_request_data())
+ *                 .responseBodyRegex(var_.network_load_balancers_backend_sets_unified_health_checker_response_body_regex())
+ *                 .responseData(var_.network_load_balancers_backend_sets_unified_health_checker_response_data())
+ *                 .retries(var_.network_load_balancers_backend_sets_unified_health_checker_retries())
+ *                 .returnCode(var_.network_load_balancers_backend_sets_unified_health_checker_return_code())
+ *                 .timeoutInMillis(var_.network_load_balancers_backend_sets_unified_health_checker_timeout_in_millis())
+ *                 .urlPath(var_.network_load_balancers_backend_sets_unified_health_checker_url_path())
+ *                 .build())
+ *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+ *             .policy(var_.network_load_balancers_backend_sets_unified_policy())
+ *             .backends(NetworkLoadBalancersBackendSetsUnifiedBackendArgs.builder()
+ *                 .port(var_.network_load_balancers_backend_sets_unified_backends_port())
+ *                 .ipAddress(var_.network_load_balancers_backend_sets_unified_backends_ip_address())
+ *                 .isBackup(var_.network_load_balancers_backend_sets_unified_backends_is_backup())
+ *                 .isDrain(var_.network_load_balancers_backend_sets_unified_backends_is_drain())
+ *                 .isOffline(var_.network_load_balancers_backend_sets_unified_backends_is_offline())
+ *                 .name(var_.network_load_balancers_backend_sets_unified_backends_name())
+ *                 .targetId(oci_cloud_guard_target.test_target().id())
+ *                 .weight(var_.network_load_balancers_backend_sets_unified_backends_weight())
+ *                 .build())
+ *             .ipVersion(var_.network_load_balancers_backend_sets_unified_ip_version())
+ *             .isPreserveSource(var_.network_load_balancers_backend_sets_unified_is_preserve_source())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

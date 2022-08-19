@@ -34,6 +34,48 @@ import javax.annotation.Nullable;
  * a future instance.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DatabaseManagement.ManagedDatabasesChangeDatabaseParameter;
+ * import com.pulumi.oci.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesChangeDatabaseParameterCredentialsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesChangeDatabaseParameterParameterArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testManagedDatabasesChangeDatabaseParameter = new ManagedDatabasesChangeDatabaseParameter(&#34;testManagedDatabasesChangeDatabaseParameter&#34;, ManagedDatabasesChangeDatabaseParameterArgs.builder()        
+ *             .credentials(ManagedDatabasesChangeDatabaseParameterCredentialsArgs.builder()
+ *                 .password(var_.managed_databases_change_database_parameter_credentials_password())
+ *                 .role(var_.managed_databases_change_database_parameter_credentials_role())
+ *                 .secretId(oci_vault_secret.test_secret().id())
+ *                 .userName(oci_identity_user.test_user().name())
+ *                 .build())
+ *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+ *             .parameters(ManagedDatabasesChangeDatabaseParameterParameterArgs.builder()
+ *                 .name(var_.managed_databases_change_database_parameter_parameters_name())
+ *                 .value(var_.managed_databases_change_database_parameter_parameters_value())
+ *                 .updateComment(var_.managed_databases_change_database_parameter_parameters_update_comment())
+ *                 .build())
+ *             .scope(var_.managed_databases_change_database_parameter_scope())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

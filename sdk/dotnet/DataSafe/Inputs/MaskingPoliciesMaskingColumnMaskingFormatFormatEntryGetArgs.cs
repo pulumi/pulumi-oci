@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryGetArgs : Pulumi.ResourceArgs
+    public sealed class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The name of the substitution column.
@@ -165,5 +165,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public MaskingPoliciesMaskingColumnMaskingFormatFormatEntryGetArgs()
         {
         }
+        public static new MaskingPoliciesMaskingColumnMaskingFormatFormatEntryGetArgs Empty => new MaskingPoliciesMaskingColumnMaskingFormatFormatEntryGetArgs();
     }
 }

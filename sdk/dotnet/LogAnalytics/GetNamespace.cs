@@ -22,20 +22,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNamespace = Oci.LogAnalytics.GetNamespace.Invoke(new()
         ///     {
-        ///         var testNamespace = Output.Create(Oci.LogAnalytics.GetNamespace.InvokeAsync(new Oci.LogAnalytics.GetNamespaceArgs
-        ///         {
-        ///             Namespace = @var.Namespace_namespace,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Namespace_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNamespace = Oci.LogAnalytics.GetNamespace.Invoke(new()
         ///     {
-        ///         var testNamespace = Output.Create(Oci.LogAnalytics.GetNamespace.InvokeAsync(new Oci.LogAnalytics.GetNamespaceArgs
-        ///         {
-        ///             Namespace = @var.Namespace_namespace,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Namespace_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.LogAnalytics
     }
 
 
-    public sealed class GetNamespaceArgs : Pulumi.InvokeArgs
+    public sealed class GetNamespaceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.LogAnalytics
         public GetNamespaceArgs()
         {
         }
+        public static new GetNamespaceArgs Empty => new GetNamespaceArgs();
     }
 
-    public sealed class GetNamespaceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNamespaceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.LogAnalytics
         public GetNamespaceInvokeArgs()
         {
         }
+        public static new GetNamespaceInvokeArgs Empty => new GetNamespaceInvokeArgs();
     }
 
 

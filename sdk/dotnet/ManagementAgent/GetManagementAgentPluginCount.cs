@@ -23,21 +23,19 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentPluginCount = Oci.ManagementAgent.GetManagementAgentPluginCount.Invoke(new()
         ///     {
-        ///         var testManagementAgentPluginCount = Output.Create(Oci.ManagementAgent.GetManagementAgentPluginCount.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentPluginCountArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             GroupBy = @var.Management_agent_plugin_count_group_by,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         GroupBy = @var.Management_agent_plugin_count_group_by,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,21 +55,19 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentPluginCount = Oci.ManagementAgent.GetManagementAgentPluginCount.Invoke(new()
         ///     {
-        ///         var testManagementAgentPluginCount = Output.Create(Oci.ManagementAgent.GetManagementAgentPluginCount.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentPluginCountArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             GroupBy = @var.Management_agent_plugin_count_group_by,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         GroupBy = @var.Management_agent_plugin_count_group_by,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.ManagementAgent
     }
 
 
-    public sealed class GetManagementAgentPluginCountArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentPluginCountArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment to which a request will be scoped.
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentPluginCountArgs()
         {
         }
+        public static new GetManagementAgentPluginCountArgs Empty => new GetManagementAgentPluginCountArgs();
     }
 
-    public sealed class GetManagementAgentPluginCountInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentPluginCountInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment to which a request will be scoped.
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentPluginCountInvokeArgs()
         {
         }
+        public static new GetManagementAgentPluginCountInvokeArgs Empty => new GetManagementAgentPluginCountInvokeArgs();
     }
 
 

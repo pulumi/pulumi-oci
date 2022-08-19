@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Ocvp.Inputs
 {
 
-    public sealed class GetExsiHostsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetExsiHostsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Ocvp.Inputs
         public GetExsiHostsFilterInputArgs()
         {
         }
+        public static new GetExsiHostsFilterInputArgs Empty => new GetExsiHostsFilterInputArgs();
     }
 }

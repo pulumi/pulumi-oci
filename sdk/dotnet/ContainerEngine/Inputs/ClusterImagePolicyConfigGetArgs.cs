@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class ClusterImagePolicyConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class ClusterImagePolicyConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public ClusterImagePolicyConfigGetArgs()
         {
         }
+        public static new ClusterImagePolicyConfigGetArgs Empty => new ClusterImagePolicyConfigGetArgs();
     }
 }

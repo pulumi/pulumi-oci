@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the month of the year.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs()
         {
         }
+        public static new AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs Empty => new AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs();
     }
 }

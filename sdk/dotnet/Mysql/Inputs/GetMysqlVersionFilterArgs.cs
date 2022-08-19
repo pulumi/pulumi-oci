@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class GetMysqlVersionFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetMysqlVersionFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public GetMysqlVersionFilterInputArgs()
         {
         }
+        public static new GetMysqlVersionFilterInputArgs Empty => new GetMysqlVersionFilterInputArgs();
     }
 }

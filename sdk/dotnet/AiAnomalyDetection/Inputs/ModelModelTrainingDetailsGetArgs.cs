@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiAnomalyDetection.Inputs
 {
 
-    public sealed class ModelModelTrainingDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class ModelModelTrainingDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("dataAssetIds", required: true)]
         private InputList<string>? _dataAssetIds;
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         public ModelModelTrainingDetailsGetArgs()
         {
         }
+        public static new ModelModelTrainingDetailsGetArgs Empty => new ModelModelTrainingDetailsGetArgs();
     }
 }

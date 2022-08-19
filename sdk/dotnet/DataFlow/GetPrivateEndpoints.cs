@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Data Flow service.
         /// 
-        /// Lists all private endpoints in the specified compartment.
+        /// Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
         /// 
         /// 
         /// {{% examples %}}
@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateEndpoints = Oci.DataFlow.GetPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testPrivateEndpoints = Output.Create(Oci.DataFlow.GetPrivateEndpoints.InvokeAsync(new Oci.DataFlow.GetPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Private_endpoint_display_name,
-        ///             DisplayNameStartsWith = @var.Private_endpoint_display_name_starts_with,
-        ///             OwnerPrincipalId = @var.Owner_principal_id,
-        ///             State = @var.Private_endpoint_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Private_endpoint_display_name,
+        ///         DisplayNameStartsWith = @var.Private_endpoint_display_name_starts_with,
+        ///         OwnerPrincipalId = @var.Owner_principal_id,
+        ///         State = @var.Private_endpoint_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -50,7 +48,7 @@ namespace Pulumi.Oci.DataFlow
         /// <summary>
         /// This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Data Flow service.
         /// 
-        /// Lists all private endpoints in the specified compartment.
+        /// Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
         /// 
         /// 
         /// {{% examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateEndpoints = Oci.DataFlow.GetPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testPrivateEndpoints = Output.Create(Oci.DataFlow.GetPrivateEndpoints.InvokeAsync(new Oci.DataFlow.GetPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Private_endpoint_display_name,
-        ///             DisplayNameStartsWith = @var.Private_endpoint_display_name_starts_with,
-        ///             OwnerPrincipalId = @var.Owner_principal_id,
-        ///             State = @var.Private_endpoint_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Private_endpoint_display_name,
+        ///         DisplayNameStartsWith = @var.Private_endpoint_display_name_starts_with,
+        ///         OwnerPrincipalId = @var.Owner_principal_id,
+        ///         State = @var.Private_endpoint_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DataFlow
     }
 
 
-    public sealed class GetPrivateEndpointsArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateEndpointsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.DataFlow
         public GetPrivateEndpointsArgs()
         {
         }
+        public static new GetPrivateEndpointsArgs Empty => new GetPrivateEndpointsArgs();
     }
 
-    public sealed class GetPrivateEndpointsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateEndpointsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.DataFlow
         public GetPrivateEndpointsInvokeArgs()
         {
         }
+        public static new GetPrivateEndpointsInvokeArgs Empty => new GetPrivateEndpointsInvokeArgs();
     }
 
 

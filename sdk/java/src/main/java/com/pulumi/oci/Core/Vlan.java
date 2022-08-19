@@ -23,6 +23,43 @@ import javax.annotation.Nullable;
  * Creates a VLAN in the specified VCN and the specified compartment.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.Vlan;
+ * import com.pulumi.oci.Core.VlanArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVlan = new Vlan(&#34;testVlan&#34;, VlanArgs.builder()        
+ *             .cidrBlock(var_.vlan_cidr_block())
+ *             .compartmentId(var_.compartment_id())
+ *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .availabilityDomain(var_.vlan_availability_domain())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.vlan_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .nsgIds(var_.vlan_nsg_ids())
+ *             .routeTableId(oci_core_route_table.test_route_table().id())
+ *             .vlanTag(var_.vlan_vlan_tag())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

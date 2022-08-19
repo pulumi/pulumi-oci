@@ -21,20 +21,18 @@ namespace Pulumi.Oci.AiVision
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testModel = Oci.AiVision.GetModel.Invoke(new()
         ///     {
-        ///         var testModel = Output.Create(Oci.AiVision.GetModel.InvokeAsync(new Oci.AiVision.GetModelArgs
-        ///         {
-        ///             ModelId = oci_ai_vision_model.Test_model.Id,
-        ///         }));
-        ///     }
+        ///         ModelId = oci_ai_vision_model.Test_model.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.AiVision
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testModel = Oci.AiVision.GetModel.Invoke(new()
         ///     {
-        ///         var testModel = Output.Create(Oci.AiVision.GetModel.InvokeAsync(new Oci.AiVision.GetModelArgs
-        ///         {
-        ///             ModelId = oci_ai_vision_model.Test_model.Id,
-        ///         }));
-        ///     }
+        ///         ModelId = oci_ai_vision_model.Test_model.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.AiVision
     }
 
 
-    public sealed class GetModelArgs : Pulumi.InvokeArgs
+    public sealed class GetModelArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique Model identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.AiVision
         public GetModelArgs()
         {
         }
+        public static new GetModelArgs Empty => new GetModelArgs();
     }
 
-    public sealed class GetModelInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetModelInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique Model identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.AiVision
         public GetModelInvokeArgs()
         {
         }
+        public static new GetModelInvokeArgs Empty => new GetModelInvokeArgs();
     }
 
 

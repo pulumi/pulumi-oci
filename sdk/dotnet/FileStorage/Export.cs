@@ -18,34 +18,32 @@ namespace Pulumi.Oci.FileStorage
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testExport = new Oci.FileStorage.Export("testExport", new()
     ///     {
-    ///         var testExport = new Oci.FileStorage.Export("testExport", new Oci.FileStorage.ExportArgs
+    ///         ExportSetId = oci_file_storage_export_set.Test_export_set.Id,
+    ///         FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
+    ///         Path = @var.Export_path,
+    ///         ExportOptions = new[]
     ///         {
-    ///             ExportSetId = oci_file_storage_export_set.Test_export_set.Id,
-    ///             FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
-    ///             Path = @var.Export_path,
-    ///             ExportOptions = 
+    ///             new Oci.FileStorage.Inputs.ExportExportOptionArgs
     ///             {
-    ///                 new Oci.FileStorage.Inputs.ExportExportOptionArgs
-    ///                 {
-    ///                     Source = @var.Export_export_options_source,
-    ///                     Access = @var.Export_export_options_access,
-    ///                     AnonymousGid = @var.Export_export_options_anonymous_gid,
-    ///                     AnonymousUid = @var.Export_export_options_anonymous_uid,
-    ///                     IdentitySquash = @var.Export_export_options_identity_squash,
-    ///                     RequirePrivilegedSourcePort = @var.Export_export_options_require_privileged_source_port,
-    ///                 },
+    ///                 Source = @var.Export_export_options_source,
+    ///                 Access = @var.Export_export_options_access,
+    ///                 AnonymousGid = @var.Export_export_options_anonymous_gid,
+    ///                 AnonymousUid = @var.Export_export_options_anonymous_uid,
+    ///                 IdentitySquash = @var.Export_export_options_identity_squash,
+    ///                 RequirePrivilegedSourcePort = @var.Export_export_options_require_privileged_source_port,
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -57,7 +55,7 @@ namespace Pulumi.Oci.FileStorage
     /// ```
     /// </summary>
     [OciResourceType("oci:FileStorage/export:Export")]
-    public partial class Export : Pulumi.CustomResource
+    public partial class Export : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Export options for the new export. If left unspecified, defaults to:
@@ -139,7 +137,7 @@ namespace Pulumi.Oci.FileStorage
         }
     }
 
-    public sealed class ExportArgs : Pulumi.ResourceArgs
+    public sealed class ExportArgs : global::Pulumi.ResourceArgs
     {
         [Input("exportOptions")]
         private InputList<Inputs.ExportExportOptionArgs>? _exportOptions;
@@ -174,9 +172,10 @@ namespace Pulumi.Oci.FileStorage
         public ExportArgs()
         {
         }
+        public static new ExportArgs Empty => new ExportArgs();
     }
 
-    public sealed class ExportState : Pulumi.ResourceArgs
+    public sealed class ExportState : global::Pulumi.ResourceArgs
     {
         [Input("exportOptions")]
         private InputList<Inputs.ExportExportOptionGetArgs>? _exportOptions;
@@ -223,5 +222,6 @@ namespace Pulumi.Oci.FileStorage
         public ExportState()
         {
         }
+        public static new ExportState Empty => new ExportState();
     }
 }

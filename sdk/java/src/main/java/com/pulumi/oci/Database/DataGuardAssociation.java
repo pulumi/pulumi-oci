@@ -32,6 +32,64 @@ import javax.annotation.Nullable;
  * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.DataGuardAssociation;
+ * import com.pulumi.oci.Database.DataGuardAssociationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDataGuardAssociation = new DataGuardAssociation(&#34;testDataGuardAssociation&#34;, DataGuardAssociationArgs.builder()        
+ *             .creationType(var_.data_guard_association_creation_type())
+ *             .databaseAdminPassword(var_.data_guard_association_database_admin_password())
+ *             .databaseId(oci_database_database.test_database().id())
+ *             .deleteStandbyDbHomeOnDelete(var_.data_guard_association_delete_standby_db_home_on_delete())
+ *             .protectionMode(var_.data_guard_association_protection_mode())
+ *             .transportType(var_.data_guard_association_transport_type())
+ *             .availabilityDomain(var_.data_guard_association_availability_domain())
+ *             .backupNetworkNsgIds(var_.data_guard_association_backup_network_nsg_ids())
+ *             .cpuCoreCount(var_.data_guard_association_cpu_core_count())
+ *             .databaseDefinedTags(var_.data_guard_association_database_defined_tags())
+ *             .databaseFreeformTags(var_.data_guard_association_database_freeform_tags())
+ *             .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
+ *             .dbSystemDefinedTags(var_.data_guard_association_db_system_defined_tags())
+ *             .dbSystemFreeformTags(var_.data_guard_association_db_system_freeform_tags())
+ *             .displayName(var_.data_guard_association_display_name())
+ *             .faultDomains(var_.data_guard_association_fault_domains())
+ *             .hostname(var_.data_guard_association_hostname())
+ *             .isActiveDataGuardEnabled(var_.data_guard_association_is_active_data_guard_enabled())
+ *             .licenseModel(var_.data_guard_association_license_model())
+ *             .nodeCount(var_.data_guard_association_node_count())
+ *             .nsgIds(var_.data_guard_association_nsg_ids())
+ *             .peerDbHomeId(oci_database_db_home.test_db_home().id())
+ *             .peerDbSystemId(oci_database_db_system.test_db_system().id())
+ *             .peerDbUniqueName(var_.data_guard_association_peer_db_unique_name())
+ *             .peerSidPrefix(var_.data_guard_association_peer_sid_prefix())
+ *             .peerVmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+ *             .privateIp(var_.data_guard_association_private_ip())
+ *             .shape(var_.data_guard_association_shape())
+ *             .storageVolumePerformanceMode(var_.data_guard_association_storage_volume_performance_mode())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .timeZone(var_.data_guard_association_time_zone())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

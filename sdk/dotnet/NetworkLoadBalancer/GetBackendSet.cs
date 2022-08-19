@@ -15,31 +15,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
         /// 
         /// Retrieves the configuration information for the specified backend set.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testBackendSet = Output.Create(Oci.NetworkLoadBalancer.GetBackendSet.InvokeAsync(new Oci.NetworkLoadBalancer.GetBackendSetArgs
-        ///         {
-        ///             BackendSetName = oci_network_load_balancer_backend_set.Test_backend_set.Name,
-        ///             NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-        ///             IpVersion = @var.Backend_set_ip_version,
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetBackendSetResult> InvokeAsync(GetBackendSetArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetBackendSetResult>("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args ?? new GetBackendSetArgs(), options.WithDefaults());
@@ -48,38 +23,13 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
         /// 
         /// Retrieves the configuration information for the specified backend set.
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testBackendSet = Output.Create(Oci.NetworkLoadBalancer.GetBackendSet.InvokeAsync(new Oci.NetworkLoadBalancer.GetBackendSetArgs
-        ///         {
-        ///             BackendSetName = oci_network_load_balancer_backend_set.Test_backend_set.Name,
-        ///             NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-        ///             IpVersion = @var.Backend_set_ip_version,
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetBackendSetResult> Invoke(GetBackendSetInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetBackendSetResult>("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args ?? new GetBackendSetInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetBackendSetArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendSetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the backend set to retrieve.  Example: `example_backend_set`
@@ -96,9 +46,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetBackendSetArgs()
         {
         }
+        public static new GetBackendSetArgs Empty => new GetBackendSetArgs();
     }
 
-    public sealed class GetBackendSetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendSetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the backend set to retrieve.  Example: `example_backend_set`
@@ -115,6 +66,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetBackendSetInvokeArgs()
         {
         }
+        public static new GetBackendSetInvokeArgs Empty => new GetBackendSetInvokeArgs();
     }
 
 

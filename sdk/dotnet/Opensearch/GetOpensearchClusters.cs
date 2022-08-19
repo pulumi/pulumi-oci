@@ -22,15 +22,12 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// ##### {Compartment-Name} - Name of  your compartment
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///     }
-        /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// {{% examples %}}
@@ -38,23 +35,21 @@ namespace Pulumi.Oci.Opensearch
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOpensearchClusters = Oci.Opensearch.GetOpensearchClusters.Invoke(new()
         ///     {
-        ///         var testOpensearchClusters = Output.Create(Oci.Opensearch.GetOpensearchClusters.InvokeAsync(new Oci.Opensearch.GetOpensearchClustersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Opensearch_cluster_display_name,
-        ///             Id = @var.Opensearch_cluster_id,
-        ///             State = @var.Opensearch_cluster_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Opensearch_cluster_display_name,
+        ///         Id = @var.Opensearch_cluster_id,
+        ///         State = @var.Opensearch_cluster_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -73,15 +68,12 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// ##### {Compartment-Name} - Name of  your compartment
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///     }
-        /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// {{% examples %}}
@@ -89,23 +81,21 @@ namespace Pulumi.Oci.Opensearch
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOpensearchClusters = Oci.Opensearch.GetOpensearchClusters.Invoke(new()
         ///     {
-        ///         var testOpensearchClusters = Output.Create(Oci.Opensearch.GetOpensearchClusters.InvokeAsync(new Oci.Opensearch.GetOpensearchClustersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Opensearch_cluster_display_name,
-        ///             Id = @var.Opensearch_cluster_id,
-        ///             State = @var.Opensearch_cluster_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Opensearch_cluster_display_name,
+        ///         Id = @var.Opensearch_cluster_id,
+        ///         State = @var.Opensearch_cluster_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -115,7 +105,7 @@ namespace Pulumi.Oci.Opensearch
     }
 
 
-    public sealed class GetOpensearchClustersArgs : Pulumi.InvokeArgs
+    public sealed class GetOpensearchClustersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -152,9 +142,10 @@ namespace Pulumi.Oci.Opensearch
         public GetOpensearchClustersArgs()
         {
         }
+        public static new GetOpensearchClustersArgs Empty => new GetOpensearchClustersArgs();
     }
 
-    public sealed class GetOpensearchClustersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOpensearchClustersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -191,6 +182,7 @@ namespace Pulumi.Oci.Opensearch
         public GetOpensearchClustersInvokeArgs()
         {
         }
+        public static new GetOpensearchClustersInvokeArgs Empty => new GetOpensearchClustersInvokeArgs();
     }
 
 

@@ -47,6 +47,37 @@ public final class ContainerEngineFunctions {
      * Create the Kubeconfig YAML for a cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .endpoint(var_.cluster_kube_config_endpoint())
+     *             .expiration(var_.cluster_kube_config_expiration())
+     *             .tokenVersion(var_.cluster_kube_config_token_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetClusterKubeConfigResult> getClusterKubeConfig(GetClusterKubeConfigArgs args) {
@@ -58,6 +89,37 @@ public final class ContainerEngineFunctions {
      * Create the Kubeconfig YAML for a cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .endpoint(var_.cluster_kube_config_endpoint())
+     *             .expiration(var_.cluster_kube_config_expiration())
+     *             .tokenVersion(var_.cluster_kube_config_token_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetClusterKubeConfigResult> getClusterKubeConfigPlain(GetClusterKubeConfigPlainArgs args) {
@@ -69,6 +131,37 @@ public final class ContainerEngineFunctions {
      * Create the Kubeconfig YAML for a cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .endpoint(var_.cluster_kube_config_endpoint())
+     *             .expiration(var_.cluster_kube_config_expiration())
+     *             .tokenVersion(var_.cluster_kube_config_token_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetClusterKubeConfigResult> getClusterKubeConfig(GetClusterKubeConfigArgs args, InvokeOptions options) {
@@ -80,6 +173,37 @@ public final class ContainerEngineFunctions {
      * Create the Kubeconfig YAML for a cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterKubeConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .endpoint(var_.cluster_kube_config_endpoint())
+     *             .expiration(var_.cluster_kube_config_expiration())
+     *             .tokenVersion(var_.cluster_kube_config_token_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetClusterKubeConfigResult> getClusterKubeConfigPlain(GetClusterKubeConfigPlainArgs args, InvokeOptions options) {
@@ -91,6 +215,35 @@ public final class ContainerEngineFunctions {
      * Get options available for clusters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
+     *             .clusterOptionId(oci_containerengine_cluster_option.test_cluster_option().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetClusterOptionResult> getClusterOption(GetClusterOptionArgs args) {
@@ -102,6 +255,35 @@ public final class ContainerEngineFunctions {
      * Get options available for clusters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
+     *             .clusterOptionId(oci_containerengine_cluster_option.test_cluster_option().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetClusterOptionResult> getClusterOptionPlain(GetClusterOptionPlainArgs args) {
@@ -113,6 +295,35 @@ public final class ContainerEngineFunctions {
      * Get options available for clusters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
+     *             .clusterOptionId(oci_containerengine_cluster_option.test_cluster_option().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetClusterOptionResult> getClusterOption(GetClusterOptionArgs args, InvokeOptions options) {
@@ -124,6 +335,35 @@ public final class ContainerEngineFunctions {
      * Get options available for clusters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClusterOptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
+     *             .clusterOptionId(oci_containerengine_cluster_option.test_cluster_option().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetClusterOptionResult> getClusterOptionPlain(GetClusterOptionPlainArgs args, InvokeOptions options) {
@@ -135,6 +375,36 @@ public final class ContainerEngineFunctions {
      * List all the cluster objects in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusters = ContainerEngineFunctions.getClusters(GetClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.cluster_name())
+     *             .states(var_.cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetClustersResult> getClusters(GetClustersArgs args) {
@@ -146,6 +416,36 @@ public final class ContainerEngineFunctions {
      * List all the cluster objects in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusters = ContainerEngineFunctions.getClusters(GetClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.cluster_name())
+     *             .states(var_.cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetClustersResult> getClustersPlain(GetClustersPlainArgs args) {
@@ -157,6 +457,36 @@ public final class ContainerEngineFunctions {
      * List all the cluster objects in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusters = ContainerEngineFunctions.getClusters(GetClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.cluster_name())
+     *             .states(var_.cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetClustersResult> getClusters(GetClustersArgs args, InvokeOptions options) {
@@ -168,6 +498,36 @@ public final class ContainerEngineFunctions {
      * List all the cluster objects in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusters = ContainerEngineFunctions.getClusters(GetClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.cluster_name())
+     *             .states(var_.cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetClustersResult> getClustersPlain(GetClustersPlainArgs args, InvokeOptions options) {
@@ -191,6 +551,34 @@ public final class ContainerEngineFunctions {
      * Get the details of a node pool.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
+     *             .nodePoolId(oci_containerengine_node_pool.test_node_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNodePoolResult> getNodePool(GetNodePoolArgs args) {
@@ -202,6 +590,34 @@ public final class ContainerEngineFunctions {
      * Get the details of a node pool.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
+     *             .nodePoolId(oci_containerengine_node_pool.test_node_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNodePoolResult> getNodePoolPlain(GetNodePoolPlainArgs args) {
@@ -213,6 +629,34 @@ public final class ContainerEngineFunctions {
      * Get the details of a node pool.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
+     *             .nodePoolId(oci_containerengine_node_pool.test_node_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNodePoolResult> getNodePool(GetNodePoolArgs args, InvokeOptions options) {
@@ -224,6 +668,34 @@ public final class ContainerEngineFunctions {
      * Get the details of a node pool.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
+     *             .nodePoolId(oci_containerengine_node_pool.test_node_pool().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNodePoolResult> getNodePoolPlain(GetNodePoolPlainArgs args, InvokeOptions options) {
@@ -235,6 +707,35 @@ public final class ContainerEngineFunctions {
      * Get options available for node pools.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolOptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
+     *             .nodePoolOptionId(oci_containerengine_node_pool_option.test_node_pool_option().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNodePoolOptionResult> getNodePoolOption(GetNodePoolOptionArgs args) {
@@ -246,6 +747,35 @@ public final class ContainerEngineFunctions {
      * Get options available for node pools.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolOptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
+     *             .nodePoolOptionId(oci_containerengine_node_pool_option.test_node_pool_option().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNodePoolOptionResult> getNodePoolOptionPlain(GetNodePoolOptionPlainArgs args) {
@@ -257,6 +787,35 @@ public final class ContainerEngineFunctions {
      * Get options available for node pools.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolOptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
+     *             .nodePoolOptionId(oci_containerengine_node_pool_option.test_node_pool_option().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNodePoolOptionResult> getNodePoolOption(GetNodePoolOptionArgs args, InvokeOptions options) {
@@ -268,6 +827,35 @@ public final class ContainerEngineFunctions {
      * Get options available for node pools.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolOptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
+     *             .nodePoolOptionId(oci_containerengine_node_pool_option.test_node_pool_option().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNodePoolOptionResult> getNodePoolOptionPlain(GetNodePoolOptionPlainArgs args, InvokeOptions options) {
@@ -279,6 +867,37 @@ public final class ContainerEngineFunctions {
      * List all the node pools in a compartment, and optionally filter by cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .name(var_.node_pool_name())
+     *             .states(var_.node_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNodePoolsResult> getNodePools(GetNodePoolsArgs args) {
@@ -290,6 +909,37 @@ public final class ContainerEngineFunctions {
      * List all the node pools in a compartment, and optionally filter by cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .name(var_.node_pool_name())
+     *             .states(var_.node_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNodePoolsResult> getNodePoolsPlain(GetNodePoolsPlainArgs args) {
@@ -301,6 +951,37 @@ public final class ContainerEngineFunctions {
      * List all the node pools in a compartment, and optionally filter by cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .name(var_.node_pool_name())
+     *             .states(var_.node_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNodePoolsResult> getNodePools(GetNodePoolsArgs args, InvokeOptions options) {
@@ -312,6 +993,37 @@ public final class ContainerEngineFunctions {
      * List all the node pools in a compartment, and optionally filter by cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetNodePoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .name(var_.node_pool_name())
+     *             .states(var_.node_pool_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNodePoolsResult> getNodePoolsPlain(GetNodePoolsPlainArgs args, InvokeOptions options) {
@@ -323,6 +1035,35 @@ public final class ContainerEngineFunctions {
      * Get the errors of a work request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWorkRequestErrorsResult> getWorkRequestErrors(GetWorkRequestErrorsArgs args) {
@@ -334,6 +1075,35 @@ public final class ContainerEngineFunctions {
      * Get the errors of a work request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWorkRequestErrorsResult> getWorkRequestErrorsPlain(GetWorkRequestErrorsPlainArgs args) {
@@ -345,6 +1115,35 @@ public final class ContainerEngineFunctions {
      * Get the errors of a work request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWorkRequestErrorsResult> getWorkRequestErrors(GetWorkRequestErrorsArgs args, InvokeOptions options) {
@@ -356,6 +1155,35 @@ public final class ContainerEngineFunctions {
      * Get the errors of a work request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWorkRequestErrorsResult> getWorkRequestErrorsPlain(GetWorkRequestErrorsPlainArgs args, InvokeOptions options) {
@@ -367,6 +1195,35 @@ public final class ContainerEngineFunctions {
      * Get the logs of a work request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestLogEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWorkRequestLogEntriesResult> getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs args) {
@@ -378,6 +1235,35 @@ public final class ContainerEngineFunctions {
      * Get the logs of a work request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestLogEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWorkRequestLogEntriesResult> getWorkRequestLogEntriesPlain(GetWorkRequestLogEntriesPlainArgs args) {
@@ -389,6 +1275,35 @@ public final class ContainerEngineFunctions {
      * Get the logs of a work request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestLogEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWorkRequestLogEntriesResult> getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs args, InvokeOptions options) {
@@ -400,6 +1315,35 @@ public final class ContainerEngineFunctions {
      * Get the logs of a work request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestLogEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWorkRequestLogEntriesResult> getWorkRequestLogEntriesPlain(GetWorkRequestLogEntriesPlainArgs args, InvokeOptions options) {
@@ -411,6 +1355,38 @@ public final class ContainerEngineFunctions {
      * List all work requests in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .resourceId(oci_containerengine_resource.test_resource().id())
+     *             .resourceType(var_.work_request_resource_type())
+     *             .statuses(var_.work_request_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWorkRequestsResult> getWorkRequests(GetWorkRequestsArgs args) {
@@ -422,6 +1398,38 @@ public final class ContainerEngineFunctions {
      * List all work requests in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .resourceId(oci_containerengine_resource.test_resource().id())
+     *             .resourceType(var_.work_request_resource_type())
+     *             .statuses(var_.work_request_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWorkRequestsResult> getWorkRequestsPlain(GetWorkRequestsPlainArgs args) {
@@ -433,6 +1441,38 @@ public final class ContainerEngineFunctions {
      * List all work requests in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .resourceId(oci_containerengine_resource.test_resource().id())
+     *             .resourceType(var_.work_request_resource_type())
+     *             .statuses(var_.work_request_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetWorkRequestsResult> getWorkRequests(GetWorkRequestsArgs args, InvokeOptions options) {
@@ -444,6 +1484,38 @@ public final class ContainerEngineFunctions {
      * List all work requests in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetWorkRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+     *             .resourceId(oci_containerengine_resource.test_resource().id())
+     *             .resourceType(var_.work_request_resource_type())
+     *             .statuses(var_.work_request_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetWorkRequestsResult> getWorkRequestsPlain(GetWorkRequestsPlainArgs args, InvokeOptions options) {

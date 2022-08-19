@@ -45,32 +45,30 @@ namespace Pulumi.Oci.FileStorage
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testFileSystem = new Oci.FileStorage.FileSystem("testFileSystem", new()
     ///     {
-    ///         var testFileSystem = new Oci.FileStorage.FileSystem("testFileSystem", new Oci.FileStorage.FileSystemArgs
+    ///         AvailabilityDomain = @var.File_system_availability_domain,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             AvailabilityDomain = @var.File_system_availability_domain,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.File_system_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             KmsKeyId = oci_kms_key.Test_key.Id,
-    ///             SourceSnapshotId = oci_file_storage_snapshot.Test_snapshot.Id,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.File_system_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         KmsKeyId = oci_kms_key.Test_key.Id,
+    ///         SourceSnapshotId = oci_file_storage_snapshot.Test_snapshot.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -82,7 +80,7 @@ namespace Pulumi.Oci.FileStorage
     /// ```
     /// </summary>
     [OciResourceType("oci:FileStorage/fileSystem:FileSystem")]
-    public partial class FileSystem : Pulumi.CustomResource
+    public partial class FileSystem : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
@@ -212,7 +210,7 @@ namespace Pulumi.Oci.FileStorage
         }
     }
 
-    public sealed class FileSystemArgs : Pulumi.ResourceArgs
+    public sealed class FileSystemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
@@ -271,9 +269,10 @@ namespace Pulumi.Oci.FileStorage
         public FileSystemArgs()
         {
         }
+        public static new FileSystemArgs Empty => new FileSystemArgs();
     }
 
-    public sealed class FileSystemState : Pulumi.ResourceArgs
+    public sealed class FileSystemState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
@@ -380,5 +379,6 @@ namespace Pulumi.Oci.FileStorage
         public FileSystemState()
         {
         }
+        public static new FileSystemState Empty => new FileSystemState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlDbSystemBackupPolicyPitrPolicyArgs : Pulumi.ResourceArgs
+    public sealed class MysqlDbSystemBackupPolicyPitrPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Specifies if PITR is enabled or disabled.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlDbSystemBackupPolicyPitrPolicyArgs()
         {
         }
+        public static new MysqlDbSystemBackupPolicyPitrPolicyArgs Empty => new MysqlDbSystemBackupPolicyPitrPolicyArgs();
     }
 }

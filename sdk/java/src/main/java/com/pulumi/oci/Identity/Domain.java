@@ -39,6 +39,47 @@ import javax.annotation.Nullable;
  * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.Domain;
+ * import com.pulumi.oci.Identity.DomainArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDomain = new Domain(&#34;testDomain&#34;, DomainArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .description(var_.domain_description())
+ *             .displayName(var_.domain_display_name())
+ *             .homeRegion(var_.domain_home_region())
+ *             .licenseType(var_.domain_license_type())
+ *             .adminEmail(var_.domain_admin_email())
+ *             .adminFirstName(var_.domain_admin_first_name())
+ *             .adminLastName(var_.domain_admin_last_name())
+ *             .adminUserName(oci_identity_user.test_user().name())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isHiddenOnLogin(var_.domain_is_hidden_on_login())
+ *             .isNotificationBypassed(var_.domain_is_notification_bypassed())
+ *             .isPrimaryEmailRequired(var_.domain_is_primary_email_required())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

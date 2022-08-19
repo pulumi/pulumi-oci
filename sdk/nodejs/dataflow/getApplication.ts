@@ -48,6 +48,10 @@ export interface GetApplicationArgs {
 export interface GetApplicationResult {
     readonly applicationId: string;
     /**
+     * Logging details of Application logs for Data Flow Run.
+     */
+    readonly applicationLogConfigs: outputs.DataFlow.GetApplicationApplicationLogConfig[];
+    /**
      * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
     readonly archiveUri: string;

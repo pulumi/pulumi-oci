@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard.Inputs
 {
 
-    public sealed class ResponderRecipeResponderRuleDetailsConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class ResponderRecipeResponderRuleDetailsConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Unique name of the configuration
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public ResponderRecipeResponderRuleDetailsConfigurationArgs()
         {
         }
+        public static new ResponderRecipeResponderRuleDetailsConfigurationArgs Empty => new ResponderRecipeResponderRuleDetailsConfigurationArgs();
     }
 }

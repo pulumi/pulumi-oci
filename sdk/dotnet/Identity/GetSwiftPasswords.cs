@@ -25,20 +25,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSwiftPasswords = Oci.Identity.GetSwiftPasswords.Invoke(new()
         ///     {
-        ///         var testSwiftPasswords = Output.Create(Oci.Identity.GetSwiftPasswords.InvokeAsync(new Oci.Identity.GetSwiftPasswordsArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,20 +58,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSwiftPasswords = Oci.Identity.GetSwiftPasswords.Invoke(new()
         ///     {
-        ///         var testSwiftPasswords = Output.Create(Oci.Identity.GetSwiftPasswords.InvokeAsync(new Oci.Identity.GetSwiftPasswordsArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetSwiftPasswordsArgs : Pulumi.InvokeArgs
+    public sealed class GetSwiftPasswordsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetSwiftPasswordsFilterArgs>? _filters;
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Identity
         public GetSwiftPasswordsArgs()
         {
         }
+        public static new GetSwiftPasswordsArgs Empty => new GetSwiftPasswordsArgs();
     }
 
-    public sealed class GetSwiftPasswordsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSwiftPasswordsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetSwiftPasswordsFilterInputArgs>? _filters;
@@ -123,6 +120,7 @@ namespace Pulumi.Oci.Identity
         public GetSwiftPasswordsInvokeArgs()
         {
         }
+        public static new GetSwiftPasswordsInvokeArgs Empty => new GetSwiftPasswordsInvokeArgs();
     }
 
 

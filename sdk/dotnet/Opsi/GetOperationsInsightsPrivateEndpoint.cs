@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperationsInsightsPrivateEndpoint = Oci.Opsi.GetOperationsInsightsPrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testOperationsInsightsPrivateEndpoint = Output.Create(Oci.Opsi.GetOperationsInsightsPrivateEndpoint.InvokeAsync(new Oci.Opsi.GetOperationsInsightsPrivateEndpointArgs
-        ///         {
-        ///             OperationsInsightsPrivateEndpointId = oci_opsi_operations_insights_private_endpoint.Test_operations_insights_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         OperationsInsightsPrivateEndpointId = oci_opsi_operations_insights_private_endpoint.Test_operations_insights_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperationsInsightsPrivateEndpoint = Oci.Opsi.GetOperationsInsightsPrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testOperationsInsightsPrivateEndpoint = Output.Create(Oci.Opsi.GetOperationsInsightsPrivateEndpoint.InvokeAsync(new Oci.Opsi.GetOperationsInsightsPrivateEndpointArgs
-        ///         {
-        ///             OperationsInsightsPrivateEndpointId = oci_opsi_operations_insights_private_endpoint.Test_operations_insights_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         OperationsInsightsPrivateEndpointId = oci_opsi_operations_insights_private_endpoint.Test_operations_insights_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetOperationsInsightsPrivateEndpointArgs : Pulumi.InvokeArgs
+    public sealed class GetOperationsInsightsPrivateEndpointArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Opsi
         public GetOperationsInsightsPrivateEndpointArgs()
         {
         }
+        public static new GetOperationsInsightsPrivateEndpointArgs Empty => new GetOperationsInsightsPrivateEndpointArgs();
     }
 
-    public sealed class GetOperationsInsightsPrivateEndpointInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOperationsInsightsPrivateEndpointInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Opsi
         public GetOperationsInsightsPrivateEndpointInvokeArgs()
         {
         }
+        public static new GetOperationsInsightsPrivateEndpointInvokeArgs Empty => new GetOperationsInsightsPrivateEndpointInvokeArgs();
     }
 
 

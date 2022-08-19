@@ -24,6 +24,70 @@ import javax.annotation.Nullable;
  * Creates a new notebook session.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataScience.NotebookSession;
+ * import com.pulumi.oci.DataScience.NotebookSessionArgs;
+ * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNotebookSession = new NotebookSession(&#34;testNotebookSession&#34;, NotebookSessionArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .projectId(oci_datascience_project.test_project().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.notebook_session_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .notebookSessionConfigDetails(NotebookSessionNotebookSessionConfigDetailsArgs.builder()
+ *                 .shape(var_.notebook_session_notebook_session_config_details_shape())
+ *                 .blockStorageSizeInGbs(var_.notebook_session_notebook_session_config_details_block_storage_size_in_gbs())
+ *                 .notebookSessionShapeConfigDetails(NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs.builder()
+ *                     .memoryInGbs(var_.notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs())
+ *                     .ocpus(var_.notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus())
+ *                     .build())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .build())
+ *             .notebookSessionConfigurationDetails(NotebookSessionNotebookSessionConfigurationDetailsArgs.builder()
+ *                 .shape(var_.notebook_session_notebook_session_configuration_details_shape())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .blockStorageSizeInGbs(var_.notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs())
+ *                 .notebookSessionShapeConfigDetails(NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs.builder()
+ *                     .memoryInGbs(var_.notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs())
+ *                     .ocpus(var_.notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus())
+ *                     .build())
+ *                 .build())
+ *             .notebookSessionRuntimeConfigDetails(NotebookSessionNotebookSessionRuntimeConfigDetailsArgs.builder()
+ *                 .customEnvironmentVariables(var_.notebook_session_notebook_session_runtime_config_details_custom_environment_variables())
+ *                 .notebookSessionGitConfigDetails(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs.builder()
+ *                     .notebookSessionGitRepoConfigCollections(NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs.builder()
+ *                         .url(var_.notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url())
+ *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

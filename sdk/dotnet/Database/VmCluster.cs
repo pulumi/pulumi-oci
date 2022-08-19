@@ -17,43 +17,41 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVmCluster = new Oci.Database.VmCluster("testVmCluster", new()
     ///     {
-    ///         var testVmCluster = new Oci.Database.VmCluster("testVmCluster", new Oci.Database.VmClusterArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         CpuCoreCount = @var.Vm_cluster_cpu_core_count,
+    ///         DisplayName = @var.Vm_cluster_display_name,
+    ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+    ///         GiVersion = @var.Vm_cluster_gi_version,
+    ///         SshPublicKeys = @var.Vm_cluster_ssh_public_keys,
+    ///         VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
+    ///         DataCollectionOptions = new Oci.Database.Inputs.VmClusterDataCollectionOptionsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             CpuCoreCount = @var.Vm_cluster_cpu_core_count,
-    ///             DisplayName = @var.Vm_cluster_display_name,
-    ///             ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-    ///             GiVersion = @var.Vm_cluster_gi_version,
-    ///             SshPublicKeys = @var.Vm_cluster_ssh_public_keys,
-    ///             VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
-    ///             DataCollectionOptions = new Oci.Database.Inputs.VmClusterDataCollectionOptionsArgs
-    ///             {
-    ///                 IsDiagnosticsEventsEnabled = @var.Vm_cluster_data_collection_options_is_diagnostics_events_enabled,
-    ///             },
-    ///             DataStorageSizeInTbs = @var.Vm_cluster_data_storage_size_in_tbs,
-    ///             DbNodeStorageSizeInGbs = @var.Vm_cluster_db_node_storage_size_in_gbs,
-    ///             DbServers = @var.Vm_cluster_db_servers,
-    ///             DefinedTags = @var.Vm_cluster_defined_tags,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsLocalBackupEnabled = @var.Vm_cluster_is_local_backup_enabled,
-    ///             IsSparseDiskgroupEnabled = @var.Vm_cluster_is_sparse_diskgroup_enabled,
-    ///             LicenseModel = @var.Vm_cluster_license_model,
-    ///             MemorySizeInGbs = @var.Vm_cluster_memory_size_in_gbs,
-    ///             TimeZone = @var.Vm_cluster_time_zone,
-    ///         });
-    ///     }
+    ///             IsDiagnosticsEventsEnabled = @var.Vm_cluster_data_collection_options_is_diagnostics_events_enabled,
+    ///         },
+    ///         DataStorageSizeInTbs = @var.Vm_cluster_data_storage_size_in_tbs,
+    ///         DbNodeStorageSizeInGbs = @var.Vm_cluster_db_node_storage_size_in_gbs,
+    ///         DbServers = @var.Vm_cluster_db_servers,
+    ///         DefinedTags = @var.Vm_cluster_defined_tags,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsLocalBackupEnabled = @var.Vm_cluster_is_local_backup_enabled,
+    ///         IsSparseDiskgroupEnabled = @var.Vm_cluster_is_sparse_diskgroup_enabled,
+    ///         LicenseModel = @var.Vm_cluster_license_model,
+    ///         MemorySizeInGbs = @var.Vm_cluster_memory_size_in_gbs,
+    ///         TimeZone = @var.Vm_cluster_time_zone,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -65,7 +63,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/vmCluster:VmCluster")]
-    public partial class VmCluster : Pulumi.CustomResource
+    public partial class VmCluster : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -267,7 +265,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class VmClusterArgs : Pulumi.ResourceArgs
+    public sealed class VmClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -407,9 +405,10 @@ namespace Pulumi.Oci.Database
         public VmClusterArgs()
         {
         }
+        public static new VmClusterArgs Empty => new VmClusterArgs();
     }
 
-    public sealed class VmClusterState : Pulumi.ResourceArgs
+    public sealed class VmClusterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -594,5 +593,6 @@ namespace Pulumi.Oci.Database
         public VmClusterState()
         {
         }
+        public static new VmClusterState Empty => new VmClusterState();
     }
 }

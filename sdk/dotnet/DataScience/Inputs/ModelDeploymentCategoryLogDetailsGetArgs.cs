@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class ModelDeploymentCategoryLogDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class ModelDeploymentCategoryLogDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The log details.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public ModelDeploymentCategoryLogDetailsGetArgs()
         {
         }
+        public static new ModelDeploymentCategoryLogDetailsGetArgs Empty => new ModelDeploymentCategoryLogDetailsGetArgs();
     }
 }

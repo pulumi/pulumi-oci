@@ -17,21 +17,19 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBackup = new Oci.Database.Backup("testBackup", new()
     ///     {
-    ///         var testBackup = new Oci.Database.Backup("testBackup", new Oci.Database.BackupArgs
-    ///         {
-    ///             DatabaseId = oci_database_database.Test_database.Id,
-    ///             DisplayName = @var.Backup_display_name,
-    ///         });
-    ///     }
+    ///         DatabaseId = oci_database_database.Test_database.Id,
+    ///         DisplayName = @var.Backup_display_name,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/backup:Backup")]
-    public partial class Backup : Pulumi.CustomResource
+    public partial class Backup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The name of the availability domain where the database backup is stored.
@@ -185,7 +183,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class BackupArgs : Pulumi.ResourceArgs
+    public sealed class BackupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
@@ -202,9 +200,10 @@ namespace Pulumi.Oci.Database
         public BackupArgs()
         {
         }
+        public static new BackupArgs Empty => new BackupArgs();
     }
 
-    public sealed class BackupState : Pulumi.ResourceArgs
+    public sealed class BackupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the availability domain where the database backup is stored.
@@ -305,5 +304,6 @@ namespace Pulumi.Oci.Database
         public BackupState()
         {
         }
+        public static new BackupState Empty => new BackupState();
     }
 }

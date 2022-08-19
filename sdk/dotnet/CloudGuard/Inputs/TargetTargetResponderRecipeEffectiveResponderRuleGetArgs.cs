@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard.Inputs
 {
 
-    public sealed class TargetTargetResponderRecipeEffectiveResponderRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class TargetTargetResponderRecipeEffectiveResponderRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) compartment associated with condition
@@ -105,5 +105,6 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public TargetTargetResponderRecipeEffectiveResponderRuleGetArgs()
         {
         }
+        public static new TargetTargetResponderRecipeEffectiveResponderRuleGetArgs Empty => new TargetTargetResponderRecipeEffectiveResponderRuleGetArgs();
     }
 }

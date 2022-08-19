@@ -17,66 +17,64 @@ namespace Pulumi.Oci.DataScience
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testNotebookSession = new Oci.DataScience.NotebookSession("testNotebookSession", new()
     ///     {
-    ///         var testNotebookSession = new Oci.DataScience.NotebookSession("testNotebookSession", new Oci.DataScience.NotebookSessionArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ProjectId = oci_datascience_project.Test_project.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ProjectId = oci_datascience_project.Test_project.Id,
-    ///             DefinedTags = 
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Notebook_session_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         NotebookSessionConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigDetailsArgs
+    ///         {
+    ///             Shape = @var.Notebook_session_notebook_session_config_details_shape,
+    ///             BlockStorageSizeInGbs = @var.Notebook_session_notebook_session_config_details_block_storage_size_in_gbs,
+    ///             NotebookSessionShapeConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
+    ///                 MemoryInGbs = @var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
+    ///                 Ocpus = @var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus,
     ///             },
-    ///             DisplayName = @var.Notebook_session_display_name,
-    ///             FreeformTags = 
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         },
+    ///         NotebookSessionConfigurationDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigurationDetailsArgs
+    ///         {
+    ///             Shape = @var.Notebook_session_notebook_session_configuration_details_shape,
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             BlockStorageSizeInGbs = @var.Notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs,
+    ///             NotebookSessionShapeConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs
     ///             {
-    ///                 { "Department", "Finance" },
+    ///                 MemoryInGbs = @var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,
+    ///                 Ocpus = @var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
     ///             },
-    ///             NotebookSessionConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigDetailsArgs
+    ///         },
+    ///         NotebookSessionRuntimeConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs
+    ///         {
+    ///             CustomEnvironmentVariables = @var.Notebook_session_notebook_session_runtime_config_details_custom_environment_variables,
+    ///             NotebookSessionGitConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs
     ///             {
-    ///                 Shape = @var.Notebook_session_notebook_session_config_details_shape,
-    ///                 BlockStorageSizeInGbs = @var.Notebook_session_notebook_session_config_details_block_storage_size_in_gbs,
-    ///                 NotebookSessionShapeConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs
+    ///                 NotebookSessionGitRepoConfigCollections = new[]
     ///                 {
-    ///                     MemoryInGbs = @var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
-    ///                     Ocpus = @var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus,
-    ///                 },
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             },
-    ///             NotebookSessionConfigurationDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigurationDetailsArgs
-    ///             {
-    ///                 Shape = @var.Notebook_session_notebook_session_configuration_details_shape,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 BlockStorageSizeInGbs = @var.Notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs,
-    ///                 NotebookSessionShapeConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs
-    ///                 {
-    ///                     MemoryInGbs = @var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,
-    ///                     Ocpus = @var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
-    ///                 },
-    ///             },
-    ///             NotebookSessionRuntimeConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs
-    ///             {
-    ///                 CustomEnvironmentVariables = @var.Notebook_session_notebook_session_runtime_config_details_custom_environment_variables,
-    ///                 NotebookSessionGitConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs
-    ///                 {
-    ///                     NotebookSessionGitRepoConfigCollections = 
+    ///                     new Oci.DataScience.Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs
     ///                     {
-    ///                         new Oci.DataScience.Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs
-    ///                         {
-    ///                             Url = @var.Notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url,
-    ///                         },
+    ///                         Url = @var.Notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url,
     ///                     },
     ///                 },
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -88,7 +86,7 @@ namespace Pulumi.Oci.DataScience
     /// ```
     /// </summary>
     [OciResourceType("oci:DataScience/notebookSession:NotebookSession")]
-    public partial class NotebookSession : Pulumi.CustomResource
+    public partial class NotebookSession : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
@@ -212,7 +210,7 @@ namespace Pulumi.Oci.DataScience
         }
     }
 
-    public sealed class NotebookSessionArgs : Pulumi.ResourceArgs
+    public sealed class NotebookSessionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
@@ -283,9 +281,10 @@ namespace Pulumi.Oci.DataScience
         public NotebookSessionArgs()
         {
         }
+        public static new NotebookSessionArgs Empty => new NotebookSessionArgs();
     }
 
-    public sealed class NotebookSessionState : Pulumi.ResourceArgs
+    public sealed class NotebookSessionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
@@ -380,5 +379,6 @@ namespace Pulumi.Oci.DataScience
         public NotebookSessionState()
         {
         }
+        public static new NotebookSessionState Empty => new NotebookSessionState();
     }
 }

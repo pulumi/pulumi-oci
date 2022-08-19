@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class TriggerActionFilterGetArgs : Pulumi.ResourceArgs
+    public sealed class TriggerActionFilterGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("events")]
         private InputList<string>? _events;
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public TriggerActionFilterGetArgs()
         {
         }
+        public static new TriggerActionFilterGetArgs Empty => new TriggerActionFilterGetArgs();
     }
 }

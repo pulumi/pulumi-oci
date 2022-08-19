@@ -37,32 +37,30 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPublicIp = new Oci.Core.PublicIp("testPublicIp", new()
     ///     {
-    ///         var testPublicIp = new Oci.Core.PublicIp("testPublicIp", new Oci.Core.PublicIpArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Lifetime = @var.Public_ip_lifetime,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Lifetime = @var.Public_ip_lifetime,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Public_ip_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             PrivateIpId = oci_core_private_ip.Test_private_ip.Id,
-    ///             PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Public_ip_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         PrivateIpId = oci_core_private_ip.Test_private_ip.Id,
+    ///         PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -74,7 +72,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/publicIp:PublicIp")]
-    public partial class PublicIp : Pulumi.CustomResource
+    public partial class PublicIp : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
@@ -206,7 +204,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class PublicIpArgs : Pulumi.ResourceArgs
+    public sealed class PublicIpArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs, you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -265,9 +263,10 @@ namespace Pulumi.Oci.Core
         public PublicIpArgs()
         {
         }
+        public static new PublicIpArgs Empty => new PublicIpArgs();
     }
 
-    public sealed class PublicIpState : Pulumi.ResourceArgs
+    public sealed class PublicIpState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of being assigned to.
@@ -370,5 +369,6 @@ namespace Pulumi.Oci.Core
         public PublicIpState()
         {
         }
+        public static new PublicIpState Empty => new PublicIpState();
     }
 }

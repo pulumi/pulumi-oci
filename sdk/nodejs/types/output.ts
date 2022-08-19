@@ -10717,6 +10717,10 @@ export namespace BigDataService {
          */
         isSecure: boolean;
         kerberosRealmName: string;
+        /**
+         * The OCID of the Key Management master encryption key.
+         */
+        kmsKeyId: string;
         masterNodes: outputs.BigDataService.GetBdsInstancesBdsInstanceMasterNode[];
         /**
          * Additional configuration of the user's network.
@@ -35376,6 +35380,17 @@ export namespace DataConnectivity {
 }
 
 export namespace DataFlow {
+    export interface ApplicationApplicationLogConfig {
+        /**
+         * (Updatable) The log group id for where log objects will be for Data Flow Runs.
+         */
+        logGroupId: string;
+        /**
+         * (Updatable) The log id of the log object the Application Logs of Data Flow Run will be shipped to.
+         */
+        logId: string;
+    }
+
     export interface ApplicationDriverShapeConfig {
         /**
          * (Updatable) The amount of memory used for the driver or executors.
@@ -35407,6 +35422,17 @@ export namespace DataFlow {
          * (Updatable) The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
          */
         value: string;
+    }
+
+    export interface GetApplicationApplicationLogConfig {
+        /**
+         * The log group id for where log objects will be for Data Flow Runs.
+         */
+        logGroupId: string;
+        /**
+         * The log id of the log object the Application Logs of Data Flow Run will be shipped to.
+         */
+        logId: string;
     }
 
     export interface GetApplicationDriverShapeConfig {
@@ -35443,6 +35469,10 @@ export namespace DataFlow {
     }
 
     export interface GetApplicationsApplication {
+        /**
+         * Logging details of Application logs for Data Flow Run.
+         */
+        applicationLogConfigs: outputs.DataFlow.GetApplicationsApplicationApplicationLogConfig[];
         /**
          * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          */
@@ -35565,6 +35595,17 @@ export namespace DataFlow {
         warehouseBucketUri: string;
     }
 
+    export interface GetApplicationsApplicationApplicationLogConfig {
+        /**
+         * The log group id for where log objects will be for Data Flow Runs.
+         */
+        logGroupId: string;
+        /**
+         * The log id of the log object the Application Logs of Data Flow Run will be shipped to.
+         */
+        logId: string;
+    }
+
     export interface GetApplicationsApplicationDriverShapeConfig {
         /**
          * The amount of memory used for the driver or executors.
@@ -35605,6 +35646,17 @@ export namespace DataFlow {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetInvokeRunApplicationLogConfig {
+        /**
+         * The log group id for where log objects will be for Data Flow Runs.
+         */
+        logGroupId: string;
+        /**
+         * The log id of the log object the Application Logs of Data Flow Run will be shipped to.
+         */
+        logId: string;
     }
 
     export interface GetInvokeRunDriverShapeConfig {
@@ -35654,6 +35706,10 @@ export namespace DataFlow {
          * The ID of the application.
          */
         applicationId: string;
+        /**
+         * Logging details of Application logs for Data Flow Run.
+         */
+        applicationLogConfigs: outputs.DataFlow.GetInvokeRunsRunApplicationLogConfig[];
         /**
          * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          */
@@ -35813,6 +35869,17 @@ export namespace DataFlow {
         warehouseBucketUri: string;
     }
 
+    export interface GetInvokeRunsRunApplicationLogConfig {
+        /**
+         * The log group id for where log objects will be for Data Flow Runs.
+         */
+        logGroupId: string;
+        /**
+         * The log id of the log object the Application Logs of Data Flow Run will be shipped to.
+         */
+        logId: string;
+    }
+
     export interface GetInvokeRunsRunDriverShapeConfig {
         /**
          * The amount of memory used for the driver or executors.
@@ -35939,6 +36006,17 @@ export namespace DataFlow {
         source: string;
         timeCreated: string;
         type: string;
+    }
+
+    export interface InvokeRunApplicationLogConfig {
+        /**
+         * The log group id for where log objects will be for Data Flow Runs.
+         */
+        logGroupId: string;
+        /**
+         * The log id of the log object the Application Logs of Data Flow Run will be shipped to.
+         */
+        logId: string;
     }
 
     export interface InvokeRunDriverShapeConfig {
@@ -42844,6 +42922,10 @@ export namespace DataScience {
          */
         jobInfrastructureType: string;
         /**
+         * Details for the job run shape configuration. Specify only when a flex shape is selected.
+         */
+        jobShapeConfigDetails: outputs.DataScience.GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
          * The shape used to launch the job run instances.
          */
         shapeName: string;
@@ -42851,6 +42933,17 @@ export namespace DataScience {
          * The subnet to create a secondary vnic in to attach to the instance running the job
          */
         subnetId: string;
+    }
+
+    export interface GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetail {
+        /**
+         * A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs: number;
+        /**
+         * A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus: number;
     }
 
     export interface GetJobJobLogConfigurationDetail {
@@ -42901,6 +42994,10 @@ export namespace DataScience {
          */
         jobInfrastructureType: string;
         /**
+         * Details for the job run shape configuration. Specify only when a flex shape is selected.
+         */
+        jobShapeConfigDetails: outputs.DataScience.GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
          * The shape used to launch the job run instances.
          */
         shapeName: string;
@@ -42908,6 +43005,17 @@ export namespace DataScience {
          * The subnet to create a secondary vnic in to attach to the instance running the job
          */
         subnetId: string;
+    }
+
+    export interface GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail {
+        /**
+         * A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs: number;
+        /**
+         * A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus: number;
     }
 
     export interface GetJobRunJobLogConfigurationOverrideDetail {
@@ -43047,6 +43155,10 @@ export namespace DataScience {
          */
         jobInfrastructureType: string;
         /**
+         * Details for the job run shape configuration. Specify only when a flex shape is selected.
+         */
+        jobShapeConfigDetails: outputs.DataScience.GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
          * The shape used to launch the job run instances.
          */
         shapeName: string;
@@ -43054,6 +43166,17 @@ export namespace DataScience {
          * The subnet to create a secondary vnic in to attach to the instance running the job
          */
         subnetId: string;
+    }
+
+    export interface GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail {
+        /**
+         * A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs: number;
+        /**
+         * A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus: number;
     }
 
     export interface GetJobRunsJobRunJobLogConfigurationOverrideDetail {
@@ -43215,6 +43338,10 @@ export namespace DataScience {
          */
         jobInfrastructureType: string;
         /**
+         * Details for the job run shape configuration. Specify only when a flex shape is selected.
+         */
+        jobShapeConfigDetails: outputs.DataScience.GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
          * The shape used to launch the job run instances.
          */
         shapeName: string;
@@ -43222,6 +43349,17 @@ export namespace DataScience {
          * The subnet to create a secondary vnic in to attach to the instance running the job
          */
         subnetId: string;
+    }
+
+    export interface GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail {
+        /**
+         * A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs: number;
+        /**
+         * A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus: number;
     }
 
     export interface GetJobsJobJobLogConfigurationDetail {
@@ -44036,6 +44174,10 @@ export namespace DataScience {
          */
         jobInfrastructureType: string;
         /**
+         * (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
+         */
+        jobShapeConfigDetails: outputs.DataScience.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails;
+        /**
          * (Updatable) The shape used to launch the job run instances.
          */
         shapeName: string;
@@ -44043,6 +44185,17 @@ export namespace DataScience {
          * (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
          */
         subnetId: string;
+    }
+
+    export interface JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails {
+        /**
+         * (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs: number;
+        /**
+         * (Updatable) A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus: number;
     }
 
     export interface JobJobLogConfigurationDetails {
@@ -44093,6 +44246,10 @@ export namespace DataScience {
          */
         jobInfrastructureType: string;
         /**
+         * Details for the job run shape configuration. Specify only when a flex shape is selected.
+         */
+        jobShapeConfigDetails: outputs.DataScience.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail[];
+        /**
          * The shape used to launch the job run instances.
          */
         shapeName: string;
@@ -44100,6 +44257,17 @@ export namespace DataScience {
          * The subnet to create a secondary vnic in to attach to the instance running the job
          */
         subnetId: string;
+    }
+
+    export interface JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail {
+        /**
+         * A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         */
+        memoryInGbs: number;
+        /**
+         * A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         */
+        ocpus: number;
     }
 
     export interface JobRunJobLogConfigurationOverrideDetails {
@@ -81974,6 +82142,10 @@ export namespace Ocvp {
          */
         isShieldedInstanceEnabled: boolean;
         /**
+         * Indicates whether this SDDC is designated for only single ESXi host.
+         */
+        isSingleHostSddc: boolean;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
          */
         nsxEdgeUplink1vlanId: string;
@@ -92182,6 +92354,10 @@ export namespace Sch {
          */
         logGroupId: string;
         /**
+         * (Updatable) Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+         */
+        logSourceIdentifier: string;
+        /**
          * (Updatable) The name of the metric.  Example: `CpuUtilization`
          */
         metric: string;
@@ -92378,6 +92554,10 @@ export namespace Sch {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
          */
         logGroupId: string;
+        /**
+         * Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+         */
+        logSourceIdentifier: string;
         /**
          * The name of the metric.  Example: `CpuUtilization`
          */
@@ -92647,6 +92827,10 @@ export namespace Sch {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
          */
         logGroupId: string;
+        /**
+         * Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+         */
+        logSourceIdentifier: string;
         /**
          * The name of the metric.  Example: `CpuUtilization`
          */

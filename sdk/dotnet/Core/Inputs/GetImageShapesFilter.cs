@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetImageShapesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetImageShapesFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetImageShapesFilterArgs()
         {
         }
+        public static new GetImageShapesFilterArgs Empty => new GetImageShapesFilterArgs();
     }
 }

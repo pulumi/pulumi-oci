@@ -22,24 +22,22 @@ namespace Pulumi.Oci.EmWarehouse
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEmWarehouses = Oci.EmWarehouse.GetEmWarehouses.Invoke(new()
         ///     {
-        ///         var testEmWarehouses = Output.Create(Oci.EmWarehouse.GetEmWarehouses.InvokeAsync(new Oci.EmWarehouse.GetEmWarehousesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Em_warehouse_display_name,
-        ///             Id = @var.Em_warehouse_id,
-        ///             OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-        ///             State = @var.Em_warehouse_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Em_warehouse_display_name,
+        ///         Id = @var.Em_warehouse_id,
+        ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+        ///         State = @var.Em_warehouse_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.EmWarehouse
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEmWarehouses = Oci.EmWarehouse.GetEmWarehouses.Invoke(new()
         ///     {
-        ///         var testEmWarehouses = Output.Create(Oci.EmWarehouse.GetEmWarehouses.InvokeAsync(new Oci.EmWarehouse.GetEmWarehousesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Em_warehouse_display_name,
-        ///             Id = @var.Em_warehouse_id,
-        ///             OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-        ///             State = @var.Em_warehouse_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Em_warehouse_display_name,
+        ///         Id = @var.Em_warehouse_id,
+        ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+        ///         State = @var.Em_warehouse_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.EmWarehouse
     }
 
 
-    public sealed class GetEmWarehousesArgs : Pulumi.InvokeArgs
+    public sealed class GetEmWarehousesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.EmWarehouse
         public GetEmWarehousesArgs()
         {
         }
+        public static new GetEmWarehousesArgs Empty => new GetEmWarehousesArgs();
     }
 
-    public sealed class GetEmWarehousesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEmWarehousesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.EmWarehouse
         public GetEmWarehousesInvokeArgs()
         {
         }
+        public static new GetEmWarehousesInvokeArgs Empty => new GetEmWarehousesInvokeArgs();
     }
 
 

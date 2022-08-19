@@ -22,6 +22,39 @@ import javax.annotation.Nullable;
  * Updates the tenant preferences. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LogAnalytics.LogAnalyticsPreferencesManagement;
+ * import com.pulumi.oci.LogAnalytics.LogAnalyticsPreferencesManagementArgs;
+ * import com.pulumi.oci.LogAnalytics.inputs.LogAnalyticsPreferencesManagementItemArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testLogAnalyticsPreferencesManagement = new LogAnalyticsPreferencesManagement(&#34;testLogAnalyticsPreferencesManagement&#34;, LogAnalyticsPreferencesManagementArgs.builder()        
+ *             .namespace(var_.log_analytics_preferences_management_namespace())
+ *             .items(LogAnalyticsPreferencesManagementItemArgs.builder()
+ *                 .name(var_.log_analytics_preferences_management_items_name())
+ *                 .value(var_.log_analytics_preferences_management_items_value())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -27,21 +27,19 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKey = Oci.Kms.GetKey.Invoke(new()
         ///     {
-        ///         var testKey = Output.Create(Oci.Kms.GetKey.InvokeAsync(new Oci.Kms.GetKeyArgs
-        ///         {
-        ///             KeyId = oci_kms_key.Test_key.Id,
-        ///             ManagementEndpoint = @var.Key_management_endpoint,
-        ///         }));
-        ///     }
+        ///         KeyId = oci_kms_key.Test_key.Id,
+        ///         ManagementEndpoint = @var.Key_management_endpoint,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -65,21 +63,19 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKey = Oci.Kms.GetKey.Invoke(new()
         ///     {
-        ///         var testKey = Output.Create(Oci.Kms.GetKey.InvokeAsync(new Oci.Kms.GetKeyArgs
-        ///         {
-        ///             KeyId = oci_kms_key.Test_key.Id,
-        ///             ManagementEndpoint = @var.Key_management_endpoint,
-        ///         }));
-        ///     }
+        ///         KeyId = oci_kms_key.Test_key.Id,
+        ///         ManagementEndpoint = @var.Key_management_endpoint,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Kms
     }
 
 
-    public sealed class GetKeyArgs : Pulumi.InvokeArgs
+    public sealed class GetKeyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the key.
@@ -106,9 +102,10 @@ namespace Pulumi.Oci.Kms
         public GetKeyArgs()
         {
         }
+        public static new GetKeyArgs Empty => new GetKeyArgs();
     }
 
-    public sealed class GetKeyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetKeyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the key.
@@ -125,6 +122,7 @@ namespace Pulumi.Oci.Kms
         public GetKeyInvokeArgs()
         {
         }
+        public static new GetKeyInvokeArgs Empty => new GetKeyInvokeArgs();
     }
 
 

@@ -22,23 +22,21 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperatorControls = Oci.OperatorAccessControl.GetControls.Invoke(new()
         ///     {
-        ///         var testOperatorControls = Output.Create(Oci.OperatorAccessControl.GetControls.InvokeAsync(new Oci.OperatorAccessControl.GetControlsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Operator_control_display_name,
-        ///             ResourceType = @var.Operator_control_resource_type,
-        ///             State = @var.Operator_control_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Operator_control_display_name,
+        ///         ResourceType = @var.Operator_control_resource_type,
+        ///         State = @var.Operator_control_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperatorControls = Oci.OperatorAccessControl.GetControls.Invoke(new()
         ///     {
-        ///         var testOperatorControls = Output.Create(Oci.OperatorAccessControl.GetControls.InvokeAsync(new Oci.OperatorAccessControl.GetControlsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Operator_control_display_name,
-        ///             ResourceType = @var.Operator_control_resource_type,
-        ///             State = @var.Operator_control_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Operator_control_display_name,
+        ///         ResourceType = @var.Operator_control_resource_type,
+        ///         State = @var.Operator_control_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.OperatorAccessControl
     }
 
 
-    public sealed class GetControlsArgs : Pulumi.InvokeArgs
+    public sealed class GetControlsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetControlsArgs()
         {
         }
+        public static new GetControlsArgs Empty => new GetControlsArgs();
     }
 
-    public sealed class GetControlsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetControlsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetControlsInvokeArgs()
         {
         }
+        public static new GetControlsInvokeArgs Empty => new GetControlsInvokeArgs();
     }
 
 

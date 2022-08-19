@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The network bandwidth for the model.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsGetArgs()
         {
         }
+        public static new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsGetArgs Empty => new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsGetArgs();
     }
 }

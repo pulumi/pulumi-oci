@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Functions.Inputs
 {
 
-    public sealed class ApplicationImagePolicyConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class ApplicationImagePolicyConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Define if image signature verification policy is enabled for the application.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Functions.Inputs
         public ApplicationImagePolicyConfigGetArgs()
         {
         }
+        public static new ApplicationImagePolicyConfigGetArgs Empty => new ApplicationImagePolicyConfigGetArgs();
     }
 }

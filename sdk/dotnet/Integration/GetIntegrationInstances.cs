@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Integration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIntegrationInstances = Oci.Integration.GetIntegrationInstances.Invoke(new()
         ///     {
-        ///         var testIntegrationInstances = Output.Create(Oci.Integration.GetIntegrationInstances.InvokeAsync(new Oci.Integration.GetIntegrationInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Integration_instance_display_name,
-        ///             State = @var.Integration_instance_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Integration_instance_display_name,
+        ///         State = @var.Integration_instance_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Integration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIntegrationInstances = Oci.Integration.GetIntegrationInstances.Invoke(new()
         ///     {
-        ///         var testIntegrationInstances = Output.Create(Oci.Integration.GetIntegrationInstances.InvokeAsync(new Oci.Integration.GetIntegrationInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Integration_instance_display_name,
-        ///             State = @var.Integration_instance_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Integration_instance_display_name,
+        ///         State = @var.Integration_instance_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Integration
     }
 
 
-    public sealed class GetIntegrationInstancesArgs : Pulumi.InvokeArgs
+    public sealed class GetIntegrationInstancesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Integration
         public GetIntegrationInstancesArgs()
         {
         }
+        public static new GetIntegrationInstancesArgs Empty => new GetIntegrationInstancesArgs();
     }
 
-    public sealed class GetIntegrationInstancesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIntegrationInstancesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Integration
         public GetIntegrationInstancesInvokeArgs()
         {
         }
+        public static new GetIntegrationInstancesInvokeArgs Empty => new GetIntegrationInstancesInvokeArgs();
     }
 
 

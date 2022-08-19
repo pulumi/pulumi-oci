@@ -22,21 +22,19 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTraceAggregatedSnapshotData = Oci.ApmTraces.GetTraceAggregatedSnapshotData.Invoke(new()
         ///     {
-        ///         var testTraceAggregatedSnapshotData = Output.Create(Oci.ApmTraces.GetTraceAggregatedSnapshotData.InvokeAsync(new Oci.ApmTraces.GetTraceAggregatedSnapshotDataArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             TraceKey = @var.Trace_aggregated_snapshot_data_trace_key,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         TraceKey = @var.Trace_aggregated_snapshot_data_trace_key,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTraceAggregatedSnapshotData = Oci.ApmTraces.GetTraceAggregatedSnapshotData.Invoke(new()
         ///     {
-        ///         var testTraceAggregatedSnapshotData = Output.Create(Oci.ApmTraces.GetTraceAggregatedSnapshotData.InvokeAsync(new Oci.ApmTraces.GetTraceAggregatedSnapshotDataArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             TraceKey = @var.Trace_aggregated_snapshot_data_trace_key,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         TraceKey = @var.Trace_aggregated_snapshot_data_trace_key,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ApmTraces
     }
 
 
-    public sealed class GetTraceAggregatedSnapshotDataArgs : Pulumi.InvokeArgs
+    public sealed class GetTraceAggregatedSnapshotDataArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM Domain ID the request is intended for.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.ApmTraces
         public GetTraceAggregatedSnapshotDataArgs()
         {
         }
+        public static new GetTraceAggregatedSnapshotDataArgs Empty => new GetTraceAggregatedSnapshotDataArgs();
     }
 
-    public sealed class GetTraceAggregatedSnapshotDataInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTraceAggregatedSnapshotDataInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM Domain ID the request is intended for.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.ApmTraces
         public GetTraceAggregatedSnapshotDataInvokeArgs()
         {
         }
+        public static new GetTraceAggregatedSnapshotDataInvokeArgs Empty => new GetTraceAggregatedSnapshotDataInvokeArgs();
     }
 
 

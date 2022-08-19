@@ -17,58 +17,56 @@ namespace Pulumi.Oci.Optimizer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testProfile = new Oci.Optimizer.Profile("testProfile", new()
     ///     {
-    ///         var testProfile = new Oci.Optimizer.Profile("testProfile", new Oci.Optimizer.ProfileArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Description = @var.Profile_description,
+    ///         LevelsConfiguration = new Oci.Optimizer.Inputs.ProfileLevelsConfigurationArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Description = @var.Profile_description,
-    ///             LevelsConfiguration = new Oci.Optimizer.Inputs.ProfileLevelsConfigurationArgs
+    ///             Items = new[]
     ///             {
-    ///                 Items = 
+    ///                 new Oci.Optimizer.Inputs.ProfileLevelsConfigurationItemArgs
     ///                 {
-    ///                     new Oci.Optimizer.Inputs.ProfileLevelsConfigurationItemArgs
-    ///                     {
-    ///                         Level = @var.Profile_levels_configuration_items_level,
-    ///                         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
-    ///                     },
+    ///                     Level = @var.Profile_levels_configuration_items_level,
+    ///                     RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
     ///                 },
     ///             },
-    ///             AggregationIntervalInDays = @var.Profile_aggregation_interval_in_days,
-    ///             DefinedTags = 
+    ///         },
+    ///         AggregationIntervalInDays = @var.Profile_aggregation_interval_in_days,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         TargetCompartments = new Oci.Optimizer.Inputs.ProfileTargetCompartmentsArgs
+    ///         {
+    ///             Items = @var.Profile_target_compartments_items,
+    ///         },
+    ///         TargetTags = new Oci.Optimizer.Inputs.ProfileTargetTagsArgs
+    ///         {
+    ///             Items = new[]
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             TargetCompartments = new Oci.Optimizer.Inputs.ProfileTargetCompartmentsArgs
-    ///             {
-    ///                 Items = @var.Profile_target_compartments_items,
-    ///             },
-    ///             TargetTags = new Oci.Optimizer.Inputs.ProfileTargetTagsArgs
-    ///             {
-    ///                 Items = 
+    ///                 new Oci.Optimizer.Inputs.ProfileTargetTagsItemArgs
     ///                 {
-    ///                     new Oci.Optimizer.Inputs.ProfileTargetTagsItemArgs
-    ///                     {
-    ///                         TagDefinitionName = @var.Profile_target_tags_items_tag_definition_name,
-    ///                         TagNamespaceName = oci_identity_tag_namespace.Test_tag_namespace.Name,
-    ///                         TagValueType = @var.Profile_target_tags_items_tag_value_type,
-    ///                         TagValues = @var.Profile_target_tags_items_tag_values,
-    ///                     },
+    ///                     TagDefinitionName = @var.Profile_target_tags_items_tag_definition_name,
+    ///                     TagNamespaceName = oci_identity_tag_namespace.Test_tag_namespace.Name,
+    ///                     TagValueType = @var.Profile_target_tags_items_tag_value_type,
+    ///                     TagValues = @var.Profile_target_tags_items_tag_values,
     ///                 },
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -80,7 +78,7 @@ namespace Pulumi.Oci.Optimizer
     /// ```
     /// </summary>
     [OciResourceType("oci:Optimizer/profile:Profile")]
-    public partial class Profile : Pulumi.CustomResource
+    public partial class Profile : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
@@ -198,7 +196,7 @@ namespace Pulumi.Oci.Optimizer
         }
     }
 
-    public sealed class ProfileArgs : Pulumi.ResourceArgs
+    public sealed class ProfileArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
@@ -269,9 +267,10 @@ namespace Pulumi.Oci.Optimizer
         public ProfileArgs()
         {
         }
+        public static new ProfileArgs Empty => new ProfileArgs();
     }
 
-    public sealed class ProfileState : Pulumi.ResourceArgs
+    public sealed class ProfileState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
@@ -360,5 +359,6 @@ namespace Pulumi.Oci.Optimizer
         public ProfileState()
         {
         }
+        public static new ProfileState Empty => new ProfileState();
     }
 }

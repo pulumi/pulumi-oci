@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceAvailabilityConfigArgs : Pulumi.ResourceArgs
+    public sealed class InstanceAvailabilityConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Whether live migration is preferred for infrastructure maintenance.  If null preference is specified, live migration will be preferred for infrastructure maintenance for applicable instances.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceAvailabilityConfigArgs()
         {
         }
+        public static new InstanceAvailabilityConfigArgs Empty => new InstanceAvailabilityConfigArgs();
     }
 }

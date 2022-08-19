@@ -20,6 +20,37 @@ import javax.annotation.Nullable;
  * Updates the category assignments of DASHBOARD and SAVEDSEARCH resources.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LogAnalytics.LogAnalyticsResourceCategoriesManagement;
+ * import com.pulumi.oci.LogAnalytics.LogAnalyticsResourceCategoriesManagementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testLogAnalyticsResourceCategoriesManagement = new LogAnalyticsResourceCategoriesManagement(&#34;testLogAnalyticsResourceCategoriesManagement&#34;, LogAnalyticsResourceCategoriesManagementArgs.builder()        
+ *             .namespace(var_.log_analytics_resource_categories_management_namespace())
+ *             .resourceId(oci_log_analytics_resource_categories_management_resource_id)
+ *             .resourceType(var_.log_analytics_resource_categories_management_resource_type())
+ *             .resourceCategories(var_.log_analytics_resource_categories_management_resource_categories())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

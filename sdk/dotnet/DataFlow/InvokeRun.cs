@@ -17,60 +17,63 @@ namespace Pulumi.Oci.DataFlow
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testInvokeRun = new Oci.DataFlow.InvokeRun("testInvokeRun", new()
     ///     {
-    ///         var testInvokeRun = new Oci.DataFlow.InvokeRun("testInvokeRun", new Oci.DataFlow.InvokeRunArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ApplicationId = oci_dataflow_application.Test_application.Id,
+    ///         ApplicationLogConfig = new Oci.DataFlow.Inputs.InvokeRunApplicationLogConfigArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ApplicationId = oci_dataflow_application.Test_application.Id,
-    ///             ArchiveUri = @var.Invoke_run_archive_uri,
-    ///             Arguments = @var.Invoke_run_arguments,
-    ///             Configuration = @var.Invoke_run_configuration,
-    ///             DefinedTags = 
+    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
+    ///             LogId = oci_logging_log.Test_log.Id,
+    ///         },
+    ///         ArchiveUri = @var.Invoke_run_archive_uri,
+    ///         Arguments = @var.Invoke_run_arguments,
+    ///         Configuration = @var.Invoke_run_configuration,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Invoke_run_display_name,
+    ///         DriverShape = @var.Invoke_run_driver_shape,
+    ///         DriverShapeConfig = new Oci.DataFlow.Inputs.InvokeRunDriverShapeConfigArgs
+    ///         {
+    ///             MemoryInGbs = @var.Invoke_run_driver_shape_config_memory_in_gbs,
+    ///             Ocpus = @var.Invoke_run_driver_shape_config_ocpus,
+    ///         },
+    ///         Execute = @var.Invoke_run_execute,
+    ///         ExecutorShape = @var.Invoke_run_executor_shape,
+    ///         ExecutorShapeConfig = new Oci.DataFlow.Inputs.InvokeRunExecutorShapeConfigArgs
+    ///         {
+    ///             MemoryInGbs = @var.Invoke_run_executor_shape_config_memory_in_gbs,
+    ///             Ocpus = @var.Invoke_run_executor_shape_config_ocpus,
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         LogsBucketUri = @var.Invoke_run_logs_bucket_uri,
+    ///         MetastoreId = @var.Metastore_id,
+    ///         NumExecutors = @var.Invoke_run_num_executors,
+    ///         Parameters = new[]
+    ///         {
+    ///             new Oci.DataFlow.Inputs.InvokeRunParameterArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
+    ///                 Name = @var.Invoke_run_parameters_name,
+    ///                 Value = @var.Invoke_run_parameters_value,
     ///             },
-    ///             DisplayName = @var.Invoke_run_display_name,
-    ///             DriverShape = @var.Invoke_run_driver_shape,
-    ///             DriverShapeConfig = new Oci.DataFlow.Inputs.InvokeRunDriverShapeConfigArgs
-    ///             {
-    ///                 MemoryInGbs = @var.Invoke_run_driver_shape_config_memory_in_gbs,
-    ///                 Ocpus = @var.Invoke_run_driver_shape_config_ocpus,
-    ///             },
-    ///             Execute = @var.Invoke_run_execute,
-    ///             ExecutorShape = @var.Invoke_run_executor_shape,
-    ///             ExecutorShapeConfig = new Oci.DataFlow.Inputs.InvokeRunExecutorShapeConfigArgs
-    ///             {
-    ///                 MemoryInGbs = @var.Invoke_run_executor_shape_config_memory_in_gbs,
-    ///                 Ocpus = @var.Invoke_run_executor_shape_config_ocpus,
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             LogsBucketUri = @var.Invoke_run_logs_bucket_uri,
-    ///             MetastoreId = @var.Metastore_id,
-    ///             NumExecutors = @var.Invoke_run_num_executors,
-    ///             Parameters = 
-    ///             {
-    ///                 new Oci.DataFlow.Inputs.InvokeRunParameterArgs
-    ///                 {
-    ///                     Name = @var.Invoke_run_parameters_name,
-    ///                     Value = @var.Invoke_run_parameters_value,
-    ///                 },
-    ///             },
-    ///             SparkVersion = @var.Invoke_run_spark_version,
-    ///             Type = @var.Invoke_run_type,
-    ///             WarehouseBucketUri = @var.Invoke_run_warehouse_bucket_uri,
-    ///         });
-    ///     }
+    ///         },
+    ///         SparkVersion = @var.Invoke_run_spark_version,
+    ///         Type = @var.Invoke_run_type,
+    ///         WarehouseBucketUri = @var.Invoke_run_warehouse_bucket_uri,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// ## Note
     /// 
@@ -85,13 +88,19 @@ namespace Pulumi.Oci.DataFlow
     /// ```
     /// </summary>
     [OciResourceType("oci:DataFlow/invokeRun:InvokeRun")]
-    public partial class InvokeRun : Pulumi.CustomResource
+    public partial class InvokeRun : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
         /// </summary>
         [Output("applicationId")]
         public Output<string> ApplicationId { get; private set; } = null!;
+
+        /// <summary>
+        /// Logging details of Application logs for Data Flow Run.
+        /// </summary>
+        [Output("applicationLogConfig")]
+        public Output<Outputs.InvokeRunApplicationLogConfig> ApplicationLogConfig { get; private set; } = null!;
 
         /// <summary>
         /// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -368,13 +377,19 @@ namespace Pulumi.Oci.DataFlow
         }
     }
 
-    public sealed class InvokeRunArgs : Pulumi.ResourceArgs
+    public sealed class InvokeRunArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
         /// </summary>
         [Input("applicationId")]
         public Input<string>? ApplicationId { get; set; }
+
+        /// <summary>
+        /// Logging details of Application logs for Data Flow Run.
+        /// </summary>
+        [Input("applicationLogConfig")]
+        public Input<Inputs.InvokeRunApplicationLogConfigArgs>? ApplicationLogConfig { get; set; }
 
         /// <summary>
         /// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -526,15 +541,22 @@ namespace Pulumi.Oci.DataFlow
         public InvokeRunArgs()
         {
         }
+        public static new InvokeRunArgs Empty => new InvokeRunArgs();
     }
 
-    public sealed class InvokeRunState : Pulumi.ResourceArgs
+    public sealed class InvokeRunState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
         /// </summary>
         [Input("applicationId")]
         public Input<string>? ApplicationId { get; set; }
+
+        /// <summary>
+        /// Logging details of Application logs for Data Flow Run.
+        /// </summary>
+        [Input("applicationLogConfig")]
+        public Input<Inputs.InvokeRunApplicationLogConfigGetArgs>? ApplicationLogConfig { get; set; }
 
         /// <summary>
         /// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
@@ -812,5 +834,6 @@ namespace Pulumi.Oci.DataFlow
         public InvokeRunState()
         {
         }
+        public static new InvokeRunState Empty => new InvokeRunState();
     }
 }

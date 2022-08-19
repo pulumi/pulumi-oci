@@ -28,41 +28,39 @@ namespace Pulumi.Oci.OsManagement
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testManagedInstanceManagement = new Oci.OsManagement.ManagedInstanceManagement("testManagedInstanceManagement", new()
     ///     {
-    ///         var testManagedInstanceManagement = new Oci.OsManagement.ManagedInstanceManagement("testManagedInstanceManagement", new Oci.OsManagement.ManagedInstanceManagementArgs
+    ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
+    ///         ParentSoftwareSource = new Oci.OsManagement.Inputs.ManagedInstanceManagementParentSoftwareSourceArgs
     ///         {
-    ///             ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-    ///             ParentSoftwareSource = new Oci.OsManagement.Inputs.ManagedInstanceManagementParentSoftwareSourceArgs
+    ///             Id = oci_osmanagement_software_source.Test_parent_software_source.Id,
+    ///             Name = oci_osmanagement_software_source.Test_parent_software_source.Display_name,
+    ///         },
+    ///         ManagedInstanceGroups = new[]
+    ///         {
+    ///             new Oci.OsManagement.Inputs.ManagedInstanceManagementManagedInstanceGroupArgs
     ///             {
-    ///                 Id = oci_osmanagement_software_source.Test_parent_software_source.Id,
-    ///                 Name = oci_osmanagement_software_source.Test_parent_software_source.Display_name,
+    ///                 Id = oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id,
+    ///                 DisplayName = @var.Managed_instance_group_display_name,
     ///             },
-    ///             ManagedInstanceGroups = 
+    ///         },
+    ///         ChildSoftwareSources = new[]
+    ///         {
+    ///             new Oci.OsManagement.Inputs.ManagedInstanceManagementChildSoftwareSourceArgs
     ///             {
-    ///                 new Oci.OsManagement.Inputs.ManagedInstanceManagementManagedInstanceGroupArgs
-    ///                 {
-    ///                     Id = oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id,
-    ///                     DisplayName = @var.Managed_instance_group_display_name,
-    ///                 },
+    ///                 Id = oci_osmanagement_software_source.Test_software_source_child.Id,
+    ///                 Name = oci_osmanagement_software_source.Test_software_source_child.Display_name,
     ///             },
-    ///             ChildSoftwareSources = 
-    ///             {
-    ///                 new Oci.OsManagement.Inputs.ManagedInstanceManagementChildSoftwareSourceArgs
-    ///                 {
-    ///                     Id = oci_osmanagement_software_source.Test_software_source_child.Id,
-    ///                     Name = oci_osmanagement_software_source.Test_software_source_child.Display_name,
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -70,7 +68,7 @@ namespace Pulumi.Oci.OsManagement
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:OsManagement/managedInstanceManagement:ManagedInstanceManagement")]
-    public partial class ManagedInstanceManagement : Pulumi.CustomResource
+    public partial class ManagedInstanceManagement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) list of child Software Sources attached to the Managed Instance
@@ -200,7 +198,7 @@ namespace Pulumi.Oci.OsManagement
         }
     }
 
-    public sealed class ManagedInstanceManagementArgs : Pulumi.ResourceArgs
+    public sealed class ManagedInstanceManagementArgs : global::Pulumi.ResourceArgs
     {
         [Input("childSoftwareSources")]
         private InputList<Inputs.ManagedInstanceManagementChildSoftwareSourceArgs>? _childSoftwareSources;
@@ -241,9 +239,10 @@ namespace Pulumi.Oci.OsManagement
         public ManagedInstanceManagementArgs()
         {
         }
+        public static new ManagedInstanceManagementArgs Empty => new ManagedInstanceManagementArgs();
     }
 
-    public sealed class ManagedInstanceManagementState : Pulumi.ResourceArgs
+    public sealed class ManagedInstanceManagementState : global::Pulumi.ResourceArgs
     {
         [Input("childSoftwareSources")]
         private InputList<Inputs.ManagedInstanceManagementChildSoftwareSourceGetArgs>? _childSoftwareSources;
@@ -344,5 +343,6 @@ namespace Pulumi.Oci.OsManagement
         public ManagedInstanceManagementState()
         {
         }
+        public static new ManagedInstanceManagementState Empty => new ManagedInstanceManagementState();
     }
 }

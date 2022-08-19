@@ -27,23 +27,21 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIdentityProviders = Oci.Identity.GetIdentityProviders.Invoke(new()
         ///     {
-        ///         var testIdentityProviders = Output.Create(Oci.Identity.GetIdentityProviders.InvokeAsync(new Oci.Identity.GetIdentityProvidersArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             Protocol = @var.Identity_provider_protocol,
-        ///             Name = @var.Identity_provider_name,
-        ///             State = @var.Identity_provider_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         Protocol = @var.Identity_provider_protocol,
+        ///         Name = @var.Identity_provider_name,
+        ///         State = @var.Identity_provider_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -67,23 +65,21 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIdentityProviders = Oci.Identity.GetIdentityProviders.Invoke(new()
         ///     {
-        ///         var testIdentityProviders = Output.Create(Oci.Identity.GetIdentityProviders.InvokeAsync(new Oci.Identity.GetIdentityProvidersArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             Protocol = @var.Identity_provider_protocol,
-        ///             Name = @var.Identity_provider_name,
-        ///             State = @var.Identity_provider_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         Protocol = @var.Identity_provider_protocol,
+        ///         Name = @var.Identity_provider_name,
+        ///         State = @var.Identity_provider_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetIdentityProvidersArgs : Pulumi.InvokeArgs
+    public sealed class GetIdentityProvidersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -130,9 +126,10 @@ namespace Pulumi.Oci.Identity
         public GetIdentityProvidersArgs()
         {
         }
+        public static new GetIdentityProvidersArgs Empty => new GetIdentityProvidersArgs();
     }
 
-    public sealed class GetIdentityProvidersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIdentityProvidersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -169,6 +166,7 @@ namespace Pulumi.Oci.Identity
         public GetIdentityProvidersInvokeArgs()
         {
         }
+        public static new GetIdentityProvidersInvokeArgs Empty => new GetIdentityProvidersInvokeArgs();
     }
 
 

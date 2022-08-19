@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class AppFirewallPolicyResponseProtectionArgs : Pulumi.ResourceArgs
+    public sealed class AppFirewallPolicyResponseProtectionArgs : global::Pulumi.ResourceArgs
     {
         [Input("rules")]
         private InputList<Inputs.AppFirewallPolicyResponseProtectionRuleArgs>? _rules;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public AppFirewallPolicyResponseProtectionArgs()
         {
         }
+        public static new AppFirewallPolicyResponseProtectionArgs Empty => new AppFirewallPolicyResponseProtectionArgs();
     }
 }

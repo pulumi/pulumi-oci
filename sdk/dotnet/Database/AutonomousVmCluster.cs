@@ -17,59 +17,57 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAutonomousVmCluster = new Oci.Database.AutonomousVmCluster("testAutonomousVmCluster", new()
     ///     {
-    ///         var testAutonomousVmCluster = new Oci.Database.AutonomousVmCluster("testAutonomousVmCluster", new Oci.Database.AutonomousVmClusterArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Autonomous_vm_cluster_display_name,
+    ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+    ///         VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
+    ///         AutonomousDataStorageSizeInTbs = @var.Autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
+    ///         CpuCoreCountPerNode = @var.Autonomous_vm_cluster_cpu_core_count_per_node,
+    ///         DefinedTags = @var.Autonomous_vm_cluster_defined_tags,
+    ///         FreeformTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Autonomous_vm_cluster_display_name,
-    ///             ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-    ///             VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
-    ///             AutonomousDataStorageSizeInTbs = @var.Autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
-    ///             CpuCoreCountPerNode = @var.Autonomous_vm_cluster_cpu_core_count_per_node,
-    ///             DefinedTags = @var.Autonomous_vm_cluster_defined_tags,
-    ///             FreeformTags = 
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsLocalBackupEnabled = @var.Autonomous_vm_cluster_is_local_backup_enabled,
+    ///         LicenseModel = @var.Autonomous_vm_cluster_license_model,
+    ///         MaintenanceWindowDetails = new[]
+    ///         {
+    ///             new Oci.Database.Inputs.AutonomousVmClusterMaintenanceWindowDetailArgs
     ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsLocalBackupEnabled = @var.Autonomous_vm_cluster_is_local_backup_enabled,
-    ///             LicenseModel = @var.Autonomous_vm_cluster_license_model,
-    ///             MaintenanceWindowDetails = 
-    ///             {
-    ///                 new Oci.Database.Inputs.AutonomousVmClusterMaintenanceWindowDetailArgs
+    ///                 Preference = @var.Autonomous_vm_cluster_maintenance_window_details_preference,
+    ///                 DaysOfWeeks = new[]
     ///                 {
-    ///                     Preference = @var.Autonomous_vm_cluster_maintenance_window_details_preference,
-    ///                     DaysOfWeeks = 
+    ///                     new Oci.Database.Inputs.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs
     ///                     {
-    ///                         new Oci.Database.Inputs.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs
-    ///                         {
-    ///                             Name = @var.Autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
-    ///                         },
+    ///                         Name = @var.Autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
     ///                     },
-    ///                     HoursOfDays = @var.Autonomous_vm_cluster_maintenance_window_details_hours_of_day,
-    ///                     LeadTimeInWeeks = @var.Autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
-    ///                     Months = 
-    ///                     {
-    ///                         new Oci.Database.Inputs.AutonomousVmClusterMaintenanceWindowDetailMonthArgs
-    ///                         {
-    ///                             Name = @var.Autonomous_vm_cluster_maintenance_window_details_months_name,
-    ///                         },
-    ///                     },
-    ///                     WeeksOfMonths = @var.Autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
     ///                 },
+    ///                 HoursOfDays = @var.Autonomous_vm_cluster_maintenance_window_details_hours_of_day,
+    ///                 LeadTimeInWeeks = @var.Autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
+    ///                 Months = new[]
+    ///                 {
+    ///                     new Oci.Database.Inputs.AutonomousVmClusterMaintenanceWindowDetailMonthArgs
+    ///                     {
+    ///                         Name = @var.Autonomous_vm_cluster_maintenance_window_details_months_name,
+    ///                     },
+    ///                 },
+    ///                 WeeksOfMonths = @var.Autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
     ///             },
-    ///             MemoryPerOracleComputeUnitInGbs = @var.Autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
-    ///             TimeZone = @var.Autonomous_vm_cluster_time_zone,
-    ///             TotalContainerDatabases = @var.Autonomous_vm_cluster_total_container_databases,
-    ///         });
-    ///     }
+    ///         },
+    ///         MemoryPerOracleComputeUnitInGbs = @var.Autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
+    ///         TimeZone = @var.Autonomous_vm_cluster_time_zone,
+    ///         TotalContainerDatabases = @var.Autonomous_vm_cluster_total_container_databases,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -81,7 +79,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/autonomousVmCluster:AutonomousVmCluster")]
-    public partial class AutonomousVmCluster : Pulumi.CustomResource
+    public partial class AutonomousVmCluster : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The data disk group size to be allocated for Autonomous Databases, in TBs.
@@ -310,7 +308,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class AutonomousVmClusterArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousVmClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The data disk group size to be allocated for Autonomous Databases, in TBs.
@@ -417,9 +415,10 @@ namespace Pulumi.Oci.Database
         public AutonomousVmClusterArgs()
         {
         }
+        public static new AutonomousVmClusterArgs Empty => new AutonomousVmClusterArgs();
     }
 
-    public sealed class AutonomousVmClusterState : Pulumi.ResourceArgs
+    public sealed class AutonomousVmClusterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The data disk group size to be allocated for Autonomous Databases, in TBs.
@@ -631,5 +630,6 @@ namespace Pulumi.Oci.Database
         public AutonomousVmClusterState()
         {
         }
+        public static new AutonomousVmClusterState Empty => new AutonomousVmClusterState();
     }
 }

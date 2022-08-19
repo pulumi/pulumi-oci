@@ -22,37 +22,35 @@ namespace Pulumi.Oci.Kms
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testKey = new Oci.Kms.Key("testKey", new()
     ///     {
-    ///         var testKey = new Oci.Kms.Key("testKey", new Oci.Kms.KeyArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Key_display_name,
+    ///         KeyShape = new Oci.Kms.Inputs.KeyKeyShapeArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Key_display_name,
-    ///             KeyShape = new Oci.Kms.Inputs.KeyKeyShapeArgs
-    ///             {
-    ///                 Algorithm = @var.Key_key_shape_algorithm,
-    ///                 Length = @var.Key_key_shape_length,
-    ///                 CurveId = oci_kms_curve.Test_curve.Id,
-    ///             },
-    ///             ManagementEndpoint = @var.Key_management_endpoint,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             ProtectionMode = @var.Key_protection_mode,
-    ///         });
-    ///     }
+    ///             Algorithm = @var.Key_key_shape_algorithm,
+    ///             Length = @var.Key_key_shape_length,
+    ///             CurveId = oci_kms_curve.Test_curve.Id,
+    ///         },
+    ///         ManagementEndpoint = @var.Key_management_endpoint,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         ProtectionMode = @var.Key_protection_mode,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -64,7 +62,7 @@ namespace Pulumi.Oci.Kms
     /// ```
     /// </summary>
     [OciResourceType("oci:Kms/key:Key")]
-    public partial class Key : Pulumi.CustomResource
+    public partial class Key : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where you want to create the master encryption key.
@@ -224,7 +222,7 @@ namespace Pulumi.Oci.Kms
         }
     }
 
-    public sealed class KeyArgs : Pulumi.ResourceArgs
+    public sealed class KeyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where you want to create the master encryption key.
@@ -313,9 +311,10 @@ namespace Pulumi.Oci.Kms
         public KeyArgs()
         {
         }
+        public static new KeyArgs Empty => new KeyArgs();
     }
 
-    public sealed class KeyState : Pulumi.ResourceArgs
+    public sealed class KeyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where you want to create the master encryption key.
@@ -452,5 +451,6 @@ namespace Pulumi.Oci.Kms
         public KeyState()
         {
         }
+        public static new KeyState Empty => new KeyState();
     }
 }

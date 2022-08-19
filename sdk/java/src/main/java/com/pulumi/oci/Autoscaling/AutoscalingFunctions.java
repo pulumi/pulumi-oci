@@ -23,6 +23,34 @@ public final class AutoscalingFunctions {
      * Gets information about the specified autoscaling configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Autoscaling.AutoscalingFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfiguration = AutoscalingFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
+     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutoScalingConfigurationResult> getAutoScalingConfiguration(GetAutoScalingConfigurationArgs args) {
@@ -34,6 +62,34 @@ public final class AutoscalingFunctions {
      * Gets information about the specified autoscaling configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Autoscaling.AutoscalingFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfiguration = AutoscalingFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
+     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutoScalingConfigurationResult> getAutoScalingConfigurationPlain(GetAutoScalingConfigurationPlainArgs args) {
@@ -45,6 +101,34 @@ public final class AutoscalingFunctions {
      * Gets information about the specified autoscaling configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Autoscaling.AutoscalingFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfiguration = AutoscalingFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
+     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutoScalingConfigurationResult> getAutoScalingConfiguration(GetAutoScalingConfigurationArgs args, InvokeOptions options) {
@@ -56,6 +140,34 @@ public final class AutoscalingFunctions {
      * Gets information about the specified autoscaling configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Autoscaling.AutoscalingFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfiguration = AutoscalingFunctions.getAutoScalingConfiguration(GetAutoScalingConfigurationArgs.builder()
+     *             .autoScalingConfigurationId(oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutoScalingConfigurationResult> getAutoScalingConfigurationPlain(GetAutoScalingConfigurationPlainArgs args, InvokeOptions options) {
@@ -67,6 +179,35 @@ public final class AutoscalingFunctions {
      * Lists autoscaling configurations in the specifed compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Autoscaling.AutoscalingFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfigurations = AutoscalingFunctions.getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.auto_scaling_configuration_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutoScalingConfigurationsResult> getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs args) {
@@ -78,6 +219,35 @@ public final class AutoscalingFunctions {
      * Lists autoscaling configurations in the specifed compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Autoscaling.AutoscalingFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfigurations = AutoscalingFunctions.getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.auto_scaling_configuration_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutoScalingConfigurationsResult> getAutoScalingConfigurationsPlain(GetAutoScalingConfigurationsPlainArgs args) {
@@ -89,6 +259,35 @@ public final class AutoscalingFunctions {
      * Lists autoscaling configurations in the specifed compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Autoscaling.AutoscalingFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfigurations = AutoscalingFunctions.getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.auto_scaling_configuration_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutoScalingConfigurationsResult> getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs args, InvokeOptions options) {
@@ -100,6 +299,35 @@ public final class AutoscalingFunctions {
      * Lists autoscaling configurations in the specifed compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Autoscaling.AutoscalingFunctions;
+     * import com.pulumi.oci.Autoscaling.inputs.GetAutoScalingConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutoScalingConfigurations = AutoscalingFunctions.getAutoScalingConfigurations(GetAutoScalingConfigurationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.auto_scaling_configuration_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutoScalingConfigurationsResult> getAutoScalingConfigurationsPlain(GetAutoScalingConfigurationsPlainArgs args, InvokeOptions options) {

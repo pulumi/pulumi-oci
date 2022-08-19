@@ -22,23 +22,21 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepoFileLine = Oci.DevOps.GetRepoFileLine.Invoke(new()
         ///     {
-        ///         var testRepoFileLine = Output.Create(Oci.DevOps.GetRepoFileLine.InvokeAsync(new Oci.DevOps.GetRepoFileLineArgs
-        ///         {
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             Revision = @var.Repo_file_line_revision,
-        ///             FilePath = @var.Repo_file_line_file_path,
-        ///             StartLineNumber = @var.Repo_file_line_start_line_number,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         Revision = @var.Repo_file_line_revision,
+        ///         FilePath = @var.Repo_file_line_file_path,
+        ///         StartLineNumber = @var.Repo_file_line_start_line_number,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepoFileLine = Oci.DevOps.GetRepoFileLine.Invoke(new()
         ///     {
-        ///         var testRepoFileLine = Output.Create(Oci.DevOps.GetRepoFileLine.InvokeAsync(new Oci.DevOps.GetRepoFileLineArgs
-        ///         {
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             Revision = @var.Repo_file_line_revision,
-        ///             FilePath = @var.Repo_file_line_file_path,
-        ///             StartLineNumber = @var.Repo_file_line_start_line_number,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         Revision = @var.Repo_file_line_revision,
+        ///         FilePath = @var.Repo_file_line_file_path,
+        ///         StartLineNumber = @var.Repo_file_line_start_line_number,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetRepoFileLineArgs : Pulumi.InvokeArgs
+    public sealed class GetRepoFileLineArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// (Required) A filter to return file contents of the specified paths.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.DevOps
         public GetRepoFileLineArgs()
         {
         }
+        public static new GetRepoFileLineArgs Empty => new GetRepoFileLineArgs();
     }
 
-    public sealed class GetRepoFileLineInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRepoFileLineInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// (Required) A filter to return file contents of the specified paths.
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.DevOps
         public GetRepoFileLineInvokeArgs()
         {
         }
+        public static new GetRepoFileLineInvokeArgs Empty => new GetRepoFileLineInvokeArgs();
     }
 
 

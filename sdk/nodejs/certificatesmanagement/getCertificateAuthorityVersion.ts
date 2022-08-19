@@ -10,18 +10,6 @@ import * as utilities from "../utilities";
  *
  * Lists all versions for the specified certificate authority (CA).
  * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testCertificateAuthorityVersion = oci.CertificatesManagement.getCertificateAuthorityVersion({
- *     certificateAuthorityId: oci_certificates_management_certificate_authority.test_certificate_authority.id,
- *     versionNumber: _var.certificate_authority_version_version_number,
- * });
- * ```
  */
 export function getCertificateAuthorityVersion(args: GetCertificateAuthorityVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateAuthorityVersionResult> {
     if (!opts) {

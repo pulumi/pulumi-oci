@@ -20,33 +20,31 @@ namespace Pulumi.Oci.Oda
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testOdaInstance = new Oci.Oda.OdaInstance("testOdaInstance", new()
     ///     {
-    ///         var testOdaInstance = new Oci.Oda.OdaInstance("testOdaInstance", new Oci.Oda.OdaInstanceArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         ShapeName = "DEVELOPMENT",
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             ShapeName = "DEVELOPMENT",
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Oda_instance_description,
-    ///             DisplayName = @var.Oda_instance_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IdentityDomain = @var.Oda_instance_identity_domain,
-    ///             IsRoleBasedAccess = @var.Oda_instance_is_role_based_access,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Oda_instance_description,
+    ///         DisplayName = @var.Oda_instance_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         IdentityDomain = @var.Oda_instance_identity_domain,
+    ///         IsRoleBasedAccess = @var.Oda_instance_is_role_based_access,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -58,7 +56,7 @@ namespace Pulumi.Oci.Oda
     /// ```
     /// </summary>
     [OciResourceType("oci:Oda/odaInstance:OdaInstance")]
-    public partial class OdaInstance : Pulumi.CustomResource
+    public partial class OdaInstance : global::Pulumi.CustomResource
     {
         /// <summary>
         /// A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
@@ -236,7 +234,7 @@ namespace Pulumi.Oci.Oda
         }
     }
 
-    public sealed class OdaInstanceArgs : Pulumi.ResourceArgs
+    public sealed class OdaInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Identifier of the compartment.
@@ -307,9 +305,10 @@ namespace Pulumi.Oci.Oda
         public OdaInstanceArgs()
         {
         }
+        public static new OdaInstanceArgs Empty => new OdaInstanceArgs();
     }
 
-    public sealed class OdaInstanceState : Pulumi.ResourceArgs
+    public sealed class OdaInstanceState : global::Pulumi.ResourceArgs
     {
         [Input("attachmentIds")]
         private InputList<string>? _attachmentIds;
@@ -488,5 +487,6 @@ namespace Pulumi.Oci.Oda
         public OdaInstanceState()
         {
         }
+        public static new OdaInstanceState Empty => new OdaInstanceState();
     }
 }

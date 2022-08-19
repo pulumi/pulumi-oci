@@ -22,28 +22,26 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousContainerDatabases = Oci.Database.GetAutonomousContainerDatabases.Invoke(new()
         ///     {
-        ///         var testAutonomousContainerDatabases = Output.Create(Oci.Database.GetAutonomousContainerDatabases.InvokeAsync(new Oci.Database.GetAutonomousContainerDatabasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AutonomousExadataInfrastructureId = oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id,
-        ///             AutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
-        ///             AvailabilityDomain = @var.Autonomous_container_database_availability_domain,
-        ///             CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
-        ///             DisplayName = @var.Autonomous_container_database_display_name,
-        ///             InfrastructureType = @var.Autonomous_container_database_infrastructure_type,
-        ///             ServiceLevelAgreementType = @var.Autonomous_container_database_service_level_agreement_type,
-        ///             State = @var.Autonomous_container_database_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AutonomousExadataInfrastructureId = oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id,
+        ///         AutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
+        ///         AvailabilityDomain = @var.Autonomous_container_database_availability_domain,
+        ///         CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
+        ///         DisplayName = @var.Autonomous_container_database_display_name,
+        ///         InfrastructureType = @var.Autonomous_container_database_infrastructure_type,
+        ///         ServiceLevelAgreementType = @var.Autonomous_container_database_service_level_agreement_type,
+        ///         State = @var.Autonomous_container_database_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,28 +60,26 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousContainerDatabases = Oci.Database.GetAutonomousContainerDatabases.Invoke(new()
         ///     {
-        ///         var testAutonomousContainerDatabases = Output.Create(Oci.Database.GetAutonomousContainerDatabases.InvokeAsync(new Oci.Database.GetAutonomousContainerDatabasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AutonomousExadataInfrastructureId = oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id,
-        ///             AutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
-        ///             AvailabilityDomain = @var.Autonomous_container_database_availability_domain,
-        ///             CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
-        ///             DisplayName = @var.Autonomous_container_database_display_name,
-        ///             InfrastructureType = @var.Autonomous_container_database_infrastructure_type,
-        ///             ServiceLevelAgreementType = @var.Autonomous_container_database_service_level_agreement_type,
-        ///             State = @var.Autonomous_container_database_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AutonomousExadataInfrastructureId = oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id,
+        ///         AutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
+        ///         AvailabilityDomain = @var.Autonomous_container_database_availability_domain,
+        ///         CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
+        ///         DisplayName = @var.Autonomous_container_database_display_name,
+        ///         InfrastructureType = @var.Autonomous_container_database_infrastructure_type,
+        ///         ServiceLevelAgreementType = @var.Autonomous_container_database_service_level_agreement_type,
+        ///         State = @var.Autonomous_container_database_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousContainerDatabasesArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousContainerDatabasesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -160,9 +156,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousContainerDatabasesArgs()
         {
         }
+        public static new GetAutonomousContainerDatabasesArgs Empty => new GetAutonomousContainerDatabasesArgs();
     }
 
-    public sealed class GetAutonomousContainerDatabasesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousContainerDatabasesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -229,6 +226,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousContainerDatabasesInvokeArgs()
         {
         }
+        public static new GetAutonomousContainerDatabasesInvokeArgs Empty => new GetAutonomousContainerDatabasesInvokeArgs();
     }
 
 

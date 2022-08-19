@@ -14,7 +14,7 @@ import * as utilities from "../utilities";
  * const testAutonomousDatabaseWallet = oci.Database.getAutonomousDatabaseWallet({
  *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
  *     password: _var.autonomous_database_wallet_password,
- *     base64EncodeContent: "false",
+ *     base64EncodeContent: false,
  *     generateType: _var.autonomous_database_wallet_generate_type,
  * });
  * ```

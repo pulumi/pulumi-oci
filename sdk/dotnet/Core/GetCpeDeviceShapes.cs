@@ -34,17 +34,15 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testCpeDeviceShapes = Output.Create(Oci.Core.GetCpeDeviceShapes.InvokeAsync());
-        ///     }
+        ///     var testCpeDeviceShapes = Oci.Core.GetCpeDeviceShapes.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,17 +73,15 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testCpeDeviceShapes = Output.Create(Oci.Core.GetCpeDeviceShapes.InvokeAsync());
-        ///     }
+        ///     var testCpeDeviceShapes = Oci.Core.GetCpeDeviceShapes.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetCpeDeviceShapesArgs : Pulumi.InvokeArgs
+    public sealed class GetCpeDeviceShapesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetCpeDeviceShapesFilterArgs>? _filters;
@@ -108,9 +104,10 @@ namespace Pulumi.Oci.Core
         public GetCpeDeviceShapesArgs()
         {
         }
+        public static new GetCpeDeviceShapesArgs Empty => new GetCpeDeviceShapesArgs();
     }
 
-    public sealed class GetCpeDeviceShapesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCpeDeviceShapesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetCpeDeviceShapesFilterInputArgs>? _filters;
@@ -123,6 +120,7 @@ namespace Pulumi.Oci.Core
         public GetCpeDeviceShapesInvokeArgs()
         {
         }
+        public static new GetCpeDeviceShapesInvokeArgs Empty => new GetCpeDeviceShapesInvokeArgs();
     }
 
 

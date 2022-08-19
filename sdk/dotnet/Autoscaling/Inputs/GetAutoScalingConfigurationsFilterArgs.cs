@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Autoscaling.Inputs
 {
 
-    public sealed class GetAutoScalingConfigurationsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetAutoScalingConfigurationsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         public GetAutoScalingConfigurationsFilterInputArgs()
         {
         }
+        public static new GetAutoScalingConfigurationsFilterInputArgs Empty => new GetAutoScalingConfigurationsFilterInputArgs();
     }
 }

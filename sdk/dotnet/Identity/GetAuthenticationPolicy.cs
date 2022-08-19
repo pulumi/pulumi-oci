@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuthenticationPolicy = Oci.Identity.GetAuthenticationPolicy.Invoke(new()
         ///     {
-        ///         var testAuthenticationPolicy = Output.Create(Oci.Identity.GetAuthenticationPolicy.InvokeAsync(new Oci.Identity.GetAuthenticationPolicyArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuthenticationPolicy = Oci.Identity.GetAuthenticationPolicy.Invoke(new()
         ///     {
-        ///         var testAuthenticationPolicy = Output.Create(Oci.Identity.GetAuthenticationPolicy.InvokeAsync(new Oci.Identity.GetAuthenticationPolicyArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetAuthenticationPolicyArgs : Pulumi.InvokeArgs
+    public sealed class GetAuthenticationPolicyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -90,9 +86,10 @@ namespace Pulumi.Oci.Identity
         public GetAuthenticationPolicyArgs()
         {
         }
+        public static new GetAuthenticationPolicyArgs Empty => new GetAuthenticationPolicyArgs();
     }
 
-    public sealed class GetAuthenticationPolicyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAuthenticationPolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -103,6 +100,7 @@ namespace Pulumi.Oci.Identity
         public GetAuthenticationPolicyInvokeArgs()
         {
         }
+        public static new GetAuthenticationPolicyInvokeArgs Empty => new GetAuthenticationPolicyInvokeArgs();
     }
 
 

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Waf
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkAddressList = Oci.Waf.GetNetworkAddressList.Invoke(new()
         ///     {
-        ///         var testNetworkAddressList = Output.Create(Oci.Waf.GetNetworkAddressList.InvokeAsync(new Oci.Waf.GetNetworkAddressListArgs
-        ///         {
-        ///             NetworkAddressListId = oci_waf_network_address_list.Test_network_address_list.Id,
-        ///         }));
-        ///     }
+        ///         NetworkAddressListId = oci_waf_network_address_list.Test_network_address_list.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Waf
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkAddressList = Oci.Waf.GetNetworkAddressList.Invoke(new()
         ///     {
-        ///         var testNetworkAddressList = Output.Create(Oci.Waf.GetNetworkAddressList.InvokeAsync(new Oci.Waf.GetNetworkAddressListArgs
-        ///         {
-        ///             NetworkAddressListId = oci_waf_network_address_list.Test_network_address_list.Id,
-        ///         }));
-        ///     }
+        ///         NetworkAddressListId = oci_waf_network_address_list.Test_network_address_list.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Waf
     }
 
 
-    public sealed class GetNetworkAddressListArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkAddressListArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Waf
         public GetNetworkAddressListArgs()
         {
         }
+        public static new GetNetworkAddressListArgs Empty => new GetNetworkAddressListArgs();
     }
 
-    public sealed class GetNetworkAddressListInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkAddressListInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Waf
         public GetNetworkAddressListInvokeArgs()
         {
         }
+        public static new GetNetworkAddressListInvokeArgs Empty => new GetNetworkAddressListInvokeArgs();
     }
 
 

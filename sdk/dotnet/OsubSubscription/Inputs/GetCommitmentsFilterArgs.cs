@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsubSubscription.Inputs
 {
 
-    public sealed class GetCommitmentsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetCommitmentsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.OsubSubscription.Inputs
         public GetCommitmentsFilterInputArgs()
         {
         }
+        public static new GetCommitmentsFilterInputArgs Empty => new GetCommitmentsFilterInputArgs();
     }
 }

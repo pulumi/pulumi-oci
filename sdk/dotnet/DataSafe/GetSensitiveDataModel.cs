@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSensitiveDataModel = Oci.DataSafe.GetSensitiveDataModel.Invoke(new()
         ///     {
-        ///         var testSensitiveDataModel = Output.Create(Oci.DataSafe.GetSensitiveDataModel.InvokeAsync(new Oci.DataSafe.GetSensitiveDataModelArgs
-        ///         {
-        ///             SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         }));
-        ///     }
+        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSensitiveDataModel = Oci.DataSafe.GetSensitiveDataModel.Invoke(new()
         ///     {
-        ///         var testSensitiveDataModel = Output.Create(Oci.DataSafe.GetSensitiveDataModel.InvokeAsync(new Oci.DataSafe.GetSensitiveDataModelArgs
-        ///         {
-        ///             SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         }));
-        ///     }
+        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetSensitiveDataModelArgs : Pulumi.InvokeArgs
+    public sealed class GetSensitiveDataModelArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the sensitive data model.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetSensitiveDataModelArgs()
         {
         }
+        public static new GetSensitiveDataModelArgs Empty => new GetSensitiveDataModelArgs();
     }
 
-    public sealed class GetSensitiveDataModelInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSensitiveDataModelInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the sensitive data model.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetSensitiveDataModelInvokeArgs()
         {
         }
+        public static new GetSensitiveDataModelInvokeArgs Empty => new GetSensitiveDataModelInvokeArgs();
     }
 
 

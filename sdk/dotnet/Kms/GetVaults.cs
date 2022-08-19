@@ -27,20 +27,18 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVaults = Oci.Kms.GetVaults.Invoke(new()
         ///     {
-        ///         var testVaults = Output.Create(Oci.Kms.GetVaults.InvokeAsync(new Oci.Kms.GetVaultsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -64,20 +62,18 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVaults = Oci.Kms.GetVaults.Invoke(new()
         ///     {
-        ///         var testVaults = Output.Create(Oci.Kms.GetVaults.InvokeAsync(new Oci.Kms.GetVaultsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Kms
     }
 
 
-    public sealed class GetVaultsArgs : Pulumi.InvokeArgs
+    public sealed class GetVaultsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -106,9 +102,10 @@ namespace Pulumi.Oci.Kms
         public GetVaultsArgs()
         {
         }
+        public static new GetVaultsArgs Empty => new GetVaultsArgs();
     }
 
-    public sealed class GetVaultsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVaultsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.Kms
         public GetVaultsInvokeArgs()
         {
         }
+        public static new GetVaultsInvokeArgs Empty => new GetVaultsInvokeArgs();
     }
 
 

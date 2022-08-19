@@ -17,30 +17,28 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testNetworkSecurityGroup = new Oci.Core.NetworkSecurityGroup("testNetworkSecurityGroup", new()
     ///     {
-    ///         var testNetworkSecurityGroup = new Oci.Core.NetworkSecurityGroup("testNetworkSecurityGroup", new Oci.Core.NetworkSecurityGroupArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Network_security_group_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Network_security_group_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/networkSecurityGroup:NetworkSecurityGroup")]
-    public partial class NetworkSecurityGroup : Pulumi.CustomResource
+    public partial class NetworkSecurityGroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the network security group.
@@ -140,7 +138,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class NetworkSecurityGroupArgs : Pulumi.ResourceArgs
+    public sealed class NetworkSecurityGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the network security group.
@@ -187,9 +185,10 @@ namespace Pulumi.Oci.Core
         public NetworkSecurityGroupArgs()
         {
         }
+        public static new NetworkSecurityGroupArgs Empty => new NetworkSecurityGroupArgs();
     }
 
-    public sealed class NetworkSecurityGroupState : Pulumi.ResourceArgs
+    public sealed class NetworkSecurityGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the network security group.
@@ -248,5 +247,6 @@ namespace Pulumi.Oci.Core
         public NetworkSecurityGroupState()
         {
         }
+        public static new NetworkSecurityGroupState Empty => new NetworkSecurityGroupState();
     }
 }

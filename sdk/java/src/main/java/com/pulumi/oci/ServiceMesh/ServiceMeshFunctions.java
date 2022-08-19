@@ -61,6 +61,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of AccessPolicy objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetAccessPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessPolicies = ServiceMeshFunctions.getAccessPolicies(GetAccessPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.access_policy_id())
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .name(var_.access_policy_name())
+     *             .state(var_.access_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAccessPoliciesResult> getAccessPolicies(GetAccessPoliciesArgs args) {
@@ -72,6 +104,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of AccessPolicy objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetAccessPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessPolicies = ServiceMeshFunctions.getAccessPolicies(GetAccessPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.access_policy_id())
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .name(var_.access_policy_name())
+     *             .state(var_.access_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAccessPoliciesResult> getAccessPoliciesPlain(GetAccessPoliciesPlainArgs args) {
@@ -83,6 +147,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of AccessPolicy objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetAccessPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessPolicies = ServiceMeshFunctions.getAccessPolicies(GetAccessPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.access_policy_id())
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .name(var_.access_policy_name())
+     *             .state(var_.access_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAccessPoliciesResult> getAccessPolicies(GetAccessPoliciesArgs args, InvokeOptions options) {
@@ -94,6 +190,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of AccessPolicy objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetAccessPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessPolicies = ServiceMeshFunctions.getAccessPolicies(GetAccessPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.access_policy_id())
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .name(var_.access_policy_name())
+     *             .state(var_.access_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAccessPoliciesResult> getAccessPoliciesPlain(GetAccessPoliciesPlainArgs args, InvokeOptions options) {
@@ -105,6 +233,34 @@ public final class ServiceMeshFunctions {
      * Get an AccessPolicy by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetAccessPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessPolicy = ServiceMeshFunctions.getAccessPolicy(GetAccessPolicyArgs.builder()
+     *             .accessPolicyId(oci_service_mesh_access_policy.test_access_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAccessPolicyResult> getAccessPolicy(GetAccessPolicyArgs args) {
@@ -116,6 +272,34 @@ public final class ServiceMeshFunctions {
      * Get an AccessPolicy by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetAccessPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessPolicy = ServiceMeshFunctions.getAccessPolicy(GetAccessPolicyArgs.builder()
+     *             .accessPolicyId(oci_service_mesh_access_policy.test_access_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAccessPolicyResult> getAccessPolicyPlain(GetAccessPolicyPlainArgs args) {
@@ -127,6 +311,34 @@ public final class ServiceMeshFunctions {
      * Get an AccessPolicy by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetAccessPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessPolicy = ServiceMeshFunctions.getAccessPolicy(GetAccessPolicyArgs.builder()
+     *             .accessPolicyId(oci_service_mesh_access_policy.test_access_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAccessPolicyResult> getAccessPolicy(GetAccessPolicyArgs args, InvokeOptions options) {
@@ -138,6 +350,34 @@ public final class ServiceMeshFunctions {
      * Get an AccessPolicy by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetAccessPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessPolicy = ServiceMeshFunctions.getAccessPolicy(GetAccessPolicyArgs.builder()
+     *             .accessPolicyId(oci_service_mesh_access_policy.test_access_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAccessPolicyResult> getAccessPolicyPlain(GetAccessPolicyPlainArgs args, InvokeOptions options) {
@@ -149,6 +389,34 @@ public final class ServiceMeshFunctions {
      * Gets an IngressGateway by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGateway = ServiceMeshFunctions.getIngressGateway(GetIngressGatewayArgs.builder()
+     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIngressGatewayResult> getIngressGateway(GetIngressGatewayArgs args) {
@@ -160,6 +428,34 @@ public final class ServiceMeshFunctions {
      * Gets an IngressGateway by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGateway = ServiceMeshFunctions.getIngressGateway(GetIngressGatewayArgs.builder()
+     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIngressGatewayResult> getIngressGatewayPlain(GetIngressGatewayPlainArgs args) {
@@ -171,6 +467,34 @@ public final class ServiceMeshFunctions {
      * Gets an IngressGateway by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGateway = ServiceMeshFunctions.getIngressGateway(GetIngressGatewayArgs.builder()
+     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIngressGatewayResult> getIngressGateway(GetIngressGatewayArgs args, InvokeOptions options) {
@@ -182,6 +506,34 @@ public final class ServiceMeshFunctions {
      * Gets an IngressGateway by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGateway = ServiceMeshFunctions.getIngressGateway(GetIngressGatewayArgs.builder()
+     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIngressGatewayResult> getIngressGatewayPlain(GetIngressGatewayPlainArgs args, InvokeOptions options) {
@@ -193,6 +545,34 @@ public final class ServiceMeshFunctions {
      * Gets a IngressGatewayRouteTable by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayRouteTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGatewayRouteTable = ServiceMeshFunctions.getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs.builder()
+     *             .ingressGatewayRouteTableId(oci_service_mesh_ingress_gateway_route_table.test_ingress_gateway_route_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIngressGatewayRouteTableResult> getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs args) {
@@ -204,6 +584,34 @@ public final class ServiceMeshFunctions {
      * Gets a IngressGatewayRouteTable by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayRouteTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGatewayRouteTable = ServiceMeshFunctions.getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs.builder()
+     *             .ingressGatewayRouteTableId(oci_service_mesh_ingress_gateway_route_table.test_ingress_gateway_route_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIngressGatewayRouteTableResult> getIngressGatewayRouteTablePlain(GetIngressGatewayRouteTablePlainArgs args) {
@@ -215,6 +623,34 @@ public final class ServiceMeshFunctions {
      * Gets a IngressGatewayRouteTable by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayRouteTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGatewayRouteTable = ServiceMeshFunctions.getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs.builder()
+     *             .ingressGatewayRouteTableId(oci_service_mesh_ingress_gateway_route_table.test_ingress_gateway_route_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIngressGatewayRouteTableResult> getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs args, InvokeOptions options) {
@@ -226,6 +662,34 @@ public final class ServiceMeshFunctions {
      * Gets a IngressGatewayRouteTable by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayRouteTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGatewayRouteTable = ServiceMeshFunctions.getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs.builder()
+     *             .ingressGatewayRouteTableId(oci_service_mesh_ingress_gateway_route_table.test_ingress_gateway_route_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIngressGatewayRouteTableResult> getIngressGatewayRouteTablePlain(GetIngressGatewayRouteTablePlainArgs args, InvokeOptions options) {
@@ -237,6 +701,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGatewayRouteTable objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGatewayRouteTables = ServiceMeshFunctions.getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.ingress_gateway_route_table_id())
+     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+     *             .name(var_.ingress_gateway_route_table_name())
+     *             .state(var_.ingress_gateway_route_table_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIngressGatewayRouteTablesResult> getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs args) {
@@ -248,6 +744,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGatewayRouteTable objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGatewayRouteTables = ServiceMeshFunctions.getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.ingress_gateway_route_table_id())
+     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+     *             .name(var_.ingress_gateway_route_table_name())
+     *             .state(var_.ingress_gateway_route_table_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIngressGatewayRouteTablesResult> getIngressGatewayRouteTablesPlain(GetIngressGatewayRouteTablesPlainArgs args) {
@@ -259,6 +787,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGatewayRouteTable objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGatewayRouteTables = ServiceMeshFunctions.getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.ingress_gateway_route_table_id())
+     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+     *             .name(var_.ingress_gateway_route_table_name())
+     *             .state(var_.ingress_gateway_route_table_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIngressGatewayRouteTablesResult> getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs args, InvokeOptions options) {
@@ -270,6 +830,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGatewayRouteTable objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewayRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGatewayRouteTables = ServiceMeshFunctions.getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.ingress_gateway_route_table_id())
+     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+     *             .name(var_.ingress_gateway_route_table_name())
+     *             .state(var_.ingress_gateway_route_table_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIngressGatewayRouteTablesResult> getIngressGatewayRouteTablesPlain(GetIngressGatewayRouteTablesPlainArgs args, InvokeOptions options) {
@@ -281,6 +873,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGateway objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGateways = ServiceMeshFunctions.getIngressGateways(GetIngressGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.ingress_gateway_id())
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .name(var_.ingress_gateway_name())
+     *             .state(var_.ingress_gateway_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIngressGatewaysResult> getIngressGateways(GetIngressGatewaysArgs args) {
@@ -292,6 +916,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGateway objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGateways = ServiceMeshFunctions.getIngressGateways(GetIngressGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.ingress_gateway_id())
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .name(var_.ingress_gateway_name())
+     *             .state(var_.ingress_gateway_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIngressGatewaysResult> getIngressGatewaysPlain(GetIngressGatewaysPlainArgs args) {
@@ -303,6 +959,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGateway objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGateways = ServiceMeshFunctions.getIngressGateways(GetIngressGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.ingress_gateway_id())
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .name(var_.ingress_gateway_name())
+     *             .state(var_.ingress_gateway_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIngressGatewaysResult> getIngressGateways(GetIngressGatewaysArgs args, InvokeOptions options) {
@@ -314,6 +1002,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of IngressGateway objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetIngressGatewaysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIngressGateways = ServiceMeshFunctions.getIngressGateways(GetIngressGatewaysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.ingress_gateway_id())
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .name(var_.ingress_gateway_name())
+     *             .state(var_.ingress_gateway_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIngressGatewaysResult> getIngressGatewaysPlain(GetIngressGatewaysPlainArgs args, InvokeOptions options) {
@@ -325,6 +1045,34 @@ public final class ServiceMeshFunctions {
      * Gets a Mesh by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetMeshArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMesh = ServiceMeshFunctions.getMesh(GetMeshArgs.builder()
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMeshResult> getMesh(GetMeshArgs args) {
@@ -336,6 +1084,34 @@ public final class ServiceMeshFunctions {
      * Gets a Mesh by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetMeshArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMesh = ServiceMeshFunctions.getMesh(GetMeshArgs.builder()
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMeshResult> getMeshPlain(GetMeshPlainArgs args) {
@@ -347,6 +1123,34 @@ public final class ServiceMeshFunctions {
      * Gets a Mesh by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetMeshArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMesh = ServiceMeshFunctions.getMesh(GetMeshArgs.builder()
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMeshResult> getMesh(GetMeshArgs args, InvokeOptions options) {
@@ -358,6 +1162,34 @@ public final class ServiceMeshFunctions {
      * Gets a Mesh by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetMeshArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMesh = ServiceMeshFunctions.getMesh(GetMeshArgs.builder()
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMeshResult> getMeshPlain(GetMeshPlainArgs args, InvokeOptions options) {
@@ -369,6 +1201,37 @@ public final class ServiceMeshFunctions {
      * Returns a list of Mesh objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetMeshesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMeshes = ServiceMeshFunctions.getMeshes(GetMeshesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.mesh_display_name())
+     *             .id(var_.mesh_id())
+     *             .state(var_.mesh_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMeshesResult> getMeshes(GetMeshesArgs args) {
@@ -380,6 +1243,37 @@ public final class ServiceMeshFunctions {
      * Returns a list of Mesh objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetMeshesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMeshes = ServiceMeshFunctions.getMeshes(GetMeshesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.mesh_display_name())
+     *             .id(var_.mesh_id())
+     *             .state(var_.mesh_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMeshesResult> getMeshesPlain(GetMeshesPlainArgs args) {
@@ -391,6 +1285,37 @@ public final class ServiceMeshFunctions {
      * Returns a list of Mesh objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetMeshesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMeshes = ServiceMeshFunctions.getMeshes(GetMeshesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.mesh_display_name())
+     *             .id(var_.mesh_id())
+     *             .state(var_.mesh_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMeshesResult> getMeshes(GetMeshesArgs args, InvokeOptions options) {
@@ -402,6 +1327,37 @@ public final class ServiceMeshFunctions {
      * Returns a list of Mesh objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetMeshesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMeshes = ServiceMeshFunctions.getMeshes(GetMeshesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.mesh_display_name())
+     *             .id(var_.mesh_id())
+     *             .state(var_.mesh_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMeshesResult> getMeshesPlain(GetMeshesPlainArgs args, InvokeOptions options) {
@@ -413,6 +1369,31 @@ public final class ServiceMeshFunctions {
      * Returns the attributes of the Proxy such as proxy image version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProxyDetailResult> getProxyDetail() {
@@ -424,6 +1405,31 @@ public final class ServiceMeshFunctions {
      * Returns the attributes of the Proxy such as proxy image version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProxyDetailResult> getProxyDetailPlain() {
@@ -435,6 +1441,31 @@ public final class ServiceMeshFunctions {
      * Returns the attributes of the Proxy such as proxy image version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProxyDetailResult> getProxyDetail(InvokeArgs args) {
@@ -446,6 +1477,31 @@ public final class ServiceMeshFunctions {
      * Returns the attributes of the Proxy such as proxy image version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProxyDetailResult> getProxyDetailPlain(InvokeArgs args) {
@@ -457,6 +1513,31 @@ public final class ServiceMeshFunctions {
      * Returns the attributes of the Proxy such as proxy image version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProxyDetailResult> getProxyDetail(InvokeArgs args, InvokeOptions options) {
@@ -468,6 +1549,31 @@ public final class ServiceMeshFunctions {
      * Returns the attributes of the Proxy such as proxy image version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProxyDetail = ServiceMeshFunctions.getProxyDetail();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProxyDetailResult> getProxyDetailPlain(InvokeArgs args, InvokeOptions options) {
@@ -479,6 +1585,34 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualDeployment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualDeployment = ServiceMeshFunctions.getVirtualDeployment(GetVirtualDeploymentArgs.builder()
+     *             .virtualDeploymentId(oci_service_mesh_virtual_deployment.test_virtual_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualDeploymentResult> getVirtualDeployment(GetVirtualDeploymentArgs args) {
@@ -490,6 +1624,34 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualDeployment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualDeployment = ServiceMeshFunctions.getVirtualDeployment(GetVirtualDeploymentArgs.builder()
+     *             .virtualDeploymentId(oci_service_mesh_virtual_deployment.test_virtual_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualDeploymentResult> getVirtualDeploymentPlain(GetVirtualDeploymentPlainArgs args) {
@@ -501,6 +1663,34 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualDeployment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualDeployment = ServiceMeshFunctions.getVirtualDeployment(GetVirtualDeploymentArgs.builder()
+     *             .virtualDeploymentId(oci_service_mesh_virtual_deployment.test_virtual_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualDeploymentResult> getVirtualDeployment(GetVirtualDeploymentArgs args, InvokeOptions options) {
@@ -512,6 +1702,34 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualDeployment by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualDeploymentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualDeployment = ServiceMeshFunctions.getVirtualDeployment(GetVirtualDeploymentArgs.builder()
+     *             .virtualDeploymentId(oci_service_mesh_virtual_deployment.test_virtual_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualDeploymentResult> getVirtualDeploymentPlain(GetVirtualDeploymentPlainArgs args, InvokeOptions options) {
@@ -523,6 +1741,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualDeployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualDeployments = ServiceMeshFunctions.getVirtualDeployments(GetVirtualDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.virtual_deployment_id())
+     *             .name(var_.virtual_deployment_name())
+     *             .state(var_.virtual_deployment_state())
+     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualDeploymentsResult> getVirtualDeployments(GetVirtualDeploymentsArgs args) {
@@ -534,6 +1784,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualDeployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualDeployments = ServiceMeshFunctions.getVirtualDeployments(GetVirtualDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.virtual_deployment_id())
+     *             .name(var_.virtual_deployment_name())
+     *             .state(var_.virtual_deployment_state())
+     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualDeploymentsResult> getVirtualDeploymentsPlain(GetVirtualDeploymentsPlainArgs args) {
@@ -545,6 +1827,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualDeployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualDeployments = ServiceMeshFunctions.getVirtualDeployments(GetVirtualDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.virtual_deployment_id())
+     *             .name(var_.virtual_deployment_name())
+     *             .state(var_.virtual_deployment_state())
+     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualDeploymentsResult> getVirtualDeployments(GetVirtualDeploymentsArgs args, InvokeOptions options) {
@@ -556,6 +1870,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualDeployments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualDeploymentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualDeployments = ServiceMeshFunctions.getVirtualDeployments(GetVirtualDeploymentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.virtual_deployment_id())
+     *             .name(var_.virtual_deployment_name())
+     *             .state(var_.virtual_deployment_state())
+     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualDeploymentsResult> getVirtualDeploymentsPlain(GetVirtualDeploymentsPlainArgs args, InvokeOptions options) {
@@ -567,6 +1913,34 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualService by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualService = ServiceMeshFunctions.getVirtualService(GetVirtualServiceArgs.builder()
+     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualServiceResult> getVirtualService(GetVirtualServiceArgs args) {
@@ -578,6 +1952,34 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualService by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualService = ServiceMeshFunctions.getVirtualService(GetVirtualServiceArgs.builder()
+     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualServiceResult> getVirtualServicePlain(GetVirtualServicePlainArgs args) {
@@ -589,6 +1991,34 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualService by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualService = ServiceMeshFunctions.getVirtualService(GetVirtualServiceArgs.builder()
+     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualServiceResult> getVirtualService(GetVirtualServiceArgs args, InvokeOptions options) {
@@ -600,6 +2030,34 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualService by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualService = ServiceMeshFunctions.getVirtualService(GetVirtualServiceArgs.builder()
+     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualServiceResult> getVirtualServicePlain(GetVirtualServicePlainArgs args, InvokeOptions options) {
@@ -611,6 +2069,34 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualServiceRouteTable by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceRouteTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServiceRouteTable = ServiceMeshFunctions.getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs.builder()
+     *             .virtualServiceRouteTableId(oci_service_mesh_virtual_service_route_table.test_virtual_service_route_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualServiceRouteTableResult> getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs args) {
@@ -622,6 +2108,34 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualServiceRouteTable by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceRouteTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServiceRouteTable = ServiceMeshFunctions.getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs.builder()
+     *             .virtualServiceRouteTableId(oci_service_mesh_virtual_service_route_table.test_virtual_service_route_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualServiceRouteTableResult> getVirtualServiceRouteTablePlain(GetVirtualServiceRouteTablePlainArgs args) {
@@ -633,6 +2147,34 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualServiceRouteTable by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceRouteTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServiceRouteTable = ServiceMeshFunctions.getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs.builder()
+     *             .virtualServiceRouteTableId(oci_service_mesh_virtual_service_route_table.test_virtual_service_route_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualServiceRouteTableResult> getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs args, InvokeOptions options) {
@@ -644,6 +2186,34 @@ public final class ServiceMeshFunctions {
      * Gets a VirtualServiceRouteTable by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceRouteTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServiceRouteTable = ServiceMeshFunctions.getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs.builder()
+     *             .virtualServiceRouteTableId(oci_service_mesh_virtual_service_route_table.test_virtual_service_route_table().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualServiceRouteTableResult> getVirtualServiceRouteTablePlain(GetVirtualServiceRouteTablePlainArgs args, InvokeOptions options) {
@@ -655,6 +2225,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualServiceRouteTable objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServiceRouteTables = ServiceMeshFunctions.getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.virtual_service_route_table_id())
+     *             .name(var_.virtual_service_route_table_name())
+     *             .state(var_.virtual_service_route_table_state())
+     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualServiceRouteTablesResult> getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs args) {
@@ -666,6 +2268,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualServiceRouteTable objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServiceRouteTables = ServiceMeshFunctions.getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.virtual_service_route_table_id())
+     *             .name(var_.virtual_service_route_table_name())
+     *             .state(var_.virtual_service_route_table_state())
+     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualServiceRouteTablesResult> getVirtualServiceRouteTablesPlain(GetVirtualServiceRouteTablesPlainArgs args) {
@@ -677,6 +2311,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualServiceRouteTable objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServiceRouteTables = ServiceMeshFunctions.getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.virtual_service_route_table_id())
+     *             .name(var_.virtual_service_route_table_name())
+     *             .state(var_.virtual_service_route_table_state())
+     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualServiceRouteTablesResult> getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs args, InvokeOptions options) {
@@ -688,6 +2354,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualServiceRouteTable objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServiceRouteTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServiceRouteTables = ServiceMeshFunctions.getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.virtual_service_route_table_id())
+     *             .name(var_.virtual_service_route_table_name())
+     *             .state(var_.virtual_service_route_table_state())
+     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualServiceRouteTablesResult> getVirtualServiceRouteTablesPlain(GetVirtualServiceRouteTablesPlainArgs args, InvokeOptions options) {
@@ -699,6 +2397,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualService objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServices = ServiceMeshFunctions.getVirtualServices(GetVirtualServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.virtual_service_id())
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .name(var_.virtual_service_name())
+     *             .state(var_.virtual_service_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualServicesResult> getVirtualServices(GetVirtualServicesArgs args) {
@@ -710,6 +2440,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualService objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServices = ServiceMeshFunctions.getVirtualServices(GetVirtualServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.virtual_service_id())
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .name(var_.virtual_service_name())
+     *             .state(var_.virtual_service_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualServicesResult> getVirtualServicesPlain(GetVirtualServicesPlainArgs args) {
@@ -721,6 +2483,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualService objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServices = ServiceMeshFunctions.getVirtualServices(GetVirtualServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.virtual_service_id())
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .name(var_.virtual_service_name())
+     *             .state(var_.virtual_service_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVirtualServicesResult> getVirtualServices(GetVirtualServicesArgs args, InvokeOptions options) {
@@ -732,6 +2526,38 @@ public final class ServiceMeshFunctions {
      * Returns a list of VirtualService objects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceMesh.ServiceMeshFunctions;
+     * import com.pulumi.oci.ServiceMesh.inputs.GetVirtualServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualServices = ServiceMeshFunctions.getVirtualServices(GetVirtualServicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.virtual_service_id())
+     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .name(var_.virtual_service_name())
+     *             .state(var_.virtual_service_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVirtualServicesResult> getVirtualServicesPlain(GetVirtualServicesPlainArgs args, InvokeOptions options) {

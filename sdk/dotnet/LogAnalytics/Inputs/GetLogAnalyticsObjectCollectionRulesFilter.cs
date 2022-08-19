@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics.Inputs
 {
 
-    public sealed class GetLogAnalyticsObjectCollectionRulesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsObjectCollectionRulesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return rules only matching with this name.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public GetLogAnalyticsObjectCollectionRulesFilterArgs()
         {
         }
+        public static new GetLogAnalyticsObjectCollectionRulesFilterArgs Empty => new GetLogAnalyticsObjectCollectionRulesFilterArgs();
     }
 }

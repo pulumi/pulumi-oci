@@ -23,7 +23,7 @@ namespace Pulumi.Oci.DatabaseMigration
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseMigration/agent:Agent")]
-    public partial class Agent : Pulumi.CustomResource
+    public partial class Agent : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the agent
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.DatabaseMigration
         }
     }
 
-    public sealed class AgentArgs : Pulumi.ResourceArgs
+    public sealed class AgentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the agent
@@ -212,9 +212,10 @@ namespace Pulumi.Oci.DatabaseMigration
         public AgentArgs()
         {
         }
+        public static new AgentArgs Empty => new AgentArgs();
     }
 
-    public sealed class AgentState : Pulumi.ResourceArgs
+    public sealed class AgentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the agent
@@ -315,5 +316,6 @@ namespace Pulumi.Oci.DatabaseMigration
         public AgentState()
         {
         }
+        public static new AgentState Empty => new AgentState();
     }
 }

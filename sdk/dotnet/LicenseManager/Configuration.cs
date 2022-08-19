@@ -17,21 +17,19 @@ namespace Pulumi.Oci.LicenseManager
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testConfiguration = new Oci.LicenseManager.Configuration("testConfiguration", new()
     ///     {
-    ///         var testConfiguration = new Oci.LicenseManager.Configuration("testConfiguration", new Oci.LicenseManager.ConfigurationArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             EmailIds = @var.Configuration_email_ids,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         EmailIds = @var.Configuration_email_ids,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Oci.LicenseManager
     /// ```
     /// </summary>
     [OciResourceType("oci:LicenseManager/configuration:Configuration")]
-    public partial class Configuration : Pulumi.CustomResource
+    public partial class Configuration : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -113,7 +111,7 @@ namespace Pulumi.Oci.LicenseManager
         }
     }
 
-    public sealed class ConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class ConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -136,9 +134,10 @@ namespace Pulumi.Oci.LicenseManager
         public ConfigurationArgs()
         {
         }
+        public static new ConfigurationArgs Empty => new ConfigurationArgs();
     }
 
-    public sealed class ConfigurationState : Pulumi.ResourceArgs
+    public sealed class ConfigurationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -173,5 +172,6 @@ namespace Pulumi.Oci.LicenseManager
         public ConfigurationState()
         {
         }
+        public static new ConfigurationState Empty => new ConfigurationState();
     }
 }

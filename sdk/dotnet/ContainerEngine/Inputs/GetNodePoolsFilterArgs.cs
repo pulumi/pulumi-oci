@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class GetNodePoolsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetNodePoolsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name to filter on.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public GetNodePoolsFilterInputArgs()
         {
         }
+        public static new GetNodePoolsFilterInputArgs Empty => new GetNodePoolsFilterInputArgs();
     }
 }

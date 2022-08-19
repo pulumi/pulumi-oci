@@ -25,34 +25,32 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUserAssessmentUsers = Oci.DataSafe.GetUserAssessmentUsers.Invoke(new()
         ///     {
-        ///         var testUserAssessmentUsers = Output.Create(Oci.DataSafe.GetUserAssessmentUsers.InvokeAsync(new Oci.DataSafe.GetUserAssessmentUsersArgs
-        ///         {
-        ///             UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-        ///             AccessLevel = @var.User_assessment_user_access_level,
-        ///             AccountStatus = @var.User_assessment_user_account_status,
-        ///             AuthenticationType = @var.User_assessment_user_authentication_type,
-        ///             CompartmentIdInSubtree = @var.User_assessment_user_compartment_id_in_subtree,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///             TimeLastLoginGreaterThanOrEqualTo = @var.User_assessment_user_time_last_login_greater_than_or_equal_to,
-        ///             TimeLastLoginLessThan = @var.User_assessment_user_time_last_login_less_than,
-        ///             TimePasswordLastChangedGreaterThanOrEqualTo = @var.User_assessment_user_time_password_last_changed_greater_than_or_equal_to,
-        ///             TimePasswordLastChangedLessThan = @var.User_assessment_user_time_password_last_changed_less_than,
-        ///             TimeUserCreatedGreaterThanOrEqualTo = @var.User_assessment_user_time_user_created_greater_than_or_equal_to,
-        ///             TimeUserCreatedLessThan = @var.User_assessment_user_time_user_created_less_than,
-        ///             UserCategory = @var.User_assessment_user_user_category,
-        ///             UserKey = @var.User_assessment_user_user_key,
-        ///             UserName = oci_identity_user.Test_user.Name,
-        ///         }));
-        ///     }
+        ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
+        ///         AccessLevel = @var.User_assessment_user_access_level,
+        ///         AccountStatus = @var.User_assessment_user_account_status,
+        ///         AuthenticationType = @var.User_assessment_user_authentication_type,
+        ///         CompartmentIdInSubtree = @var.User_assessment_user_compartment_id_in_subtree,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         TimeLastLoginGreaterThanOrEqualTo = @var.User_assessment_user_time_last_login_greater_than_or_equal_to,
+        ///         TimeLastLoginLessThan = @var.User_assessment_user_time_last_login_less_than,
+        ///         TimePasswordLastChangedGreaterThanOrEqualTo = @var.User_assessment_user_time_password_last_changed_greater_than_or_equal_to,
+        ///         TimePasswordLastChangedLessThan = @var.User_assessment_user_time_password_last_changed_less_than,
+        ///         TimeUserCreatedGreaterThanOrEqualTo = @var.User_assessment_user_time_user_created_greater_than_or_equal_to,
+        ///         TimeUserCreatedLessThan = @var.User_assessment_user_time_user_created_less_than,
+        ///         UserCategory = @var.User_assessment_user_user_category,
+        ///         UserKey = @var.User_assessment_user_user_key,
+        ///         UserName = oci_identity_user.Test_user.Name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -74,34 +72,32 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUserAssessmentUsers = Oci.DataSafe.GetUserAssessmentUsers.Invoke(new()
         ///     {
-        ///         var testUserAssessmentUsers = Output.Create(Oci.DataSafe.GetUserAssessmentUsers.InvokeAsync(new Oci.DataSafe.GetUserAssessmentUsersArgs
-        ///         {
-        ///             UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-        ///             AccessLevel = @var.User_assessment_user_access_level,
-        ///             AccountStatus = @var.User_assessment_user_account_status,
-        ///             AuthenticationType = @var.User_assessment_user_authentication_type,
-        ///             CompartmentIdInSubtree = @var.User_assessment_user_compartment_id_in_subtree,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///             TimeLastLoginGreaterThanOrEqualTo = @var.User_assessment_user_time_last_login_greater_than_or_equal_to,
-        ///             TimeLastLoginLessThan = @var.User_assessment_user_time_last_login_less_than,
-        ///             TimePasswordLastChangedGreaterThanOrEqualTo = @var.User_assessment_user_time_password_last_changed_greater_than_or_equal_to,
-        ///             TimePasswordLastChangedLessThan = @var.User_assessment_user_time_password_last_changed_less_than,
-        ///             TimeUserCreatedGreaterThanOrEqualTo = @var.User_assessment_user_time_user_created_greater_than_or_equal_to,
-        ///             TimeUserCreatedLessThan = @var.User_assessment_user_time_user_created_less_than,
-        ///             UserCategory = @var.User_assessment_user_user_category,
-        ///             UserKey = @var.User_assessment_user_user_key,
-        ///             UserName = oci_identity_user.Test_user.Name,
-        ///         }));
-        ///     }
+        ///         UserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
+        ///         AccessLevel = @var.User_assessment_user_access_level,
+        ///         AccountStatus = @var.User_assessment_user_account_status,
+        ///         AuthenticationType = @var.User_assessment_user_authentication_type,
+        ///         CompartmentIdInSubtree = @var.User_assessment_user_compartment_id_in_subtree,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         TimeLastLoginGreaterThanOrEqualTo = @var.User_assessment_user_time_last_login_greater_than_or_equal_to,
+        ///         TimeLastLoginLessThan = @var.User_assessment_user_time_last_login_less_than,
+        ///         TimePasswordLastChangedGreaterThanOrEqualTo = @var.User_assessment_user_time_password_last_changed_greater_than_or_equal_to,
+        ///         TimePasswordLastChangedLessThan = @var.User_assessment_user_time_password_last_changed_less_than,
+        ///         TimeUserCreatedGreaterThanOrEqualTo = @var.User_assessment_user_time_user_created_greater_than_or_equal_to,
+        ///         TimeUserCreatedLessThan = @var.User_assessment_user_time_user_created_less_than,
+        ///         UserCategory = @var.User_assessment_user_user_category,
+        ///         UserKey = @var.User_assessment_user_user_key,
+        ///         UserName = oci_identity_user.Test_user.Name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -111,7 +107,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetUserAssessmentUsersArgs : Pulumi.InvokeArgs
+    public sealed class GetUserAssessmentUsersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -214,9 +210,10 @@ namespace Pulumi.Oci.DataSafe
         public GetUserAssessmentUsersArgs()
         {
         }
+        public static new GetUserAssessmentUsersArgs Empty => new GetUserAssessmentUsersArgs();
     }
 
-    public sealed class GetUserAssessmentUsersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUserAssessmentUsersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -319,6 +316,7 @@ namespace Pulumi.Oci.DataSafe
         public GetUserAssessmentUsersInvokeArgs()
         {
         }
+        public static new GetUserAssessmentUsersInvokeArgs Empty => new GetUserAssessmentUsersInvokeArgs();
     }
 
 

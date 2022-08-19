@@ -22,22 +22,20 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCatalogs = Oci.DataCatalog.GetCatalogs.Invoke(new()
         ///     {
-        ///         var testCatalogs = Output.Create(Oci.DataCatalog.GetCatalogs.InvokeAsync(new Oci.DataCatalog.GetCatalogsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Catalog_display_name,
-        ///             State = @var.Catalog_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Catalog_display_name,
+        ///         State = @var.Catalog_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCatalogs = Oci.DataCatalog.GetCatalogs.Invoke(new()
         ///     {
-        ///         var testCatalogs = Output.Create(Oci.DataCatalog.GetCatalogs.InvokeAsync(new Oci.DataCatalog.GetCatalogsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Catalog_display_name,
-        ///             State = @var.Catalog_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Catalog_display_name,
+        ///         State = @var.Catalog_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.DataCatalog
     }
 
 
-    public sealed class GetCatalogsArgs : Pulumi.InvokeArgs
+    public sealed class GetCatalogsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment where you want to list resources.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.DataCatalog
         public GetCatalogsArgs()
         {
         }
+        public static new GetCatalogsArgs Empty => new GetCatalogsArgs();
     }
 
-    public sealed class GetCatalogsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCatalogsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment where you want to list resources.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.DataCatalog
         public GetCatalogsInvokeArgs()
         {
         }
+        public static new GetCatalogsInvokeArgs Empty => new GetCatalogsInvokeArgs();
     }
 
 

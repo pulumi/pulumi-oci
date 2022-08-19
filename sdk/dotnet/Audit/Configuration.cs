@@ -15,21 +15,19 @@ namespace Pulumi.Oci.Audit
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testConfiguration = new Oci.Audit.Configuration("testConfiguration", new()
     ///     {
-    ///         var testConfiguration = new Oci.Audit.Configuration("testConfiguration", new Oci.Audit.ConfigurationArgs
-    ///         {
-    ///             CompartmentId = @var.Tenancy_ocid,
-    ///             RetentionPeriodDays = @var.Configuration_retention_period_days,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Tenancy_ocid,
+    ///         RetentionPeriodDays = @var.Configuration_retention_period_days,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -37,7 +35,7 @@ namespace Pulumi.Oci.Audit
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Audit/configuration:Configuration")]
-    public partial class Configuration : Pulumi.CustomResource
+    public partial class Configuration : global::Pulumi.CustomResource
     {
         /// <summary>
         /// ID of the root compartment (tenancy)
@@ -95,7 +93,7 @@ namespace Pulumi.Oci.Audit
         }
     }
 
-    public sealed class ConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class ConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// ID of the root compartment (tenancy)
@@ -112,9 +110,10 @@ namespace Pulumi.Oci.Audit
         public ConfigurationArgs()
         {
         }
+        public static new ConfigurationArgs Empty => new ConfigurationArgs();
     }
 
-    public sealed class ConfigurationState : Pulumi.ResourceArgs
+    public sealed class ConfigurationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// ID of the root compartment (tenancy)
@@ -131,5 +130,6 @@ namespace Pulumi.Oci.Audit
         public ConfigurationState()
         {
         }
+        public static new ConfigurationState Empty => new ConfigurationState();
     }
 }

@@ -28,6 +28,41 @@ import javax.annotation.Nullable;
  * header value and use it to call `GET /workRequests/{workRequestId}`.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Oda.OdaInstance;
+ * import com.pulumi.oci.Oda.OdaInstanceArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testOdaInstance = new OdaInstance(&#34;testOdaInstance&#34;, OdaInstanceArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .shapeName(&#34;DEVELOPMENT&#34;)
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.oda_instance_description())
+ *             .displayName(var_.oda_instance_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .identityDomain(var_.oda_instance_identity_domain())
+ *             .isRoleBasedAccess(var_.oda_instance_is_role_based_access())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

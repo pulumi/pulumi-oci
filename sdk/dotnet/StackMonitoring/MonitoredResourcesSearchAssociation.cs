@@ -17,27 +17,25 @@ namespace Pulumi.Oci.StackMonitoring
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMonitoredResourcesSearchAssociation = new Oci.StackMonitoring.MonitoredResourcesSearchAssociation("testMonitoredResourcesSearchAssociation", new()
     ///     {
-    ///         var testMonitoredResourcesSearchAssociation = new Oci.StackMonitoring.MonitoredResourcesSearchAssociation("testMonitoredResourcesSearchAssociation", new Oci.StackMonitoring.MonitoredResourcesSearchAssociationArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             AssociationType = @var.Monitored_resources_search_association_association_type,
-    ///             DestinationResourceId = oci_stack_monitoring_destination_resource.Test_destination_resource.Id,
-    ///             DestinationResourceName = @var.Monitored_resources_search_association_destination_resource_name,
-    ///             DestinationResourceType = @var.Monitored_resources_search_association_destination_resource_type,
-    ///             SourceResourceId = oci_stack_monitoring_source_resource.Test_source_resource.Id,
-    ///             SourceResourceName = @var.Monitored_resources_search_association_source_resource_name,
-    ///             SourceResourceType = @var.Monitored_resources_search_association_source_resource_type,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         AssociationType = @var.Monitored_resources_search_association_association_type,
+    ///         DestinationResourceId = oci_stack_monitoring_destination_resource.Test_destination_resource.Id,
+    ///         DestinationResourceName = @var.Monitored_resources_search_association_destination_resource_name,
+    ///         DestinationResourceType = @var.Monitored_resources_search_association_destination_resource_type,
+    ///         SourceResourceId = oci_stack_monitoring_source_resource.Test_source_resource.Id,
+    ///         SourceResourceName = @var.Monitored_resources_search_association_source_resource_name,
+    ///         SourceResourceType = @var.Monitored_resources_search_association_source_resource_type,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -49,7 +47,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// ```
     /// </summary>
     [OciResourceType("oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation")]
-    public partial class MonitoredResourcesSearchAssociation : Pulumi.CustomResource
+    public partial class MonitoredResourcesSearchAssociation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Association type to be created between source and destination resources
@@ -149,7 +147,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
     }
 
-    public sealed class MonitoredResourcesSearchAssociationArgs : Pulumi.ResourceArgs
+    public sealed class MonitoredResourcesSearchAssociationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Association type to be created between source and destination resources
@@ -202,9 +200,10 @@ namespace Pulumi.Oci.StackMonitoring
         public MonitoredResourcesSearchAssociationArgs()
         {
         }
+        public static new MonitoredResourcesSearchAssociationArgs Empty => new MonitoredResourcesSearchAssociationArgs();
     }
 
-    public sealed class MonitoredResourcesSearchAssociationState : Pulumi.ResourceArgs
+    public sealed class MonitoredResourcesSearchAssociationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Association type to be created between source and destination resources
@@ -269,5 +268,6 @@ namespace Pulumi.Oci.StackMonitoring
         public MonitoredResourcesSearchAssociationState()
         {
         }
+        public static new MonitoredResourcesSearchAssociationState Empty => new MonitoredResourcesSearchAssociationState();
     }
 }

@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbManagementPrivateEndpoints = Oci.DatabaseManagement.GetDbManagementPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testDbManagementPrivateEndpoints = Output.Create(Oci.DatabaseManagement.GetDbManagementPrivateEndpoints.InvokeAsync(new Oci.DatabaseManagement.GetDbManagementPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IsCluster = @var.Db_management_private_endpoint_is_cluster,
-        ///             Name = @var.Db_management_private_endpoint_name,
-        ///             State = @var.Db_management_private_endpoint_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IsCluster = @var.Db_management_private_endpoint_is_cluster,
+        ///         Name = @var.Db_management_private_endpoint_name,
+        ///         State = @var.Db_management_private_endpoint_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbManagementPrivateEndpoints = Oci.DatabaseManagement.GetDbManagementPrivateEndpoints.Invoke(new()
         ///     {
-        ///         var testDbManagementPrivateEndpoints = Output.Create(Oci.DatabaseManagement.GetDbManagementPrivateEndpoints.InvokeAsync(new Oci.DatabaseManagement.GetDbManagementPrivateEndpointsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IsCluster = @var.Db_management_private_endpoint_is_cluster,
-        ///             Name = @var.Db_management_private_endpoint_name,
-        ///             State = @var.Db_management_private_endpoint_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IsCluster = @var.Db_management_private_endpoint_is_cluster,
+        ///         Name = @var.Db_management_private_endpoint_name,
+        ///         State = @var.Db_management_private_endpoint_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetDbManagementPrivateEndpointsArgs : Pulumi.InvokeArgs
+    public sealed class GetDbManagementPrivateEndpointsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetDbManagementPrivateEndpointsArgs()
         {
         }
+        public static new GetDbManagementPrivateEndpointsArgs Empty => new GetDbManagementPrivateEndpointsArgs();
     }
 
-    public sealed class GetDbManagementPrivateEndpointsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbManagementPrivateEndpointsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetDbManagementPrivateEndpointsInvokeArgs()
         {
         }
+        public static new GetDbManagementPrivateEndpointsInvokeArgs Empty => new GetDbManagementPrivateEndpointsInvokeArgs();
     }
 
 

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCertificate = Oci.ApiGateway.GetCertificate.Invoke(new()
         ///     {
-        ///         var testCertificate = Output.Create(Oci.ApiGateway.GetCertificate.InvokeAsync(new Oci.ApiGateway.GetCertificateArgs
-        ///         {
-        ///             CertificateId = oci_apigateway_certificate.Test_certificate.Id,
-        ///         }));
-        ///     }
+        ///         CertificateId = oci_apigateway_certificate.Test_certificate.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCertificate = Oci.ApiGateway.GetCertificate.Invoke(new()
         ///     {
-        ///         var testCertificate = Output.Create(Oci.ApiGateway.GetCertificate.InvokeAsync(new Oci.ApiGateway.GetCertificateArgs
-        ///         {
-        ///             CertificateId = oci_apigateway_certificate.Test_certificate.Id,
-        ///         }));
-        ///     }
+        ///         CertificateId = oci_apigateway_certificate.Test_certificate.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ApiGateway
     }
 
 
-    public sealed class GetCertificateArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificateArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ocid of the certificate.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ApiGateway
         public GetCertificateArgs()
         {
         }
+        public static new GetCertificateArgs Empty => new GetCertificateArgs();
     }
 
-    public sealed class GetCertificateInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificateInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ocid of the certificate.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ApiGateway
         public GetCertificateInvokeArgs()
         {
         }
+        public static new GetCertificateInvokeArgs Empty => new GetCertificateInvokeArgs();
     }
 
 

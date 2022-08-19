@@ -22,25 +22,23 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityZones = Oci.CloudGuard.GetSecurityZones.Invoke(new()
         ///     {
-        ///         var testSecurityZones = Output.Create(Oci.CloudGuard.GetSecurityZones.InvokeAsync(new Oci.CloudGuard.GetSecurityZonesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Security_zone_display_name,
-        ///             Id = @var.Security_zone_id,
-        ///             IsRequiredSecurityZonesInSubtree = @var.Security_zone_is_required_security_zones_in_subtree,
-        ///             SecurityRecipeId = oci_cloud_guard_security_recipe.Test_security_recipe.Id,
-        ///             State = @var.Security_zone_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Security_zone_display_name,
+        ///         Id = @var.Security_zone_id,
+        ///         IsRequiredSecurityZonesInSubtree = @var.Security_zone_is_required_security_zones_in_subtree,
+        ///         SecurityRecipeId = oci_cloud_guard_security_recipe.Test_security_recipe.Id,
+        ///         State = @var.Security_zone_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityZones = Oci.CloudGuard.GetSecurityZones.Invoke(new()
         ///     {
-        ///         var testSecurityZones = Output.Create(Oci.CloudGuard.GetSecurityZones.InvokeAsync(new Oci.CloudGuard.GetSecurityZonesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Security_zone_display_name,
-        ///             Id = @var.Security_zone_id,
-        ///             IsRequiredSecurityZonesInSubtree = @var.Security_zone_is_required_security_zones_in_subtree,
-        ///             SecurityRecipeId = oci_cloud_guard_security_recipe.Test_security_recipe.Id,
-        ///             State = @var.Security_zone_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Security_zone_display_name,
+        ///         Id = @var.Security_zone_id,
+        ///         IsRequiredSecurityZonesInSubtree = @var.Security_zone_is_required_security_zones_in_subtree,
+        ///         SecurityRecipeId = oci_cloud_guard_security_recipe.Test_security_recipe.Id,
+        ///         State = @var.Security_zone_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetSecurityZonesArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityZonesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetSecurityZonesArgs()
         {
         }
+        public static new GetSecurityZonesArgs Empty => new GetSecurityZonesArgs();
     }
 
-    public sealed class GetSecurityZonesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityZonesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -187,6 +184,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetSecurityZonesInvokeArgs()
         {
         }
+        public static new GetSecurityZonesInvokeArgs Empty => new GetSecurityZonesInvokeArgs();
     }
 
 

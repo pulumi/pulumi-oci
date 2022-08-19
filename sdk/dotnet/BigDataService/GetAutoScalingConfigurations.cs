@@ -19,7 +19,7 @@ namespace Pulumi.Oci.BigDataService
     }
 
 
-    public sealed class GetAutoScalingConfigurationsArgs : Pulumi.InvokeArgs
+    public sealed class GetAutoScalingConfigurationsArgs : global::Pulumi.InvokeArgs
     {
         [Input("bdsInstanceId", required: true)]
         public string BdsInstanceId { get; set; } = null!;
@@ -44,9 +44,10 @@ namespace Pulumi.Oci.BigDataService
         public GetAutoScalingConfigurationsArgs()
         {
         }
+        public static new GetAutoScalingConfigurationsArgs Empty => new GetAutoScalingConfigurationsArgs();
     }
 
-    public sealed class GetAutoScalingConfigurationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutoScalingConfigurationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("bdsInstanceId", required: true)]
         public Input<string> BdsInstanceId { get; set; } = null!;
@@ -71,6 +72,7 @@ namespace Pulumi.Oci.BigDataService
         public GetAutoScalingConfigurationsInvokeArgs()
         {
         }
+        public static new GetAutoScalingConfigurationsInvokeArgs Empty => new GetAutoScalingConfigurationsInvokeArgs();
     }
 
 

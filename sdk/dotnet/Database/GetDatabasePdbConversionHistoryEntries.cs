@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabasePdbConversionHistoryEntries = Oci.Database.GetDatabasePdbConversionHistoryEntries.Invoke(new()
         ///     {
-        ///         var testDatabasePdbConversionHistoryEntries = Output.Create(Oci.Database.GetDatabasePdbConversionHistoryEntries.InvokeAsync(new Oci.Database.GetDatabasePdbConversionHistoryEntriesArgs
-        ///         {
-        ///             DatabaseId = oci_database_database.Test_database.Id,
-        ///             PdbConversionAction = @var.Database_pdb_conversion_history_entry_pdb_conversion_action,
-        ///             State = @var.Database_pdb_conversion_history_entry_state,
-        ///         }));
-        ///     }
+        ///         DatabaseId = oci_database_database.Test_database.Id,
+        ///         PdbConversionAction = @var.Database_pdb_conversion_history_entry_pdb_conversion_action,
+        ///         State = @var.Database_pdb_conversion_history_entry_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabasePdbConversionHistoryEntries = Oci.Database.GetDatabasePdbConversionHistoryEntries.Invoke(new()
         ///     {
-        ///         var testDatabasePdbConversionHistoryEntries = Output.Create(Oci.Database.GetDatabasePdbConversionHistoryEntries.InvokeAsync(new Oci.Database.GetDatabasePdbConversionHistoryEntriesArgs
-        ///         {
-        ///             DatabaseId = oci_database_database.Test_database.Id,
-        ///             PdbConversionAction = @var.Database_pdb_conversion_history_entry_pdb_conversion_action,
-        ///             State = @var.Database_pdb_conversion_history_entry_state,
-        ///         }));
-        ///     }
+        ///         DatabaseId = oci_database_database.Test_database.Id,
+        ///         PdbConversionAction = @var.Database_pdb_conversion_history_entry_pdb_conversion_action,
+        ///         State = @var.Database_pdb_conversion_history_entry_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDatabasePdbConversionHistoryEntriesArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabasePdbConversionHistoryEntriesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Database
         public GetDatabasePdbConversionHistoryEntriesArgs()
         {
         }
+        public static new GetDatabasePdbConversionHistoryEntriesArgs Empty => new GetDatabasePdbConversionHistoryEntriesArgs();
     }
 
-    public sealed class GetDatabasePdbConversionHistoryEntriesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabasePdbConversionHistoryEntriesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Database
         public GetDatabasePdbConversionHistoryEntriesInvokeArgs()
         {
         }
+        public static new GetDatabasePdbConversionHistoryEntriesInvokeArgs Empty => new GetDatabasePdbConversionHistoryEntriesInvokeArgs();
     }
 
 

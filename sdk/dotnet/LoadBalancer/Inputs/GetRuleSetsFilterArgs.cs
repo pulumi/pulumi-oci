@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class GetRuleSetsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetRuleSetsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public GetRuleSetsFilterInputArgs()
         {
         }
+        public static new GetRuleSetsFilterInputArgs Empty => new GetRuleSetsFilterInputArgs();
     }
 }

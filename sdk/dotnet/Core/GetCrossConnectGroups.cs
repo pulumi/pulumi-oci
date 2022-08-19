@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCrossConnectGroups = Oci.Core.GetCrossConnectGroups.Invoke(new()
         ///     {
-        ///         var testCrossConnectGroups = Output.Create(Oci.Core.GetCrossConnectGroups.InvokeAsync(new Oci.Core.GetCrossConnectGroupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Cross_connect_group_display_name,
-        ///             State = @var.Cross_connect_group_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Cross_connect_group_display_name,
+        ///         State = @var.Cross_connect_group_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCrossConnectGroups = Oci.Core.GetCrossConnectGroups.Invoke(new()
         ///     {
-        ///         var testCrossConnectGroups = Output.Create(Oci.Core.GetCrossConnectGroups.InvokeAsync(new Oci.Core.GetCrossConnectGroupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Cross_connect_group_display_name,
-        ///             State = @var.Cross_connect_group_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Cross_connect_group_display_name,
+        ///         State = @var.Cross_connect_group_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetCrossConnectGroupsArgs : Pulumi.InvokeArgs
+    public sealed class GetCrossConnectGroupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Core
         public GetCrossConnectGroupsArgs()
         {
         }
+        public static new GetCrossConnectGroupsArgs Empty => new GetCrossConnectGroupsArgs();
     }
 
-    public sealed class GetCrossConnectGroupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCrossConnectGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Core
         public GetCrossConnectGroupsInvokeArgs()
         {
         }
+        public static new GetCrossConnectGroupsInvokeArgs Empty => new GetCrossConnectGroupsInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class GetTagNamespacesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetTagNamespacesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public GetTagNamespacesFilterInputArgs()
         {
         }
+        public static new GetTagNamespacesFilterInputArgs Empty => new GetTagNamespacesFilterInputArgs();
     }
 }

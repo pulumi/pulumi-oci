@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsubOrganizationSubscription.Inputs
 {
 
-    public sealed class GetOrganizationSubscriptionsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetOrganizationSubscriptionsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Currency name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.OsubOrganizationSubscription.Inputs
         public GetOrganizationSubscriptionsFilterInputArgs()
         {
         }
+        public static new GetOrganizationSubscriptionsFilterInputArgs Empty => new GetOrganizationSubscriptionsFilterInputArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class ConfigScriptParameterArgs : Pulumi.ResourceArgs
+    public sealed class ConfigScriptParameterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// If parameter value is default or overwritten.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public ConfigScriptParameterArgs()
         {
         }
+        public static new ConfigScriptParameterArgs Empty => new ConfigScriptParameterArgs();
     }
 }

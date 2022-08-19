@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMetastore = Oci.DataCatalog.GetMetastore.Invoke(new()
         ///     {
-        ///         var testMetastore = Output.Create(Oci.DataCatalog.GetMetastore.InvokeAsync(new Oci.DataCatalog.GetMetastoreArgs
-        ///         {
-        ///             MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
-        ///         }));
-        ///     }
+        ///         MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMetastore = Oci.DataCatalog.GetMetastore.Invoke(new()
         ///     {
-        ///         var testMetastore = Output.Create(Oci.DataCatalog.GetMetastore.InvokeAsync(new Oci.DataCatalog.GetMetastoreArgs
-        ///         {
-        ///             MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
-        ///         }));
-        ///     }
+        ///         MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataCatalog
     }
 
 
-    public sealed class GetMetastoreArgs : Pulumi.InvokeArgs
+    public sealed class GetMetastoreArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The metastore's OCID.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataCatalog
         public GetMetastoreArgs()
         {
         }
+        public static new GetMetastoreArgs Empty => new GetMetastoreArgs();
     }
 
-    public sealed class GetMetastoreInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMetastoreInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The metastore's OCID.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataCatalog
         public GetMetastoreInvokeArgs()
         {
         }
+        public static new GetMetastoreInvokeArgs Empty => new GetMetastoreInvokeArgs();
     }
 
 

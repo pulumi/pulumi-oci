@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousDatabaseCustomerContactGetArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseCustomerContactGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousDatabaseCustomerContactGetArgs()
         {
         }
+        public static new AutonomousDatabaseCustomerContactGetArgs Empty => new AutonomousDatabaseCustomerContactGetArgs();
     }
 }

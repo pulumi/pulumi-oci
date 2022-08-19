@@ -39,24 +39,22 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCompartments = Oci.Identity.GetCompartments.Invoke(new()
         ///     {
-        ///         var testCompartments = Output.Create(Oci.Identity.GetCompartments.InvokeAsync(new Oci.Identity.GetCompartmentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Compartment_access_level,
-        ///             CompartmentIdInSubtree = @var.Compartment_compartment_id_in_subtree,
-        ///             Name = @var.Compartment_name,
-        ///             State = @var.Compartment_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Compartment_access_level,
+        ///         CompartmentIdInSubtree = @var.Compartment_compartment_id_in_subtree,
+        ///         Name = @var.Compartment_name,
+        ///         State = @var.Compartment_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -92,24 +90,22 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCompartments = Oci.Identity.GetCompartments.Invoke(new()
         ///     {
-        ///         var testCompartments = Output.Create(Oci.Identity.GetCompartments.InvokeAsync(new Oci.Identity.GetCompartmentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Compartment_access_level,
-        ///             CompartmentIdInSubtree = @var.Compartment_compartment_id_in_subtree,
-        ///             Name = @var.Compartment_name,
-        ///             State = @var.Compartment_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Compartment_access_level,
+        ///         CompartmentIdInSubtree = @var.Compartment_compartment_id_in_subtree,
+        ///         Name = @var.Compartment_name,
+        ///         State = @var.Compartment_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -119,7 +115,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetCompartmentsArgs : Pulumi.InvokeArgs
+    public sealed class GetCompartmentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
@@ -162,9 +158,10 @@ namespace Pulumi.Oci.Identity
         public GetCompartmentsArgs()
         {
         }
+        public static new GetCompartmentsArgs Empty => new GetCompartmentsArgs();
     }
 
-    public sealed class GetCompartmentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCompartmentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). For the compartments on which the user indirectly has INSPECT permissions, a restricted set of fields is returned.
@@ -207,6 +204,7 @@ namespace Pulumi.Oci.Identity
         public GetCompartmentsInvokeArgs()
         {
         }
+        public static new GetCompartmentsInvokeArgs Empty => new GetCompartmentsInvokeArgs();
     }
 
 

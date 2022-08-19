@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateApplication = Oci.ServiceCatalog.GetPrivateApplication.Invoke(new()
         ///     {
-        ///         var testPrivateApplication = Output.Create(Oci.ServiceCatalog.GetPrivateApplication.InvokeAsync(new Oci.ServiceCatalog.GetPrivateApplicationArgs
-        ///         {
-        ///             PrivateApplicationId = oci_service_catalog_private_application.Test_private_application.Id,
-        ///         }));
-        ///     }
+        ///         PrivateApplicationId = oci_service_catalog_private_application.Test_private_application.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateApplication = Oci.ServiceCatalog.GetPrivateApplication.Invoke(new()
         ///     {
-        ///         var testPrivateApplication = Output.Create(Oci.ServiceCatalog.GetPrivateApplication.InvokeAsync(new Oci.ServiceCatalog.GetPrivateApplicationArgs
-        ///         {
-        ///             PrivateApplicationId = oci_service_catalog_private_application.Test_private_application.Id,
-        ///         }));
-        ///     }
+        ///         PrivateApplicationId = oci_service_catalog_private_application.Test_private_application.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ServiceCatalog
     }
 
 
-    public sealed class GetPrivateApplicationArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateApplicationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the private application.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ServiceCatalog
         public GetPrivateApplicationArgs()
         {
         }
+        public static new GetPrivateApplicationArgs Empty => new GetPrivateApplicationArgs();
     }
 
-    public sealed class GetPrivateApplicationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateApplicationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique identifier for the private application.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ServiceCatalog
         public GetPrivateApplicationInvokeArgs()
         {
         }
+        public static new GetPrivateApplicationInvokeArgs Empty => new GetPrivateApplicationInvokeArgs();
     }
 
 

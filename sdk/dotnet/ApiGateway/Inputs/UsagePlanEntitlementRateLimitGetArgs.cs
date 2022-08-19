@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class UsagePlanEntitlementRateLimitGetArgs : Pulumi.ResourceArgs
+    public sealed class UsagePlanEntitlementRateLimitGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public UsagePlanEntitlementRateLimitGetArgs()
         {
         }
+        public static new UsagePlanEntitlementRateLimitGetArgs Empty => new UsagePlanEntitlementRateLimitGetArgs();
     }
 }

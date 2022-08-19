@@ -26,6 +26,54 @@ import javax.annotation.Nullable;
  * Creates an Exadata Cloud@Customer VM cluster.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.VmCluster;
+ * import com.pulumi.oci.Database.VmClusterArgs;
+ * import com.pulumi.oci.Database.inputs.VmClusterDataCollectionOptionsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVmCluster = new VmCluster(&#34;testVmCluster&#34;, VmClusterArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .cpuCoreCount(var_.vm_cluster_cpu_core_count())
+ *             .displayName(var_.vm_cluster_display_name())
+ *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+ *             .giVersion(var_.vm_cluster_gi_version())
+ *             .sshPublicKeys(var_.vm_cluster_ssh_public_keys())
+ *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+ *             .dataCollectionOptions(VmClusterDataCollectionOptionsArgs.builder()
+ *                 .isDiagnosticsEventsEnabled(var_.vm_cluster_data_collection_options_is_diagnostics_events_enabled())
+ *                 .build())
+ *             .dataStorageSizeInTbs(var_.vm_cluster_data_storage_size_in_tbs())
+ *             .dbNodeStorageSizeInGbs(var_.vm_cluster_db_node_storage_size_in_gbs())
+ *             .dbServers(var_.vm_cluster_db_servers())
+ *             .definedTags(var_.vm_cluster_defined_tags())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isLocalBackupEnabled(var_.vm_cluster_is_local_backup_enabled())
+ *             .isSparseDiskgroupEnabled(var_.vm_cluster_is_sparse_diskgroup_enabled())
+ *             .licenseModel(var_.vm_cluster_license_model())
+ *             .memorySizeInGbs(var_.vm_cluster_memory_size_in_gbs())
+ *             .timeZone(var_.vm_cluster_time_zone())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class SecurityAssessmentStatisticAdvisoryGetArgs : Pulumi.ResourceArgs
+    public sealed class SecurityAssessmentStatisticAdvisoryGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The number of findings in the Auditing category.
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public SecurityAssessmentStatisticAdvisoryGetArgs()
         {
         }
+        public static new SecurityAssessmentStatisticAdvisoryGetArgs Empty => new SecurityAssessmentStatisticAdvisoryGetArgs();
     }
 }

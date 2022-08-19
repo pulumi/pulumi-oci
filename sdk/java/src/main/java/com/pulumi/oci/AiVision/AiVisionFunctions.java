@@ -29,6 +29,34 @@ public final class AiVisionFunctions {
      * Gets a Model by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = AiVisionFunctions.getModel(GetModelArgs.builder()
+     *             .modelId(oci_ai_vision_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args) {
@@ -40,6 +68,34 @@ public final class AiVisionFunctions {
      * Gets a Model by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = AiVisionFunctions.getModel(GetModelArgs.builder()
+     *             .modelId(oci_ai_vision_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args) {
@@ -51,6 +107,34 @@ public final class AiVisionFunctions {
      * Gets a Model by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = AiVisionFunctions.getModel(GetModelArgs.builder()
+     *             .modelId(oci_ai_vision_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args, InvokeOptions options) {
@@ -62,6 +146,34 @@ public final class AiVisionFunctions {
      * Gets a Model by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModel = AiVisionFunctions.getModel(GetModelArgs.builder()
+     *             .modelId(oci_ai_vision_model.test_model().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args, InvokeOptions options) {
@@ -73,6 +185,38 @@ public final class AiVisionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = AiVisionFunctions.getModels(GetModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.model_display_name())
+     *             .id(var_.model_id())
+     *             .projectId(oci_ai_vision_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelsResult> getModels() {
@@ -84,6 +228,38 @@ public final class AiVisionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = AiVisionFunctions.getModels(GetModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.model_display_name())
+     *             .id(var_.model_id())
+     *             .projectId(oci_ai_vision_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain() {
@@ -95,6 +271,38 @@ public final class AiVisionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = AiVisionFunctions.getModels(GetModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.model_display_name())
+     *             .id(var_.model_id())
+     *             .projectId(oci_ai_vision_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelsResult> getModels(GetModelsArgs args) {
@@ -106,6 +314,38 @@ public final class AiVisionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = AiVisionFunctions.getModels(GetModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.model_display_name())
+     *             .id(var_.model_id())
+     *             .projectId(oci_ai_vision_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args) {
@@ -117,6 +357,38 @@ public final class AiVisionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = AiVisionFunctions.getModels(GetModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.model_display_name())
+     *             .id(var_.model_id())
+     *             .projectId(oci_ai_vision_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetModelsResult> getModels(GetModelsArgs args, InvokeOptions options) {
@@ -128,6 +400,38 @@ public final class AiVisionFunctions {
      * Returns a list of Models.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModels = AiVisionFunctions.getModels(GetModelsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.model_display_name())
+     *             .id(var_.model_id())
+     *             .projectId(oci_ai_vision_project.test_project().id())
+     *             .state(var_.model_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args, InvokeOptions options) {
@@ -139,6 +443,34 @@ public final class AiVisionFunctions {
      * Gets a Project by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = AiVisionFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(oci_ai_vision_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args) {
@@ -150,6 +482,34 @@ public final class AiVisionFunctions {
      * Gets a Project by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = AiVisionFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(oci_ai_vision_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args) {
@@ -161,6 +521,34 @@ public final class AiVisionFunctions {
      * Gets a Project by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = AiVisionFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(oci_ai_vision_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOptions options) {
@@ -172,6 +560,34 @@ public final class AiVisionFunctions {
      * Gets a Project by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = AiVisionFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(oci_ai_vision_project.test_project().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args, InvokeOptions options) {
@@ -183,6 +599,37 @@ public final class AiVisionFunctions {
      * Returns a list of Projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = AiVisionFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.project_display_name())
+     *             .id(var_.project_id())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProjectsResult> getProjects() {
@@ -194,6 +641,37 @@ public final class AiVisionFunctions {
      * Returns a list of Projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = AiVisionFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.project_display_name())
+     *             .id(var_.project_id())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain() {
@@ -205,6 +683,37 @@ public final class AiVisionFunctions {
      * Returns a list of Projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = AiVisionFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.project_display_name())
+     *             .id(var_.project_id())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args) {
@@ -216,6 +725,37 @@ public final class AiVisionFunctions {
      * Returns a list of Projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = AiVisionFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.project_display_name())
+     *             .id(var_.project_id())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args) {
@@ -227,6 +767,37 @@ public final class AiVisionFunctions {
      * Returns a list of Projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = AiVisionFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.project_display_name())
+     *             .id(var_.project_id())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOptions options) {
@@ -238,6 +809,37 @@ public final class AiVisionFunctions {
      * Returns a list of Projects.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = AiVisionFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.project_display_name())
+     *             .id(var_.project_id())
+     *             .state(var_.project_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args, InvokeOptions options) {

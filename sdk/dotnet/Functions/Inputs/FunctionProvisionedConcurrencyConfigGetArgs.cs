@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Functions.Inputs
 {
 
-    public sealed class FunctionProvisionedConcurrencyConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class FunctionProvisionedConcurrencyConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable)
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Functions.Inputs
         public FunctionProvisionedConcurrencyConfigGetArgs()
         {
         }
+        public static new FunctionProvisionedConcurrencyConfigGetArgs Empty => new FunctionProvisionedConcurrencyConfigGetArgs();
     }
 }

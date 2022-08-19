@@ -23,6 +23,75 @@ import javax.annotation.Nullable;
  * Creates a new model deployment.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataScience.ModelDeployment;
+ * import com.pulumi.oci.DataScience.ModelDeploymentArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelDeploymentCategoryLogDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelDeploymentCategoryLogDetailsAccessArgs;
+ * import com.pulumi.oci.DataScience.inputs.ModelDeploymentCategoryLogDetailsPredictArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testModelDeployment = new ModelDeployment(&#34;testModelDeployment&#34;, ModelDeploymentArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .modelDeploymentConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsArgs.builder()
+ *                 .deploymentType(var_.model_deployment_model_deployment_configuration_details_deployment_type())
+ *                 .modelConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs.builder()
+ *                     .instanceConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs.builder()
+ *                         .instanceShapeName(oci_core_shape.test_shape().name())
+ *                         .modelDeploymentInstanceShapeConfigDetails(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs.builder()
+ *                             .memoryInGbs(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs())
+ *                             .ocpus(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus())
+ *                             .build())
+ *                         .build())
+ *                     .modelId(oci_datascience_model.test_model().id())
+ *                     .bandwidthMbps(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps())
+ *                     .scalingPolicy(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs.builder()
+ *                         .instanceCount(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_instance_count())
+ *                         .policyType(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_scaling_policy_policy_type())
+ *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .projectId(oci_datascience_project.test_project().id())
+ *             .categoryLogDetails(ModelDeploymentCategoryLogDetailsArgs.builder()
+ *                 .access(ModelDeploymentCategoryLogDetailsAccessArgs.builder()
+ *                     .logGroupId(oci_logging_log_group.test_log_group().id())
+ *                     .logId(oci_logging_log.test_log().id())
+ *                     .build())
+ *                 .predict(ModelDeploymentCategoryLogDetailsPredictArgs.builder()
+ *                     .logGroupId(oci_logging_log_group.test_log_group().id())
+ *                     .logId(oci_logging_log.test_log().id())
+ *                     .build())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.model_deployment_description())
+ *             .displayName(var_.model_deployment_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

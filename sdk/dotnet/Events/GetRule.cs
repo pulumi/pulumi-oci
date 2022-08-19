@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Events
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRule = Oci.Events.GetRule.Invoke(new()
         ///     {
-        ///         var testRule = Output.Create(Oci.Events.GetRule.InvokeAsync(new Oci.Events.GetRuleArgs
-        ///         {
-        ///             RuleId = oci_events_rule.Test_rule.Id,
-        ///         }));
-        ///     }
+        ///         RuleId = oci_events_rule.Test_rule.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Events
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRule = Oci.Events.GetRule.Invoke(new()
         ///     {
-        ///         var testRule = Output.Create(Oci.Events.GetRule.InvokeAsync(new Oci.Events.GetRuleArgs
-        ///         {
-        ///             RuleId = oci_events_rule.Test_rule.Id,
-        ///         }));
-        ///     }
+        ///         RuleId = oci_events_rule.Test_rule.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Events
     }
 
 
-    public sealed class GetRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetRuleArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Events
         public GetRuleArgs()
         {
         }
+        public static new GetRuleArgs Empty => new GetRuleArgs();
     }
 
-    public sealed class GetRuleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Events
         public GetRuleInvokeArgs()
         {
         }
+        public static new GetRuleInvokeArgs Empty => new GetRuleInvokeArgs();
     }
 
 

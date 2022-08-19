@@ -22,6 +22,42 @@ import javax.annotation.Nullable;
  * Create a new empty container repository. Avoid entering confidential information.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Artifacts.ContainerRepository;
+ * import com.pulumi.oci.Artifacts.ContainerRepositoryArgs;
+ * import com.pulumi.oci.Artifacts.inputs.ContainerRepositoryReadmeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testContainerRepository = new ContainerRepository(&#34;testContainerRepository&#34;, ContainerRepositoryArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.container_repository_display_name())
+ *             .isImmutable(var_.container_repository_is_immutable())
+ *             .isPublic(var_.container_repository_is_public())
+ *             .readme(ContainerRepositoryReadmeArgs.builder()
+ *                 .content(var_.container_repository_readme_content())
+ *                 .format(var_.container_repository_readme_format())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -17,43 +17,41 @@ namespace Pulumi.Oci.MeteringComputation
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testUsage = new Oci.MeteringComputation.Usage("testUsage", new()
     ///     {
-    ///         var testUsage = new Oci.MeteringComputation.Usage("testUsage", new Oci.MeteringComputation.UsageArgs
+    ///         Granularity = @var.Usage_granularity,
+    ///         TenantId = oci_metering_computation_tenant.Test_tenant.Id,
+    ///         TimeUsageEnded = @var.Usage_time_usage_ended,
+    ///         TimeUsageStarted = @var.Usage_time_usage_started,
+    ///         CompartmentDepth = @var.Usage_compartment_depth,
+    ///         Filter = @var.Usage_filter,
+    ///         Forecast = new Oci.MeteringComputation.Inputs.UsageForecastArgs
     ///         {
-    ///             Granularity = @var.Usage_granularity,
-    ///             TenantId = oci_metering_computation_tenant.Test_tenant.Id,
-    ///             TimeUsageEnded = @var.Usage_time_usage_ended,
-    ///             TimeUsageStarted = @var.Usage_time_usage_started,
-    ///             CompartmentDepth = @var.Usage_compartment_depth,
-    ///             Filter = @var.Usage_filter,
-    ///             Forecast = new Oci.MeteringComputation.Inputs.UsageForecastArgs
+    ///             TimeForecastEnded = @var.Usage_forecast_time_forecast_ended,
+    ///             ForecastType = @var.Usage_forecast_forecast_type,
+    ///             TimeForecastStarted = @var.Usage_forecast_time_forecast_started,
+    ///         },
+    ///         GroupBies = @var.Usage_group_by,
+    ///         GroupByTags = new[]
+    ///         {
+    ///             new Oci.MeteringComputation.Inputs.UsageGroupByTagArgs
     ///             {
-    ///                 TimeForecastEnded = @var.Usage_forecast_time_forecast_ended,
-    ///                 ForecastType = @var.Usage_forecast_forecast_type,
-    ///                 TimeForecastStarted = @var.Usage_forecast_time_forecast_started,
+    ///                 Key = @var.Usage_group_by_tag_key,
+    ///                 Namespace = @var.Usage_group_by_tag_namespace,
+    ///                 Value = @var.Usage_group_by_tag_value,
     ///             },
-    ///             GroupBies = @var.Usage_group_by,
-    ///             GroupByTags = 
-    ///             {
-    ///                 new Oci.MeteringComputation.Inputs.UsageGroupByTagArgs
-    ///                 {
-    ///                     Key = @var.Usage_group_by_tag_key,
-    ///                     Namespace = @var.Usage_group_by_tag_namespace,
-    ///                     Value = @var.Usage_group_by_tag_value,
-    ///                 },
-    ///             },
-    ///             IsAggregateByTime = @var.Usage_is_aggregate_by_time,
-    ///             QueryType = @var.Usage_query_type,
-    ///         });
-    ///     }
+    ///         },
+    ///         IsAggregateByTime = @var.Usage_is_aggregate_by_time,
+    ///         QueryType = @var.Usage_query_type,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -61,7 +59,7 @@ namespace Pulumi.Oci.MeteringComputation
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:MeteringComputation/usage:Usage")]
-    public partial class Usage : Pulumi.CustomResource
+    public partial class Usage : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The compartment depth level.
@@ -179,7 +177,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
     }
 
-    public sealed class UsageArgs : Pulumi.ResourceArgs
+    public sealed class UsageArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The compartment depth level.
@@ -262,9 +260,10 @@ namespace Pulumi.Oci.MeteringComputation
         public UsageArgs()
         {
         }
+        public static new UsageArgs Empty => new UsageArgs();
     }
 
-    public sealed class UsageState : Pulumi.ResourceArgs
+    public sealed class UsageState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The compartment depth level.
@@ -359,5 +358,6 @@ namespace Pulumi.Oci.MeteringComputation
         public UsageState()
         {
         }
+        public static new UsageState Empty => new UsageState();
     }
 }

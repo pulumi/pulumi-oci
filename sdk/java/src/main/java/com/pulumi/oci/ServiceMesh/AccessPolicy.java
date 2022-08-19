@@ -23,6 +23,62 @@ import javax.annotation.Nullable;
  * Creates a new AccessPolicy.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ServiceMesh.AccessPolicy;
+ * import com.pulumi.oci.ServiceMesh.AccessPolicyArgs;
+ * import com.pulumi.oci.ServiceMesh.inputs.AccessPolicyRuleArgs;
+ * import com.pulumi.oci.ServiceMesh.inputs.AccessPolicyRuleDestinationArgs;
+ * import com.pulumi.oci.ServiceMesh.inputs.AccessPolicyRuleSourceArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAccessPolicy = new AccessPolicy(&#34;testAccessPolicy&#34;, AccessPolicyArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.access_policy_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .rules(AccessPolicyRuleArgs.builder()
+ *                 .action(var_.access_policy_rules_action())
+ *                 .destination(AccessPolicyRuleDestinationArgs.builder()
+ *                     .type(var_.access_policy_rules_destination_type())
+ *                     .hostnames(var_.access_policy_rules_destination_hostnames())
+ *                     .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+ *                     .ipAddresses(var_.access_policy_rules_destination_ip_addresses())
+ *                     .ports(var_.access_policy_rules_destination_ports())
+ *                     .protocol(var_.access_policy_rules_destination_protocol())
+ *                     .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+ *                     .build())
+ *                 .source(AccessPolicyRuleSourceArgs.builder()
+ *                     .type(var_.access_policy_rules_source_type())
+ *                     .hostnames(var_.access_policy_rules_source_hostnames())
+ *                     .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+ *                     .ipAddresses(var_.access_policy_rules_source_ip_addresses())
+ *                     .ports(var_.access_policy_rules_source_ports())
+ *                     .protocol(var_.access_policy_rules_source_protocol())
+ *                     .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

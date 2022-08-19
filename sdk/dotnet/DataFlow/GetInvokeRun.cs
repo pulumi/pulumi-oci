@@ -22,20 +22,18 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInvokeRun = Oci.DataFlow.GetInvokeRun.Invoke(new()
         ///     {
-        ///         var testInvokeRun = Output.Create(Oci.DataFlow.GetInvokeRun.InvokeAsync(new Oci.DataFlow.GetInvokeRunArgs
-        ///         {
-        ///             RunId = oci_dataflow_run.Test_run.Id,
-        ///         }));
-        ///     }
+        ///         RunId = oci_dataflow_run.Test_run.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInvokeRun = Oci.DataFlow.GetInvokeRun.Invoke(new()
         ///     {
-        ///         var testInvokeRun = Output.Create(Oci.DataFlow.GetInvokeRun.InvokeAsync(new Oci.DataFlow.GetInvokeRunArgs
-        ///         {
-        ///             RunId = oci_dataflow_run.Test_run.Id,
-        ///         }));
-        ///     }
+        ///         RunId = oci_dataflow_run.Test_run.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DataFlow
     }
 
 
-    public sealed class GetInvokeRunArgs : Pulumi.InvokeArgs
+    public sealed class GetInvokeRunArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique ID for the run
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.DataFlow
         public GetInvokeRunArgs()
         {
         }
+        public static new GetInvokeRunArgs Empty => new GetInvokeRunArgs();
     }
 
-    public sealed class GetInvokeRunInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInvokeRunInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique ID for the run
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.DataFlow
         public GetInvokeRunInvokeArgs()
         {
         }
+        public static new GetInvokeRunInvokeArgs Empty => new GetInvokeRunInvokeArgs();
     }
 
 
@@ -111,6 +109,10 @@ namespace Pulumi.Oci.DataFlow
         /// The application ID.
         /// </summary>
         public readonly string ApplicationId;
+        /// <summary>
+        /// Logging details of Application logs for Data Flow Run.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInvokeRunApplicationLogConfigResult> ApplicationLogConfigs;
         /// <summary>
         /// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
@@ -274,6 +276,8 @@ namespace Pulumi.Oci.DataFlow
         private GetInvokeRunResult(
             string applicationId,
 
+            ImmutableArray<Outputs.GetInvokeRunApplicationLogConfigResult> applicationLogConfigs,
+
             string archiveUri,
 
             ImmutableArray<string> arguments,
@@ -357,6 +361,7 @@ namespace Pulumi.Oci.DataFlow
             string warehouseBucketUri)
         {
             ApplicationId = applicationId;
+            ApplicationLogConfigs = applicationLogConfigs;
             ArchiveUri = archiveUri;
             Arguments = arguments;
             Asynchronous = asynchronous;

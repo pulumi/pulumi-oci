@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJavaRelease = Oci.Jms.GetJavaRelease.Invoke(new()
         ///     {
-        ///         var testJavaRelease = Output.Create(Oci.Jms.GetJavaRelease.InvokeAsync(new Oci.Jms.GetJavaReleaseArgs
-        ///         {
-        ///             ReleaseVersion = @var.Java_release_release_version,
-        ///         }));
-        ///     }
+        ///         ReleaseVersion = @var.Java_release_release_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJavaRelease = Oci.Jms.GetJavaRelease.Invoke(new()
         ///     {
-        ///         var testJavaRelease = Output.Create(Oci.Jms.GetJavaRelease.InvokeAsync(new Oci.Jms.GetJavaReleaseArgs
-        ///         {
-        ///             ReleaseVersion = @var.Java_release_release_version,
-        ///         }));
-        ///     }
+        ///         ReleaseVersion = @var.Java_release_release_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Jms
     }
 
 
-    public sealed class GetJavaReleaseArgs : Pulumi.InvokeArgs
+    public sealed class GetJavaReleaseArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Java release version identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Jms
         public GetJavaReleaseArgs()
         {
         }
+        public static new GetJavaReleaseArgs Empty => new GetJavaReleaseArgs();
     }
 
-    public sealed class GetJavaReleaseInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetJavaReleaseInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Java release version identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Jms
         public GetJavaReleaseInvokeArgs()
         {
         }
+        public static new GetJavaReleaseInvokeArgs Empty => new GetJavaReleaseInvokeArgs();
     }
 
 

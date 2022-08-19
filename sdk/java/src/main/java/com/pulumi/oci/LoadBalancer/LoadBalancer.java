@@ -54,6 +54,51 @@ import javax.annotation.Nullable;
  * * `oci_load_balancer`
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LoadBalancer.LoadBalancer;
+ * import com.pulumi.oci.LoadBalancer.LoadBalancerArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.LoadBalancerReservedIpArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.LoadBalancerShapeDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testLoadBalancer = new LoadBalancer(&#34;testLoadBalancer&#34;, LoadBalancerArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.load_balancer_display_name())
+ *             .shape(var_.load_balancer_shape())
+ *             .subnetIds(var_.load_balancer_subnet_ids())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .ipMode(var_.load_balancer_ip_mode())
+ *             .isPrivate(var_.load_balancer_is_private())
+ *             .networkSecurityGroupIds(var_.load_balancer_network_security_group_ids())
+ *             .reservedIps(LoadBalancerReservedIpArgs.builder()
+ *                 .id(var_.load_balancer_reserved_ips_id())
+ *                 .build())
+ *             .shapeDetails(LoadBalancerShapeDetailsArgs.builder()
+ *                 .maximumBandwidthInMbps(var_.load_balancer_shape_details_maximum_bandwidth_in_mbps())
+ *                 .minimumBandwidthInMbps(var_.load_balancer_shape_details_minimum_bandwidth_in_mbps())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

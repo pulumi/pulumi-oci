@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Blockchain.Inputs
 {
 
-    public sealed class BlockchainPlatformHostOcpuUtilizationInfoGetArgs : Pulumi.ResourceArgs
+    public sealed class BlockchainPlatformHostOcpuUtilizationInfoGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Host name of VM
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Blockchain.Inputs
         public BlockchainPlatformHostOcpuUtilizationInfoGetArgs()
         {
         }
+        public static new BlockchainPlatformHostOcpuUtilizationInfoGetArgs Empty => new BlockchainPlatformHostOcpuUtilizationInfoGetArgs();
     }
 }

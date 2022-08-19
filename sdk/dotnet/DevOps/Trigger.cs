@@ -17,50 +17,48 @@ namespace Pulumi.Oci.DevOps
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testTrigger = new Oci.DevOps.Trigger("testTrigger", new()
     ///     {
-    ///         var testTrigger = new Oci.DevOps.Trigger("testTrigger", new Oci.DevOps.TriggerArgs
+    ///         Actions = new[]
     ///         {
-    ///             Actions = 
+    ///             new Oci.DevOps.Inputs.TriggerActionArgs
     ///             {
-    ///                 new Oci.DevOps.Inputs.TriggerActionArgs
+    ///                 BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
+    ///                 Type = @var.Trigger_actions_type,
+    ///                 Filter = new Oci.DevOps.Inputs.TriggerActionFilterArgs
     ///                 {
-    ///                     BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
-    ///                     Type = @var.Trigger_actions_type,
-    ///                     Filter = new Oci.DevOps.Inputs.TriggerActionFilterArgs
+    ///                     TriggerSource = @var.Trigger_actions_filter_trigger_source,
+    ///                     Events = @var.Trigger_actions_filter_events,
+    ///                     Include = new Oci.DevOps.Inputs.TriggerActionFilterIncludeArgs
     ///                     {
-    ///                         TriggerSource = @var.Trigger_actions_filter_trigger_source,
-    ///                         Events = @var.Trigger_actions_filter_events,
-    ///                         Include = new Oci.DevOps.Inputs.TriggerActionFilterIncludeArgs
-    ///                         {
-    ///                             BaseRef = @var.Trigger_actions_filter_include_base_ref,
-    ///                             HeadRef = @var.Trigger_actions_filter_include_head_ref,
-    ///                         },
+    ///                         BaseRef = @var.Trigger_actions_filter_include_base_ref,
+    ///                         HeadRef = @var.Trigger_actions_filter_include_head_ref,
     ///                     },
     ///                 },
     ///             },
-    ///             ProjectId = oci_devops_project.Test_project.Id,
-    ///             TriggerSource = @var.Trigger_trigger_source,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Trigger_description,
-    ///             DisplayName = @var.Trigger_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             RepositoryId = oci_artifacts_repository.Test_repository.Id,
-    ///         });
-    ///     }
+    ///         },
+    ///         ProjectId = oci_devops_project.Test_project.Id,
+    ///         TriggerSource = @var.Trigger_trigger_source,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Trigger_description,
+    ///         DisplayName = @var.Trigger_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -72,7 +70,7 @@ namespace Pulumi.Oci.DevOps
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/trigger:Trigger")]
-    public partial class Trigger : Pulumi.CustomResource
+    public partial class Trigger : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The list of actions that are to be performed for this trigger.
@@ -208,7 +206,7 @@ namespace Pulumi.Oci.DevOps
         }
     }
 
-    public sealed class TriggerArgs : Pulumi.ResourceArgs
+    public sealed class TriggerArgs : global::Pulumi.ResourceArgs
     {
         [Input("actions", required: true)]
         private InputList<Inputs.TriggerActionArgs>? _actions;
@@ -279,9 +277,10 @@ namespace Pulumi.Oci.DevOps
         public TriggerArgs()
         {
         }
+        public static new TriggerArgs Empty => new TriggerArgs();
     }
 
-    public sealed class TriggerState : Pulumi.ResourceArgs
+    public sealed class TriggerState : global::Pulumi.ResourceArgs
     {
         [Input("actions")]
         private InputList<Inputs.TriggerActionGetArgs>? _actions;
@@ -400,5 +399,6 @@ namespace Pulumi.Oci.DevOps
         public TriggerState()
         {
         }
+        public static new TriggerState Empty => new TriggerState();
     }
 }

@@ -28,6 +28,45 @@ import javax.annotation.Nullable;
  * Creates a new Blockchain Platform.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Blockchain.BlockchainPlatform;
+ * import com.pulumi.oci.Blockchain.BlockchainPlatformArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBlockchainPlatform = new BlockchainPlatform(&#34;testBlockchainPlatform&#34;, BlockchainPlatformArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .computeShape(var_.blockchain_platform_compute_shape())
+ *             .displayName(var_.blockchain_platform_display_name())
+ *             .idcsAccessToken(var_.blockchain_platform_idcs_access_token())
+ *             .platformRole(var_.blockchain_platform_platform_role())
+ *             .caCertArchiveText(var_.blockchain_platform_ca_cert_archive_text())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.blockchain_platform_description())
+ *             .federatedUserId(oci_identity_user.test_user().id())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .isByol(var_.blockchain_platform_is_byol())
+ *             .platformVersion(var_.blockchain_platform_platform_version())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

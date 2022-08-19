@@ -22,23 +22,21 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedInstanceEventReport = Oci.OsManagement.GetManagedInstanceEventReport.Invoke(new()
         ///     {
-        ///         var testManagedInstanceEventReport = Output.Create(Oci.OsManagement.GetManagedInstanceEventReport.InvokeAsync(new Oci.OsManagement.GetManagedInstanceEventReportArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///             LatestTimestampGreaterThanOrEqualTo = @var.Managed_instance_event_report_latest_timestamp_greater_than_or_equal_to,
-        ///             LatestTimestampLessThan = @var.Managed_instance_event_report_latest_timestamp_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
+        ///         LatestTimestampGreaterThanOrEqualTo = @var.Managed_instance_event_report_latest_timestamp_greater_than_or_equal_to,
+        ///         LatestTimestampLessThan = @var.Managed_instance_event_report_latest_timestamp_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedInstanceEventReport = Oci.OsManagement.GetManagedInstanceEventReport.Invoke(new()
         ///     {
-        ///         var testManagedInstanceEventReport = Output.Create(Oci.OsManagement.GetManagedInstanceEventReport.InvokeAsync(new Oci.OsManagement.GetManagedInstanceEventReportArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///             LatestTimestampGreaterThanOrEqualTo = @var.Managed_instance_event_report_latest_timestamp_greater_than_or_equal_to,
-        ///             LatestTimestampLessThan = @var.Managed_instance_event_report_latest_timestamp_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
+        ///         LatestTimestampGreaterThanOrEqualTo = @var.Managed_instance_event_report_latest_timestamp_greater_than_or_equal_to,
+        ///         LatestTimestampLessThan = @var.Managed_instance_event_report_latest_timestamp_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.OsManagement
     }
 
 
-    public sealed class GetManagedInstanceEventReportArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedInstanceEventReportArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.OsManagement
         public GetManagedInstanceEventReportArgs()
         {
         }
+        public static new GetManagedInstanceEventReportArgs Empty => new GetManagedInstanceEventReportArgs();
     }
 
-    public sealed class GetManagedInstanceEventReportInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedInstanceEventReportInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.OsManagement
         public GetManagedInstanceEventReportInvokeArgs()
         {
         }
+        public static new GetManagedInstanceEventReportInvokeArgs Empty => new GetManagedInstanceEventReportInvokeArgs();
     }
 
 

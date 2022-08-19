@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class VnicAttachmentCreateVnicDetailsArgs : Pulumi.ResourceArgs
+    public sealed class VnicAttachmentCreateVnicDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether the VNIC should be assigned a DNS record. If set to false, no DNS record registion for the VNIC; if set to true, DNS record will be registered. Example: `true`
@@ -99,5 +99,6 @@ namespace Pulumi.Oci.Core.Inputs
         public VnicAttachmentCreateVnicDetailsArgs()
         {
         }
+        public static new VnicAttachmentCreateVnicDetailsArgs Empty => new VnicAttachmentCreateVnicDetailsArgs();
     }
 }

@@ -23,7 +23,7 @@ namespace Pulumi.Oci.Vault
     /// ```
     /// </summary>
     [OciResourceType("oci:Vault/secret:Secret")]
-    public partial class Secret : Pulumi.CustomResource
+    public partial class Secret : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where you want to create the secret.
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Vault
         }
     }
 
-    public sealed class SecretArgs : Pulumi.ResourceArgs
+    public sealed class SecretArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where you want to create the secret.
@@ -254,9 +254,10 @@ namespace Pulumi.Oci.Vault
         public SecretArgs()
         {
         }
+        public static new SecretArgs Empty => new SecretArgs();
     }
 
-    public sealed class SecretState : Pulumi.ResourceArgs
+    public sealed class SecretState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where you want to create the secret.
@@ -381,5 +382,6 @@ namespace Pulumi.Oci.Vault
         public SecretState()
         {
         }
+        public static new SecretState Empty => new SecretState();
     }
 }

@@ -21,21 +21,19 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSslCipherSuite = Oci.LoadBalancer.GetSslCipherSuite.Invoke(new()
         ///     {
-        ///         var testSslCipherSuite = Output.Create(Oci.LoadBalancer.GetSslCipherSuite.InvokeAsync(new Oci.LoadBalancer.GetSslCipherSuiteArgs
-        ///         {
-        ///             Name = @var.Ssl_cipher_suite_name,
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         Name = @var.Ssl_cipher_suite_name,
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSslCipherSuite = Oci.LoadBalancer.GetSslCipherSuite.Invoke(new()
         ///     {
-        ///         var testSslCipherSuite = Output.Create(Oci.LoadBalancer.GetSslCipherSuite.InvokeAsync(new Oci.LoadBalancer.GetSslCipherSuiteArgs
-        ///         {
-        ///             Name = @var.Ssl_cipher_suite_name,
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         Name = @var.Ssl_cipher_suite_name,
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetSslCipherSuiteArgs : Pulumi.InvokeArgs
+    public sealed class GetSslCipherSuiteArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetSslCipherSuiteArgs()
         {
         }
+        public static new GetSslCipherSuiteArgs Empty => new GetSslCipherSuiteArgs();
     }
 
-    public sealed class GetSslCipherSuiteInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSslCipherSuiteInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetSslCipherSuiteInvokeArgs()
         {
         }
+        public static new GetSslCipherSuiteInvokeArgs Empty => new GetSslCipherSuiteInvokeArgs();
     }
 
 

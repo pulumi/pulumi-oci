@@ -21,20 +21,18 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperatorAction = Oci.OperatorAccessControl.GetAction.Invoke(new()
         ///     {
-        ///         var testOperatorAction = Output.Create(Oci.OperatorAccessControl.GetAction.InvokeAsync(new Oci.OperatorAccessControl.GetActionArgs
-        ///         {
-        ///             OperatorActionId = oci_operator_access_control_operator_action.Test_operator_action.Id,
-        ///         }));
-        ///     }
+        ///         OperatorActionId = oci_operator_access_control_operator_action.Test_operator_action.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOperatorAction = Oci.OperatorAccessControl.GetAction.Invoke(new()
         ///     {
-        ///         var testOperatorAction = Output.Create(Oci.OperatorAccessControl.GetAction.InvokeAsync(new Oci.OperatorAccessControl.GetActionArgs
-        ///         {
-        ///             OperatorActionId = oci_operator_access_control_operator_action.Test_operator_action.Id,
-        ///         }));
-        ///     }
+        ///         OperatorActionId = oci_operator_access_control_operator_action.Test_operator_action.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.OperatorAccessControl
     }
 
 
-    public sealed class GetActionArgs : Pulumi.InvokeArgs
+    public sealed class GetActionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Oracle supplied identifier associated with the operator action.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetActionArgs()
         {
         }
+        public static new GetActionArgs Empty => new GetActionArgs();
     }
 
-    public sealed class GetActionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetActionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Oracle supplied identifier associated with the operator action.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         public GetActionInvokeArgs()
         {
         }
+        public static new GetActionInvokeArgs Empty => new GetActionInvokeArgs();
     }
 
 

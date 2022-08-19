@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Sch.Inputs
 {
 
-    public sealed class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs : Pulumi.ResourceArgs
+    public sealed class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The metrics to query for the specified metric namespace.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Sch.Inputs
         public ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs()
         {
         }
+        public static new ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs Empty => new ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs();
     }
 }

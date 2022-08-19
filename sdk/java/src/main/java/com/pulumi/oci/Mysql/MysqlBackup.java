@@ -24,6 +24,40 @@ import javax.annotation.Nullable;
  * Create a backup of a DB System.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Mysql.MysqlBackup;
+ * import com.pulumi.oci.Mysql.MysqlBackupArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMysqlBackup = new MysqlBackup(&#34;testMysqlBackup&#34;, MysqlBackupArgs.builder()        
+ *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+ *             .backupType(var_.mysql_backup_backup_type())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.mysql_backup_description())
+ *             .displayName(var_.mysql_backup_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .retentionInDays(var_.mysql_backup_retention_in_days())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

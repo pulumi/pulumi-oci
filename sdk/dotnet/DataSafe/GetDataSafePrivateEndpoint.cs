@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataSafePrivateEndpoint = Oci.DataSafe.GetDataSafePrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testDataSafePrivateEndpoint = Output.Create(Oci.DataSafe.GetDataSafePrivateEndpoint.InvokeAsync(new Oci.DataSafe.GetDataSafePrivateEndpointArgs
-        ///         {
-        ///             DataSafePrivateEndpointId = oci_data_safe_data_safe_private_endpoint.Test_data_safe_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         DataSafePrivateEndpointId = oci_data_safe_data_safe_private_endpoint.Test_data_safe_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataSafePrivateEndpoint = Oci.DataSafe.GetDataSafePrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testDataSafePrivateEndpoint = Output.Create(Oci.DataSafe.GetDataSafePrivateEndpoint.InvokeAsync(new Oci.DataSafe.GetDataSafePrivateEndpointArgs
-        ///         {
-        ///             DataSafePrivateEndpointId = oci_data_safe_data_safe_private_endpoint.Test_data_safe_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         DataSafePrivateEndpointId = oci_data_safe_data_safe_private_endpoint.Test_data_safe_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetDataSafePrivateEndpointArgs : Pulumi.InvokeArgs
+    public sealed class GetDataSafePrivateEndpointArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the private endpoint.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetDataSafePrivateEndpointArgs()
         {
         }
+        public static new GetDataSafePrivateEndpointArgs Empty => new GetDataSafePrivateEndpointArgs();
     }
 
-    public sealed class GetDataSafePrivateEndpointInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDataSafePrivateEndpointInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the private endpoint.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetDataSafePrivateEndpointInvokeArgs()
         {
         }
+        public static new GetDataSafePrivateEndpointInvokeArgs Empty => new GetDataSafePrivateEndpointInvokeArgs();
     }
 
 

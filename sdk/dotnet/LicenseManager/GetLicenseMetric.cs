@@ -21,21 +21,19 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLicenseMetric = Oci.LicenseManager.GetLicenseMetric.Invoke(new()
         ///     {
-        ///         var testLicenseMetric = Output.Create(Oci.LicenseManager.GetLicenseMetric.InvokeAsync(new Oci.LicenseManager.GetLicenseMetricArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IsCompartmentIdInSubtree = @var.License_metric_is_compartment_id_in_subtree,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IsCompartmentIdInSubtree = @var.License_metric_is_compartment_id_in_subtree,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLicenseMetric = Oci.LicenseManager.GetLicenseMetric.Invoke(new()
         ///     {
-        ///         var testLicenseMetric = Output.Create(Oci.LicenseManager.GetLicenseMetric.InvokeAsync(new Oci.LicenseManager.GetLicenseMetricArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IsCompartmentIdInSubtree = @var.License_metric_is_compartment_id_in_subtree,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IsCompartmentIdInSubtree = @var.License_metric_is_compartment_id_in_subtree,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.LicenseManager
     }
 
 
-    public sealed class GetLicenseMetricArgs : Pulumi.InvokeArgs
+    public sealed class GetLicenseMetricArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.LicenseManager
         public GetLicenseMetricArgs()
         {
         }
+        public static new GetLicenseMetricArgs Empty => new GetLicenseMetricArgs();
     }
 
-    public sealed class GetLicenseMetricInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLicenseMetricInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.LicenseManager
         public GetLicenseMetricInvokeArgs()
         {
         }
+        public static new GetLicenseMetricInvokeArgs Empty => new GetLicenseMetricInvokeArgs();
     }
 
 

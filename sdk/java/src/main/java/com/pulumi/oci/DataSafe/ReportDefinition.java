@@ -28,6 +28,70 @@ import javax.annotation.Nullable;
  * Creates a new report definition with parameters specified in the body. The report definition is stored in the specified compartment.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.ReportDefinition;
+ * import com.pulumi.oci.DataSafe.ReportDefinitionArgs;
+ * import com.pulumi.oci.DataSafe.inputs.ReportDefinitionColumnFilterArgs;
+ * import com.pulumi.oci.DataSafe.inputs.ReportDefinitionColumnInfoArgs;
+ * import com.pulumi.oci.DataSafe.inputs.ReportDefinitionColumnSortingArgs;
+ * import com.pulumi.oci.DataSafe.inputs.ReportDefinitionSummaryArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testReportDefinition = new ReportDefinition(&#34;testReportDefinition&#34;, ReportDefinitionArgs.builder()        
+ *             .columnFilters(ReportDefinitionColumnFilterArgs.builder()
+ *                 .expressions(var_.report_definition_column_filters_expressions())
+ *                 .fieldName(var_.report_definition_column_filters_field_name())
+ *                 .isEnabled(var_.report_definition_column_filters_is_enabled())
+ *                 .isHidden(var_.report_definition_column_filters_is_hidden())
+ *                 .operator(var_.report_definition_column_filters_operator())
+ *                 .build())
+ *             .columnInfos(ReportDefinitionColumnInfoArgs.builder()
+ *                 .displayName(var_.report_definition_column_info_display_name())
+ *                 .displayOrder(var_.report_definition_column_info_display_order())
+ *                 .fieldName(var_.report_definition_column_info_field_name())
+ *                 .isHidden(var_.report_definition_column_info_is_hidden())
+ *                 .dataType(var_.report_definition_column_info_data_type())
+ *                 .build())
+ *             .columnSortings(ReportDefinitionColumnSortingArgs.builder()
+ *                 .fieldName(var_.report_definition_column_sortings_field_name())
+ *                 .isAscending(var_.report_definition_column_sortings_is_ascending())
+ *                 .sortingOrder(var_.report_definition_column_sortings_sorting_order())
+ *                 .build())
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.report_definition_display_name())
+ *             .parentId(oci_data_safe_parent.test_parent().id())
+ *             .summaries(ReportDefinitionSummaryArgs.builder()
+ *                 .displayOrder(var_.report_definition_summary_display_order())
+ *                 .name(var_.report_definition_summary_name())
+ *                 .countOf(var_.report_definition_summary_count_of())
+ *                 .groupByFieldName(var_.report_definition_summary_group_by_field_name())
+ *                 .isHidden(var_.report_definition_summary_is_hidden())
+ *                 .scimFilter(var_.report_definition_summary_scim_filter())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.report_definition_description())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

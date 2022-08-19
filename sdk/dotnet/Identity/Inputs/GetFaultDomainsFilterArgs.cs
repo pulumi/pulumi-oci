@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class GetFaultDomainsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetFaultDomainsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the Fault Domain.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public GetFaultDomainsFilterInputArgs()
         {
         }
+        public static new GetFaultDomainsFilterInputArgs Empty => new GetFaultDomainsFilterInputArgs();
     }
 }

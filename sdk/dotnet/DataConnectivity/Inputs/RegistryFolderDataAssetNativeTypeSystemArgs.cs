@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataConnectivity.Inputs
 {
 
-    public sealed class RegistryFolderDataAssetNativeTypeSystemArgs : Pulumi.ResourceArgs
+    public sealed class RegistryFolderDataAssetNativeTypeSystemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) User-defined description for the folder.
@@ -105,5 +105,6 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public RegistryFolderDataAssetNativeTypeSystemArgs()
         {
         }
+        public static new RegistryFolderDataAssetNativeTypeSystemArgs Empty => new RegistryFolderDataAssetNativeTypeSystemArgs();
     }
 }

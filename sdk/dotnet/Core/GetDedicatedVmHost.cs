@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDedicatedVmHost = Oci.Core.GetDedicatedVmHost.Invoke(new()
         ///     {
-        ///         var testDedicatedVmHost = Output.Create(Oci.Core.GetDedicatedVmHost.InvokeAsync(new Oci.Core.GetDedicatedVmHostArgs
-        ///         {
-        ///             DedicatedVmHostId = oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
-        ///         }));
-        ///     }
+        ///         DedicatedVmHostId = oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDedicatedVmHost = Oci.Core.GetDedicatedVmHost.Invoke(new()
         ///     {
-        ///         var testDedicatedVmHost = Output.Create(Oci.Core.GetDedicatedVmHost.InvokeAsync(new Oci.Core.GetDedicatedVmHostArgs
-        ///         {
-        ///             DedicatedVmHostId = oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
-        ///         }));
-        ///     }
+        ///         DedicatedVmHostId = oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetDedicatedVmHostArgs : Pulumi.InvokeArgs
+    public sealed class GetDedicatedVmHostArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the dedicated VM host.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetDedicatedVmHostArgs()
         {
         }
+        public static new GetDedicatedVmHostArgs Empty => new GetDedicatedVmHostArgs();
     }
 
-    public sealed class GetDedicatedVmHostInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDedicatedVmHostInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the dedicated VM host.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetDedicatedVmHostInvokeArgs()
         {
         }
+        public static new GetDedicatedVmHostInvokeArgs Empty => new GetDedicatedVmHostInvokeArgs();
     }
 
 

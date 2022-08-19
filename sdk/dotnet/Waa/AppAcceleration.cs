@@ -17,33 +17,31 @@ namespace Pulumi.Oci.Waa
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testWebAppAcceleration = new Oci.Waa.AppAcceleration("testWebAppAcceleration", new()
     ///     {
-    ///         var testWebAppAcceleration = new Oci.Waa.AppAcceleration("testWebAppAcceleration", new Oci.Waa.AppAccelerationArgs
+    ///         BackendType = @var.Web_app_acceleration_backend_type,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         WebAppAccelerationPolicyId = oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             BackendType = @var.Web_app_acceleration_backend_type,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///             WebAppAccelerationPolicyId = oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Web_app_acceleration_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             SystemTags = @var.Web_app_acceleration_system_tags,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Web_app_acceleration_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         SystemTags = @var.Web_app_acceleration_system_tags,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.Waa
     /// ```
     /// </summary>
     [OciResourceType("oci:Waa/appAcceleration:AppAcceleration")]
-    public partial class AppAcceleration : Pulumi.CustomResource
+    public partial class AppAcceleration : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Type of the WebAppFirewall, as example LOAD_BALANCER.
@@ -173,7 +171,7 @@ namespace Pulumi.Oci.Waa
         }
     }
 
-    public sealed class AppAccelerationArgs : Pulumi.ResourceArgs
+    public sealed class AppAccelerationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Type of the WebAppFirewall, as example LOAD_BALANCER.
@@ -244,9 +242,10 @@ namespace Pulumi.Oci.Waa
         public AppAccelerationArgs()
         {
         }
+        public static new AppAccelerationArgs Empty => new AppAccelerationArgs();
     }
 
-    public sealed class AppAccelerationState : Pulumi.ResourceArgs
+    public sealed class AppAccelerationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Type of the WebAppFirewall, as example LOAD_BALANCER.
@@ -341,5 +340,6 @@ namespace Pulumi.Oci.Waa
         public AppAccelerationState()
         {
         }
+        public static new AppAccelerationState Empty => new AppAccelerationState();
     }
 }

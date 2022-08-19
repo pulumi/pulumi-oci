@@ -23,6 +23,44 @@ import javax.annotation.Nullable;
  * Attaches the specified storage volume to the specified instance.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.VolumeAttachment;
+ * import com.pulumi.oci.Core.VolumeAttachmentArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVolumeAttachment = new VolumeAttachment(&#34;testVolumeAttachment&#34;, VolumeAttachmentArgs.builder()        
+ *             .attachmentType(var_.volume_attachment_attachment_type())
+ *             .instanceId(oci_core_instance.test_instance().id())
+ *             .volumeId(oci_core_volume.test_volume().id())
+ *             .device(var_.volume_attachment_device())
+ *             .displayName(var_.volume_attachment_display_name())
+ *             .encryptionInTransitType(var_.volume_attachment_encryption_in_transit_type())
+ *             .isAgentAutoIscsiLoginEnabled(var_.volume_attachment_is_agent_auto_iscsi_login_enabled())
+ *             .isPvEncryptionInTransitEnabled(var_.volume_attachment_is_pv_encryption_in_transit_enabled())
+ *             .isReadOnly(var_.volume_attachment_is_read_only())
+ *             .isShareable(var_.volume_attachment_is_shareable())
+ *             .useChap(var_.volume_attachment_use_chap())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

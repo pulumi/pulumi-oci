@@ -33,32 +33,30 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testNetworkSource = new Oci.Identity.NetworkSource("testNetworkSource", new()
     ///     {
-    ///         var testNetworkSource = new Oci.Identity.NetworkSource("testNetworkSource", new Oci.Identity.NetworkSourceArgs
+    ///         CompartmentId = @var.Tenancy_ocid,
+    ///         Description = @var.Network_source_description,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Tenancy_ocid,
-    ///             Description = @var.Network_source_description,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             PublicSourceLists = @var.Network_source_public_source_list,
-    ///             Services = @var.Network_source_services,
-    ///             VirtualSourceLists = @var.Network_source_virtual_source_list,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         PublicSourceLists = @var.Network_source_public_source_list,
+    ///         Services = @var.Network_source_services,
+    ///         VirtualSourceLists = @var.Network_source_virtual_source_list,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -70,7 +68,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/networkSource:NetworkSource")]
-    public partial class NetworkSource : Pulumi.CustomResource
+    public partial class NetworkSource : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the tenancy (root compartment) containing the network source object.
@@ -182,7 +180,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class NetworkSourceArgs : Pulumi.ResourceArgs
+    public sealed class NetworkSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the tenancy (root compartment) containing the network source object.
@@ -265,9 +263,10 @@ namespace Pulumi.Oci.Identity
         public NetworkSourceArgs()
         {
         }
+        public static new NetworkSourceArgs Empty => new NetworkSourceArgs();
     }
 
-    public sealed class NetworkSourceState : Pulumi.ResourceArgs
+    public sealed class NetworkSourceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the tenancy (root compartment) containing the network source object.
@@ -368,5 +367,6 @@ namespace Pulumi.Oci.Identity
         public NetworkSourceState()
         {
         }
+        public static new NetworkSourceState Empty => new NetworkSourceState();
     }
 }

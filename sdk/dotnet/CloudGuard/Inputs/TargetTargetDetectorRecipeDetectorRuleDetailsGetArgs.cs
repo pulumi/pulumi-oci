@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard.Inputs
 {
 
-    public sealed class TargetTargetDetectorRecipeDetectorRuleDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class TargetTargetDetectorRecipeDetectorRuleDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("conditionGroups")]
         private InputList<Inputs.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupGetArgs>? _conditionGroups;
@@ -69,5 +69,6 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public TargetTargetDetectorRecipeDetectorRuleDetailsGetArgs()
         {
         }
+        public static new TargetTargetDetectorRecipeDetectorRuleDetailsGetArgs Empty => new TargetTargetDetectorRecipeDetectorRuleDetailsGetArgs();
     }
 }

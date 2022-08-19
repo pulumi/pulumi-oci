@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCrossConnectLocations = Oci.Core.GetCrossConnectLocations.Invoke(new()
         ///     {
-        ///         var testCrossConnectLocations = Output.Create(Oci.Core.GetCrossConnectLocations.InvokeAsync(new Oci.Core.GetCrossConnectLocationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCrossConnectLocations = Oci.Core.GetCrossConnectLocations.Invoke(new()
         ///     {
-        ///         var testCrossConnectLocations = Output.Create(Oci.Core.GetCrossConnectLocations.InvokeAsync(new Oci.Core.GetCrossConnectLocationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetCrossConnectLocationsArgs : Pulumi.InvokeArgs
+    public sealed class GetCrossConnectLocationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.Core
         public GetCrossConnectLocationsArgs()
         {
         }
+        public static new GetCrossConnectLocationsArgs Empty => new GetCrossConnectLocationsArgs();
     }
 
-    public sealed class GetCrossConnectLocationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCrossConnectLocationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.Core
         public GetCrossConnectLocationsInvokeArgs()
         {
         }
+        public static new GetCrossConnectLocationsInvokeArgs Empty => new GetCrossConnectLocationsInvokeArgs();
     }
 
 

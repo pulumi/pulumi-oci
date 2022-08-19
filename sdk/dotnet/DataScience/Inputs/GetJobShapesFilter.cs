@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class GetJobShapesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetJobShapesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the job shape.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public GetJobShapesFilterArgs()
         {
         }
+        public static new GetJobShapesFilterArgs Empty => new GetJobShapesFilterArgs();
     }
 }

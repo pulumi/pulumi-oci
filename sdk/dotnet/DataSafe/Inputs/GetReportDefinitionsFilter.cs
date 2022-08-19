@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class GetReportDefinitionsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetReportDefinitionsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Name of the report summary.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public GetReportDefinitionsFilterArgs()
         {
         }
+        public static new GetReportDefinitionsFilterArgs Empty => new GetReportDefinitionsFilterArgs();
     }
 }

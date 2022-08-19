@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("blockVolumes")]
         private InputList<Inputs.InstanceConfigurationInstanceDetailsBlockVolumeGetArgs>? _blockVolumes;
@@ -43,5 +43,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsGetArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsGetArgs Empty => new InstanceConfigurationInstanceDetailsGetArgs();
     }
 }

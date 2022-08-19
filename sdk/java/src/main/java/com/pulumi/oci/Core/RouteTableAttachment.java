@@ -19,6 +19,35 @@ import javax.annotation.Nullable;
  * Attaches the specified `route table` to the specified `subnet`.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.RouteTableAttachment;
+ * import com.pulumi.oci.Core.RouteTableAttachmentArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testRouteTableAttachment = new RouteTableAttachment(&#34;testRouteTableAttachment&#34;, RouteTableAttachmentArgs.builder()        
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .routeTableId(oci_core_route_table.test_route_table().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

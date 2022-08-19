@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging.Inputs
 {
 
-    public sealed class UnifiedAgentConfigurationGroupAssociationArgs : Pulumi.ResourceArgs
+    public sealed class UnifiedAgentConfigurationGroupAssociationArgs : global::Pulumi.ResourceArgs
     {
         [Input("groupLists")]
         private InputList<string>? _groupLists;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Logging.Inputs
         public UnifiedAgentConfigurationGroupAssociationArgs()
         {
         }
+        public static new UnifiedAgentConfigurationGroupAssociationArgs Empty => new UnifiedAgentConfigurationGroupAssociationArgs();
     }
 }

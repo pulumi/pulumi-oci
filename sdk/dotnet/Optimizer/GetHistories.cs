@@ -23,27 +23,25 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHistories = Oci.Optimizer.GetHistories.Invoke(new()
         ///     {
-        ///         var testHistories = Output.Create(Oci.Optimizer.GetHistories.InvokeAsync(new Oci.Optimizer.GetHistoriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.History_compartment_id_in_subtree,
-        ///             Name = @var.History_name,
-        ///             RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
-        ///             RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
-        ///             ResourceType = @var.History_resource_type,
-        ///             State = @var.History_state,
-        ///             Status = @var.History_status,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.History_compartment_id_in_subtree,
+        ///         Name = @var.History_name,
+        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
+        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
+        ///         ResourceType = @var.History_resource_type,
+        ///         State = @var.History_state,
+        ///         Status = @var.History_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,27 +61,25 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHistories = Oci.Optimizer.GetHistories.Invoke(new()
         ///     {
-        ///         var testHistories = Output.Create(Oci.Optimizer.GetHistories.InvokeAsync(new Oci.Optimizer.GetHistoriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.History_compartment_id_in_subtree,
-        ///             Name = @var.History_name,
-        ///             RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
-        ///             RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
-        ///             ResourceType = @var.History_resource_type,
-        ///             State = @var.History_state,
-        ///             Status = @var.History_status,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.History_compartment_id_in_subtree,
+        ///         Name = @var.History_name,
+        ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
+        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
+        ///         ResourceType = @var.History_resource_type,
+        ///         State = @var.History_state,
+        ///         Status = @var.History_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.Optimizer
     }
 
 
-    public sealed class GetHistoriesArgs : Pulumi.InvokeArgs
+    public sealed class GetHistoriesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -154,9 +150,10 @@ namespace Pulumi.Oci.Optimizer
         public GetHistoriesArgs()
         {
         }
+        public static new GetHistoriesArgs Empty => new GetHistoriesArgs();
     }
 
-    public sealed class GetHistoriesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetHistoriesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -217,6 +214,7 @@ namespace Pulumi.Oci.Optimizer
         public GetHistoriesInvokeArgs()
         {
         }
+        public static new GetHistoriesInvokeArgs Empty => new GetHistoriesInvokeArgs();
     }
 
 

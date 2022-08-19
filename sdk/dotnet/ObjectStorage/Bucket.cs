@@ -18,49 +18,47 @@ namespace Pulumi.Oci.ObjectStorage
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBucket = new Oci.ObjectStorage.Bucket("testBucket", new()
     ///     {
-    ///         var testBucket = new Oci.ObjectStorage.Bucket("testBucket", new Oci.ObjectStorage.BucketArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Namespace = @var.Bucket_namespace,
+    ///         AccessType = @var.Bucket_access_type,
+    ///         AutoTiering = @var.Bucket_auto_tiering,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Namespace = @var.Bucket_namespace,
-    ///             AccessType = @var.Bucket_access_type,
-    ///             AutoTiering = @var.Bucket_auto_tiering,
-    ///             DefinedTags = 
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         KmsKeyId = oci_kms_key.Test_key.Id,
+    ///         Metadata = @var.Bucket_metadata,
+    ///         ObjectEventsEnabled = @var.Bucket_object_events_enabled,
+    ///         StorageTier = @var.Bucket_storage_tier,
+    ///         RetentionRules = new[]
+    ///         {
+    ///             new Oci.ObjectStorage.Inputs.BucketRetentionRuleArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             KmsKeyId = oci_kms_key.Test_key.Id,
-    ///             Metadata = @var.Bucket_metadata,
-    ///             ObjectEventsEnabled = @var.Bucket_object_events_enabled,
-    ///             StorageTier = @var.Bucket_storage_tier,
-    ///             RetentionRules = 
-    ///             {
-    ///                 new Oci.ObjectStorage.Inputs.BucketRetentionRuleArgs
+    ///                 DisplayName = @var.Retention_rule_display_name,
+    ///                 Duration = new Oci.ObjectStorage.Inputs.BucketRetentionRuleDurationArgs
     ///                 {
-    ///                     DisplayName = @var.Retention_rule_display_name,
-    ///                     Duration = new Oci.ObjectStorage.Inputs.BucketRetentionRuleDurationArgs
-    ///                     {
-    ///                         TimeAmount = @var.Retention_rule_duration_time_amount,
-    ///                         TimeUnit = @var.Retention_rule_duration_time_unit,
-    ///                     },
-    ///                     TimeRuleLocked = @var.Retention_rule_time_rule_locked,
+    ///                     TimeAmount = @var.Retention_rule_duration_time_amount,
+    ///                     TimeUnit = @var.Retention_rule_duration_time_unit,
     ///                 },
+    ///                 TimeRuleLocked = @var.Retention_rule_time_rule_locked,
     ///             },
-    ///             Versioning = @var.Bucket_versioning,
-    ///         });
-    ///     }
+    ///         },
+    ///         Versioning = @var.Bucket_versioning,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -72,7 +70,7 @@ namespace Pulumi.Oci.ObjectStorage
     /// ```
     /// </summary>
     [OciResourceType("oci:ObjectStorage/bucket:Bucket")]
-    public partial class Bucket : Pulumi.CustomResource
+    public partial class Bucket : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
@@ -250,7 +248,7 @@ namespace Pulumi.Oci.ObjectStorage
         }
     }
 
-    public sealed class BucketArgs : Pulumi.ResourceArgs
+    public sealed class BucketArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
@@ -357,9 +355,10 @@ namespace Pulumi.Oci.ObjectStorage
         public BucketArgs()
         {
         }
+        public static new BucketArgs Empty => new BucketArgs();
     }
 
-    public sealed class BucketState : Pulumi.ResourceArgs
+    public sealed class BucketState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
@@ -520,5 +519,6 @@ namespace Pulumi.Oci.ObjectStorage
         public BucketState()
         {
         }
+        public static new BucketState Empty => new BucketState();
     }
 }

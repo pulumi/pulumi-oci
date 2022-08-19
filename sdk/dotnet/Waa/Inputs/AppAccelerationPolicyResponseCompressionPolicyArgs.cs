@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waa.Inputs
 {
 
-    public sealed class AppAccelerationPolicyResponseCompressionPolicyArgs : Pulumi.ResourceArgs
+    public sealed class AppAccelerationPolicyResponseCompressionPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) An object that specifies the gzip compression policy.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Waa.Inputs
         public AppAccelerationPolicyResponseCompressionPolicyArgs()
         {
         }
+        public static new AppAccelerationPolicyResponseCompressionPolicyArgs Empty => new AppAccelerationPolicyResponseCompressionPolicyArgs();
     }
 }

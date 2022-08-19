@@ -21,21 +21,19 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaskingPoliciesMaskingColumn = Oci.DataSafe.GetMaskingPoliciesMaskingColumn.Invoke(new()
         ///     {
-        ///         var testMaskingPoliciesMaskingColumn = Output.Create(Oci.DataSafe.GetMaskingPoliciesMaskingColumn.InvokeAsync(new Oci.DataSafe.GetMaskingPoliciesMaskingColumnArgs
-        ///         {
-        ///             MaskingColumnKey = @var.Masking_policies_masking_column_masking_column_key,
-        ///             MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///         }));
-        ///     }
+        ///         MaskingColumnKey = @var.Masking_policies_masking_column_masking_column_key,
+        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMaskingPoliciesMaskingColumn = Oci.DataSafe.GetMaskingPoliciesMaskingColumn.Invoke(new()
         ///     {
-        ///         var testMaskingPoliciesMaskingColumn = Output.Create(Oci.DataSafe.GetMaskingPoliciesMaskingColumn.InvokeAsync(new Oci.DataSafe.GetMaskingPoliciesMaskingColumnArgs
-        ///         {
-        ///             MaskingColumnKey = @var.Masking_policies_masking_column_masking_column_key,
-        ///             MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///         }));
-        ///     }
+        ///         MaskingColumnKey = @var.Masking_policies_masking_column_masking_column_key,
+        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetMaskingPoliciesMaskingColumnArgs : Pulumi.InvokeArgs
+    public sealed class GetMaskingPoliciesMaskingColumnArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique key that identifies the masking column. It's numeric and unique within a masking policy.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.DataSafe
         public GetMaskingPoliciesMaskingColumnArgs()
         {
         }
+        public static new GetMaskingPoliciesMaskingColumnArgs Empty => new GetMaskingPoliciesMaskingColumnArgs();
     }
 
-    public sealed class GetMaskingPoliciesMaskingColumnInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMaskingPoliciesMaskingColumnInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique key that identifies the masking column. It's numeric and unique within a masking policy.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.DataSafe
         public GetMaskingPoliciesMaskingColumnInvokeArgs()
         {
         }
+        public static new GetMaskingPoliciesMaskingColumnInvokeArgs Empty => new GetMaskingPoliciesMaskingColumnInvokeArgs();
     }
 
 

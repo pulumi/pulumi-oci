@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Functions
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFunction = Oci.Functions.GetFunction.Invoke(new()
         ///     {
-        ///         var testFunction = Output.Create(Oci.Functions.GetFunction.InvokeAsync(new Oci.Functions.GetFunctionArgs
-        ///         {
-        ///             FunctionId = oci_functions_function.Test_function.Id,
-        ///         }));
-        ///     }
+        ///         FunctionId = oci_functions_function.Test_function.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Functions
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFunction = Oci.Functions.GetFunction.Invoke(new()
         ///     {
-        ///         var testFunction = Output.Create(Oci.Functions.GetFunction.InvokeAsync(new Oci.Functions.GetFunctionArgs
-        ///         {
-        ///             FunctionId = oci_functions_function.Test_function.Id,
-        ///         }));
-        ///     }
+        ///         FunctionId = oci_functions_function.Test_function.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Functions
     }
 
 
-    public sealed class GetFunctionArgs : Pulumi.InvokeArgs
+    public sealed class GetFunctionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Functions
         public GetFunctionArgs()
         {
         }
+        public static new GetFunctionArgs Empty => new GetFunctionArgs();
     }
 
-    public sealed class GetFunctionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFunctionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Functions
         public GetFunctionInvokeArgs()
         {
         }
+        public static new GetFunctionInvokeArgs Empty => new GetFunctionInvokeArgs();
     }
 
 

@@ -17,36 +17,34 @@ namespace Pulumi.Oci.LogAnalytics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLogAnalyticsEntity = new Oci.LogAnalytics.LogAnalyticsEntity("testLogAnalyticsEntity", new()
     ///     {
-    ///         var testLogAnalyticsEntity = new Oci.LogAnalytics.LogAnalyticsEntity("testLogAnalyticsEntity", new Oci.LogAnalytics.LogAnalyticsEntityArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         EntityTypeName = @var.Log_analytics_entity_entity_type_name,
+    ///         Namespace = @var.Log_analytics_entity_namespace,
+    ///         CloudResourceId = oci_log_analytics_cloud_resource.Test_cloud_resource.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             EntityTypeName = @var.Log_analytics_entity_entity_type_name,
-    ///             Namespace = @var.Log_analytics_entity_namespace,
-    ///             CloudResourceId = oci_log_analytics_cloud_resource.Test_cloud_resource.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             Hostname = @var.Log_analytics_entity_hostname,
-    ///             ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
-    ///             Properties = @var.Log_analytics_entity_properties,
-    ///             SourceId = oci_log_analytics_source.Test_source.Id,
-    ///             TimezoneRegion = @var.Log_analytics_entity_timezone_region,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         Hostname = @var.Log_analytics_entity_hostname,
+    ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+    ///         Properties = @var.Log_analytics_entity_properties,
+    ///         SourceId = oci_log_analytics_source.Test_source.Id,
+    ///         TimezoneRegion = @var.Log_analytics_entity_timezone_region,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -58,7 +56,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// ```
     /// </summary>
     [OciResourceType("oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity")]
-    public partial class LogAnalyticsEntity : Pulumi.CustomResource
+    public partial class LogAnalyticsEntity : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
@@ -224,7 +222,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
     }
 
-    public sealed class LogAnalyticsEntityArgs : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsEntityArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
@@ -319,9 +317,10 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsEntityArgs()
         {
         }
+        public static new LogAnalyticsEntityArgs Empty => new LogAnalyticsEntityArgs();
     }
 
-    public sealed class LogAnalyticsEntityState : Pulumi.ResourceArgs
+    public sealed class LogAnalyticsEntityState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
@@ -464,5 +463,6 @@ namespace Pulumi.Oci.LogAnalytics
         public LogAnalyticsEntityState()
         {
         }
+        public static new LogAnalyticsEntityState Empty => new LogAnalyticsEntityState();
     }
 }

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testContainerImageSignature = Oci.Artifacts.GetContainerImageSignature.Invoke(new()
         ///     {
-        ///         var testContainerImageSignature = Output.Create(Oci.Artifacts.GetContainerImageSignature.InvokeAsync(new Oci.Artifacts.GetContainerImageSignatureArgs
-        ///         {
-        ///             ImageSignatureId = oci_artifacts_image_signature.Test_image_signature.Id,
-        ///         }));
-        ///     }
+        ///         ImageSignatureId = oci_artifacts_image_signature.Test_image_signature.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testContainerImageSignature = Oci.Artifacts.GetContainerImageSignature.Invoke(new()
         ///     {
-        ///         var testContainerImageSignature = Output.Create(Oci.Artifacts.GetContainerImageSignature.InvokeAsync(new Oci.Artifacts.GetContainerImageSignatureArgs
-        ///         {
-        ///             ImageSignatureId = oci_artifacts_image_signature.Test_image_signature.Id,
-        ///         }));
-        ///     }
+        ///         ImageSignatureId = oci_artifacts_image_signature.Test_image_signature.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Artifacts
     }
 
 
-    public sealed class GetContainerImageSignatureArgs : Pulumi.InvokeArgs
+    public sealed class GetContainerImageSignatureArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containersignature.oc1..exampleuniqueID`
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Artifacts
         public GetContainerImageSignatureArgs()
         {
         }
+        public static new GetContainerImageSignatureArgs Empty => new GetContainerImageSignatureArgs();
     }
 
-    public sealed class GetContainerImageSignatureInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetContainerImageSignatureInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containersignature.oc1..exampleuniqueID`
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Artifacts
         public GetContainerImageSignatureInvokeArgs()
         {
         }
+        public static new GetContainerImageSignatureInvokeArgs Empty => new GetContainerImageSignatureInvokeArgs();
     }
 
 

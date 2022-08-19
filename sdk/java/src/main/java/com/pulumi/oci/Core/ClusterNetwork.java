@@ -25,6 +25,54 @@ import javax.annotation.Nullable;
  * [Managing Cluster Networks](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.ClusterNetwork;
+ * import com.pulumi.oci.Core.ClusterNetworkArgs;
+ * import com.pulumi.oci.Core.inputs.ClusterNetworkInstancePoolArgs;
+ * import com.pulumi.oci.Core.inputs.ClusterNetworkPlacementConfigurationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testClusterNetwork = new ClusterNetwork(&#34;testClusterNetwork&#34;, ClusterNetworkArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .instancePools(ClusterNetworkInstancePoolArgs.builder()
+ *                 .instanceConfigurationId(oci_core_instance_configuration.test_instance_configuration().id())
+ *                 .size(var_.cluster_network_instance_pools_size())
+ *                 .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                 .displayName(var_.cluster_network_instance_pools_display_name())
+ *                 .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                 .build())
+ *             .placementConfiguration(ClusterNetworkPlacementConfigurationArgs.builder()
+ *                 .availabilityDomain(var_.cluster_network_placement_configuration_availability_domain())
+ *                 .primarySubnetId(oci_core_subnet.test_subnet().id())
+ *                 .secondaryVnicSubnets(ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs.builder()
+ *                     .subnetId(oci_core_subnet.test_subnet().id())
+ *                     .displayName(var_.cluster_network_placement_configuration_secondary_vnic_subnets_display_name())
+ *                     .build())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.cluster_network_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

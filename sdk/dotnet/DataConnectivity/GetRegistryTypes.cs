@@ -22,22 +22,20 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryTypes = Oci.DataConnectivity.GetRegistryTypes.Invoke(new()
         ///     {
-        ///         var testRegistryTypes = Output.Create(Oci.DataConnectivity.GetRegistryTypes.InvokeAsync(new Oci.DataConnectivity.GetRegistryTypesArgs
-        ///         {
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///             Name = @var.Registry_type_name,
-        ///             Type = @var.Registry_type_type,
-        ///         }));
-        ///     }
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///         Name = @var.Registry_type_name,
+        ///         Type = @var.Registry_type_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegistryTypes = Oci.DataConnectivity.GetRegistryTypes.Invoke(new()
         ///     {
-        ///         var testRegistryTypes = Output.Create(Oci.DataConnectivity.GetRegistryTypes.InvokeAsync(new Oci.DataConnectivity.GetRegistryTypesArgs
-        ///         {
-        ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-        ///             Name = @var.Registry_type_name,
-        ///             Type = @var.Registry_type_type,
-        ///         }));
-        ///     }
+        ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+        ///         Name = @var.Registry_type_name,
+        ///         Type = @var.Registry_type_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.DataConnectivity
     }
 
 
-    public sealed class GetRegistryTypesArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryTypesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetRegistryTypesFilterArgs>? _filters;
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryTypesArgs()
         {
         }
+        public static new GetRegistryTypesArgs Empty => new GetRegistryTypesArgs();
     }
 
-    public sealed class GetRegistryTypesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRegistryTypesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetRegistryTypesFilterInputArgs>? _filters;
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.DataConnectivity
         public GetRegistryTypesInvokeArgs()
         {
         }
+        public static new GetRegistryTypesInvokeArgs Empty => new GetRegistryTypesInvokeArgs();
     }
 
 

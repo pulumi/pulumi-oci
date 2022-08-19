@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LicenseManager.Inputs
 {
 
-    public sealed class ProductLicenseImageGetArgs : Pulumi.ResourceArgs
+    public sealed class ProductLicenseImageGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The image ID associated with the product license.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.LicenseManager.Inputs
         public ProductLicenseImageGetArgs()
         {
         }
+        public static new ProductLicenseImageGetArgs Empty => new ProductLicenseImageGetArgs();
     }
 }

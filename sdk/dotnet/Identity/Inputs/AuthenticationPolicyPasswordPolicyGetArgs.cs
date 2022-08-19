@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class AuthenticationPolicyPasswordPolicyGetArgs : Pulumi.ResourceArgs
+    public sealed class AuthenticationPolicyPasswordPolicyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) At least one lower case character required.
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public AuthenticationPolicyPasswordPolicyGetArgs()
         {
         }
+        public static new AuthenticationPolicyPasswordPolicyGetArgs Empty => new AuthenticationPolicyPasswordPolicyGetArgs();
     }
 }

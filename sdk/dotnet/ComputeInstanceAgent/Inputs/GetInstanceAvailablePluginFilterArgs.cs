@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ComputeInstanceAgent.Inputs
 {
 
-    public sealed class GetInstanceAvailablePluginFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetInstanceAvailablePluginFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The plugin name
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ComputeInstanceAgent.Inputs
         public GetInstanceAvailablePluginFilterInputArgs()
         {
         }
+        public static new GetInstanceAvailablePluginFilterInputArgs Empty => new GetInstanceAvailablePluginFilterInputArgs();
     }
 }

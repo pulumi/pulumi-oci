@@ -26,6 +26,35 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get information for a plugin.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
+     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
+     *             .pluginName(var_.instance_agent_plugin_plugin_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceAgentPluginResult> getInstanceAgentPlugin(GetInstanceAgentPluginArgs args) {
@@ -37,6 +66,35 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get information for a plugin.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
+     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
+     *             .pluginName(var_.instance_agent_plugin_plugin_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceAgentPluginResult> getInstanceAgentPluginPlain(GetInstanceAgentPluginPlainArgs args) {
@@ -48,6 +106,35 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get information for a plugin.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
+     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
+     *             .pluginName(var_.instance_agent_plugin_plugin_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceAgentPluginResult> getInstanceAgentPlugin(GetInstanceAgentPluginArgs args, InvokeOptions options) {
@@ -59,6 +146,35 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get information for a plugin.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
+     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
+     *             .pluginName(var_.instance_agent_plugin_plugin_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceAgentPluginResult> getInstanceAgentPluginPlain(GetInstanceAgentPluginPlainArgs args, InvokeOptions options) {
@@ -70,6 +186,36 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get one or more plugin information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
+     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
+     *             .name(var_.instance_agent_plugin_name())
+     *             .status(var_.instance_agent_plugin_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceAgentPluginsResult> getInstanceAgentPlugins(GetInstanceAgentPluginsArgs args) {
@@ -81,6 +227,36 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get one or more plugin information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
+     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
+     *             .name(var_.instance_agent_plugin_name())
+     *             .status(var_.instance_agent_plugin_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceAgentPluginsResult> getInstanceAgentPluginsPlain(GetInstanceAgentPluginsPlainArgs args) {
@@ -92,6 +268,36 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get one or more plugin information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
+     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
+     *             .name(var_.instance_agent_plugin_name())
+     *             .status(var_.instance_agent_plugin_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceAgentPluginsResult> getInstanceAgentPlugins(GetInstanceAgentPluginsArgs args, InvokeOptions options) {
@@ -103,6 +309,36 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get one or more plugin information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAgentPluginsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
+     *             .instanceagentId(oci_computeinstanceagent_instanceagent.test_instanceagent().id())
+     *             .name(var_.instance_agent_plugin_name())
+     *             .status(var_.instance_agent_plugin_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceAgentPluginsResult> getInstanceAgentPluginsPlain(GetInstanceAgentPluginsPlainArgs args, InvokeOptions options) {
@@ -114,6 +350,36 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get the list of plugins that are available.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAvailablePluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
+     *             .osName(var_.instance_available_plugin_os_name())
+     *             .osVersion(var_.instance_available_plugin_os_version())
+     *             .name(var_.instance_available_plugin_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceAvailablePluginResult> getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs args) {
@@ -125,6 +391,36 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get the list of plugins that are available.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAvailablePluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
+     *             .osName(var_.instance_available_plugin_os_name())
+     *             .osVersion(var_.instance_available_plugin_os_version())
+     *             .name(var_.instance_available_plugin_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceAvailablePluginResult> getInstanceAvailablePluginPlain(GetInstanceAvailablePluginPlainArgs args) {
@@ -136,6 +432,36 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get the list of plugins that are available.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAvailablePluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
+     *             .osName(var_.instance_available_plugin_os_name())
+     *             .osVersion(var_.instance_available_plugin_os_version())
+     *             .name(var_.instance_available_plugin_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstanceAvailablePluginResult> getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs args, InvokeOptions options) {
@@ -147,6 +473,36 @@ public final class ComputeInstanceAgentFunctions {
      * The API to get the list of plugins that are available.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ComputeInstanceAgent.ComputeInstanceAgentFunctions;
+     * import com.pulumi.oci.ComputeInstanceAgent.inputs.GetInstanceAvailablePluginArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
+     *             .osName(var_.instance_available_plugin_os_name())
+     *             .osVersion(var_.instance_available_plugin_os_version())
+     *             .name(var_.instance_available_plugin_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstanceAvailablePluginResult> getInstanceAvailablePluginPlain(GetInstanceAvailablePluginPlainArgs args, InvokeOptions options) {

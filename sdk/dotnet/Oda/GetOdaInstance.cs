@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Oda
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOdaInstance = Oci.Oda.GetOdaInstance.Invoke(new()
         ///     {
-        ///         var testOdaInstance = Output.Create(Oci.Oda.GetOdaInstance.InvokeAsync(new Oci.Oda.GetOdaInstanceArgs
-        ///         {
-        ///             OdaInstanceId = oci_oda_oda_instance.Test_oda_instance.Id,
-        ///         }));
-        ///     }
+        ///         OdaInstanceId = oci_oda_oda_instance.Test_oda_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Oda
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOdaInstance = Oci.Oda.GetOdaInstance.Invoke(new()
         ///     {
-        ///         var testOdaInstance = Output.Create(Oci.Oda.GetOdaInstance.InvokeAsync(new Oci.Oda.GetOdaInstanceArgs
-        ///         {
-        ///             OdaInstanceId = oci_oda_oda_instance.Test_oda_instance.Id,
-        ///         }));
-        ///     }
+        ///         OdaInstanceId = oci_oda_oda_instance.Test_oda_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Oda
     }
 
 
-    public sealed class GetOdaInstanceArgs : Pulumi.InvokeArgs
+    public sealed class GetOdaInstanceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Digital Assistant instance identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Oda
         public GetOdaInstanceArgs()
         {
         }
+        public static new GetOdaInstanceArgs Empty => new GetOdaInstanceArgs();
     }
 
-    public sealed class GetOdaInstanceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOdaInstanceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Digital Assistant instance identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Oda
         public GetOdaInstanceInvokeArgs()
         {
         }
+        public static new GetOdaInstanceInvokeArgs Empty => new GetOdaInstanceInvokeArgs();
     }
 
 

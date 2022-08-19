@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class GetHttpRedirectsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetHttpRedirectsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public GetHttpRedirectsFilterInputArgs()
         {
         }
+        public static new GetHttpRedirectsFilterInputArgs Empty => new GetHttpRedirectsFilterInputArgs();
     }
 }

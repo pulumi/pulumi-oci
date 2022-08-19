@@ -25,6 +25,48 @@ import javax.annotation.Nullable;
  * Creates a backup destination in an Exadata Cloud@Customer system.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.BackupDestination;
+ * import com.pulumi.oci.Database.BackupDestinationArgs;
+ * import com.pulumi.oci.Database.inputs.BackupDestinationMountTypeDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBackupDestination = new BackupDestination(&#34;testBackupDestination&#34;, BackupDestinationArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.backup_destination_display_name())
+ *             .type(var_.backup_destination_type())
+ *             .connectionString(var_.backup_destination_connection_string())
+ *             .definedTags(var_.backup_destination_defined_tags())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .localMountPointPath(var_.backup_destination_local_mount_point_path())
+ *             .mountTypeDetails(BackupDestinationMountTypeDetailsArgs.builder()
+ *                 .mountType(var_.backup_destination_mount_type_details_mount_type())
+ *                 .localMountPointPath(var_.backup_destination_mount_type_details_local_mount_point_path())
+ *                 .nfsServers(var_.backup_destination_mount_type_details_nfs_server())
+ *                 .nfsServerExport(var_.backup_destination_mount_type_details_nfs_server_export())
+ *                 .build())
+ *             .vpcUsers(var_.backup_destination_vpc_users())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

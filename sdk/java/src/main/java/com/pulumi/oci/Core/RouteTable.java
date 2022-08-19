@@ -40,6 +40,46 @@ import javax.annotation.Nullable;
  * For more information on configuring a VCN&#39;s default route table, see [Managing Default VCN Resources](https://www.terraform.io/docs/providers/oci/guides/managing_default_resources.html)
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.RouteTable;
+ * import com.pulumi.oci.Core.RouteTableArgs;
+ * import com.pulumi.oci.Core.inputs.RouteTableRouteRuleArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testRouteTable = new RouteTable(&#34;testRouteTable&#34;, RouteTableArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.route_table_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .routeRules(RouteTableRouteRuleArgs.builder()
+ *                 .networkEntityId(oci_core_internet_gateway.test_internet_gateway().id())
+ *                 .cidrBlock(var_.route_table_route_rules_cidr_block())
+ *                 .description(var_.route_table_route_rules_description())
+ *                 .destination(var_.route_table_route_rules_destination())
+ *                 .destinationType(var_.route_table_route_rules_destination_type())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

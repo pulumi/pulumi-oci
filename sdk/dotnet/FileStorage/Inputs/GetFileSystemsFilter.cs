@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FileStorage.Inputs
 {
 
-    public sealed class GetFileSystemsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetFileSystemsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.FileStorage.Inputs
         public GetFileSystemsFilterArgs()
         {
         }
+        public static new GetFileSystemsFilterArgs Empty => new GetFileSystemsFilterArgs();
     }
 }

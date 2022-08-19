@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Streaming.Inputs
 {
 
-    public sealed class StreamPoolKafkaSettingsArgs : Pulumi.ResourceArgs
+    public sealed class StreamPoolKafkaSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Enable auto creation of topic on the server.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Streaming.Inputs
         public StreamPoolKafkaSettingsArgs()
         {
         }
+        public static new StreamPoolKafkaSettingsArgs Empty => new StreamPoolKafkaSettingsArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Monitoring.Inputs
 {
 
-    public sealed class GetAlarmStatusesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetAlarmStatusesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Monitoring.Inputs
         public GetAlarmStatusesFilterInputArgs()
         {
         }
+        public static new GetAlarmStatusesFilterInputArgs Empty => new GetAlarmStatusesFilterInputArgs();
     }
 }

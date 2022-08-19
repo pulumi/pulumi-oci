@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class HeatWaveClusterClusterNodeArgs : Pulumi.ResourceArgs
+    public sealed class HeatWaveClusterClusterNodeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The ID of the node within MySQL HeatWave cluster.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public HeatWaveClusterClusterNodeArgs()
         {
         }
+        public static new HeatWaveClusterClusterNodeArgs Empty => new HeatWaveClusterClusterNodeArgs();
     }
 }

@@ -179,6 +179,34 @@ public final class DatabaseManagementFunctions {
      * Gets the details of a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
+     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbManagementPrivateEndpointResult> getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs args) {
@@ -190,6 +218,34 @@ public final class DatabaseManagementFunctions {
      * Gets the details of a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
+     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointResult> getDbManagementPrivateEndpointPlain(GetDbManagementPrivateEndpointPlainArgs args) {
@@ -201,6 +257,34 @@ public final class DatabaseManagementFunctions {
      * Gets the details of a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
+     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbManagementPrivateEndpointResult> getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs args, InvokeOptions options) {
@@ -212,6 +296,34 @@ public final class DatabaseManagementFunctions {
      * Gets the details of a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
+     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointResult> getDbManagementPrivateEndpointPlain(GetDbManagementPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -223,6 +335,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbManagementPrivateEndpointAssociatedDatabaseResult> getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs args) {
@@ -234,6 +375,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointAssociatedDatabaseResult> getDbManagementPrivateEndpointAssociatedDatabasePlain(GetDbManagementPrivateEndpointAssociatedDatabasePlainArgs args) {
@@ -245,6 +415,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbManagementPrivateEndpointAssociatedDatabaseResult> getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs args, InvokeOptions options) {
@@ -256,6 +455,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointAssociatedDatabaseResult> getDbManagementPrivateEndpointAssociatedDatabasePlain(GetDbManagementPrivateEndpointAssociatedDatabasePlainArgs args, InvokeOptions options) {
@@ -267,6 +495,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbManagementPrivateEndpointAssociatedDatabasesResult> getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs args) {
@@ -278,6 +535,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointAssociatedDatabasesResult> getDbManagementPrivateEndpointAssociatedDatabasesPlain(GetDbManagementPrivateEndpointAssociatedDatabasesPlainArgs args) {
@@ -289,6 +575,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbManagementPrivateEndpointAssociatedDatabasesResult> getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs args, InvokeOptions options) {
@@ -300,6 +615,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of databases using a specific Database Management private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointAssociatedDatabasesResult> getDbManagementPrivateEndpointAssociatedDatabasesPlain(GetDbManagementPrivateEndpointAssociatedDatabasesPlainArgs args, InvokeOptions options) {
@@ -311,6 +655,38 @@ public final class DatabaseManagementFunctions {
      * Gets a list of Database Management private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpoints = DatabaseManagementFunctions.getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCluster(var_.db_management_private_endpoint_is_cluster())
+     *             .name(var_.db_management_private_endpoint_name())
+     *             .state(var_.db_management_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbManagementPrivateEndpointsResult> getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs args) {
@@ -322,6 +698,38 @@ public final class DatabaseManagementFunctions {
      * Gets a list of Database Management private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpoints = DatabaseManagementFunctions.getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCluster(var_.db_management_private_endpoint_is_cluster())
+     *             .name(var_.db_management_private_endpoint_name())
+     *             .state(var_.db_management_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointsResult> getDbManagementPrivateEndpointsPlain(GetDbManagementPrivateEndpointsPlainArgs args) {
@@ -333,6 +741,38 @@ public final class DatabaseManagementFunctions {
      * Gets a list of Database Management private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpoints = DatabaseManagementFunctions.getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCluster(var_.db_management_private_endpoint_is_cluster())
+     *             .name(var_.db_management_private_endpoint_name())
+     *             .state(var_.db_management_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbManagementPrivateEndpointsResult> getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs args, InvokeOptions options) {
@@ -344,6 +784,38 @@ public final class DatabaseManagementFunctions {
      * Gets a list of Database Management private endpoints.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbManagementPrivateEndpoints = DatabaseManagementFunctions.getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .isCluster(var_.db_management_private_endpoint_is_cluster())
+     *             .name(var_.db_management_private_endpoint_name())
+     *             .state(var_.db_management_private_endpoint_state())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbManagementPrivateEndpointsResult> getDbManagementPrivateEndpointsPlain(GetDbManagementPrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -355,6 +827,40 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobExecutionsStatus = DatabaseManagementFunctions.getJobExecutionsStatus(GetJobExecutionsStatusArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .endTime(var_.job_executions_status_end_time())
+     *             .startTime(var_.job_executions_status_start_time())
+     *             .id(var_.job_executions_status_id())
+     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.job_executions_status_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobExecutionsStatusResult> getJobExecutionsStatus(GetJobExecutionsStatusArgs args) {
@@ -366,6 +872,40 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobExecutionsStatus = DatabaseManagementFunctions.getJobExecutionsStatus(GetJobExecutionsStatusArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .endTime(var_.job_executions_status_end_time())
+     *             .startTime(var_.job_executions_status_start_time())
+     *             .id(var_.job_executions_status_id())
+     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.job_executions_status_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobExecutionsStatusResult> getJobExecutionsStatusPlain(GetJobExecutionsStatusPlainArgs args) {
@@ -377,6 +917,40 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobExecutionsStatus = DatabaseManagementFunctions.getJobExecutionsStatus(GetJobExecutionsStatusArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .endTime(var_.job_executions_status_end_time())
+     *             .startTime(var_.job_executions_status_start_time())
+     *             .id(var_.job_executions_status_id())
+     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.job_executions_status_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobExecutionsStatusResult> getJobExecutionsStatus(GetJobExecutionsStatusArgs args, InvokeOptions options) {
@@ -388,6 +962,40 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobExecutionsStatus = DatabaseManagementFunctions.getJobExecutionsStatus(GetJobExecutionsStatusArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .endTime(var_.job_executions_status_end_time())
+     *             .startTime(var_.job_executions_status_start_time())
+     *             .id(var_.job_executions_status_id())
+     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.job_executions_status_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobExecutionsStatusResult> getJobExecutionsStatusPlain(GetJobExecutionsStatusPlainArgs args, InvokeOptions options) {
@@ -399,6 +1007,40 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobExecutionsStatuses = DatabaseManagementFunctions.getJobExecutionsStatuses(GetJobExecutionsStatusesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .endTime(var_.job_executions_status_end_time())
+     *             .startTime(var_.job_executions_status_start_time())
+     *             .id(var_.job_executions_status_id())
+     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.job_executions_status_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobExecutionsStatusesResult> getJobExecutionsStatuses(GetJobExecutionsStatusesArgs args) {
@@ -410,6 +1052,40 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobExecutionsStatuses = DatabaseManagementFunctions.getJobExecutionsStatuses(GetJobExecutionsStatusesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .endTime(var_.job_executions_status_end_time())
+     *             .startTime(var_.job_executions_status_start_time())
+     *             .id(var_.job_executions_status_id())
+     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.job_executions_status_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobExecutionsStatusesResult> getJobExecutionsStatusesPlain(GetJobExecutionsStatusesPlainArgs args) {
@@ -421,6 +1097,40 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobExecutionsStatuses = DatabaseManagementFunctions.getJobExecutionsStatuses(GetJobExecutionsStatusesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .endTime(var_.job_executions_status_end_time())
+     *             .startTime(var_.job_executions_status_start_time())
+     *             .id(var_.job_executions_status_id())
+     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.job_executions_status_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobExecutionsStatusesResult> getJobExecutionsStatuses(GetJobExecutionsStatusesArgs args, InvokeOptions options) {
@@ -432,6 +1142,40 @@ public final class DatabaseManagementFunctions {
      * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetJobExecutionsStatusesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobExecutionsStatuses = DatabaseManagementFunctions.getJobExecutionsStatuses(GetJobExecutionsStatusesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .endTime(var_.job_executions_status_end_time())
+     *             .startTime(var_.job_executions_status_start_time())
+     *             .id(var_.job_executions_status_id())
+     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.job_executions_status_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobExecutionsStatusesResult> getJobExecutionsStatusesPlain(GetJobExecutionsStatusesPlainArgs args, InvokeOptions options) {
@@ -443,6 +1187,34 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database specified by managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseResult> getManagedDatabase(GetManagedDatabaseArgs args) {
@@ -454,6 +1226,34 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database specified by managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseResult> getManagedDatabasePlain(GetManagedDatabasePlainArgs args) {
@@ -465,6 +1265,34 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database specified by managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseResult> getManagedDatabase(GetManagedDatabaseArgs args, InvokeOptions options) {
@@ -476,6 +1304,34 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database specified by managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseResult> getManagedDatabasePlain(GetManagedDatabasePlainArgs args, InvokeOptions options) {
@@ -488,6 +1344,36 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .timeEnd(var_.managed_database_addm_task_time_end())
+     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs args) {
@@ -500,6 +1386,36 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .timeEnd(var_.managed_database_addm_task_time_end())
+     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTaskPlain(GetManagedDatabaseAddmTaskPlainArgs args) {
@@ -512,6 +1428,36 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .timeEnd(var_.managed_database_addm_task_time_end())
+     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs args, InvokeOptions options) {
@@ -524,6 +1470,36 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .timeEnd(var_.managed_database_addm_task_time_end())
+     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAddmTaskResult> getManagedDatabaseAddmTaskPlain(GetManagedDatabaseAddmTaskPlainArgs args, InvokeOptions options) {
@@ -536,6 +1512,36 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .timeEnd(var_.managed_database_addm_task_time_end())
+     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs args) {
@@ -548,6 +1554,36 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .timeEnd(var_.managed_database_addm_task_time_end())
+     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasksPlain(GetManagedDatabaseAddmTasksPlainArgs args) {
@@ -560,6 +1596,36 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .timeEnd(var_.managed_database_addm_task_time_end())
+     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs args, InvokeOptions options) {
@@ -572,6 +1638,36 @@ public final class DatabaseManagementFunctions {
      * the name of the ADDM task, description, user, status and creation date time.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .timeEnd(var_.managed_database_addm_task_time_end())
+     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAddmTasksResult> getManagedDatabaseAddmTasksPlain(GetManagedDatabaseAddmTasksPlainArgs args, InvokeOptions options) {
@@ -583,6 +1679,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_alert_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
+     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
+     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs args) {
@@ -594,6 +1725,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_alert_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
+     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
+     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCountPlain(GetManagedDatabaseAlertLogCountPlainArgs args) {
@@ -605,6 +1771,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_alert_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
+     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
+     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs args, InvokeOptions options) {
@@ -616,6 +1817,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_alert_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
+     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
+     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAlertLogCountResult> getManagedDatabaseAlertLogCountPlain(GetManagedDatabaseAlertLogCountPlainArgs args, InvokeOptions options) {
@@ -627,6 +1863,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_alert_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
+     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
+     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs args) {
@@ -638,6 +1909,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_alert_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
+     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
+     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCountsPlain(GetManagedDatabaseAlertLogCountsPlainArgs args) {
@@ -649,6 +1955,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_alert_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
+     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
+     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs args, InvokeOptions options) {
@@ -660,6 +2001,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of alert logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAlertLogCountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_alert_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
+     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
+     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAlertLogCountsResult> getManagedDatabaseAlertLogCountsPlain(GetManagedDatabaseAlertLogCountsPlainArgs args, InvokeOptions options) {
@@ -671,6 +2047,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_attention_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
+     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
+     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs args) {
@@ -682,6 +2093,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_attention_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
+     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
+     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCountPlain(GetManagedDatabaseAttentionLogCountPlainArgs args) {
@@ -693,6 +2139,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_attention_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
+     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
+     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs args, InvokeOptions options) {
@@ -704,6 +2185,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_attention_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
+     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
+     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAttentionLogCountResult> getManagedDatabaseAttentionLogCountPlain(GetManagedDatabaseAttentionLogCountPlainArgs args, InvokeOptions options) {
@@ -715,6 +2231,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_attention_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
+     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
+     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs args) {
@@ -726,6 +2277,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_attention_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
+     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
+     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCountsPlain(GetManagedDatabaseAttentionLogCountsPlainArgs args) {
@@ -737,6 +2323,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_attention_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
+     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
+     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs args, InvokeOptions options) {
@@ -748,6 +2369,41 @@ public final class DatabaseManagementFunctions {
      * Get the counts of attention logs for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAttentionLogCountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .groupBy(var_.managed_database_attention_log_count_group_by())
+     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
+     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
+     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
+     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseAttentionLogCountsResult> getManagedDatabaseAttentionLogCountsPlain(GetManagedDatabaseAttentionLogCountsPlainArgs args, InvokeOptions options) {
@@ -759,6 +2415,34 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
+     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseGroupResult> getManagedDatabaseGroup(GetManagedDatabaseGroupArgs args) {
@@ -770,6 +2454,34 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
+     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseGroupResult> getManagedDatabaseGroupPlain(GetManagedDatabaseGroupPlainArgs args) {
@@ -781,6 +2493,34 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
+     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseGroupResult> getManagedDatabaseGroup(GetManagedDatabaseGroupArgs args, InvokeOptions options) {
@@ -792,6 +2532,34 @@ public final class DatabaseManagementFunctions {
      * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
+     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseGroupResult> getManagedDatabaseGroupPlain(GetManagedDatabaseGroupPlainArgs args, InvokeOptions options) {
@@ -806,6 +2574,37 @@ public final class DatabaseManagementFunctions {
      * all the Managed Database Groups in the compartment are listed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseGroups = DatabaseManagementFunctions.getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.managed_database_group_id())
+     *             .name(var_.managed_database_group_name())
+     *             .state(var_.managed_database_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseGroupsResult> getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs args) {
@@ -820,6 +2619,37 @@ public final class DatabaseManagementFunctions {
      * all the Managed Database Groups in the compartment are listed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseGroups = DatabaseManagementFunctions.getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.managed_database_group_id())
+     *             .name(var_.managed_database_group_name())
+     *             .state(var_.managed_database_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseGroupsResult> getManagedDatabaseGroupsPlain(GetManagedDatabaseGroupsPlainArgs args) {
@@ -834,6 +2664,37 @@ public final class DatabaseManagementFunctions {
      * all the Managed Database Groups in the compartment are listed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseGroups = DatabaseManagementFunctions.getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.managed_database_group_id())
+     *             .name(var_.managed_database_group_name())
+     *             .state(var_.managed_database_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseGroupsResult> getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs args, InvokeOptions options) {
@@ -848,6 +2709,37 @@ public final class DatabaseManagementFunctions {
      * all the Managed Database Groups in the compartment are listed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseGroups = DatabaseManagementFunctions.getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.managed_database_group_id())
+     *             .name(var_.managed_database_group_name())
+     *             .state(var_.managed_database_group_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseGroupsResult> getManagedDatabaseGroupsPlain(GetManagedDatabaseGroupsPlainArgs args, InvokeOptions options) {
@@ -860,6 +2752,36 @@ public final class DatabaseManagementFunctions {
      * Managed Database, findings, recommendations, rationale, and examples.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
+     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_execution_name())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_task_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs args) {
@@ -872,6 +2794,36 @@ public final class DatabaseManagementFunctions {
      * Managed Database, findings, recommendations, rationale, and examples.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
+     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_execution_name())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_task_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionPlainArgs args) {
@@ -884,6 +2836,36 @@ public final class DatabaseManagementFunctions {
      * Managed Database, findings, recommendations, rationale, and examples.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
+     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_execution_name())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_task_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs args, InvokeOptions options) {
@@ -896,6 +2878,36 @@ public final class DatabaseManagementFunctions {
      * Managed Database, findings, recommendations, rationale, and examples.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
+     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_execution_name())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_task_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionPlainArgs args, InvokeOptions options) {
@@ -907,6 +2919,36 @@ public final class DatabaseManagementFunctions {
      * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
+     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_script_execution_name())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_script_task_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs args) {
@@ -918,6 +2960,36 @@ public final class DatabaseManagementFunctions {
      * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
+     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_script_execution_name())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_script_task_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlainArgs args) {
@@ -929,6 +3001,36 @@ public final class DatabaseManagementFunctions {
      * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
+     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_script_execution_name())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_script_task_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs args, InvokeOptions options) {
@@ -940,6 +3042,36 @@ public final class DatabaseManagementFunctions {
      * Gets the Oracle system-generated script for the specified Optimizer Statistics Advisor execution.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
+     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_script_execution_name())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_script_task_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptPlainArgs args, InvokeOptions options) {
@@ -953,6 +3085,36 @@ public final class DatabaseManagementFunctions {
      * If the date-time range is not specified, then the executions in the last seven days are listed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to())
+     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs args) {
@@ -966,6 +3128,36 @@ public final class DatabaseManagementFunctions {
      * If the date-time range is not specified, then the executions in the last seven days are listed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to())
+     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlainArgs args) {
@@ -979,6 +3171,36 @@ public final class DatabaseManagementFunctions {
      * If the date-time range is not specified, then the executions in the last seven days are listed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to())
+     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs args, InvokeOptions options) {
@@ -992,6 +3214,36 @@ public final class DatabaseManagementFunctions {
      * If the date-time range is not specified, then the executions in the last seven days are listed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to())
+     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult> getManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlain(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsPlainArgs args, InvokeOptions options) {
@@ -1008,6 +3260,38 @@ public final class DatabaseManagementFunctions {
      * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
+     *             .groupType(var_.managed_database_optimizer_statistics_collection_aggregation_group_type())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to())
+     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to())
+     *             .taskType(var_.managed_database_optimizer_statistics_collection_aggregation_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs args) {
@@ -1024,6 +3308,38 @@ public final class DatabaseManagementFunctions {
      * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
+     *             .groupType(var_.managed_database_optimizer_statistics_collection_aggregation_group_type())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to())
+     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to())
+     *             .taskType(var_.managed_database_optimizer_statistics_collection_aggregation_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsPlainArgs args) {
@@ -1040,6 +3356,38 @@ public final class DatabaseManagementFunctions {
      * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
+     *             .groupType(var_.managed_database_optimizer_statistics_collection_aggregation_group_type())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to())
+     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to())
+     *             .taskType(var_.managed_database_optimizer_statistics_collection_aggregation_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs args, InvokeOptions options) {
@@ -1056,6 +3404,38 @@ public final class DatabaseManagementFunctions {
      * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
+     *             .groupType(var_.managed_database_optimizer_statistics_collection_aggregation_group_type())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to())
+     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to())
+     *             .taskType(var_.managed_database_optimizer_statistics_collection_aggregation_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> getManagedDatabaseOptimizerStatisticsCollectionAggregationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsPlainArgs args, InvokeOptions options) {
@@ -1067,6 +3447,35 @@ public final class DatabaseManagementFunctions {
      * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .optimizerStatisticsCollectionOperationId(oci_database_management_optimizer_statistics_collection_operation.test_optimizer_statistics_collection_operation().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs args) {
@@ -1078,6 +3487,35 @@ public final class DatabaseManagementFunctions {
      * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .optimizerStatisticsCollectionOperationId(oci_database_management_optimizer_statistics_collection_operation.test_optimizer_statistics_collection_operation().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperationPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationPlainArgs args) {
@@ -1089,6 +3527,35 @@ public final class DatabaseManagementFunctions {
      * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .optimizerStatisticsCollectionOperationId(oci_database_management_optimizer_statistics_collection_operation.test_optimizer_statistics_collection_operation().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs args, InvokeOptions options) {
@@ -1100,6 +3567,35 @@ public final class DatabaseManagementFunctions {
      * Gets a detailed report of the Optimizer Statistics Collection operation for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .optimizerStatisticsCollectionOperationId(oci_database_management_optimizer_statistics_collection_operation.test_optimizer_statistics_collection_operation().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationResult> getManagedDatabaseOptimizerStatisticsCollectionOperationPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationPlainArgs args, InvokeOptions options) {
@@ -1117,6 +3613,38 @@ public final class DatabaseManagementFunctions {
      * To obtain the required results, you can apply the different types of filters supported by this API.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to())
+     *             .filterBy(var_.managed_database_optimizer_statistics_collection_operation_filter_by())
+     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to())
+     *             .taskType(var_.managed_database_optimizer_statistics_collection_operation_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs args) {
@@ -1134,6 +3662,38 @@ public final class DatabaseManagementFunctions {
      * To obtain the required results, you can apply the different types of filters supported by this API.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to())
+     *             .filterBy(var_.managed_database_optimizer_statistics_collection_operation_filter_by())
+     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to())
+     *             .taskType(var_.managed_database_optimizer_statistics_collection_operation_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationsPlainArgs args) {
@@ -1151,6 +3711,38 @@ public final class DatabaseManagementFunctions {
      * To obtain the required results, you can apply the different types of filters supported by this API.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to())
+     *             .filterBy(var_.managed_database_optimizer_statistics_collection_operation_filter_by())
+     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to())
+     *             .taskType(var_.managed_database_optimizer_statistics_collection_operation_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs args, InvokeOptions options) {
@@ -1168,6 +3760,38 @@ public final class DatabaseManagementFunctions {
      * To obtain the required results, you can apply the different types of filters supported by this API.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to())
+     *             .filterBy(var_.managed_database_optimizer_statistics_collection_operation_filter_by())
+     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to())
+     *             .taskType(var_.managed_database_optimizer_statistics_collection_operation_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult> getManagedDatabaseOptimizerStatisticsCollectionOperationsPlain(GetManagedDatabaseOptimizerStatisticsCollectionOperationsPlainArgs args, InvokeOptions options) {
@@ -1179,6 +3803,38 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
+     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTaskResult> getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs args) {
@@ -1190,6 +3846,38 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
+     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTaskResult> getManagedDatabaseSqlTuningAdvisorTaskPlain(GetManagedDatabaseSqlTuningAdvisorTaskPlainArgs args) {
@@ -1201,6 +3889,38 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
+     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTaskResult> getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs args, InvokeOptions options) {
@@ -1212,6 +3932,38 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
+     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTaskResult> getManagedDatabaseSqlTuningAdvisorTaskPlain(GetManagedDatabaseSqlTuningAdvisorTaskPlainArgs args, InvokeOptions options) {
@@ -1223,6 +3975,38 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
+     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksResult> getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs args) {
@@ -1234,6 +4018,38 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
+     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksResult> getManagedDatabaseSqlTuningAdvisorTasksPlain(GetManagedDatabaseSqlTuningAdvisorTasksPlainArgs args) {
@@ -1245,6 +4061,38 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
+     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksResult> getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs args, InvokeOptions options) {
@@ -1256,6 +4104,38 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
+     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksResult> getManagedDatabaseSqlTuningAdvisorTasksPlain(GetManagedDatabaseSqlTuningAdvisorTasksPlainArgs args, InvokeOptions options) {
@@ -1269,6 +4149,37 @@ public final class DatabaseManagementFunctions {
      * and this API retrieves the comparison report of the statistics of the two plans.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
+     *             .executionId(oci_database_management_execution.test_execution().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs args) {
@@ -1282,6 +4193,37 @@ public final class DatabaseManagementFunctions {
      * and this API retrieves the comparison report of the statistics of the two plans.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
+     *             .executionId(oci_database_management_execution.test_execution().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonPlain(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonPlainArgs args) {
@@ -1295,6 +4237,37 @@ public final class DatabaseManagementFunctions {
      * and this API retrieves the comparison report of the statistics of the two plans.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
+     *             .executionId(oci_database_management_execution.test_execution().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs args, InvokeOptions options) {
@@ -1308,6 +4281,37 @@ public final class DatabaseManagementFunctions {
      * and this API retrieves the comparison report of the statistics of the two plans.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
+     *             .executionId(oci_database_management_execution.test_execution().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonPlain(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonPlainArgs args, InvokeOptions options) {
@@ -1319,6 +4323,41 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
+     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
+     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
+     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
+     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
+     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs args) {
@@ -1330,6 +4369,41 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
+     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
+     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
+     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
+     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
+     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> getManagedDatabaseSqlTuningAdvisorTasksFindingPlain(GetManagedDatabaseSqlTuningAdvisorTasksFindingPlainArgs args) {
@@ -1341,6 +4415,41 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
+     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
+     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
+     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
+     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
+     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs args, InvokeOptions options) {
@@ -1352,6 +4461,41 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
+     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
+     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
+     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
+     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
+     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksFindingResult> getManagedDatabaseSqlTuningAdvisorTasksFindingPlain(GetManagedDatabaseSqlTuningAdvisorTasksFindingPlainArgs args, InvokeOptions options) {
@@ -1363,6 +4507,41 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
+     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
+     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
+     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
+     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
+     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs args) {
@@ -1374,6 +4553,41 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
+     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
+     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
+     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
+     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
+     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> getManagedDatabaseSqlTuningAdvisorTasksFindingsPlain(GetManagedDatabaseSqlTuningAdvisorTasksFindingsPlainArgs args) {
@@ -1385,6 +4599,41 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
+     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
+     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
+     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
+     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
+     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs args, InvokeOptions options) {
@@ -1396,6 +4645,41 @@ public final class DatabaseManagementFunctions {
      * Gets an array of the details of the findings that match specific filters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
+     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
+     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
+     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
+     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
+     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> getManagedDatabaseSqlTuningAdvisorTasksFindingsPlain(GetManagedDatabaseSqlTuningAdvisorTasksFindingsPlainArgs args, InvokeOptions options) {
@@ -1408,6 +4692,37 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
+     *             .executionId(oci_database_management_execution.test_execution().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs args) {
@@ -1420,6 +4735,37 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
+     *             .executionId(oci_database_management_execution.test_execution().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendationPlain(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationPlainArgs args) {
@@ -1432,6 +4778,37 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
+     *             .executionId(oci_database_management_execution.test_execution().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs args, InvokeOptions options) {
@@ -1444,6 +4821,37 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
+     *             .executionId(oci_database_management_execution.test_execution().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendationPlain(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationPlainArgs args, InvokeOptions options) {
@@ -1456,6 +4864,37 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
+     *             .executionId(oci_database_management_execution.test_execution().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs args) {
@@ -1468,6 +4907,37 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
+     *             .executionId(oci_database_management_execution.test_execution().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendationsPlain(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsPlainArgs args) {
@@ -1480,6 +4950,37 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
+     *             .executionId(oci_database_management_execution.test_execution().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs args, InvokeOptions options) {
@@ -1492,6 +4993,37 @@ public final class DatabaseManagementFunctions {
      * The task ID and object ID are used to retrieve the findings and recommendations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
+     *             .executionId(oci_database_management_execution.test_execution().id())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> getManagedDatabaseSqlTuningAdvisorTasksRecommendationsPlain(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsPlainArgs args, InvokeOptions options) {
@@ -1503,6 +5035,37 @@ public final class DatabaseManagementFunctions {
      * Retrieves a SQL execution plan for the SQL being tuned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
+     *             .attribute(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs args) {
@@ -1514,6 +5077,37 @@ public final class DatabaseManagementFunctions {
      * Retrieves a SQL execution plan for the SQL being tuned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
+     *             .attribute(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlain(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlainArgs args) {
@@ -1525,6 +5119,37 @@ public final class DatabaseManagementFunctions {
      * Retrieves a SQL execution plan for the SQL being tuned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
+     *             .attribute(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs args, InvokeOptions options) {
@@ -1536,6 +5161,37 @@ public final class DatabaseManagementFunctions {
      * Retrieves a SQL execution plan for the SQL being tuned.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
+     *             .attribute(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute())
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanResult> getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlain(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlainArgs args, InvokeOptions options) {
@@ -1547,6 +5203,40 @@ public final class DatabaseManagementFunctions {
      * Gets the summary report for the specified SQL Tuning Advisor task.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .beginExecIdGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to())
+     *             .endExecIdLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to())
+     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_summary_report_search_period())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs args) {
@@ -1558,6 +5248,40 @@ public final class DatabaseManagementFunctions {
      * Gets the summary report for the specified SQL Tuning Advisor task.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .beginExecIdGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to())
+     *             .endExecIdLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to())
+     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_summary_report_search_period())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> getManagedDatabaseSqlTuningAdvisorTasksSummaryReportPlain(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportPlainArgs args) {
@@ -1569,6 +5293,40 @@ public final class DatabaseManagementFunctions {
      * Gets the summary report for the specified SQL Tuning Advisor task.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .beginExecIdGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to())
+     *             .endExecIdLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to())
+     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_summary_report_search_period())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs args, InvokeOptions options) {
@@ -1580,6 +5338,40 @@ public final class DatabaseManagementFunctions {
      * Gets the summary report for the specified SQL Tuning Advisor task.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .beginExecIdGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to())
+     *             .endExecIdLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to())
+     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_summary_report_search_period())
+     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to())
+     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> getManagedDatabaseSqlTuningAdvisorTasksSummaryReportPlain(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportPlainArgs args, InvokeOptions options) {
@@ -1591,6 +5383,36 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
+     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs args) {
@@ -1602,6 +5424,36 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
+     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSetPlain(GetManagedDatabaseSqlTuningSetPlainArgs args) {
@@ -1613,6 +5465,36 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
+     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs args, InvokeOptions options) {
@@ -1624,6 +5506,36 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
+     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningSetResult> getManagedDatabaseSqlTuningSetPlain(GetManagedDatabaseSqlTuningSetPlainArgs args, InvokeOptions options) {
@@ -1635,6 +5547,36 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
+     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs args) {
@@ -1646,6 +5588,36 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
+     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSetsPlain(GetManagedDatabaseSqlTuningSetsPlainArgs args) {
@@ -1657,6 +5629,36 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
+     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs args, InvokeOptions options) {
@@ -1668,6 +5670,36 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL tuning sets for the specified Managed Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
+     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlTuningSetsResult> getManagedDatabaseSqlTuningSetsPlain(GetManagedDatabaseSqlTuningSetsPlainArgs args, InvokeOptions options) {
@@ -1680,6 +5712,34 @@ public final class DatabaseManagementFunctions {
      * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseTableStatisticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs args) {
@@ -1692,6 +5752,34 @@ public final class DatabaseManagementFunctions {
      * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseTableStatisticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatisticsPlain(GetManagedDatabaseTableStatisticsPlainArgs args) {
@@ -1704,6 +5792,34 @@ public final class DatabaseManagementFunctions {
      * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseTableStatisticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs args, InvokeOptions options) {
@@ -1716,6 +5832,34 @@ public final class DatabaseManagementFunctions {
      * Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseTableStatisticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseTableStatisticsResult> getManagedDatabaseTableStatisticsPlain(GetManagedDatabaseTableStatisticsPlainArgs args, InvokeOptions options) {
@@ -1727,6 +5871,35 @@ public final class DatabaseManagementFunctions {
      * Gets the details of the user specified by managedDatabaseId and userName.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserResult> getManagedDatabaseUser(GetManagedDatabaseUserArgs args) {
@@ -1738,6 +5911,35 @@ public final class DatabaseManagementFunctions {
      * Gets the details of the user specified by managedDatabaseId and userName.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserResult> getManagedDatabaseUserPlain(GetManagedDatabaseUserPlainArgs args) {
@@ -1749,6 +5951,35 @@ public final class DatabaseManagementFunctions {
      * Gets the details of the user specified by managedDatabaseId and userName.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserResult> getManagedDatabaseUser(GetManagedDatabaseUserArgs args, InvokeOptions options) {
@@ -1760,6 +5991,35 @@ public final class DatabaseManagementFunctions {
      * Gets the details of the user specified by managedDatabaseId and userName.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserResult> getManagedDatabaseUserPlain(GetManagedDatabaseUserPlainArgs args, InvokeOptions options) {
@@ -1771,6 +6031,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserConsumerGroupPrivilegeResult> getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs args) {
@@ -1782,6 +6072,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserConsumerGroupPrivilegeResult> getManagedDatabaseUserConsumerGroupPrivilegePlain(GetManagedDatabaseUserConsumerGroupPrivilegePlainArgs args) {
@@ -1793,6 +6113,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserConsumerGroupPrivilegeResult> getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs args, InvokeOptions options) {
@@ -1804,6 +6154,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserConsumerGroupPrivilegeResult> getManagedDatabaseUserConsumerGroupPrivilegePlain(GetManagedDatabaseUserConsumerGroupPrivilegePlainArgs args, InvokeOptions options) {
@@ -1815,6 +6195,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserConsumerGroupPrivilegesResult> getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs args) {
@@ -1826,6 +6236,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserConsumerGroupPrivilegesResult> getManagedDatabaseUserConsumerGroupPrivilegesPlain(GetManagedDatabaseUserConsumerGroupPrivilegesPlainArgs args) {
@@ -1837,6 +6277,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserConsumerGroupPrivilegesResult> getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs args, InvokeOptions options) {
@@ -1848,6 +6318,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of consumer group privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserConsumerGroupPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserConsumerGroupPrivilegesResult> getManagedDatabaseUserConsumerGroupPrivilegesPlain(GetManagedDatabaseUserConsumerGroupPrivilegesPlainArgs args, InvokeOptions options) {
@@ -1859,6 +6359,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserDataAccessContainerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_data_access_container_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserDataAccessContainerResult> getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs args) {
@@ -1870,6 +6400,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserDataAccessContainerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_data_access_container_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserDataAccessContainerResult> getManagedDatabaseUserDataAccessContainerPlain(GetManagedDatabaseUserDataAccessContainerPlainArgs args) {
@@ -1881,6 +6441,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserDataAccessContainerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_data_access_container_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserDataAccessContainerResult> getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs args, InvokeOptions options) {
@@ -1892,6 +6482,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserDataAccessContainerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_data_access_container_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserDataAccessContainerResult> getManagedDatabaseUserDataAccessContainerPlain(GetManagedDatabaseUserDataAccessContainerPlainArgs args, InvokeOptions options) {
@@ -1903,6 +6523,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserDataAccessContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_data_access_container_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserDataAccessContainersResult> getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs args) {
@@ -1914,6 +6564,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserDataAccessContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_data_access_container_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserDataAccessContainersResult> getManagedDatabaseUserDataAccessContainersPlain(GetManagedDatabaseUserDataAccessContainersPlainArgs args) {
@@ -1925,6 +6605,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserDataAccessContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_data_access_container_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserDataAccessContainersResult> getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs args, InvokeOptions options) {
@@ -1936,6 +6646,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !=&#39;Y&#39;.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserDataAccessContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_data_access_container_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserDataAccessContainersResult> getManagedDatabaseUserDataAccessContainersPlain(GetManagedDatabaseUserDataAccessContainersPlainArgs args, InvokeOptions options) {
@@ -1947,6 +6687,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserObjectPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_object_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserObjectPrivilegeResult> getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs args) {
@@ -1958,6 +6728,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserObjectPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_object_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserObjectPrivilegeResult> getManagedDatabaseUserObjectPrivilegePlain(GetManagedDatabaseUserObjectPrivilegePlainArgs args) {
@@ -1969,6 +6769,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserObjectPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_object_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserObjectPrivilegeResult> getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs args, InvokeOptions options) {
@@ -1980,6 +6810,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserObjectPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_object_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserObjectPrivilegeResult> getManagedDatabaseUserObjectPrivilegePlain(GetManagedDatabaseUserObjectPrivilegePlainArgs args, InvokeOptions options) {
@@ -1991,6 +6851,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserObjectPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_object_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserObjectPrivilegesResult> getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs args) {
@@ -2002,6 +6892,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserObjectPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_object_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserObjectPrivilegesResult> getManagedDatabaseUserObjectPrivilegesPlain(GetManagedDatabaseUserObjectPrivilegesPlainArgs args) {
@@ -2013,6 +6933,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserObjectPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_object_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserObjectPrivilegesResult> getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs args, InvokeOptions options) {
@@ -2024,6 +6974,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of object privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserObjectPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_object_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserObjectPrivilegesResult> getManagedDatabaseUserObjectPrivilegesPlain(GetManagedDatabaseUserObjectPrivilegesPlainArgs args, InvokeOptions options) {
@@ -2035,6 +7015,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserProxiedForUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserProxiedForUserResult> getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs args) {
@@ -2046,6 +7056,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserProxiedForUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserProxiedForUserResult> getManagedDatabaseUserProxiedForUserPlain(GetManagedDatabaseUserProxiedForUserPlainArgs args) {
@@ -2057,6 +7097,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserProxiedForUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserProxiedForUserResult> getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs args, InvokeOptions options) {
@@ -2068,6 +7138,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserProxiedForUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserProxiedForUserResult> getManagedDatabaseUserProxiedForUserPlain(GetManagedDatabaseUserProxiedForUserPlainArgs args, InvokeOptions options) {
@@ -2079,6 +7179,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserProxiedForUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserProxiedForUsersResult> getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs args) {
@@ -2090,6 +7220,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserProxiedForUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserProxiedForUsersResult> getManagedDatabaseUserProxiedForUsersPlain(GetManagedDatabaseUserProxiedForUsersPlainArgs args) {
@@ -2101,6 +7261,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserProxiedForUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserProxiedForUsersResult> getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs args, InvokeOptions options) {
@@ -2112,6 +7302,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users on whose behalf the current user acts as proxy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserProxiedForUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserProxiedForUsersResult> getManagedDatabaseUserProxiedForUsersPlain(GetManagedDatabaseUserProxiedForUsersPlainArgs args, InvokeOptions options) {
@@ -2123,6 +7343,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserRoleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_role_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserRoleResult> getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs args) {
@@ -2134,6 +7384,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserRoleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_role_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserRoleResult> getManagedDatabaseUserRolePlain(GetManagedDatabaseUserRolePlainArgs args) {
@@ -2145,6 +7425,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserRoleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_role_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserRoleResult> getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs args, InvokeOptions options) {
@@ -2156,6 +7466,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserRoleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_role_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserRoleResult> getManagedDatabaseUserRolePlain(GetManagedDatabaseUserRolePlainArgs args, InvokeOptions options) {
@@ -2167,6 +7507,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserRolesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_role_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserRolesResult> getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs args) {
@@ -2178,6 +7548,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserRolesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_role_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserRolesResult> getManagedDatabaseUserRolesPlain(GetManagedDatabaseUserRolesPlainArgs args) {
@@ -2189,6 +7589,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserRolesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_role_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUserRolesResult> getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs args, InvokeOptions options) {
@@ -2200,6 +7630,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of roles granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserRolesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_database_user_role_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUserRolesResult> getManagedDatabaseUserRolesPlain(GetManagedDatabaseUserRolesPlainArgs args, InvokeOptions options) {
@@ -2211,6 +7671,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUsersResult> getManagedDatabaseUsers(GetManagedDatabaseUsersArgs args) {
@@ -2222,6 +7711,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUsersResult> getManagedDatabaseUsersPlain(GetManagedDatabaseUsersPlainArgs args) {
@@ -2233,6 +7751,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabaseUsersResult> getManagedDatabaseUsers(GetManagedDatabaseUsersArgs args, InvokeOptions options) {
@@ -2244,6 +7791,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of users for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_database_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabaseUsersResult> getManagedDatabaseUsersPlain(GetManagedDatabaseUsersPlainArgs args, InvokeOptions options) {
@@ -2260,6 +7836,38 @@ public final class DatabaseManagementFunctions {
      * considered and Managed Databases with `ADVANCED` management option are listed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deploymentType(var_.managed_database_deployment_type())
+     *             .id(var_.managed_database_id())
+     *             .managementOption(var_.managed_database_management_option())
+     *             .name(var_.managed_database_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesResult> getManagedDatabases(GetManagedDatabasesArgs args) {
@@ -2276,6 +7884,38 @@ public final class DatabaseManagementFunctions {
      * considered and Managed Databases with `ADVANCED` management option are listed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deploymentType(var_.managed_database_deployment_type())
+     *             .id(var_.managed_database_id())
+     *             .managementOption(var_.managed_database_management_option())
+     *             .name(var_.managed_database_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesResult> getManagedDatabasesPlain(GetManagedDatabasesPlainArgs args) {
@@ -2292,6 +7932,38 @@ public final class DatabaseManagementFunctions {
      * considered and Managed Databases with `ADVANCED` management option are listed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deploymentType(var_.managed_database_deployment_type())
+     *             .id(var_.managed_database_id())
+     *             .managementOption(var_.managed_database_management_option())
+     *             .name(var_.managed_database_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesResult> getManagedDatabases(GetManagedDatabasesArgs args, InvokeOptions options) {
@@ -2308,6 +7980,38 @@ public final class DatabaseManagementFunctions {
      * considered and Managed Databases with `ADVANCED` management option are listed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .deploymentType(var_.managed_database_deployment_type())
+     *             .id(var_.managed_database_id())
+     *             .managementOption(var_.managed_database_management_option())
+     *             .name(var_.managed_database_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesResult> getManagedDatabasesPlain(GetManagedDatabasesPlainArgs args, InvokeOptions options) {
@@ -2319,6 +8023,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesAsmPropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_databases_asm_property_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesAsmPropertiesResult> getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs args) {
@@ -2330,6 +8063,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesAsmPropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_databases_asm_property_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesAsmPropertiesResult> getManagedDatabasesAsmPropertiesPlain(GetManagedDatabasesAsmPropertiesPlainArgs args) {
@@ -2341,6 +8103,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesAsmPropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_databases_asm_property_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesAsmPropertiesResult> getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs args, InvokeOptions options) {
@@ -2352,6 +8143,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesAsmPropertiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_databases_asm_property_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesAsmPropertiesResult> getManagedDatabasesAsmPropertiesPlain(GetManagedDatabasesAsmPropertiesPlainArgs args, InvokeOptions options) {
@@ -2363,6 +8183,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesAsmPropertyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_databases_asm_property_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesAsmPropertyResult> getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs args) {
@@ -2374,6 +8223,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesAsmPropertyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_databases_asm_property_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesAsmPropertyResult> getManagedDatabasesAsmPropertyPlain(GetManagedDatabasesAsmPropertyPlainArgs args) {
@@ -2385,6 +8263,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesAsmPropertyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_databases_asm_property_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesAsmPropertyResult> getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs args, InvokeOptions options) {
@@ -2396,6 +8303,35 @@ public final class DatabaseManagementFunctions {
      * Gets the list of ASM properties for the specified managedDatabaseId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesAsmPropertyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .name(var_.managed_databases_asm_property_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesAsmPropertyResult> getManagedDatabasesAsmPropertyPlain(GetManagedDatabasesAsmPropertyPlainArgs args, InvokeOptions options) {
@@ -2407,6 +8343,37 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesDatabaseParameterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
+     *             .name(var_.managed_databases_database_parameter_name())
+     *             .source(var_.managed_databases_database_parameter_source())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesDatabaseParameterResult> getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs args) {
@@ -2418,6 +8385,37 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesDatabaseParameterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
+     *             .name(var_.managed_databases_database_parameter_name())
+     *             .source(var_.managed_databases_database_parameter_source())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesDatabaseParameterResult> getManagedDatabasesDatabaseParameterPlain(GetManagedDatabasesDatabaseParameterPlainArgs args) {
@@ -2429,6 +8427,37 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesDatabaseParameterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
+     *             .name(var_.managed_databases_database_parameter_name())
+     *             .source(var_.managed_databases_database_parameter_source())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesDatabaseParameterResult> getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs args, InvokeOptions options) {
@@ -2440,6 +8469,37 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesDatabaseParameterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
+     *             .name(var_.managed_databases_database_parameter_name())
+     *             .source(var_.managed_databases_database_parameter_source())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesDatabaseParameterResult> getManagedDatabasesDatabaseParameterPlain(GetManagedDatabasesDatabaseParameterPlainArgs args, InvokeOptions options) {
@@ -2451,6 +8511,37 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesDatabaseParametersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
+     *             .name(var_.managed_databases_database_parameter_name())
+     *             .source(var_.managed_databases_database_parameter_source())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesDatabaseParametersResult> getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs args) {
@@ -2462,6 +8553,37 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesDatabaseParametersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
+     *             .name(var_.managed_databases_database_parameter_name())
+     *             .source(var_.managed_databases_database_parameter_source())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesDatabaseParametersResult> getManagedDatabasesDatabaseParametersPlain(GetManagedDatabasesDatabaseParametersPlainArgs args) {
@@ -2473,6 +8595,37 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesDatabaseParametersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
+     *             .name(var_.managed_databases_database_parameter_name())
+     *             .source(var_.managed_databases_database_parameter_source())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesDatabaseParametersResult> getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs args, InvokeOptions options) {
@@ -2484,6 +8637,37 @@ public final class DatabaseManagementFunctions {
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesDatabaseParametersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
+     *             .name(var_.managed_databases_database_parameter_name())
+     *             .source(var_.managed_databases_database_parameter_source())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesDatabaseParametersResult> getManagedDatabasesDatabaseParametersPlain(GetManagedDatabasesDatabaseParametersPlainArgs args, InvokeOptions options) {
@@ -2495,6 +8679,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserProxyUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesUserProxyUserResult> getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs args) {
@@ -2506,6 +8720,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserProxyUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserProxyUserResult> getManagedDatabasesUserProxyUserPlain(GetManagedDatabasesUserProxyUserPlainArgs args) {
@@ -2517,6 +8761,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserProxyUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesUserProxyUserResult> getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs args, InvokeOptions options) {
@@ -2528,6 +8802,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserProxyUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserProxyUserResult> getManagedDatabasesUserProxyUserPlain(GetManagedDatabasesUserProxyUserPlainArgs args, InvokeOptions options) {
@@ -2539,6 +8843,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserProxyUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesUserProxyUsersResult> getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs args) {
@@ -2550,6 +8884,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserProxyUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserProxyUsersResult> getManagedDatabasesUserProxyUsersPlain(GetManagedDatabasesUserProxyUsersPlainArgs args) {
@@ -2561,6 +8925,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserProxyUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesUserProxyUsersResult> getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs args, InvokeOptions options) {
@@ -2572,6 +8966,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of proxy users for the current user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserProxyUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserProxyUsersResult> getManagedDatabasesUserProxyUsersPlain(GetManagedDatabasesUserProxyUsersPlainArgs args, InvokeOptions options) {
@@ -2583,6 +9007,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserSystemPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesUserSystemPrivilegeResult> getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs args) {
@@ -2594,6 +9048,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserSystemPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserSystemPrivilegeResult> getManagedDatabasesUserSystemPrivilegePlain(GetManagedDatabasesUserSystemPrivilegePlainArgs args) {
@@ -2605,6 +9089,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserSystemPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesUserSystemPrivilegeResult> getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs args, InvokeOptions options) {
@@ -2616,6 +9130,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserSystemPrivilegeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserSystemPrivilegeResult> getManagedDatabasesUserSystemPrivilegePlain(GetManagedDatabasesUserSystemPrivilegePlainArgs args, InvokeOptions options) {
@@ -2627,6 +9171,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserSystemPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesUserSystemPrivilegesResult> getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs args) {
@@ -2638,6 +9212,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserSystemPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserSystemPrivilegesResult> getManagedDatabasesUserSystemPrivilegesPlain(GetManagedDatabasesUserSystemPrivilegesPlainArgs args) {
@@ -2649,6 +9253,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserSystemPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedDatabasesUserSystemPrivilegesResult> getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs args, InvokeOptions options) {
@@ -2660,6 +9294,36 @@ public final class DatabaseManagementFunctions {
      * Gets the list of system privileges granted to a specific user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserSystemPrivilegesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
+     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .userName(oci_identity_user.test_user().name())
+     *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedDatabasesUserSystemPrivilegesResult> getManagedDatabasesUserSystemPrivilegesPlain(GetManagedDatabasesUserSystemPrivilegesPlainArgs args, InvokeOptions options) {

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class GetShapesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetShapesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the shape. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Core.Inputs
         public GetShapesFilterArgs()
         {
         }
+        public static new GetShapesFilterArgs Empty => new GetShapesFilterArgs();
     }
 }

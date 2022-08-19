@@ -44,46 +44,44 @@ namespace Pulumi.Oci.LoadBalancer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLoadBalancer = new Oci.LoadBalancer.LoadBalancer("testLoadBalancer", new()
     ///     {
-    ///         var testLoadBalancer = new Oci.LoadBalancer.LoadBalancer("testLoadBalancer", new Oci.LoadBalancer.LoadBalancerArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Load_balancer_display_name,
+    ///         Shape = @var.Load_balancer_shape,
+    ///         SubnetIds = @var.Load_balancer_subnet_ids,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Load_balancer_display_name,
-    ///             Shape = @var.Load_balancer_shape,
-    ///             SubnetIds = @var.Load_balancer_subnet_ids,
-    ///             DefinedTags = 
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IpMode = @var.Load_balancer_ip_mode,
+    ///         IsPrivate = @var.Load_balancer_is_private,
+    ///         NetworkSecurityGroupIds = @var.Load_balancer_network_security_group_ids,
+    ///         ReservedIps = new[]
+    ///         {
+    ///             new Oci.LoadBalancer.Inputs.LoadBalancerReservedIpArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
+    ///                 Id = @var.Load_balancer_reserved_ips_id,
     ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IpMode = @var.Load_balancer_ip_mode,
-    ///             IsPrivate = @var.Load_balancer_is_private,
-    ///             NetworkSecurityGroupIds = @var.Load_balancer_network_security_group_ids,
-    ///             ReservedIps = 
-    ///             {
-    ///                 new Oci.LoadBalancer.Inputs.LoadBalancerReservedIpArgs
-    ///                 {
-    ///                     Id = @var.Load_balancer_reserved_ips_id,
-    ///                 },
-    ///             },
-    ///             ShapeDetails = new Oci.LoadBalancer.Inputs.LoadBalancerShapeDetailsArgs
-    ///             {
-    ///                 MaximumBandwidthInMbps = @var.Load_balancer_shape_details_maximum_bandwidth_in_mbps,
-    ///                 MinimumBandwidthInMbps = @var.Load_balancer_shape_details_minimum_bandwidth_in_mbps,
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         ShapeDetails = new Oci.LoadBalancer.Inputs.LoadBalancerShapeDetailsArgs
+    ///         {
+    ///             MaximumBandwidthInMbps = @var.Load_balancer_shape_details_maximum_bandwidth_in_mbps,
+    ///             MinimumBandwidthInMbps = @var.Load_balancer_shape_details_minimum_bandwidth_in_mbps,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -95,7 +93,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/loadBalancer:LoadBalancer")]
-    public partial class LoadBalancer : Pulumi.CustomResource
+    public partial class LoadBalancer : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
@@ -237,7 +235,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
     }
 
-    public sealed class LoadBalancerArgs : Pulumi.ResourceArgs
+    public sealed class LoadBalancerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
@@ -338,9 +336,10 @@ namespace Pulumi.Oci.LoadBalancer
         public LoadBalancerArgs()
         {
         }
+        public static new LoadBalancerArgs Empty => new LoadBalancerArgs();
     }
 
-    public sealed class LoadBalancerState : Pulumi.ResourceArgs
+    public sealed class LoadBalancerState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
@@ -490,5 +489,6 @@ namespace Pulumi.Oci.LoadBalancer
         public LoadBalancerState()
         {
         }
+        public static new LoadBalancerState Empty => new LoadBalancerState();
     }
 }

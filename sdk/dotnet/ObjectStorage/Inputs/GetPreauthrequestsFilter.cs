@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage.Inputs
 {
 
-    public sealed class GetPreauthrequestsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetPreauthrequestsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The user-provided name of the pre-authenticated request.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
         public GetPreauthrequestsFilterArgs()
         {
         }
+        public static new GetPreauthrequestsFilterArgs Empty => new GetPreauthrequestsFilterArgs();
     }
 }

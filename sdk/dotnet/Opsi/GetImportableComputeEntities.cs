@@ -28,20 +28,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testImportableComputeEntities = Oci.Opsi.GetImportableComputeEntities.Invoke(new()
         ///     {
-        ///         var testImportableComputeEntities = Output.Create(Oci.Opsi.GetImportableComputeEntities.InvokeAsync(new Oci.Opsi.GetImportableComputeEntitiesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -66,20 +64,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testImportableComputeEntities = Oci.Opsi.GetImportableComputeEntities.Invoke(new()
         ///     {
-        ///         var testImportableComputeEntities = Output.Create(Oci.Opsi.GetImportableComputeEntities.InvokeAsync(new Oci.Opsi.GetImportableComputeEntitiesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetImportableComputeEntitiesArgs : Pulumi.InvokeArgs
+    public sealed class GetImportableComputeEntitiesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -100,9 +96,10 @@ namespace Pulumi.Oci.Opsi
         public GetImportableComputeEntitiesArgs()
         {
         }
+        public static new GetImportableComputeEntitiesArgs Empty => new GetImportableComputeEntitiesArgs();
     }
 
-    public sealed class GetImportableComputeEntitiesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetImportableComputeEntitiesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.Opsi
         public GetImportableComputeEntitiesInvokeArgs()
         {
         }
+        public static new GetImportableComputeEntitiesInvokeArgs Empty => new GetImportableComputeEntitiesInvokeArgs();
     }
 
 

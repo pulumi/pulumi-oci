@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring.Inputs
 {
 
-    public sealed class GetDiscoveryJobsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetDiscoveryJobsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only discovery jobs that match the entire resource name given.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public GetDiscoveryJobsFilterArgs()
         {
         }
+        public static new GetDiscoveryJobsFilterArgs Empty => new GetDiscoveryJobsFilterArgs();
     }
 }

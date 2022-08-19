@@ -18,24 +18,6 @@ import * as utilities from "../utilities";
  * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
  * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
  * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testObjects = oci.ObjectStorage.getObjects({
- *     bucket: _var.object_bucket,
- *     namespace: _var.object_namespace,
- *     delimiter: _var.object_delimiter,
- *     end: _var.object_end,
- *     fields: _var.object_fields,
- *     prefix: _var.object_prefix,
- *     start: _var.object_start,
- *     startAfter: _var.object_start_after,
- * });
- * ```
  */
 export function getObjects(args: GetObjectsArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectsResult> {
     if (!opts) {

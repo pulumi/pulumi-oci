@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class AuthenticationPolicyNetworkPolicyArgs : Pulumi.ResourceArgs
+    public sealed class AuthenticationPolicyNetworkPolicyArgs : global::Pulumi.ResourceArgs
     {
         [Input("networkSourceIds")]
         private InputList<string>? _networkSourceIds;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public AuthenticationPolicyNetworkPolicyArgs()
         {
         }
+        public static new AuthenticationPolicyNetworkPolicyArgs Empty => new AuthenticationPolicyNetworkPolicyArgs();
     }
 }

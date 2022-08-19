@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class VcnByoipv6cidrDetailGetArgs : Pulumi.ResourceArgs
+    public sealed class VcnByoipv6cidrDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public VcnByoipv6cidrDetailGetArgs()
         {
         }
+        public static new VcnByoipv6cidrDetailGetArgs Empty => new VcnByoipv6cidrDetailGetArgs();
     }
 }

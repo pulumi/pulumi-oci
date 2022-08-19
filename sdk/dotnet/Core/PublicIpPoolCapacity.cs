@@ -13,22 +13,20 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPublicIpPoolCapacity = new Oci.Core.PublicIpPoolCapacity("testPublicIpPoolCapacity", new()
     ///     {
-    ///         var testPublicIpPoolCapacity = new Oci.Core.PublicIpPoolCapacity("testPublicIpPoolCapacity", new Oci.Core.PublicIpPoolCapacityArgs
-    ///         {
-    ///             ByoipId = @var.Byoip_id,
-    ///             CidrBlock = @var.Cidr_block,
-    ///             PublicIpPoolId = @var.Public_ip_pool_id,
-    ///         });
-    ///     }
+    ///         ByoipId = @var.Byoip_id,
+    ///         CidrBlock = @var.Cidr_block,
+    ///         PublicIpPoolId = @var.Public_ip_pool_id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -40,7 +38,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity")]
-    public partial class PublicIpPoolCapacity : Pulumi.CustomResource
+    public partial class PublicIpPoolCapacity : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the Byoip Range Id object to which the cidr block belongs.
@@ -104,7 +102,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class PublicIpPoolCapacityArgs : Pulumi.ResourceArgs
+    public sealed class PublicIpPoolCapacityArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the Byoip Range Id object to which the cidr block belongs.
@@ -127,9 +125,10 @@ namespace Pulumi.Oci.Core
         public PublicIpPoolCapacityArgs()
         {
         }
+        public static new PublicIpPoolCapacityArgs Empty => new PublicIpPoolCapacityArgs();
     }
 
-    public sealed class PublicIpPoolCapacityState : Pulumi.ResourceArgs
+    public sealed class PublicIpPoolCapacityState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the Byoip Range Id object to which the cidr block belongs.
@@ -152,5 +151,6 @@ namespace Pulumi.Oci.Core
         public PublicIpPoolCapacityState()
         {
         }
+        public static new PublicIpPoolCapacityState Empty => new PublicIpPoolCapacityState();
     }
 }

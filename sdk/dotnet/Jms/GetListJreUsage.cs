@@ -21,25 +21,23 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testListJreUsage = Oci.Jms.GetListJreUsage.Invoke(new()
         ///     {
-        ///         var testListJreUsage = Output.Create(Oci.Jms.GetListJreUsage.InvokeAsync(new Oci.Jms.GetListJreUsageArgs
-        ///         {
-        ///             ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///             ApplicationName = oci_dataflow_application.Test_application.Name,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             HostId = oci_jms_host.Test_host.Id,
-        ///             TimeEnd = @var.List_jre_usage_time_end,
-        ///             TimeStart = @var.List_jre_usage_time_start,
-        ///         }));
-        ///     }
+        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
+        ///         ApplicationName = oci_dataflow_application.Test_application.Name,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         HostId = oci_jms_host.Test_host.Id,
+        ///         TimeEnd = @var.List_jre_usage_time_end,
+        ///         TimeStart = @var.List_jre_usage_time_start,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.Jms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testListJreUsage = Oci.Jms.GetListJreUsage.Invoke(new()
         ///     {
-        ///         var testListJreUsage = Output.Create(Oci.Jms.GetListJreUsage.InvokeAsync(new Oci.Jms.GetListJreUsageArgs
-        ///         {
-        ///             ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///             ApplicationName = oci_dataflow_application.Test_application.Name,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             HostId = oci_jms_host.Test_host.Id,
-        ///             TimeEnd = @var.List_jre_usage_time_end,
-        ///             TimeStart = @var.List_jre_usage_time_start,
-        ///         }));
-        ///     }
+        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
+        ///         ApplicationName = oci_dataflow_application.Test_application.Name,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         HostId = oci_jms_host.Test_host.Id,
+        ///         TimeEnd = @var.List_jre_usage_time_end,
+        ///         TimeStart = @var.List_jre_usage_time_start,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Jms
     }
 
 
-    public sealed class GetListJreUsageArgs : Pulumi.InvokeArgs
+    public sealed class GetListJreUsageArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Fleet-unique identifier of the application.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.Jms
         public GetListJreUsageArgs()
         {
         }
+        public static new GetListJreUsageArgs Empty => new GetListJreUsageArgs();
     }
 
-    public sealed class GetListJreUsageInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetListJreUsageInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Fleet-unique identifier of the application.
@@ -169,6 +166,7 @@ namespace Pulumi.Oci.Jms
         public GetListJreUsageInvokeArgs()
         {
         }
+        public static new GetListJreUsageInvokeArgs Empty => new GetListJreUsageInvokeArgs();
     }
 
 

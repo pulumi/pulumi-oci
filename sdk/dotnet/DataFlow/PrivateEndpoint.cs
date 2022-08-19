@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataFlow
     /// ```
     /// </summary>
     [OciResourceType("oci:DataFlow/privateEndpoint:PrivateEndpoint")]
-    public partial class PrivateEndpoint : Pulumi.CustomResource
+    public partial class PrivateEndpoint : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of a compartment.
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.DataFlow
         }
     }
 
-    public sealed class PrivateEndpointArgs : Pulumi.ResourceArgs
+    public sealed class PrivateEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of a compartment.
@@ -238,9 +238,10 @@ namespace Pulumi.Oci.DataFlow
         public PrivateEndpointArgs()
         {
         }
+        public static new PrivateEndpointArgs Empty => new PrivateEndpointArgs();
     }
 
-    public sealed class PrivateEndpointState : Pulumi.ResourceArgs
+    public sealed class PrivateEndpointState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of a compartment.
@@ -359,5 +360,6 @@ namespace Pulumi.Oci.DataFlow
         public PrivateEndpointState()
         {
         }
+        public static new PrivateEndpointState Empty => new PrivateEndpointState();
     }
 }

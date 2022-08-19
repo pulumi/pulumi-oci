@@ -316,6 +316,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported character sets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
+     *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isShared(var_.autonomous_database_character_set_is_shared())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousCharacterSetsResult> getAutonomousCharacterSets() {
@@ -327,6 +356,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported character sets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
+     *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isShared(var_.autonomous_database_character_set_is_shared())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousCharacterSetsResult> getAutonomousCharacterSetsPlain() {
@@ -338,6 +396,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported character sets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
+     *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isShared(var_.autonomous_database_character_set_is_shared())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousCharacterSetsResult> getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs args) {
@@ -349,6 +436,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported character sets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
+     *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isShared(var_.autonomous_database_character_set_is_shared())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousCharacterSetsResult> getAutonomousCharacterSetsPlain(GetAutonomousCharacterSetsPlainArgs args) {
@@ -360,6 +476,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported character sets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
+     *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isShared(var_.autonomous_database_character_set_is_shared())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousCharacterSetsResult> getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs args, InvokeOptions options) {
@@ -371,6 +516,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported character sets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
+     *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isShared(var_.autonomous_database_character_set_is_shared())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousCharacterSetsResult> getAutonomousCharacterSetsPlain(GetAutonomousCharacterSetsPlainArgs args, InvokeOptions options) {
@@ -382,6 +556,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabase = DatabaseFunctions.getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousContainerDatabaseResult> getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs args) {
@@ -393,6 +595,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabase = DatabaseFunctions.getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseResult> getAutonomousContainerDatabasePlain(GetAutonomousContainerDatabasePlainArgs args) {
@@ -404,6 +634,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabase = DatabaseFunctions.getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousContainerDatabaseResult> getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs args, InvokeOptions options) {
@@ -415,6 +673,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabase = DatabaseFunctions.getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseResult> getAutonomousContainerDatabasePlain(GetAutonomousContainerDatabasePlainArgs args, InvokeOptions options) {
@@ -426,6 +712,35 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs.builder()
+     *             .autonomousContainerDatabaseDataguardAssociationId(oci_database_autonomous_container_database_dataguard_association.test_autonomous_container_database_dataguard_association().id())
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousContainerDatabaseDataguardAssociationResult> getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs args) {
@@ -437,6 +752,35 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs.builder()
+     *             .autonomousContainerDatabaseDataguardAssociationId(oci_database_autonomous_container_database_dataguard_association.test_autonomous_container_database_dataguard_association().id())
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseDataguardAssociationResult> getAutonomousContainerDatabaseDataguardAssociationPlain(GetAutonomousContainerDatabaseDataguardAssociationPlainArgs args) {
@@ -448,6 +792,35 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs.builder()
+     *             .autonomousContainerDatabaseDataguardAssociationId(oci_database_autonomous_container_database_dataguard_association.test_autonomous_container_database_dataguard_association().id())
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousContainerDatabaseDataguardAssociationResult> getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs args, InvokeOptions options) {
@@ -459,6 +832,35 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs.builder()
+     *             .autonomousContainerDatabaseDataguardAssociationId(oci_database_autonomous_container_database_dataguard_association.test_autonomous_container_database_dataguard_association().id())
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseDataguardAssociationResult> getAutonomousContainerDatabaseDataguardAssociationPlain(GetAutonomousContainerDatabaseDataguardAssociationPlainArgs args, InvokeOptions options) {
@@ -470,6 +872,34 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousContainerDatabaseDataguardAssociationsResult> getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs args) {
@@ -481,6 +911,34 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseDataguardAssociationsResult> getAutonomousContainerDatabaseDataguardAssociationsPlain(GetAutonomousContainerDatabaseDataguardAssociationsPlainArgs args) {
@@ -492,6 +950,34 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousContainerDatabaseDataguardAssociationsResult> getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs args, InvokeOptions options) {
@@ -503,6 +989,34 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseDataguardAssociationsResult> getAutonomousContainerDatabaseDataguardAssociationsPlain(GetAutonomousContainerDatabaseDataguardAssociationsPlainArgs args, InvokeOptions options) {
@@ -514,6 +1028,42 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabases = DatabaseFunctions.getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .availabilityDomain(var_.autonomous_container_database_availability_domain())
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .displayName(var_.autonomous_container_database_display_name())
+     *             .infrastructureType(var_.autonomous_container_database_infrastructure_type())
+     *             .serviceLevelAgreementType(var_.autonomous_container_database_service_level_agreement_type())
+     *             .state(var_.autonomous_container_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousContainerDatabasesResult> getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs args) {
@@ -525,6 +1075,42 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabases = DatabaseFunctions.getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .availabilityDomain(var_.autonomous_container_database_availability_domain())
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .displayName(var_.autonomous_container_database_display_name())
+     *             .infrastructureType(var_.autonomous_container_database_infrastructure_type())
+     *             .serviceLevelAgreementType(var_.autonomous_container_database_service_level_agreement_type())
+     *             .state(var_.autonomous_container_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabasesResult> getAutonomousContainerDatabasesPlain(GetAutonomousContainerDatabasesPlainArgs args) {
@@ -536,6 +1122,42 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabases = DatabaseFunctions.getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .availabilityDomain(var_.autonomous_container_database_availability_domain())
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .displayName(var_.autonomous_container_database_display_name())
+     *             .infrastructureType(var_.autonomous_container_database_infrastructure_type())
+     *             .serviceLevelAgreementType(var_.autonomous_container_database_service_level_agreement_type())
+     *             .state(var_.autonomous_container_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousContainerDatabasesResult> getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs args, InvokeOptions options) {
@@ -547,6 +1169,42 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Container Databases in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabases = DatabaseFunctions.getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .availabilityDomain(var_.autonomous_container_database_availability_domain())
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .displayName(var_.autonomous_container_database_display_name())
+     *             .infrastructureType(var_.autonomous_container_database_infrastructure_type())
+     *             .serviceLevelAgreementType(var_.autonomous_container_database_service_level_agreement_type())
+     *             .state(var_.autonomous_container_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousContainerDatabasesResult> getAutonomousContainerDatabasesPlain(GetAutonomousContainerDatabasesPlainArgs args, InvokeOptions options) {
@@ -558,6 +1216,35 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the requested container database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerPatches = DatabaseFunctions.getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousContainerPatchesResult> getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs args) {
@@ -569,6 +1256,35 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the requested container database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerPatches = DatabaseFunctions.getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousContainerPatchesResult> getAutonomousContainerPatchesPlain(GetAutonomousContainerPatchesPlainArgs args) {
@@ -580,6 +1296,35 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the requested container database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerPatches = DatabaseFunctions.getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousContainerPatchesResult> getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs args, InvokeOptions options) {
@@ -591,6 +1336,35 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the requested container database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerPatches = DatabaseFunctions.getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs.builder()
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousContainerPatchesResult> getAutonomousContainerPatchesPlain(GetAutonomousContainerPatchesPlainArgs args, InvokeOptions options) {
@@ -602,6 +1376,34 @@ public final class DatabaseFunctions {
      * Gets the details of the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabase = DatabaseFunctions.getAutonomousDatabase(GetAutonomousDatabaseArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseResult> getAutonomousDatabase(GetAutonomousDatabaseArgs args) {
@@ -613,6 +1415,34 @@ public final class DatabaseFunctions {
      * Gets the details of the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabase = DatabaseFunctions.getAutonomousDatabase(GetAutonomousDatabaseArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseResult> getAutonomousDatabasePlain(GetAutonomousDatabasePlainArgs args) {
@@ -624,6 +1454,34 @@ public final class DatabaseFunctions {
      * Gets the details of the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabase = DatabaseFunctions.getAutonomousDatabase(GetAutonomousDatabaseArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseResult> getAutonomousDatabase(GetAutonomousDatabaseArgs args, InvokeOptions options) {
@@ -635,6 +1493,34 @@ public final class DatabaseFunctions {
      * Gets the details of the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabase = DatabaseFunctions.getAutonomousDatabase(GetAutonomousDatabaseArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseResult> getAutonomousDatabasePlain(GetAutonomousDatabasePlainArgs args, InvokeOptions options) {
@@ -646,6 +1532,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Database backup.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseBackup = DatabaseFunctions.getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs.builder()
+     *             .autonomousDatabaseBackupId(oci_database_autonomous_database_backup.test_autonomous_database_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseBackupResult> getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs args) {
@@ -657,6 +1571,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Database backup.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseBackup = DatabaseFunctions.getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs.builder()
+     *             .autonomousDatabaseBackupId(oci_database_autonomous_database_backup.test_autonomous_database_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseBackupResult> getAutonomousDatabaseBackupPlain(GetAutonomousDatabaseBackupPlainArgs args) {
@@ -668,6 +1610,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Database backup.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseBackup = DatabaseFunctions.getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs.builder()
+     *             .autonomousDatabaseBackupId(oci_database_autonomous_database_backup.test_autonomous_database_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseBackupResult> getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs args, InvokeOptions options) {
@@ -679,6 +1649,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Database backup.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseBackup = DatabaseFunctions.getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs.builder()
+     *             .autonomousDatabaseBackupId(oci_database_autonomous_database_backup.test_autonomous_database_backup().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseBackupResult> getAutonomousDatabaseBackupPlain(GetAutonomousDatabaseBackupPlainArgs args, InvokeOptions options) {
@@ -690,6 +1688,37 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.autonomous_database_backup_display_name())
+     *             .state(var_.autonomous_database_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackups() {
@@ -701,6 +1730,37 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.autonomous_database_backup_display_name())
+     *             .state(var_.autonomous_database_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackupsPlain() {
@@ -712,6 +1772,37 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.autonomous_database_backup_display_name())
+     *             .state(var_.autonomous_database_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs args) {
@@ -723,6 +1814,37 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.autonomous_database_backup_display_name())
+     *             .state(var_.autonomous_database_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackupsPlain(GetAutonomousDatabaseBackupsPlainArgs args) {
@@ -734,6 +1856,37 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.autonomous_database_backup_display_name())
+     *             .state(var_.autonomous_database_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs args, InvokeOptions options) {
@@ -745,6 +1898,37 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.autonomous_database_backup_display_name())
+     *             .state(var_.autonomous_database_backup_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseBackupsResult> getAutonomousDatabaseBackupsPlain(GetAutonomousDatabaseBackupsPlainArgs args, InvokeOptions options) {
@@ -756,6 +1940,35 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs.builder()
+     *             .autonomousDatabaseDataguardAssociationId(oci_database_autonomous_database_dataguard_association.test_autonomous_database_dataguard_association().id())
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseDataguardAssociationResult> getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs args) {
@@ -767,6 +1980,35 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs.builder()
+     *             .autonomousDatabaseDataguardAssociationId(oci_database_autonomous_database_dataguard_association.test_autonomous_database_dataguard_association().id())
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseDataguardAssociationResult> getAutonomousDatabaseDataguardAssociationPlain(GetAutonomousDatabaseDataguardAssociationPlainArgs args) {
@@ -778,6 +2020,35 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs.builder()
+     *             .autonomousDatabaseDataguardAssociationId(oci_database_autonomous_database_dataguard_association.test_autonomous_database_dataguard_association().id())
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseDataguardAssociationResult> getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs args, InvokeOptions options) {
@@ -789,6 +2060,35 @@ public final class DatabaseFunctions {
      * Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs.builder()
+     *             .autonomousDatabaseDataguardAssociationId(oci_database_autonomous_database_dataguard_association.test_autonomous_database_dataguard_association().id())
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseDataguardAssociationResult> getAutonomousDatabaseDataguardAssociationPlain(GetAutonomousDatabaseDataguardAssociationPlainArgs args, InvokeOptions options) {
@@ -800,6 +2100,34 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseDataguardAssociationsResult> getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs args) {
@@ -811,6 +2139,34 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseDataguardAssociationsResult> getAutonomousDatabaseDataguardAssociationsPlain(GetAutonomousDatabaseDataguardAssociationsPlainArgs args) {
@@ -822,6 +2178,34 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseDataguardAssociationsResult> getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs args, InvokeOptions options) {
@@ -833,6 +2217,34 @@ public final class DatabaseFunctions {
      * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseDataguardAssociationsResult> getAutonomousDatabaseDataguardAssociationsPlain(GetAutonomousDatabaseDataguardAssociationsPlainArgs args, InvokeOptions options) {
@@ -844,6 +2256,34 @@ public final class DatabaseFunctions {
      * Gets the wallet details for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseInstanceWalletManagement = DatabaseFunctions.getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseInstanceWalletManagementResult> getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs args) {
@@ -855,6 +2295,34 @@ public final class DatabaseFunctions {
      * Gets the wallet details for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseInstanceWalletManagement = DatabaseFunctions.getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseInstanceWalletManagementResult> getAutonomousDatabaseInstanceWalletManagementPlain(GetAutonomousDatabaseInstanceWalletManagementPlainArgs args) {
@@ -866,6 +2334,34 @@ public final class DatabaseFunctions {
      * Gets the wallet details for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseInstanceWalletManagement = DatabaseFunctions.getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseInstanceWalletManagementResult> getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs args, InvokeOptions options) {
@@ -877,6 +2373,34 @@ public final class DatabaseFunctions {
      * Gets the wallet details for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseInstanceWalletManagement = DatabaseFunctions.getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseInstanceWalletManagementResult> getAutonomousDatabaseInstanceWalletManagementPlain(GetAutonomousDatabaseInstanceWalletManagementPlainArgs args, InvokeOptions options) {
@@ -888,6 +2412,31 @@ public final class DatabaseFunctions {
      * Gets the Autonomous Database regional wallet details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagement() {
@@ -899,6 +2448,31 @@ public final class DatabaseFunctions {
      * Gets the Autonomous Database regional wallet details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagementPlain() {
@@ -910,6 +2484,31 @@ public final class DatabaseFunctions {
      * Gets the Autonomous Database regional wallet details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagement(InvokeArgs args) {
@@ -921,6 +2520,31 @@ public final class DatabaseFunctions {
      * Gets the Autonomous Database regional wallet details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagementPlain(InvokeArgs args) {
@@ -932,6 +2556,31 @@ public final class DatabaseFunctions {
      * Gets the Autonomous Database regional wallet details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagement(InvokeArgs args, InvokeOptions options) {
@@ -943,6 +2592,31 @@ public final class DatabaseFunctions {
      * Gets the Autonomous Database regional wallet details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseRegionalWalletManagement = DatabaseFunctions.getAutonomousDatabaseRegionalWalletManagement();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagementPlain(InvokeArgs args, InvokeOptions options) {
@@ -950,6 +2624,37 @@ public final class DatabaseFunctions {
     }
     /**
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .password(var_.autonomous_database_wallet_password())
+     *             .base64EncodeContent(&#34;false&#34;)
+     *             .generateType(var_.autonomous_database_wallet_generate_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs args) {
@@ -957,6 +2662,37 @@ public final class DatabaseFunctions {
     }
     /**
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .password(var_.autonomous_database_wallet_password())
+     *             .base64EncodeContent(&#34;false&#34;)
+     *             .generateType(var_.autonomous_database_wallet_generate_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWalletPlain(GetAutonomousDatabaseWalletPlainArgs args) {
@@ -964,6 +2700,37 @@ public final class DatabaseFunctions {
     }
     /**
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .password(var_.autonomous_database_wallet_password())
+     *             .base64EncodeContent(&#34;false&#34;)
+     *             .generateType(var_.autonomous_database_wallet_generate_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs args, InvokeOptions options) {
@@ -971,6 +2738,37 @@ public final class DatabaseFunctions {
     }
     /**
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .password(var_.autonomous_database_wallet_password())
+     *             .base64EncodeContent(&#34;false&#34;)
+     *             .generateType(var_.autonomous_database_wallet_generate_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWalletPlain(GetAutonomousDatabaseWalletPlainArgs args, InvokeOptions options) {
@@ -982,6 +2780,43 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Databases based on the query parameters specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabases = DatabaseFunctions.getAutonomousDatabases(GetAutonomousDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .dbVersion(var_.autonomous_database_db_version())
+     *             .dbWorkload(var_.autonomous_database_db_workload())
+     *             .displayName(var_.autonomous_database_display_name())
+     *             .infrastructureType(var_.autonomous_database_infrastructure_type())
+     *             .isDataGuardEnabled(var_.autonomous_database_is_data_guard_enabled())
+     *             .isFreeTier(var_.autonomous_database_is_free_tier())
+     *             .isRefreshableClone(var_.autonomous_database_is_refreshable_clone())
+     *             .state(var_.autonomous_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabasesResult> getAutonomousDatabases(GetAutonomousDatabasesArgs args) {
@@ -993,6 +2828,43 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Databases based on the query parameters specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabases = DatabaseFunctions.getAutonomousDatabases(GetAutonomousDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .dbVersion(var_.autonomous_database_db_version())
+     *             .dbWorkload(var_.autonomous_database_db_workload())
+     *             .displayName(var_.autonomous_database_display_name())
+     *             .infrastructureType(var_.autonomous_database_infrastructure_type())
+     *             .isDataGuardEnabled(var_.autonomous_database_is_data_guard_enabled())
+     *             .isFreeTier(var_.autonomous_database_is_free_tier())
+     *             .isRefreshableClone(var_.autonomous_database_is_refreshable_clone())
+     *             .state(var_.autonomous_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabasesResult> getAutonomousDatabasesPlain(GetAutonomousDatabasesPlainArgs args) {
@@ -1004,6 +2876,43 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Databases based on the query parameters specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabases = DatabaseFunctions.getAutonomousDatabases(GetAutonomousDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .dbVersion(var_.autonomous_database_db_version())
+     *             .dbWorkload(var_.autonomous_database_db_workload())
+     *             .displayName(var_.autonomous_database_display_name())
+     *             .infrastructureType(var_.autonomous_database_infrastructure_type())
+     *             .isDataGuardEnabled(var_.autonomous_database_is_data_guard_enabled())
+     *             .isFreeTier(var_.autonomous_database_is_free_tier())
+     *             .isRefreshableClone(var_.autonomous_database_is_refreshable_clone())
+     *             .state(var_.autonomous_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabasesResult> getAutonomousDatabases(GetAutonomousDatabasesArgs args, InvokeOptions options) {
@@ -1015,6 +2924,43 @@ public final class DatabaseFunctions {
      * Gets a list of Autonomous Databases based on the query parameters specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabases = DatabaseFunctions.getAutonomousDatabases(GetAutonomousDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .dbVersion(var_.autonomous_database_db_version())
+     *             .dbWorkload(var_.autonomous_database_db_workload())
+     *             .displayName(var_.autonomous_database_display_name())
+     *             .infrastructureType(var_.autonomous_database_infrastructure_type())
+     *             .isDataGuardEnabled(var_.autonomous_database_is_data_guard_enabled())
+     *             .isFreeTier(var_.autonomous_database_is_free_tier())
+     *             .isRefreshableClone(var_.autonomous_database_is_refreshable_clone())
+     *             .state(var_.autonomous_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabasesResult> getAutonomousDatabasesPlain(GetAutonomousDatabasesPlainArgs args, InvokeOptions options) {
@@ -1026,6 +2972,38 @@ public final class DatabaseFunctions {
      * Lists the Autonomous Database clones for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesClonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasesClones = DatabaseFunctions.getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .cloneType(var_.autonomous_databases_clone_clone_type())
+     *             .displayName(var_.autonomous_databases_clone_display_name())
+     *             .state(var_.autonomous_databases_clone_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabasesClonesResult> getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs args) {
@@ -1037,6 +3015,38 @@ public final class DatabaseFunctions {
      * Lists the Autonomous Database clones for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesClonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasesClones = DatabaseFunctions.getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .cloneType(var_.autonomous_databases_clone_clone_type())
+     *             .displayName(var_.autonomous_databases_clone_display_name())
+     *             .state(var_.autonomous_databases_clone_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabasesClonesResult> getAutonomousDatabasesClonesPlain(GetAutonomousDatabasesClonesPlainArgs args) {
@@ -1048,6 +3058,38 @@ public final class DatabaseFunctions {
      * Lists the Autonomous Database clones for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesClonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasesClones = DatabaseFunctions.getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .cloneType(var_.autonomous_databases_clone_clone_type())
+     *             .displayName(var_.autonomous_databases_clone_display_name())
+     *             .state(var_.autonomous_databases_clone_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDatabasesClonesResult> getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs args, InvokeOptions options) {
@@ -1059,6 +3101,38 @@ public final class DatabaseFunctions {
      * Lists the Autonomous Database clones for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesClonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasesClones = DatabaseFunctions.getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs.builder()
+     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .cloneType(var_.autonomous_databases_clone_clone_type())
+     *             .displayName(var_.autonomous_databases_clone_display_name())
+     *             .state(var_.autonomous_databases_clone_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDatabasesClonesResult> getAutonomousDatabasesClonesPlain(GetAutonomousDatabasesClonesPlainArgs args, InvokeOptions options) {
@@ -1071,6 +3145,34 @@ public final class DatabaseFunctions {
      * databases with [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDbPreviewVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDbPreviewVersions = DatabaseFunctions.getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDbPreviewVersionsResult> getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs args) {
@@ -1083,6 +3185,34 @@ public final class DatabaseFunctions {
      * databases with [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDbPreviewVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDbPreviewVersions = DatabaseFunctions.getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDbPreviewVersionsResult> getAutonomousDbPreviewVersionsPlain(GetAutonomousDbPreviewVersionsPlainArgs args) {
@@ -1095,6 +3225,34 @@ public final class DatabaseFunctions {
      * databases with [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDbPreviewVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDbPreviewVersions = DatabaseFunctions.getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDbPreviewVersionsResult> getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs args, InvokeOptions options) {
@@ -1107,6 +3265,34 @@ public final class DatabaseFunctions {
      * databases with [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDbPreviewVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDbPreviewVersions = DatabaseFunctions.getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDbPreviewVersionsResult> getAutonomousDbPreviewVersionsPlain(GetAutonomousDbPreviewVersionsPlainArgs args, InvokeOptions options) {
@@ -1118,6 +3304,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported Autonomous Database versions.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDbVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDbVersions = DatabaseFunctions.getAutonomousDbVersions(GetAutonomousDbVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbWorkload(var_.autonomous_db_version_db_workload())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDbVersionsResult> getAutonomousDbVersions(GetAutonomousDbVersionsArgs args) {
@@ -1129,6 +3344,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported Autonomous Database versions.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDbVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDbVersions = DatabaseFunctions.getAutonomousDbVersions(GetAutonomousDbVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbWorkload(var_.autonomous_db_version_db_workload())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDbVersionsResult> getAutonomousDbVersionsPlain(GetAutonomousDbVersionsPlainArgs args) {
@@ -1140,6 +3384,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported Autonomous Database versions.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDbVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDbVersions = DatabaseFunctions.getAutonomousDbVersions(GetAutonomousDbVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbWorkload(var_.autonomous_db_version_db_workload())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousDbVersionsResult> getAutonomousDbVersions(GetAutonomousDbVersionsArgs args, InvokeOptions options) {
@@ -1151,6 +3424,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported Autonomous Database versions.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDbVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDbVersions = DatabaseFunctions.getAutonomousDbVersions(GetAutonomousDbVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbWorkload(var_.autonomous_db_version_db_workload())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousDbVersionsResult> getAutonomousDbVersionsPlain(GetAutonomousDbVersionsPlainArgs args, InvokeOptions options) {
@@ -1162,6 +3464,34 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation to get details of an Exadata Infrastructure resource and the [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster) operation to get details of an Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructure = DatabaseFunctions.getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs.builder()
+     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureResult> getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs args) {
@@ -1173,6 +3503,34 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation to get details of an Exadata Infrastructure resource and the [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster) operation to get details of an Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructure = DatabaseFunctions.getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs.builder()
+     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructureResult> getAutonomousExadataInfrastructurePlain(GetAutonomousExadataInfrastructurePlainArgs args) {
@@ -1184,6 +3542,34 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation to get details of an Exadata Infrastructure resource and the [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster) operation to get details of an Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructure = DatabaseFunctions.getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs.builder()
+     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureResult> getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs args, InvokeOptions options) {
@@ -1195,6 +3581,34 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation to get details of an Exadata Infrastructure resource and the [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster) operation to get details of an Autonomous Exadata VM cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructure = DatabaseFunctions.getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs.builder()
+     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructureResult> getAutonomousExadataInfrastructurePlain(GetAutonomousExadataInfrastructurePlainArgs args, InvokeOptions options) {
@@ -1206,6 +3620,34 @@ public final class DatabaseFunctions {
      * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureOcpuArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructureOcpu = DatabaseFunctions.getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs.builder()
+     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureOcpuResult> getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs args) {
@@ -1217,6 +3659,34 @@ public final class DatabaseFunctions {
      * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureOcpuArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructureOcpu = DatabaseFunctions.getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs.builder()
+     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructureOcpuResult> getAutonomousExadataInfrastructureOcpuPlain(GetAutonomousExadataInfrastructureOcpuPlainArgs args) {
@@ -1228,6 +3698,34 @@ public final class DatabaseFunctions {
      * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureOcpuArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructureOcpu = DatabaseFunctions.getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs.builder()
+     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureOcpuResult> getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs args, InvokeOptions options) {
@@ -1239,6 +3737,34 @@ public final class DatabaseFunctions {
      * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureOcpuArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructureOcpu = DatabaseFunctions.getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs.builder()
+     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructureOcpuResult> getAutonomousExadataInfrastructureOcpuPlain(GetAutonomousExadataInfrastructureOcpuPlainArgs args, InvokeOptions options) {
@@ -1250,6 +3776,35 @@ public final class DatabaseFunctions {
      * **Deprecated.**
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructureShapes = DatabaseFunctions.getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs.builder()
+     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_shape_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureShapesResult> getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs args) {
@@ -1261,6 +3816,35 @@ public final class DatabaseFunctions {
      * **Deprecated.**
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructureShapes = DatabaseFunctions.getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs.builder()
+     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_shape_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructureShapesResult> getAutonomousExadataInfrastructureShapesPlain(GetAutonomousExadataInfrastructureShapesPlainArgs args) {
@@ -1272,6 +3856,35 @@ public final class DatabaseFunctions {
      * **Deprecated.**
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructureShapes = DatabaseFunctions.getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs.builder()
+     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_shape_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousExadataInfrastructureShapesResult> getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs args, InvokeOptions options) {
@@ -1283,6 +3896,35 @@ public final class DatabaseFunctions {
      * **Deprecated.**
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructureShapes = DatabaseFunctions.getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs.builder()
+     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_shape_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructureShapesResult> getAutonomousExadataInfrastructureShapesPlain(GetAutonomousExadataInfrastructureShapesPlainArgs args, InvokeOptions options) {
@@ -1294,6 +3936,37 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation to list Exadata Infrastructures in the Oracle cloud and the  [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters) operation to list Autonomous Exadata VM clusters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructures = DatabaseFunctions.getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_availability_domain())
+     *             .displayName(var_.autonomous_exadata_infrastructure_display_name())
+     *             .state(var_.autonomous_exadata_infrastructure_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousExadataInfrastructuresResult> getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs args) {
@@ -1305,6 +3978,37 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation to list Exadata Infrastructures in the Oracle cloud and the  [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters) operation to list Autonomous Exadata VM clusters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructures = DatabaseFunctions.getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_availability_domain())
+     *             .displayName(var_.autonomous_exadata_infrastructure_display_name())
+     *             .state(var_.autonomous_exadata_infrastructure_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructuresResult> getAutonomousExadataInfrastructuresPlain(GetAutonomousExadataInfrastructuresPlainArgs args) {
@@ -1316,6 +4020,37 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation to list Exadata Infrastructures in the Oracle cloud and the  [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters) operation to list Autonomous Exadata VM clusters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructures = DatabaseFunctions.getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_availability_domain())
+     *             .displayName(var_.autonomous_exadata_infrastructure_display_name())
+     *             .state(var_.autonomous_exadata_infrastructure_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousExadataInfrastructuresResult> getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs args, InvokeOptions options) {
@@ -1327,6 +4062,37 @@ public final class DatabaseFunctions {
      * **Deprecated.** Use the [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation to list Exadata Infrastructures in the Oracle cloud and the  [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters) operation to list Autonomous Exadata VM clusters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousExadataInfrastructures = DatabaseFunctions.getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_availability_domain())
+     *             .displayName(var_.autonomous_exadata_infrastructure_display_name())
+     *             .state(var_.autonomous_exadata_infrastructure_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousExadataInfrastructuresResult> getAutonomousExadataInfrastructuresPlain(GetAutonomousExadataInfrastructuresPlainArgs args, InvokeOptions options) {
@@ -1338,6 +4104,34 @@ public final class DatabaseFunctions {
      * Gets information about a specific autonomous patch.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousPatch = DatabaseFunctions.getAutonomousPatch(GetAutonomousPatchArgs.builder()
+     *             .autonomousPatchId(oci_database_autonomous_patch.test_autonomous_patch().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousPatchResult> getAutonomousPatch(GetAutonomousPatchArgs args) {
@@ -1349,6 +4143,34 @@ public final class DatabaseFunctions {
      * Gets information about a specific autonomous patch.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousPatch = DatabaseFunctions.getAutonomousPatch(GetAutonomousPatchArgs.builder()
+     *             .autonomousPatchId(oci_database_autonomous_patch.test_autonomous_patch().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousPatchResult> getAutonomousPatchPlain(GetAutonomousPatchPlainArgs args) {
@@ -1360,6 +4182,34 @@ public final class DatabaseFunctions {
      * Gets information about a specific autonomous patch.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousPatch = DatabaseFunctions.getAutonomousPatch(GetAutonomousPatchArgs.builder()
+     *             .autonomousPatchId(oci_database_autonomous_patch.test_autonomous_patch().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousPatchResult> getAutonomousPatch(GetAutonomousPatchArgs args, InvokeOptions options) {
@@ -1371,6 +4221,34 @@ public final class DatabaseFunctions {
      * Gets information about a specific autonomous patch.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousPatch = DatabaseFunctions.getAutonomousPatch(GetAutonomousPatchArgs.builder()
+     *             .autonomousPatchId(oci_database_autonomous_patch.test_autonomous_patch().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousPatchResult> getAutonomousPatchPlain(GetAutonomousPatchPlainArgs args, InvokeOptions options) {
@@ -1382,6 +4260,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVmCluster = DatabaseFunctions.getAutonomousVmCluster(GetAutonomousVmClusterArgs.builder()
+     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousVmClusterResult> getAutonomousVmCluster(GetAutonomousVmClusterArgs args) {
@@ -1393,6 +4299,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVmCluster = DatabaseFunctions.getAutonomousVmCluster(GetAutonomousVmClusterArgs.builder()
+     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousVmClusterResult> getAutonomousVmClusterPlain(GetAutonomousVmClusterPlainArgs args) {
@@ -1404,6 +4338,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVmCluster = DatabaseFunctions.getAutonomousVmCluster(GetAutonomousVmClusterArgs.builder()
+     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousVmClusterResult> getAutonomousVmCluster(GetAutonomousVmClusterArgs args, InvokeOptions options) {
@@ -1415,6 +4377,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see [GetCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVmCluster = DatabaseFunctions.getAutonomousVmCluster(GetAutonomousVmClusterArgs.builder()
+     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousVmClusterResult> getAutonomousVmClusterPlain(GetAutonomousVmClusterPlainArgs args, InvokeOptions options) {
@@ -1426,6 +4416,37 @@ public final class DatabaseFunctions {
      * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To list Autonomous VM Clusters in the Oracle Cloud, see [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVmClusters = DatabaseFunctions.getAutonomousVmClusters(GetAutonomousVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.autonomous_vm_cluster_display_name())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .state(var_.autonomous_vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousVmClustersResult> getAutonomousVmClusters(GetAutonomousVmClustersArgs args) {
@@ -1437,6 +4458,37 @@ public final class DatabaseFunctions {
      * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To list Autonomous VM Clusters in the Oracle Cloud, see [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVmClusters = DatabaseFunctions.getAutonomousVmClusters(GetAutonomousVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.autonomous_vm_cluster_display_name())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .state(var_.autonomous_vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousVmClustersResult> getAutonomousVmClustersPlain(GetAutonomousVmClustersPlainArgs args) {
@@ -1448,6 +4500,37 @@ public final class DatabaseFunctions {
      * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To list Autonomous VM Clusters in the Oracle Cloud, see [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVmClusters = DatabaseFunctions.getAutonomousVmClusters(GetAutonomousVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.autonomous_vm_cluster_display_name())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .state(var_.autonomous_vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAutonomousVmClustersResult> getAutonomousVmClusters(GetAutonomousVmClustersArgs args, InvokeOptions options) {
@@ -1459,6 +4542,37 @@ public final class DatabaseFunctions {
      * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To list Autonomous VM Clusters in the Oracle Cloud, see [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousVmClusters = DatabaseFunctions.getAutonomousVmClusters(GetAutonomousVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.autonomous_vm_cluster_display_name())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .state(var_.autonomous_vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAutonomousVmClustersResult> getAutonomousVmClustersPlain(GetAutonomousVmClustersPlainArgs args, InvokeOptions options) {
@@ -1470,6 +4584,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified backup destination in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupDestinationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackupDestination = DatabaseFunctions.getBackupDestination(GetBackupDestinationArgs.builder()
+     *             .backupDestinationId(oci_database_backup_destination.test_backup_destination().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackupDestinationResult> getBackupDestination(GetBackupDestinationArgs args) {
@@ -1481,6 +4623,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified backup destination in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupDestinationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackupDestination = DatabaseFunctions.getBackupDestination(GetBackupDestinationArgs.builder()
+     *             .backupDestinationId(oci_database_backup_destination.test_backup_destination().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackupDestinationResult> getBackupDestinationPlain(GetBackupDestinationPlainArgs args) {
@@ -1492,6 +4662,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified backup destination in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupDestinationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackupDestination = DatabaseFunctions.getBackupDestination(GetBackupDestinationArgs.builder()
+     *             .backupDestinationId(oci_database_backup_destination.test_backup_destination().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackupDestinationResult> getBackupDestination(GetBackupDestinationArgs args, InvokeOptions options) {
@@ -1503,6 +4701,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified backup destination in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupDestinationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackupDestination = DatabaseFunctions.getBackupDestination(GetBackupDestinationArgs.builder()
+     *             .backupDestinationId(oci_database_backup_destination.test_backup_destination().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackupDestinationResult> getBackupDestinationPlain(GetBackupDestinationPlainArgs args, InvokeOptions options) {
@@ -1514,6 +4740,35 @@ public final class DatabaseFunctions {
      * Gets a list of backup destinations in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupDestinationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackupDestinations = DatabaseFunctions.getBackupDestinations(GetBackupDestinationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .type(var_.backup_destination_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackupDestinationsResult> getBackupDestinations(GetBackupDestinationsArgs args) {
@@ -1525,6 +4780,35 @@ public final class DatabaseFunctions {
      * Gets a list of backup destinations in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupDestinationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackupDestinations = DatabaseFunctions.getBackupDestinations(GetBackupDestinationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .type(var_.backup_destination_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackupDestinationsResult> getBackupDestinationsPlain(GetBackupDestinationsPlainArgs args) {
@@ -1536,6 +4820,35 @@ public final class DatabaseFunctions {
      * Gets a list of backup destinations in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupDestinationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackupDestinations = DatabaseFunctions.getBackupDestinations(GetBackupDestinationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .type(var_.backup_destination_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackupDestinationsResult> getBackupDestinations(GetBackupDestinationsArgs args, InvokeOptions options) {
@@ -1547,6 +4860,35 @@ public final class DatabaseFunctions {
      * Gets a list of backup destinations in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupDestinationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackupDestinations = DatabaseFunctions.getBackupDestinations(GetBackupDestinationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .type(var_.backup_destination_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackupDestinationsResult> getBackupDestinationsPlain(GetBackupDestinationsPlainArgs args, InvokeOptions options) {
@@ -1558,6 +4900,35 @@ public final class DatabaseFunctions {
      * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackupsResult> getBackups() {
@@ -1569,6 +4940,35 @@ public final class DatabaseFunctions {
      * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackupsResult> getBackupsPlain() {
@@ -1580,6 +4980,35 @@ public final class DatabaseFunctions {
      * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackupsResult> getBackups(GetBackupsArgs args) {
@@ -1591,6 +5020,35 @@ public final class DatabaseFunctions {
      * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackupsResult> getBackupsPlain(GetBackupsPlainArgs args) {
@@ -1602,6 +5060,35 @@ public final class DatabaseFunctions {
      * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBackupsResult> getBackups(GetBackupsArgs args, InvokeOptions options) {
@@ -1613,6 +5100,35 @@ public final class DatabaseFunctions {
      * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBackupsResult> getBackupsPlain(GetBackupsPlainArgs args, InvokeOptions options) {
@@ -1624,6 +5140,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmCluster = DatabaseFunctions.getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs.builder()
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudAutonomousVmClusterResult> getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs args) {
@@ -1635,6 +5179,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmCluster = DatabaseFunctions.getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs.builder()
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudAutonomousVmClusterResult> getCloudAutonomousVmClusterPlain(GetCloudAutonomousVmClusterPlainArgs args) {
@@ -1646,6 +5218,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmCluster = DatabaseFunctions.getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs.builder()
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudAutonomousVmClusterResult> getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs args, InvokeOptions options) {
@@ -1657,6 +5257,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmCluster = DatabaseFunctions.getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs.builder()
+     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudAutonomousVmClusterResult> getCloudAutonomousVmClusterPlain(GetCloudAutonomousVmClusterPlainArgs args, InvokeOptions options) {
@@ -1668,6 +5296,38 @@ public final class DatabaseFunctions {
      * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see [ListAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/ListAutonomousVmClusters).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusters = DatabaseFunctions.getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.cloud_autonomous_vm_cluster_availability_domain())
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .displayName(var_.cloud_autonomous_vm_cluster_display_name())
+     *             .state(var_.cloud_autonomous_vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudAutonomousVmClustersResult> getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs args) {
@@ -1679,6 +5339,38 @@ public final class DatabaseFunctions {
      * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see [ListAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/ListAutonomousVmClusters).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusters = DatabaseFunctions.getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.cloud_autonomous_vm_cluster_availability_domain())
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .displayName(var_.cloud_autonomous_vm_cluster_display_name())
+     *             .state(var_.cloud_autonomous_vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudAutonomousVmClustersResult> getCloudAutonomousVmClustersPlain(GetCloudAutonomousVmClustersPlainArgs args) {
@@ -1690,6 +5382,38 @@ public final class DatabaseFunctions {
      * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see [ListAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/ListAutonomousVmClusters).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusters = DatabaseFunctions.getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.cloud_autonomous_vm_cluster_availability_domain())
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .displayName(var_.cloud_autonomous_vm_cluster_display_name())
+     *             .state(var_.cloud_autonomous_vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudAutonomousVmClustersResult> getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs args, InvokeOptions options) {
@@ -1701,6 +5425,38 @@ public final class DatabaseFunctions {
      * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see [ListAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/ListAutonomousVmClusters).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAutonomousVmClusters = DatabaseFunctions.getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.cloud_autonomous_vm_cluster_availability_domain())
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .displayName(var_.cloud_autonomous_vm_cluster_display_name())
+     *             .state(var_.cloud_autonomous_vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudAutonomousVmClustersResult> getCloudAutonomousVmClustersPlain(GetCloudAutonomousVmClustersPlainArgs args, InvokeOptions options) {
@@ -1712,6 +5468,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructure = DatabaseFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs args) {
@@ -1723,6 +5507,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructure = DatabaseFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructurePlain(GetCloudExadataInfrastructurePlainArgs args) {
@@ -1734,6 +5546,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructure = DatabaseFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs args, InvokeOptions options) {
@@ -1745,6 +5585,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructure = DatabaseFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudExadataInfrastructureResult> getCloudExadataInfrastructurePlain(GetCloudExadataInfrastructurePlainArgs args, InvokeOptions options) {
@@ -1756,6 +5624,36 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructures = DatabaseFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cloud_exadata_infrastructure_display_name())
+     *             .state(var_.cloud_exadata_infrastructure_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs args) {
@@ -1767,6 +5665,36 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructures = DatabaseFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cloud_exadata_infrastructure_display_name())
+     *             .state(var_.cloud_exadata_infrastructure_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructuresPlain(GetCloudExadataInfrastructuresPlainArgs args) {
@@ -1778,6 +5706,36 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructures = DatabaseFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cloud_exadata_infrastructure_display_name())
+     *             .state(var_.cloud_exadata_infrastructure_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs args, InvokeOptions options) {
@@ -1789,6 +5747,36 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudExadataInfrastructures = DatabaseFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cloud_exadata_infrastructure_display_name())
+     *             .state(var_.cloud_exadata_infrastructure_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudExadataInfrastructuresResult> getCloudExadataInfrastructuresPlain(GetCloudExadataInfrastructuresPlainArgs args, InvokeOptions options) {
@@ -1800,6 +5788,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmCluster = DatabaseFunctions.getCloudVmCluster(GetCloudVmClusterArgs.builder()
+     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudVmClusterResult> getCloudVmCluster(GetCloudVmClusterArgs args) {
@@ -1811,6 +5827,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmCluster = DatabaseFunctions.getCloudVmCluster(GetCloudVmClusterArgs.builder()
+     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudVmClusterResult> getCloudVmClusterPlain(GetCloudVmClusterPlainArgs args) {
@@ -1822,6 +5866,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmCluster = DatabaseFunctions.getCloudVmCluster(GetCloudVmClusterArgs.builder()
+     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudVmClusterResult> getCloudVmCluster(GetCloudVmClusterArgs args, InvokeOptions options) {
@@ -1833,6 +5905,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmCluster = DatabaseFunctions.getCloudVmCluster(GetCloudVmClusterArgs.builder()
+     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudVmClusterResult> getCloudVmClusterPlain(GetCloudVmClusterPlainArgs args, InvokeOptions options) {
@@ -1847,6 +5947,34 @@ public final class DatabaseFunctions {
      * The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClusterIormConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmClusterIormConfig = DatabaseFunctions.getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs.builder()
+     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudVmClusterIormConfigResult> getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs args) {
@@ -1861,6 +5989,34 @@ public final class DatabaseFunctions {
      * The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClusterIormConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmClusterIormConfig = DatabaseFunctions.getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs.builder()
+     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudVmClusterIormConfigResult> getCloudVmClusterIormConfigPlain(GetCloudVmClusterIormConfigPlainArgs args) {
@@ -1875,6 +6031,34 @@ public final class DatabaseFunctions {
      * The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClusterIormConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmClusterIormConfig = DatabaseFunctions.getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs.builder()
+     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudVmClusterIormConfigResult> getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs args, InvokeOptions options) {
@@ -1889,6 +6073,34 @@ public final class DatabaseFunctions {
      * The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Cloud Vm Cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClusterIormConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmClusterIormConfig = DatabaseFunctions.getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs.builder()
+     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudVmClusterIormConfigResult> getCloudVmClusterIormConfigPlain(GetCloudVmClusterIormConfigPlainArgs args, InvokeOptions options) {
@@ -1900,6 +6112,37 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmClusters = DatabaseFunctions.getCloudVmClusters(GetCloudVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .displayName(var_.cloud_vm_cluster_display_name())
+     *             .state(var_.cloud_vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudVmClustersResult> getCloudVmClusters(GetCloudVmClustersArgs args) {
@@ -1911,6 +6154,37 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmClusters = DatabaseFunctions.getCloudVmClusters(GetCloudVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .displayName(var_.cloud_vm_cluster_display_name())
+     *             .state(var_.cloud_vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudVmClustersResult> getCloudVmClustersPlain(GetCloudVmClustersPlainArgs args) {
@@ -1922,6 +6196,37 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmClusters = DatabaseFunctions.getCloudVmClusters(GetCloudVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .displayName(var_.cloud_vm_cluster_display_name())
+     *             .state(var_.cloud_vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudVmClustersResult> getCloudVmClusters(GetCloudVmClustersArgs args, InvokeOptions options) {
@@ -1933,6 +6238,37 @@ public final class DatabaseFunctions {
      * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetCloudVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudVmClusters = DatabaseFunctions.getCloudVmClusters(GetCloudVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .displayName(var_.cloud_vm_cluster_display_name())
+     *             .state(var_.cloud_vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudVmClustersResult> getCloudVmClustersPlain(GetCloudVmClustersPlainArgs args, InvokeOptions options) {
@@ -1944,6 +6280,35 @@ public final class DatabaseFunctions {
      * Gets the specified Data Guard association&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataGuardAssociation = DatabaseFunctions.getDataGuardAssociation(GetDataGuardAssociationArgs.builder()
+     *             .dataGuardAssociationId(oci_database_data_guard_association.test_data_guard_association().id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataGuardAssociationResult> getDataGuardAssociation(GetDataGuardAssociationArgs args) {
@@ -1955,6 +6320,35 @@ public final class DatabaseFunctions {
      * Gets the specified Data Guard association&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataGuardAssociation = DatabaseFunctions.getDataGuardAssociation(GetDataGuardAssociationArgs.builder()
+     *             .dataGuardAssociationId(oci_database_data_guard_association.test_data_guard_association().id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataGuardAssociationResult> getDataGuardAssociationPlain(GetDataGuardAssociationPlainArgs args) {
@@ -1966,6 +6360,35 @@ public final class DatabaseFunctions {
      * Gets the specified Data Guard association&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataGuardAssociation = DatabaseFunctions.getDataGuardAssociation(GetDataGuardAssociationArgs.builder()
+     *             .dataGuardAssociationId(oci_database_data_guard_association.test_data_guard_association().id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataGuardAssociationResult> getDataGuardAssociation(GetDataGuardAssociationArgs args, InvokeOptions options) {
@@ -1977,6 +6400,35 @@ public final class DatabaseFunctions {
      * Gets the specified Data Guard association&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataGuardAssociation = DatabaseFunctions.getDataGuardAssociation(GetDataGuardAssociationArgs.builder()
+     *             .dataGuardAssociationId(oci_database_data_guard_association.test_data_guard_association().id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataGuardAssociationResult> getDataGuardAssociationPlain(GetDataGuardAssociationPlainArgs args, InvokeOptions options) {
@@ -1988,6 +6440,34 @@ public final class DatabaseFunctions {
      * Lists all Data Guard associations for the specified database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataGuardAssociations = DatabaseFunctions.getDataGuardAssociations(GetDataGuardAssociationsArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataGuardAssociationsResult> getDataGuardAssociations(GetDataGuardAssociationsArgs args) {
@@ -1999,6 +6479,34 @@ public final class DatabaseFunctions {
      * Lists all Data Guard associations for the specified database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataGuardAssociations = DatabaseFunctions.getDataGuardAssociations(GetDataGuardAssociationsArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataGuardAssociationsResult> getDataGuardAssociationsPlain(GetDataGuardAssociationsPlainArgs args) {
@@ -2010,6 +6518,34 @@ public final class DatabaseFunctions {
      * Lists all Data Guard associations for the specified database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataGuardAssociations = DatabaseFunctions.getDataGuardAssociations(GetDataGuardAssociationsArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataGuardAssociationsResult> getDataGuardAssociations(GetDataGuardAssociationsArgs args, InvokeOptions options) {
@@ -2021,6 +6557,34 @@ public final class DatabaseFunctions {
      * Lists all Data Guard associations for the specified database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataGuardAssociations = DatabaseFunctions.getDataGuardAssociations(GetDataGuardAssociationsArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataGuardAssociationsResult> getDataGuardAssociationsPlain(GetDataGuardAssociationsPlainArgs args, InvokeOptions options) {
@@ -2032,6 +6596,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabase = DatabaseFunctions.getDatabase(GetTargetDatabaseArgs.builder()
+     *             .databaseId(var_.database_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseResult> getDatabase(GetDatabaseArgs args) {
@@ -2043,6 +6635,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabase = DatabaseFunctions.getDatabase(GetTargetDatabaseArgs.builder()
+     *             .databaseId(var_.database_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseResult> getDatabasePlain(GetDatabasePlainArgs args) {
@@ -2054,6 +6674,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabase = DatabaseFunctions.getDatabase(GetTargetDatabaseArgs.builder()
+     *             .databaseId(var_.database_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseResult> getDatabase(GetDatabaseArgs args, InvokeOptions options) {
@@ -2065,6 +6713,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabase = DatabaseFunctions.getDatabase(GetTargetDatabaseArgs.builder()
+     *             .databaseId(var_.database_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseResult> getDatabasePlain(GetDatabasePlainArgs args, InvokeOptions options) {
@@ -2076,6 +6752,39 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance run histories in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRunHistories = DatabaseFunctions.getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.maintenance_run_history_availability_domain())
+     *             .maintenanceType(var_.maintenance_run_history_maintenance_type())
+     *             .state(var_.maintenance_run_history_state())
+     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
+     *             .targetResourceType(var_.maintenance_run_history_target_resource_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs args) {
@@ -2087,6 +6796,39 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance run histories in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRunHistories = DatabaseFunctions.getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.maintenance_run_history_availability_domain())
+     *             .maintenanceType(var_.maintenance_run_history_maintenance_type())
+     *             .state(var_.maintenance_run_history_state())
+     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
+     *             .targetResourceType(var_.maintenance_run_history_target_resource_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistoriesPlain(GetDatabaseMaintenanceRunHistoriesPlainArgs args) {
@@ -2098,6 +6840,39 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance run histories in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRunHistories = DatabaseFunctions.getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.maintenance_run_history_availability_domain())
+     *             .maintenanceType(var_.maintenance_run_history_maintenance_type())
+     *             .state(var_.maintenance_run_history_state())
+     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
+     *             .targetResourceType(var_.maintenance_run_history_target_resource_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs args, InvokeOptions options) {
@@ -2109,6 +6884,39 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance run histories in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRunHistories = DatabaseFunctions.getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.maintenance_run_history_availability_domain())
+     *             .maintenanceType(var_.maintenance_run_history_maintenance_type())
+     *             .state(var_.maintenance_run_history_state())
+     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
+     *             .targetResourceType(var_.maintenance_run_history_target_resource_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseMaintenanceRunHistoriesResult> getDatabaseMaintenanceRunHistoriesPlain(GetDatabaseMaintenanceRunHistoriesPlainArgs args, InvokeOptions options) {
@@ -2120,6 +6928,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run history.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRunHistory = DatabaseFunctions.getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs.builder()
+     *             .maintenanceRunHistoryId(oci_database_maintenance_run_history.test_maintenance_run_history().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs args) {
@@ -2131,6 +6967,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run history.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRunHistory = DatabaseFunctions.getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs.builder()
+     *             .maintenanceRunHistoryId(oci_database_maintenance_run_history.test_maintenance_run_history().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistoryPlain(GetDatabaseMaintenanceRunHistoryPlainArgs args) {
@@ -2142,6 +7006,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run history.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRunHistory = DatabaseFunctions.getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs.builder()
+     *             .maintenanceRunHistoryId(oci_database_maintenance_run_history.test_maintenance_run_history().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs args, InvokeOptions options) {
@@ -2153,6 +7045,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run history.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRunHistory = DatabaseFunctions.getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs.builder()
+     *             .maintenanceRunHistoryId(oci_database_maintenance_run_history.test_maintenance_run_history().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseMaintenanceRunHistoryResult> getDatabaseMaintenanceRunHistoryPlain(GetDatabaseMaintenanceRunHistoryPlainArgs args, InvokeOptions options) {
@@ -2164,6 +7084,36 @@ public final class DatabaseFunctions {
      * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabasePdbConversionHistoryEntries = DatabaseFunctions.getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbConversionAction(var_.database_pdb_conversion_history_entry_pdb_conversion_action())
+     *             .state(var_.database_pdb_conversion_history_entry_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabasePdbConversionHistoryEntriesResult> getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs args) {
@@ -2175,6 +7125,36 @@ public final class DatabaseFunctions {
      * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabasePdbConversionHistoryEntries = DatabaseFunctions.getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbConversionAction(var_.database_pdb_conversion_history_entry_pdb_conversion_action())
+     *             .state(var_.database_pdb_conversion_history_entry_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabasePdbConversionHistoryEntriesResult> getDatabasePdbConversionHistoryEntriesPlain(GetDatabasePdbConversionHistoryEntriesPlainArgs args) {
@@ -2186,6 +7166,36 @@ public final class DatabaseFunctions {
      * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabasePdbConversionHistoryEntries = DatabaseFunctions.getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbConversionAction(var_.database_pdb_conversion_history_entry_pdb_conversion_action())
+     *             .state(var_.database_pdb_conversion_history_entry_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabasePdbConversionHistoryEntriesResult> getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs args, InvokeOptions options) {
@@ -2197,6 +7207,36 @@ public final class DatabaseFunctions {
      * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabasePdbConversionHistoryEntries = DatabaseFunctions.getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbConversionAction(var_.database_pdb_conversion_history_entry_pdb_conversion_action())
+     *             .state(var_.database_pdb_conversion_history_entry_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabasePdbConversionHistoryEntriesResult> getDatabasePdbConversionHistoryEntriesPlain(GetDatabasePdbConversionHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -2208,6 +7248,35 @@ public final class DatabaseFunctions {
      * Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabasePdbConversionHistoryEntry = DatabaseFunctions.getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbConversionHistoryEntryId(oci_database_pdb_conversion_history_entry.test_pdb_conversion_history_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabasePdbConversionHistoryEntryResult> getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs args) {
@@ -2219,6 +7288,35 @@ public final class DatabaseFunctions {
      * Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabasePdbConversionHistoryEntry = DatabaseFunctions.getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbConversionHistoryEntryId(oci_database_pdb_conversion_history_entry.test_pdb_conversion_history_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabasePdbConversionHistoryEntryResult> getDatabasePdbConversionHistoryEntryPlain(GetDatabasePdbConversionHistoryEntryPlainArgs args) {
@@ -2230,6 +7328,35 @@ public final class DatabaseFunctions {
      * Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabasePdbConversionHistoryEntry = DatabaseFunctions.getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbConversionHistoryEntryId(oci_database_pdb_conversion_history_entry.test_pdb_conversion_history_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabasePdbConversionHistoryEntryResult> getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs args, InvokeOptions options) {
@@ -2241,6 +7368,35 @@ public final class DatabaseFunctions {
      * Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabasePdbConversionHistoryEntry = DatabaseFunctions.getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbConversionHistoryEntryId(oci_database_pdb_conversion_history_entry.test_pdb_conversion_history_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabasePdbConversionHistoryEntryResult> getDatabasePdbConversionHistoryEntryPlain(GetDatabasePdbConversionHistoryEntryPlainArgs args, InvokeOptions options) {
@@ -2252,6 +7408,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified database software image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSoftwareImage = DatabaseFunctions.getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs.builder()
+     *             .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseSoftwareImageResult> getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs args) {
@@ -2263,6 +7447,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified database software image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSoftwareImage = DatabaseFunctions.getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs.builder()
+     *             .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseSoftwareImageResult> getDatabaseSoftwareImagePlain(GetDatabaseSoftwareImagePlainArgs args) {
@@ -2274,6 +7486,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified database software image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSoftwareImage = DatabaseFunctions.getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs.builder()
+     *             .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseSoftwareImageResult> getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs args, InvokeOptions options) {
@@ -2285,6 +7525,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified database software image.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSoftwareImage = DatabaseFunctions.getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs.builder()
+     *             .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseSoftwareImageResult> getDatabaseSoftwareImagePlain(GetDatabaseSoftwareImagePlainArgs args, InvokeOptions options) {
@@ -2296,6 +7564,39 @@ public final class DatabaseFunctions {
      * Gets a list of the database software images in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_software_image_display_name())
+     *             .imageShapeFamily(var_.database_software_image_image_shape_family())
+     *             .imageType(var_.database_software_image_image_type())
+     *             .isUpgradeSupported(var_.database_software_image_is_upgrade_supported())
+     *             .state(var_.database_software_image_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseSoftwareImagesResult> getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs args) {
@@ -2307,6 +7608,39 @@ public final class DatabaseFunctions {
      * Gets a list of the database software images in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_software_image_display_name())
+     *             .imageShapeFamily(var_.database_software_image_image_shape_family())
+     *             .imageType(var_.database_software_image_image_type())
+     *             .isUpgradeSupported(var_.database_software_image_is_upgrade_supported())
+     *             .state(var_.database_software_image_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseSoftwareImagesResult> getDatabaseSoftwareImagesPlain(GetDatabaseSoftwareImagesPlainArgs args) {
@@ -2318,6 +7652,39 @@ public final class DatabaseFunctions {
      * Gets a list of the database software images in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_software_image_display_name())
+     *             .imageShapeFamily(var_.database_software_image_image_shape_family())
+     *             .imageType(var_.database_software_image_image_type())
+     *             .isUpgradeSupported(var_.database_software_image_is_upgrade_supported())
+     *             .state(var_.database_software_image_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseSoftwareImagesResult> getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs args, InvokeOptions options) {
@@ -2329,6 +7696,39 @@ public final class DatabaseFunctions {
      * Gets a list of the database software images in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.database_software_image_display_name())
+     *             .imageShapeFamily(var_.database_software_image_image_shape_family())
+     *             .imageType(var_.database_software_image_image_type())
+     *             .isUpgradeSupported(var_.database_software_image_is_upgrade_supported())
+     *             .state(var_.database_software_image_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseSoftwareImagesResult> getDatabaseSoftwareImagesPlain(GetDatabaseSoftwareImagesPlainArgs args, InvokeOptions options) {
@@ -2340,6 +7740,36 @@ public final class DatabaseFunctions {
      * Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseUpgradeHistoryEntries = DatabaseFunctions.getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .state(var_.database_upgrade_history_entry_state())
+     *             .upgradeAction(var_.database_upgrade_history_entry_upgrade_action())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseUpgradeHistoryEntriesResult> getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs args) {
@@ -2351,6 +7781,36 @@ public final class DatabaseFunctions {
      * Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseUpgradeHistoryEntries = DatabaseFunctions.getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .state(var_.database_upgrade_history_entry_state())
+     *             .upgradeAction(var_.database_upgrade_history_entry_upgrade_action())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseUpgradeHistoryEntriesResult> getDatabaseUpgradeHistoryEntriesPlain(GetDatabaseUpgradeHistoryEntriesPlainArgs args) {
@@ -2362,6 +7822,36 @@ public final class DatabaseFunctions {
      * Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseUpgradeHistoryEntries = DatabaseFunctions.getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .state(var_.database_upgrade_history_entry_state())
+     *             .upgradeAction(var_.database_upgrade_history_entry_upgrade_action())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseUpgradeHistoryEntriesResult> getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs args, InvokeOptions options) {
@@ -2373,6 +7863,36 @@ public final class DatabaseFunctions {
      * Gets the upgrade history for a specified database in a bare metal or virtual machine DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseUpgradeHistoryEntries = DatabaseFunctions.getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .state(var_.database_upgrade_history_entry_state())
+     *             .upgradeAction(var_.database_upgrade_history_entry_upgrade_action())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseUpgradeHistoryEntriesResult> getDatabaseUpgradeHistoryEntriesPlain(GetDatabaseUpgradeHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -2384,6 +7904,35 @@ public final class DatabaseFunctions {
      * gets the upgrade history for a specified database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseUpgradeHistoryEntry = DatabaseFunctions.getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseUpgradeHistoryEntryResult> getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs args) {
@@ -2395,6 +7944,35 @@ public final class DatabaseFunctions {
      * gets the upgrade history for a specified database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseUpgradeHistoryEntry = DatabaseFunctions.getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseUpgradeHistoryEntryResult> getDatabaseUpgradeHistoryEntryPlain(GetDatabaseUpgradeHistoryEntryPlainArgs args) {
@@ -2406,6 +7984,35 @@ public final class DatabaseFunctions {
      * gets the upgrade history for a specified database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseUpgradeHistoryEntry = DatabaseFunctions.getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabaseUpgradeHistoryEntryResult> getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs args, InvokeOptions options) {
@@ -2417,6 +8024,35 @@ public final class DatabaseFunctions {
      * gets the upgrade history for a specified database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseUpgradeHistoryEntry = DatabaseFunctions.getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs.builder()
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabaseUpgradeHistoryEntryResult> getDatabaseUpgradeHistoryEntryPlain(GetDatabaseUpgradeHistoryEntryPlainArgs args, InvokeOptions options) {
@@ -2428,6 +8064,38 @@ public final class DatabaseFunctions {
      * Gets a list of the databases in the specified Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabases = DatabaseFunctions.getDatabases(GetTargetDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .dbName(var_.database_db_name())
+     *             .state(var_.database_state())
+     *             .systemId(oci_database_system.test_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabasesResult> getDatabases(GetDatabasesArgs args) {
@@ -2439,6 +8107,38 @@ public final class DatabaseFunctions {
      * Gets a list of the databases in the specified Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabases = DatabaseFunctions.getDatabases(GetTargetDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .dbName(var_.database_db_name())
+     *             .state(var_.database_state())
+     *             .systemId(oci_database_system.test_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabasesResult> getDatabasesPlain(GetDatabasesPlainArgs args) {
@@ -2450,6 +8150,38 @@ public final class DatabaseFunctions {
      * Gets a list of the databases in the specified Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabases = DatabaseFunctions.getDatabases(GetTargetDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .dbName(var_.database_db_name())
+     *             .state(var_.database_state())
+     *             .systemId(oci_database_system.test_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDatabasesResult> getDatabases(GetDatabasesArgs args, InvokeOptions options) {
@@ -2461,6 +8193,38 @@ public final class DatabaseFunctions {
      * Gets a list of the databases in the specified Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabases = DatabaseFunctions.getDatabases(GetTargetDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .dbName(var_.database_db_name())
+     *             .state(var_.database_state())
+     *             .systemId(oci_database_system.test_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDatabasesResult> getDatabasesPlain(GetDatabasesPlainArgs args, InvokeOptions options) {
@@ -2472,6 +8236,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHome = DatabaseFunctions.getDbHome(GetDbHomeArgs.builder()
+     *             .dbHomeId(var_.db_home_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbHomeResult> getDbHome(GetDbHomeArgs args) {
@@ -2483,6 +8275,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHome = DatabaseFunctions.getDbHome(GetDbHomeArgs.builder()
+     *             .dbHomeId(var_.db_home_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbHomeResult> getDbHomePlain(GetDbHomePlainArgs args) {
@@ -2494,6 +8314,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHome = DatabaseFunctions.getDbHome(GetDbHomeArgs.builder()
+     *             .dbHomeId(var_.db_home_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbHomeResult> getDbHome(GetDbHomeArgs args, InvokeOptions options) {
@@ -2505,6 +8353,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHome = DatabaseFunctions.getDbHome(GetDbHomeArgs.builder()
+     *             .dbHomeId(var_.db_home_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbHomeResult> getDbHomePlain(GetDbHomePlainArgs args, InvokeOptions options) {
@@ -2516,6 +8392,34 @@ public final class DatabaseFunctions {
      * Lists the history of patch operations on the specified Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomePatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHomePatchHistoryEntries = DatabaseFunctions.getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs.builder()
+     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbHomePatchHistoryEntriesResult> getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs args) {
@@ -2527,6 +8431,34 @@ public final class DatabaseFunctions {
      * Lists the history of patch operations on the specified Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomePatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHomePatchHistoryEntries = DatabaseFunctions.getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs.builder()
+     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbHomePatchHistoryEntriesResult> getDbHomePatchHistoryEntriesPlain(GetDbHomePatchHistoryEntriesPlainArgs args) {
@@ -2538,6 +8470,34 @@ public final class DatabaseFunctions {
      * Lists the history of patch operations on the specified Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomePatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHomePatchHistoryEntries = DatabaseFunctions.getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs.builder()
+     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbHomePatchHistoryEntriesResult> getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs args, InvokeOptions options) {
@@ -2549,6 +8509,34 @@ public final class DatabaseFunctions {
      * Lists the history of patch operations on the specified Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomePatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHomePatchHistoryEntries = DatabaseFunctions.getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs.builder()
+     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbHomePatchHistoryEntriesResult> getDbHomePatchHistoryEntriesPlain(GetDbHomePatchHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -2560,6 +8548,34 @@ public final class DatabaseFunctions {
      * Lists patches applicable to the requested Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomePatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHomePatches = DatabaseFunctions.getDbHomePatches(GetDbHomePatchesArgs.builder()
+     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbHomePatchesResult> getDbHomePatches(GetDbHomePatchesArgs args) {
@@ -2571,6 +8587,34 @@ public final class DatabaseFunctions {
      * Lists patches applicable to the requested Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomePatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHomePatches = DatabaseFunctions.getDbHomePatches(GetDbHomePatchesArgs.builder()
+     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbHomePatchesResult> getDbHomePatchesPlain(GetDbHomePatchesPlainArgs args) {
@@ -2582,6 +8626,34 @@ public final class DatabaseFunctions {
      * Lists patches applicable to the requested Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomePatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHomePatches = DatabaseFunctions.getDbHomePatches(GetDbHomePatchesArgs.builder()
+     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbHomePatchesResult> getDbHomePatches(GetDbHomePatchesArgs args, InvokeOptions options) {
@@ -2593,6 +8665,34 @@ public final class DatabaseFunctions {
      * Lists patches applicable to the requested Database Home.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbHomePatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbHomePatches = DatabaseFunctions.getDbHomePatches(GetDbHomePatchesArgs.builder()
+     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbHomePatchesResult> getDbHomePatchesPlain(GetDbHomePatchesPlainArgs args, InvokeOptions options) {
@@ -2640,6 +8740,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified database node.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNode = DatabaseFunctions.getDbNode(GetDbNodeArgs.builder()
+     *             .dbNodeId(var_.db_node_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbNodeResult> getDbNode(GetDbNodeArgs args) {
@@ -2651,6 +8779,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified database node.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNode = DatabaseFunctions.getDbNode(GetDbNodeArgs.builder()
+     *             .dbNodeId(var_.db_node_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbNodeResult> getDbNodePlain(GetDbNodePlainArgs args) {
@@ -2662,6 +8818,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified database node.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNode = DatabaseFunctions.getDbNode(GetDbNodeArgs.builder()
+     *             .dbNodeId(var_.db_node_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbNodeResult> getDbNode(GetDbNodeArgs args, InvokeOptions options) {
@@ -2673,6 +8857,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified database node.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNode = DatabaseFunctions.getDbNode(GetDbNodeArgs.builder()
+     *             .dbNodeId(var_.db_node_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbNodeResult> getDbNodePlain(GetDbNodePlainArgs args, InvokeOptions options) {
@@ -2684,6 +8896,35 @@ public final class DatabaseFunctions {
      * Gets the specified database node console connection&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleConnection = DatabaseFunctions.getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs.builder()
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .id(var_.db_node_console_connection_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbNodeConsoleConnectionResult> getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs args) {
@@ -2695,6 +8936,35 @@ public final class DatabaseFunctions {
      * Gets the specified database node console connection&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleConnection = DatabaseFunctions.getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs.builder()
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .id(var_.db_node_console_connection_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleConnectionResult> getDbNodeConsoleConnectionPlain(GetDbNodeConsoleConnectionPlainArgs args) {
@@ -2706,6 +8976,35 @@ public final class DatabaseFunctions {
      * Gets the specified database node console connection&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleConnection = DatabaseFunctions.getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs.builder()
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .id(var_.db_node_console_connection_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbNodeConsoleConnectionResult> getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs args, InvokeOptions options) {
@@ -2717,6 +9016,35 @@ public final class DatabaseFunctions {
      * Gets the specified database node console connection&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleConnection = DatabaseFunctions.getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs.builder()
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .id(var_.db_node_console_connection_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleConnectionResult> getDbNodeConsoleConnectionPlain(GetDbNodeConsoleConnectionPlainArgs args, InvokeOptions options) {
@@ -2728,6 +9056,34 @@ public final class DatabaseFunctions {
      * Lists the console connections for the specified database node.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleConnections = DatabaseFunctions.getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs.builder()
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbNodeConsoleConnectionsResult> getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs args) {
@@ -2739,6 +9095,34 @@ public final class DatabaseFunctions {
      * Lists the console connections for the specified database node.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleConnections = DatabaseFunctions.getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs.builder()
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleConnectionsResult> getDbNodeConsoleConnectionsPlain(GetDbNodeConsoleConnectionsPlainArgs args) {
@@ -2750,6 +9134,34 @@ public final class DatabaseFunctions {
      * Lists the console connections for the specified database node.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleConnections = DatabaseFunctions.getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs.builder()
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbNodeConsoleConnectionsResult> getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs args, InvokeOptions options) {
@@ -2761,6 +9173,34 @@ public final class DatabaseFunctions {
      * Lists the console connections for the specified database node.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleConnections = DatabaseFunctions.getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs.builder()
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbNodeConsoleConnectionsResult> getDbNodeConsoleConnectionsPlain(GetDbNodeConsoleConnectionsPlainArgs args, InvokeOptions options) {
@@ -2772,6 +9212,38 @@ public final class DatabaseFunctions {
      * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodes = DatabaseFunctions.getDbNodes(GetDbNodesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbServerId(oci_database_db_server.test_db_server().id())
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .state(var_.db_node_state())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbNodesResult> getDbNodes(GetDbNodesArgs args) {
@@ -2783,6 +9255,38 @@ public final class DatabaseFunctions {
      * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodes = DatabaseFunctions.getDbNodes(GetDbNodesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbServerId(oci_database_db_server.test_db_server().id())
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .state(var_.db_node_state())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbNodesResult> getDbNodesPlain(GetDbNodesPlainArgs args) {
@@ -2794,6 +9298,38 @@ public final class DatabaseFunctions {
      * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodes = DatabaseFunctions.getDbNodes(GetDbNodesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbServerId(oci_database_db_server.test_db_server().id())
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .state(var_.db_node_state())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbNodesResult> getDbNodes(GetDbNodesArgs args, InvokeOptions options) {
@@ -2805,6 +9341,38 @@ public final class DatabaseFunctions {
      * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodes = DatabaseFunctions.getDbNodes(GetDbNodesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbServerId(oci_database_db_server.test_db_server().id())
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .state(var_.db_node_state())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbNodesResult> getDbNodesPlain(GetDbNodesPlainArgs args, InvokeOptions options) {
@@ -2816,6 +9384,35 @@ public final class DatabaseFunctions {
      * Gets information about the Exadata Db server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbServer = DatabaseFunctions.getDbServer(GetDbServerArgs.builder()
+     *             .dbServerId(oci_database_db_server.test_db_server().id())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbServerResult> getDbServer(GetDbServerArgs args) {
@@ -2827,6 +9424,35 @@ public final class DatabaseFunctions {
      * Gets information about the Exadata Db server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbServer = DatabaseFunctions.getDbServer(GetDbServerArgs.builder()
+     *             .dbServerId(oci_database_db_server.test_db_server().id())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbServerResult> getDbServerPlain(GetDbServerPlainArgs args) {
@@ -2838,6 +9464,35 @@ public final class DatabaseFunctions {
      * Gets information about the Exadata Db server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbServer = DatabaseFunctions.getDbServer(GetDbServerArgs.builder()
+     *             .dbServerId(oci_database_db_server.test_db_server().id())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbServerResult> getDbServer(GetDbServerArgs args, InvokeOptions options) {
@@ -2849,6 +9504,35 @@ public final class DatabaseFunctions {
      * Gets information about the Exadata Db server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbServer = DatabaseFunctions.getDbServer(GetDbServerArgs.builder()
+     *             .dbServerId(oci_database_db_server.test_db_server().id())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbServerResult> getDbServerPlain(GetDbServerPlainArgs args, InvokeOptions options) {
@@ -2860,6 +9544,37 @@ public final class DatabaseFunctions {
      * Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbServers = DatabaseFunctions.getDbServers(GetDbServersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .displayName(var_.db_server_display_name())
+     *             .state(var_.db_server_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbServersResult> getDbServers(GetDbServersArgs args) {
@@ -2871,6 +9586,37 @@ public final class DatabaseFunctions {
      * Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbServers = DatabaseFunctions.getDbServers(GetDbServersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .displayName(var_.db_server_display_name())
+     *             .state(var_.db_server_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbServersResult> getDbServersPlain(GetDbServersPlainArgs args) {
@@ -2882,6 +9628,37 @@ public final class DatabaseFunctions {
      * Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbServers = DatabaseFunctions.getDbServers(GetDbServersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .displayName(var_.db_server_display_name())
+     *             .state(var_.db_server_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbServersResult> getDbServers(GetDbServersArgs args, InvokeOptions options) {
@@ -2893,6 +9670,37 @@ public final class DatabaseFunctions {
      * Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbServers = DatabaseFunctions.getDbServers(GetDbServersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .displayName(var_.db_server_display_name())
+     *             .state(var_.db_server_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbServersResult> getDbServersPlain(GetDbServersPlainArgs args, InvokeOptions options) {
@@ -2904,6 +9712,34 @@ public final class DatabaseFunctions {
      * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemComputePerformances = DatabaseFunctions.getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.builder()
+     *             .dbSystemShape(var_.db_system_compute_performance_db_system_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemComputePerformancesResult> getDbSystemComputePerformances() {
@@ -2915,6 +9751,34 @@ public final class DatabaseFunctions {
      * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemComputePerformances = DatabaseFunctions.getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.builder()
+     *             .dbSystemShape(var_.db_system_compute_performance_db_system_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemComputePerformancesResult> getDbSystemComputePerformancesPlain() {
@@ -2926,6 +9790,34 @@ public final class DatabaseFunctions {
      * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemComputePerformances = DatabaseFunctions.getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.builder()
+     *             .dbSystemShape(var_.db_system_compute_performance_db_system_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemComputePerformancesResult> getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs args) {
@@ -2937,6 +9829,34 @@ public final class DatabaseFunctions {
      * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemComputePerformances = DatabaseFunctions.getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.builder()
+     *             .dbSystemShape(var_.db_system_compute_performance_db_system_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemComputePerformancesResult> getDbSystemComputePerformancesPlain(GetDbSystemComputePerformancesPlainArgs args) {
@@ -2948,6 +9868,34 @@ public final class DatabaseFunctions {
      * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemComputePerformances = DatabaseFunctions.getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.builder()
+     *             .dbSystemShape(var_.db_system_compute_performance_db_system_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemComputePerformancesResult> getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs args, InvokeOptions options) {
@@ -2959,6 +9907,34 @@ public final class DatabaseFunctions {
      * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemComputePerformances = DatabaseFunctions.getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.builder()
+     *             .dbSystemShape(var_.db_system_compute_performance_db_system_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemComputePerformancesResult> getDbSystemComputePerformancesPlain(GetDbSystemComputePerformancesPlainArgs args, InvokeOptions options) {
@@ -2970,6 +9946,34 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPatchHistoryEntries = DatabaseFunctions.getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemHistoryEntriesResult> getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs args) {
@@ -2981,6 +9985,34 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPatchHistoryEntries = DatabaseFunctions.getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemHistoryEntriesResult> getDbSystemHistoryEntriesPlain(GetDbSystemHistoryEntriesPlainArgs args) {
@@ -2992,6 +10024,34 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPatchHistoryEntries = DatabaseFunctions.getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemHistoryEntriesResult> getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs args, InvokeOptions options) {
@@ -3003,6 +10063,34 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPatchHistoryEntries = DatabaseFunctions.getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemHistoryEntriesResult> getDbSystemHistoryEntriesPlain(GetDbSystemHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -3014,6 +10102,34 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPatches = DatabaseFunctions.getDbSystemPatches(GetDbSystemPatchesArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemPatchesResult> getDbSystemPatches(GetDbSystemPatchesArgs args) {
@@ -3025,6 +10141,34 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPatches = DatabaseFunctions.getDbSystemPatches(GetDbSystemPatchesArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemPatchesResult> getDbSystemPatchesPlain(GetDbSystemPatchesPlainArgs args) {
@@ -3036,6 +10180,34 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPatches = DatabaseFunctions.getDbSystemPatches(GetDbSystemPatchesArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemPatchesResult> getDbSystemPatches(GetDbSystemPatchesArgs args, InvokeOptions options) {
@@ -3047,6 +10219,34 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPatches = DatabaseFunctions.getDbSystemPatches(GetDbSystemPatchesArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemPatchesResult> getDbSystemPatchesPlain(GetDbSystemPatchesPlainArgs args, InvokeOptions options) {
@@ -3058,6 +10258,35 @@ public final class DatabaseFunctions {
      * Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.db_system_shape_availability_domain())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemShapesResult> getDbSystemShapes(GetDbSystemShapesArgs args) {
@@ -3069,6 +10298,35 @@ public final class DatabaseFunctions {
      * Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.db_system_shape_availability_domain())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemShapesResult> getDbSystemShapesPlain(GetDbSystemShapesPlainArgs args) {
@@ -3080,6 +10338,35 @@ public final class DatabaseFunctions {
      * Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.db_system_shape_availability_domain())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemShapesResult> getDbSystemShapes(GetDbSystemShapesArgs args, InvokeOptions options) {
@@ -3091,6 +10378,35 @@ public final class DatabaseFunctions {
      * Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.db_system_shape_availability_domain())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemShapesResult> getDbSystemShapesPlain(GetDbSystemShapesPlainArgs args, InvokeOptions options) {
@@ -3102,6 +10418,35 @@ public final class DatabaseFunctions {
      * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
+     *             .storageManagement(var_.db_system_storage_performance_storage_management())
+     *             .shapeType(var_.db_system_storage_performance_shape_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs args) {
@@ -3113,6 +10458,35 @@ public final class DatabaseFunctions {
      * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
+     *             .storageManagement(var_.db_system_storage_performance_storage_management())
+     *             .shapeType(var_.db_system_storage_performance_shape_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformancesPlain(GetDbSystemStoragePerformancesPlainArgs args) {
@@ -3124,6 +10498,35 @@ public final class DatabaseFunctions {
      * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
+     *             .storageManagement(var_.db_system_storage_performance_storage_management())
+     *             .shapeType(var_.db_system_storage_performance_shape_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs args, InvokeOptions options) {
@@ -3135,6 +10538,35 @@ public final class DatabaseFunctions {
      * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
+     *             .storageManagement(var_.db_system_storage_performance_storage_management())
+     *             .shapeType(var_.db_system_storage_performance_shape_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemStoragePerformancesResult> getDbSystemStoragePerformancesPlain(GetDbSystemStoragePerformancesPlainArgs args, InvokeOptions options) {
@@ -3150,6 +10582,38 @@ public final class DatabaseFunctions {
      * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystems = DatabaseFunctions.getDbSystems(GetDbSystemsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.db_system_availability_domain())
+     *             .backupId(oci_database_backup.test_backup().id())
+     *             .displayName(var_.db_system_display_name())
+     *             .state(var_.db_system_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemsResult> getDbSystems(GetDbSystemsArgs args) {
@@ -3165,6 +10629,38 @@ public final class DatabaseFunctions {
      * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystems = DatabaseFunctions.getDbSystems(GetDbSystemsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.db_system_availability_domain())
+     *             .backupId(oci_database_backup.test_backup().id())
+     *             .displayName(var_.db_system_display_name())
+     *             .state(var_.db_system_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemsResult> getDbSystemsPlain(GetDbSystemsPlainArgs args) {
@@ -3180,6 +10676,38 @@ public final class DatabaseFunctions {
      * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystems = DatabaseFunctions.getDbSystems(GetDbSystemsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.db_system_availability_domain())
+     *             .backupId(oci_database_backup.test_backup().id())
+     *             .displayName(var_.db_system_display_name())
+     *             .state(var_.db_system_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemsResult> getDbSystems(GetDbSystemsArgs args, InvokeOptions options) {
@@ -3195,6 +10723,38 @@ public final class DatabaseFunctions {
      * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystems = DatabaseFunctions.getDbSystems(GetDbSystemsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.db_system_availability_domain())
+     *             .backupId(oci_database_backup.test_backup().id())
+     *             .displayName(var_.db_system_display_name())
+     *             .state(var_.db_system_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemsResult> getDbSystemsPlain(GetDbSystemsPlainArgs args, InvokeOptions options) {
@@ -3206,6 +10766,36 @@ public final class DatabaseFunctions {
      * Gets the history of the upgrade actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemsUpgradeHistoryEntries = DatabaseFunctions.getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .state(var_.db_systems_upgrade_history_entry_state())
+     *             .upgradeAction(var_.db_systems_upgrade_history_entry_upgrade_action())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs args) {
@@ -3217,6 +10807,36 @@ public final class DatabaseFunctions {
      * Gets the history of the upgrade actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemsUpgradeHistoryEntries = DatabaseFunctions.getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .state(var_.db_systems_upgrade_history_entry_state())
+     *             .upgradeAction(var_.db_systems_upgrade_history_entry_upgrade_action())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntriesPlain(GetDbSystemsUpgradeHistoryEntriesPlainArgs args) {
@@ -3228,6 +10848,36 @@ public final class DatabaseFunctions {
      * Gets the history of the upgrade actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemsUpgradeHistoryEntries = DatabaseFunctions.getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .state(var_.db_systems_upgrade_history_entry_state())
+     *             .upgradeAction(var_.db_systems_upgrade_history_entry_upgrade_action())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs args, InvokeOptions options) {
@@ -3239,6 +10889,36 @@ public final class DatabaseFunctions {
      * Gets the history of the upgrade actions performed on the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemsUpgradeHistoryEntries = DatabaseFunctions.getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .state(var_.db_systems_upgrade_history_entry_state())
+     *             .upgradeAction(var_.db_systems_upgrade_history_entry_upgrade_action())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemsUpgradeHistoryEntriesResult> getDbSystemsUpgradeHistoryEntriesPlain(GetDbSystemsUpgradeHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -3250,6 +10930,35 @@ public final class DatabaseFunctions {
      * Gets the details of the specified operating system upgrade operation for the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemsUpgradeHistoryEntry = DatabaseFunctions.getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs args) {
@@ -3261,6 +10970,35 @@ public final class DatabaseFunctions {
      * Gets the details of the specified operating system upgrade operation for the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemsUpgradeHistoryEntry = DatabaseFunctions.getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntryPlain(GetDbSystemsUpgradeHistoryEntryPlainArgs args) {
@@ -3272,6 +11010,35 @@ public final class DatabaseFunctions {
      * Gets the details of the specified operating system upgrade operation for the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemsUpgradeHistoryEntry = DatabaseFunctions.getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs args, InvokeOptions options) {
@@ -3283,6 +11050,35 @@ public final class DatabaseFunctions {
      * Gets the details of the specified operating system upgrade operation for the specified DB system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemsUpgradeHistoryEntry = DatabaseFunctions.getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbSystemsUpgradeHistoryEntryResult> getDbSystemsUpgradeHistoryEntryPlain(GetDbSystemsUpgradeHistoryEntryPlainArgs args, InvokeOptions options) {
@@ -3294,6 +11090,39 @@ public final class DatabaseFunctions {
      * Gets a list of supported Oracle Database versions.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbVersions = DatabaseFunctions.getDbVersions(GetDbVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemShape(var_.db_version_db_system_shape())
+     *             .isDatabaseSoftwareImageSupported(var_.db_version_is_database_software_image_supported())
+     *             .isUpgradeSupported(var_.db_version_is_upgrade_supported())
+     *             .storageManagement(var_.db_version_storage_management())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbVersionsResult> getDbVersions(GetDbVersionsArgs args) {
@@ -3305,6 +11134,39 @@ public final class DatabaseFunctions {
      * Gets a list of supported Oracle Database versions.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbVersions = DatabaseFunctions.getDbVersions(GetDbVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemShape(var_.db_version_db_system_shape())
+     *             .isDatabaseSoftwareImageSupported(var_.db_version_is_database_software_image_supported())
+     *             .isUpgradeSupported(var_.db_version_is_upgrade_supported())
+     *             .storageManagement(var_.db_version_storage_management())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbVersionsResult> getDbVersionsPlain(GetDbVersionsPlainArgs args) {
@@ -3316,6 +11178,39 @@ public final class DatabaseFunctions {
      * Gets a list of supported Oracle Database versions.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbVersions = DatabaseFunctions.getDbVersions(GetDbVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemShape(var_.db_version_db_system_shape())
+     *             .isDatabaseSoftwareImageSupported(var_.db_version_is_database_software_image_supported())
+     *             .isUpgradeSupported(var_.db_version_is_upgrade_supported())
+     *             .storageManagement(var_.db_version_storage_management())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDbVersionsResult> getDbVersions(GetDbVersionsArgs args, InvokeOptions options) {
@@ -3327,6 +11222,39 @@ public final class DatabaseFunctions {
      * Gets a list of supported Oracle Database versions.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbVersions = DatabaseFunctions.getDbVersions(GetDbVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemShape(var_.db_version_db_system_shape())
+     *             .isDatabaseSoftwareImageSupported(var_.db_version_is_database_software_image_supported())
+     *             .isUpgradeSupported(var_.db_version_is_upgrade_supported())
+     *             .storageManagement(var_.db_version_storage_management())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDbVersionsResult> getDbVersionsPlain(GetDbVersionsPlainArgs args, InvokeOptions options) {
@@ -3339,6 +11267,34 @@ public final class DatabaseFunctions {
      * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExadataInfrastructureResult> getExadataInfrastructure(GetExadataInfrastructureArgs args) {
@@ -3351,6 +11307,34 @@ public final class DatabaseFunctions {
      * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExadataInfrastructureResult> getExadataInfrastructurePlain(GetExadataInfrastructurePlainArgs args) {
@@ -3363,6 +11347,34 @@ public final class DatabaseFunctions {
      * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExadataInfrastructureResult> getExadataInfrastructure(GetExadataInfrastructureArgs args, InvokeOptions options) {
@@ -3375,6 +11387,34 @@ public final class DatabaseFunctions {
      * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExadataInfrastructureResult> getExadataInfrastructurePlain(GetExadataInfrastructurePlainArgs args, InvokeOptions options) {
@@ -3386,6 +11426,35 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureDownloadConfigFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .base64EncodeContent(&#34;false&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExadataInfrastructureDownloadConfigFileResult> getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs args) {
@@ -3397,6 +11466,35 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureDownloadConfigFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .base64EncodeContent(&#34;false&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExadataInfrastructureDownloadConfigFileResult> getExadataInfrastructureDownloadConfigFilePlain(GetExadataInfrastructureDownloadConfigFilePlainArgs args) {
@@ -3408,6 +11506,35 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureDownloadConfigFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .base64EncodeContent(&#34;false&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExadataInfrastructureDownloadConfigFileResult> getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs args, InvokeOptions options) {
@@ -3419,6 +11546,35 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureDownloadConfigFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .base64EncodeContent(&#34;false&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExadataInfrastructureDownloadConfigFileResult> getExadataInfrastructureDownloadConfigFilePlain(GetExadataInfrastructureDownloadConfigFilePlainArgs args, InvokeOptions options) {
@@ -3431,6 +11587,36 @@ public final class DatabaseFunctions {
      * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.exadata_infrastructure_display_name())
+     *             .state(var_.exadata_infrastructure_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExadataInfrastructuresResult> getExadataInfrastructures(GetExadataInfrastructuresArgs args) {
@@ -3443,6 +11629,36 @@ public final class DatabaseFunctions {
      * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.exadata_infrastructure_display_name())
+     *             .state(var_.exadata_infrastructure_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExadataInfrastructuresResult> getExadataInfrastructuresPlain(GetExadataInfrastructuresPlainArgs args) {
@@ -3455,6 +11671,36 @@ public final class DatabaseFunctions {
      * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.exadata_infrastructure_display_name())
+     *             .state(var_.exadata_infrastructure_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExadataInfrastructuresResult> getExadataInfrastructures(GetExadataInfrastructuresArgs args, InvokeOptions options) {
@@ -3467,6 +11713,36 @@ public final class DatabaseFunctions {
      * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.exadata_infrastructure_display_name())
+     *             .state(var_.exadata_infrastructure_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExadataInfrastructuresResult> getExadataInfrastructuresPlain(GetExadataInfrastructuresPlainArgs args, InvokeOptions options) {
@@ -3486,6 +11762,34 @@ public final class DatabaseFunctions {
      * new resource model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataIormConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataIormConfig = DatabaseFunctions.getExadataIormConfig(GetExadataIormConfigArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExadataIormConfigResult> getExadataIormConfig(GetExadataIormConfigArgs args) {
@@ -3505,6 +11809,34 @@ public final class DatabaseFunctions {
      * new resource model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataIormConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataIormConfig = DatabaseFunctions.getExadataIormConfig(GetExadataIormConfigArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExadataIormConfigResult> getExadataIormConfigPlain(GetExadataIormConfigPlainArgs args) {
@@ -3524,6 +11856,34 @@ public final class DatabaseFunctions {
      * new resource model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataIormConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataIormConfig = DatabaseFunctions.getExadataIormConfig(GetExadataIormConfigArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExadataIormConfigResult> getExadataIormConfig(GetExadataIormConfigArgs args, InvokeOptions options) {
@@ -3543,6 +11903,34 @@ public final class DatabaseFunctions {
      * new resource model.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataIormConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataIormConfig = DatabaseFunctions.getExadataIormConfig(GetExadataIormConfigArgs.builder()
+     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExadataIormConfigResult> getExadataIormConfigPlain(GetExadataIormConfigPlainArgs args, InvokeOptions options) {
@@ -3554,6 +11942,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified external container database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalContainerDatabase = DatabaseFunctions.getExternalContainerDatabase(GetExternalContainerDatabaseArgs.builder()
+     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalContainerDatabaseResult> getExternalContainerDatabase(GetExternalContainerDatabaseArgs args) {
@@ -3565,6 +11981,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified external container database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalContainerDatabase = DatabaseFunctions.getExternalContainerDatabase(GetExternalContainerDatabaseArgs.builder()
+     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalContainerDatabaseResult> getExternalContainerDatabasePlain(GetExternalContainerDatabasePlainArgs args) {
@@ -3576,6 +12020,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified external container database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalContainerDatabase = DatabaseFunctions.getExternalContainerDatabase(GetExternalContainerDatabaseArgs.builder()
+     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalContainerDatabaseResult> getExternalContainerDatabase(GetExternalContainerDatabaseArgs args, InvokeOptions options) {
@@ -3587,6 +12059,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified external container database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalContainerDatabase = DatabaseFunctions.getExternalContainerDatabase(GetExternalContainerDatabaseArgs.builder()
+     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalContainerDatabaseResult> getExternalContainerDatabasePlain(GetExternalContainerDatabasePlainArgs args, InvokeOptions options) {
@@ -3598,6 +12098,36 @@ public final class DatabaseFunctions {
      * Gets a list of the external container databases in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalContainerDatabases = DatabaseFunctions.getExternalContainerDatabases(GetExternalContainerDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_container_database_display_name())
+     *             .state(var_.external_container_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalContainerDatabasesResult> getExternalContainerDatabases(GetExternalContainerDatabasesArgs args) {
@@ -3609,6 +12139,36 @@ public final class DatabaseFunctions {
      * Gets a list of the external container databases in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalContainerDatabases = DatabaseFunctions.getExternalContainerDatabases(GetExternalContainerDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_container_database_display_name())
+     *             .state(var_.external_container_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalContainerDatabasesResult> getExternalContainerDatabasesPlain(GetExternalContainerDatabasesPlainArgs args) {
@@ -3620,6 +12180,36 @@ public final class DatabaseFunctions {
      * Gets a list of the external container databases in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalContainerDatabases = DatabaseFunctions.getExternalContainerDatabases(GetExternalContainerDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_container_database_display_name())
+     *             .state(var_.external_container_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalContainerDatabasesResult> getExternalContainerDatabases(GetExternalContainerDatabasesArgs args, InvokeOptions options) {
@@ -3631,6 +12221,36 @@ public final class DatabaseFunctions {
      * Gets a list of the external container databases in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalContainerDatabases = DatabaseFunctions.getExternalContainerDatabases(GetExternalContainerDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_container_database_display_name())
+     *             .state(var_.external_container_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalContainerDatabasesResult> getExternalContainerDatabasesPlain(GetExternalContainerDatabasesPlainArgs args, InvokeOptions options) {
@@ -3642,6 +12262,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified external database connector.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabaseConnector = DatabaseFunctions.getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs.builder()
+     *             .externalDatabaseConnectorId(oci_database_external_database_connector.test_external_database_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalDatabaseConnectorResult> getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs args) {
@@ -3653,6 +12301,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified external database connector.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabaseConnector = DatabaseFunctions.getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs.builder()
+     *             .externalDatabaseConnectorId(oci_database_external_database_connector.test_external_database_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalDatabaseConnectorResult> getExternalDatabaseConnectorPlain(GetExternalDatabaseConnectorPlainArgs args) {
@@ -3664,6 +12340,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified external database connector.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabaseConnector = DatabaseFunctions.getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs.builder()
+     *             .externalDatabaseConnectorId(oci_database_external_database_connector.test_external_database_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalDatabaseConnectorResult> getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs args, InvokeOptions options) {
@@ -3675,6 +12379,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified external database connector.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabaseConnector = DatabaseFunctions.getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs.builder()
+     *             .externalDatabaseConnectorId(oci_database_external_database_connector.test_external_database_connector().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalDatabaseConnectorResult> getExternalDatabaseConnectorPlain(GetExternalDatabaseConnectorPlainArgs args, InvokeOptions options) {
@@ -3686,6 +12418,37 @@ public final class DatabaseFunctions {
      * Gets a list of the external database connectors in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabaseConnectors = DatabaseFunctions.getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .externalDatabaseId(oci_database_database.test_database().id())
+     *             .displayName(var_.external_database_connector_display_name())
+     *             .state(var_.external_database_connector_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalDatabaseConnectorsResult> getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs args) {
@@ -3697,6 +12460,37 @@ public final class DatabaseFunctions {
      * Gets a list of the external database connectors in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabaseConnectors = DatabaseFunctions.getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .externalDatabaseId(oci_database_database.test_database().id())
+     *             .displayName(var_.external_database_connector_display_name())
+     *             .state(var_.external_database_connector_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalDatabaseConnectorsResult> getExternalDatabaseConnectorsPlain(GetExternalDatabaseConnectorsPlainArgs args) {
@@ -3708,6 +12502,37 @@ public final class DatabaseFunctions {
      * Gets a list of the external database connectors in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabaseConnectors = DatabaseFunctions.getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .externalDatabaseId(oci_database_database.test_database().id())
+     *             .displayName(var_.external_database_connector_display_name())
+     *             .state(var_.external_database_connector_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalDatabaseConnectorsResult> getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs args, InvokeOptions options) {
@@ -3719,6 +12544,37 @@ public final class DatabaseFunctions {
      * Gets a list of the external database connectors in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalDatabaseConnectors = DatabaseFunctions.getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .externalDatabaseId(oci_database_database.test_database().id())
+     *             .displayName(var_.external_database_connector_display_name())
+     *             .state(var_.external_database_connector_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalDatabaseConnectorsResult> getExternalDatabaseConnectorsPlain(GetExternalDatabaseConnectorsPlainArgs args, InvokeOptions options) {
@@ -3730,6 +12586,34 @@ public final class DatabaseFunctions {
      * Gets information about a specific external non-container database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalNonContainerDatabase = DatabaseFunctions.getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs.builder()
+     *             .externalNonContainerDatabaseId(oci_database_external_non_container_database.test_external_non_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalNonContainerDatabaseResult> getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs args) {
@@ -3741,6 +12625,34 @@ public final class DatabaseFunctions {
      * Gets information about a specific external non-container database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalNonContainerDatabase = DatabaseFunctions.getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs.builder()
+     *             .externalNonContainerDatabaseId(oci_database_external_non_container_database.test_external_non_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalNonContainerDatabaseResult> getExternalNonContainerDatabasePlain(GetExternalNonContainerDatabasePlainArgs args) {
@@ -3752,6 +12664,34 @@ public final class DatabaseFunctions {
      * Gets information about a specific external non-container database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalNonContainerDatabase = DatabaseFunctions.getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs.builder()
+     *             .externalNonContainerDatabaseId(oci_database_external_non_container_database.test_external_non_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalNonContainerDatabaseResult> getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs args, InvokeOptions options) {
@@ -3763,6 +12703,34 @@ public final class DatabaseFunctions {
      * Gets information about a specific external non-container database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalNonContainerDatabase = DatabaseFunctions.getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs.builder()
+     *             .externalNonContainerDatabaseId(oci_database_external_non_container_database.test_external_non_container_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalNonContainerDatabaseResult> getExternalNonContainerDatabasePlain(GetExternalNonContainerDatabasePlainArgs args, InvokeOptions options) {
@@ -3774,6 +12742,36 @@ public final class DatabaseFunctions {
      * Gets a list of the ExternalNonContainerDatabases in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalNonContainerDatabases = DatabaseFunctions.getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_non_container_database_display_name())
+     *             .state(var_.external_non_container_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalNonContainerDatabasesResult> getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs args) {
@@ -3785,6 +12783,36 @@ public final class DatabaseFunctions {
      * Gets a list of the ExternalNonContainerDatabases in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalNonContainerDatabases = DatabaseFunctions.getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_non_container_database_display_name())
+     *             .state(var_.external_non_container_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalNonContainerDatabasesResult> getExternalNonContainerDatabasesPlain(GetExternalNonContainerDatabasesPlainArgs args) {
@@ -3796,6 +12824,36 @@ public final class DatabaseFunctions {
      * Gets a list of the ExternalNonContainerDatabases in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalNonContainerDatabases = DatabaseFunctions.getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_non_container_database_display_name())
+     *             .state(var_.external_non_container_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalNonContainerDatabasesResult> getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs args, InvokeOptions options) {
@@ -3807,6 +12865,36 @@ public final class DatabaseFunctions {
      * Gets a list of the ExternalNonContainerDatabases in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalNonContainerDatabases = DatabaseFunctions.getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_non_container_database_display_name())
+     *             .state(var_.external_non_container_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalNonContainerDatabasesResult> getExternalNonContainerDatabasesPlain(GetExternalNonContainerDatabasesPlainArgs args, InvokeOptions options) {
@@ -3819,6 +12907,34 @@ public final class DatabaseFunctions {
      * [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalPluggableDatabase = DatabaseFunctions.getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs.builder()
+     *             .externalPluggableDatabaseId(oci_database_external_pluggable_database.test_external_pluggable_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalPluggableDatabaseResult> getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs args) {
@@ -3831,6 +12947,34 @@ public final class DatabaseFunctions {
      * [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalPluggableDatabase = DatabaseFunctions.getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs.builder()
+     *             .externalPluggableDatabaseId(oci_database_external_pluggable_database.test_external_pluggable_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalPluggableDatabaseResult> getExternalPluggableDatabasePlain(GetExternalPluggableDatabasePlainArgs args) {
@@ -3843,6 +12987,34 @@ public final class DatabaseFunctions {
      * [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalPluggableDatabase = DatabaseFunctions.getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs.builder()
+     *             .externalPluggableDatabaseId(oci_database_external_pluggable_database.test_external_pluggable_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalPluggableDatabaseResult> getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs args, InvokeOptions options) {
@@ -3855,6 +13027,34 @@ public final class DatabaseFunctions {
      * [external pluggable database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails) resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalPluggableDatabase = DatabaseFunctions.getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs.builder()
+     *             .externalPluggableDatabaseId(oci_database_external_pluggable_database.test_external_pluggable_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalPluggableDatabaseResult> getExternalPluggableDatabasePlain(GetExternalPluggableDatabasePlainArgs args, InvokeOptions options) {
@@ -3867,6 +13067,37 @@ public final class DatabaseFunctions {
      * resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalPluggableDatabases = DatabaseFunctions.getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_pluggable_database_display_name())
+     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
+     *             .state(var_.external_pluggable_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalPluggableDatabasesResult> getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs args) {
@@ -3879,6 +13110,37 @@ public final class DatabaseFunctions {
      * resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalPluggableDatabases = DatabaseFunctions.getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_pluggable_database_display_name())
+     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
+     *             .state(var_.external_pluggable_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalPluggableDatabasesResult> getExternalPluggableDatabasesPlain(GetExternalPluggableDatabasesPlainArgs args) {
@@ -3891,6 +13153,37 @@ public final class DatabaseFunctions {
      * resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalPluggableDatabases = DatabaseFunctions.getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_pluggable_database_display_name())
+     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
+     *             .state(var_.external_pluggable_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExternalPluggableDatabasesResult> getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs args, InvokeOptions options) {
@@ -3903,6 +13196,37 @@ public final class DatabaseFunctions {
      * resources in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalPluggableDatabases = DatabaseFunctions.getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.external_pluggable_database_display_name())
+     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
+     *             .state(var_.external_pluggable_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExternalPluggableDatabasesResult> getExternalPluggableDatabasesPlain(GetExternalPluggableDatabasesPlainArgs args, InvokeOptions options) {
@@ -3914,6 +13238,35 @@ public final class DatabaseFunctions {
      * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetFlexComponentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.flex_component_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFlexComponentsResult> getFlexComponents(GetFlexComponentsArgs args) {
@@ -3925,6 +13278,35 @@ public final class DatabaseFunctions {
      * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetFlexComponentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.flex_component_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFlexComponentsResult> getFlexComponentsPlain(GetFlexComponentsPlainArgs args) {
@@ -3936,6 +13318,35 @@ public final class DatabaseFunctions {
      * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetFlexComponentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.flex_component_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFlexComponentsResult> getFlexComponents(GetFlexComponentsArgs args, InvokeOptions options) {
@@ -3947,6 +13358,35 @@ public final class DatabaseFunctions {
      * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetFlexComponentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.flex_component_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFlexComponentsResult> getFlexComponentsPlain(GetFlexComponentsPlainArgs args, InvokeOptions options) {
@@ -3958,6 +13398,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetGiVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .shape(var_.gi_version_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGiVersionsResult> getGiVersions(GetGiVersionsArgs args) {
@@ -3969,6 +13438,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetGiVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .shape(var_.gi_version_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGiVersionsResult> getGiVersionsPlain(GetGiVersionsPlainArgs args) {
@@ -3980,6 +13478,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetGiVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .shape(var_.gi_version_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGiVersionsResult> getGiVersions(GetGiVersionsArgs args, InvokeOptions options) {
@@ -3991,6 +13518,35 @@ public final class DatabaseFunctions {
      * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetGiVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .shape(var_.gi_version_shape())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGiVersionsResult> getGiVersionsPlain(GetGiVersionsPlainArgs args, InvokeOptions options) {
@@ -4002,6 +13558,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified key store.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetKeyStoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyStore = DatabaseFunctions.getKeyStore(GetKeyStoreArgs.builder()
+     *             .keyStoreId(oci_database_key_store.test_key_store().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKeyStoreResult> getKeyStore(GetKeyStoreArgs args) {
@@ -4013,6 +13597,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified key store.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetKeyStoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyStore = DatabaseFunctions.getKeyStore(GetKeyStoreArgs.builder()
+     *             .keyStoreId(oci_database_key_store.test_key_store().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKeyStoreResult> getKeyStorePlain(GetKeyStorePlainArgs args) {
@@ -4024,6 +13636,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified key store.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetKeyStoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyStore = DatabaseFunctions.getKeyStore(GetKeyStoreArgs.builder()
+     *             .keyStoreId(oci_database_key_store.test_key_store().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKeyStoreResult> getKeyStore(GetKeyStoreArgs args, InvokeOptions options) {
@@ -4035,6 +13675,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified key store.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetKeyStoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyStore = DatabaseFunctions.getKeyStore(GetKeyStoreArgs.builder()
+     *             .keyStoreId(oci_database_key_store.test_key_store().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKeyStoreResult> getKeyStorePlain(GetKeyStorePlainArgs args, InvokeOptions options) {
@@ -4046,6 +13714,34 @@ public final class DatabaseFunctions {
      * Gets a list of key stores in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetKeyStoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKeyStoresResult> getKeyStores(GetKeyStoresArgs args) {
@@ -4057,6 +13753,34 @@ public final class DatabaseFunctions {
      * Gets a list of key stores in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetKeyStoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKeyStoresResult> getKeyStoresPlain(GetKeyStoresPlainArgs args) {
@@ -4068,6 +13792,34 @@ public final class DatabaseFunctions {
      * Gets a list of key stores in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetKeyStoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKeyStoresResult> getKeyStores(GetKeyStoresArgs args, InvokeOptions options) {
@@ -4079,6 +13831,34 @@ public final class DatabaseFunctions {
      * Gets a list of key stores in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetKeyStoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKeyStoresResult> getKeyStoresPlain(GetKeyStoresPlainArgs args, InvokeOptions options) {
@@ -4090,6 +13870,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetMaintenanceRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRun = DatabaseFunctions.getMaintenanceRun(GetMaintenanceRunArgs.builder()
+     *             .maintenanceRunId(oci_database_maintenance_run.test_maintenance_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaintenanceRunResult> getMaintenanceRun(GetMaintenanceRunArgs args) {
@@ -4101,6 +13909,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetMaintenanceRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRun = DatabaseFunctions.getMaintenanceRun(GetMaintenanceRunArgs.builder()
+     *             .maintenanceRunId(oci_database_maintenance_run.test_maintenance_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaintenanceRunResult> getMaintenanceRunPlain(GetMaintenanceRunPlainArgs args) {
@@ -4112,6 +13948,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetMaintenanceRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRun = DatabaseFunctions.getMaintenanceRun(GetMaintenanceRunArgs.builder()
+     *             .maintenanceRunId(oci_database_maintenance_run.test_maintenance_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaintenanceRunResult> getMaintenanceRun(GetMaintenanceRunArgs args, InvokeOptions options) {
@@ -4123,6 +13987,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified maintenance run.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetMaintenanceRunArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRun = DatabaseFunctions.getMaintenanceRun(GetMaintenanceRunArgs.builder()
+     *             .maintenanceRunId(oci_database_maintenance_run.test_maintenance_run().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaintenanceRunResult> getMaintenanceRunPlain(GetMaintenanceRunPlainArgs args, InvokeOptions options) {
@@ -4134,6 +14026,40 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance runs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetMaintenanceRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.maintenance_run_availability_domain())
+     *             .maintenanceSubtype(var_.maintenance_run_maintenance_subtype())
+     *             .maintenanceType(var_.maintenance_run_maintenance_type())
+     *             .state(var_.maintenance_run_state())
+     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
+     *             .targetResourceType(var_.maintenance_run_target_resource_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaintenanceRunsResult> getMaintenanceRuns(GetMaintenanceRunsArgs args) {
@@ -4145,6 +14071,40 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance runs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetMaintenanceRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.maintenance_run_availability_domain())
+     *             .maintenanceSubtype(var_.maintenance_run_maintenance_subtype())
+     *             .maintenanceType(var_.maintenance_run_maintenance_type())
+     *             .state(var_.maintenance_run_state())
+     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
+     *             .targetResourceType(var_.maintenance_run_target_resource_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaintenanceRunsResult> getMaintenanceRunsPlain(GetMaintenanceRunsPlainArgs args) {
@@ -4156,6 +14116,40 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance runs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetMaintenanceRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.maintenance_run_availability_domain())
+     *             .maintenanceSubtype(var_.maintenance_run_maintenance_subtype())
+     *             .maintenanceType(var_.maintenance_run_maintenance_type())
+     *             .state(var_.maintenance_run_state())
+     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
+     *             .targetResourceType(var_.maintenance_run_target_resource_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMaintenanceRunsResult> getMaintenanceRuns(GetMaintenanceRunsArgs args, InvokeOptions options) {
@@ -4167,6 +14161,40 @@ public final class DatabaseFunctions {
      * Gets a list of the maintenance runs in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetMaintenanceRunsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.maintenance_run_availability_domain())
+     *             .maintenanceSubtype(var_.maintenance_run_maintenance_subtype())
+     *             .maintenanceType(var_.maintenance_run_maintenance_type())
+     *             .state(var_.maintenance_run_state())
+     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
+     *             .targetResourceType(var_.maintenance_run_target_resource_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMaintenanceRunsResult> getMaintenanceRunsPlain(GetMaintenanceRunsPlainArgs args, InvokeOptions options) {
@@ -4178,6 +14206,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified pluggable database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabase = DatabaseFunctions.getPluggableDatabase(GetPluggableDatabaseArgs.builder()
+     *             .pluggableDatabaseId(oci_database_pluggable_database.test_pluggable_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPluggableDatabaseResult> getPluggableDatabase(GetPluggableDatabaseArgs args) {
@@ -4189,6 +14245,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified pluggable database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabase = DatabaseFunctions.getPluggableDatabase(GetPluggableDatabaseArgs.builder()
+     *             .pluggableDatabaseId(oci_database_pluggable_database.test_pluggable_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPluggableDatabaseResult> getPluggableDatabasePlain(GetPluggableDatabasePlainArgs args) {
@@ -4200,6 +14284,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified pluggable database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabase = DatabaseFunctions.getPluggableDatabase(GetPluggableDatabaseArgs.builder()
+     *             .pluggableDatabaseId(oci_database_pluggable_database.test_pluggable_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPluggableDatabaseResult> getPluggableDatabase(GetPluggableDatabaseArgs args, InvokeOptions options) {
@@ -4211,6 +14323,34 @@ public final class DatabaseFunctions {
      * Gets information about the specified pluggable database.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabase = DatabaseFunctions.getPluggableDatabase(GetPluggableDatabaseArgs.builder()
+     *             .pluggableDatabaseId(oci_database_pluggable_database.test_pluggable_database().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPluggableDatabaseResult> getPluggableDatabasePlain(GetPluggableDatabasePlainArgs args, InvokeOptions options) {
@@ -4222,6 +14362,37 @@ public final class DatabaseFunctions {
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabases = DatabaseFunctions.getPluggableDatabases(GetPluggableDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbName(var_.pluggable_database_pdb_name())
+     *             .state(var_.pluggable_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPluggableDatabasesResult> getPluggableDatabases() {
@@ -4233,6 +14404,37 @@ public final class DatabaseFunctions {
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabases = DatabaseFunctions.getPluggableDatabases(GetPluggableDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbName(var_.pluggable_database_pdb_name())
+     *             .state(var_.pluggable_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPluggableDatabasesResult> getPluggableDatabasesPlain() {
@@ -4244,6 +14446,37 @@ public final class DatabaseFunctions {
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabases = DatabaseFunctions.getPluggableDatabases(GetPluggableDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbName(var_.pluggable_database_pdb_name())
+     *             .state(var_.pluggable_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPluggableDatabasesResult> getPluggableDatabases(GetPluggableDatabasesArgs args) {
@@ -4255,6 +14488,37 @@ public final class DatabaseFunctions {
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabases = DatabaseFunctions.getPluggableDatabases(GetPluggableDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbName(var_.pluggable_database_pdb_name())
+     *             .state(var_.pluggable_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPluggableDatabasesResult> getPluggableDatabasesPlain(GetPluggableDatabasesPlainArgs args) {
@@ -4266,6 +14530,37 @@ public final class DatabaseFunctions {
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabases = DatabaseFunctions.getPluggableDatabases(GetPluggableDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbName(var_.pluggable_database_pdb_name())
+     *             .state(var_.pluggable_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPluggableDatabasesResult> getPluggableDatabases(GetPluggableDatabasesArgs args, InvokeOptions options) {
@@ -4277,6 +14572,37 @@ public final class DatabaseFunctions {
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPluggableDatabases = DatabaseFunctions.getPluggableDatabases(GetPluggableDatabasesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .databaseId(oci_database_database.test_database().id())
+     *             .pdbName(var_.pluggable_database_pdb_name())
+     *             .state(var_.pluggable_database_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPluggableDatabasesResult> getPluggableDatabasesPlain(GetPluggableDatabasesPlainArgs args, InvokeOptions options) {
@@ -4288,6 +14614,34 @@ public final class DatabaseFunctions {
      * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmCluster = DatabaseFunctions.getVmCluster(GetVmClusterArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterResult> getVmCluster(GetVmClusterArgs args) {
@@ -4299,6 +14653,34 @@ public final class DatabaseFunctions {
      * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmCluster = DatabaseFunctions.getVmCluster(GetVmClusterArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterResult> getVmClusterPlain(GetVmClusterPlainArgs args) {
@@ -4310,6 +14692,34 @@ public final class DatabaseFunctions {
      * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmCluster = DatabaseFunctions.getVmCluster(GetVmClusterArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterResult> getVmCluster(GetVmClusterArgs args, InvokeOptions options) {
@@ -4321,6 +14731,34 @@ public final class DatabaseFunctions {
      * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmCluster = DatabaseFunctions.getVmCluster(GetVmClusterArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterResult> getVmClusterPlain(GetVmClusterPlainArgs args, InvokeOptions options) {
@@ -4333,6 +14771,35 @@ public final class DatabaseFunctions {
      * To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the [GetCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmCluster) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetwork = DatabaseFunctions.getVmClusterNetwork(GetVmClusterNetworkArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterNetworkResult> getVmClusterNetwork(GetVmClusterNetworkArgs args) {
@@ -4345,6 +14812,35 @@ public final class DatabaseFunctions {
      * To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the [GetCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmCluster) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetwork = DatabaseFunctions.getVmClusterNetwork(GetVmClusterNetworkArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterNetworkResult> getVmClusterNetworkPlain(GetVmClusterNetworkPlainArgs args) {
@@ -4357,6 +14853,35 @@ public final class DatabaseFunctions {
      * To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the [GetCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmCluster) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetwork = DatabaseFunctions.getVmClusterNetwork(GetVmClusterNetworkArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterNetworkResult> getVmClusterNetwork(GetVmClusterNetworkArgs args, InvokeOptions options) {
@@ -4369,6 +14894,35 @@ public final class DatabaseFunctions {
      * To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the [GetCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmCluster) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetwork = DatabaseFunctions.getVmClusterNetwork(GetVmClusterNetworkArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterNetworkResult> getVmClusterNetworkPlain(GetVmClusterNetworkPlainArgs args, InvokeOptions options) {
@@ -4380,6 +14934,36 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkDownloadConfigFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .base64EncodeContent(&#34;false&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterNetworkDownloadConfigFileResult> getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs args) {
@@ -4391,6 +14975,36 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkDownloadConfigFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .base64EncodeContent(&#34;false&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterNetworkDownloadConfigFileResult> getVmClusterNetworkDownloadConfigFilePlain(GetVmClusterNetworkDownloadConfigFilePlainArgs args) {
@@ -4402,6 +15016,36 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkDownloadConfigFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .base64EncodeContent(&#34;false&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterNetworkDownloadConfigFileResult> getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs args, InvokeOptions options) {
@@ -4413,6 +15057,36 @@ public final class DatabaseFunctions {
      * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkDownloadConfigFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .base64EncodeContent(&#34;false&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterNetworkDownloadConfigFileResult> getVmClusterNetworkDownloadConfigFilePlain(GetVmClusterNetworkDownloadConfigFilePlainArgs args, InvokeOptions options) {
@@ -4424,6 +15098,37 @@ public final class DatabaseFunctions {
      * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworks = DatabaseFunctions.getVmClusterNetworks(GetVmClusterNetworksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .displayName(var_.vm_cluster_network_display_name())
+     *             .state(var_.vm_cluster_network_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterNetworksResult> getVmClusterNetworks(GetVmClusterNetworksArgs args) {
@@ -4435,6 +15140,37 @@ public final class DatabaseFunctions {
      * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworks = DatabaseFunctions.getVmClusterNetworks(GetVmClusterNetworksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .displayName(var_.vm_cluster_network_display_name())
+     *             .state(var_.vm_cluster_network_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterNetworksResult> getVmClusterNetworksPlain(GetVmClusterNetworksPlainArgs args) {
@@ -4446,6 +15182,37 @@ public final class DatabaseFunctions {
      * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworks = DatabaseFunctions.getVmClusterNetworks(GetVmClusterNetworksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .displayName(var_.vm_cluster_network_display_name())
+     *             .state(var_.vm_cluster_network_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterNetworksResult> getVmClusterNetworks(GetVmClusterNetworksArgs args, InvokeOptions options) {
@@ -4457,6 +15224,37 @@ public final class DatabaseFunctions {
      * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterNetworksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworks = DatabaseFunctions.getVmClusterNetworks(GetVmClusterNetworksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .displayName(var_.vm_cluster_network_display_name())
+     *             .state(var_.vm_cluster_network_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterNetworksResult> getVmClusterNetworksPlain(GetVmClusterNetworksPlainArgs args, InvokeOptions options) {
@@ -4468,6 +15266,35 @@ public final class DatabaseFunctions {
      * Gets information about a specified patch package.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatch = DatabaseFunctions.getVmClusterPatch(GetVmClusterPatchArgs.builder()
+     *             .patchId(oci_database_patch.test_patch().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterPatchResult> getVmClusterPatch(GetVmClusterPatchArgs args) {
@@ -4479,6 +15306,35 @@ public final class DatabaseFunctions {
      * Gets information about a specified patch package.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatch = DatabaseFunctions.getVmClusterPatch(GetVmClusterPatchArgs.builder()
+     *             .patchId(oci_database_patch.test_patch().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterPatchResult> getVmClusterPatchPlain(GetVmClusterPatchPlainArgs args) {
@@ -4490,6 +15346,35 @@ public final class DatabaseFunctions {
      * Gets information about a specified patch package.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatch = DatabaseFunctions.getVmClusterPatch(GetVmClusterPatchArgs.builder()
+     *             .patchId(oci_database_patch.test_patch().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterPatchResult> getVmClusterPatch(GetVmClusterPatchArgs args, InvokeOptions options) {
@@ -4501,6 +15386,35 @@ public final class DatabaseFunctions {
      * Gets information about a specified patch package.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatch = DatabaseFunctions.getVmClusterPatch(GetVmClusterPatchArgs.builder()
+     *             .patchId(oci_database_patch.test_patch().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterPatchResult> getVmClusterPatchPlain(GetVmClusterPatchPlainArgs args, InvokeOptions options) {
@@ -4512,6 +15426,34 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatchHistoryEntries = DatabaseFunctions.getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterPatchHistoryEntriesResult> getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs args) {
@@ -4523,6 +15465,34 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatchHistoryEntries = DatabaseFunctions.getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterPatchHistoryEntriesResult> getVmClusterPatchHistoryEntriesPlain(GetVmClusterPatchHistoryEntriesPlainArgs args) {
@@ -4534,6 +15504,34 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatchHistoryEntries = DatabaseFunctions.getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterPatchHistoryEntriesResult> getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs args, InvokeOptions options) {
@@ -4545,6 +15543,34 @@ public final class DatabaseFunctions {
      * Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatchHistoryEntries = DatabaseFunctions.getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterPatchHistoryEntriesResult> getVmClusterPatchHistoryEntriesPlain(GetVmClusterPatchHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -4556,6 +15582,35 @@ public final class DatabaseFunctions {
      * Gets the patch history details for the specified patch history entry.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatchHistoryEntry = DatabaseFunctions.getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs.builder()
+     *             .patchHistoryEntryId(oci_database_patch_history_entry.test_patch_history_entry().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterPatchHistoryEntryResult> getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs args) {
@@ -4567,6 +15622,35 @@ public final class DatabaseFunctions {
      * Gets the patch history details for the specified patch history entry.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatchHistoryEntry = DatabaseFunctions.getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs.builder()
+     *             .patchHistoryEntryId(oci_database_patch_history_entry.test_patch_history_entry().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterPatchHistoryEntryResult> getVmClusterPatchHistoryEntryPlain(GetVmClusterPatchHistoryEntryPlainArgs args) {
@@ -4578,6 +15662,35 @@ public final class DatabaseFunctions {
      * Gets the patch history details for the specified patch history entry.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatchHistoryEntry = DatabaseFunctions.getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs.builder()
+     *             .patchHistoryEntryId(oci_database_patch_history_entry.test_patch_history_entry().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterPatchHistoryEntryResult> getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs args, InvokeOptions options) {
@@ -4589,6 +15702,35 @@ public final class DatabaseFunctions {
      * Gets the patch history details for the specified patch history entry.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatchHistoryEntry = DatabaseFunctions.getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs.builder()
+     *             .patchHistoryEntryId(oci_database_patch_history_entry.test_patch_history_entry().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterPatchHistoryEntryResult> getVmClusterPatchHistoryEntryPlain(GetVmClusterPatchHistoryEntryPlainArgs args, InvokeOptions options) {
@@ -4600,6 +15742,34 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatches = DatabaseFunctions.getVmClusterPatches(GetVmClusterPatchesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterPatchesResult> getVmClusterPatches(GetVmClusterPatchesArgs args) {
@@ -4611,6 +15781,34 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatches = DatabaseFunctions.getVmClusterPatches(GetVmClusterPatchesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterPatchesResult> getVmClusterPatchesPlain(GetVmClusterPatchesPlainArgs args) {
@@ -4622,6 +15820,34 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatches = DatabaseFunctions.getVmClusterPatches(GetVmClusterPatchesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterPatchesResult> getVmClusterPatches(GetVmClusterPatchesArgs args, InvokeOptions options) {
@@ -4633,6 +15859,34 @@ public final class DatabaseFunctions {
      * Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterPatchesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterPatches = DatabaseFunctions.getVmClusterPatches(GetVmClusterPatchesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterPatchesResult> getVmClusterPatchesPlain(GetVmClusterPatchesPlainArgs args, InvokeOptions options) {
@@ -4680,6 +15934,35 @@ public final class DatabaseFunctions {
      * Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdate = DatabaseFunctions.getVmClusterUpdate(GetVmClusterUpdateArgs.builder()
+     *             .updateId(oci_database_update.test_update().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterUpdateResult> getVmClusterUpdate(GetVmClusterUpdateArgs args) {
@@ -4691,6 +15974,35 @@ public final class DatabaseFunctions {
      * Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdate = DatabaseFunctions.getVmClusterUpdate(GetVmClusterUpdateArgs.builder()
+     *             .updateId(oci_database_update.test_update().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterUpdateResult> getVmClusterUpdatePlain(GetVmClusterUpdatePlainArgs args) {
@@ -4702,6 +16014,35 @@ public final class DatabaseFunctions {
      * Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdate = DatabaseFunctions.getVmClusterUpdate(GetVmClusterUpdateArgs.builder()
+     *             .updateId(oci_database_update.test_update().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterUpdateResult> getVmClusterUpdate(GetVmClusterUpdateArgs args, InvokeOptions options) {
@@ -4713,6 +16054,35 @@ public final class DatabaseFunctions {
      * Gets information about a specified maintenance update package for a VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdate = DatabaseFunctions.getVmClusterUpdate(GetVmClusterUpdateArgs.builder()
+     *             .updateId(oci_database_update.test_update().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterUpdateResult> getVmClusterUpdatePlain(GetVmClusterUpdatePlainArgs args, InvokeOptions options) {
@@ -4724,6 +16094,36 @@ public final class DatabaseFunctions {
      * Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdateHistoryEntries = DatabaseFunctions.getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .state(var_.vm_cluster_update_history_entry_state())
+     *             .updateType(var_.vm_cluster_update_history_entry_update_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterUpdateHistoryEntriesResult> getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs args) {
@@ -4735,6 +16135,36 @@ public final class DatabaseFunctions {
      * Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdateHistoryEntries = DatabaseFunctions.getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .state(var_.vm_cluster_update_history_entry_state())
+     *             .updateType(var_.vm_cluster_update_history_entry_update_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterUpdateHistoryEntriesResult> getVmClusterUpdateHistoryEntriesPlain(GetVmClusterUpdateHistoryEntriesPlainArgs args) {
@@ -4746,6 +16176,36 @@ public final class DatabaseFunctions {
      * Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdateHistoryEntries = DatabaseFunctions.getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .state(var_.vm_cluster_update_history_entry_state())
+     *             .updateType(var_.vm_cluster_update_history_entry_update_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterUpdateHistoryEntriesResult> getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs args, InvokeOptions options) {
@@ -4757,6 +16217,36 @@ public final class DatabaseFunctions {
      * Gets the history of the maintenance update actions performed on the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdateHistoryEntries = DatabaseFunctions.getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .state(var_.vm_cluster_update_history_entry_state())
+     *             .updateType(var_.vm_cluster_update_history_entry_update_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterUpdateHistoryEntriesResult> getVmClusterUpdateHistoryEntriesPlain(GetVmClusterUpdateHistoryEntriesPlainArgs args, InvokeOptions options) {
@@ -4768,6 +16258,35 @@ public final class DatabaseFunctions {
      * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdateHistoryEntry = DatabaseFunctions.getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs.builder()
+     *             .updateHistoryEntryId(oci_database_update_history_entry.test_update_history_entry().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterUpdateHistoryEntryResult> getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs args) {
@@ -4779,6 +16298,35 @@ public final class DatabaseFunctions {
      * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdateHistoryEntry = DatabaseFunctions.getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs.builder()
+     *             .updateHistoryEntryId(oci_database_update_history_entry.test_update_history_entry().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterUpdateHistoryEntryResult> getVmClusterUpdateHistoryEntryPlain(GetVmClusterUpdateHistoryEntryPlainArgs args) {
@@ -4790,6 +16338,35 @@ public final class DatabaseFunctions {
      * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdateHistoryEntry = DatabaseFunctions.getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs.builder()
+     *             .updateHistoryEntryId(oci_database_update_history_entry.test_update_history_entry().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterUpdateHistoryEntryResult> getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs args, InvokeOptions options) {
@@ -4801,6 +16378,35 @@ public final class DatabaseFunctions {
      * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdateHistoryEntry = DatabaseFunctions.getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs.builder()
+     *             .updateHistoryEntryId(oci_database_update_history_entry.test_update_history_entry().id())
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterUpdateHistoryEntryResult> getVmClusterUpdateHistoryEntryPlain(GetVmClusterUpdateHistoryEntryPlainArgs args, InvokeOptions options) {
@@ -4812,6 +16418,36 @@ public final class DatabaseFunctions {
      * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdates = DatabaseFunctions.getVmClusterUpdates(GetVmClusterUpdatesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .state(var_.vm_cluster_update_state())
+     *             .updateType(var_.vm_cluster_update_update_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterUpdatesResult> getVmClusterUpdates(GetVmClusterUpdatesArgs args) {
@@ -4823,6 +16459,36 @@ public final class DatabaseFunctions {
      * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdates = DatabaseFunctions.getVmClusterUpdates(GetVmClusterUpdatesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .state(var_.vm_cluster_update_state())
+     *             .updateType(var_.vm_cluster_update_update_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterUpdatesResult> getVmClusterUpdatesPlain(GetVmClusterUpdatesPlainArgs args) {
@@ -4834,6 +16500,36 @@ public final class DatabaseFunctions {
      * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdates = DatabaseFunctions.getVmClusterUpdates(GetVmClusterUpdatesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .state(var_.vm_cluster_update_state())
+     *             .updateType(var_.vm_cluster_update_update_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClusterUpdatesResult> getVmClusterUpdates(GetVmClusterUpdatesArgs args, InvokeOptions options) {
@@ -4845,6 +16541,36 @@ public final class DatabaseFunctions {
      * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterUpdates = DatabaseFunctions.getVmClusterUpdates(GetVmClusterUpdatesArgs.builder()
+     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .state(var_.vm_cluster_update_state())
+     *             .updateType(var_.vm_cluster_update_update_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClusterUpdatesResult> getVmClusterUpdatesPlain(GetVmClusterUpdatesPlainArgs args, InvokeOptions options) {
@@ -4857,6 +16583,37 @@ public final class DatabaseFunctions {
      * To list the cloud VM clusters in an Exadata Cloud Service instance, use the [ListCloudVmClusters ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/ListCloudVmClusters) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusters = DatabaseFunctions.getVmClusters(GetVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vm_cluster_display_name())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .state(var_.vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClustersResult> getVmClusters(GetVmClustersArgs args) {
@@ -4869,6 +16626,37 @@ public final class DatabaseFunctions {
      * To list the cloud VM clusters in an Exadata Cloud Service instance, use the [ListCloudVmClusters ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/ListCloudVmClusters) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusters = DatabaseFunctions.getVmClusters(GetVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vm_cluster_display_name())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .state(var_.vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClustersResult> getVmClustersPlain(GetVmClustersPlainArgs args) {
@@ -4881,6 +16669,37 @@ public final class DatabaseFunctions {
      * To list the cloud VM clusters in an Exadata Cloud Service instance, use the [ListCloudVmClusters ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/ListCloudVmClusters) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusters = DatabaseFunctions.getVmClusters(GetVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vm_cluster_display_name())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .state(var_.vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVmClustersResult> getVmClusters(GetVmClustersArgs args, InvokeOptions options) {
@@ -4893,6 +16712,37 @@ public final class DatabaseFunctions {
      * To list the cloud VM clusters in an Exadata Cloud Service instance, use the [ListCloudVmClusters ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/ListCloudVmClusters) operation.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusters = DatabaseFunctions.getVmClusters(GetVmClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.vm_cluster_display_name())
+     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .state(var_.vm_cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVmClustersResult> getVmClustersPlain(GetVmClustersPlainArgs args, InvokeOptions options) {

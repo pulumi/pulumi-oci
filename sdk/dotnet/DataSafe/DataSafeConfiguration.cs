@@ -17,21 +17,19 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDataSafeConfiguration = new Oci.DataSafe.DataSafeConfiguration("testDataSafeConfiguration", new()
     ///     {
-    ///         var testDataSafeConfiguration = new Oci.DataSafe.DataSafeConfiguration("testDataSafeConfiguration", new Oci.DataSafe.DataSafeConfigurationArgs
-    ///         {
-    ///             IsEnabled = @var.Data_safe_configuration_is_enabled,
-    ///             CompartmentId = @var.Compartment_id,
-    ///         });
-    ///     }
+    ///         IsEnabled = @var.Data_safe_configuration_is_enabled,
+    ///         CompartmentId = @var.Compartment_id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -39,7 +37,7 @@ namespace Pulumi.Oci.DataSafe
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:DataSafe/dataSafeConfiguration:DataSafeConfiguration")]
-    public partial class DataSafeConfiguration : Pulumi.CustomResource
+    public partial class DataSafeConfiguration : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) A filter to return only resources that match the specified compartment OCID.
@@ -139,7 +137,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class DataSafeConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class DataSafeConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A filter to return only resources that match the specified compartment OCID.
@@ -156,9 +154,10 @@ namespace Pulumi.Oci.DataSafe
         public DataSafeConfigurationArgs()
         {
         }
+        public static new DataSafeConfigurationArgs Empty => new DataSafeConfigurationArgs();
     }
 
-    public sealed class DataSafeConfigurationState : Pulumi.ResourceArgs
+    public sealed class DataSafeConfigurationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A filter to return only resources that match the specified compartment OCID.
@@ -235,5 +234,6 @@ namespace Pulumi.Oci.DataSafe
         public DataSafeConfigurationState()
         {
         }
+        public static new DataSafeConfigurationState Empty => new DataSafeConfigurationState();
     }
 }

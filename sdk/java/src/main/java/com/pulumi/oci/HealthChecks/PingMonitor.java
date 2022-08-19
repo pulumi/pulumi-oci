@@ -26,6 +26,44 @@ import javax.annotation.Nullable;
  * specified by `intervalInSeconds`.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.HealthChecks.PingMonitor;
+ * import com.pulumi.oci.HealthChecks.PingMonitorArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPingMonitor = new PingMonitor(&#34;testPingMonitor&#34;, PingMonitorArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.ping_monitor_display_name())
+ *             .intervalInSeconds(var_.ping_monitor_interval_in_seconds())
+ *             .protocol(var_.ping_monitor_protocol())
+ *             .targets(var_.ping_monitor_targets())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isEnabled(var_.ping_monitor_is_enabled())
+ *             .port(var_.ping_monitor_port())
+ *             .timeoutInSeconds(var_.ping_monitor_timeout_in_seconds())
+ *             .vantagePointNames(var_.ping_monitor_vantage_point_names())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -17,31 +17,29 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testIpv6 = new Oci.Core.Ipv6("testIpv6", new()
     ///     {
-    ///         var testIpv6 = new Oci.Core.Ipv6("testIpv6", new Oci.Core.Ipv6Args
+    ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Ipv6_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IpAddress = @var.Ipv6_ip_address,
-    ///             Ipv6subnetCidr = @var.Ipv6_ipv6subnet_cidr,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Ipv6_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IpAddress = @var.Ipv6_ip_address,
+    ///         Ipv6subnetCidr = @var.Ipv6_ipv6subnet_cidr,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/ipv6:Ipv6")]
-    public partial class Ipv6 : Pulumi.CustomResource
+    public partial class Ipv6 : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
@@ -159,7 +157,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class Ipv6Args : Pulumi.ResourceArgs
+    public sealed class Ipv6Args : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -212,9 +210,10 @@ namespace Pulumi.Oci.Core
         public Ipv6Args()
         {
         }
+        public static new Ipv6Args Empty => new Ipv6Args();
     }
 
-    public sealed class Ipv6State : Pulumi.ResourceArgs
+    public sealed class Ipv6State : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
@@ -291,5 +290,6 @@ namespace Pulumi.Oci.Core
         public Ipv6State()
         {
         }
+        public static new Ipv6State Empty => new Ipv6State();
     }
 }

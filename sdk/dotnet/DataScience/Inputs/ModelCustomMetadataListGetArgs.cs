@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class ModelCustomMetadataListGetArgs : Pulumi.ResourceArgs
+    public sealed class ModelCustomMetadataListGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public ModelCustomMetadataListGetArgs()
         {
         }
+        public static new ModelCustomMetadataListGetArgs Empty => new ModelCustomMetadataListGetArgs();
     }
 }

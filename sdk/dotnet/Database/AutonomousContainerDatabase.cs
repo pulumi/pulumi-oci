@@ -17,96 +17,94 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAutonomousContainerDatabase = new Oci.Database.AutonomousContainerDatabase("testAutonomousContainerDatabase", new()
     ///     {
-    ///         var testAutonomousContainerDatabase = new Oci.Database.AutonomousContainerDatabase("testAutonomousContainerDatabase", new Oci.Database.AutonomousContainerDatabaseArgs
+    ///         DisplayName = @var.Autonomous_container_database_display_name,
+    ///         PatchModel = @var.Autonomous_container_database_patch_model,
+    ///         CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
+    ///         AutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
+    ///         BackupConfig = new Oci.Database.Inputs.AutonomousContainerDatabaseBackupConfigArgs
     ///         {
-    ///             DisplayName = @var.Autonomous_container_database_display_name,
-    ///             PatchModel = @var.Autonomous_container_database_patch_model,
-    ///             CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
-    ///             AutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
-    ///             BackupConfig = new Oci.Database.Inputs.AutonomousContainerDatabaseBackupConfigArgs
+    ///             BackupDestinationDetails = new Oci.Database.Inputs.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs
     ///             {
-    ///                 BackupDestinationDetails = new Oci.Database.Inputs.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs
+    ///                 Type = @var.Autonomous_container_database_backup_config_backup_destination_details_type,
+    ///                 Id = @var.Autonomous_container_database_backup_config_backup_destination_details_id,
+    ///                 InternetProxy = @var.Autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
+    ///                 VpcPassword = @var.Autonomous_container_database_backup_config_backup_destination_details_vpc_password,
+    ///                 VpcUser = @var.Autonomous_container_database_backup_config_backup_destination_details_vpc_user,
+    ///             },
+    ///             RecoveryWindowInDays = @var.Autonomous_container_database_backup_config_recovery_window_in_days,
+    ///         },
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DbUniqueName = @var.Autonomous_container_database_db_unique_name,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsAutomaticFailoverEnabled = @var.Autonomous_container_database_is_automatic_failover_enabled,
+    ///         KeyStoreId = oci_database_key_store.Test_key_store.Id,
+    ///         KmsKeyId = oci_kms_key.Test_key.Id,
+    ///         MaintenanceWindowDetails = new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs
+    ///         {
+    ///             Preference = @var.Autonomous_container_database_maintenance_window_details_preference,
+    ///             CustomActionTimeoutInMins = @var.Autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins,
+    ///             DaysOfWeeks = new[]
+    ///             {
+    ///                 new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs
     ///                 {
-    ///                     Type = @var.Autonomous_container_database_backup_config_backup_destination_details_type,
-    ///                     Id = @var.Autonomous_container_database_backup_config_backup_destination_details_id,
-    ///                     InternetProxy = @var.Autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-    ///                     VpcPassword = @var.Autonomous_container_database_backup_config_backup_destination_details_vpc_password,
-    ///                     VpcUser = @var.Autonomous_container_database_backup_config_backup_destination_details_vpc_user,
+    ///                     Name = @var.Autonomous_container_database_maintenance_window_details_days_of_week_name,
     ///                 },
-    ///                 RecoveryWindowInDays = @var.Autonomous_container_database_backup_config_recovery_window_in_days,
     ///             },
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DbUniqueName = @var.Autonomous_container_database_db_unique_name,
-    ///             DefinedTags = 
+    ///             HoursOfDays = @var.Autonomous_container_database_maintenance_window_details_hours_of_day,
+    ///             IsCustomActionTimeoutEnabled = @var.Autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled,
+    ///             LeadTimeInWeeks = @var.Autonomous_container_database_maintenance_window_details_lead_time_in_weeks,
+    ///             Months = new[]
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsAutomaticFailoverEnabled = @var.Autonomous_container_database_is_automatic_failover_enabled,
-    ///             KeyStoreId = oci_database_key_store.Test_key_store.Id,
-    ///             KmsKeyId = oci_kms_key.Test_key.Id,
-    ///             MaintenanceWindowDetails = new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs
-    ///             {
-    ///                 Preference = @var.Autonomous_container_database_maintenance_window_details_preference,
-    ///                 CustomActionTimeoutInMins = @var.Autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins,
-    ///                 DaysOfWeeks = 
+    ///                 new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs
     ///                 {
-    ///                     new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs
-    ///                     {
-    ///                         Name = @var.Autonomous_container_database_maintenance_window_details_days_of_week_name,
-    ///                     },
+    ///                     Name = @var.Autonomous_container_database_maintenance_window_details_months_name,
     ///                 },
-    ///                 HoursOfDays = @var.Autonomous_container_database_maintenance_window_details_hours_of_day,
-    ///                 IsCustomActionTimeoutEnabled = @var.Autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled,
-    ///                 LeadTimeInWeeks = @var.Autonomous_container_database_maintenance_window_details_lead_time_in_weeks,
-    ///                 Months = 
-    ///                 {
-    ///                     new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs
-    ///                     {
-    ///                         Name = @var.Autonomous_container_database_maintenance_window_details_months_name,
-    ///                     },
-    ///                 },
-    ///                 PatchingMode = @var.Autonomous_container_database_maintenance_window_details_patching_mode,
-    ///                 WeeksOfMonths = @var.Autonomous_container_database_maintenance_window_details_weeks_of_month,
     ///             },
-    ///             PeerAutonomousContainerDatabaseDisplayName = @var.Autonomous_container_database_peer_autonomous_container_database_display_name,
-    ///             PeerCloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
-    ///             ProtectionMode = @var.Autonomous_container_database_protection_mode,
-    ///             PeerAutonomousContainerDatabaseBackupConfig = new Oci.Database.Inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs
+    ///             PatchingMode = @var.Autonomous_container_database_maintenance_window_details_patching_mode,
+    ///             WeeksOfMonths = @var.Autonomous_container_database_maintenance_window_details_weeks_of_month,
+    ///         },
+    ///         PeerAutonomousContainerDatabaseDisplayName = @var.Autonomous_container_database_peer_autonomous_container_database_display_name,
+    ///         PeerCloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
+    ///         ProtectionMode = @var.Autonomous_container_database_protection_mode,
+    ///         PeerAutonomousContainerDatabaseBackupConfig = new Oci.Database.Inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs
+    ///         {
+    ///             BackupDestinationDetails = new[]
     ///             {
-    ///                 BackupDestinationDetails = 
+    ///                 new Oci.Database.Inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs
     ///                 {
-    ///                     new Oci.Database.Inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs
-    ///                     {
-    ///                         Type = @var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_type,
-    ///                         Id = @var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_id,
-    ///                         InternetProxy = @var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-    ///                         VpcPassword = @var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
-    ///                         VpcUser = @var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
-    ///                     },
+    ///                     Type = @var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_type,
+    ///                     Id = @var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_id,
+    ///                     InternetProxy = @var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
+    ///                     VpcPassword = @var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
+    ///                     VpcUser = @var.Autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
     ///                 },
-    ///                 RecoveryWindowInDays = @var.Autonomous_container_database_peer_autonomous_container_database_backup_config_recovery_window_in_days,
     ///             },
-    ///             PeerAutonomousContainerDatabaseCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///             PeerAutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
-    ///             PeerDbUniqueName = @var.Autonomous_container_database_peer_db_unique_name,
-    ///             ServiceLevelAgreementType = @var.Autonomous_container_database_service_level_agreement_type,
-    ///             VaultId = oci_kms_vault.Test_vault.Id,
-    ///             StandbyMaintenanceBufferInDays = @var.Autonomous_container_database_standby_maintenance_buffer_in_days,
-    ///         });
-    ///     }
+    ///             RecoveryWindowInDays = @var.Autonomous_container_database_peer_autonomous_container_database_backup_config_recovery_window_in_days,
+    ///         },
+    ///         PeerAutonomousContainerDatabaseCompartmentId = oci_identity_compartment.Test_compartment.Id,
+    ///         PeerAutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
+    ///         PeerDbUniqueName = @var.Autonomous_container_database_peer_db_unique_name,
+    ///         ServiceLevelAgreementType = @var.Autonomous_container_database_service_level_agreement_type,
+    ///         VaultId = oci_kms_vault.Test_vault.Id,
+    ///         StandbyMaintenanceBufferInDays = @var.Autonomous_container_database_standby_maintenance_buffer_in_days,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -118,7 +116,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase")]
-    public partial class AutonomousContainerDatabase : Pulumi.CustomResource
+    public partial class AutonomousContainerDatabase : global::Pulumi.CustomResource
     {
         /// <summary>
         /// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
@@ -419,7 +417,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class AutonomousContainerDatabaseArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousContainerDatabaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
@@ -583,9 +581,10 @@ namespace Pulumi.Oci.Database
         public AutonomousContainerDatabaseArgs()
         {
         }
+        public static new AutonomousContainerDatabaseArgs Empty => new AutonomousContainerDatabaseArgs();
     }
 
-    public sealed class AutonomousContainerDatabaseState : Pulumi.ResourceArgs
+    public sealed class AutonomousContainerDatabaseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
@@ -875,5 +874,6 @@ namespace Pulumi.Oci.Database
         public AutonomousContainerDatabaseState()
         {
         }
+        public static new AutonomousContainerDatabaseState Empty => new AutonomousContainerDatabaseState();
     }
 }

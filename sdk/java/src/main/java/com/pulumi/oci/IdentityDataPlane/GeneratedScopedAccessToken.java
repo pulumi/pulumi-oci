@@ -19,6 +19,35 @@ import javax.annotation.Nullable;
  * Based on the calling principal and the input payload, derive the claims and create a security token.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.IdentityDataPlane.GeneratedScopedAccessToken;
+ * import com.pulumi.oci.IdentityDataPlane.GeneratedScopedAccessTokenArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testGenerateScopedAccessToken = new GeneratedScopedAccessToken(&#34;testGenerateScopedAccessToken&#34;, GeneratedScopedAccessTokenArgs.builder()        
+ *             .publicKey(var_.generate_scoped_access_token_public_key())
+ *             .scope(var_.generate_scoped_access_token_scope())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

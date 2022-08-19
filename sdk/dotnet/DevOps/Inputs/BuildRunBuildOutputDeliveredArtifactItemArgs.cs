@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildRunBuildOutputDeliveredArtifactItemArgs : Pulumi.ResourceArgs
+    public sealed class BuildRunBuildOutputDeliveredArtifactItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the artifact registry repository used by the DeliverArtifactStage
@@ -69,5 +69,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildRunBuildOutputDeliveredArtifactItemArgs()
         {
         }
+        public static new BuildRunBuildOutputDeliveredArtifactItemArgs Empty => new BuildRunBuildOutputDeliveredArtifactItemArgs();
     }
 }

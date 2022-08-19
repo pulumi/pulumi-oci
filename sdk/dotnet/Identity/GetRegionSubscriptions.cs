@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegionSubscriptions = Oci.Identity.GetRegionSubscriptions.Invoke(new()
         ///     {
-        ///         var testRegionSubscriptions = Output.Create(Oci.Identity.GetRegionSubscriptions.InvokeAsync(new Oci.Identity.GetRegionSubscriptionsArgs
-        ///         {
-        ///             TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-        ///         }));
-        ///     }
+        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRegionSubscriptions = Oci.Identity.GetRegionSubscriptions.Invoke(new()
         ///     {
-        ///         var testRegionSubscriptions = Output.Create(Oci.Identity.GetRegionSubscriptions.InvokeAsync(new Oci.Identity.GetRegionSubscriptionsArgs
-        ///         {
-        ///             TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-        ///         }));
-        ///     }
+        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetRegionSubscriptionsArgs : Pulumi.InvokeArgs
+    public sealed class GetRegionSubscriptionsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetRegionSubscriptionsFilterArgs>? _filters;
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Identity
         public GetRegionSubscriptionsArgs()
         {
         }
+        public static new GetRegionSubscriptionsArgs Empty => new GetRegionSubscriptionsArgs();
     }
 
-    public sealed class GetRegionSubscriptionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRegionSubscriptionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetRegionSubscriptionsFilterInputArgs>? _filters;
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Identity
         public GetRegionSubscriptionsInvokeArgs()
         {
         }
+        public static new GetRegionSubscriptionsInvokeArgs Empty => new GetRegionSubscriptionsInvokeArgs();
     }
 
 

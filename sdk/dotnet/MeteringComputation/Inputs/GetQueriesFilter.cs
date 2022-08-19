@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class GetQueriesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetQueriesFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public GetQueriesFilterArgs()
         {
         }
+        public static new GetQueriesFilterArgs Empty => new GetQueriesFilterArgs();
     }
 }

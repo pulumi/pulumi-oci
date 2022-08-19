@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class ConnectionConnectDescriptorArgs : Pulumi.ResourceArgs
+    public sealed class ConnectionConnectDescriptorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Connect String. Required if no host, port nor databaseServiceName were specified. If a Private Endpoint was specified in the Connection, the host entry should be a valid IP address. Supported formats: Easy connect: &lt;host&gt;:&lt;port&gt;/&lt;db_service_name&gt; Long format: (description= (address=(port=&lt;port&gt;)(host=&lt;host&gt;))(connect_data=(service_name=&lt;db_service_name&gt;)))
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public ConnectionConnectDescriptorArgs()
         {
         }
+        public static new ConnectionConnectDescriptorArgs Empty => new ConnectionConnectDescriptorArgs();
     }
 }

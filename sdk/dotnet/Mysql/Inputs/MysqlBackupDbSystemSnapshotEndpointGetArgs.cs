@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlBackupDbSystemSnapshotEndpointGetArgs : Pulumi.ResourceArgs
+    public sealed class MysqlBackupDbSystemSnapshotEndpointGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The network address of the DB System.
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlBackupDbSystemSnapshotEndpointGetArgs()
         {
         }
+        public static new MysqlBackupDbSystemSnapshotEndpointGetArgs Empty => new MysqlBackupDbSystemSnapshotEndpointGetArgs();
     }
 }

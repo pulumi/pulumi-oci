@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeployment = Oci.DevOps.GetDeployment.Invoke(new()
         ///     {
-        ///         var testDeployment = Output.Create(Oci.DevOps.GetDeployment.InvokeAsync(new Oci.DevOps.GetDeploymentArgs
-        ///         {
-        ///             DeploymentId = oci_devops_deployment.Test_deployment.Id,
-        ///         }));
-        ///     }
+        ///         DeploymentId = oci_devops_deployment.Test_deployment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeployment = Oci.DevOps.GetDeployment.Invoke(new()
         ///     {
-        ///         var testDeployment = Output.Create(Oci.DevOps.GetDeployment.InvokeAsync(new Oci.DevOps.GetDeploymentArgs
-        ///         {
-        ///             DeploymentId = oci_devops_deployment.Test_deployment.Id,
-        ///         }));
-        ///     }
+        ///         DeploymentId = oci_devops_deployment.Test_deployment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetDeploymentArgs : Pulumi.InvokeArgs
+    public sealed class GetDeploymentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique deployment identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DevOps
         public GetDeploymentArgs()
         {
         }
+        public static new GetDeploymentArgs Empty => new GetDeploymentArgs();
     }
 
-    public sealed class GetDeploymentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDeploymentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique deployment identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DevOps
         public GetDeploymentInvokeArgs()
         {
         }
+        public static new GetDeploymentInvokeArgs Empty => new GetDeploymentInvokeArgs();
     }
 
 

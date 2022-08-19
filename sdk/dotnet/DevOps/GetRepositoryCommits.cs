@@ -22,27 +22,25 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryCommits = Oci.DevOps.GetRepositoryCommits.Invoke(new()
         ///     {
-        ///         var testRepositoryCommits = Output.Create(Oci.DevOps.GetRepositoryCommits.InvokeAsync(new Oci.DevOps.GetRepositoryCommitsArgs
-        ///         {
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             AuthorName = @var.Repository_commit_author_name,
-        ///             CommitMessage = @var.Repository_commit_commit_message,
-        ///             ExcludeRefName = @var.Repository_commit_exclude_ref_name,
-        ///             FilePath = @var.Repository_commit_file_path,
-        ///             RefName = @var.Repository_commit_ref_name,
-        ///             TimestampGreaterThanOrEqualTo = @var.Repository_commit_timestamp_greater_than_or_equal_to,
-        ///             TimestampLessThanOrEqualTo = @var.Repository_commit_timestamp_less_than_or_equal_to,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         AuthorName = @var.Repository_commit_author_name,
+        ///         CommitMessage = @var.Repository_commit_commit_message,
+        ///         ExcludeRefName = @var.Repository_commit_exclude_ref_name,
+        ///         FilePath = @var.Repository_commit_file_path,
+        ///         RefName = @var.Repository_commit_ref_name,
+        ///         TimestampGreaterThanOrEqualTo = @var.Repository_commit_timestamp_greater_than_or_equal_to,
+        ///         TimestampLessThanOrEqualTo = @var.Repository_commit_timestamp_less_than_or_equal_to,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,27 +59,25 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryCommits = Oci.DevOps.GetRepositoryCommits.Invoke(new()
         ///     {
-        ///         var testRepositoryCommits = Output.Create(Oci.DevOps.GetRepositoryCommits.InvokeAsync(new Oci.DevOps.GetRepositoryCommitsArgs
-        ///         {
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             AuthorName = @var.Repository_commit_author_name,
-        ///             CommitMessage = @var.Repository_commit_commit_message,
-        ///             ExcludeRefName = @var.Repository_commit_exclude_ref_name,
-        ///             FilePath = @var.Repository_commit_file_path,
-        ///             RefName = @var.Repository_commit_ref_name,
-        ///             TimestampGreaterThanOrEqualTo = @var.Repository_commit_timestamp_greater_than_or_equal_to,
-        ///             TimestampLessThanOrEqualTo = @var.Repository_commit_timestamp_less_than_or_equal_to,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         AuthorName = @var.Repository_commit_author_name,
+        ///         CommitMessage = @var.Repository_commit_commit_message,
+        ///         ExcludeRefName = @var.Repository_commit_exclude_ref_name,
+        ///         FilePath = @var.Repository_commit_file_path,
+        ///         RefName = @var.Repository_commit_ref_name,
+        ///         TimestampGreaterThanOrEqualTo = @var.Repository_commit_timestamp_greater_than_or_equal_to,
+        ///         TimestampLessThanOrEqualTo = @var.Repository_commit_timestamp_less_than_or_equal_to,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetRepositoryCommitsArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryCommitsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return any commits that are pushed by the requested author.
@@ -152,9 +148,10 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryCommitsArgs()
         {
         }
+        public static new GetRepositoryCommitsArgs Empty => new GetRepositoryCommitsArgs();
     }
 
-    public sealed class GetRepositoryCommitsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryCommitsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return any commits that are pushed by the requested author.
@@ -215,6 +212,7 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryCommitsInvokeArgs()
         {
         }
+        public static new GetRepositoryCommitsInvokeArgs Empty => new GetRepositoryCommitsInvokeArgs();
     }
 
 

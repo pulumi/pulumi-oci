@@ -17,66 +17,64 @@ namespace Pulumi.Oci.VnMonitoring
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPathAnalyzerTest = new Oci.VnMonitoring.PathAnalyzerTest("testPathAnalyzerTest", new()
     ///     {
-    ///         var testPathAnalyzerTest = new Oci.VnMonitoring.PathAnalyzerTest("testPathAnalyzerTest", new Oci.VnMonitoring.PathAnalyzerTestArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DestinationEndpoint = new Oci.VnMonitoring.Inputs.PathAnalyzerTestDestinationEndpointArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DestinationEndpoint = new Oci.VnMonitoring.Inputs.PathAnalyzerTestDestinationEndpointArgs
-    ///             {
-    ///                 Type = @var.Path_analyzer_test_destination_endpoint_type,
-    ///                 Address = @var.Path_analyzer_test_destination_endpoint_address,
-    ///                 InstanceId = oci_core_instance.Test_instance.Id,
-    ///                 ListenerId = oci_load_balancer_listener.Test_listener.Id,
-    ///                 LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///                 NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 VlanId = oci_core_vlan.Test_vlan.Id,
-    ///                 VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
-    ///             },
-    ///             Protocol = @var.Path_analyzer_test_protocol,
-    ///             SourceEndpoint = new Oci.VnMonitoring.Inputs.PathAnalyzerTestSourceEndpointArgs
-    ///             {
-    ///                 Type = @var.Path_analyzer_test_source_endpoint_type,
-    ///                 Address = @var.Path_analyzer_test_source_endpoint_address,
-    ///                 InstanceId = oci_core_instance.Test_instance.Id,
-    ///                 ListenerId = oci_load_balancer_listener.Test_listener.Id,
-    ///                 LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///                 NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 VlanId = oci_core_vlan.Test_vlan.Id,
-    ///                 VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Path_analyzer_test_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             ProtocolParameters = new Oci.VnMonitoring.Inputs.PathAnalyzerTestProtocolParametersArgs
-    ///             {
-    ///                 Type = @var.Path_analyzer_test_protocol_parameters_type,
-    ///                 DestinationPort = @var.Path_analyzer_test_protocol_parameters_destination_port,
-    ///                 IcmpCode = @var.Path_analyzer_test_protocol_parameters_icmp_code,
-    ///                 IcmpType = @var.Path_analyzer_test_protocol_parameters_icmp_type,
-    ///                 SourcePort = @var.Path_analyzer_test_protocol_parameters_source_port,
-    ///             },
-    ///             QueryOptions = new Oci.VnMonitoring.Inputs.PathAnalyzerTestQueryOptionsArgs
-    ///             {
-    ///                 IsBiDirectionalAnalysis = @var.Path_analyzer_test_query_options_is_bi_directional_analysis,
-    ///             },
-    ///         });
-    ///     }
+    ///             Type = @var.Path_analyzer_test_destination_endpoint_type,
+    ///             Address = @var.Path_analyzer_test_destination_endpoint_address,
+    ///             InstanceId = oci_core_instance.Test_instance.Id,
+    ///             ListenerId = oci_load_balancer_listener.Test_listener.Id,
+    ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///             NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             VlanId = oci_core_vlan.Test_vlan.Id,
+    ///             VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+    ///         },
+    ///         Protocol = @var.Path_analyzer_test_protocol,
+    ///         SourceEndpoint = new Oci.VnMonitoring.Inputs.PathAnalyzerTestSourceEndpointArgs
+    ///         {
+    ///             Type = @var.Path_analyzer_test_source_endpoint_type,
+    ///             Address = @var.Path_analyzer_test_source_endpoint_address,
+    ///             InstanceId = oci_core_instance.Test_instance.Id,
+    ///             ListenerId = oci_load_balancer_listener.Test_listener.Id,
+    ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///             NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             VlanId = oci_core_vlan.Test_vlan.Id,
+    ///             VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Path_analyzer_test_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         ProtocolParameters = new Oci.VnMonitoring.Inputs.PathAnalyzerTestProtocolParametersArgs
+    ///         {
+    ///             Type = @var.Path_analyzer_test_protocol_parameters_type,
+    ///             DestinationPort = @var.Path_analyzer_test_protocol_parameters_destination_port,
+    ///             IcmpCode = @var.Path_analyzer_test_protocol_parameters_icmp_code,
+    ///             IcmpType = @var.Path_analyzer_test_protocol_parameters_icmp_type,
+    ///             SourcePort = @var.Path_analyzer_test_protocol_parameters_source_port,
+    ///         },
+    ///         QueryOptions = new Oci.VnMonitoring.Inputs.PathAnalyzerTestQueryOptionsArgs
+    ///         {
+    ///             IsBiDirectionalAnalysis = @var.Path_analyzer_test_query_options_is_bi_directional_analysis,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -88,7 +86,7 @@ namespace Pulumi.Oci.VnMonitoring
     /// ```
     /// </summary>
     [OciResourceType("oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest")]
-    public partial class PathAnalyzerTest : Pulumi.CustomResource
+    public partial class PathAnalyzerTest : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
@@ -212,7 +210,7 @@ namespace Pulumi.Oci.VnMonitoring
         }
     }
 
-    public sealed class PathAnalyzerTestArgs : Pulumi.ResourceArgs
+    public sealed class PathAnalyzerTestArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
@@ -283,9 +281,10 @@ namespace Pulumi.Oci.VnMonitoring
         public PathAnalyzerTestArgs()
         {
         }
+        public static new PathAnalyzerTestArgs Empty => new PathAnalyzerTestArgs();
     }
 
-    public sealed class PathAnalyzerTestState : Pulumi.ResourceArgs
+    public sealed class PathAnalyzerTestState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
@@ -386,5 +385,6 @@ namespace Pulumi.Oci.VnMonitoring
         public PathAnalyzerTestState()
         {
         }
+        public static new PathAnalyzerTestState Empty => new PathAnalyzerTestState();
     }
 }

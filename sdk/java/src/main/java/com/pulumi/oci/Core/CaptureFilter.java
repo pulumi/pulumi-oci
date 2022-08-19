@@ -31,6 +31,77 @@ import javax.annotation.Nullable;
  * It does not have to be unique, and you can change it.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.CaptureFilter;
+ * import com.pulumi.oci.Core.CaptureFilterArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs;
+ * import com.pulumi.oci.Core.inputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCaptureFilter = new CaptureFilter(&#34;testCaptureFilter&#34;, CaptureFilterArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .filterType(var_.capture_filter_filter_type())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.capture_filter_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .vtapCaptureFilterRules(CaptureFilterVtapCaptureFilterRuleArgs.builder()
+ *                 .trafficDirection(var_.capture_filter_vtap_capture_filter_rules_traffic_direction())
+ *                 .destinationCidr(var_.capture_filter_vtap_capture_filter_rules_destination_cidr())
+ *                 .icmpOptions(CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs.builder()
+ *                     .type(var_.capture_filter_vtap_capture_filter_rules_icmp_options_type())
+ *                     .code(var_.capture_filter_vtap_capture_filter_rules_icmp_options_code())
+ *                     .build())
+ *                 .protocol(var_.capture_filter_vtap_capture_filter_rules_protocol())
+ *                 .ruleAction(var_.capture_filter_vtap_capture_filter_rules_rule_action())
+ *                 .sourceCidr(var_.capture_filter_vtap_capture_filter_rules_source_cidr())
+ *                 .tcpOptions(CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs.builder()
+ *                     .destinationPortRange(CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs.builder()
+ *                         .max(var_.capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max())
+ *                         .min(var_.capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min())
+ *                         .build())
+ *                     .sourcePortRange(CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs.builder()
+ *                         .max(var_.capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max())
+ *                         .min(var_.capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min())
+ *                         .build())
+ *                     .build())
+ *                 .udpOptions(CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs.builder()
+ *                     .destinationPortRange(CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs.builder()
+ *                         .max(var_.capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max())
+ *                         .min(var_.capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min())
+ *                         .build())
+ *                     .sourcePortRange(CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs.builder()
+ *                         .max(var_.capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max())
+ *                         .min(var_.capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min())
+ *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

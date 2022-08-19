@@ -25,6 +25,39 @@ import javax.annotation.Nullable;
  * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Ons.Subscription;
+ * import com.pulumi.oci.Ons.SubscriptionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSubscription = new Subscription(&#34;testSubscription&#34;, SubscriptionArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .endpoint(var_.subscription_endpoint())
+ *             .protocol(var_.subscription_protocol())
+ *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

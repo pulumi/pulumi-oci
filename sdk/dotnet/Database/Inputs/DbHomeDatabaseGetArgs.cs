@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class DbHomeDatabaseGetArgs : Pulumi.ResourceArgs
+    public sealed class DbHomeDatabaseGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
@@ -188,5 +188,6 @@ namespace Pulumi.Oci.Database.Inputs
         public DbHomeDatabaseGetArgs()
         {
         }
+        public static new DbHomeDatabaseGetArgs Empty => new DbHomeDatabaseGetArgs();
     }
 }

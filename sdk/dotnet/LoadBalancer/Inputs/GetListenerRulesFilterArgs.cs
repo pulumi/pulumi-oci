@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class GetListenerRulesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetListenerRulesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the rule set that the rule belongs to.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public GetListenerRulesFilterInputArgs()
         {
         }
+        public static new GetListenerRulesFilterInputArgs Empty => new GetListenerRulesFilterInputArgs();
     }
 }

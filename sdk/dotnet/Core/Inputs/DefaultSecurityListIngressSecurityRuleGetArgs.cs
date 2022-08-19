@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class DefaultSecurityListIngressSecurityRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class DefaultSecurityListIngressSecurityRuleGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Core.Inputs
         public DefaultSecurityListIngressSecurityRuleGetArgs()
         {
         }
+        public static new DefaultSecurityListIngressSecurityRuleGetArgs Empty => new DefaultSecurityListIngressSecurityRuleGetArgs();
     }
 }

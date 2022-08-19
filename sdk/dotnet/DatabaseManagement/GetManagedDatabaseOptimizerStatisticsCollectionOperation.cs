@@ -21,21 +21,19 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseOptimizerStatisticsCollectionOperation = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperation.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseOptimizerStatisticsCollectionOperation = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperation.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             OptimizerStatisticsCollectionOperationId = oci_database_management_optimizer_statistics_collection_operation.Test_optimizer_statistics_collection_operation.Id,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         OptimizerStatisticsCollectionOperationId = oci_database_management_optimizer_statistics_collection_operation.Test_optimizer_statistics_collection_operation.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseOptimizerStatisticsCollectionOperation = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperation.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseOptimizerStatisticsCollectionOperation = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperation.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             OptimizerStatisticsCollectionOperationId = oci_database_management_optimizer_statistics_collection_operation.Test_optimizer_statistics_collection_operation.Id,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         OptimizerStatisticsCollectionOperationId = oci_database_management_optimizer_statistics_collection_operation.Test_optimizer_statistics_collection_operation.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs()
         {
         }
+        public static new GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs Empty => new GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs();
     }
 
-    public sealed class GetManagedDatabaseOptimizerStatisticsCollectionOperationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseOptimizerStatisticsCollectionOperationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseOptimizerStatisticsCollectionOperationInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseOptimizerStatisticsCollectionOperationInvokeArgs Empty => new GetManagedDatabaseOptimizerStatisticsCollectionOperationInvokeArgs();
     }
 
 

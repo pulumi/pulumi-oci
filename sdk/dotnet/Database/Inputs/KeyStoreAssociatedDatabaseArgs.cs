@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class KeyStoreAssociatedDatabaseArgs : Pulumi.ResourceArgs
+    public sealed class KeyStoreAssociatedDatabaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the database that is associated with the key store.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Database.Inputs
         public KeyStoreAssociatedDatabaseArgs()
         {
         }
+        public static new KeyStoreAssociatedDatabaseArgs Empty => new KeyStoreAssociatedDatabaseArgs();
     }
 }

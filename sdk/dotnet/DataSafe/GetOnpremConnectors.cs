@@ -22,25 +22,23 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOnPremConnectors = Oci.DataSafe.GetOnpremConnectors.Invoke(new()
         ///     {
-        ///         var testOnPremConnectors = Output.Create(Oci.DataSafe.GetOnpremConnectors.InvokeAsync(new Oci.DataSafe.GetOnpremConnectorsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.On_prem_connector_access_level,
-        ///             CompartmentIdInSubtree = @var.On_prem_connector_compartment_id_in_subtree,
-        ///             DisplayName = @var.On_prem_connector_display_name,
-        ///             OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
-        ///             OnPremConnectorLifecycleState = @var.On_prem_connector_on_prem_connector_lifecycle_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.On_prem_connector_access_level,
+        ///         CompartmentIdInSubtree = @var.On_prem_connector_compartment_id_in_subtree,
+        ///         DisplayName = @var.On_prem_connector_display_name,
+        ///         OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
+        ///         OnPremConnectorLifecycleState = @var.On_prem_connector_on_prem_connector_lifecycle_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOnPremConnectors = Oci.DataSafe.GetOnpremConnectors.Invoke(new()
         ///     {
-        ///         var testOnPremConnectors = Output.Create(Oci.DataSafe.GetOnpremConnectors.InvokeAsync(new Oci.DataSafe.GetOnpremConnectorsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.On_prem_connector_access_level,
-        ///             CompartmentIdInSubtree = @var.On_prem_connector_compartment_id_in_subtree,
-        ///             DisplayName = @var.On_prem_connector_display_name,
-        ///             OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
-        ///             OnPremConnectorLifecycleState = @var.On_prem_connector_on_prem_connector_lifecycle_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.On_prem_connector_access_level,
+        ///         CompartmentIdInSubtree = @var.On_prem_connector_compartment_id_in_subtree,
+        ///         DisplayName = @var.On_prem_connector_display_name,
+        ///         OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
+        ///         OnPremConnectorLifecycleState = @var.On_prem_connector_on_prem_connector_lifecycle_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetOnpremConnectorsArgs : Pulumi.InvokeArgs
+    public sealed class GetOnpremConnectorsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.DataSafe
         public GetOnpremConnectorsArgs()
         {
         }
+        public static new GetOnpremConnectorsArgs Empty => new GetOnpremConnectorsArgs();
     }
 
-    public sealed class GetOnpremConnectorsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOnpremConnectorsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -187,6 +184,7 @@ namespace Pulumi.Oci.DataSafe
         public GetOnpremConnectorsInvokeArgs()
         {
         }
+        public static new GetOnpremConnectorsInvokeArgs Empty => new GetOnpremConnectorsInvokeArgs();
     }
 
 

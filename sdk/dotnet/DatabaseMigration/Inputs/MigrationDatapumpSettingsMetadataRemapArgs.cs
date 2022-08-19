@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationDatapumpSettingsMetadataRemapArgs : Pulumi.ResourceArgs
+    public sealed class MigrationDatapumpSettingsMetadataRemapArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Specifies the new value that oldValue should be translated into.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationDatapumpSettingsMetadataRemapArgs()
         {
         }
+        public static new MigrationDatapumpSettingsMetadataRemapArgs Empty => new MigrationDatapumpSettingsMetadataRemapArgs();
     }
 }

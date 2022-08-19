@@ -23,22 +23,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseOptimizerStatisticsAdvisorExecution = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecution.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseOptimizerStatisticsAdvisorExecution = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecution.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs
-        ///         {
-        ///             ExecutionName = @var.Managed_database_optimizer_statistics_advisor_execution_execution_name,
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             TaskName = @var.Managed_database_optimizer_statistics_advisor_execution_task_name,
-        ///         }));
-        ///     }
+        ///         ExecutionName = @var.Managed_database_optimizer_statistics_advisor_execution_execution_name,
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         TaskName = @var.Managed_database_optimizer_statistics_advisor_execution_task_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,22 +56,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseOptimizerStatisticsAdvisorExecution = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecution.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseOptimizerStatisticsAdvisorExecution = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecution.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs
-        ///         {
-        ///             ExecutionName = @var.Managed_database_optimizer_statistics_advisor_execution_execution_name,
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             TaskName = @var.Managed_database_optimizer_statistics_advisor_execution_task_name,
-        ///         }));
-        ///     }
+        ///         ExecutionName = @var.Managed_database_optimizer_statistics_advisor_execution_execution_name,
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         TaskName = @var.Managed_database_optimizer_statistics_advisor_execution_task_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the Optimizer Statistics Advisor execution.
@@ -106,9 +102,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs()
         {
         }
+        public static new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs Empty => new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs();
     }
 
-    public sealed class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the Optimizer Statistics Advisor execution.
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionInvokeArgs Empty => new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionInvokeArgs();
     }
 
 

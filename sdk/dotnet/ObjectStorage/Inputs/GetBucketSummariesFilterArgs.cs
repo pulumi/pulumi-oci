@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage.Inputs
 {
 
-    public sealed class GetBucketSummariesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetBucketSummariesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
         public GetBucketSummariesFilterInputArgs()
         {
         }
+        public static new GetBucketSummariesFilterInputArgs Empty => new GetBucketSummariesFilterInputArgs();
     }
 }

@@ -17,27 +17,25 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVmClusterAddVirtualMachine = new Oci.Database.VmClusterAddVirtualNetwork("testVmClusterAddVirtualMachine", new()
     ///     {
-    ///         var testVmClusterAddVirtualMachine = new Oci.Database.VmClusterAddVirtualNetwork("testVmClusterAddVirtualMachine", new Oci.Database.VmClusterAddVirtualNetworkArgs
+    ///         DbServers = new[]
     ///         {
-    ///             DbServers = 
+    ///             new Oci.Database.Inputs.VmClusterAddVirtualNetworkDbServerArgs
     ///             {
-    ///                 new Oci.Database.Inputs.VmClusterAddVirtualNetworkDbServerArgs
-    ///                 {
-    ///                     DbServerId = oci_database_db_server.Test_db_server.Id,
-    ///                 },
+    ///                 DbServerId = oci_database_db_server.Test_db_server.Id,
     ///             },
-    ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-    ///         });
-    ///     }
+    ///         },
+    ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ##### Note: You may also need to add `db_servers` and `cpu_core_count` to the ignore_changes for the resource `oci.Database.VmCluster` list if you see a diff on a subsequent apply
@@ -51,7 +49,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork")]
-    public partial class VmClusterAddVirtualNetwork : Pulumi.CustomResource
+    public partial class VmClusterAddVirtualNetwork : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -253,7 +251,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class VmClusterAddVirtualNetworkArgs : Pulumi.ResourceArgs
+    public sealed class VmClusterAddVirtualNetworkArgs : global::Pulumi.ResourceArgs
     {
         [Input("dbServers", required: true)]
         private InputList<Inputs.VmClusterAddVirtualNetworkDbServerArgs>? _dbServers;
@@ -276,9 +274,10 @@ namespace Pulumi.Oci.Database
         public VmClusterAddVirtualNetworkArgs()
         {
         }
+        public static new VmClusterAddVirtualNetworkArgs Empty => new VmClusterAddVirtualNetworkArgs();
     }
 
-    public sealed class VmClusterAddVirtualNetworkState : Pulumi.ResourceArgs
+    public sealed class VmClusterAddVirtualNetworkState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -469,5 +468,6 @@ namespace Pulumi.Oci.Database
         public VmClusterAddVirtualNetworkState()
         {
         }
+        public static new VmClusterAddVirtualNetworkState Empty => new VmClusterAddVirtualNetworkState();
     }
 }

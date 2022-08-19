@@ -24,6 +24,57 @@ import javax.annotation.Nullable;
  * Adds a listener to a load balancer.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LoadBalancer.Listener;
+ * import com.pulumi.oci.LoadBalancer.ListenerArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.ListenerConnectionConfigurationArgs;
+ * import com.pulumi.oci.LoadBalancer.inputs.ListenerSslConfigurationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testListener = new Listener(&#34;testListener&#34;, ListenerArgs.builder()        
+ *             .defaultBackendSetName(oci_load_balancer_backend_set.test_backend_set().name())
+ *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *             .port(var_.listener_port())
+ *             .protocol(var_.listener_protocol())
+ *             .connectionConfiguration(ListenerConnectionConfigurationArgs.builder()
+ *                 .idleTimeoutInSeconds(var_.listener_connection_configuration_idle_timeout_in_seconds())
+ *                 .backendTcpProxyProtocolVersion(var_.listener_connection_configuration_backend_tcp_proxy_protocol_version())
+ *                 .build())
+ *             .hostnameNames(oci_load_balancer_hostname.test_hostname().name())
+ *             .pathRouteSetName(oci_load_balancer_path_route_set.test_path_route_set().name())
+ *             .routingPolicyName(oci_load_balancer_load_balancer_routing_policy.test_load_balancer_routing_policy().name())
+ *             .ruleSetNames(oci_load_balancer_rule_set.test_rule_set().name())
+ *             .sslConfiguration(ListenerSslConfigurationArgs.builder()
+ *                 .certificateName(oci_load_balancer_certificate.test_certificate().name())
+ *                 .certificateIds(var_.listener_ssl_configuration_certificate_ids())
+ *                 .cipherSuiteName(var_.listener_ssl_configuration_cipher_suite_name())
+ *                 .protocols(var_.listener_ssl_configuration_protocols())
+ *                 .serverOrderPreference(var_.listener_ssl_configuration_server_order_preference())
+ *                 .trustedCertificateAuthorityIds(var_.listener_ssl_configuration_trusted_certificate_authority_ids())
+ *                 .verifyDepth(var_.listener_ssl_configuration_verify_depth())
+ *                 .verifyPeerCertificate(var_.listener_ssl_configuration_verify_peer_certificate())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

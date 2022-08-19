@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryDiff = Oci.DevOps.GetRepositoryDiff.Invoke(new()
         ///     {
-        ///         var testRepositoryDiff = Output.Create(Oci.DevOps.GetRepositoryDiff.InvokeAsync(new Oci.DevOps.GetRepositoryDiffArgs
-        ///         {
-        ///             BaseVersion = @var.Repository_diff_base_version,
-        ///             FilePath = @var.Repository_diff_file_path,
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             TargetVersion = @var.Repository_diff_target_version,
-        ///             IsComparisonFromMergeBase = @var.Repository_diff_is_comparison_from_merge_base,
-        ///         }));
-        ///     }
+        ///         BaseVersion = @var.Repository_diff_base_version,
+        ///         FilePath = @var.Repository_diff_file_path,
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         TargetVersion = @var.Repository_diff_target_version,
+        ///         IsComparisonFromMergeBase = @var.Repository_diff_is_comparison_from_merge_base,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryDiff = Oci.DevOps.GetRepositoryDiff.Invoke(new()
         ///     {
-        ///         var testRepositoryDiff = Output.Create(Oci.DevOps.GetRepositoryDiff.InvokeAsync(new Oci.DevOps.GetRepositoryDiffArgs
-        ///         {
-        ///             BaseVersion = @var.Repository_diff_base_version,
-        ///             FilePath = @var.Repository_diff_file_path,
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///             TargetVersion = @var.Repository_diff_target_version,
-        ///             IsComparisonFromMergeBase = @var.Repository_diff_is_comparison_from_merge_base,
-        ///         }));
-        ///     }
+        ///         BaseVersion = @var.Repository_diff_base_version,
+        ///         FilePath = @var.Repository_diff_file_path,
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         TargetVersion = @var.Repository_diff_target_version,
+        ///         IsComparisonFromMergeBase = @var.Repository_diff_is_comparison_from_merge_base,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetRepositoryDiffArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryDiffArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The branch to compare changes against.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryDiffArgs()
         {
         }
+        public static new GetRepositoryDiffArgs Empty => new GetRepositoryDiffArgs();
     }
 
-    public sealed class GetRepositoryDiffInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryDiffInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The branch to compare changes against.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryDiffInvokeArgs()
         {
         }
+        public static new GetRepositoryDiffInvokeArgs Empty => new GetRepositoryDiffInvokeArgs();
     }
 
 

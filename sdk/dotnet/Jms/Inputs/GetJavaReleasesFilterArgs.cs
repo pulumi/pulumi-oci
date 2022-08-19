@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Jms.Inputs
 {
 
-    public sealed class GetJavaReleasesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetJavaReleasesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Jms.Inputs
         public GetJavaReleasesFilterInputArgs()
         {
         }
+        public static new GetJavaReleasesFilterInputArgs Empty => new GetJavaReleasesFilterInputArgs();
     }
 }

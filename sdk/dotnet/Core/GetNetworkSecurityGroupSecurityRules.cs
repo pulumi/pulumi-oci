@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkSecurityGroupSecurityRules = Oci.Core.GetNetworkSecurityGroupSecurityRules.Invoke(new()
         ///     {
-        ///         var testNetworkSecurityGroupSecurityRules = Output.Create(Oci.Core.GetNetworkSecurityGroupSecurityRules.InvokeAsync(new Oci.Core.GetNetworkSecurityGroupSecurityRulesArgs
-        ///         {
-        ///             NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
-        ///             Direction = @var.Network_security_group_security_rule_direction,
-        ///         }));
-        ///     }
+        ///         NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
+        ///         Direction = @var.Network_security_group_security_rule_direction,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkSecurityGroupSecurityRules = Oci.Core.GetNetworkSecurityGroupSecurityRules.Invoke(new()
         ///     {
-        ///         var testNetworkSecurityGroupSecurityRules = Output.Create(Oci.Core.GetNetworkSecurityGroupSecurityRules.InvokeAsync(new Oci.Core.GetNetworkSecurityGroupSecurityRulesArgs
-        ///         {
-        ///             NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
-        ///             Direction = @var.Network_security_group_security_rule_direction,
-        ///         }));
-        ///     }
+        ///         NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
+        ///         Direction = @var.Network_security_group_security_rule_direction,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetNetworkSecurityGroupSecurityRulesArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSecurityGroupSecurityRulesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Direction of the security rule. Set to `EGRESS` for rules that allow outbound IP packets, or `INGRESS` for rules that allow inbound IP packets.
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.Core
         public GetNetworkSecurityGroupSecurityRulesArgs()
         {
         }
+        public static new GetNetworkSecurityGroupSecurityRulesArgs Empty => new GetNetworkSecurityGroupSecurityRulesArgs();
     }
 
-    public sealed class GetNetworkSecurityGroupSecurityRulesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSecurityGroupSecurityRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Direction of the security rule. Set to `EGRESS` for rules that allow outbound IP packets, or `INGRESS` for rules that allow inbound IP packets.
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.Core
         public GetNetworkSecurityGroupSecurityRulesInvokeArgs()
         {
         }
+        public static new GetNetworkSecurityGroupSecurityRulesInvokeArgs Empty => new GetNetworkSecurityGroupSecurityRulesInvokeArgs();
     }
 
 

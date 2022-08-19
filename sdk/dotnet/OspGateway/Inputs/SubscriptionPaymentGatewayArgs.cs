@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OspGateway.Inputs
 {
 
-    public sealed class SubscriptionPaymentGatewayArgs : Pulumi.ResourceArgs
+    public sealed class SubscriptionPaymentGatewayArgs : global::Pulumi.ResourceArgs
     {
         [Input("merchantDefinedDatas")]
         private InputList<Inputs.SubscriptionPaymentGatewayMerchantDefinedDataArgs>? _merchantDefinedDatas;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.OspGateway.Inputs
         public SubscriptionPaymentGatewayArgs()
         {
         }
+        public static new SubscriptionPaymentGatewayArgs Empty => new SubscriptionPaymentGatewayArgs();
     }
 }

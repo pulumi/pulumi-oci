@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployEnvironmentComputeInstanceGroupSelectorsItemGetArgs : Pulumi.ResourceArgs
+    public sealed class DeployEnvironmentComputeInstanceGroupSelectorsItemGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("computeInstanceIds")]
         private InputList<string>? _computeInstanceIds;
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployEnvironmentComputeInstanceGroupSelectorsItemGetArgs()
         {
         }
+        public static new DeployEnvironmentComputeInstanceGroupSelectorsItemGetArgs Empty => new DeployEnvironmentComputeInstanceGroupSelectorsItemGetArgs();
     }
 }

@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Waa
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWebAppAccelerationPolicies = Oci.Waa.GetAppAccelerationPolicies.Invoke(new()
         ///     {
-        ///         var testWebAppAccelerationPolicies = Output.Create(Oci.Waa.GetAppAccelerationPolicies.InvokeAsync(new Oci.Waa.GetAppAccelerationPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Web_app_acceleration_policy_display_name,
-        ///             Id = @var.Web_app_acceleration_policy_id,
-        ///             States = @var.Web_app_acceleration_policy_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Web_app_acceleration_policy_display_name,
+        ///         Id = @var.Web_app_acceleration_policy_id,
+        ///         States = @var.Web_app_acceleration_policy_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Waa
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWebAppAccelerationPolicies = Oci.Waa.GetAppAccelerationPolicies.Invoke(new()
         ///     {
-        ///         var testWebAppAccelerationPolicies = Output.Create(Oci.Waa.GetAppAccelerationPolicies.InvokeAsync(new Oci.Waa.GetAppAccelerationPoliciesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Web_app_acceleration_policy_display_name,
-        ///             Id = @var.Web_app_acceleration_policy_id,
-        ///             States = @var.Web_app_acceleration_policy_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Web_app_acceleration_policy_display_name,
+        ///         Id = @var.Web_app_acceleration_policy_id,
+        ///         States = @var.Web_app_acceleration_policy_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Waa
     }
 
 
-    public sealed class GetAppAccelerationPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetAppAccelerationPoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.Waa
         public GetAppAccelerationPoliciesArgs()
         {
         }
+        public static new GetAppAccelerationPoliciesArgs Empty => new GetAppAccelerationPoliciesArgs();
     }
 
-    public sealed class GetAppAccelerationPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAppAccelerationPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -171,6 +168,7 @@ namespace Pulumi.Oci.Waa
         public GetAppAccelerationPoliciesInvokeArgs()
         {
         }
+        public static new GetAppAccelerationPoliciesInvokeArgs Empty => new GetAppAccelerationPoliciesInvokeArgs();
     }
 
 

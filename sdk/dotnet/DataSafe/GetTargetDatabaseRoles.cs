@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetDatabaseRoles = Oci.DataSafe.GetTargetDatabaseRoles.Invoke(new()
         ///     {
-        ///         var testTargetDatabaseRoles = Output.Create(Oci.DataSafe.GetTargetDatabaseRoles.InvokeAsync(new Oci.DataSafe.GetTargetDatabaseRolesArgs
-        ///         {
-        ///             TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///             AuthenticationType = @var.Target_database_role_authentication_type,
-        ///             IsOracleMaintained = @var.Target_database_role_is_oracle_maintained,
-        ///             RoleNames = @var.Target_database_role_role_name,
-        ///             RoleNameContains = @var.Target_database_role_role_name_contains,
-        ///         }));
-        ///     }
+        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///         AuthenticationType = @var.Target_database_role_authentication_type,
+        ///         IsOracleMaintained = @var.Target_database_role_is_oracle_maintained,
+        ///         RoleNames = @var.Target_database_role_role_name,
+        ///         RoleNameContains = @var.Target_database_role_role_name_contains,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetDatabaseRoles = Oci.DataSafe.GetTargetDatabaseRoles.Invoke(new()
         ///     {
-        ///         var testTargetDatabaseRoles = Output.Create(Oci.DataSafe.GetTargetDatabaseRoles.InvokeAsync(new Oci.DataSafe.GetTargetDatabaseRolesArgs
-        ///         {
-        ///             TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///             AuthenticationType = @var.Target_database_role_authentication_type,
-        ///             IsOracleMaintained = @var.Target_database_role_is_oracle_maintained,
-        ///             RoleNames = @var.Target_database_role_role_name,
-        ///             RoleNameContains = @var.Target_database_role_role_name_contains,
-        ///         }));
-        ///     }
+        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///         AuthenticationType = @var.Target_database_role_authentication_type,
+        ///         IsOracleMaintained = @var.Target_database_role_is_oracle_maintained,
+        ///         RoleNames = @var.Target_database_role_role_name,
+        ///         RoleNameContains = @var.Target_database_role_role_name_contains,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetTargetDatabaseRolesArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabaseRolesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return roles based on authentication type.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabaseRolesArgs()
         {
         }
+        public static new GetTargetDatabaseRolesArgs Empty => new GetTargetDatabaseRolesArgs();
     }
 
-    public sealed class GetTargetDatabaseRolesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabaseRolesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return roles based on authentication type.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabaseRolesInvokeArgs()
         {
         }
+        public static new GetTargetDatabaseRolesInvokeArgs Empty => new GetTargetDatabaseRolesInvokeArgs();
     }
 
 

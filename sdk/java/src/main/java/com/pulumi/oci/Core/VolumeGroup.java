@@ -22,6 +22,49 @@ import javax.annotation.Nullable;
 
 /**
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.VolumeGroup;
+ * import com.pulumi.oci.Core.VolumeGroupArgs;
+ * import com.pulumi.oci.Core.inputs.VolumeGroupSourceDetailsArgs;
+ * import com.pulumi.oci.Core.inputs.VolumeGroupVolumeGroupReplicaArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVolumeGroup = new VolumeGroup(&#34;testVolumeGroup&#34;, VolumeGroupArgs.builder()        
+ *             .availabilityDomain(var_.volume_group_availability_domain())
+ *             .compartmentId(var_.compartment_id())
+ *             .sourceDetails(VolumeGroupSourceDetailsArgs.builder()
+ *                 .type(&#34;volumeIds&#34;)
+ *                 .volumeIds(var_.volume_group_source_id())
+ *                 .build())
+ *             .backupPolicyId(data.oci_core_volume_backup_policies().test_volume_backup_policies().volume_backup_policies()[0].id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.volume_group_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .volumeGroupReplicas(VolumeGroupVolumeGroupReplicaArgs.builder()
+ *                 .availabilityDomain(var_.volume_group_volume_group_replicas_availability_domain())
+ *                 .displayName(var_.volume_group_volume_group_replicas_display_name())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

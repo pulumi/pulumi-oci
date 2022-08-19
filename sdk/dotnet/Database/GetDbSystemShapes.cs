@@ -21,21 +21,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystemShapes = Oci.Database.GetDbSystemShapes.Invoke(new()
         ///     {
-        ///         var testDbSystemShapes = Output.Create(Oci.Database.GetDbSystemShapes.InvokeAsync(new Oci.Database.GetDbSystemShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Db_system_shape_availability_domain,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Db_system_shape_availability_domain,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystemShapes = Oci.Database.GetDbSystemShapes.Invoke(new()
         ///     {
-        ///         var testDbSystemShapes = Output.Create(Oci.Database.GetDbSystemShapes.InvokeAsync(new Oci.Database.GetDbSystemShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Db_system_shape_availability_domain,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Db_system_shape_availability_domain,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbSystemShapesArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemShapesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the Availability Domain.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Database
         public GetDbSystemShapesArgs()
         {
         }
+        public static new GetDbSystemShapesArgs Empty => new GetDbSystemShapesArgs();
     }
 
-    public sealed class GetDbSystemShapesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemShapesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the Availability Domain.
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.Database
         public GetDbSystemShapesInvokeArgs()
         {
         }
+        public static new GetDbSystemShapesInvokeArgs Empty => new GetDbSystemShapesInvokeArgs();
     }
 
 

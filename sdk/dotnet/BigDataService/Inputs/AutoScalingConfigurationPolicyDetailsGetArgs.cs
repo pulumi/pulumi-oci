@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class AutoScalingConfigurationPolicyDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationPolicyDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type of autoscaling action to take.
@@ -75,5 +75,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public AutoScalingConfigurationPolicyDetailsGetArgs()
         {
         }
+        public static new AutoScalingConfigurationPolicyDetailsGetArgs Empty => new AutoScalingConfigurationPolicyDetailsGetArgs();
     }
 }

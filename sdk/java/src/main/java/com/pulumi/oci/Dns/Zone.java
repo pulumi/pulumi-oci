@@ -28,6 +28,45 @@ import javax.annotation.Nullable;
  * the `scope` and `viewId` query parameters are required when creating private zones.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Dns.Zone;
+ * import com.pulumi.oci.Dns.ZoneArgs;
+ * import com.pulumi.oci.Dns.inputs.ZoneExternalMasterArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testZone = new Zone(&#34;testZone&#34;, ZoneArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .zoneType(var_.zone_zone_type())
+ *             .definedTags(var_.zone_defined_tags())
+ *             .externalMasters(ZoneExternalMasterArgs.builder()
+ *                 .address(var_.zone_external_masters_address())
+ *                 .port(var_.zone_external_masters_port())
+ *                 .tsigKeyId(oci_dns_tsig_key.test_tsig_key().id())
+ *                 .build())
+ *             .freeformTags(var_.zone_freeform_tags())
+ *             .scope(var_.zone_scope())
+ *             .viewId(oci_dns_view.test_view().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

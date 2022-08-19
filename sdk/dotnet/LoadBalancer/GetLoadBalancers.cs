@@ -25,23 +25,21 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLoadBalancers = Oci.LoadBalancer.GetLoadBalancers.Invoke(new()
         ///     {
-        ///         var testLoadBalancers = Output.Create(Oci.LoadBalancer.GetLoadBalancers.InvokeAsync(new Oci.LoadBalancer.GetLoadBalancersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Detail = @var.Load_balancer_detail,
-        ///             DisplayName = @var.Load_balancer_display_name,
-        ///             State = @var.Load_balancer_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Detail = @var.Load_balancer_detail,
+        ///         DisplayName = @var.Load_balancer_display_name,
+        ///         State = @var.Load_balancer_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,23 +61,21 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLoadBalancers = Oci.LoadBalancer.GetLoadBalancers.Invoke(new()
         ///     {
-        ///         var testLoadBalancers = Output.Create(Oci.LoadBalancer.GetLoadBalancers.InvokeAsync(new Oci.LoadBalancer.GetLoadBalancersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Detail = @var.Load_balancer_detail,
-        ///             DisplayName = @var.Load_balancer_display_name,
-        ///             State = @var.Load_balancer_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Detail = @var.Load_balancer_detail,
+        ///         DisplayName = @var.Load_balancer_display_name,
+        ///         State = @var.Load_balancer_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetLoadBalancersArgs : Pulumi.InvokeArgs
+    public sealed class GetLoadBalancersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetLoadBalancersArgs()
         {
         }
+        public static new GetLoadBalancersArgs Empty => new GetLoadBalancersArgs();
     }
 
-    public sealed class GetLoadBalancersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLoadBalancersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
@@ -165,6 +162,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetLoadBalancersInvokeArgs()
         {
         }
+        public static new GetLoadBalancersInvokeArgs Empty => new GetLoadBalancersInvokeArgs();
     }
 
 

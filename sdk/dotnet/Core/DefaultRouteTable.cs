@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     [OciResourceType("oci:Core/defaultRouteTable:DefaultRouteTable")]
-    public partial class DefaultRouteTable : Pulumi.CustomResource
+    public partial class DefaultRouteTable : global::Pulumi.CustomResource
     {
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class DefaultRouteTableArgs : Pulumi.ResourceArgs
+    public sealed class DefaultRouteTableArgs : global::Pulumi.ResourceArgs
     {
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -118,9 +118,10 @@ namespace Pulumi.Oci.Core
         public DefaultRouteTableArgs()
         {
         }
+        public static new DefaultRouteTableArgs Empty => new DefaultRouteTableArgs();
     }
 
-    public sealed class DefaultRouteTableState : Pulumi.ResourceArgs
+    public sealed class DefaultRouteTableState : global::Pulumi.ResourceArgs
     {
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -164,5 +165,6 @@ namespace Pulumi.Oci.Core
         public DefaultRouteTableState()
         {
         }
+        public static new DefaultRouteTableState Empty => new DefaultRouteTableState();
     }
 }

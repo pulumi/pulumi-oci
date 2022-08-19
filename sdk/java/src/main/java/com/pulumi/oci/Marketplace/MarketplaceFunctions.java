@@ -59,6 +59,34 @@ public final class MarketplaceFunctions {
      * Gets the details of a specific, previously accepted terms of use agreement.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAcceptedAgreement = MarketplaceFunctions.getAcceptedAgreement(GetAcceptedAgreementArgs.builder()
+     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAcceptedAgreementResult> getAcceptedAgreement(GetAcceptedAgreementArgs args) {
@@ -70,6 +98,34 @@ public final class MarketplaceFunctions {
      * Gets the details of a specific, previously accepted terms of use agreement.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAcceptedAgreement = MarketplaceFunctions.getAcceptedAgreement(GetAcceptedAgreementArgs.builder()
+     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAcceptedAgreementResult> getAcceptedAgreementPlain(GetAcceptedAgreementPlainArgs args) {
@@ -81,6 +137,34 @@ public final class MarketplaceFunctions {
      * Gets the details of a specific, previously accepted terms of use agreement.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAcceptedAgreement = MarketplaceFunctions.getAcceptedAgreement(GetAcceptedAgreementArgs.builder()
+     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAcceptedAgreementResult> getAcceptedAgreement(GetAcceptedAgreementArgs args, InvokeOptions options) {
@@ -92,6 +176,34 @@ public final class MarketplaceFunctions {
      * Gets the details of a specific, previously accepted terms of use agreement.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAcceptedAgreement = MarketplaceFunctions.getAcceptedAgreement(GetAcceptedAgreementArgs.builder()
+     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAcceptedAgreementResult> getAcceptedAgreementPlain(GetAcceptedAgreementPlainArgs args, InvokeOptions options) {
@@ -104,6 +216,38 @@ public final class MarketplaceFunctions {
      * You can filter results by specifying query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAcceptedAgreements = MarketplaceFunctions.getAcceptedAgreements(GetAcceptedAgreementsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
+     *             .displayName(var_.accepted_agreement_display_name())
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .packageVersion(var_.accepted_agreement_package_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAcceptedAgreementsResult> getAcceptedAgreements(GetAcceptedAgreementsArgs args) {
@@ -116,6 +260,38 @@ public final class MarketplaceFunctions {
      * You can filter results by specifying query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAcceptedAgreements = MarketplaceFunctions.getAcceptedAgreements(GetAcceptedAgreementsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
+     *             .displayName(var_.accepted_agreement_display_name())
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .packageVersion(var_.accepted_agreement_package_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAcceptedAgreementsResult> getAcceptedAgreementsPlain(GetAcceptedAgreementsPlainArgs args) {
@@ -128,6 +304,38 @@ public final class MarketplaceFunctions {
      * You can filter results by specifying query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAcceptedAgreements = MarketplaceFunctions.getAcceptedAgreements(GetAcceptedAgreementsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
+     *             .displayName(var_.accepted_agreement_display_name())
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .packageVersion(var_.accepted_agreement_package_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAcceptedAgreementsResult> getAcceptedAgreements(GetAcceptedAgreementsArgs args, InvokeOptions options) {
@@ -140,6 +348,38 @@ public final class MarketplaceFunctions {
      * You can filter results by specifying query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetAcceptedAgreementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAcceptedAgreements = MarketplaceFunctions.getAcceptedAgreements(GetAcceptedAgreementsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
+     *             .displayName(var_.accepted_agreement_display_name())
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .packageVersion(var_.accepted_agreement_package_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAcceptedAgreementsResult> getAcceptedAgreementsPlain(GetAcceptedAgreementsPlainArgs args, InvokeOptions options) {
@@ -152,6 +392,34 @@ public final class MarketplaceFunctions {
      * to the software product provided by the listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategories = MarketplaceFunctions.getCategories(GetCategoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCategoriesResult> getCategories() {
@@ -164,6 +432,34 @@ public final class MarketplaceFunctions {
      * to the software product provided by the listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategories = MarketplaceFunctions.getCategories(GetCategoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCategoriesResult> getCategoriesPlain() {
@@ -176,6 +472,34 @@ public final class MarketplaceFunctions {
      * to the software product provided by the listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategories = MarketplaceFunctions.getCategories(GetCategoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCategoriesResult> getCategories(GetCategoriesArgs args) {
@@ -188,6 +512,34 @@ public final class MarketplaceFunctions {
      * to the software product provided by the listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategories = MarketplaceFunctions.getCategories(GetCategoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCategoriesResult> getCategoriesPlain(GetCategoriesPlainArgs args) {
@@ -200,6 +552,34 @@ public final class MarketplaceFunctions {
      * to the software product provided by the listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategories = MarketplaceFunctions.getCategories(GetCategoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCategoriesResult> getCategories(GetCategoriesArgs args, InvokeOptions options) {
@@ -212,6 +592,34 @@ public final class MarketplaceFunctions {
      * to the software product provided by the listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCategories = MarketplaceFunctions.getCategories(GetCategoriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCategoriesResult> getCategoriesPlain(GetCategoriesPlainArgs args, InvokeOptions options) {
@@ -237,6 +645,35 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListing = MarketplaceFunctions.getListing(GetListingArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListingResult> getListing(GetListingArgs args) {
@@ -262,6 +699,35 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListing = MarketplaceFunctions.getListing(GetListingArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListingResult> getListingPlain(GetListingPlainArgs args) {
@@ -287,6 +753,35 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListing = MarketplaceFunctions.getListing(GetListingArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListingResult> getListing(GetListingArgs args, InvokeOptions options) {
@@ -312,6 +807,35 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListing = MarketplaceFunctions.getListing(GetListingArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListingResult> getListingPlain(GetListingPlainArgs args, InvokeOptions options) {
@@ -336,6 +860,36 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingPackageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingPackage = MarketplaceFunctions.getListingPackage(GetListingPackageArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .packageVersion(var_.listing_package_package_version())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListingPackageResult> getListingPackage(GetListingPackageArgs args) {
@@ -360,6 +914,36 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingPackageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingPackage = MarketplaceFunctions.getListingPackage(GetListingPackageArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .packageVersion(var_.listing_package_package_version())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListingPackageResult> getListingPackagePlain(GetListingPackagePlainArgs args) {
@@ -384,6 +968,36 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingPackageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingPackage = MarketplaceFunctions.getListingPackage(GetListingPackageArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .packageVersion(var_.listing_package_package_version())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListingPackageResult> getListingPackage(GetListingPackageArgs args, InvokeOptions options) {
@@ -408,6 +1022,36 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingPackageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingPackage = MarketplaceFunctions.getListingPackage(GetListingPackageArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .packageVersion(var_.listing_package_package_version())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListingPackageResult> getListingPackagePlain(GetListingPackagePlainArgs args, InvokeOptions options) {
@@ -419,6 +1063,36 @@ public final class MarketplaceFunctions {
      * Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingPackageAgreementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingPackageAgreements = MarketplaceFunctions.getListingPackageAgreements(GetListingPackageAgreementsArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .packageVersion(var_.listing_package_agreement_package_version())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListingPackageAgreementsResult> getListingPackageAgreements(GetListingPackageAgreementsArgs args) {
@@ -430,6 +1104,36 @@ public final class MarketplaceFunctions {
      * Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingPackageAgreementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingPackageAgreements = MarketplaceFunctions.getListingPackageAgreements(GetListingPackageAgreementsArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .packageVersion(var_.listing_package_agreement_package_version())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListingPackageAgreementsResult> getListingPackageAgreementsPlain(GetListingPackageAgreementsPlainArgs args) {
@@ -441,6 +1145,36 @@ public final class MarketplaceFunctions {
      * Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingPackageAgreementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingPackageAgreements = MarketplaceFunctions.getListingPackageAgreements(GetListingPackageAgreementsArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .packageVersion(var_.listing_package_agreement_package_version())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListingPackageAgreementsResult> getListingPackageAgreements(GetListingPackageAgreementsArgs args, InvokeOptions options) {
@@ -452,6 +1186,36 @@ public final class MarketplaceFunctions {
      * Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingPackageAgreementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingPackageAgreements = MarketplaceFunctions.getListingPackageAgreements(GetListingPackageAgreementsArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .packageVersion(var_.listing_package_agreement_package_version())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListingPackageAgreementsResult> getListingPackageAgreementsPlain(GetListingPackageAgreementsPlainArgs args, InvokeOptions options) {
@@ -476,6 +1240,37 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingPackages = MarketplaceFunctions.getListingPackages(GetListingPackagesArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .packageType(var_.listing_package_package_type())
+     *             .packageVersion(var_.listing_package_package_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListingPackagesResult> getListingPackages(GetListingPackagesArgs args) {
@@ -500,6 +1295,37 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingPackages = MarketplaceFunctions.getListingPackages(GetListingPackagesArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .packageType(var_.listing_package_package_type())
+     *             .packageVersion(var_.listing_package_package_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListingPackagesResult> getListingPackagesPlain(GetListingPackagesPlainArgs args) {
@@ -524,6 +1350,37 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingPackages = MarketplaceFunctions.getListingPackages(GetListingPackagesArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .packageType(var_.listing_package_package_type())
+     *             .packageVersion(var_.listing_package_package_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListingPackagesResult> getListingPackages(GetListingPackagesArgs args, InvokeOptions options) {
@@ -548,6 +1405,37 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingPackages = MarketplaceFunctions.getListingPackages(GetListingPackagesArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .packageType(var_.listing_package_package_type())
+     *             .packageVersion(var_.listing_package_package_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListingPackagesResult> getListingPackagesPlain(GetListingPackagesPlainArgs args, InvokeOptions options) {
@@ -559,6 +1447,35 @@ public final class MarketplaceFunctions {
      * Returns list of all tax implications that current tenant may be liable to once they launch the listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingTaxesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingTaxes = MarketplaceFunctions.getListingTaxes(GetListingTaxesArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListingTaxesResult> getListingTaxes(GetListingTaxesArgs args) {
@@ -570,6 +1487,35 @@ public final class MarketplaceFunctions {
      * Returns list of all tax implications that current tenant may be liable to once they launch the listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingTaxesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingTaxes = MarketplaceFunctions.getListingTaxes(GetListingTaxesArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListingTaxesResult> getListingTaxesPlain(GetListingTaxesPlainArgs args) {
@@ -581,6 +1527,35 @@ public final class MarketplaceFunctions {
      * Returns list of all tax implications that current tenant may be liable to once they launch the listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingTaxesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingTaxes = MarketplaceFunctions.getListingTaxes(GetListingTaxesArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListingTaxesResult> getListingTaxes(GetListingTaxesArgs args, InvokeOptions options) {
@@ -592,6 +1567,35 @@ public final class MarketplaceFunctions {
      * Returns list of all tax implications that current tenant may be liable to once they launch the listing.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingTaxesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListingTaxes = MarketplaceFunctions.getListingTaxes(GetListingTaxesArgs.builder()
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListingTaxesResult> getListingTaxesPlain(GetListingTaxesPlainArgs args, InvokeOptions options) {
@@ -617,6 +1621,44 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
+     *             .categories(var_.listing_category())
+     *             .compartmentId(var_.compartment_id())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .isFeatured(var_.listing_is_featured())
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .listingTypes(var_.listing_listing_types())
+     *             .names(var_.listing_name())
+     *             .operatingSystems(var_.listing_operating_systems())
+     *             .packageType(var_.listing_package_type())
+     *             .pricings(var_.listing_pricing())
+     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListingsResult> getListings() {
@@ -642,6 +1684,44 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
+     *             .categories(var_.listing_category())
+     *             .compartmentId(var_.compartment_id())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .isFeatured(var_.listing_is_featured())
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .listingTypes(var_.listing_listing_types())
+     *             .names(var_.listing_name())
+     *             .operatingSystems(var_.listing_operating_systems())
+     *             .packageType(var_.listing_package_type())
+     *             .pricings(var_.listing_pricing())
+     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListingsResult> getListingsPlain() {
@@ -667,6 +1747,44 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
+     *             .categories(var_.listing_category())
+     *             .compartmentId(var_.compartment_id())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .isFeatured(var_.listing_is_featured())
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .listingTypes(var_.listing_listing_types())
+     *             .names(var_.listing_name())
+     *             .operatingSystems(var_.listing_operating_systems())
+     *             .packageType(var_.listing_package_type())
+     *             .pricings(var_.listing_pricing())
+     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListingsResult> getListings(GetListingsArgs args) {
@@ -692,6 +1810,44 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
+     *             .categories(var_.listing_category())
+     *             .compartmentId(var_.compartment_id())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .isFeatured(var_.listing_is_featured())
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .listingTypes(var_.listing_listing_types())
+     *             .names(var_.listing_name())
+     *             .operatingSystems(var_.listing_operating_systems())
+     *             .packageType(var_.listing_package_type())
+     *             .pricings(var_.listing_pricing())
+     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListingsResult> getListingsPlain(GetListingsPlainArgs args) {
@@ -717,6 +1873,44 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
+     *             .categories(var_.listing_category())
+     *             .compartmentId(var_.compartment_id())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .isFeatured(var_.listing_is_featured())
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .listingTypes(var_.listing_listing_types())
+     *             .names(var_.listing_name())
+     *             .operatingSystems(var_.listing_operating_systems())
+     *             .packageType(var_.listing_package_type())
+     *             .pricings(var_.listing_pricing())
+     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListingsResult> getListings(GetListingsArgs args, InvokeOptions options) {
@@ -742,6 +1936,44 @@ public final class MarketplaceFunctions {
      * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
+     *             .categories(var_.listing_category())
+     *             .compartmentId(var_.compartment_id())
+     *             .imageId(oci_core_image.test_image().id())
+     *             .isFeatured(var_.listing_is_featured())
+     *             .listingId(oci_marketplace_listing.test_listing().id())
+     *             .listingTypes(var_.listing_listing_types())
+     *             .names(var_.listing_name())
+     *             .operatingSystems(var_.listing_operating_systems())
+     *             .packageType(var_.listing_package_type())
+     *             .pricings(var_.listing_pricing())
+     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListingsResult> getListingsPlain(GetListingsPlainArgs args, InvokeOptions options) {
@@ -753,6 +1985,34 @@ public final class MarketplaceFunctions {
      * Gets the details of the specified publication.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublication = MarketplaceFunctions.getPublication(GetPublicationArgs.builder()
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicationResult> getPublication(GetPublicationArgs args) {
@@ -764,6 +2024,34 @@ public final class MarketplaceFunctions {
      * Gets the details of the specified publication.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublication = MarketplaceFunctions.getPublication(GetPublicationArgs.builder()
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicationResult> getPublicationPlain(GetPublicationPlainArgs args) {
@@ -775,6 +2063,34 @@ public final class MarketplaceFunctions {
      * Gets the details of the specified publication.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublication = MarketplaceFunctions.getPublication(GetPublicationArgs.builder()
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicationResult> getPublication(GetPublicationArgs args, InvokeOptions options) {
@@ -786,6 +2102,34 @@ public final class MarketplaceFunctions {
      * Gets the details of the specified publication.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublication = MarketplaceFunctions.getPublication(GetPublicationArgs.builder()
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicationResult> getPublicationPlain(GetPublicationPlainArgs args, InvokeOptions options) {
@@ -797,6 +2141,35 @@ public final class MarketplaceFunctions {
      * Gets the details of a specific package version within a given publication.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicationPackage = MarketplaceFunctions.getPublicationPackage(GetPublicationPackageArgs.builder()
+     *             .packageVersion(var_.publication_package_package_version())
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicationPackageResult> getPublicationPackage(GetPublicationPackageArgs args) {
@@ -808,6 +2181,35 @@ public final class MarketplaceFunctions {
      * Gets the details of a specific package version within a given publication.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicationPackage = MarketplaceFunctions.getPublicationPackage(GetPublicationPackageArgs.builder()
+     *             .packageVersion(var_.publication_package_package_version())
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicationPackageResult> getPublicationPackagePlain(GetPublicationPackagePlainArgs args) {
@@ -819,6 +2221,35 @@ public final class MarketplaceFunctions {
      * Gets the details of a specific package version within a given publication.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicationPackage = MarketplaceFunctions.getPublicationPackage(GetPublicationPackageArgs.builder()
+     *             .packageVersion(var_.publication_package_package_version())
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicationPackageResult> getPublicationPackage(GetPublicationPackageArgs args, InvokeOptions options) {
@@ -830,6 +2261,35 @@ public final class MarketplaceFunctions {
      * Gets the details of a specific package version within a given publication.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicationPackage = MarketplaceFunctions.getPublicationPackage(GetPublicationPackageArgs.builder()
+     *             .packageVersion(var_.publication_package_package_version())
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicationPackageResult> getPublicationPackagePlain(GetPublicationPackagePlainArgs args, InvokeOptions options) {
@@ -841,6 +2301,36 @@ public final class MarketplaceFunctions {
      * Lists the packages in the specified publication.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicationPackages = MarketplaceFunctions.getPublicationPackages(GetPublicationPackagesArgs.builder()
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .packageType(var_.publication_package_package_type())
+     *             .packageVersion(var_.publication_package_package_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicationPackagesResult> getPublicationPackages(GetPublicationPackagesArgs args) {
@@ -852,6 +2342,36 @@ public final class MarketplaceFunctions {
      * Lists the packages in the specified publication.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicationPackages = MarketplaceFunctions.getPublicationPackages(GetPublicationPackagesArgs.builder()
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .packageType(var_.publication_package_package_type())
+     *             .packageVersion(var_.publication_package_package_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicationPackagesResult> getPublicationPackagesPlain(GetPublicationPackagesPlainArgs args) {
@@ -863,6 +2383,36 @@ public final class MarketplaceFunctions {
      * Lists the packages in the specified publication.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicationPackages = MarketplaceFunctions.getPublicationPackages(GetPublicationPackagesArgs.builder()
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .packageType(var_.publication_package_package_type())
+     *             .packageVersion(var_.publication_package_package_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicationPackagesResult> getPublicationPackages(GetPublicationPackagesArgs args, InvokeOptions options) {
@@ -874,6 +2424,36 @@ public final class MarketplaceFunctions {
      * Lists the packages in the specified publication.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublicationPackages = MarketplaceFunctions.getPublicationPackages(GetPublicationPackagesArgs.builder()
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .packageType(var_.publication_package_package_type())
+     *             .packageVersion(var_.publication_package_package_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicationPackagesResult> getPublicationPackagesPlain(GetPublicationPackagesPlainArgs args, InvokeOptions options) {
@@ -885,6 +2465,38 @@ public final class MarketplaceFunctions {
      * Lists the publications in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublications = MarketplaceFunctions.getPublications(GetPublicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .listingType(var_.publication_listing_type())
+     *             .names(var_.publication_name())
+     *             .operatingSystems(var_.publication_operating_systems())
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicationsResult> getPublications(GetPublicationsArgs args) {
@@ -896,6 +2508,38 @@ public final class MarketplaceFunctions {
      * Lists the publications in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublications = MarketplaceFunctions.getPublications(GetPublicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .listingType(var_.publication_listing_type())
+     *             .names(var_.publication_name())
+     *             .operatingSystems(var_.publication_operating_systems())
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicationsResult> getPublicationsPlain(GetPublicationsPlainArgs args) {
@@ -907,6 +2551,38 @@ public final class MarketplaceFunctions {
      * Lists the publications in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublications = MarketplaceFunctions.getPublications(GetPublicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .listingType(var_.publication_listing_type())
+     *             .names(var_.publication_name())
+     *             .operatingSystems(var_.publication_operating_systems())
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublicationsResult> getPublications(GetPublicationsArgs args, InvokeOptions options) {
@@ -918,6 +2594,38 @@ public final class MarketplaceFunctions {
      * Lists the publications in the specified compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublications = MarketplaceFunctions.getPublications(GetPublicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .listingType(var_.publication_listing_type())
+     *             .names(var_.publication_name())
+     *             .operatingSystems(var_.publication_operating_systems())
+     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublicationsResult> getPublicationsPlain(GetPublicationsPlainArgs args, InvokeOptions options) {
@@ -929,6 +2637,35 @@ public final class MarketplaceFunctions {
      * Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublishersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublishersResult> getPublishers() {
@@ -940,6 +2677,35 @@ public final class MarketplaceFunctions {
      * Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublishersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublishersResult> getPublishersPlain() {
@@ -951,6 +2717,35 @@ public final class MarketplaceFunctions {
      * Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublishersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublishersResult> getPublishers(GetPublishersArgs args) {
@@ -962,6 +2757,35 @@ public final class MarketplaceFunctions {
      * Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublishersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublishersResult> getPublishersPlain(GetPublishersPlainArgs args) {
@@ -973,6 +2797,35 @@ public final class MarketplaceFunctions {
      * Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublishersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPublishersResult> getPublishers(GetPublishersArgs args, InvokeOptions options) {
@@ -984,6 +2837,35 @@ public final class MarketplaceFunctions {
      * Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetPublishersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPublishersResult> getPublishersPlain(GetPublishersPlainArgs args, InvokeOptions options) {

@@ -21,25 +21,23 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCustomProtectionRules = Oci.Waas.GetCustomProtectionRules.Invoke(new()
         ///     {
-        ///         var testCustomProtectionRules = Output.Create(Oci.Waas.GetCustomProtectionRules.InvokeAsync(new Oci.Waas.GetCustomProtectionRulesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayNames = @var.Custom_protection_rule_display_names,
-        ///             Ids = @var.Custom_protection_rule_ids,
-        ///             States = @var.Custom_protection_rule_states,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Custom_protection_rule_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Custom_protection_rule_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayNames = @var.Custom_protection_rule_display_names,
+        ///         Ids = @var.Custom_protection_rule_ids,
+        ///         States = @var.Custom_protection_rule_states,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Custom_protection_rule_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Custom_protection_rule_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCustomProtectionRules = Oci.Waas.GetCustomProtectionRules.Invoke(new()
         ///     {
-        ///         var testCustomProtectionRules = Output.Create(Oci.Waas.GetCustomProtectionRules.InvokeAsync(new Oci.Waas.GetCustomProtectionRulesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayNames = @var.Custom_protection_rule_display_names,
-        ///             Ids = @var.Custom_protection_rule_ids,
-        ///             States = @var.Custom_protection_rule_states,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Custom_protection_rule_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Custom_protection_rule_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayNames = @var.Custom_protection_rule_display_names,
+        ///         Ids = @var.Custom_protection_rule_ids,
+        ///         States = @var.Custom_protection_rule_states,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Custom_protection_rule_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Custom_protection_rule_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Waas
     }
 
 
-    public sealed class GetCustomProtectionRulesArgs : Pulumi.InvokeArgs
+    public sealed class GetCustomProtectionRulesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
@@ -152,9 +148,10 @@ namespace Pulumi.Oci.Waas
         public GetCustomProtectionRulesArgs()
         {
         }
+        public static new GetCustomProtectionRulesArgs Empty => new GetCustomProtectionRulesArgs();
     }
 
-    public sealed class GetCustomProtectionRulesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCustomProtectionRulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
@@ -221,6 +218,7 @@ namespace Pulumi.Oci.Waas
         public GetCustomProtectionRulesInvokeArgs()
         {
         }
+        public static new GetCustomProtectionRulesInvokeArgs Empty => new GetCustomProtectionRulesInvokeArgs();
     }
 
 

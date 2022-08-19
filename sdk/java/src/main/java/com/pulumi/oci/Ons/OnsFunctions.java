@@ -29,6 +29,34 @@ public final class OnsFunctions {
      * Gets the specified topic&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetNotificationTopicArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationTopic = OnsFunctions.getNotificationTopic(GetNotificationTopicArgs.builder()
+     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNotificationTopicResult> getNotificationTopic(GetNotificationTopicArgs args) {
@@ -40,6 +68,34 @@ public final class OnsFunctions {
      * Gets the specified topic&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetNotificationTopicArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationTopic = OnsFunctions.getNotificationTopic(GetNotificationTopicArgs.builder()
+     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNotificationTopicResult> getNotificationTopicPlain(GetNotificationTopicPlainArgs args) {
@@ -51,6 +107,34 @@ public final class OnsFunctions {
      * Gets the specified topic&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetNotificationTopicArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationTopic = OnsFunctions.getNotificationTopic(GetNotificationTopicArgs.builder()
+     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNotificationTopicResult> getNotificationTopic(GetNotificationTopicArgs args, InvokeOptions options) {
@@ -62,6 +146,34 @@ public final class OnsFunctions {
      * Gets the specified topic&#39;s configuration information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetNotificationTopicArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationTopic = OnsFunctions.getNotificationTopic(GetNotificationTopicArgs.builder()
+     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNotificationTopicResult> getNotificationTopicPlain(GetNotificationTopicPlainArgs args, InvokeOptions options) {
@@ -75,6 +187,37 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetNotificationTopicsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationTopics = OnsFunctions.getNotificationTopics(GetNotificationTopicsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.notification_topic_id())
+     *             .name(var_.notification_topic_name())
+     *             .state(var_.notification_topic_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNotificationTopicsResult> getNotificationTopics(GetNotificationTopicsArgs args) {
@@ -88,6 +231,37 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetNotificationTopicsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationTopics = OnsFunctions.getNotificationTopics(GetNotificationTopicsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.notification_topic_id())
+     *             .name(var_.notification_topic_name())
+     *             .state(var_.notification_topic_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNotificationTopicsResult> getNotificationTopicsPlain(GetNotificationTopicsPlainArgs args) {
@@ -101,6 +275,37 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetNotificationTopicsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationTopics = OnsFunctions.getNotificationTopics(GetNotificationTopicsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.notification_topic_id())
+     *             .name(var_.notification_topic_name())
+     *             .state(var_.notification_topic_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNotificationTopicsResult> getNotificationTopics(GetNotificationTopicsArgs args, InvokeOptions options) {
@@ -114,6 +319,37 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetNotificationTopicsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationTopics = OnsFunctions.getNotificationTopics(GetNotificationTopicsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .id(var_.notification_topic_id())
+     *             .name(var_.notification_topic_name())
+     *             .state(var_.notification_topic_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNotificationTopicsResult> getNotificationTopicsPlain(GetNotificationTopicsPlainArgs args, InvokeOptions options) {
@@ -127,6 +363,34 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OnsFunctions.getSubscription(GetSubscriptionArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionResult> getSubscription(GetSubscriptionArgs args) {
@@ -140,6 +404,34 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OnsFunctions.getSubscription(GetSubscriptionArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionResult> getSubscriptionPlain(GetSubscriptionPlainArgs args) {
@@ -153,6 +445,34 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OnsFunctions.getSubscription(GetSubscriptionArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionResult> getSubscription(GetSubscriptionArgs args, InvokeOptions options) {
@@ -166,6 +486,34 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OnsFunctions.getSubscription(GetSubscriptionArgs.builder()
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionResult> getSubscriptionPlain(GetSubscriptionPlainArgs args, InvokeOptions options) {
@@ -179,6 +527,35 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OnsFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args) {
@@ -192,6 +569,35 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OnsFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args) {
@@ -205,6 +611,35 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OnsFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args, InvokeOptions options) {
@@ -218,6 +653,35 @@ public final class OnsFunctions {
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ons.OnsFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OnsFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .topicId(oci_ons_notification_topic.test_notification_topic().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args, InvokeOptions options) {

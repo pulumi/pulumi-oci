@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousContainerDatabaseBackupConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousContainerDatabaseBackupConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Backup destination details.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousContainerDatabaseBackupConfigGetArgs()
         {
         }
+        public static new AutonomousContainerDatabaseBackupConfigGetArgs Empty => new AutonomousContainerDatabaseBackupConfigGetArgs();
     }
 }

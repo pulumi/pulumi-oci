@@ -21,21 +21,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputeGlobalImageCapabilitySchemasVersion = Oci.Core.GetComputeGlobalImageCapabilitySchemasVersion.Invoke(new()
         ///     {
-        ///         var testComputeGlobalImageCapabilitySchemasVersion = Output.Create(Oci.Core.GetComputeGlobalImageCapabilitySchemasVersion.InvokeAsync(new Oci.Core.GetComputeGlobalImageCapabilitySchemasVersionArgs
-        ///         {
-        ///             ComputeGlobalImageCapabilitySchemaId = oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
-        ///             ComputeGlobalImageCapabilitySchemaVersionName = @var.Compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name,
-        ///         }));
-        ///     }
+        ///         ComputeGlobalImageCapabilitySchemaId = oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
+        ///         ComputeGlobalImageCapabilitySchemaVersionName = @var.Compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputeGlobalImageCapabilitySchemasVersion = Oci.Core.GetComputeGlobalImageCapabilitySchemasVersion.Invoke(new()
         ///     {
-        ///         var testComputeGlobalImageCapabilitySchemasVersion = Output.Create(Oci.Core.GetComputeGlobalImageCapabilitySchemasVersion.InvokeAsync(new Oci.Core.GetComputeGlobalImageCapabilitySchemasVersionArgs
-        ///         {
-        ///             ComputeGlobalImageCapabilitySchemaId = oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
-        ///             ComputeGlobalImageCapabilitySchemaVersionName = @var.Compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name,
-        ///         }));
-        ///     }
+        ///         ComputeGlobalImageCapabilitySchemaId = oci_core_compute_global_image_capability_schema.Test_compute_global_image_capability_schema.Id,
+        ///         ComputeGlobalImageCapabilitySchemaVersionName = @var.Compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetComputeGlobalImageCapabilitySchemasVersionArgs : Pulumi.InvokeArgs
+    public sealed class GetComputeGlobalImageCapabilitySchemasVersionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Core
         public GetComputeGlobalImageCapabilitySchemasVersionArgs()
         {
         }
+        public static new GetComputeGlobalImageCapabilitySchemasVersionArgs Empty => new GetComputeGlobalImageCapabilitySchemasVersionArgs();
     }
 
-    public sealed class GetComputeGlobalImageCapabilitySchemasVersionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetComputeGlobalImageCapabilitySchemasVersionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.Core
         public GetComputeGlobalImageCapabilitySchemasVersionInvokeArgs()
         {
         }
+        public static new GetComputeGlobalImageCapabilitySchemasVersionInvokeArgs Empty => new GetComputeGlobalImageCapabilitySchemasVersionInvokeArgs();
     }
 
 

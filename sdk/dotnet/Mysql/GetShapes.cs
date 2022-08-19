@@ -25,23 +25,21 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testShapes = Oci.Mysql.GetShapes.Invoke(new()
         ///     {
-        ///         var testShapes = Output.Create(Oci.Mysql.GetShapes.InvokeAsync(new Oci.Mysql.GetShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Shape_availability_domain,
-        ///             IsSupportedFors = @var.Shape_is_supported_for,
-        ///             Name = @var.Shape_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Shape_availability_domain,
+        ///         IsSupportedFors = @var.Shape_is_supported_for,
+        ///         Name = @var.Shape_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,23 +61,21 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testShapes = Oci.Mysql.GetShapes.Invoke(new()
         ///     {
-        ///         var testShapes = Output.Create(Oci.Mysql.GetShapes.InvokeAsync(new Oci.Mysql.GetShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Shape_availability_domain,
-        ///             IsSupportedFors = @var.Shape_is_supported_for,
-        ///             Name = @var.Shape_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Shape_availability_domain,
+        ///         IsSupportedFors = @var.Shape_is_supported_for,
+        ///         Name = @var.Shape_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Mysql
     }
 
 
-    public sealed class GetShapesArgs : Pulumi.InvokeArgs
+    public sealed class GetShapesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the Availability Domain.
@@ -132,9 +128,10 @@ namespace Pulumi.Oci.Mysql
         public GetShapesArgs()
         {
         }
+        public static new GetShapesArgs Empty => new GetShapesArgs();
     }
 
-    public sealed class GetShapesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetShapesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the Availability Domain.
@@ -177,6 +174,7 @@ namespace Pulumi.Oci.Mysql
         public GetShapesInvokeArgs()
         {
         }
+        public static new GetShapesInvokeArgs Empty => new GetShapesInvokeArgs();
     }
 
 

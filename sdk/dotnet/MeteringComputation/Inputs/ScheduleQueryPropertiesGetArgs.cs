@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class ScheduleQueryPropertiesGetArgs : Pulumi.ResourceArgs
+    public sealed class ScheduleQueryPropertiesGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The depth level of the compartment.
@@ -75,5 +75,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public ScheduleQueryPropertiesGetArgs()
         {
         }
+        public static new ScheduleQueryPropertiesGetArgs Empty => new ScheduleQueryPropertiesGetArgs();
     }
 }

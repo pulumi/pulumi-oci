@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class MigrationGoldenGateDetailsHubArgs : Pulumi.ResourceArgs
+    public sealed class MigrationGoldenGateDetailsHubArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) OCID of GoldenGate Microservices compute instance.
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public MigrationGoldenGateDetailsHubArgs()
         {
         }
+        public static new MigrationGoldenGateDetailsHubArgs Empty => new MigrationGoldenGateDetailsHubArgs();
     }
 }

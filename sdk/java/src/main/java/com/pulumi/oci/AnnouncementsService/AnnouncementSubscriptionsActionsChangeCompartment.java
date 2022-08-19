@@ -21,6 +21,35 @@ import javax.annotation.Nullable;
  * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.AnnouncementsService.AnnouncementSubscriptionsActionsChangeCompartment;
+ * import com.pulumi.oci.AnnouncementsService.AnnouncementSubscriptionsActionsChangeCompartmentArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAnnouncementSubscriptionsActionsChangeCompartment = new AnnouncementSubscriptionsActionsChangeCompartment(&#34;testAnnouncementSubscriptionsActionsChangeCompartment&#34;, AnnouncementSubscriptionsActionsChangeCompartmentArgs.builder()        
+ *             .announcementSubscriptionId(oci_announcements_service_announcement_subscription.test_announcement_subscription().id())
+ *             .compartmentId(var_.compartment_id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

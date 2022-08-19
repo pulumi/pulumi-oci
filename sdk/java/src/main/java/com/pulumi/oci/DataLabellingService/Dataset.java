@@ -25,6 +25,68 @@ import javax.annotation.Nullable;
  * Creates a new Dataset.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataLabellingService.Dataset;
+ * import com.pulumi.oci.DataLabellingService.DatasetArgs;
+ * import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetFormatDetailsArgs;
+ * import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs;
+ * import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetSourceDetailsArgs;
+ * import com.pulumi.oci.DataLabellingService.inputs.DatasetLabelSetArgs;
+ * import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialRecordGenerationConfigurationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDataset = new Dataset(&#34;testDataset&#34;, DatasetArgs.builder()        
+ *             .annotationFormat(var_.dataset_annotation_format())
+ *             .compartmentId(var_.compartment_id())
+ *             .datasetFormatDetails(DatasetDatasetFormatDetailsArgs.builder()
+ *                 .formatType(var_.dataset_dataset_format_details_format_type())
+ *                 .textFileTypeMetadata(DatasetDatasetFormatDetailsTextFileTypeMetadataArgs.builder()
+ *                     .columnIndex(var_.dataset_dataset_format_details_text_file_type_metadata_column_index())
+ *                     .formatType(var_.dataset_dataset_format_details_text_file_type_metadata_format_type())
+ *                     .columnDelimiter(var_.dataset_dataset_format_details_text_file_type_metadata_column_delimiter())
+ *                     .columnName(var_.dataset_dataset_format_details_text_file_type_metadata_column_name())
+ *                     .escapeCharacter(var_.dataset_dataset_format_details_text_file_type_metadata_escape_character())
+ *                     .lineDelimiter(var_.dataset_dataset_format_details_text_file_type_metadata_line_delimiter())
+ *                     .build())
+ *                 .build())
+ *             .datasetSourceDetails(DatasetDatasetSourceDetailsArgs.builder()
+ *                 .bucket(var_.dataset_dataset_source_details_bucket())
+ *                 .namespace(var_.dataset_dataset_source_details_namespace())
+ *                 .sourceType(var_.dataset_dataset_source_details_source_type())
+ *                 .prefix(var_.dataset_dataset_source_details_prefix())
+ *                 .build())
+ *             .labelSet(DatasetLabelSetArgs.builder()
+ *                 .items(DatasetLabelSetItemArgs.builder()
+ *                     .name(var_.dataset_label_set_items_name())
+ *                     .build())
+ *                 .build())
+ *             .definedTags(var_.dataset_defined_tags())
+ *             .description(var_.dataset_description())
+ *             .displayName(var_.dataset_display_name())
+ *             .freeformTags(var_.dataset_freeform_tags())
+ *             .initialRecordGenerationConfiguration()
+ *             .labelingInstructions(var_.dataset_labeling_instructions())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

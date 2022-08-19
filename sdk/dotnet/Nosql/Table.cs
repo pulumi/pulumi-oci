@@ -17,34 +17,32 @@ namespace Pulumi.Oci.Nosql
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testTable = new Oci.Nosql.Table("testTable", new()
     ///     {
-    ///         var testTable = new Oci.Nosql.Table("testTable", new Oci.Nosql.TableArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DdlStatement = @var.Table_ddl_statement,
+    ///         DefinedTags = @var.Table_defined_tags,
+    ///         FreeformTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DdlStatement = @var.Table_ddl_statement,
-    ///             DefinedTags = @var.Table_defined_tags,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             IsAutoReclaimable = @var.Table_is_auto_reclaimable,
-    ///             TableLimits = new Oci.Nosql.Inputs.TableTableLimitsArgs
-    ///             {
-    ///                 MaxReadUnits = @var.Table_table_limits_max_read_units,
-    ///                 MaxStorageInGbs = @var.Table_table_limits_max_storage_in_gbs,
-    ///                 MaxWriteUnits = @var.Table_table_limits_max_write_units,
-    ///                 CapacityMode = @var.Table_table_limits_capacity_mode,
-    ///             },
-    ///         });
-    ///     }
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         IsAutoReclaimable = @var.Table_is_auto_reclaimable,
+    ///         TableLimits = new Oci.Nosql.Inputs.TableTableLimitsArgs
+    ///         {
+    ///             MaxReadUnits = @var.Table_table_limits_max_read_units,
+    ///             MaxStorageInGbs = @var.Table_table_limits_max_storage_in_gbs,
+    ///             MaxWriteUnits = @var.Table_table_limits_max_write_units,
+    ///             CapacityMode = @var.Table_table_limits_capacity_mode,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -56,7 +54,7 @@ namespace Pulumi.Oci.Nosql
     /// ```
     /// </summary>
     [OciResourceType("oci:Nosql/table:Table")]
-    public partial class Table : Pulumi.CustomResource
+    public partial class Table : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Compartment Identifier.
@@ -186,7 +184,7 @@ namespace Pulumi.Oci.Nosql
         }
     }
 
-    public sealed class TableArgs : Pulumi.ResourceArgs
+    public sealed class TableArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier.
@@ -245,9 +243,10 @@ namespace Pulumi.Oci.Nosql
         public TableArgs()
         {
         }
+        public static new TableArgs Empty => new TableArgs();
     }
 
-    public sealed class TableState : Pulumi.ResourceArgs
+    public sealed class TableState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier.
@@ -360,5 +359,6 @@ namespace Pulumi.Oci.Nosql
         public TableState()
         {
         }
+        public static new TableState Empty => new TableState();
     }
 }

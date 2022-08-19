@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("notebookSessionGitRepoConfigCollections")]
         private InputList<Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionGetArgs>? _notebookSessionGitRepoConfigCollections;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsGetArgs()
         {
         }
+        public static new NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsGetArgs Empty => new NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsGetArgs();
     }
 }

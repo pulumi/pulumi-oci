@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs Empty => new InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs();
     }
 }

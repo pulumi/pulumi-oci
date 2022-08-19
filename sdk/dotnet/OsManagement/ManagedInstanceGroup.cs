@@ -19,31 +19,29 @@ namespace Pulumi.Oci.OsManagement
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testManagedInstanceGroup = new Oci.OsManagement.ManagedInstanceGroup("testManagedInstanceGroup", new()
     ///     {
-    ///         var testManagedInstanceGroup = new Oci.OsManagement.ManagedInstanceGroup("testManagedInstanceGroup", new Oci.OsManagement.ManagedInstanceGroupArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Managed_instance_group_display_name,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Managed_instance_group_display_name,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Managed_instance_group_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             OsFamily = @var.Managed_instance_group_os_family,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Managed_instance_group_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         OsFamily = @var.Managed_instance_group_os_family,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.OsManagement
     /// ```
     /// </summary>
     [OciResourceType("oci:OsManagement/managedInstanceGroup:ManagedInstanceGroup")]
-    public partial class ManagedInstanceGroup : Pulumi.CustomResource
+    public partial class ManagedInstanceGroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) OCID for the Compartment
@@ -152,7 +150,7 @@ namespace Pulumi.Oci.OsManagement
         }
     }
 
-    public sealed class ManagedInstanceGroupArgs : Pulumi.ResourceArgs
+    public sealed class ManagedInstanceGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) OCID for the Compartment
@@ -205,9 +203,10 @@ namespace Pulumi.Oci.OsManagement
         public ManagedInstanceGroupArgs()
         {
         }
+        public static new ManagedInstanceGroupArgs Empty => new ManagedInstanceGroupArgs();
     }
 
-    public sealed class ManagedInstanceGroupState : Pulumi.ResourceArgs
+    public sealed class ManagedInstanceGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) OCID for the Compartment
@@ -281,5 +280,6 @@ namespace Pulumi.Oci.OsManagement
         public ManagedInstanceGroupState()
         {
         }
+        public static new ManagedInstanceGroupState Empty => new ManagedInstanceGroupState();
     }
 }

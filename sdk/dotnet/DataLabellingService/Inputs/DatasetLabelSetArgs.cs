@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataLabellingService.Inputs
 {
 
-    public sealed class DatasetLabelSetArgs : Pulumi.ResourceArgs
+    public sealed class DatasetLabelSetArgs : global::Pulumi.ResourceArgs
     {
         [Input("items", required: true)]
         private InputList<Inputs.DatasetLabelSetItemArgs>? _items;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataLabellingService.Inputs
         public DatasetLabelSetArgs()
         {
         }
+        public static new DatasetLabelSetArgs Empty => new DatasetLabelSetArgs();
     }
 }

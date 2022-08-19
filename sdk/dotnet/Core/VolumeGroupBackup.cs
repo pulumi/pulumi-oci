@@ -18,31 +18,29 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVolumeGroupBackup = new Oci.Core.VolumeGroupBackup("testVolumeGroupBackup", new()
     ///     {
-    ///         var testVolumeGroupBackup = new Oci.Core.VolumeGroupBackup("testVolumeGroupBackup", new Oci.Core.VolumeGroupBackupArgs
+    ///         VolumeGroupId = oci_core_volume_group.Test_volume_group.Id,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             VolumeGroupId = oci_core_volume_group.Test_volume_group.Id,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Volume_group_backup_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             Type = @var.Volume_group_backup_type,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Volume_group_backup_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         Type = @var.Volume_group_backup_type,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/volumeGroupBackup:VolumeGroupBackup")]
-    public partial class VolumeGroupBackup : Pulumi.CustomResource
+    public partial class VolumeGroupBackup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
@@ -211,7 +209,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class VolumeGroupBackupArgs : Pulumi.ResourceArgs
+    public sealed class VolumeGroupBackupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
@@ -273,9 +271,10 @@ namespace Pulumi.Oci.Core
         public VolumeGroupBackupArgs()
         {
         }
+        public static new VolumeGroupBackupArgs Empty => new VolumeGroupBackupArgs();
     }
 
-    public sealed class VolumeGroupBackupState : Pulumi.ResourceArgs
+    public sealed class VolumeGroupBackupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
@@ -409,5 +408,6 @@ namespace Pulumi.Oci.Core
         public VolumeGroupBackupState()
         {
         }
+        public static new VolumeGroupBackupState Empty => new VolumeGroupBackupState();
     }
 }

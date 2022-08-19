@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualCircuits = Oci.Core.GetVirtualCircuits.Invoke(new()
         ///     {
-        ///         var testVirtualCircuits = Output.Create(Oci.Core.GetVirtualCircuits.InvokeAsync(new Oci.Core.GetVirtualCircuitsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Virtual_circuit_display_name,
-        ///             State = @var.Virtual_circuit_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Virtual_circuit_display_name,
+        ///         State = @var.Virtual_circuit_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualCircuits = Oci.Core.GetVirtualCircuits.Invoke(new()
         ///     {
-        ///         var testVirtualCircuits = Output.Create(Oci.Core.GetVirtualCircuits.InvokeAsync(new Oci.Core.GetVirtualCircuitsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Virtual_circuit_display_name,
-        ///             State = @var.Virtual_circuit_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Virtual_circuit_display_name,
+        ///         State = @var.Virtual_circuit_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVirtualCircuitsArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualCircuitsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Core
         public GetVirtualCircuitsArgs()
         {
         }
+        public static new GetVirtualCircuitsArgs Empty => new GetVirtualCircuitsArgs();
     }
 
-    public sealed class GetVirtualCircuitsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualCircuitsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Core
         public GetVirtualCircuitsInvokeArgs()
         {
         }
+        public static new GetVirtualCircuitsInvokeArgs Empty => new GetVirtualCircuitsInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class AppFirewallPolicyRequestProtectionArgs : Pulumi.ResourceArgs
+    public sealed class AppFirewallPolicyRequestProtectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public AppFirewallPolicyRequestProtectionArgs()
         {
         }
+        public static new AppFirewallPolicyRequestProtectionArgs Empty => new AppFirewallPolicyRequestProtectionArgs();
     }
 }

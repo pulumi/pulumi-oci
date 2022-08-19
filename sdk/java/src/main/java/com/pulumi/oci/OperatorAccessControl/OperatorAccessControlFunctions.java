@@ -44,6 +44,34 @@ public final class OperatorAccessControlFunctions {
      * Gets details of an access request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequest = OperatorAccessControlFunctions.getAccessRequest(GetAccessRequestArgs.builder()
+     *             .accessRequestId(oci_operator_access_control_access_request.test_access_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAccessRequestResult> getAccessRequest(GetAccessRequestArgs args) {
@@ -55,6 +83,34 @@ public final class OperatorAccessControlFunctions {
      * Gets details of an access request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequest = OperatorAccessControlFunctions.getAccessRequest(GetAccessRequestArgs.builder()
+     *             .accessRequestId(oci_operator_access_control_access_request.test_access_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAccessRequestResult> getAccessRequestPlain(GetAccessRequestPlainArgs args) {
@@ -66,6 +122,34 @@ public final class OperatorAccessControlFunctions {
      * Gets details of an access request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequest = OperatorAccessControlFunctions.getAccessRequest(GetAccessRequestArgs.builder()
+     *             .accessRequestId(oci_operator_access_control_access_request.test_access_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAccessRequestResult> getAccessRequest(GetAccessRequestArgs args, InvokeOptions options) {
@@ -77,6 +161,34 @@ public final class OperatorAccessControlFunctions {
      * Gets details of an access request.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequest = OperatorAccessControlFunctions.getAccessRequest(GetAccessRequestArgs.builder()
+     *             .accessRequestId(oci_operator_access_control_access_request.test_access_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAccessRequestResult> getAccessRequestPlain(GetAccessRequestPlainArgs args, InvokeOptions options) {
@@ -88,6 +200,34 @@ public final class OperatorAccessControlFunctions {
      * Returns a history of all status associated with the accessRequestId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequestHistory = OperatorAccessControlFunctions.getAccessRequestHistory(GetAccessRequestHistoryArgs.builder()
+     *             .accessRequestId(oci_operator_access_control_access_request.test_access_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAccessRequestHistoryResult> getAccessRequestHistory(GetAccessRequestHistoryArgs args) {
@@ -99,6 +239,34 @@ public final class OperatorAccessControlFunctions {
      * Returns a history of all status associated with the accessRequestId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequestHistory = OperatorAccessControlFunctions.getAccessRequestHistory(GetAccessRequestHistoryArgs.builder()
+     *             .accessRequestId(oci_operator_access_control_access_request.test_access_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAccessRequestHistoryResult> getAccessRequestHistoryPlain(GetAccessRequestHistoryPlainArgs args) {
@@ -110,6 +278,34 @@ public final class OperatorAccessControlFunctions {
      * Returns a history of all status associated with the accessRequestId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequestHistory = OperatorAccessControlFunctions.getAccessRequestHistory(GetAccessRequestHistoryArgs.builder()
+     *             .accessRequestId(oci_operator_access_control_access_request.test_access_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAccessRequestHistoryResult> getAccessRequestHistory(GetAccessRequestHistoryArgs args, InvokeOptions options) {
@@ -121,6 +317,34 @@ public final class OperatorAccessControlFunctions {
      * Returns a history of all status associated with the accessRequestId.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequestHistory = OperatorAccessControlFunctions.getAccessRequestHistory(GetAccessRequestHistoryArgs.builder()
+     *             .accessRequestId(oci_operator_access_control_access_request.test_access_request().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAccessRequestHistoryResult> getAccessRequestHistoryPlain(GetAccessRequestHistoryPlainArgs args, InvokeOptions options) {
@@ -132,6 +356,39 @@ public final class OperatorAccessControlFunctions {
      * Lists all access requests in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequests = OperatorAccessControlFunctions.getAccessRequests(GetAccessRequestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .resourceName(var_.access_request_resource_name())
+     *             .resourceType(var_.access_request_resource_type())
+     *             .state(var_.access_request_state())
+     *             .timeEnd(var_.access_request_time_end())
+     *             .timeStart(var_.access_request_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAccessRequestsResult> getAccessRequests(GetAccessRequestsArgs args) {
@@ -143,6 +400,39 @@ public final class OperatorAccessControlFunctions {
      * Lists all access requests in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequests = OperatorAccessControlFunctions.getAccessRequests(GetAccessRequestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .resourceName(var_.access_request_resource_name())
+     *             .resourceType(var_.access_request_resource_type())
+     *             .state(var_.access_request_state())
+     *             .timeEnd(var_.access_request_time_end())
+     *             .timeStart(var_.access_request_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAccessRequestsResult> getAccessRequestsPlain(GetAccessRequestsPlainArgs args) {
@@ -154,6 +444,39 @@ public final class OperatorAccessControlFunctions {
      * Lists all access requests in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequests = OperatorAccessControlFunctions.getAccessRequests(GetAccessRequestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .resourceName(var_.access_request_resource_name())
+     *             .resourceType(var_.access_request_resource_type())
+     *             .state(var_.access_request_state())
+     *             .timeEnd(var_.access_request_time_end())
+     *             .timeStart(var_.access_request_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAccessRequestsResult> getAccessRequests(GetAccessRequestsArgs args, InvokeOptions options) {
@@ -165,6 +488,39 @@ public final class OperatorAccessControlFunctions {
      * Lists all access requests in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetAccessRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAccessRequests = OperatorAccessControlFunctions.getAccessRequests(GetAccessRequestsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .resourceName(var_.access_request_resource_name())
+     *             .resourceType(var_.access_request_resource_type())
+     *             .state(var_.access_request_state())
+     *             .timeEnd(var_.access_request_time_end())
+     *             .timeStart(var_.access_request_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAccessRequestsResult> getAccessRequestsPlain(GetAccessRequestsPlainArgs args, InvokeOptions options) {
@@ -176,6 +532,34 @@ public final class OperatorAccessControlFunctions {
      * Gets the operator action associated with the specified operator action ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorAction = OperatorAccessControlFunctions.getAction(GetActionArgs.builder()
+     *             .operatorActionId(oci_operator_access_control_operator_action.test_operator_action().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetActionResult> getAction(GetActionArgs args) {
@@ -187,6 +571,34 @@ public final class OperatorAccessControlFunctions {
      * Gets the operator action associated with the specified operator action ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorAction = OperatorAccessControlFunctions.getAction(GetActionArgs.builder()
+     *             .operatorActionId(oci_operator_access_control_operator_action.test_operator_action().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetActionResult> getActionPlain(GetActionPlainArgs args) {
@@ -198,6 +610,34 @@ public final class OperatorAccessControlFunctions {
      * Gets the operator action associated with the specified operator action ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorAction = OperatorAccessControlFunctions.getAction(GetActionArgs.builder()
+     *             .operatorActionId(oci_operator_access_control_operator_action.test_operator_action().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetActionResult> getAction(GetActionArgs args, InvokeOptions options) {
@@ -209,6 +649,34 @@ public final class OperatorAccessControlFunctions {
      * Gets the operator action associated with the specified operator action ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorAction = OperatorAccessControlFunctions.getAction(GetActionArgs.builder()
+     *             .operatorActionId(oci_operator_access_control_operator_action.test_operator_action().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetActionResult> getActionPlain(GetActionPlainArgs args, InvokeOptions options) {
@@ -220,6 +688,37 @@ public final class OperatorAccessControlFunctions {
      * Lists all the OperatorActions available in the system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorActions = OperatorAccessControlFunctions.getActions(GetActionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.operator_action_name())
+     *             .resourceType(var_.operator_action_resource_type())
+     *             .state(var_.operator_action_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetActionsResult> getActions(GetActionsArgs args) {
@@ -231,6 +730,37 @@ public final class OperatorAccessControlFunctions {
      * Lists all the OperatorActions available in the system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorActions = OperatorAccessControlFunctions.getActions(GetActionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.operator_action_name())
+     *             .resourceType(var_.operator_action_resource_type())
+     *             .state(var_.operator_action_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetActionsResult> getActionsPlain(GetActionsPlainArgs args) {
@@ -242,6 +772,37 @@ public final class OperatorAccessControlFunctions {
      * Lists all the OperatorActions available in the system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorActions = OperatorAccessControlFunctions.getActions(GetActionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.operator_action_name())
+     *             .resourceType(var_.operator_action_resource_type())
+     *             .state(var_.operator_action_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetActionsResult> getActions(GetActionsArgs args, InvokeOptions options) {
@@ -253,6 +814,37 @@ public final class OperatorAccessControlFunctions {
      * Lists all the OperatorActions available in the system.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetActionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorActions = OperatorAccessControlFunctions.getActions(GetActionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.operator_action_name())
+     *             .resourceType(var_.operator_action_resource_type())
+     *             .state(var_.operator_action_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetActionsResult> getActionsPlain(GetActionsPlainArgs args, InvokeOptions options) {
@@ -264,6 +856,34 @@ public final class OperatorAccessControlFunctions {
      * Gets the Operator Control associated with the specified Operator Control ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControl = OperatorAccessControlFunctions.getControl(GetControlArgs.builder()
+     *             .operatorControlId(oci_operator_access_control_operator_control.test_operator_control().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetControlResult> getControl(GetControlArgs args) {
@@ -275,6 +895,34 @@ public final class OperatorAccessControlFunctions {
      * Gets the Operator Control associated with the specified Operator Control ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControl = OperatorAccessControlFunctions.getControl(GetControlArgs.builder()
+     *             .operatorControlId(oci_operator_access_control_operator_control.test_operator_control().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetControlResult> getControlPlain(GetControlPlainArgs args) {
@@ -286,6 +934,34 @@ public final class OperatorAccessControlFunctions {
      * Gets the Operator Control associated with the specified Operator Control ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControl = OperatorAccessControlFunctions.getControl(GetControlArgs.builder()
+     *             .operatorControlId(oci_operator_access_control_operator_control.test_operator_control().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetControlResult> getControl(GetControlArgs args, InvokeOptions options) {
@@ -297,6 +973,34 @@ public final class OperatorAccessControlFunctions {
      * Gets the Operator Control associated with the specified Operator Control ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControl = OperatorAccessControlFunctions.getControl(GetControlArgs.builder()
+     *             .operatorControlId(oci_operator_access_control_operator_control.test_operator_control().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetControlResult> getControlPlain(GetControlPlainArgs args, InvokeOptions options) {
@@ -308,6 +1012,34 @@ public final class OperatorAccessControlFunctions {
      * Gets the details of an Operator Control Assignment of the specified ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControlAssignment = OperatorAccessControlFunctions.getControlAssignment(GetControlAssignmentArgs.builder()
+     *             .operatorControlAssignmentId(oci_operator_access_control_operator_control_assignment.test_operator_control_assignment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetControlAssignmentResult> getControlAssignment(GetControlAssignmentArgs args) {
@@ -319,6 +1051,34 @@ public final class OperatorAccessControlFunctions {
      * Gets the details of an Operator Control Assignment of the specified ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControlAssignment = OperatorAccessControlFunctions.getControlAssignment(GetControlAssignmentArgs.builder()
+     *             .operatorControlAssignmentId(oci_operator_access_control_operator_control_assignment.test_operator_control_assignment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetControlAssignmentResult> getControlAssignmentPlain(GetControlAssignmentPlainArgs args) {
@@ -330,6 +1090,34 @@ public final class OperatorAccessControlFunctions {
      * Gets the details of an Operator Control Assignment of the specified ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControlAssignment = OperatorAccessControlFunctions.getControlAssignment(GetControlAssignmentArgs.builder()
+     *             .operatorControlAssignmentId(oci_operator_access_control_operator_control_assignment.test_operator_control_assignment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetControlAssignmentResult> getControlAssignment(GetControlAssignmentArgs args, InvokeOptions options) {
@@ -341,6 +1129,34 @@ public final class OperatorAccessControlFunctions {
      * Gets the details of an Operator Control Assignment of the specified ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControlAssignment = OperatorAccessControlFunctions.getControlAssignment(GetControlAssignmentArgs.builder()
+     *             .operatorControlAssignmentId(oci_operator_access_control_operator_control_assignment.test_operator_control_assignment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetControlAssignmentResult> getControlAssignmentPlain(GetControlAssignmentPlainArgs args, InvokeOptions options) {
@@ -352,6 +1168,38 @@ public final class OperatorAccessControlFunctions {
      * Lists all Operator Control Assignments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControlAssignments = OperatorAccessControlFunctions.getControlAssignments(GetControlAssignmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .operatorControlName(oci_operator_access_control_operator_control.test_operator_control().name())
+     *             .resourceName(var_.operator_control_assignment_resource_name())
+     *             .resourceType(var_.operator_control_assignment_resource_type())
+     *             .state(var_.operator_control_assignment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetControlAssignmentsResult> getControlAssignments(GetControlAssignmentsArgs args) {
@@ -363,6 +1211,38 @@ public final class OperatorAccessControlFunctions {
      * Lists all Operator Control Assignments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControlAssignments = OperatorAccessControlFunctions.getControlAssignments(GetControlAssignmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .operatorControlName(oci_operator_access_control_operator_control.test_operator_control().name())
+     *             .resourceName(var_.operator_control_assignment_resource_name())
+     *             .resourceType(var_.operator_control_assignment_resource_type())
+     *             .state(var_.operator_control_assignment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetControlAssignmentsResult> getControlAssignmentsPlain(GetControlAssignmentsPlainArgs args) {
@@ -374,6 +1254,38 @@ public final class OperatorAccessControlFunctions {
      * Lists all Operator Control Assignments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControlAssignments = OperatorAccessControlFunctions.getControlAssignments(GetControlAssignmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .operatorControlName(oci_operator_access_control_operator_control.test_operator_control().name())
+     *             .resourceName(var_.operator_control_assignment_resource_name())
+     *             .resourceType(var_.operator_control_assignment_resource_type())
+     *             .state(var_.operator_control_assignment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetControlAssignmentsResult> getControlAssignments(GetControlAssignmentsArgs args, InvokeOptions options) {
@@ -385,6 +1297,38 @@ public final class OperatorAccessControlFunctions {
      * Lists all Operator Control Assignments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControlAssignments = OperatorAccessControlFunctions.getControlAssignments(GetControlAssignmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .operatorControlName(oci_operator_access_control_operator_control.test_operator_control().name())
+     *             .resourceName(var_.operator_control_assignment_resource_name())
+     *             .resourceType(var_.operator_control_assignment_resource_type())
+     *             .state(var_.operator_control_assignment_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetControlAssignmentsResult> getControlAssignmentsPlain(GetControlAssignmentsPlainArgs args, InvokeOptions options) {
@@ -396,6 +1340,37 @@ public final class OperatorAccessControlFunctions {
      * Lists the operator controls in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControls = OperatorAccessControlFunctions.getControls(GetControlsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operator_control_display_name())
+     *             .resourceType(var_.operator_control_resource_type())
+     *             .state(var_.operator_control_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetControlsResult> getControls(GetControlsArgs args) {
@@ -407,6 +1382,37 @@ public final class OperatorAccessControlFunctions {
      * Lists the operator controls in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControls = OperatorAccessControlFunctions.getControls(GetControlsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operator_control_display_name())
+     *             .resourceType(var_.operator_control_resource_type())
+     *             .state(var_.operator_control_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetControlsResult> getControlsPlain(GetControlsPlainArgs args) {
@@ -418,6 +1424,37 @@ public final class OperatorAccessControlFunctions {
      * Lists the operator controls in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControls = OperatorAccessControlFunctions.getControls(GetControlsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operator_control_display_name())
+     *             .resourceType(var_.operator_control_resource_type())
+     *             .state(var_.operator_control_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetControlsResult> getControls(GetControlsArgs args, InvokeOptions options) {
@@ -429,6 +1466,37 @@ public final class OperatorAccessControlFunctions {
      * Lists the operator controls in the compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OperatorAccessControl.OperatorAccessControlFunctions;
+     * import com.pulumi.oci.OperatorAccessControl.inputs.GetControlsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOperatorControls = OperatorAccessControlFunctions.getControls(GetControlsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.operator_control_display_name())
+     *             .resourceType(var_.operator_control_resource_type())
+     *             .state(var_.operator_control_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetControlsResult> getControlsPlain(GetControlsPlainArgs args, InvokeOptions options) {

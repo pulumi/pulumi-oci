@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Functions.Inputs
 {
 
-    public sealed class ApplicationTraceConfigArgs : Pulumi.ResourceArgs
+    public sealed class ApplicationTraceConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Functions.Inputs
         public ApplicationTraceConfigArgs()
         {
         }
+        public static new ApplicationTraceConfigArgs Empty => new ApplicationTraceConfigArgs();
     }
 }

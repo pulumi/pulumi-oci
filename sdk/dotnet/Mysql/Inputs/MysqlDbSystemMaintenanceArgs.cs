@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlDbSystemMaintenanceArgs : Pulumi.ResourceArgs
+    public sealed class MysqlDbSystemMaintenanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The start of the 2 hour maintenance window.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlDbSystemMaintenanceArgs()
         {
         }
+        public static new MysqlDbSystemMaintenanceArgs Empty => new MysqlDbSystemMaintenanceArgs();
     }
 }

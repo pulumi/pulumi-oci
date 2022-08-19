@@ -22,23 +22,21 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityRecipes = Oci.CloudGuard.GetSecurityRecipes.Invoke(new()
         ///     {
-        ///         var testSecurityRecipes = Output.Create(Oci.CloudGuard.GetSecurityRecipes.InvokeAsync(new Oci.CloudGuard.GetSecurityRecipesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Security_recipe_display_name,
-        ///             Id = @var.Security_recipe_id,
-        ///             State = @var.Security_recipe_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Security_recipe_display_name,
+        ///         Id = @var.Security_recipe_id,
+        ///         State = @var.Security_recipe_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSecurityRecipes = Oci.CloudGuard.GetSecurityRecipes.Invoke(new()
         ///     {
-        ///         var testSecurityRecipes = Output.Create(Oci.CloudGuard.GetSecurityRecipes.InvokeAsync(new Oci.CloudGuard.GetSecurityRecipesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Security_recipe_display_name,
-        ///             Id = @var.Security_recipe_id,
-        ///             State = @var.Security_recipe_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Security_recipe_display_name,
+        ///         Id = @var.Security_recipe_id,
+        ///         State = @var.Security_recipe_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetSecurityRecipesArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityRecipesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetSecurityRecipesArgs()
         {
         }
+        public static new GetSecurityRecipesArgs Empty => new GetSecurityRecipesArgs();
     }
 
-    public sealed class GetSecurityRecipesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSecurityRecipesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetSecurityRecipesInvokeArgs()
         {
         }
+        public static new GetSecurityRecipesInvokeArgs Empty => new GetSecurityRecipesInvokeArgs();
     }
 
 

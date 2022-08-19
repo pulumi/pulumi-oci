@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow.Inputs
 {
 
-    public sealed class InvokeRunExecutorShapeConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class InvokeRunExecutorShapeConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The amount of memory used for the driver or executors.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataFlow.Inputs
         public InvokeRunExecutorShapeConfigGetArgs()
         {
         }
+        public static new InvokeRunExecutorShapeConfigGetArgs Empty => new InvokeRunExecutorShapeConfigGetArgs();
     }
 }

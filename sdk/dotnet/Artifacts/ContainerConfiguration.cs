@@ -15,19 +15,15 @@ namespace Pulumi.Oci.Artifacts
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
-    ///     {
-    ///         var testContainerConfiguration = new Oci.Artifacts.ContainerConfiguration("testContainerConfiguration", new Oci.Artifacts.ContainerConfigurationArgs
-    ///         {
-    ///         });
-    ///     }
+    ///     var testContainerConfiguration = new Oci.Artifacts.ContainerConfiguration("testContainerConfiguration");
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -39,7 +35,7 @@ namespace Pulumi.Oci.Artifacts
     /// ```
     /// </summary>
     [OciResourceType("oci:Artifacts/containerConfiguration:ContainerConfiguration")]
-    public partial class ContainerConfiguration : Pulumi.CustomResource
+    public partial class ContainerConfiguration : global::Pulumi.CustomResource
     {
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -100,7 +96,7 @@ namespace Pulumi.Oci.Artifacts
         }
     }
 
-    public sealed class ContainerConfigurationArgs : Pulumi.ResourceArgs
+    public sealed class ContainerConfigurationArgs : global::Pulumi.ResourceArgs
     {
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -114,9 +110,10 @@ namespace Pulumi.Oci.Artifacts
         public ContainerConfigurationArgs()
         {
         }
+        public static new ContainerConfigurationArgs Empty => new ContainerConfigurationArgs();
     }
 
-    public sealed class ContainerConfigurationState : Pulumi.ResourceArgs
+    public sealed class ContainerConfigurationState : global::Pulumi.ResourceArgs
     {
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -136,5 +133,6 @@ namespace Pulumi.Oci.Artifacts
         public ContainerConfigurationState()
         {
         }
+        public static new ContainerConfigurationState Empty => new ContainerConfigurationState();
     }
 }

@@ -23,21 +23,19 @@ namespace Pulumi.Oci.Apm
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataKeys = Oci.Apm.GetDataKeys.Invoke(new()
         ///     {
-        ///         var testDataKeys = Output.Create(Oci.Apm.GetDataKeys.InvokeAsync(new Oci.Apm.GetDataKeysArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             DataKeyType = @var.Data_key_data_key_type,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         DataKeyType = @var.Data_key_data_key_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,21 +55,19 @@ namespace Pulumi.Oci.Apm
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataKeys = Oci.Apm.GetDataKeys.Invoke(new()
         ///     {
-        ///         var testDataKeys = Output.Create(Oci.Apm.GetDataKeys.InvokeAsync(new Oci.Apm.GetDataKeysArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             DataKeyType = @var.Data_key_data_key_type,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         DataKeyType = @var.Data_key_data_key_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Apm
     }
 
 
-    public sealed class GetDataKeysArgs : Pulumi.InvokeArgs
+    public sealed class GetDataKeysArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the APM domain
@@ -106,9 +102,10 @@ namespace Pulumi.Oci.Apm
         public GetDataKeysArgs()
         {
         }
+        public static new GetDataKeysArgs Empty => new GetDataKeysArgs();
     }
 
-    public sealed class GetDataKeysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDataKeysInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the APM domain
@@ -133,6 +130,7 @@ namespace Pulumi.Oci.Apm
         public GetDataKeysInvokeArgs()
         {
         }
+        public static new GetDataKeysInvokeArgs Empty => new GetDataKeysInvokeArgs();
     }
 
 

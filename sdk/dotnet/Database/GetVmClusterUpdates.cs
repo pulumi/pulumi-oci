@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVmClusterUpdates = Oci.Database.GetVmClusterUpdates.Invoke(new()
         ///     {
-        ///         var testVmClusterUpdates = Output.Create(Oci.Database.GetVmClusterUpdates.InvokeAsync(new Oci.Database.GetVmClusterUpdatesArgs
-        ///         {
-        ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-        ///             State = @var.Vm_cluster_update_state,
-        ///             UpdateType = @var.Vm_cluster_update_update_type,
-        ///         }));
-        ///     }
+        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///         State = @var.Vm_cluster_update_state,
+        ///         UpdateType = @var.Vm_cluster_update_update_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVmClusterUpdates = Oci.Database.GetVmClusterUpdates.Invoke(new()
         ///     {
-        ///         var testVmClusterUpdates = Output.Create(Oci.Database.GetVmClusterUpdates.InvokeAsync(new Oci.Database.GetVmClusterUpdatesArgs
-        ///         {
-        ///             VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-        ///             State = @var.Vm_cluster_update_state,
-        ///             UpdateType = @var.Vm_cluster_update_update_type,
-        ///         }));
-        ///     }
+        ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+        ///         State = @var.Vm_cluster_update_state,
+        ///         UpdateType = @var.Vm_cluster_update_update_type,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetVmClusterUpdatesArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterUpdatesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetVmClusterUpdatesFilterArgs>? _filters;
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Database
         public GetVmClusterUpdatesArgs()
         {
         }
+        public static new GetVmClusterUpdatesArgs Empty => new GetVmClusterUpdatesArgs();
     }
 
-    public sealed class GetVmClusterUpdatesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterUpdatesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetVmClusterUpdatesFilterInputArgs>? _filters;
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Database
         public GetVmClusterUpdatesInvokeArgs()
         {
         }
+        public static new GetVmClusterUpdatesInvokeArgs Empty => new GetVmClusterUpdatesInvokeArgs();
     }
 
 

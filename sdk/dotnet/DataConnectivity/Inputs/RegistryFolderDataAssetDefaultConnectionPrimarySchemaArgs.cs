@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataConnectivity.Inputs
 {
 
-    public sealed class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs : Pulumi.ResourceArgs
+    public sealed class RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The default connection key.
@@ -99,5 +99,6 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs()
         {
         }
+        public static new RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs Empty => new RegistryFolderDataAssetDefaultConnectionPrimarySchemaArgs();
     }
 }

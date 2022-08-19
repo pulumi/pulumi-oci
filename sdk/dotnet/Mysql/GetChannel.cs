@@ -24,20 +24,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testChannel = Oci.Mysql.GetChannel.Invoke(new()
         ///     {
-        ///         var testChannel = Output.Create(Oci.Mysql.GetChannel.InvokeAsync(new Oci.Mysql.GetChannelArgs
-        ///         {
-        ///             ChannelId = oci_mysql_channel.Test_channel.Id,
-        ///         }));
-        ///     }
+        ///         ChannelId = oci_mysql_channel.Test_channel.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,20 +56,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testChannel = Oci.Mysql.GetChannel.Invoke(new()
         ///     {
-        ///         var testChannel = Output.Create(Oci.Mysql.GetChannel.InvokeAsync(new Oci.Mysql.GetChannelArgs
-        ///         {
-        ///             ChannelId = oci_mysql_channel.Test_channel.Id,
-        ///         }));
-        ///     }
+        ///         ChannelId = oci_mysql_channel.Test_channel.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Mysql
     }
 
 
-    public sealed class GetChannelArgs : Pulumi.InvokeArgs
+    public sealed class GetChannelArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Channel [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -92,9 +88,10 @@ namespace Pulumi.Oci.Mysql
         public GetChannelArgs()
         {
         }
+        public static new GetChannelArgs Empty => new GetChannelArgs();
     }
 
-    public sealed class GetChannelInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetChannelInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Channel [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -105,6 +102,7 @@ namespace Pulumi.Oci.Mysql
         public GetChannelInvokeArgs()
         {
         }
+        public static new GetChannelInvokeArgs Empty => new GetChannelInvokeArgs();
     }
 
 

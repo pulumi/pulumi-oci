@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Budget.Inputs
 {
 
-    public sealed class GetBudgetsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetBudgetsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Budget.Inputs
         public GetBudgetsFilterArgs()
         {
         }
+        public static new GetBudgetsFilterArgs Empty => new GetBudgetsFilterArgs();
     }
 }

@@ -23,25 +23,23 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAssociations = Oci.CertificatesManagement.GetAssociations.Invoke(new()
         ///     {
-        ///         var testAssociations = Output.Create(Oci.CertificatesManagement.GetAssociations.InvokeAsync(new Oci.CertificatesManagement.GetAssociationsArgs
-        ///         {
-        ///             AssociatedResourceId = oci_certificates_management_associated_resource.Test_associated_resource.Id,
-        ///             AssociationId = oci_certificates_management_association.Test_association.Id,
-        ///             AssociationType = @var.Association_association_type,
-        ///             CertificatesResourceId = oci_certificates_management_certificates_resource.Test_certificates_resource.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Association_name,
-        ///         }));
-        ///     }
+        ///         AssociatedResourceId = oci_certificates_management_associated_resource.Test_associated_resource.Id,
+        ///         AssociationId = oci_certificates_management_association.Test_association.Id,
+        ///         AssociationType = @var.Association_association_type,
+        ///         CertificatesResourceId = oci_certificates_management_certificates_resource.Test_certificates_resource.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Association_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,25 +59,23 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAssociations = Oci.CertificatesManagement.GetAssociations.Invoke(new()
         ///     {
-        ///         var testAssociations = Output.Create(Oci.CertificatesManagement.GetAssociations.InvokeAsync(new Oci.CertificatesManagement.GetAssociationsArgs
-        ///         {
-        ///             AssociatedResourceId = oci_certificates_management_associated_resource.Test_associated_resource.Id,
-        ///             AssociationId = oci_certificates_management_association.Test_association.Id,
-        ///             AssociationType = @var.Association_association_type,
-        ///             CertificatesResourceId = oci_certificates_management_certificates_resource.Test_certificates_resource.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Association_name,
-        ///         }));
-        ///     }
+        ///         AssociatedResourceId = oci_certificates_management_associated_resource.Test_associated_resource.Id,
+        ///         AssociationId = oci_certificates_management_association.Test_association.Id,
+        ///         AssociationType = @var.Association_association_type,
+        ///         CertificatesResourceId = oci_certificates_management_certificates_resource.Test_certificates_resource.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Association_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.CertificatesManagement
     }
 
 
-    public sealed class GetAssociationsArgs : Pulumi.InvokeArgs
+    public sealed class GetAssociationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter that returns only resources that match the given OCID of an associated Oracle Cloud Infrastructure resource.
@@ -138,9 +134,10 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetAssociationsArgs()
         {
         }
+        public static new GetAssociationsArgs Empty => new GetAssociationsArgs();
     }
 
-    public sealed class GetAssociationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAssociationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter that returns only resources that match the given OCID of an associated Oracle Cloud Infrastructure resource.
@@ -189,6 +186,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetAssociationsInvokeArgs()
         {
         }
+        public static new GetAssociationsInvokeArgs Empty => new GetAssociationsInvokeArgs();
     }
 
 

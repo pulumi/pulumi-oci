@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class VmClusterRemoveVirtualMachineDbServerArgs : Pulumi.ResourceArgs
+    public sealed class VmClusterRemoveVirtualMachineDbServerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exacc Db server.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Database.Inputs
         public VmClusterRemoveVirtualMachineDbServerArgs()
         {
         }
+        public static new VmClusterRemoveVirtualMachineDbServerArgs Empty => new VmClusterRemoveVirtualMachineDbServerArgs();
     }
 }

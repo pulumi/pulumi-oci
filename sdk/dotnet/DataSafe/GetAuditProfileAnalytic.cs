@@ -34,23 +34,21 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditProfileAnalytic = Oci.DataSafe.GetAuditProfileAnalytic.Invoke(new()
         ///     {
-        ///         var testAuditProfileAnalytic = Output.Create(Oci.DataSafe.GetAuditProfileAnalytic.InvokeAsync(new Oci.DataSafe.GetAuditProfileAnalyticArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Audit_profile_analytic_access_level,
-        ///             CompartmentIdInSubtree = @var.Audit_profile_analytic_compartment_id_in_subtree,
-        ///             GroupBies = @var.Audit_profile_analytic_group_by,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Audit_profile_analytic_access_level,
+        ///         CompartmentIdInSubtree = @var.Audit_profile_analytic_compartment_id_in_subtree,
+        ///         GroupBies = @var.Audit_profile_analytic_group_by,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,23 +79,21 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditProfileAnalytic = Oci.DataSafe.GetAuditProfileAnalytic.Invoke(new()
         ///     {
-        ///         var testAuditProfileAnalytic = Output.Create(Oci.DataSafe.GetAuditProfileAnalytic.InvokeAsync(new Oci.DataSafe.GetAuditProfileAnalyticArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Audit_profile_analytic_access_level,
-        ///             CompartmentIdInSubtree = @var.Audit_profile_analytic_compartment_id_in_subtree,
-        ///             GroupBies = @var.Audit_profile_analytic_group_by,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Audit_profile_analytic_access_level,
+        ///         CompartmentIdInSubtree = @var.Audit_profile_analytic_compartment_id_in_subtree,
+        ///         GroupBies = @var.Audit_profile_analytic_group_by,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -107,7 +103,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetAuditProfileAnalyticArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditProfileAnalyticArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -142,9 +138,10 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditProfileAnalyticArgs()
         {
         }
+        public static new GetAuditProfileAnalyticArgs Empty => new GetAuditProfileAnalyticArgs();
     }
 
-    public sealed class GetAuditProfileAnalyticInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditProfileAnalyticInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -179,6 +176,7 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditProfileAnalyticInvokeArgs()
         {
         }
+        public static new GetAuditProfileAnalyticInvokeArgs Empty => new GetAuditProfileAnalyticInvokeArgs();
     }
 
 

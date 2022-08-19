@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class DrgAttachmentManagementNetworkDetailsArgs : Pulumi.ResourceArgs
+    public sealed class DrgAttachmentManagementNetworkDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// -(Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
@@ -40,5 +40,6 @@ namespace Pulumi.Oci.Core.Inputs
         public DrgAttachmentManagementNetworkDetailsArgs()
         {
         }
+        public static new DrgAttachmentManagementNetworkDetailsArgs Empty => new DrgAttachmentManagementNetworkDetailsArgs();
     }
 }

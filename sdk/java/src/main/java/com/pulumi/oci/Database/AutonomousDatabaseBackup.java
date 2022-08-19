@@ -21,6 +21,35 @@ import javax.annotation.Nullable;
  * Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.AutonomousDatabaseBackup;
+ * import com.pulumi.oci.Database.AutonomousDatabaseBackupArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutonomousDatabaseBackup = new AutonomousDatabaseBackup(&#34;testAutonomousDatabaseBackup&#34;, AutonomousDatabaseBackupArgs.builder()        
+ *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+ *             .displayName(var_.autonomous_database_backup_display_name())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

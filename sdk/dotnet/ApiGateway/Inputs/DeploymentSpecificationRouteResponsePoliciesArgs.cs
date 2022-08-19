@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteResponsePoliciesArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteResponsePoliciesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A set of transformations to apply to HTTP headers that pass through the gateway.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteResponsePoliciesArgs()
         {
         }
+        public static new DeploymentSpecificationRouteResponsePoliciesArgs Empty => new DeploymentSpecificationRouteResponsePoliciesArgs();
     }
 }

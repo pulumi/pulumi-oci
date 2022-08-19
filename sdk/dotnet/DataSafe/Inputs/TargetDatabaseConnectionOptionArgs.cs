@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class TargetDatabaseConnectionOptionArgs : Pulumi.ResourceArgs
+    public sealed class TargetDatabaseConnectionOptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The connection type used to connect to the database. Allowed values:
@@ -35,5 +35,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public TargetDatabaseConnectionOptionArgs()
         {
         }
+        public static new TargetDatabaseConnectionOptionArgs Empty => new TargetDatabaseConnectionOptionArgs();
     }
 }

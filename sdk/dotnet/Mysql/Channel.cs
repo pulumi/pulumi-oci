@@ -23,7 +23,7 @@ namespace Pulumi.Oci.Mysql
     /// ```
     /// </summary>
     [OciResourceType("oci:Mysql/channel:Channel")]
-    public partial class Channel : Pulumi.CustomResource
+    public partial class Channel : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Mysql
         }
     }
 
-    public sealed class ChannelArgs : Pulumi.ResourceArgs
+    public sealed class ChannelArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -206,9 +206,10 @@ namespace Pulumi.Oci.Mysql
         public ChannelArgs()
         {
         }
+        public static new ChannelArgs Empty => new ChannelArgs();
     }
 
-    public sealed class ChannelState : Pulumi.ResourceArgs
+    public sealed class ChannelState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -297,5 +298,6 @@ namespace Pulumi.Oci.Mysql
         public ChannelState()
         {
         }
+        public static new ChannelState Empty => new ChannelState();
     }
 }

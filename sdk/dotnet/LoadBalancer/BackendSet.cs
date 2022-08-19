@@ -21,58 +21,56 @@ namespace Pulumi.Oci.LoadBalancer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBackendSet = new Oci.LoadBalancer.BackendSet("testBackendSet", new()
     ///     {
-    ///         var testBackendSet = new Oci.LoadBalancer.BackendSet("testBackendSet", new Oci.LoadBalancer.BackendSetArgs
+    ///         HealthChecker = new Oci.LoadBalancer.Inputs.BackendSetHealthCheckerArgs
     ///         {
-    ///             HealthChecker = new Oci.LoadBalancer.Inputs.BackendSetHealthCheckerArgs
-    ///             {
-    ///                 Protocol = @var.Backend_set_health_checker_protocol,
-    ///                 IntervalMs = @var.Backend_set_health_checker_interval_ms,
-    ///                 Port = @var.Backend_set_health_checker_port,
-    ///                 ResponseBodyRegex = @var.Backend_set_health_checker_response_body_regex,
-    ///                 Retries = @var.Backend_set_health_checker_retries,
-    ///                 ReturnCode = @var.Backend_set_health_checker_return_code,
-    ///                 TimeoutInMillis = @var.Backend_set_health_checker_timeout_in_millis,
-    ///                 UrlPath = @var.Backend_set_health_checker_url_path,
-    ///             },
-    ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///             Policy = @var.Backend_set_policy,
-    ///             LbCookieSessionPersistenceConfiguration = new Oci.LoadBalancer.Inputs.BackendSetLbCookieSessionPersistenceConfigurationArgs
-    ///             {
-    ///                 CookieName = @var.Backend_set_lb_cookie_session_persistence_configuration_cookie_name,
-    ///                 DisableFallback = @var.Backend_set_lb_cookie_session_persistence_configuration_disable_fallback,
-    ///                 Domain = @var.Backend_set_lb_cookie_session_persistence_configuration_domain,
-    ///                 IsHttpOnly = @var.Backend_set_lb_cookie_session_persistence_configuration_is_http_only,
-    ///                 IsSecure = @var.Backend_set_lb_cookie_session_persistence_configuration_is_secure,
-    ///                 MaxAgeInSeconds = @var.Backend_set_lb_cookie_session_persistence_configuration_max_age_in_seconds,
-    ///                 Path = @var.Backend_set_lb_cookie_session_persistence_configuration_path,
-    ///             },
-    ///             SessionPersistenceConfiguration = new Oci.LoadBalancer.Inputs.BackendSetSessionPersistenceConfigurationArgs
-    ///             {
-    ///                 CookieName = @var.Backend_set_session_persistence_configuration_cookie_name,
-    ///                 DisableFallback = @var.Backend_set_session_persistence_configuration_disable_fallback,
-    ///             },
-    ///             SslConfiguration = new Oci.LoadBalancer.Inputs.BackendSetSslConfigurationArgs
-    ///             {
-    ///                 CertificateIds = @var.Backend_set_ssl_configuration_certificate_ids,
-    ///                 CertificateName = oci_load_balancer_certificate.Test_certificate.Name,
-    ///                 CipherSuiteName = @var.Backend_set_ssl_configuration_cipher_suite_name,
-    ///                 Protocols = @var.Backend_set_ssl_configuration_protocols,
-    ///                 ServerOrderPreference = @var.Backend_set_ssl_configuration_server_order_preference,
-    ///                 TrustedCertificateAuthorityIds = @var.Backend_set_ssl_configuration_trusted_certificate_authority_ids,
-    ///                 VerifyDepth = @var.Backend_set_ssl_configuration_verify_depth,
-    ///                 VerifyPeerCertificate = @var.Backend_set_ssl_configuration_verify_peer_certificate,
-    ///             },
-    ///         });
-    ///     }
+    ///             Protocol = @var.Backend_set_health_checker_protocol,
+    ///             IntervalMs = @var.Backend_set_health_checker_interval_ms,
+    ///             Port = @var.Backend_set_health_checker_port,
+    ///             ResponseBodyRegex = @var.Backend_set_health_checker_response_body_regex,
+    ///             Retries = @var.Backend_set_health_checker_retries,
+    ///             ReturnCode = @var.Backend_set_health_checker_return_code,
+    ///             TimeoutInMillis = @var.Backend_set_health_checker_timeout_in_millis,
+    ///             UrlPath = @var.Backend_set_health_checker_url_path,
+    ///         },
+    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         Policy = @var.Backend_set_policy,
+    ///         LbCookieSessionPersistenceConfiguration = new Oci.LoadBalancer.Inputs.BackendSetLbCookieSessionPersistenceConfigurationArgs
+    ///         {
+    ///             CookieName = @var.Backend_set_lb_cookie_session_persistence_configuration_cookie_name,
+    ///             DisableFallback = @var.Backend_set_lb_cookie_session_persistence_configuration_disable_fallback,
+    ///             Domain = @var.Backend_set_lb_cookie_session_persistence_configuration_domain,
+    ///             IsHttpOnly = @var.Backend_set_lb_cookie_session_persistence_configuration_is_http_only,
+    ///             IsSecure = @var.Backend_set_lb_cookie_session_persistence_configuration_is_secure,
+    ///             MaxAgeInSeconds = @var.Backend_set_lb_cookie_session_persistence_configuration_max_age_in_seconds,
+    ///             Path = @var.Backend_set_lb_cookie_session_persistence_configuration_path,
+    ///         },
+    ///         SessionPersistenceConfiguration = new Oci.LoadBalancer.Inputs.BackendSetSessionPersistenceConfigurationArgs
+    ///         {
+    ///             CookieName = @var.Backend_set_session_persistence_configuration_cookie_name,
+    ///             DisableFallback = @var.Backend_set_session_persistence_configuration_disable_fallback,
+    ///         },
+    ///         SslConfiguration = new Oci.LoadBalancer.Inputs.BackendSetSslConfigurationArgs
+    ///         {
+    ///             CertificateIds = @var.Backend_set_ssl_configuration_certificate_ids,
+    ///             CertificateName = oci_load_balancer_certificate.Test_certificate.Name,
+    ///             CipherSuiteName = @var.Backend_set_ssl_configuration_cipher_suite_name,
+    ///             Protocols = @var.Backend_set_ssl_configuration_protocols,
+    ///             ServerOrderPreference = @var.Backend_set_ssl_configuration_server_order_preference,
+    ///             TrustedCertificateAuthorityIds = @var.Backend_set_ssl_configuration_trusted_certificate_authority_ids,
+    ///             VerifyDepth = @var.Backend_set_ssl_configuration_verify_depth,
+    ///             VerifyPeerCertificate = @var.Backend_set_ssl_configuration_verify_peer_certificate,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
     ///       (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
@@ -88,7 +86,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/backendSet:BackendSet")]
-    public partial class BackendSet : Pulumi.CustomResource
+    public partial class BackendSet : global::Pulumi.CustomResource
     {
         [Output("backends")]
         public Output<ImmutableArray<Outputs.BackendSetBackend>> Backends { get; private set; } = null!;
@@ -182,7 +180,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
     }
 
-    public sealed class BackendSetArgs : Pulumi.ResourceArgs
+    public sealed class BackendSetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The health check policy's configuration details.
@@ -229,9 +227,10 @@ namespace Pulumi.Oci.LoadBalancer
         public BackendSetArgs()
         {
         }
+        public static new BackendSetArgs Empty => new BackendSetArgs();
     }
 
-    public sealed class BackendSetState : Pulumi.ResourceArgs
+    public sealed class BackendSetState : global::Pulumi.ResourceArgs
     {
         [Input("backends")]
         private InputList<Inputs.BackendSetBackendGetArgs>? _backends;
@@ -289,5 +288,6 @@ namespace Pulumi.Oci.LoadBalancer
         public BackendSetState()
         {
         }
+        public static new BackendSetState Empty => new BackendSetState();
     }
 }

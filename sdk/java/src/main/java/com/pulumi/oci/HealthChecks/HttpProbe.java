@@ -26,6 +26,42 @@ import javax.annotation.Nullable;
  * *Note:* On-demand probe configurations are not saved.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.HealthChecks.HttpProbe;
+ * import com.pulumi.oci.HealthChecks.HttpProbeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testHttpProbe = new HttpProbe(&#34;testHttpProbe&#34;, HttpProbeArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .protocol(var_.http_probe_protocol())
+ *             .targets(var_.http_probe_targets())
+ *             .headers(var_.http_probe_headers())
+ *             .method(var_.http_probe_method())
+ *             .path(var_.http_probe_path())
+ *             .port(var_.http_probe_port())
+ *             .timeoutInSeconds(var_.http_probe_timeout_in_seconds())
+ *             .vantagePointNames(var_.http_probe_vantage_point_names())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

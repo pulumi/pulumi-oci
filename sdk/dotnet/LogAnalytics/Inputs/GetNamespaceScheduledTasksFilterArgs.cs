@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics.Inputs
 {
 
-    public sealed class GetNamespaceScheduledTasksFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetNamespaceScheduledTasksFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public GetNamespaceScheduledTasksFilterInputArgs()
         {
         }
+        public static new GetNamespaceScheduledTasksFilterInputArgs Empty => new GetNamespaceScheduledTasksFilterInputArgs();
     }
 }

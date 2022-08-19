@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class NetworkAddressListVcnAddressArgs : Pulumi.ResourceArgs
+    public sealed class NetworkAddressListVcnAddressArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A private IP address or CIDR IP address range.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public NetworkAddressListVcnAddressArgs()
         {
         }
+        public static new NetworkAddressListVcnAddressArgs Empty => new NetworkAddressListVcnAddressArgs();
     }
 }

@@ -22,29 +22,27 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabases = Oci.Database.GetAutonomousDatabases.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabases = Output.Create(Oci.Database.GetAutonomousDatabases.InvokeAsync(new Oci.Database.GetAutonomousDatabasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
-        ///             DbVersion = @var.Autonomous_database_db_version,
-        ///             DbWorkload = @var.Autonomous_database_db_workload,
-        ///             DisplayName = @var.Autonomous_database_display_name,
-        ///             InfrastructureType = @var.Autonomous_database_infrastructure_type,
-        ///             IsDataGuardEnabled = @var.Autonomous_database_is_data_guard_enabled,
-        ///             IsFreeTier = @var.Autonomous_database_is_free_tier,
-        ///             IsRefreshableClone = @var.Autonomous_database_is_refreshable_clone,
-        ///             State = @var.Autonomous_database_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
+        ///         DbVersion = @var.Autonomous_database_db_version,
+        ///         DbWorkload = @var.Autonomous_database_db_workload,
+        ///         DisplayName = @var.Autonomous_database_display_name,
+        ///         InfrastructureType = @var.Autonomous_database_infrastructure_type,
+        ///         IsDataGuardEnabled = @var.Autonomous_database_is_data_guard_enabled,
+        ///         IsFreeTier = @var.Autonomous_database_is_free_tier,
+        ///         IsRefreshableClone = @var.Autonomous_database_is_refreshable_clone,
+        ///         State = @var.Autonomous_database_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,29 +61,27 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabases = Oci.Database.GetAutonomousDatabases.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabases = Output.Create(Oci.Database.GetAutonomousDatabases.InvokeAsync(new Oci.Database.GetAutonomousDatabasesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
-        ///             DbVersion = @var.Autonomous_database_db_version,
-        ///             DbWorkload = @var.Autonomous_database_db_workload,
-        ///             DisplayName = @var.Autonomous_database_display_name,
-        ///             InfrastructureType = @var.Autonomous_database_infrastructure_type,
-        ///             IsDataGuardEnabled = @var.Autonomous_database_is_data_guard_enabled,
-        ///             IsFreeTier = @var.Autonomous_database_is_free_tier,
-        ///             IsRefreshableClone = @var.Autonomous_database_is_refreshable_clone,
-        ///             State = @var.Autonomous_database_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
+        ///         DbVersion = @var.Autonomous_database_db_version,
+        ///         DbWorkload = @var.Autonomous_database_db_workload,
+        ///         DisplayName = @var.Autonomous_database_display_name,
+        ///         InfrastructureType = @var.Autonomous_database_infrastructure_type,
+        ///         IsDataGuardEnabled = @var.Autonomous_database_is_data_guard_enabled,
+        ///         IsFreeTier = @var.Autonomous_database_is_free_tier,
+        ///         IsRefreshableClone = @var.Autonomous_database_is_refreshable_clone,
+        ///         State = @var.Autonomous_database_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousDatabasesArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDatabasesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -168,9 +164,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDatabasesArgs()
         {
         }
+        public static new GetAutonomousDatabasesArgs Empty => new GetAutonomousDatabasesArgs();
     }
 
-    public sealed class GetAutonomousDatabasesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDatabasesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -243,6 +240,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDatabasesInvokeArgs()
         {
         }
+        public static new GetAutonomousDatabasesInvokeArgs Empty => new GetAutonomousDatabasesInvokeArgs();
     }
 
 

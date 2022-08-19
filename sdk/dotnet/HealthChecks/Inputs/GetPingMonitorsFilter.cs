@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.HealthChecks.Inputs
 {
 
-    public sealed class GetPingMonitorsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetPingMonitorsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.HealthChecks.Inputs
         public GetPingMonitorsFilterArgs()
         {
         }
+        public static new GetPingMonitorsFilterArgs Empty => new GetPingMonitorsFilterArgs();
     }
 }

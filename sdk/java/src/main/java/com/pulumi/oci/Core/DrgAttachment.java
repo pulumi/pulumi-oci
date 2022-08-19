@@ -34,6 +34,45 @@ import javax.annotation.Nullable;
  * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.DrgAttachment;
+ * import com.pulumi.oci.Core.DrgAttachmentArgs;
+ * import com.pulumi.oci.Core.inputs.DrgAttachmentNetworkDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDrgAttachment = new DrgAttachment(&#34;testDrgAttachment&#34;, DrgAttachmentArgs.builder()        
+ *             .drgId(oci_core_drg.test_drg().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.drg_attachment_display_name())
+ *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .networkDetails(DrgAttachmentNetworkDetailsArgs.builder()
+ *                 .id(oci_core_vcn.test_vcn().id())
+ *                 .type(var_.drg_attachment_network_details_type())
+ *                 .routeTableId(oci_core_route_table.test_route_table().id())
+ *                 .vcnRouteType(var_.drg_attachment_network_details_vcn_route_type())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

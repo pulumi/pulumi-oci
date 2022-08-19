@@ -23,20 +23,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSmtpCredentials = Oci.Identity.GetSmtpCredentials.Invoke(new()
         ///     {
-        ///         var testSmtpCredentials = Output.Create(Oci.Identity.GetSmtpCredentials.InvokeAsync(new Oci.Identity.GetSmtpCredentialsArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSmtpCredentials = Oci.Identity.GetSmtpCredentials.Invoke(new()
         ///     {
-        ///         var testSmtpCredentials = Output.Create(Oci.Identity.GetSmtpCredentials.InvokeAsync(new Oci.Identity.GetSmtpCredentialsArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetSmtpCredentialsArgs : Pulumi.InvokeArgs
+    public sealed class GetSmtpCredentialsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetSmtpCredentialsFilterArgs>? _filters;
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.Identity
         public GetSmtpCredentialsArgs()
         {
         }
+        public static new GetSmtpCredentialsArgs Empty => new GetSmtpCredentialsArgs();
     }
 
-    public sealed class GetSmtpCredentialsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSmtpCredentialsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetSmtpCredentialsFilterInputArgs>? _filters;
@@ -119,6 +116,7 @@ namespace Pulumi.Oci.Identity
         public GetSmtpCredentialsInvokeArgs()
         {
         }
+        public static new GetSmtpCredentialsInvokeArgs Empty => new GetSmtpCredentialsInvokeArgs();
     }
 
 

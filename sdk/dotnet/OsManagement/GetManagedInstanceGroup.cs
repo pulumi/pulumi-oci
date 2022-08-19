@@ -22,20 +22,18 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedInstanceGroup = Oci.OsManagement.GetManagedInstanceGroup.Invoke(new()
         ///     {
-        ///         var testManagedInstanceGroup = Output.Create(Oci.OsManagement.GetManagedInstanceGroup.InvokeAsync(new Oci.OsManagement.GetManagedInstanceGroupArgs
-        ///         {
-        ///             ManagedInstanceGroupId = oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id,
-        ///         }));
-        ///     }
+        ///         ManagedInstanceGroupId = oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedInstanceGroup = Oci.OsManagement.GetManagedInstanceGroup.Invoke(new()
         ///     {
-        ///         var testManagedInstanceGroup = Output.Create(Oci.OsManagement.GetManagedInstanceGroup.InvokeAsync(new Oci.OsManagement.GetManagedInstanceGroupArgs
-        ///         {
-        ///             ManagedInstanceGroupId = oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id,
-        ///         }));
-        ///     }
+        ///         ManagedInstanceGroupId = oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.OsManagement
     }
 
 
-    public sealed class GetManagedInstanceGroupArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedInstanceGroupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID for the managed instance group
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.OsManagement
         public GetManagedInstanceGroupArgs()
         {
         }
+        public static new GetManagedInstanceGroupArgs Empty => new GetManagedInstanceGroupArgs();
     }
 
-    public sealed class GetManagedInstanceGroupInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedInstanceGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID for the managed instance group
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.OsManagement
         public GetManagedInstanceGroupInvokeArgs()
         {
         }
+        public static new GetManagedInstanceGroupInvokeArgs Empty => new GetManagedInstanceGroupInvokeArgs();
     }
 
 

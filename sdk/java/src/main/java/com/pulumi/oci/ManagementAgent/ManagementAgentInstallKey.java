@@ -21,6 +21,38 @@ import javax.annotation.Nullable;
  * User creates a new install key as part of this API.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ManagementAgent.ManagementAgentInstallKey;
+ * import com.pulumi.oci.ManagementAgent.ManagementAgentInstallKeyArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testManagementAgentInstallKey = new ManagementAgentInstallKey(&#34;testManagementAgentInstallKey&#34;, ManagementAgentInstallKeyArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.management_agent_install_key_display_name())
+ *             .allowedKeyInstallCount(var_.management_agent_install_key_allowed_key_install_count())
+ *             .isUnlimited(var_.management_agent_install_key_is_unlimited())
+ *             .timeExpires(var_.management_agent_install_key_time_expires())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

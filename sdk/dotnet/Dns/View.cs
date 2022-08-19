@@ -17,24 +17,22 @@ namespace Pulumi.Oci.Dns
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testView = new Oci.Dns.View("testView", new()
     ///     {
-    ///         var testView = new Oci.Dns.View("testView", new Oci.Dns.ViewArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Scope = "PRIVATE",
-    ///             DefinedTags = @var.View_defined_tags,
-    ///             DisplayName = @var.View_display_name,
-    ///             FreeformTags = @var.View_freeform_tags,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Scope = "PRIVATE",
+    ///         DefinedTags = @var.View_defined_tags,
+    ///         DisplayName = @var.View_display_name,
+    ///         FreeformTags = @var.View_freeform_tags,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.Dns
     /// ```
     /// </summary>
     [OciResourceType("oci:Dns/view:View")]
-    public partial class View : Pulumi.CustomResource
+    public partial class View : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the owning compartment.
@@ -158,7 +156,7 @@ namespace Pulumi.Oci.Dns
         }
     }
 
-    public sealed class ViewArgs : Pulumi.ResourceArgs
+    public sealed class ViewArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the owning compartment.
@@ -205,9 +203,10 @@ namespace Pulumi.Oci.Dns
         public ViewArgs()
         {
         }
+        public static new ViewArgs Empty => new ViewArgs();
     }
 
-    public sealed class ViewState : Pulumi.ResourceArgs
+    public sealed class ViewState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the owning compartment.
@@ -284,5 +283,6 @@ namespace Pulumi.Oci.Dns
         public ViewState()
         {
         }
+        public static new ViewState Empty => new ViewState();
     }
 }

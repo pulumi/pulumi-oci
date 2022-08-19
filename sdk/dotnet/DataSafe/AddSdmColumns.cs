@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     [OciResourceType("oci:DataSafe/addSdmColumns:AddSdmColumns")]
-    public partial class AddSdmColumns : Pulumi.CustomResource
+    public partial class AddSdmColumns : global::Pulumi.CustomResource
     {
         [Output("maskingPolicyId")]
         public Output<string> MaskingPolicyId { get; private set; } = null!;
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class AddSdmColumnsArgs : Pulumi.ResourceArgs
+    public sealed class AddSdmColumnsArgs : global::Pulumi.ResourceArgs
     {
         [Input("maskingPolicyId", required: true)]
         public Input<string> MaskingPolicyId { get; set; } = null!;
@@ -67,9 +67,10 @@ namespace Pulumi.Oci.DataSafe
         public AddSdmColumnsArgs()
         {
         }
+        public static new AddSdmColumnsArgs Empty => new AddSdmColumnsArgs();
     }
 
-    public sealed class AddSdmColumnsState : Pulumi.ResourceArgs
+    public sealed class AddSdmColumnsState : global::Pulumi.ResourceArgs
     {
         [Input("maskingPolicyId")]
         public Input<string>? MaskingPolicyId { get; set; }
@@ -77,5 +78,6 @@ namespace Pulumi.Oci.DataSafe
         public AddSdmColumnsState()
         {
         }
+        public static new AddSdmColumnsState Empty => new AddSdmColumnsState();
     }
 }

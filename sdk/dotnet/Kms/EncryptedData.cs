@@ -18,26 +18,24 @@ namespace Pulumi.Oci.Kms
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testEncryptedData = new Oci.Kms.EncryptedData("testEncryptedData", new()
     ///     {
-    ///         var testEncryptedData = new Oci.Kms.EncryptedData("testEncryptedData", new Oci.Kms.EncryptedDataArgs
-    ///         {
-    ///             CryptoEndpoint = @var.Encrypted_data_crypto_endpoint,
-    ///             KeyId = oci_kms_key.Test_key.Id,
-    ///             Plaintext = @var.Encrypted_data_plaintext,
-    ///             AssociatedData = @var.Encrypted_data_associated_data,
-    ///             EncryptionAlgorithm = @var.Encrypted_data_encryption_algorithm,
-    ///             KeyVersionId = oci_kms_key_version.Test_key_version.Id,
-    ///             LoggingContext = @var.Encrypted_data_logging_context,
-    ///         });
-    ///     }
+    ///         CryptoEndpoint = @var.Encrypted_data_crypto_endpoint,
+    ///         KeyId = oci_kms_key.Test_key.Id,
+    ///         Plaintext = @var.Encrypted_data_plaintext,
+    ///         AssociatedData = @var.Encrypted_data_associated_data,
+    ///         EncryptionAlgorithm = @var.Encrypted_data_encryption_algorithm,
+    ///         KeyVersionId = oci_kms_key_version.Test_key_version.Id,
+    ///         LoggingContext = @var.Encrypted_data_logging_context,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -45,7 +43,7 @@ namespace Pulumi.Oci.Kms
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Kms/encryptedData:EncryptedData")]
-    public partial class EncryptedData : Pulumi.CustomResource
+    public partial class EncryptedData : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
@@ -139,7 +137,7 @@ namespace Pulumi.Oci.Kms
         }
     }
 
-    public sealed class EncryptedDataArgs : Pulumi.ResourceArgs
+    public sealed class EncryptedDataArgs : global::Pulumi.ResourceArgs
     {
         [Input("associatedData")]
         private InputMap<object>? _associatedData;
@@ -198,9 +196,10 @@ namespace Pulumi.Oci.Kms
         public EncryptedDataArgs()
         {
         }
+        public static new EncryptedDataArgs Empty => new EncryptedDataArgs();
     }
 
-    public sealed class EncryptedDataState : Pulumi.ResourceArgs
+    public sealed class EncryptedDataState : global::Pulumi.ResourceArgs
     {
         [Input("associatedData")]
         private InputMap<object>? _associatedData;
@@ -265,5 +264,6 @@ namespace Pulumi.Oci.Kms
         public EncryptedDataState()
         {
         }
+        public static new EncryptedDataState Empty => new EncryptedDataState();
     }
 }

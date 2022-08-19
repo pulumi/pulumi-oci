@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogSavedSearch = Oci.Logging.GetLogSavedSearch.Invoke(new()
         ///     {
-        ///         var testLogSavedSearch = Output.Create(Oci.Logging.GetLogSavedSearch.InvokeAsync(new Oci.Logging.GetLogSavedSearchArgs
-        ///         {
-        ///             LogSavedSearchId = oci_logging_log_saved_search.Test_log_saved_search.Id,
-        ///         }));
-        ///     }
+        ///         LogSavedSearchId = oci_logging_log_saved_search.Test_log_saved_search.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogSavedSearch = Oci.Logging.GetLogSavedSearch.Invoke(new()
         ///     {
-        ///         var testLogSavedSearch = Output.Create(Oci.Logging.GetLogSavedSearch.InvokeAsync(new Oci.Logging.GetLogSavedSearchArgs
-        ///         {
-        ///             LogSavedSearchId = oci_logging_log_saved_search.Test_log_saved_search.Id,
-        ///         }));
-        ///     }
+        ///         LogSavedSearchId = oci_logging_log_saved_search.Test_log_saved_search.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Logging
     }
 
 
-    public sealed class GetLogSavedSearchArgs : Pulumi.InvokeArgs
+    public sealed class GetLogSavedSearchArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of the logSavedSearch
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Logging
         public GetLogSavedSearchArgs()
         {
         }
+        public static new GetLogSavedSearchArgs Empty => new GetLogSavedSearchArgs();
     }
 
-    public sealed class GetLogSavedSearchInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogSavedSearchInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of the logSavedSearch
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Logging
         public GetLogSavedSearchInvokeArgs()
         {
         }
+        public static new GetLogSavedSearchInvokeArgs Empty => new GetLogSavedSearchInvokeArgs();
     }
 
 

@@ -21,7 +21,7 @@ namespace Pulumi.Oci.Database
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/externalNonContainerDatabaseManagement:ExternalNonContainerDatabaseManagement")]
-    public partial class ExternalNonContainerDatabaseManagement : Pulumi.CustomResource
+    public partial class ExternalNonContainerDatabaseManagement : global::Pulumi.CustomResource
     {
         [Output("enableManagement")]
         public Output<bool> EnableManagement { get; private set; } = null!;
@@ -88,7 +88,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class ExternalNonContainerDatabaseManagementArgs : Pulumi.ResourceArgs
+    public sealed class ExternalNonContainerDatabaseManagementArgs : global::Pulumi.ResourceArgs
     {
         [Input("enableManagement", required: true)]
         public Input<bool> EnableManagement { get; set; } = null!;
@@ -114,9 +114,10 @@ namespace Pulumi.Oci.Database
         public ExternalNonContainerDatabaseManagementArgs()
         {
         }
+        public static new ExternalNonContainerDatabaseManagementArgs Empty => new ExternalNonContainerDatabaseManagementArgs();
     }
 
-    public sealed class ExternalNonContainerDatabaseManagementState : Pulumi.ResourceArgs
+    public sealed class ExternalNonContainerDatabaseManagementState : global::Pulumi.ResourceArgs
     {
         [Input("enableManagement")]
         public Input<bool>? EnableManagement { get; set; }
@@ -142,5 +143,6 @@ namespace Pulumi.Oci.Database
         public ExternalNonContainerDatabaseManagementState()
         {
         }
+        public static new ExternalNonContainerDatabaseManagementState Empty => new ExternalNonContainerDatabaseManagementState();
     }
 }

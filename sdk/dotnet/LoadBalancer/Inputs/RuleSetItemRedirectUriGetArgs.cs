@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class RuleSetItemRedirectUriGetArgs : Pulumi.ResourceArgs
+    public sealed class RuleSetItemRedirectUriGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The valid domain name (hostname) or IP address to use in the redirect URI.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public RuleSetItemRedirectUriGetArgs()
         {
         }
+        public static new RuleSetItemRedirectUriGetArgs Empty => new RuleSetItemRedirectUriGetArgs();
     }
 }

@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbHomePatches = Oci.Database.GetDbHomePatches.Invoke(new()
         ///     {
-        ///         var testDbHomePatches = Output.Create(Oci.Database.GetDbHomePatches.InvokeAsync(new Oci.Database.GetDbHomePatchesArgs
-        ///         {
-        ///             DbHomeId = oci_database_db_home.Test_db_home.Id,
-        ///         }));
-        ///     }
+        ///         DbHomeId = oci_database_db_home.Test_db_home.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbHomePatches = Oci.Database.GetDbHomePatches.Invoke(new()
         ///     {
-        ///         var testDbHomePatches = Output.Create(Oci.Database.GetDbHomePatches.InvokeAsync(new Oci.Database.GetDbHomePatchesArgs
-        ///         {
-        ///             DbHomeId = oci_database_db_home.Test_db_home.Id,
-        ///         }));
-        ///     }
+        ///         DbHomeId = oci_database_db_home.Test_db_home.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbHomePatchesArgs : Pulumi.InvokeArgs
+    public sealed class GetDbHomePatchesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Database
         public GetDbHomePatchesArgs()
         {
         }
+        public static new GetDbHomePatchesArgs Empty => new GetDbHomePatchesArgs();
     }
 
-    public sealed class GetDbHomePatchesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbHomePatchesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Database
         public GetDbHomePatchesInvokeArgs()
         {
         }
+        public static new GetDbHomePatchesInvokeArgs Empty => new GetDbHomePatchesInvokeArgs();
     }
 
 

@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBlockVolumeReplicas = Oci.Core.GetBlockVolumeReplicas.Invoke(new()
         ///     {
-        ///         var testBlockVolumeReplicas = Output.Create(Oci.Core.GetBlockVolumeReplicas.InvokeAsync(new Oci.Core.GetBlockVolumeReplicasArgs
-        ///         {
-        ///             AvailabilityDomain = @var.Block_volume_replica_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Block_volume_replica_display_name,
-        ///             State = @var.Block_volume_replica_state,
-        ///             VolumeGroupReplicaId = oci_core_volume_group_replica.Test_volume_group_replica.Id,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.Block_volume_replica_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Block_volume_replica_display_name,
+        ///         State = @var.Block_volume_replica_state,
+        ///         VolumeGroupReplicaId = oci_core_volume_group_replica.Test_volume_group_replica.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBlockVolumeReplicas = Oci.Core.GetBlockVolumeReplicas.Invoke(new()
         ///     {
-        ///         var testBlockVolumeReplicas = Output.Create(Oci.Core.GetBlockVolumeReplicas.InvokeAsync(new Oci.Core.GetBlockVolumeReplicasArgs
-        ///         {
-        ///             AvailabilityDomain = @var.Block_volume_replica_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Block_volume_replica_display_name,
-        ///             State = @var.Block_volume_replica_state,
-        ///             VolumeGroupReplicaId = oci_core_volume_group_replica.Test_volume_group_replica.Id,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.Block_volume_replica_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Block_volume_replica_display_name,
+        ///         State = @var.Block_volume_replica_state,
+        ///         VolumeGroupReplicaId = oci_core_volume_group_replica.Test_volume_group_replica.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetBlockVolumeReplicasArgs : Pulumi.InvokeArgs
+    public sealed class GetBlockVolumeReplicasArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.Core
         public GetBlockVolumeReplicasArgs()
         {
         }
+        public static new GetBlockVolumeReplicasArgs Empty => new GetBlockVolumeReplicasArgs();
     }
 
-    public sealed class GetBlockVolumeReplicasInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBlockVolumeReplicasInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.Core
         public GetBlockVolumeReplicasInvokeArgs()
         {
         }
+        public static new GetBlockVolumeReplicasInvokeArgs Empty => new GetBlockVolumeReplicasInvokeArgs();
     }
 
 

@@ -21,21 +21,19 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testInstancePoolInstance = new Oci.Core.InstancePoolInstance("testInstancePoolInstance", new()
     ///     {
-    ///         var testInstancePoolInstance = new Oci.Core.InstancePoolInstance("testInstancePoolInstance", new Oci.Core.InstancePoolInstanceArgs
-    ///         {
-    ///             InstanceId = oci_core_instance.Test_instance.Id,
-    ///             InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
-    ///         });
-    ///     }
+    ///         InstanceId = oci_core_instance.Test_instance.Id,
+    ///         InstancePoolId = oci_core_instance_pool.Test_instance_pool.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -47,7 +45,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/instancePoolInstance:InstancePoolInstance")]
-    public partial class InstancePoolInstance : Pulumi.CustomResource
+    public partial class InstancePoolInstance : global::Pulumi.CustomResource
     {
         [Output("autoTerminateInstanceOnDelete")]
         public Output<bool?> AutoTerminateInstanceOnDelete { get; private set; } = null!;
@@ -171,7 +169,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class InstancePoolInstanceArgs : Pulumi.ResourceArgs
+    public sealed class InstancePoolInstanceArgs : global::Pulumi.ResourceArgs
     {
         [Input("autoTerminateInstanceOnDelete")]
         public Input<bool>? AutoTerminateInstanceOnDelete { get; set; }
@@ -194,9 +192,10 @@ namespace Pulumi.Oci.Core
         public InstancePoolInstanceArgs()
         {
         }
+        public static new InstancePoolInstanceArgs Empty => new InstancePoolInstanceArgs();
     }
 
-    public sealed class InstancePoolInstanceState : Pulumi.ResourceArgs
+    public sealed class InstancePoolInstanceState : global::Pulumi.ResourceArgs
     {
         [Input("autoTerminateInstanceOnDelete")]
         public Input<bool>? AutoTerminateInstanceOnDelete { get; set; }
@@ -285,5 +284,6 @@ namespace Pulumi.Oci.Core
         public InstancePoolInstanceState()
         {
         }
+        public static new InstancePoolInstanceState Empty => new InstancePoolInstanceState();
     }
 }

@@ -24,50 +24,48 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDataGuardAssociation = new Oci.Database.DataGuardAssociation("testDataGuardAssociation", new()
     ///     {
-    ///         var testDataGuardAssociation = new Oci.Database.DataGuardAssociation("testDataGuardAssociation", new Oci.Database.DataGuardAssociationArgs
-    ///         {
-    ///             CreationType = @var.Data_guard_association_creation_type,
-    ///             DatabaseAdminPassword = @var.Data_guard_association_database_admin_password,
-    ///             DatabaseId = oci_database_database.Test_database.Id,
-    ///             DeleteStandbyDbHomeOnDelete = @var.Data_guard_association_delete_standby_db_home_on_delete,
-    ///             ProtectionMode = @var.Data_guard_association_protection_mode,
-    ///             TransportType = @var.Data_guard_association_transport_type,
-    ///             AvailabilityDomain = @var.Data_guard_association_availability_domain,
-    ///             BackupNetworkNsgIds = @var.Data_guard_association_backup_network_nsg_ids,
-    ///             CpuCoreCount = @var.Data_guard_association_cpu_core_count,
-    ///             DatabaseDefinedTags = @var.Data_guard_association_database_defined_tags,
-    ///             DatabaseFreeformTags = @var.Data_guard_association_database_freeform_tags,
-    ///             DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
-    ///             DbSystemDefinedTags = @var.Data_guard_association_db_system_defined_tags,
-    ///             DbSystemFreeformTags = @var.Data_guard_association_db_system_freeform_tags,
-    ///             DisplayName = @var.Data_guard_association_display_name,
-    ///             FaultDomains = @var.Data_guard_association_fault_domains,
-    ///             Hostname = @var.Data_guard_association_hostname,
-    ///             IsActiveDataGuardEnabled = @var.Data_guard_association_is_active_data_guard_enabled,
-    ///             LicenseModel = @var.Data_guard_association_license_model,
-    ///             NodeCount = @var.Data_guard_association_node_count,
-    ///             NsgIds = @var.Data_guard_association_nsg_ids,
-    ///             PeerDbHomeId = oci_database_db_home.Test_db_home.Id,
-    ///             PeerDbSystemId = oci_database_db_system.Test_db_system.Id,
-    ///             PeerDbUniqueName = @var.Data_guard_association_peer_db_unique_name,
-    ///             PeerSidPrefix = @var.Data_guard_association_peer_sid_prefix,
-    ///             PeerVmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
-    ///             PrivateIp = @var.Data_guard_association_private_ip,
-    ///             Shape = @var.Data_guard_association_shape,
-    ///             StorageVolumePerformanceMode = @var.Data_guard_association_storage_volume_performance_mode,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             TimeZone = @var.Data_guard_association_time_zone,
-    ///         });
-    ///     }
+    ///         CreationType = @var.Data_guard_association_creation_type,
+    ///         DatabaseAdminPassword = @var.Data_guard_association_database_admin_password,
+    ///         DatabaseId = oci_database_database.Test_database.Id,
+    ///         DeleteStandbyDbHomeOnDelete = @var.Data_guard_association_delete_standby_db_home_on_delete,
+    ///         ProtectionMode = @var.Data_guard_association_protection_mode,
+    ///         TransportType = @var.Data_guard_association_transport_type,
+    ///         AvailabilityDomain = @var.Data_guard_association_availability_domain,
+    ///         BackupNetworkNsgIds = @var.Data_guard_association_backup_network_nsg_ids,
+    ///         CpuCoreCount = @var.Data_guard_association_cpu_core_count,
+    ///         DatabaseDefinedTags = @var.Data_guard_association_database_defined_tags,
+    ///         DatabaseFreeformTags = @var.Data_guard_association_database_freeform_tags,
+    ///         DatabaseSoftwareImageId = oci_database_database_software_image.Test_database_software_image.Id,
+    ///         DbSystemDefinedTags = @var.Data_guard_association_db_system_defined_tags,
+    ///         DbSystemFreeformTags = @var.Data_guard_association_db_system_freeform_tags,
+    ///         DisplayName = @var.Data_guard_association_display_name,
+    ///         FaultDomains = @var.Data_guard_association_fault_domains,
+    ///         Hostname = @var.Data_guard_association_hostname,
+    ///         IsActiveDataGuardEnabled = @var.Data_guard_association_is_active_data_guard_enabled,
+    ///         LicenseModel = @var.Data_guard_association_license_model,
+    ///         NodeCount = @var.Data_guard_association_node_count,
+    ///         NsgIds = @var.Data_guard_association_nsg_ids,
+    ///         PeerDbHomeId = oci_database_db_home.Test_db_home.Id,
+    ///         PeerDbSystemId = oci_database_db_system.Test_db_system.Id,
+    ///         PeerDbUniqueName = @var.Data_guard_association_peer_db_unique_name,
+    ///         PeerSidPrefix = @var.Data_guard_association_peer_sid_prefix,
+    ///         PeerVmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+    ///         PrivateIp = @var.Data_guard_association_private_ip,
+    ///         Shape = @var.Data_guard_association_shape,
+    ///         StorageVolumePerformanceMode = @var.Data_guard_association_storage_volume_performance_mode,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         TimeZone = @var.Data_guard_association_time_zone,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -75,7 +73,7 @@ namespace Pulumi.Oci.Database
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/dataGuardAssociation:DataGuardAssociation")]
-    public partial class DataGuardAssociation : Pulumi.CustomResource
+    public partial class DataGuardAssociation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
@@ -366,7 +364,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class DataGuardAssociationArgs : Pulumi.ResourceArgs
+    public sealed class DataGuardAssociationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
@@ -604,9 +602,10 @@ namespace Pulumi.Oci.Database
         public DataGuardAssociationArgs()
         {
         }
+        public static new DataGuardAssociationArgs Empty => new DataGuardAssociationArgs();
     }
 
-    public sealed class DataGuardAssociationState : Pulumi.ResourceArgs
+    public sealed class DataGuardAssociationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
@@ -898,5 +897,6 @@ namespace Pulumi.Oci.Database
         public DataGuardAssociationState()
         {
         }
+        public static new DataGuardAssociationState Empty => new DataGuardAssociationState();
     }
 }

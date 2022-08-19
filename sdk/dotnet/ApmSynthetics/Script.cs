@@ -17,41 +17,39 @@ namespace Pulumi.Oci.ApmSynthetics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testScript = new Oci.ApmSynthetics.Script("testScript", new()
     ///     {
-    ///         var testScript = new Oci.ApmSynthetics.Script("testScript", new Oci.ApmSynthetics.ScriptArgs
+    ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+    ///         Content = @var.Script_content,
+    ///         ContentType = @var.Script_content_type,
+    ///         DisplayName = @var.Script_display_name,
+    ///         ContentFileName = @var.Script_content_file_name,
+    ///         DefinedTags = 
     ///         {
-    ///             ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-    ///             Content = @var.Script_content,
-    ///             ContentType = @var.Script_content_type,
-    ///             DisplayName = @var.Script_display_name,
-    ///             ContentFileName = @var.Script_content_file_name,
-    ///             DefinedTags = 
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         Parameters = new[]
+    ///         {
+    ///             new Oci.ApmSynthetics.Inputs.ScriptParameterArgs
     ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
+    ///                 ParamName = @var.Script_parameters_param_name,
+    ///                 IsSecret = @var.Script_parameters_is_secret,
+    ///                 ParamValue = @var.Script_parameters_param_value,
     ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             Parameters = 
-    ///             {
-    ///                 new Oci.ApmSynthetics.Inputs.ScriptParameterArgs
-    ///                 {
-    ///                     ParamName = @var.Script_parameters_param_name,
-    ///                     IsSecret = @var.Script_parameters_is_secret,
-    ///                     ParamValue = @var.Script_parameters_param_value,
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -63,7 +61,7 @@ namespace Pulumi.Oci.ApmSynthetics
     /// ```
     /// </summary>
     [OciResourceType("oci:ApmSynthetics/script:Script")]
-    public partial class Script : Pulumi.CustomResource
+    public partial class Script : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The APM domain ID the request is intended for.
@@ -187,7 +185,7 @@ namespace Pulumi.Oci.ApmSynthetics
         }
     }
 
-    public sealed class ScriptArgs : Pulumi.ResourceArgs
+    public sealed class ScriptArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The APM domain ID the request is intended for.
@@ -258,9 +256,10 @@ namespace Pulumi.Oci.ApmSynthetics
         public ScriptArgs()
         {
         }
+        public static new ScriptArgs Empty => new ScriptArgs();
     }
 
-    public sealed class ScriptState : Pulumi.ResourceArgs
+    public sealed class ScriptState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The APM domain ID the request is intended for.
@@ -367,5 +366,6 @@ namespace Pulumi.Oci.ApmSynthetics
         public ScriptState()
         {
         }
+        public static new ScriptState Empty => new ScriptState();
     }
 }

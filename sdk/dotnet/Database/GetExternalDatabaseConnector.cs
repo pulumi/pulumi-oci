@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExternalDatabaseConnector = Oci.Database.GetExternalDatabaseConnector.Invoke(new()
         ///     {
-        ///         var testExternalDatabaseConnector = Output.Create(Oci.Database.GetExternalDatabaseConnector.InvokeAsync(new Oci.Database.GetExternalDatabaseConnectorArgs
-        ///         {
-        ///             ExternalDatabaseConnectorId = oci_database_external_database_connector.Test_external_database_connector.Id,
-        ///         }));
-        ///     }
+        ///         ExternalDatabaseConnectorId = oci_database_external_database_connector.Test_external_database_connector.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExternalDatabaseConnector = Oci.Database.GetExternalDatabaseConnector.Invoke(new()
         ///     {
-        ///         var testExternalDatabaseConnector = Output.Create(Oci.Database.GetExternalDatabaseConnector.InvokeAsync(new Oci.Database.GetExternalDatabaseConnectorArgs
-        ///         {
-        ///             ExternalDatabaseConnectorId = oci_database_external_database_connector.Test_external_database_connector.Id,
-        ///         }));
-        ///     }
+        ///         ExternalDatabaseConnectorId = oci_database_external_database_connector.Test_external_database_connector.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetExternalDatabaseConnectorArgs : Pulumi.InvokeArgs
+    public sealed class GetExternalDatabaseConnectorArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector resource (`ExternalDatabaseConnectorId`).
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Database
         public GetExternalDatabaseConnectorArgs()
         {
         }
+        public static new GetExternalDatabaseConnectorArgs Empty => new GetExternalDatabaseConnectorArgs();
     }
 
-    public sealed class GetExternalDatabaseConnectorInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetExternalDatabaseConnectorInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector resource (`ExternalDatabaseConnectorId`).
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Database
         public GetExternalDatabaseConnectorInvokeArgs()
         {
         }
+        public static new GetExternalDatabaseConnectorInvokeArgs Empty => new GetExternalDatabaseConnectorInvokeArgs();
     }
 
 

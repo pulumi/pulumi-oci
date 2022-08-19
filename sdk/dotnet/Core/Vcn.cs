@@ -56,43 +56,41 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVcn = new Oci.Core.Vcn("testVcn", new()
     ///     {
-    ///         var testVcn = new Oci.Core.Vcn("testVcn", new Oci.Core.VcnArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Byoipv6cidrDetails = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Byoipv6cidrDetails = 
+    ///             new Oci.Core.Inputs.VcnByoipv6cidrDetailArgs
     ///             {
-    ///                 new Oci.Core.Inputs.VcnByoipv6cidrDetailArgs
-    ///                 {
-    ///                     Byoipv6rangeId = oci_core_byoipv6range.Test_byoipv6range.Id,
-    ///                     Ipv6cidrBlock = @var.Vcn_byoipv6cidr_details_ipv6cidr_block,
-    ///                 },
+    ///                 Byoipv6rangeId = oci_core_byoipv6range.Test_byoipv6range.Id,
+    ///                 Ipv6cidrBlock = @var.Vcn_byoipv6cidr_details_ipv6cidr_block,
     ///             },
-    ///             CidrBlock = @var.Vcn_cidr_block,
-    ///             CidrBlocks = @var.Vcn_cidr_blocks,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Vcn_display_name,
-    ///             DnsLabel = @var.Vcn_dns_label,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             Ipv6privateCidrBlocks = @var.Vcn_ipv6private_cidr_blocks,
-    ///             IsIpv6enabled = @var.Vcn_is_ipv6enabled,
-    ///             IsOracleGuaAllocationEnabled = @var.Vcn_is_oracle_gua_allocation_enabled,
-    ///         });
-    ///     }
+    ///         },
+    ///         CidrBlock = @var.Vcn_cidr_block,
+    ///         CidrBlocks = @var.Vcn_cidr_blocks,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Vcn_display_name,
+    ///         DnsLabel = @var.Vcn_dns_label,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         Ipv6privateCidrBlocks = @var.Vcn_ipv6private_cidr_blocks,
+    ///         IsIpv6enabled = @var.Vcn_is_ipv6enabled,
+    ///         IsOracleGuaAllocationEnabled = @var.Vcn_is_oracle_gua_allocation_enabled,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -104,7 +102,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/vcn:Vcn")]
-    public partial class Vcn : Pulumi.CustomResource
+    public partial class Vcn : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
@@ -271,7 +269,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class VcnArgs : Pulumi.ResourceArgs
+    public sealed class VcnArgs : global::Pulumi.ResourceArgs
     {
         [Input("byoipv6cidrDetails")]
         private InputList<Inputs.VcnByoipv6cidrDetailArgs>? _byoipv6cidrDetails;
@@ -379,9 +377,10 @@ namespace Pulumi.Oci.Core
         public VcnArgs()
         {
         }
+        public static new VcnArgs Empty => new VcnArgs();
     }
 
-    public sealed class VcnState : Pulumi.ResourceArgs
+    public sealed class VcnState : global::Pulumi.ResourceArgs
     {
         [Input("byoipv6cidrBlocks")]
         private InputList<string>? _byoipv6cidrBlocks;
@@ -549,5 +548,6 @@ namespace Pulumi.Oci.Core
         public VcnState()
         {
         }
+        public static new VcnState Empty => new VcnState();
     }
 }

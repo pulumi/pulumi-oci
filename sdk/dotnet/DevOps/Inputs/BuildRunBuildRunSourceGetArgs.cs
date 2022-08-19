@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class BuildRunBuildRunSourceGetArgs : Pulumi.ResourceArgs
+    public sealed class BuildRunBuildRunSourceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The DevOps code repository identifier that invoked the build run.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public BuildRunBuildRunSourceGetArgs()
         {
         }
+        public static new BuildRunBuildRunSourceGetArgs Empty => new BuildRunBuildRunSourceGetArgs();
     }
 }

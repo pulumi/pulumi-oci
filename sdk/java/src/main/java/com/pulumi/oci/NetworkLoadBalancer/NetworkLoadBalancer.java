@@ -26,6 +26,46 @@ import javax.annotation.Nullable;
  * Creates a network load balancer.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancer;
+ * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerArgs;
+ * import com.pulumi.oci.NetworkLoadBalancer.inputs.NetworkLoadBalancerReservedIpArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNetworkLoadBalancer = new NetworkLoadBalancer(&#34;testNetworkLoadBalancer&#34;, NetworkLoadBalancerArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.network_load_balancer_display_name())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isPreserveSourceDestination(var_.network_load_balancer_is_preserve_source_destination())
+ *             .isPrivate(var_.network_load_balancer_is_private())
+ *             .networkSecurityGroupIds(var_.network_load_balancer_network_security_group_ids())
+ *             .nlbIpVersion(var_.network_load_balancer_nlb_ip_version())
+ *             .reservedIps(NetworkLoadBalancerReservedIpArgs.builder()
+ *                 .id(var_.network_load_balancer_reserved_ips_id())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

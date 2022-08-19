@@ -35,6 +35,39 @@ import javax.annotation.Nullable;
  * be unique, and you can change it. Avoid entering confidential information.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.Cpe;
+ * import com.pulumi.oci.Core.CpeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCpe = new Cpe(&#34;testCpe&#34;, CpeArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .ipAddress(var_.cpe_ip_address())
+ *             .cpeDeviceShapeId(data.oci_core_cpe_device_shapes().test_cpe_device_shapes().cpe_device_shapes()[0].cpe_device_shape_id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.cpe_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

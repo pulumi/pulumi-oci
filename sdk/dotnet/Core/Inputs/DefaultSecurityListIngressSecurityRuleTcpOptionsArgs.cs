@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class DefaultSecurityListIngressSecurityRuleTcpOptionsArgs : Pulumi.ResourceArgs
+    public sealed class DefaultSecurityListIngressSecurityRuleTcpOptionsArgs : global::Pulumi.ResourceArgs
     {
         [Input("max")]
         public Input<int>? Max { get; set; }
@@ -24,5 +24,6 @@ namespace Pulumi.Oci.Core.Inputs
         public DefaultSecurityListIngressSecurityRuleTcpOptionsArgs()
         {
         }
+        public static new DefaultSecurityListIngressSecurityRuleTcpOptionsArgs Empty => new DefaultSecurityListIngressSecurityRuleTcpOptionsArgs();
     }
 }

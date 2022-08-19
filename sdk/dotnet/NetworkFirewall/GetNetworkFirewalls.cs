@@ -22,25 +22,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkFirewalls = Oci.NetworkFirewall.GetNetworkFirewalls.Invoke(new()
         ///     {
-        ///         var testNetworkFirewalls = Output.Create(Oci.NetworkFirewall.GetNetworkFirewalls.InvokeAsync(new Oci.NetworkFirewall.GetNetworkFirewallsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Network_firewall_availability_domain,
-        ///             DisplayName = @var.Network_firewall_display_name,
-        ///             Id = @var.Network_firewall_id,
-        ///             NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-        ///             State = @var.Network_firewall_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Network_firewall_availability_domain,
+        ///         DisplayName = @var.Network_firewall_display_name,
+        ///         Id = @var.Network_firewall_id,
+        ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
+        ///         State = @var.Network_firewall_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkFirewalls = Oci.NetworkFirewall.GetNetworkFirewalls.Invoke(new()
         ///     {
-        ///         var testNetworkFirewalls = Output.Create(Oci.NetworkFirewall.GetNetworkFirewalls.InvokeAsync(new Oci.NetworkFirewall.GetNetworkFirewallsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Network_firewall_availability_domain,
-        ///             DisplayName = @var.Network_firewall_display_name,
-        ///             Id = @var.Network_firewall_id,
-        ///             NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-        ///             State = @var.Network_firewall_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Network_firewall_availability_domain,
+        ///         DisplayName = @var.Network_firewall_display_name,
+        ///         Id = @var.Network_firewall_id,
+        ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
+        ///         State = @var.Network_firewall_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.NetworkFirewall
     }
 
 
-    public sealed class GetNetworkFirewallsArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkFirewallsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that are present within the specified availability domain. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.NetworkFirewall
         public GetNetworkFirewallsArgs()
         {
         }
+        public static new GetNetworkFirewallsArgs Empty => new GetNetworkFirewallsArgs();
     }
 
-    public sealed class GetNetworkFirewallsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkFirewallsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that are present within the specified availability domain. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
@@ -187,6 +184,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public GetNetworkFirewallsInvokeArgs()
         {
         }
+        public static new GetNetworkFirewallsInvokeArgs Empty => new GetNetworkFirewallsInvokeArgs();
     }
 
 

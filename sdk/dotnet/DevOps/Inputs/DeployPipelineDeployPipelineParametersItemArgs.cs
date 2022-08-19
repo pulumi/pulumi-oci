@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployPipelineDeployPipelineParametersItemArgs : Pulumi.ResourceArgs
+    public sealed class DeployPipelineDeployPipelineParametersItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Default value of the parameter.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployPipelineDeployPipelineParametersItemArgs()
         {
         }
+        public static new DeployPipelineDeployPipelineParametersItemArgs Empty => new DeployPipelineDeployPipelineParametersItemArgs();
     }
 }

@@ -28,21 +28,19 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSwiftPassword = new Oci.Identity.SwiftPassword("testSwiftPassword", new()
     ///     {
-    ///         var testSwiftPassword = new Oci.Identity.SwiftPassword("testSwiftPassword", new Oci.Identity.SwiftPasswordArgs
-    ///         {
-    ///             Description = @var.Swift_password_description,
-    ///             UserId = oci_identity_user.Test_user.Id,
-    ///         });
-    ///     }
+    ///         Description = @var.Swift_password_description,
+    ///         UserId = oci_identity_user.Test_user.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/swiftPassword:SwiftPassword")]
-    public partial class SwiftPassword : Pulumi.CustomResource
+    public partial class SwiftPassword : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The description you assign to the Swift password during creation. Does not have to be unique, and it's changeable.
@@ -142,7 +140,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class SwiftPasswordArgs : Pulumi.ResourceArgs
+    public sealed class SwiftPasswordArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The description you assign to the Swift password during creation. Does not have to be unique, and it's changeable.
@@ -159,9 +157,10 @@ namespace Pulumi.Oci.Identity
         public SwiftPasswordArgs()
         {
         }
+        public static new SwiftPasswordArgs Empty => new SwiftPasswordArgs();
     }
 
-    public sealed class SwiftPasswordState : Pulumi.ResourceArgs
+    public sealed class SwiftPasswordState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The description you assign to the Swift password during creation. Does not have to be unique, and it's changeable.
@@ -208,5 +207,6 @@ namespace Pulumi.Oci.Identity
         public SwiftPasswordState()
         {
         }
+        public static new SwiftPasswordState Empty => new SwiftPasswordState();
     }
 }

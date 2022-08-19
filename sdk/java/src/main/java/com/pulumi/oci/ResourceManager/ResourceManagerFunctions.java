@@ -35,6 +35,34 @@ public final class ResourceManagerFunctions {
      * Gets the specified private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoint = ResourceManagerFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args) {
@@ -46,6 +74,34 @@ public final class ResourceManagerFunctions {
      * Gets the specified private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoint = ResourceManagerFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args) {
@@ -57,6 +113,34 @@ public final class ResourceManagerFunctions {
      * Gets the specified private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoint = ResourceManagerFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOptions options) {
@@ -68,6 +152,34 @@ public final class ResourceManagerFunctions {
      * Gets the specified private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoint = ResourceManagerFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args, InvokeOptions options) {
@@ -79,6 +191,35 @@ public final class ResourceManagerFunctions {
      * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointReachableIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpointReachableIp = ResourceManagerFunctions.getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs.builder()
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .privateIp(var_.private_endpoint_reachable_ip_private_ip())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs args) {
@@ -90,6 +231,35 @@ public final class ResourceManagerFunctions {
      * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointReachableIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpointReachableIp = ResourceManagerFunctions.getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs.builder()
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .privateIp(var_.private_endpoint_reachable_ip_private_ip())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIpPlain(GetPrivateEndpointReachableIpPlainArgs args) {
@@ -101,6 +271,35 @@ public final class ResourceManagerFunctions {
      * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointReachableIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpointReachableIp = ResourceManagerFunctions.getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs.builder()
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .privateIp(var_.private_endpoint_reachable_ip_private_ip())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs args, InvokeOptions options) {
@@ -112,6 +311,35 @@ public final class ResourceManagerFunctions {
      * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetPrivateEndpointReachableIpArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpointReachableIp = ResourceManagerFunctions.getPrivateEndpointReachableIp(GetPrivateEndpointReachableIpArgs.builder()
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .privateIp(var_.private_endpoint_reachable_ip_private_ip())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateEndpointReachableIpResult> getPrivateEndpointReachableIpPlain(GetPrivateEndpointReachableIpPlainArgs args, InvokeOptions options) {
@@ -125,6 +353,37 @@ public final class ResourceManagerFunctions {
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoints = ResourceManagerFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_endpoint_display_name())
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateEndpointsResult> getPrivateEndpoints() {
@@ -138,6 +397,37 @@ public final class ResourceManagerFunctions {
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoints = ResourceManagerFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_endpoint_display_name())
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain() {
@@ -151,6 +441,37 @@ public final class ResourceManagerFunctions {
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoints = ResourceManagerFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_endpoint_display_name())
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args) {
@@ -164,6 +485,37 @@ public final class ResourceManagerFunctions {
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoints = ResourceManagerFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_endpoint_display_name())
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args) {
@@ -177,6 +529,37 @@ public final class ResourceManagerFunctions {
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoints = ResourceManagerFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_endpoint_display_name())
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args, InvokeOptions options) {
@@ -190,6 +573,37 @@ public final class ResourceManagerFunctions {
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateEndpoints = ResourceManagerFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_endpoint_display_name())
+     *             .privateEndpointId(oci_resourcemanager_private_endpoint.test_private_endpoint().id())
+     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args, InvokeOptions options) {
@@ -201,6 +615,34 @@ public final class ResourceManagerFunctions {
      * Gets a stack using the stack ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStackArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStack = ResourceManagerFunctions.getStack(GetStackArgs.builder()
+     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStackResult> getStack(GetStackArgs args) {
@@ -212,6 +654,34 @@ public final class ResourceManagerFunctions {
      * Gets a stack using the stack ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStackArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStack = ResourceManagerFunctions.getStack(GetStackArgs.builder()
+     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStackResult> getStackPlain(GetStackPlainArgs args) {
@@ -223,6 +693,34 @@ public final class ResourceManagerFunctions {
      * Gets a stack using the stack ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStackArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStack = ResourceManagerFunctions.getStack(GetStackArgs.builder()
+     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStackResult> getStack(GetStackArgs args, InvokeOptions options) {
@@ -234,6 +732,34 @@ public final class ResourceManagerFunctions {
      * Gets a stack using the stack ID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStackArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStack = ResourceManagerFunctions.getStack(GetStackArgs.builder()
+     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStackResult> getStackPlain(GetStackPlainArgs args, InvokeOptions options) {
@@ -241,6 +767,34 @@ public final class ResourceManagerFunctions {
     }
     /**
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStackTfStateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStackTfState = ResourceManagerFunctions.getStackTfState(GetStackTfStateArgs.builder()
+     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStackTfStateResult> getStackTfState(GetStackTfStateArgs args) {
@@ -248,6 +802,34 @@ public final class ResourceManagerFunctions {
     }
     /**
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStackTfStateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStackTfState = ResourceManagerFunctions.getStackTfState(GetStackTfStateArgs.builder()
+     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStackTfStateResult> getStackTfStatePlain(GetStackTfStatePlainArgs args) {
@@ -255,6 +837,34 @@ public final class ResourceManagerFunctions {
     }
     /**
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStackTfStateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStackTfState = ResourceManagerFunctions.getStackTfState(GetStackTfStateArgs.builder()
+     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStackTfStateResult> getStackTfState(GetStackTfStateArgs args, InvokeOptions options) {
@@ -262,6 +872,34 @@ public final class ResourceManagerFunctions {
     }
     /**
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStackTfStateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStackTfState = ResourceManagerFunctions.getStackTfState(GetStackTfStateArgs.builder()
+     *             .stackId(oci_resourcemanager_stack.test_stack().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStackTfStateResult> getStackTfStatePlain(GetStackTfStatePlainArgs args, InvokeOptions options) {
@@ -275,6 +913,37 @@ public final class ResourceManagerFunctions {
      * - If called using the stack ID, returns the specified stack.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStacksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStacks = ResourceManagerFunctions.getStacks(GetStacksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.stack_display_name())
+     *             .id(var_.stack_id())
+     *             .state(var_.stack_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStacksResult> getStacks(GetStacksArgs args) {
@@ -288,6 +957,37 @@ public final class ResourceManagerFunctions {
      * - If called using the stack ID, returns the specified stack.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStacksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStacks = ResourceManagerFunctions.getStacks(GetStacksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.stack_display_name())
+     *             .id(var_.stack_id())
+     *             .state(var_.stack_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStacksResult> getStacksPlain(GetStacksPlainArgs args) {
@@ -301,6 +1001,37 @@ public final class ResourceManagerFunctions {
      * - If called using the stack ID, returns the specified stack.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStacksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStacks = ResourceManagerFunctions.getStacks(GetStacksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.stack_display_name())
+     *             .id(var_.stack_id())
+     *             .state(var_.stack_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetStacksResult> getStacks(GetStacksArgs args, InvokeOptions options) {
@@ -314,6 +1045,37 @@ public final class ResourceManagerFunctions {
      * - If called using the stack ID, returns the specified stack.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ResourceManager.ResourceManagerFunctions;
+     * import com.pulumi.oci.ResourceManager.inputs.GetStacksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStacks = ResourceManagerFunctions.getStacks(GetStacksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.stack_display_name())
+     *             .id(var_.stack_id())
+     *             .state(var_.stack_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetStacksResult> getStacksPlain(GetStacksPlainArgs args, InvokeOptions options) {

@@ -21,22 +21,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseUserConsumerGroupPrivileges = Oci.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivileges.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseUserConsumerGroupPrivileges = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivileges.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivilegesArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             UserName = oci_identity_user.Test_user.Name,
-        ///             Name = @var.Managed_database_user_consumer_group_privilege_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         UserName = oci_identity_user.Test_user.Name,
+        ///         Name = @var.Managed_database_user_consumer_group_privilege_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseUserConsumerGroupPrivileges = Oci.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivileges.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseUserConsumerGroupPrivileges = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivileges.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivilegesArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             UserName = oci_identity_user.Test_user.Name,
-        ///             Name = @var.Managed_database_user_consumer_group_privilege_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         UserName = oci_identity_user.Test_user.Name,
+        ///         Name = @var.Managed_database_user_consumer_group_privilege_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseUserConsumerGroupPrivilegesArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseUserConsumerGroupPrivilegesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs>? _filters;
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseUserConsumerGroupPrivilegesArgs()
         {
         }
+        public static new GetManagedDatabaseUserConsumerGroupPrivilegesArgs Empty => new GetManagedDatabaseUserConsumerGroupPrivilegesArgs();
     }
 
-    public sealed class GetManagedDatabaseUserConsumerGroupPrivilegesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseUserConsumerGroupPrivilegesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetManagedDatabaseUserConsumerGroupPrivilegesFilterInputArgs>? _filters;
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseUserConsumerGroupPrivilegesInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseUserConsumerGroupPrivilegesInvokeArgs Empty => new GetManagedDatabaseUserConsumerGroupPrivilegesInvokeArgs();
     }
 
 

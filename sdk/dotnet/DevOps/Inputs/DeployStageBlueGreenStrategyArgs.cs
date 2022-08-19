@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployStageBlueGreenStrategyArgs : Pulumi.ResourceArgs
+    public sealed class DeployStageBlueGreenStrategyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the Ingress resource.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployStageBlueGreenStrategyArgs()
         {
         }
+        public static new DeployStageBlueGreenStrategyArgs Empty => new DeployStageBlueGreenStrategyArgs();
     }
 }

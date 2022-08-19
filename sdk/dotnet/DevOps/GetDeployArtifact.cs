@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeployArtifact = Oci.DevOps.GetDeployArtifact.Invoke(new()
         ///     {
-        ///         var testDeployArtifact = Output.Create(Oci.DevOps.GetDeployArtifact.InvokeAsync(new Oci.DevOps.GetDeployArtifactArgs
-        ///         {
-        ///             DeployArtifactId = oci_devops_deploy_artifact.Test_deploy_artifact.Id,
-        ///         }));
-        ///     }
+        ///         DeployArtifactId = oci_devops_deploy_artifact.Test_deploy_artifact.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeployArtifact = Oci.DevOps.GetDeployArtifact.Invoke(new()
         ///     {
-        ///         var testDeployArtifact = Output.Create(Oci.DevOps.GetDeployArtifact.InvokeAsync(new Oci.DevOps.GetDeployArtifactArgs
-        ///         {
-        ///             DeployArtifactId = oci_devops_deploy_artifact.Test_deploy_artifact.Id,
-        ///         }));
-        ///     }
+        ///         DeployArtifactId = oci_devops_deploy_artifact.Test_deploy_artifact.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetDeployArtifactArgs : Pulumi.InvokeArgs
+    public sealed class GetDeployArtifactArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique artifact identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DevOps
         public GetDeployArtifactArgs()
         {
         }
+        public static new GetDeployArtifactArgs Empty => new GetDeployArtifactArgs();
     }
 
-    public sealed class GetDeployArtifactInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDeployArtifactInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique artifact identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DevOps
         public GetDeployArtifactInvokeArgs()
         {
         }
+        public static new GetDeployArtifactInvokeArgs Empty => new GetDeployArtifactInvokeArgs();
     }
 
 

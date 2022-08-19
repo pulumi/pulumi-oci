@@ -22,6 +22,35 @@ import javax.annotation.Nullable;
  * For more information, see [Caching Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm#purge).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Waas.PurgeCache;
+ * import com.pulumi.oci.Waas.PurgeCacheArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPurgeCache = new PurgeCache(&#34;testPurgeCache&#34;, PurgeCacheArgs.builder()        
+ *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+ *             .resources(var_.purge_cache_resources())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

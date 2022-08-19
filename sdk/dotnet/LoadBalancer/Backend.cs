@@ -17,27 +17,25 @@ namespace Pulumi.Oci.LoadBalancer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBackend = new Oci.LoadBalancer.Backend("testBackend", new()
     ///     {
-    ///         var testBackend = new Oci.LoadBalancer.Backend("testBackend", new Oci.LoadBalancer.BackendArgs
-    ///         {
-    ///             BackendsetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-    ///             IpAddress = @var.Backend_ip_address,
-    ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///             Port = @var.Backend_port,
-    ///             Backup = @var.Backend_backup,
-    ///             Drain = @var.Backend_drain,
-    ///             Offline = @var.Backend_offline,
-    ///             Weight = @var.Backend_weight,
-    ///         });
-    ///     }
+    ///         BackendsetName = oci_load_balancer_backend_set.Test_backend_set.Name,
+    ///         IpAddress = @var.Backend_ip_address,
+    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         Port = @var.Backend_port,
+    ///         Backup = @var.Backend_backup,
+    ///         Drain = @var.Backend_drain,
+    ///         Offline = @var.Backend_offline,
+    ///         Weight = @var.Backend_weight,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -49,7 +47,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// ```
     /// </summary>
     [OciResourceType("oci:LoadBalancer/backend:Backend")]
-    public partial class Backend : Pulumi.CustomResource
+    public partial class Backend : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The name of the backend set to add the backend server to.  Example: `example_backend_set`
@@ -152,7 +150,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
     }
 
-    public sealed class BackendArgs : Pulumi.ResourceArgs
+    public sealed class BackendArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the backend set to add the backend server to.  Example: `example_backend_set`
@@ -205,9 +203,10 @@ namespace Pulumi.Oci.LoadBalancer
         public BackendArgs()
         {
         }
+        public static new BackendArgs Empty => new BackendArgs();
     }
 
-    public sealed class BackendState : Pulumi.ResourceArgs
+    public sealed class BackendState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the backend set to add the backend server to.  Example: `example_backend_set`
@@ -269,5 +268,6 @@ namespace Pulumi.Oci.LoadBalancer
         public BackendState()
         {
         }
+        public static new BackendState Empty => new BackendState();
     }
 }

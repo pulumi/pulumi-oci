@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProfileLevels = Oci.Optimizer.GetProfileLevels.Invoke(new()
         ///     {
-        ///         var testProfileLevels = Output.Create(Oci.Optimizer.GetProfileLevels.InvokeAsync(new Oci.Optimizer.GetProfileLevelsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Profile_level_compartment_id_in_subtree,
-        ///             Name = @var.Profile_level_name,
-        ///             RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Profile_level_compartment_id_in_subtree,
+        ///         Name = @var.Profile_level_name,
+        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProfileLevels = Oci.Optimizer.GetProfileLevels.Invoke(new()
         ///     {
-        ///         var testProfileLevels = Output.Create(Oci.Optimizer.GetProfileLevels.InvokeAsync(new Oci.Optimizer.GetProfileLevelsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Profile_level_compartment_id_in_subtree,
-        ///             Name = @var.Profile_level_name,
-        ///             RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Profile_level_compartment_id_in_subtree,
+        ///         Name = @var.Profile_level_name,
+        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Optimizer
     }
 
 
-    public sealed class GetProfileLevelsArgs : Pulumi.InvokeArgs
+    public sealed class GetProfileLevelsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.Optimizer
         public GetProfileLevelsArgs()
         {
         }
+        public static new GetProfileLevelsArgs Empty => new GetProfileLevelsArgs();
     }
 
-    public sealed class GetProfileLevelsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetProfileLevelsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.Optimizer
         public GetProfileLevelsInvokeArgs()
         {
         }
+        public static new GetProfileLevelsInvokeArgs Empty => new GetProfileLevelsInvokeArgs();
     }
 
 

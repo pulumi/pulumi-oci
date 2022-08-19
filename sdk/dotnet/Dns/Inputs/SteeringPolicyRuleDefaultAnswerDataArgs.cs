@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class SteeringPolicyRuleDefaultAnswerDataArgs : Pulumi.ResourceArgs
+    public sealed class SteeringPolicyRuleDefaultAnswerDataArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public SteeringPolicyRuleDefaultAnswerDataArgs()
         {
         }
+        public static new SteeringPolicyRuleDefaultAnswerDataArgs Empty => new SteeringPolicyRuleDefaultAnswerDataArgs();
     }
 }

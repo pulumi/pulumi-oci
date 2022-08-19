@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCloudExadataInfrastructures = Oci.Database.GetCloudExadataInfrastructures.Invoke(new()
         ///     {
-        ///         var testCloudExadataInfrastructures = Output.Create(Oci.Database.GetCloudExadataInfrastructures.InvokeAsync(new Oci.Database.GetCloudExadataInfrastructuresArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Cloud_exadata_infrastructure_display_name,
-        ///             State = @var.Cloud_exadata_infrastructure_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Cloud_exadata_infrastructure_display_name,
+        ///         State = @var.Cloud_exadata_infrastructure_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCloudExadataInfrastructures = Oci.Database.GetCloudExadataInfrastructures.Invoke(new()
         ///     {
-        ///         var testCloudExadataInfrastructures = Output.Create(Oci.Database.GetCloudExadataInfrastructures.InvokeAsync(new Oci.Database.GetCloudExadataInfrastructuresArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Cloud_exadata_infrastructure_display_name,
-        ///             State = @var.Cloud_exadata_infrastructure_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Cloud_exadata_infrastructure_display_name,
+        ///         State = @var.Cloud_exadata_infrastructure_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetCloudExadataInfrastructuresArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudExadataInfrastructuresArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Database
         public GetCloudExadataInfrastructuresArgs()
         {
         }
+        public static new GetCloudExadataInfrastructuresArgs Empty => new GetCloudExadataInfrastructuresArgs();
     }
 
-    public sealed class GetCloudExadataInfrastructuresInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCloudExadataInfrastructuresInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Database
         public GetCloudExadataInfrastructuresInvokeArgs()
         {
         }
+        public static new GetCloudExadataInfrastructuresInvokeArgs Empty => new GetCloudExadataInfrastructuresInvokeArgs();
     }
 
 

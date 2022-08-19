@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class GetPoliciesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetPoliciesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of a load balancing policy.  Example: 'LEAST_CONNECTIONS'
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public GetPoliciesFilterArgs()
         {
         }
+        public static new GetPoliciesFilterArgs Empty => new GetPoliciesFilterArgs();
     }
 }

@@ -16,31 +16,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// Lists all versions for the specified certificate authority (CA).
         /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
-        /// 
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testCertificateAuthorityVersion = Output.Create(Oci.CertificatesManagement.GetCertificateAuthorityVersion.InvokeAsync(new Oci.CertificatesManagement.GetCertificateAuthorityVersionArgs
-        ///         {
-        ///             CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///             VersionNumber = @var.Certificate_authority_version_version_number,
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetCertificateAuthorityVersionResult> InvokeAsync(GetCertificateAuthorityVersionArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.InvokeAsync<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionArgs(), options.WithDefaults());
@@ -50,38 +25,13 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// Lists all versions for the specified certificate authority (CA).
         /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
-        /// 
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testCertificateAuthorityVersion = Output.Create(Oci.CertificatesManagement.GetCertificateAuthorityVersion.InvokeAsync(new Oci.CertificatesManagement.GetCertificateAuthorityVersionArgs
-        ///         {
-        ///             CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///             VersionNumber = @var.Certificate_authority_version_version_number,
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetCertificateAuthorityVersionResult> Invoke(GetCertificateAuthorityVersionInvokeArgs args, InvokeOptions? options = null)
             => Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCertificateAuthorityVersionArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificateAuthorityVersionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the certificate authority (CA).
@@ -95,9 +45,10 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCertificateAuthorityVersionArgs()
         {
         }
+        public static new GetCertificateAuthorityVersionArgs Empty => new GetCertificateAuthorityVersionArgs();
     }
 
-    public sealed class GetCertificateAuthorityVersionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificateAuthorityVersionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the certificate authority (CA).
@@ -111,6 +62,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCertificateAuthorityVersionInvokeArgs()
         {
         }
+        public static new GetCertificateAuthorityVersionInvokeArgs Empty => new GetCertificateAuthorityVersionInvokeArgs();
     }
 
 

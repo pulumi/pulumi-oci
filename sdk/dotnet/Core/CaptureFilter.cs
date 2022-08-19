@@ -25,72 +25,70 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCaptureFilter = new Oci.Core.CaptureFilter("testCaptureFilter", new()
     ///     {
-    ///         var testCaptureFilter = new Oci.Core.CaptureFilter("testCaptureFilter", new Oci.Core.CaptureFilterArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         FilterType = @var.Capture_filter_filter_type,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             FilterType = @var.Capture_filter_filter_type,
-    ///             DefinedTags = 
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Capture_filter_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         VtapCaptureFilterRules = new[]
+    ///         {
+    ///             new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Capture_filter_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             VtapCaptureFilterRules = 
-    ///             {
-    ///                 new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleArgs
+    ///                 TrafficDirection = @var.Capture_filter_vtap_capture_filter_rules_traffic_direction,
+    ///                 DestinationCidr = @var.Capture_filter_vtap_capture_filter_rules_destination_cidr,
+    ///                 IcmpOptions = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs
     ///                 {
-    ///                     TrafficDirection = @var.Capture_filter_vtap_capture_filter_rules_traffic_direction,
-    ///                     DestinationCidr = @var.Capture_filter_vtap_capture_filter_rules_destination_cidr,
-    ///                     IcmpOptions = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs
+    ///                     Type = @var.Capture_filter_vtap_capture_filter_rules_icmp_options_type,
+    ///                     Code = @var.Capture_filter_vtap_capture_filter_rules_icmp_options_code,
+    ///                 },
+    ///                 Protocol = @var.Capture_filter_vtap_capture_filter_rules_protocol,
+    ///                 RuleAction = @var.Capture_filter_vtap_capture_filter_rules_rule_action,
+    ///                 SourceCidr = @var.Capture_filter_vtap_capture_filter_rules_source_cidr,
+    ///                 TcpOptions = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs
+    ///                 {
+    ///                     DestinationPortRange = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs
     ///                     {
-    ///                         Type = @var.Capture_filter_vtap_capture_filter_rules_icmp_options_type,
-    ///                         Code = @var.Capture_filter_vtap_capture_filter_rules_icmp_options_code,
+    ///                         Max = @var.Capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max,
+    ///                         Min = @var.Capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min,
     ///                     },
-    ///                     Protocol = @var.Capture_filter_vtap_capture_filter_rules_protocol,
-    ///                     RuleAction = @var.Capture_filter_vtap_capture_filter_rules_rule_action,
-    ///                     SourceCidr = @var.Capture_filter_vtap_capture_filter_rules_source_cidr,
-    ///                     TcpOptions = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs
+    ///                     SourcePortRange = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs
     ///                     {
-    ///                         DestinationPortRange = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs
-    ///                         {
-    ///                             Max = @var.Capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max,
-    ///                             Min = @var.Capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min,
-    ///                         },
-    ///                         SourcePortRange = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs
-    ///                         {
-    ///                             Max = @var.Capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max,
-    ///                             Min = @var.Capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min,
-    ///                         },
+    ///                         Max = @var.Capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max,
+    ///                         Min = @var.Capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min,
     ///                     },
-    ///                     UdpOptions = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs
+    ///                 },
+    ///                 UdpOptions = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs
+    ///                 {
+    ///                     DestinationPortRange = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs
     ///                     {
-    ///                         DestinationPortRange = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs
-    ///                         {
-    ///                             Max = @var.Capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max,
-    ///                             Min = @var.Capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min,
-    ///                         },
-    ///                         SourcePortRange = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs
-    ///                         {
-    ///                             Max = @var.Capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max,
-    ///                             Min = @var.Capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min,
-    ///                         },
+    ///                         Max = @var.Capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max,
+    ///                         Min = @var.Capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min,
+    ///                     },
+    ///                     SourcePortRange = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs
+    ///                     {
+    ///                         Max = @var.Capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max,
+    ///                         Min = @var.Capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min,
     ///                     },
     ///                 },
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -102,7 +100,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/captureFilter:CaptureFilter")]
-    public partial class CaptureFilter : Pulumi.CustomResource
+    public partial class CaptureFilter : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
@@ -196,7 +194,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class CaptureFilterArgs : Pulumi.ResourceArgs
+    public sealed class CaptureFilterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
@@ -255,9 +253,10 @@ namespace Pulumi.Oci.Core
         public CaptureFilterArgs()
         {
         }
+        public static new CaptureFilterArgs Empty => new CaptureFilterArgs();
     }
 
-    public sealed class CaptureFilterState : Pulumi.ResourceArgs
+    public sealed class CaptureFilterState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
@@ -328,5 +327,6 @@ namespace Pulumi.Oci.Core
         public CaptureFilterState()
         {
         }
+        public static new CaptureFilterState Empty => new CaptureFilterState();
     }
 }

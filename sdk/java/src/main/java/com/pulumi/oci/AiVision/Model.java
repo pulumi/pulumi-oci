@@ -27,6 +27,67 @@ import javax.annotation.Nullable;
  * Creates a new Model.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.AiVision.Model;
+ * import com.pulumi.oci.AiVision.ModelArgs;
+ * import com.pulumi.oci.AiVision.inputs.ModelTrainingDatasetArgs;
+ * import com.pulumi.oci.AiVision.inputs.ModelTestingDatasetArgs;
+ * import com.pulumi.oci.AiVision.inputs.ModelValidationDatasetArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testModel = new Model(&#34;testModel&#34;, ModelArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .modelType(var_.model_model_type())
+ *             .projectId(oci_ai_vision_project.test_project().id())
+ *             .trainingDataset(ModelTrainingDatasetArgs.builder()
+ *                 .datasetType(var_.model_training_dataset_dataset_type())
+ *                 .bucket(var_.model_training_dataset_bucket())
+ *                 .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
+ *                 .namespaceName(var_.model_training_dataset_namespace())
+ *                 .object(var_.model_training_dataset_object())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.model_description())
+ *             .displayName(var_.model_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .isQuickMode(var_.model_is_quick_mode())
+ *             .maxTrainingDurationInHours(var_.model_max_training_duration_in_hours())
+ *             .modelVersion(var_.model_model_version())
+ *             .testingDataset(ModelTestingDatasetArgs.builder()
+ *                 .datasetType(var_.model_testing_dataset_dataset_type())
+ *                 .bucket(var_.model_testing_dataset_bucket())
+ *                 .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
+ *                 .namespaceName(var_.model_testing_dataset_namespace())
+ *                 .object(var_.model_testing_dataset_object())
+ *                 .build())
+ *             .validationDataset(ModelValidationDatasetArgs.builder()
+ *                 .datasetType(var_.model_validation_dataset_dataset_type())
+ *                 .bucket(var_.model_validation_dataset_bucket())
+ *                 .datasetId(oci_data_labeling_service_dataset.test_dataset().id())
+ *                 .namespaceName(var_.model_validation_dataset_namespace())
+ *                 .object(var_.model_validation_dataset_object())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

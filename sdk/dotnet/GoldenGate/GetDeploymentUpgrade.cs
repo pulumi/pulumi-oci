@@ -22,20 +22,18 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeploymentUpgrade = Oci.GoldenGate.GetDeploymentUpgrade.Invoke(new()
         ///     {
-        ///         var testDeploymentUpgrade = Output.Create(Oci.GoldenGate.GetDeploymentUpgrade.InvokeAsync(new Oci.GoldenGate.GetDeploymentUpgradeArgs
-        ///         {
-        ///             DeploymentUpgradeId = oci_golden_gate_deployment_upgrade.Test_deployment_upgrade.Id,
-        ///         }));
-        ///     }
+        ///         DeploymentUpgradeId = oci_golden_gate_deployment_upgrade.Test_deployment_upgrade.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeploymentUpgrade = Oci.GoldenGate.GetDeploymentUpgrade.Invoke(new()
         ///     {
-        ///         var testDeploymentUpgrade = Output.Create(Oci.GoldenGate.GetDeploymentUpgrade.InvokeAsync(new Oci.GoldenGate.GetDeploymentUpgradeArgs
-        ///         {
-        ///             DeploymentUpgradeId = oci_golden_gate_deployment_upgrade.Test_deployment_upgrade.Id,
-        ///         }));
-        ///     }
+        ///         DeploymentUpgradeId = oci_golden_gate_deployment_upgrade.Test_deployment_upgrade.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.GoldenGate
     }
 
 
-    public sealed class GetDeploymentUpgradeArgs : Pulumi.InvokeArgs
+    public sealed class GetDeploymentUpgradeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A unique Deployment Upgrade identifier.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.GoldenGate
         public GetDeploymentUpgradeArgs()
         {
         }
+        public static new GetDeploymentUpgradeArgs Empty => new GetDeploymentUpgradeArgs();
     }
 
-    public sealed class GetDeploymentUpgradeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDeploymentUpgradeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A unique Deployment Upgrade identifier.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.GoldenGate
         public GetDeploymentUpgradeInvokeArgs()
         {
         }
+        public static new GetDeploymentUpgradeInvokeArgs Empty => new GetDeploymentUpgradeInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class GetApisFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetApisFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Name of the validation.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public GetApisFilterArgs()
         {
         }
+        public static new GetApisFilterArgs Empty => new GetApisFilterArgs();
     }
 }

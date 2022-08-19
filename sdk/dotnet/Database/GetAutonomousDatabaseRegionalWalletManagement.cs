@@ -22,17 +22,15 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var testAutonomousDatabaseRegionalWalletManagement = Output.Create(Oci.Database.GetAutonomousDatabaseRegionalWalletManagement.InvokeAsync());
-        ///     }
+        ///     var testAutonomousDatabaseRegionalWalletManagement = Oci.Database.GetAutonomousDatabaseRegionalWalletManagement.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}

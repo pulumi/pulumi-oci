@@ -22,24 +22,22 @@ namespace Pulumi.Oci.AiVision
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testModels = Oci.AiVision.GetModels.Invoke(new()
         ///     {
-        ///         var testModels = Output.Create(Oci.AiVision.GetModels.InvokeAsync(new Oci.AiVision.GetModelsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Model_display_name,
-        ///             Id = @var.Model_id,
-        ///             ProjectId = oci_ai_vision_project.Test_project.Id,
-        ///             State = @var.Model_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Model_display_name,
+        ///         Id = @var.Model_id,
+        ///         ProjectId = oci_ai_vision_project.Test_project.Id,
+        ///         State = @var.Model_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.AiVision
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testModels = Oci.AiVision.GetModels.Invoke(new()
         ///     {
-        ///         var testModels = Output.Create(Oci.AiVision.GetModels.InvokeAsync(new Oci.AiVision.GetModelsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Model_display_name,
-        ///             Id = @var.Model_id,
-        ///             ProjectId = oci_ai_vision_project.Test_project.Id,
-        ///             State = @var.Model_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Model_display_name,
+        ///         Id = @var.Model_id,
+        ///         ProjectId = oci_ai_vision_project.Test_project.Id,
+        ///         State = @var.Model_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.AiVision
     }
 
 
-    public sealed class GetModelsArgs : Pulumi.InvokeArgs
+    public sealed class GetModelsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.AiVision
         public GetModelsArgs()
         {
         }
+        public static new GetModelsArgs Empty => new GetModelsArgs();
     }
 
-    public sealed class GetModelsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetModelsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.AiVision
         public GetModelsInvokeArgs()
         {
         }
+        public static new GetModelsInvokeArgs Empty => new GetModelsInvokeArgs();
     }
 
 

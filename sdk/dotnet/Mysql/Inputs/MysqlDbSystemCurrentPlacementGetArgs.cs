@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlDbSystemCurrentPlacementGetArgs : Pulumi.ResourceArgs
+    public sealed class MysqlDbSystemCurrentPlacementGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlDbSystemCurrentPlacementGetArgs()
         {
         }
+        public static new MysqlDbSystemCurrentPlacementGetArgs Empty => new MysqlDbSystemCurrentPlacementGetArgs();
     }
 }

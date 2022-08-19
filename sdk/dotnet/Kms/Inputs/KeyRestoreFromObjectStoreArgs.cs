@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Kms.Inputs
 {
 
-    public sealed class KeyRestoreFromObjectStoreArgs : Pulumi.ResourceArgs
+    public sealed class KeyRestoreFromObjectStoreArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the bucket where key was backed up
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Kms.Inputs
         public KeyRestoreFromObjectStoreArgs()
         {
         }
+        public static new KeyRestoreFromObjectStoreArgs Empty => new KeyRestoreFromObjectStoreArgs();
     }
 }

@@ -23,6 +23,55 @@ import javax.annotation.Nullable;
  * Creates a new trigger.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DevOps.Trigger;
+ * import com.pulumi.oci.DevOps.TriggerArgs;
+ * import com.pulumi.oci.DevOps.inputs.TriggerActionArgs;
+ * import com.pulumi.oci.DevOps.inputs.TriggerActionFilterArgs;
+ * import com.pulumi.oci.DevOps.inputs.TriggerActionFilterIncludeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testTrigger = new Trigger(&#34;testTrigger&#34;, TriggerArgs.builder()        
+ *             .actions(TriggerActionArgs.builder()
+ *                 .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+ *                 .type(var_.trigger_actions_type())
+ *                 .filter(TriggerActionFilterArgs.builder()
+ *                     .triggerSource(var_.trigger_actions_filter_trigger_source())
+ *                     .events(var_.trigger_actions_filter_events())
+ *                     .include(TriggerActionFilterIncludeArgs.builder()
+ *                         .baseRef(var_.trigger_actions_filter_include_base_ref())
+ *                         .headRef(var_.trigger_actions_filter_include_head_ref())
+ *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .projectId(oci_devops_project.test_project().id())
+ *             .triggerSource(var_.trigger_trigger_source())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.trigger_description())
+ *             .displayName(var_.trigger_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .repositoryId(oci_artifacts_repository.test_repository().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -36,25 +36,23 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDetectorRecipes = Oci.CloudGuard.GetDetectorRecipes.Invoke(new()
         ///     {
-        ///         var testDetectorRecipes = Output.Create(Oci.CloudGuard.GetDetectorRecipes.InvokeAsync(new Oci.CloudGuard.GetDetectorRecipesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Detector_recipe_access_level,
-        ///             CompartmentIdInSubtree = @var.Detector_recipe_compartment_id_in_subtree,
-        ///             DisplayName = @var.Detector_recipe_display_name,
-        ///             ResourceMetadataOnly = @var.Detector_recipe_resource_metadata_only,
-        ///             State = @var.Detector_recipe_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Detector_recipe_access_level,
+        ///         CompartmentIdInSubtree = @var.Detector_recipe_compartment_id_in_subtree,
+        ///         DisplayName = @var.Detector_recipe_display_name,
+        ///         ResourceMetadataOnly = @var.Detector_recipe_resource_metadata_only,
+        ///         State = @var.Detector_recipe_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,25 +85,23 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDetectorRecipes = Oci.CloudGuard.GetDetectorRecipes.Invoke(new()
         ///     {
-        ///         var testDetectorRecipes = Output.Create(Oci.CloudGuard.GetDetectorRecipes.InvokeAsync(new Oci.CloudGuard.GetDetectorRecipesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Detector_recipe_access_level,
-        ///             CompartmentIdInSubtree = @var.Detector_recipe_compartment_id_in_subtree,
-        ///             DisplayName = @var.Detector_recipe_display_name,
-        ///             ResourceMetadataOnly = @var.Detector_recipe_resource_metadata_only,
-        ///             State = @var.Detector_recipe_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Detector_recipe_access_level,
+        ///         CompartmentIdInSubtree = @var.Detector_recipe_compartment_id_in_subtree,
+        ///         DisplayName = @var.Detector_recipe_display_name,
+        ///         ResourceMetadataOnly = @var.Detector_recipe_resource_metadata_only,
+        ///         State = @var.Detector_recipe_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -115,7 +111,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetDetectorRecipesArgs : Pulumi.InvokeArgs
+    public sealed class GetDetectorRecipesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
@@ -164,9 +160,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetDetectorRecipesArgs()
         {
         }
+        public static new GetDetectorRecipesArgs Empty => new GetDetectorRecipesArgs();
     }
 
-    public sealed class GetDetectorRecipesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDetectorRecipesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
@@ -215,6 +212,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetDetectorRecipesInvokeArgs()
         {
         }
+        public static new GetDetectorRecipesInvokeArgs Empty => new GetDetectorRecipesInvokeArgs();
     }
 
 

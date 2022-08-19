@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class TriggerActionGetArgs : Pulumi.ResourceArgs
+    public sealed class TriggerActionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the build pipeline to be triggered.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public TriggerActionGetArgs()
         {
         }
+        public static new TriggerActionGetArgs Empty => new TriggerActionGetArgs();
     }
 }

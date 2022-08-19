@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring.Inputs
 {
 
-    public sealed class MonitoredResourcesListMemberItemGetArgs : Pulumi.ResourceArgs
+    public sealed class MonitoredResourcesListMemberItemGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -93,5 +93,6 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public MonitoredResourcesListMemberItemGetArgs()
         {
         }
+        public static new MonitoredResourcesListMemberItemGetArgs Empty => new MonitoredResourcesListMemberItemGetArgs();
     }
 }

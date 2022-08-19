@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class AuditPolicyAuditSpecificationGetArgs : Pulumi.ResourceArgs
+    public sealed class AuditPolicyAuditSpecificationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The category to which the audit policy belongs.
@@ -87,5 +87,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public AuditPolicyAuditSpecificationGetArgs()
         {
         }
+        public static new AuditPolicyAuditSpecificationGetArgs Empty => new AuditPolicyAuditSpecificationGetArgs();
     }
 }

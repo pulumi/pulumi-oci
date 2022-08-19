@@ -68,6 +68,34 @@ public final class CloudGuardFunctions {
      * GET Cloud Guard Configuration Details for a Tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetCloudGuardConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGuardConfiguration = CloudGuardFunctions.getCloudGuardConfiguration(GetCloudGuardConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudGuardConfigurationResult> getCloudGuardConfiguration(GetCloudGuardConfigurationArgs args) {
@@ -79,6 +107,34 @@ public final class CloudGuardFunctions {
      * GET Cloud Guard Configuration Details for a Tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetCloudGuardConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGuardConfiguration = CloudGuardFunctions.getCloudGuardConfiguration(GetCloudGuardConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudGuardConfigurationResult> getCloudGuardConfigurationPlain(GetCloudGuardConfigurationPlainArgs args) {
@@ -90,6 +146,34 @@ public final class CloudGuardFunctions {
      * GET Cloud Guard Configuration Details for a Tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetCloudGuardConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGuardConfiguration = CloudGuardFunctions.getCloudGuardConfiguration(GetCloudGuardConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCloudGuardConfigurationResult> getCloudGuardConfiguration(GetCloudGuardConfigurationArgs args, InvokeOptions options) {
@@ -101,6 +185,34 @@ public final class CloudGuardFunctions {
      * GET Cloud Guard Configuration Details for a Tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetCloudGuardConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGuardConfiguration = CloudGuardFunctions.getCloudGuardConfiguration(GetCloudGuardConfigurationArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCloudGuardConfigurationResult> getCloudGuardConfigurationPlain(GetCloudGuardConfigurationPlainArgs args, InvokeOptions options) {
@@ -112,6 +224,34 @@ public final class CloudGuardFunctions {
      * Returns a DataMaskRule identified by DataMaskRuleId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataMaskRule = CloudGuardFunctions.getDataMaskRule(GetDataMaskRuleArgs.builder()
+     *             .dataMaskRuleId(oci_cloud_guard_data_mask_rule.test_data_mask_rule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataMaskRuleResult> getDataMaskRule(GetDataMaskRuleArgs args) {
@@ -123,6 +263,34 @@ public final class CloudGuardFunctions {
      * Returns a DataMaskRule identified by DataMaskRuleId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataMaskRule = CloudGuardFunctions.getDataMaskRule(GetDataMaskRuleArgs.builder()
+     *             .dataMaskRuleId(oci_cloud_guard_data_mask_rule.test_data_mask_rule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataMaskRuleResult> getDataMaskRulePlain(GetDataMaskRulePlainArgs args) {
@@ -134,6 +302,34 @@ public final class CloudGuardFunctions {
      * Returns a DataMaskRule identified by DataMaskRuleId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataMaskRule = CloudGuardFunctions.getDataMaskRule(GetDataMaskRuleArgs.builder()
+     *             .dataMaskRuleId(oci_cloud_guard_data_mask_rule.test_data_mask_rule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataMaskRuleResult> getDataMaskRule(GetDataMaskRuleArgs args, InvokeOptions options) {
@@ -145,6 +341,34 @@ public final class CloudGuardFunctions {
      * Returns a DataMaskRule identified by DataMaskRuleId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataMaskRule = CloudGuardFunctions.getDataMaskRule(GetDataMaskRuleArgs.builder()
+     *             .dataMaskRuleId(oci_cloud_guard_data_mask_rule.test_data_mask_rule().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataMaskRuleResult> getDataMaskRulePlain(GetDataMaskRulePlainArgs args, InvokeOptions options) {
@@ -156,6 +380,41 @@ public final class CloudGuardFunctions {
      * Returns a list of all Data Mask Rules in the root &#39;compartmentId&#39; passed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataMaskRules = CloudGuardFunctions.getDataMaskRules(GetDataMaskRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.data_mask_rule_access_level())
+     *             .dataMaskRuleStatus(var_.data_mask_rule_data_mask_rule_status())
+     *             .displayName(var_.data_mask_rule_display_name())
+     *             .iamGroupId(oci_identity_group.test_group().id())
+     *             .state(var_.data_mask_rule_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .targetType(var_.data_mask_rule_target_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataMaskRulesResult> getDataMaskRules(GetDataMaskRulesArgs args) {
@@ -167,6 +426,41 @@ public final class CloudGuardFunctions {
      * Returns a list of all Data Mask Rules in the root &#39;compartmentId&#39; passed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataMaskRules = CloudGuardFunctions.getDataMaskRules(GetDataMaskRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.data_mask_rule_access_level())
+     *             .dataMaskRuleStatus(var_.data_mask_rule_data_mask_rule_status())
+     *             .displayName(var_.data_mask_rule_display_name())
+     *             .iamGroupId(oci_identity_group.test_group().id())
+     *             .state(var_.data_mask_rule_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .targetType(var_.data_mask_rule_target_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataMaskRulesResult> getDataMaskRulesPlain(GetDataMaskRulesPlainArgs args) {
@@ -178,6 +472,41 @@ public final class CloudGuardFunctions {
      * Returns a list of all Data Mask Rules in the root &#39;compartmentId&#39; passed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataMaskRules = CloudGuardFunctions.getDataMaskRules(GetDataMaskRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.data_mask_rule_access_level())
+     *             .dataMaskRuleStatus(var_.data_mask_rule_data_mask_rule_status())
+     *             .displayName(var_.data_mask_rule_display_name())
+     *             .iamGroupId(oci_identity_group.test_group().id())
+     *             .state(var_.data_mask_rule_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .targetType(var_.data_mask_rule_target_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDataMaskRulesResult> getDataMaskRules(GetDataMaskRulesArgs args, InvokeOptions options) {
@@ -189,6 +518,41 @@ public final class CloudGuardFunctions {
      * Returns a list of all Data Mask Rules in the root &#39;compartmentId&#39; passed.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDataMaskRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataMaskRules = CloudGuardFunctions.getDataMaskRules(GetDataMaskRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.data_mask_rule_access_level())
+     *             .dataMaskRuleStatus(var_.data_mask_rule_data_mask_rule_status())
+     *             .displayName(var_.data_mask_rule_display_name())
+     *             .iamGroupId(oci_identity_group.test_group().id())
+     *             .state(var_.data_mask_rule_state())
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .targetType(var_.data_mask_rule_target_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDataMaskRulesResult> getDataMaskRulesPlain(GetDataMaskRulesPlainArgs args, InvokeOptions options) {
@@ -200,6 +564,34 @@ public final class CloudGuardFunctions {
      * Returns a DetectorRecipe identified by detectorRecipeId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectorRecipe = CloudGuardFunctions.getDetectorRecipe(GetDetectorRecipeArgs.builder()
+     *             .detectorRecipeId(oci_cloud_guard_detector_recipe.test_detector_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectorRecipeResult> getDetectorRecipe(GetDetectorRecipeArgs args) {
@@ -211,6 +603,34 @@ public final class CloudGuardFunctions {
      * Returns a DetectorRecipe identified by detectorRecipeId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectorRecipe = CloudGuardFunctions.getDetectorRecipe(GetDetectorRecipeArgs.builder()
+     *             .detectorRecipeId(oci_cloud_guard_detector_recipe.test_detector_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectorRecipeResult> getDetectorRecipePlain(GetDetectorRecipePlainArgs args) {
@@ -222,6 +642,34 @@ public final class CloudGuardFunctions {
      * Returns a DetectorRecipe identified by detectorRecipeId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectorRecipe = CloudGuardFunctions.getDetectorRecipe(GetDetectorRecipeArgs.builder()
+     *             .detectorRecipeId(oci_cloud_guard_detector_recipe.test_detector_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectorRecipeResult> getDetectorRecipe(GetDetectorRecipeArgs args, InvokeOptions options) {
@@ -233,6 +681,34 @@ public final class CloudGuardFunctions {
      * Returns a DetectorRecipe identified by detectorRecipeId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectorRecipe = CloudGuardFunctions.getDetectorRecipe(GetDetectorRecipeArgs.builder()
+     *             .detectorRecipeId(oci_cloud_guard_detector_recipe.test_detector_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectorRecipeResult> getDetectorRecipePlain(GetDetectorRecipePlainArgs args, InvokeOptions options) {
@@ -258,6 +734,39 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectorRecipes = CloudGuardFunctions.getDetectorRecipes(GetDetectorRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.detector_recipe_access_level())
+     *             .compartmentIdInSubtree(var_.detector_recipe_compartment_id_in_subtree())
+     *             .displayName(var_.detector_recipe_display_name())
+     *             .resourceMetadataOnly(var_.detector_recipe_resource_metadata_only())
+     *             .state(var_.detector_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectorRecipesResult> getDetectorRecipes(GetDetectorRecipesArgs args) {
@@ -283,6 +792,39 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectorRecipes = CloudGuardFunctions.getDetectorRecipes(GetDetectorRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.detector_recipe_access_level())
+     *             .compartmentIdInSubtree(var_.detector_recipe_compartment_id_in_subtree())
+     *             .displayName(var_.detector_recipe_display_name())
+     *             .resourceMetadataOnly(var_.detector_recipe_resource_metadata_only())
+     *             .state(var_.detector_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectorRecipesResult> getDetectorRecipesPlain(GetDetectorRecipesPlainArgs args) {
@@ -308,6 +850,39 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectorRecipes = CloudGuardFunctions.getDetectorRecipes(GetDetectorRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.detector_recipe_access_level())
+     *             .compartmentIdInSubtree(var_.detector_recipe_compartment_id_in_subtree())
+     *             .displayName(var_.detector_recipe_display_name())
+     *             .resourceMetadataOnly(var_.detector_recipe_resource_metadata_only())
+     *             .state(var_.detector_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDetectorRecipesResult> getDetectorRecipes(GetDetectorRecipesArgs args, InvokeOptions options) {
@@ -333,6 +908,39 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetDetectorRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDetectorRecipes = CloudGuardFunctions.getDetectorRecipes(GetDetectorRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.detector_recipe_access_level())
+     *             .compartmentIdInSubtree(var_.detector_recipe_compartment_id_in_subtree())
+     *             .displayName(var_.detector_recipe_display_name())
+     *             .resourceMetadataOnly(var_.detector_recipe_resource_metadata_only())
+     *             .state(var_.detector_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDetectorRecipesResult> getDetectorRecipesPlain(GetDetectorRecipesPlainArgs args, InvokeOptions options) {
@@ -344,6 +952,34 @@ public final class CloudGuardFunctions {
      * Returns a Target identified by targetId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTarget = CloudGuardFunctions.getGuardTarget(GetGuardTargetArgs.builder()
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGuardTargetResult> getGuardTarget(GetGuardTargetArgs args) {
@@ -355,6 +991,34 @@ public final class CloudGuardFunctions {
      * Returns a Target identified by targetId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTarget = CloudGuardFunctions.getGuardTarget(GetGuardTargetArgs.builder()
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGuardTargetResult> getGuardTargetPlain(GetGuardTargetPlainArgs args) {
@@ -366,6 +1030,34 @@ public final class CloudGuardFunctions {
      * Returns a Target identified by targetId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTarget = CloudGuardFunctions.getGuardTarget(GetGuardTargetArgs.builder()
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGuardTargetResult> getGuardTarget(GetGuardTargetArgs args, InvokeOptions options) {
@@ -377,6 +1069,34 @@ public final class CloudGuardFunctions {
      * Returns a Target identified by targetId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTarget = CloudGuardFunctions.getGuardTarget(GetGuardTargetArgs.builder()
+     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGuardTargetResult> getGuardTargetPlain(GetGuardTargetPlainArgs args, InvokeOptions options) {
@@ -401,6 +1121,39 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargets = CloudGuardFunctions.getGuardTargets(GetGuardTargetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.target_access_level())
+     *             .compartmentIdInSubtree(var_.target_compartment_id_in_subtree())
+     *             .displayName(var_.target_display_name())
+     *             .isNonSecurityZoneTargetsOnlyQuery(var_.target_is_non_security_zone_targets_only_query())
+     *             .state(var_.target_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGuardTargetsResult> getGuardTargets(GetGuardTargetsArgs args) {
@@ -425,6 +1178,39 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargets = CloudGuardFunctions.getGuardTargets(GetGuardTargetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.target_access_level())
+     *             .compartmentIdInSubtree(var_.target_compartment_id_in_subtree())
+     *             .displayName(var_.target_display_name())
+     *             .isNonSecurityZoneTargetsOnlyQuery(var_.target_is_non_security_zone_targets_only_query())
+     *             .state(var_.target_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGuardTargetsResult> getGuardTargetsPlain(GetGuardTargetsPlainArgs args) {
@@ -449,6 +1235,39 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargets = CloudGuardFunctions.getGuardTargets(GetGuardTargetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.target_access_level())
+     *             .compartmentIdInSubtree(var_.target_compartment_id_in_subtree())
+     *             .displayName(var_.target_display_name())
+     *             .isNonSecurityZoneTargetsOnlyQuery(var_.target_is_non_security_zone_targets_only_query())
+     *             .state(var_.target_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetGuardTargetsResult> getGuardTargets(GetGuardTargetsArgs args, InvokeOptions options) {
@@ -473,6 +1292,39 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetGuardTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargets = CloudGuardFunctions.getGuardTargets(GetGuardTargetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.target_access_level())
+     *             .compartmentIdInSubtree(var_.target_compartment_id_in_subtree())
+     *             .displayName(var_.target_display_name())
+     *             .isNonSecurityZoneTargetsOnlyQuery(var_.target_is_non_security_zone_targets_only_query())
+     *             .state(var_.target_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetGuardTargetsResult> getGuardTargetsPlain(GetGuardTargetsPlainArgs args, InvokeOptions options) {
@@ -484,6 +1336,34 @@ public final class CloudGuardFunctions {
      * Returns a managed list identified by managedListId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetManagedListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedList = CloudGuardFunctions.getManagedList(GetManagedListArgs.builder()
+     *             .managedListId(oci_cloud_guard_managed_list.test_managed_list().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedListResult> getManagedList(GetManagedListArgs args) {
@@ -495,6 +1375,34 @@ public final class CloudGuardFunctions {
      * Returns a managed list identified by managedListId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetManagedListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedList = CloudGuardFunctions.getManagedList(GetManagedListArgs.builder()
+     *             .managedListId(oci_cloud_guard_managed_list.test_managed_list().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedListResult> getManagedListPlain(GetManagedListPlainArgs args) {
@@ -506,6 +1414,34 @@ public final class CloudGuardFunctions {
      * Returns a managed list identified by managedListId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetManagedListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedList = CloudGuardFunctions.getManagedList(GetManagedListArgs.builder()
+     *             .managedListId(oci_cloud_guard_managed_list.test_managed_list().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedListResult> getManagedList(GetManagedListArgs args, InvokeOptions options) {
@@ -517,6 +1453,34 @@ public final class CloudGuardFunctions {
      * Returns a managed list identified by managedListId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetManagedListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedList = CloudGuardFunctions.getManagedList(GetManagedListArgs.builder()
+     *             .managedListId(oci_cloud_guard_managed_list.test_managed_list().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedListResult> getManagedListPlain(GetManagedListPlainArgs args, InvokeOptions options) {
@@ -541,6 +1505,40 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetManagedListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedLists = CloudGuardFunctions.getManagedLists(GetManagedListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.managed_list_access_level())
+     *             .compartmentIdInSubtree(var_.managed_list_compartment_id_in_subtree())
+     *             .displayName(var_.managed_list_display_name())
+     *             .listType(var_.managed_list_list_type())
+     *             .resourceMetadataOnly(var_.managed_list_resource_metadata_only())
+     *             .state(var_.managed_list_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedListsResult> getManagedLists(GetManagedListsArgs args) {
@@ -565,6 +1563,40 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetManagedListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedLists = CloudGuardFunctions.getManagedLists(GetManagedListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.managed_list_access_level())
+     *             .compartmentIdInSubtree(var_.managed_list_compartment_id_in_subtree())
+     *             .displayName(var_.managed_list_display_name())
+     *             .listType(var_.managed_list_list_type())
+     *             .resourceMetadataOnly(var_.managed_list_resource_metadata_only())
+     *             .state(var_.managed_list_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedListsResult> getManagedListsPlain(GetManagedListsPlainArgs args) {
@@ -589,6 +1621,40 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetManagedListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedLists = CloudGuardFunctions.getManagedLists(GetManagedListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.managed_list_access_level())
+     *             .compartmentIdInSubtree(var_.managed_list_compartment_id_in_subtree())
+     *             .displayName(var_.managed_list_display_name())
+     *             .listType(var_.managed_list_list_type())
+     *             .resourceMetadataOnly(var_.managed_list_resource_metadata_only())
+     *             .state(var_.managed_list_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetManagedListsResult> getManagedLists(GetManagedListsArgs args, InvokeOptions options) {
@@ -613,6 +1679,40 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetManagedListsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedLists = CloudGuardFunctions.getManagedLists(GetManagedListsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.managed_list_access_level())
+     *             .compartmentIdInSubtree(var_.managed_list_compartment_id_in_subtree())
+     *             .displayName(var_.managed_list_display_name())
+     *             .listType(var_.managed_list_list_type())
+     *             .resourceMetadataOnly(var_.managed_list_resource_metadata_only())
+     *             .state(var_.managed_list_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetManagedListsResult> getManagedListsPlain(GetManagedListsPlainArgs args, InvokeOptions options) {
@@ -624,6 +1724,34 @@ public final class CloudGuardFunctions {
      * Get a ResponderRecipe by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResponderRecipe = CloudGuardFunctions.getResponderRecipe(GetResponderRecipeArgs.builder()
+     *             .responderRecipeId(oci_cloud_guard_responder_recipe.test_responder_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResponderRecipeResult> getResponderRecipe(GetResponderRecipeArgs args) {
@@ -635,6 +1763,34 @@ public final class CloudGuardFunctions {
      * Get a ResponderRecipe by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResponderRecipe = CloudGuardFunctions.getResponderRecipe(GetResponderRecipeArgs.builder()
+     *             .responderRecipeId(oci_cloud_guard_responder_recipe.test_responder_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResponderRecipeResult> getResponderRecipePlain(GetResponderRecipePlainArgs args) {
@@ -646,6 +1802,34 @@ public final class CloudGuardFunctions {
      * Get a ResponderRecipe by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResponderRecipe = CloudGuardFunctions.getResponderRecipe(GetResponderRecipeArgs.builder()
+     *             .responderRecipeId(oci_cloud_guard_responder_recipe.test_responder_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResponderRecipeResult> getResponderRecipe(GetResponderRecipeArgs args, InvokeOptions options) {
@@ -657,6 +1841,34 @@ public final class CloudGuardFunctions {
      * Get a ResponderRecipe by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResponderRecipe = CloudGuardFunctions.getResponderRecipe(GetResponderRecipeArgs.builder()
+     *             .responderRecipeId(oci_cloud_guard_responder_recipe.test_responder_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResponderRecipeResult> getResponderRecipePlain(GetResponderRecipePlainArgs args, InvokeOptions options) {
@@ -681,6 +1893,39 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResponderRecipes = CloudGuardFunctions.getResponderRecipes(GetResponderRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.responder_recipe_access_level())
+     *             .compartmentIdInSubtree(var_.responder_recipe_compartment_id_in_subtree())
+     *             .displayName(var_.responder_recipe_display_name())
+     *             .resourceMetadataOnly(var_.responder_recipe_resource_metadata_only())
+     *             .state(var_.responder_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResponderRecipesResult> getResponderRecipes(GetResponderRecipesArgs args) {
@@ -705,6 +1950,39 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResponderRecipes = CloudGuardFunctions.getResponderRecipes(GetResponderRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.responder_recipe_access_level())
+     *             .compartmentIdInSubtree(var_.responder_recipe_compartment_id_in_subtree())
+     *             .displayName(var_.responder_recipe_display_name())
+     *             .resourceMetadataOnly(var_.responder_recipe_resource_metadata_only())
+     *             .state(var_.responder_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResponderRecipesResult> getResponderRecipesPlain(GetResponderRecipesPlainArgs args) {
@@ -729,6 +2007,39 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResponderRecipes = CloudGuardFunctions.getResponderRecipes(GetResponderRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.responder_recipe_access_level())
+     *             .compartmentIdInSubtree(var_.responder_recipe_compartment_id_in_subtree())
+     *             .displayName(var_.responder_recipe_display_name())
+     *             .resourceMetadataOnly(var_.responder_recipe_resource_metadata_only())
+     *             .state(var_.responder_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetResponderRecipesResult> getResponderRecipes(GetResponderRecipesArgs args, InvokeOptions options) {
@@ -753,6 +2064,39 @@ public final class CloudGuardFunctions {
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetResponderRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResponderRecipes = CloudGuardFunctions.getResponderRecipes(GetResponderRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .accessLevel(var_.responder_recipe_access_level())
+     *             .compartmentIdInSubtree(var_.responder_recipe_compartment_id_in_subtree())
+     *             .displayName(var_.responder_recipe_display_name())
+     *             .resourceMetadataOnly(var_.responder_recipe_resource_metadata_only())
+     *             .state(var_.responder_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetResponderRecipesResult> getResponderRecipesPlain(GetResponderRecipesPlainArgs args, InvokeOptions options) {
@@ -764,6 +2108,37 @@ public final class CloudGuardFunctions {
      * Returns a list of security zone policies. Specify any compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicies = CloudGuardFunctions.getSecurityPolicies(GetSecurityPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_policy_display_name())
+     *             .id(var_.security_policy_id())
+     *             .state(var_.security_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityPoliciesResult> getSecurityPolicies(GetSecurityPoliciesArgs args) {
@@ -775,6 +2150,37 @@ public final class CloudGuardFunctions {
      * Returns a list of security zone policies. Specify any compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicies = CloudGuardFunctions.getSecurityPolicies(GetSecurityPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_policy_display_name())
+     *             .id(var_.security_policy_id())
+     *             .state(var_.security_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityPoliciesResult> getSecurityPoliciesPlain(GetSecurityPoliciesPlainArgs args) {
@@ -786,6 +2192,37 @@ public final class CloudGuardFunctions {
      * Returns a list of security zone policies. Specify any compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicies = CloudGuardFunctions.getSecurityPolicies(GetSecurityPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_policy_display_name())
+     *             .id(var_.security_policy_id())
+     *             .state(var_.security_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityPoliciesResult> getSecurityPolicies(GetSecurityPoliciesArgs args, InvokeOptions options) {
@@ -797,6 +2234,37 @@ public final class CloudGuardFunctions {
      * Returns a list of security zone policies. Specify any compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicies = CloudGuardFunctions.getSecurityPolicies(GetSecurityPoliciesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_policy_display_name())
+     *             .id(var_.security_policy_id())
+     *             .state(var_.security_policy_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityPoliciesResult> getSecurityPoliciesPlain(GetSecurityPoliciesPlainArgs args, InvokeOptions options) {
@@ -808,6 +2276,34 @@ public final class CloudGuardFunctions {
      * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicy = CloudGuardFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
+     *             .securityPolicyId(oci_cloud_guard_security_policy.test_security_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityPolicyResult> getSecurityPolicy(GetSecurityPolicyArgs args) {
@@ -819,6 +2315,34 @@ public final class CloudGuardFunctions {
      * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicy = CloudGuardFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
+     *             .securityPolicyId(oci_cloud_guard_security_policy.test_security_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityPolicyResult> getSecurityPolicyPlain(GetSecurityPolicyPlainArgs args) {
@@ -830,6 +2354,34 @@ public final class CloudGuardFunctions {
      * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicy = CloudGuardFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
+     *             .securityPolicyId(oci_cloud_guard_security_policy.test_security_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityPolicyResult> getSecurityPolicy(GetSecurityPolicyArgs args, InvokeOptions options) {
@@ -841,6 +2393,34 @@ public final class CloudGuardFunctions {
      * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityPolicy = CloudGuardFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
+     *             .securityPolicyId(oci_cloud_guard_security_policy.test_security_policy().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityPolicyResult> getSecurityPolicyPlain(GetSecurityPolicyPlainArgs args, InvokeOptions options) {
@@ -852,6 +2432,34 @@ public final class CloudGuardFunctions {
      * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityRecipe = CloudGuardFunctions.getSecurityRecipe(GetSecurityRecipeArgs.builder()
+     *             .securityRecipeId(oci_cloud_guard_security_recipe.test_security_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityRecipeResult> getSecurityRecipe(GetSecurityRecipeArgs args) {
@@ -863,6 +2471,34 @@ public final class CloudGuardFunctions {
      * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityRecipe = CloudGuardFunctions.getSecurityRecipe(GetSecurityRecipeArgs.builder()
+     *             .securityRecipeId(oci_cloud_guard_security_recipe.test_security_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityRecipeResult> getSecurityRecipePlain(GetSecurityRecipePlainArgs args) {
@@ -874,6 +2510,34 @@ public final class CloudGuardFunctions {
      * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityRecipe = CloudGuardFunctions.getSecurityRecipe(GetSecurityRecipeArgs.builder()
+     *             .securityRecipeId(oci_cloud_guard_security_recipe.test_security_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityRecipeResult> getSecurityRecipe(GetSecurityRecipeArgs args, InvokeOptions options) {
@@ -885,6 +2549,34 @@ public final class CloudGuardFunctions {
      * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityRecipe = CloudGuardFunctions.getSecurityRecipe(GetSecurityRecipeArgs.builder()
+     *             .securityRecipeId(oci_cloud_guard_security_recipe.test_security_recipe().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityRecipeResult> getSecurityRecipePlain(GetSecurityRecipePlainArgs args, InvokeOptions options) {
@@ -896,6 +2588,37 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zone recipes in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityRecipes = CloudGuardFunctions.getSecurityRecipes(GetSecurityRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_recipe_display_name())
+     *             .id(var_.security_recipe_id())
+     *             .state(var_.security_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityRecipesResult> getSecurityRecipes(GetSecurityRecipesArgs args) {
@@ -907,6 +2630,37 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zone recipes in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityRecipes = CloudGuardFunctions.getSecurityRecipes(GetSecurityRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_recipe_display_name())
+     *             .id(var_.security_recipe_id())
+     *             .state(var_.security_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityRecipesResult> getSecurityRecipesPlain(GetSecurityRecipesPlainArgs args) {
@@ -918,6 +2672,37 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zone recipes in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityRecipes = CloudGuardFunctions.getSecurityRecipes(GetSecurityRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_recipe_display_name())
+     *             .id(var_.security_recipe_id())
+     *             .state(var_.security_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityRecipesResult> getSecurityRecipes(GetSecurityRecipesArgs args, InvokeOptions options) {
@@ -929,6 +2714,37 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zone recipes in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityRecipesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityRecipes = CloudGuardFunctions.getSecurityRecipes(GetSecurityRecipesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_recipe_display_name())
+     *             .id(var_.security_recipe_id())
+     *             .state(var_.security_recipe_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityRecipesResult> getSecurityRecipesPlain(GetSecurityRecipesPlainArgs args, InvokeOptions options) {
@@ -940,6 +2756,34 @@ public final class CloudGuardFunctions {
      * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityZone = CloudGuardFunctions.getSecurityZone(GetSecurityZoneArgs.builder()
+     *             .securityZoneId(oci_cloud_guard_security_zone.test_security_zone().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityZoneResult> getSecurityZone(GetSecurityZoneArgs args) {
@@ -951,6 +2795,34 @@ public final class CloudGuardFunctions {
      * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityZone = CloudGuardFunctions.getSecurityZone(GetSecurityZoneArgs.builder()
+     *             .securityZoneId(oci_cloud_guard_security_zone.test_security_zone().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityZoneResult> getSecurityZonePlain(GetSecurityZonePlainArgs args) {
@@ -962,6 +2834,34 @@ public final class CloudGuardFunctions {
      * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityZone = CloudGuardFunctions.getSecurityZone(GetSecurityZoneArgs.builder()
+     *             .securityZoneId(oci_cloud_guard_security_zone.test_security_zone().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityZoneResult> getSecurityZone(GetSecurityZoneArgs args, InvokeOptions options) {
@@ -973,6 +2873,34 @@ public final class CloudGuardFunctions {
      * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone&#39;s compartments that violate a policy are denied.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZoneArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityZone = CloudGuardFunctions.getSecurityZone(GetSecurityZoneArgs.builder()
+     *             .securityZoneId(oci_cloud_guard_security_zone.test_security_zone().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityZoneResult> getSecurityZonePlain(GetSecurityZonePlainArgs args, InvokeOptions options) {
@@ -984,6 +2912,39 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zones in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityZones = CloudGuardFunctions.getSecurityZones(GetSecurityZonesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_zone_display_name())
+     *             .id(var_.security_zone_id())
+     *             .isRequiredSecurityZonesInSubtree(var_.security_zone_is_required_security_zones_in_subtree())
+     *             .securityRecipeId(oci_cloud_guard_security_recipe.test_security_recipe().id())
+     *             .state(var_.security_zone_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityZonesResult> getSecurityZones(GetSecurityZonesArgs args) {
@@ -995,6 +2956,39 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zones in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityZones = CloudGuardFunctions.getSecurityZones(GetSecurityZonesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_zone_display_name())
+     *             .id(var_.security_zone_id())
+     *             .isRequiredSecurityZonesInSubtree(var_.security_zone_is_required_security_zones_in_subtree())
+     *             .securityRecipeId(oci_cloud_guard_security_recipe.test_security_recipe().id())
+     *             .state(var_.security_zone_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityZonesResult> getSecurityZonesPlain(GetSecurityZonesPlainArgs args) {
@@ -1006,6 +3000,39 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zones in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityZones = CloudGuardFunctions.getSecurityZones(GetSecurityZonesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_zone_display_name())
+     *             .id(var_.security_zone_id())
+     *             .isRequiredSecurityZonesInSubtree(var_.security_zone_is_required_security_zones_in_subtree())
+     *             .securityRecipeId(oci_cloud_guard_security_recipe.test_security_recipe().id())
+     *             .state(var_.security_zone_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSecurityZonesResult> getSecurityZones(GetSecurityZonesArgs args, InvokeOptions options) {
@@ -1017,6 +3044,39 @@ public final class CloudGuardFunctions {
      * Gets a list of all security zones in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CloudGuard.CloudGuardFunctions;
+     * import com.pulumi.oci.CloudGuard.inputs.GetSecurityZonesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSecurityZones = CloudGuardFunctions.getSecurityZones(GetSecurityZonesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.security_zone_display_name())
+     *             .id(var_.security_zone_id())
+     *             .isRequiredSecurityZonesInSubtree(var_.security_zone_is_required_security_zones_in_subtree())
+     *             .securityRecipeId(oci_cloud_guard_security_recipe.test_security_recipe().id())
+     *             .state(var_.security_zone_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSecurityZonesResult> getSecurityZonesPlain(GetSecurityZonesPlainArgs args, InvokeOptions options) {

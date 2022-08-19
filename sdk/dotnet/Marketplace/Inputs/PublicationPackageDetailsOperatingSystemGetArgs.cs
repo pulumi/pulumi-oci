@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Marketplace.Inputs
 {
 
-    public sealed class PublicationPackageDetailsOperatingSystemGetArgs : Pulumi.ResourceArgs
+    public sealed class PublicationPackageDetailsOperatingSystemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The name of the contact.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Marketplace.Inputs
         public PublicationPackageDetailsOperatingSystemGetArgs()
         {
         }
+        public static new PublicationPackageDetailsOperatingSystemGetArgs Empty => new PublicationPackageDetailsOperatingSystemGetArgs();
     }
 }

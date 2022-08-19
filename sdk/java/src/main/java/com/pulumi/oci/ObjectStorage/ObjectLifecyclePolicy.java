@@ -21,6 +21,50 @@ import javax.annotation.Nullable;
  * Creates or replaces the object lifecycle policy for the bucket.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ObjectStorage.ObjectLifecyclePolicy;
+ * import com.pulumi.oci.ObjectStorage.ObjectLifecyclePolicyArgs;
+ * import com.pulumi.oci.ObjectStorage.inputs.ObjectLifecyclePolicyRuleArgs;
+ * import com.pulumi.oci.ObjectStorage.inputs.ObjectLifecyclePolicyRuleObjectNameFilterArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testObjectLifecyclePolicy = new ObjectLifecyclePolicy(&#34;testObjectLifecyclePolicy&#34;, ObjectLifecyclePolicyArgs.builder()        
+ *             .bucket(var_.object_lifecycle_policy_bucket())
+ *             .namespace(var_.object_lifecycle_policy_namespace())
+ *             .rules(ObjectLifecyclePolicyRuleArgs.builder()
+ *                 .action(var_.object_lifecycle_policy_rules_action())
+ *                 .isEnabled(var_.object_lifecycle_policy_rules_is_enabled())
+ *                 .name(var_.object_lifecycle_policy_rules_name())
+ *                 .timeAmount(var_.object_lifecycle_policy_rules_time_amount())
+ *                 .timeUnit(var_.object_lifecycle_policy_rules_time_unit())
+ *                 .objectNameFilter(ObjectLifecyclePolicyRuleObjectNameFilterArgs.builder()
+ *                     .exclusionPatterns(var_.object_lifecycle_policy_rules_object_name_filter_exclusion_patterns())
+ *                     .inclusionPatterns(var_.object_lifecycle_policy_rules_object_name_filter_inclusion_patterns())
+ *                     .inclusionPrefixes(var_.object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes())
+ *                     .build())
+ *                 .target(var_.object_lifecycle_policy_rules_target())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

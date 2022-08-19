@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConsoleHistories = Oci.Core.GetConsoleHistories.Invoke(new()
         ///     {
-        ///         var testConsoleHistories = Output.Create(Oci.Core.GetConsoleHistories.InvokeAsync(new Oci.Core.GetConsoleHistoriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Console_history_availability_domain,
-        ///             InstanceId = oci_core_instance.Test_instance.Id,
-        ///             State = @var.Console_history_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Console_history_availability_domain,
+        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         State = @var.Console_history_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConsoleHistories = Oci.Core.GetConsoleHistories.Invoke(new()
         ///     {
-        ///         var testConsoleHistories = Output.Create(Oci.Core.GetConsoleHistories.InvokeAsync(new Oci.Core.GetConsoleHistoriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Console_history_availability_domain,
-        ///             InstanceId = oci_core_instance.Test_instance.Id,
-        ///             State = @var.Console_history_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Console_history_availability_domain,
+        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         State = @var.Console_history_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetConsoleHistoriesArgs : Pulumi.InvokeArgs
+    public sealed class GetConsoleHistoriesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.Core
         public GetConsoleHistoriesArgs()
         {
         }
+        public static new GetConsoleHistoriesArgs Empty => new GetConsoleHistoriesArgs();
     }
 
-    public sealed class GetConsoleHistoriesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConsoleHistoriesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.Core
         public GetConsoleHistoriesInvokeArgs()
         {
         }
+        public static new GetConsoleHistoriesInvokeArgs Empty => new GetConsoleHistoriesInvokeArgs();
     }
 
 

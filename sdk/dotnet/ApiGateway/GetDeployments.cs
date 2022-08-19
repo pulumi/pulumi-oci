@@ -22,23 +22,21 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeployments = Oci.ApiGateway.GetDeployments.Invoke(new()
         ///     {
-        ///         var testDeployments = Output.Create(Oci.ApiGateway.GetDeployments.InvokeAsync(new Oci.ApiGateway.GetDeploymentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Deployment_display_name,
-        ///             GatewayId = oci_apigateway_gateway.Test_gateway.Id,
-        ///             State = @var.Deployment_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Deployment_display_name,
+        ///         GatewayId = oci_apigateway_gateway.Test_gateway.Id,
+        ///         State = @var.Deployment_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDeployments = Oci.ApiGateway.GetDeployments.Invoke(new()
         ///     {
-        ///         var testDeployments = Output.Create(Oci.ApiGateway.GetDeployments.InvokeAsync(new Oci.ApiGateway.GetDeploymentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Deployment_display_name,
-        ///             GatewayId = oci_apigateway_gateway.Test_gateway.Id,
-        ///             State = @var.Deployment_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Deployment_display_name,
+        ///         GatewayId = oci_apigateway_gateway.Test_gateway.Id,
+        ///         State = @var.Deployment_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.ApiGateway
     }
 
 
-    public sealed class GetDeploymentsArgs : Pulumi.InvokeArgs
+    public sealed class GetDeploymentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ocid of the compartment in which to list resources.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.ApiGateway
         public GetDeploymentsArgs()
         {
         }
+        public static new GetDeploymentsArgs Empty => new GetDeploymentsArgs();
     }
 
-    public sealed class GetDeploymentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDeploymentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ocid of the compartment in which to list resources.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.ApiGateway
         public GetDeploymentsInvokeArgs()
         {
         }
+        public static new GetDeploymentsInvokeArgs Empty => new GetDeploymentsInvokeArgs();
     }
 
 

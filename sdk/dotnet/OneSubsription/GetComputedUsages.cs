@@ -29,7 +29,7 @@ namespace Pulumi.Oci.OneSubsription
     }
 
 
-    public sealed class GetComputedUsagesArgs : Pulumi.InvokeArgs
+    public sealed class GetComputedUsagesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the root compartment.
@@ -78,9 +78,10 @@ namespace Pulumi.Oci.OneSubsription
         public GetComputedUsagesArgs()
         {
         }
+        public static new GetComputedUsagesArgs Empty => new GetComputedUsagesArgs();
     }
 
-    public sealed class GetComputedUsagesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetComputedUsagesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the root compartment.
@@ -129,6 +130,7 @@ namespace Pulumi.Oci.OneSubsription
         public GetComputedUsagesInvokeArgs()
         {
         }
+        public static new GetComputedUsagesInvokeArgs Empty => new GetComputedUsagesInvokeArgs();
     }
 
 

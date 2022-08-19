@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class SecurityAssessmentStatisticArgs : Pulumi.ResourceArgs
+    public sealed class SecurityAssessmentStatisticArgs : global::Pulumi.ResourceArgs
     {
         [Input("advisories")]
         private InputList<Inputs.SecurityAssessmentStatisticAdvisoryArgs>? _advisories;
@@ -93,5 +93,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public SecurityAssessmentStatisticArgs()
         {
         }
+        public static new SecurityAssessmentStatisticArgs Empty => new SecurityAssessmentStatisticArgs();
     }
 }

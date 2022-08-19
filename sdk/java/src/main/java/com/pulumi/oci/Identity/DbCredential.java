@@ -19,6 +19,36 @@ import javax.annotation.Nullable;
  * Creates a new DB credential for the specified user.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DbCredential;
+ * import com.pulumi.oci.Identity.DbCredentialArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDbCredential = new DbCredential(&#34;testDbCredential&#34;, DbCredentialArgs.builder()        
+ *             .description(var_.db_credential_description())
+ *             .password(var_.db_credential_password())
+ *             .userId(oci_identity_user.test_user().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

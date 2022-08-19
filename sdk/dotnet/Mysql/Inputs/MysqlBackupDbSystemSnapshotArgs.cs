@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlBackupDbSystemSnapshotArgs : Pulumi.ResourceArgs
+    public sealed class MysqlBackupDbSystemSnapshotArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The username for the administrative user.
@@ -195,5 +195,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlBackupDbSystemSnapshotArgs()
         {
         }
+        public static new MysqlBackupDbSystemSnapshotArgs Empty => new MysqlBackupDbSystemSnapshotArgs();
     }
 }

@@ -17,24 +17,22 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPluggableDatabasesLocalClone = new Oci.Database.PluggableDatabasesLocalClone("testPluggableDatabasesLocalClone", new()
     ///     {
-    ///         var testPluggableDatabasesLocalClone = new Oci.Database.PluggableDatabasesLocalClone("testPluggableDatabasesLocalClone", new Oci.Database.PluggableDatabasesLocalCloneArgs
-    ///         {
-    ///             ClonedPdbName = @var.Pluggable_databases_local_clone_cloned_pdb_name,
-    ///             PluggableDatabaseId = oci_database_pluggable_database.Test_pluggable_database.Id,
-    ///             PdbAdminPassword = @var.Pluggable_databases_local_clone_pdb_admin_password,
-    ///             ShouldPdbAdminAccountBeLocked = @var.Pluggable_databases_local_clone_should_pdb_admin_account_be_locked,
-    ///             TargetTdeWalletPassword = @var.Pluggable_databases_local_clone_target_tde_wallet_password,
-    ///         });
-    ///     }
+    ///         ClonedPdbName = @var.Pluggable_databases_local_clone_cloned_pdb_name,
+    ///         PluggableDatabaseId = oci_database_pluggable_database.Test_pluggable_database.Id,
+    ///         PdbAdminPassword = @var.Pluggable_databases_local_clone_pdb_admin_password,
+    ///         ShouldPdbAdminAccountBeLocked = @var.Pluggable_databases_local_clone_should_pdb_admin_account_be_locked,
+    ///         TargetTdeWalletPassword = @var.Pluggable_databases_local_clone_target_tde_wallet_password,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -42,7 +40,7 @@ namespace Pulumi.Oci.Database
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/pluggableDatabasesLocalClone:PluggableDatabasesLocalClone")]
-    public partial class PluggableDatabasesLocalClone : Pulumi.CustomResource
+    public partial class PluggableDatabasesLocalClone : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -184,7 +182,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class PluggableDatabasesLocalCloneArgs : Pulumi.ResourceArgs
+    public sealed class PluggableDatabasesLocalCloneArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -219,9 +217,10 @@ namespace Pulumi.Oci.Database
         public PluggableDatabasesLocalCloneArgs()
         {
         }
+        public static new PluggableDatabasesLocalCloneArgs Empty => new PluggableDatabasesLocalCloneArgs();
     }
 
-    public sealed class PluggableDatabasesLocalCloneState : Pulumi.ResourceArgs
+    public sealed class PluggableDatabasesLocalCloneState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -340,5 +339,6 @@ namespace Pulumi.Oci.Database
         public PluggableDatabasesLocalCloneState()
         {
         }
+        public static new PluggableDatabasesLocalCloneState Empty => new PluggableDatabasesLocalCloneState();
     }
 }

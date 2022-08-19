@@ -21,21 +21,19 @@ namespace Pulumi.Oci.Blockchain
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPeer = Oci.Blockchain.GetPeer.Invoke(new()
         ///     {
-        ///         var testPeer = Output.Create(Oci.Blockchain.GetPeer.InvokeAsync(new Oci.Blockchain.GetPeerArgs
-        ///         {
-        ///             BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-        ///             PeerId = oci_blockchain_peer.Test_peer.Id,
-        ///         }));
-        ///     }
+        ///         BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+        ///         PeerId = oci_blockchain_peer.Test_peer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.Blockchain
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPeer = Oci.Blockchain.GetPeer.Invoke(new()
         ///     {
-        ///         var testPeer = Output.Create(Oci.Blockchain.GetPeer.InvokeAsync(new Oci.Blockchain.GetPeerArgs
-        ///         {
-        ///             BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
-        ///             PeerId = oci_blockchain_peer.Test_peer.Id,
-        ///         }));
-        ///     }
+        ///         BlockchainPlatformId = oci_blockchain_blockchain_platform.Test_blockchain_platform.Id,
+        ///         PeerId = oci_blockchain_peer.Test_peer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Blockchain
     }
 
 
-    public sealed class GetPeerArgs : Pulumi.InvokeArgs
+    public sealed class GetPeerArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique service identifier.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Blockchain
         public GetPeerArgs()
         {
         }
+        public static new GetPeerArgs Empty => new GetPeerArgs();
     }
 
-    public sealed class GetPeerInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPeerInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique service identifier.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.Blockchain
         public GetPeerInvokeArgs()
         {
         }
+        public static new GetPeerInvokeArgs Empty => new GetPeerInvokeArgs();
     }
 
 

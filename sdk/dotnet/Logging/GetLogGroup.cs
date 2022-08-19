@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogGroup = Oci.Logging.GetLogGroup.Invoke(new()
         ///     {
-        ///         var testLogGroup = Output.Create(Oci.Logging.GetLogGroup.InvokeAsync(new Oci.Logging.GetLogGroupArgs
-        ///         {
-        ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-        ///         }));
-        ///     }
+        ///         LogGroupId = oci_logging_log_group.Test_log_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Logging
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogGroup = Oci.Logging.GetLogGroup.Invoke(new()
         ///     {
-        ///         var testLogGroup = Output.Create(Oci.Logging.GetLogGroup.InvokeAsync(new Oci.Logging.GetLogGroupArgs
-        ///         {
-        ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-        ///         }));
-        ///     }
+        ///         LogGroupId = oci_logging_log_group.Test_log_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Logging
     }
 
 
-    public sealed class GetLogGroupArgs : Pulumi.InvokeArgs
+    public sealed class GetLogGroupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of a log group to work with.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Logging
         public GetLogGroupArgs()
         {
         }
+        public static new GetLogGroupArgs Empty => new GetLogGroupArgs();
     }
 
-    public sealed class GetLogGroupInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of a log group to work with.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Logging
         public GetLogGroupInvokeArgs()
         {
         }
+        public static new GetLogGroupInvokeArgs Empty => new GetLogGroupInvokeArgs();
     }
 
 

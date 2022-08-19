@@ -21,21 +21,19 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBackends = Oci.LoadBalancer.GetBackends.Invoke(new()
         ///     {
-        ///         var testBackends = Output.Create(Oci.LoadBalancer.GetBackends.InvokeAsync(new Oci.LoadBalancer.GetBackendsArgs
-        ///         {
-        ///             BackendsetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         BackendsetName = oci_load_balancer_backend_set.Test_backend_set.Name,
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBackends = Oci.LoadBalancer.GetBackends.Invoke(new()
         ///     {
-        ///         var testBackends = Output.Create(Oci.LoadBalancer.GetBackends.InvokeAsync(new Oci.LoadBalancer.GetBackendsArgs
-        ///         {
-        ///             BackendsetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-        ///             LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         BackendsetName = oci_load_balancer_backend_set.Test_backend_set.Name,
+        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetBackendsArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the backend set associated with the backend servers.  Example: `example_backend_set`
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetBackendsArgs()
         {
         }
+        public static new GetBackendsArgs Empty => new GetBackendsArgs();
     }
 
-    public sealed class GetBackendsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the backend set associated with the backend servers.  Example: `example_backend_set`
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetBackendsInvokeArgs()
         {
         }
+        public static new GetBackendsInvokeArgs Empty => new GetBackendsInvokeArgs();
     }
 
 

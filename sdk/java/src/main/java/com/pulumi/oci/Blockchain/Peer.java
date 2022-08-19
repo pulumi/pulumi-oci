@@ -20,6 +20,41 @@ import javax.annotation.Nullable;
  * Create Blockchain Platform Peer
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Blockchain.Peer;
+ * import com.pulumi.oci.Blockchain.PeerArgs;
+ * import com.pulumi.oci.Blockchain.inputs.PeerOcpuAllocationParamArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPeer = new Peer(&#34;testPeer&#34;, PeerArgs.builder()        
+ *             .ad(var_.peer_ad())
+ *             .blockchainPlatformId(oci_blockchain_blockchain_platform.test_blockchain_platform().id())
+ *             .ocpuAllocationParam(PeerOcpuAllocationParamArgs.builder()
+ *                 .ocpuAllocationNumber(var_.peer_ocpu_allocation_param_ocpu_allocation_number())
+ *                 .build())
+ *             .role(var_.peer_role())
+ *             .alias(var_.peer_alias())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

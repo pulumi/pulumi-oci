@@ -25,23 +25,21 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseGroups = Oci.DatabaseManagement.GetManagedDatabaseGroups.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseGroups = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseGroups.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseGroupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Managed_database_group_id,
-        ///             Name = @var.Managed_database_group_name,
-        ///             State = @var.Managed_database_group_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Managed_database_group_id,
+        ///         Name = @var.Managed_database_group_name,
+        ///         State = @var.Managed_database_group_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,23 +61,21 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseGroups = Oci.DatabaseManagement.GetManagedDatabaseGroups.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseGroups = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseGroups.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseGroupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Managed_database_group_id,
-        ///             Name = @var.Managed_database_group_name,
-        ///             State = @var.Managed_database_group_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Managed_database_group_id,
+        ///         Name = @var.Managed_database_group_name,
+        ///         State = @var.Managed_database_group_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseGroupsArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseGroupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -126,9 +122,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseGroupsArgs()
         {
         }
+        public static new GetManagedDatabaseGroupsArgs Empty => new GetManagedDatabaseGroupsArgs();
     }
 
-    public sealed class GetManagedDatabaseGroupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -165,6 +162,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseGroupsInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseGroupsInvokeArgs Empty => new GetManagedDatabaseGroupsInvokeArgs();
     }
 
 

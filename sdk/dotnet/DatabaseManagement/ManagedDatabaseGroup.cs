@@ -18,28 +18,26 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testManagedDatabaseGroup = new Oci.DatabaseManagement.ManagedDatabaseGroup("testManagedDatabaseGroup", new()
     ///     {
-    ///         var testManagedDatabaseGroup = new Oci.DatabaseManagement.ManagedDatabaseGroup("testManagedDatabaseGroup", new Oci.DatabaseManagement.ManagedDatabaseGroupArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Description = @var.Managed_database_group_description,
+    ///         ManagedDatabases = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Description = @var.Managed_database_group_description,
-    ///             ManagedDatabases = 
+    ///             new Oci.DatabaseManagement.Inputs.ManagedDatabaseGroupManagedDatabaseArgs
     ///             {
-    ///                 new Oci.DatabaseManagement.Inputs.ManagedDatabaseGroupManagedDatabaseArgs
-    ///                 {
-    ///                     Id = @var.Managed_database_id,
-    ///                 },
+    ///                 Id = @var.Managed_database_id,
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -51,7 +49,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup")]
-    public partial class ManagedDatabaseGroup : Pulumi.CustomResource
+    public partial class ManagedDatabaseGroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
@@ -139,7 +137,7 @@ namespace Pulumi.Oci.DatabaseManagement
         }
     }
 
-    public sealed class ManagedDatabaseGroupArgs : Pulumi.ResourceArgs
+    public sealed class ManagedDatabaseGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
@@ -174,9 +172,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public ManagedDatabaseGroupArgs()
         {
         }
+        public static new ManagedDatabaseGroupArgs Empty => new ManagedDatabaseGroupArgs();
     }
 
-    public sealed class ManagedDatabaseGroupState : Pulumi.ResourceArgs
+    public sealed class ManagedDatabaseGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
@@ -229,5 +228,6 @@ namespace Pulumi.Oci.DatabaseManagement
         public ManagedDatabaseGroupState()
         {
         }
+        public static new ManagedDatabaseGroupState Empty => new ManagedDatabaseGroupState();
     }
 }

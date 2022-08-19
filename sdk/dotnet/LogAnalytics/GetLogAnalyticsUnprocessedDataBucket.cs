@@ -22,20 +22,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsUnprocessedDataBucket = Oci.LogAnalytics.GetLogAnalyticsUnprocessedDataBucket.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsUnprocessedDataBucket = Output.Create(Oci.LogAnalytics.GetLogAnalyticsUnprocessedDataBucket.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsUnprocessedDataBucketArgs
-        ///         {
-        ///             Namespace = @var.Log_analytics_unprocessed_data_bucket_namespace,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Log_analytics_unprocessed_data_bucket_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLogAnalyticsUnprocessedDataBucket = Oci.LogAnalytics.GetLogAnalyticsUnprocessedDataBucket.Invoke(new()
         ///     {
-        ///         var testLogAnalyticsUnprocessedDataBucket = Output.Create(Oci.LogAnalytics.GetLogAnalyticsUnprocessedDataBucket.InvokeAsync(new Oci.LogAnalytics.GetLogAnalyticsUnprocessedDataBucketArgs
-        ///         {
-        ///             Namespace = @var.Log_analytics_unprocessed_data_bucket_namespace,
-        ///         }));
-        ///     }
+        ///         Namespace = @var.Log_analytics_unprocessed_data_bucket_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.LogAnalytics
     }
 
 
-    public sealed class GetLogAnalyticsUnprocessedDataBucketArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsUnprocessedDataBucketArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsUnprocessedDataBucketArgs()
         {
         }
+        public static new GetLogAnalyticsUnprocessedDataBucketArgs Empty => new GetLogAnalyticsUnprocessedDataBucketArgs();
     }
 
-    public sealed class GetLogAnalyticsUnprocessedDataBucketInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLogAnalyticsUnprocessedDataBucketInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Logging Analytics namespace used for the request.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.LogAnalytics
         public GetLogAnalyticsUnprocessedDataBucketInvokeArgs()
         {
         }
+        public static new GetLogAnalyticsUnprocessedDataBucketInvokeArgs Empty => new GetLogAnalyticsUnprocessedDataBucketInvokeArgs();
     }
 
 

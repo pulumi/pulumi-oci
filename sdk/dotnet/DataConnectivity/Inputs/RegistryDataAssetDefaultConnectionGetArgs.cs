@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataConnectivity.Inputs
 {
 
-    public sealed class RegistryDataAssetDefaultConnectionGetArgs : Pulumi.ResourceArgs
+    public sealed class RegistryDataAssetDefaultConnectionGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("connectionProperties")]
         private InputList<Inputs.RegistryDataAssetDefaultConnectionConnectionPropertyGetArgs>? _connectionProperties;
@@ -117,5 +117,6 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public RegistryDataAssetDefaultConnectionGetArgs()
         {
         }
+        public static new RegistryDataAssetDefaultConnectionGetArgs Empty => new RegistryDataAssetDefaultConnectionGetArgs();
     }
 }

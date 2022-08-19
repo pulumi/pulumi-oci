@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyWafConfigProtectionSettingsArgs : Pulumi.ResourceArgs
+    public sealed class PolicyWafConfigProtectionSettingsArgs : global::Pulumi.ResourceArgs
     {
         [Input("allowedHttpMethods")]
         private InputList<string>? _allowedHttpMethods;
@@ -105,5 +105,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyWafConfigProtectionSettingsArgs()
         {
         }
+        public static new PolicyWafConfigProtectionSettingsArgs Empty => new PolicyWafConfigProtectionSettingsArgs();
     }
 }

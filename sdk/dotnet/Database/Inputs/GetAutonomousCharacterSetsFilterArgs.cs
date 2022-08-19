@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class GetAutonomousCharacterSetsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetAutonomousCharacterSetsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A valid Oracle character set.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Database.Inputs
         public GetAutonomousCharacterSetsFilterInputArgs()
         {
         }
+        public static new GetAutonomousCharacterSetsFilterInputArgs Empty => new GetAutonomousCharacterSetsFilterInputArgs();
     }
 }

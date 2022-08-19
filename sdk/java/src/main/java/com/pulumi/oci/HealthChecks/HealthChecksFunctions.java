@@ -38,6 +38,34 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified monitor.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHttpMonitorResult> getHttpMonitor(GetHttpMonitorArgs args) {
@@ -49,6 +77,34 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified monitor.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHttpMonitorResult> getHttpMonitorPlain(GetHttpMonitorPlainArgs args) {
@@ -60,6 +116,34 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified monitor.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHttpMonitorResult> getHttpMonitor(GetHttpMonitorArgs args, InvokeOptions options) {
@@ -71,6 +155,34 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified monitor.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHttpMonitorResult> getHttpMonitorPlain(GetHttpMonitorPlainArgs args, InvokeOptions options) {
@@ -82,6 +194,36 @@ public final class HealthChecksFunctions {
      * Gets a list of HTTP monitors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpMonitors = HealthChecksFunctions.getHttpMonitors(GetHttpMonitorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.http_monitor_display_name())
+     *             .homeRegion(var_.http_monitor_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHttpMonitorsResult> getHttpMonitors(GetHttpMonitorsArgs args) {
@@ -93,6 +235,36 @@ public final class HealthChecksFunctions {
      * Gets a list of HTTP monitors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpMonitors = HealthChecksFunctions.getHttpMonitors(GetHttpMonitorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.http_monitor_display_name())
+     *             .homeRegion(var_.http_monitor_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHttpMonitorsResult> getHttpMonitorsPlain(GetHttpMonitorsPlainArgs args) {
@@ -104,6 +276,36 @@ public final class HealthChecksFunctions {
      * Gets a list of HTTP monitors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpMonitors = HealthChecksFunctions.getHttpMonitors(GetHttpMonitorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.http_monitor_display_name())
+     *             .homeRegion(var_.http_monitor_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHttpMonitorsResult> getHttpMonitors(GetHttpMonitorsArgs args, InvokeOptions options) {
@@ -115,6 +317,36 @@ public final class HealthChecksFunctions {
      * Gets a list of HTTP monitors.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpMonitors = HealthChecksFunctions.getHttpMonitors(GetHttpMonitorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.http_monitor_display_name())
+     *             .homeRegion(var_.http_monitor_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHttpMonitorsResult> getHttpMonitorsPlain(GetHttpMonitorsPlainArgs args, InvokeOptions options) {
@@ -128,6 +360,37 @@ public final class HealthChecksFunctions {
      * on-demand probe.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpProbeResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
+     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
+     *             .startTimeGreaterThanOrEqualTo(var_.http_probe_result_start_time_greater_than_or_equal_to())
+     *             .startTimeLessThanOrEqualTo(var_.http_probe_result_start_time_less_than_or_equal_to())
+     *             .target(var_.http_probe_result_target())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHttpProbeResultsResult> getHttpProbeResults(GetHttpProbeResultsArgs args) {
@@ -141,6 +404,37 @@ public final class HealthChecksFunctions {
      * on-demand probe.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpProbeResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
+     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
+     *             .startTimeGreaterThanOrEqualTo(var_.http_probe_result_start_time_greater_than_or_equal_to())
+     *             .startTimeLessThanOrEqualTo(var_.http_probe_result_start_time_less_than_or_equal_to())
+     *             .target(var_.http_probe_result_target())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHttpProbeResultsResult> getHttpProbeResultsPlain(GetHttpProbeResultsPlainArgs args) {
@@ -154,6 +448,37 @@ public final class HealthChecksFunctions {
      * on-demand probe.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpProbeResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
+     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
+     *             .startTimeGreaterThanOrEqualTo(var_.http_probe_result_start_time_greater_than_or_equal_to())
+     *             .startTimeLessThanOrEqualTo(var_.http_probe_result_start_time_less_than_or_equal_to())
+     *             .target(var_.http_probe_result_target())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetHttpProbeResultsResult> getHttpProbeResults(GetHttpProbeResultsArgs args, InvokeOptions options) {
@@ -167,6 +492,37 @@ public final class HealthChecksFunctions {
      * on-demand probe.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetHttpProbeResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
+     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
+     *             .startTimeGreaterThanOrEqualTo(var_.http_probe_result_start_time_greater_than_or_equal_to())
+     *             .startTimeLessThanOrEqualTo(var_.http_probe_result_start_time_less_than_or_equal_to())
+     *             .target(var_.http_probe_result_target())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetHttpProbeResultsResult> getHttpProbeResultsPlain(GetHttpProbeResultsPlainArgs args, InvokeOptions options) {
@@ -178,6 +534,34 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified ping monitor.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPingMonitorResult> getPingMonitor(GetPingMonitorArgs args) {
@@ -189,6 +573,34 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified ping monitor.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPingMonitorResult> getPingMonitorPlain(GetPingMonitorPlainArgs args) {
@@ -200,6 +612,34 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified ping monitor.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPingMonitorResult> getPingMonitor(GetPingMonitorArgs args, InvokeOptions options) {
@@ -211,6 +651,34 @@ public final class HealthChecksFunctions {
      * Gets the configuration for the specified ping monitor.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
+     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPingMonitorResult> getPingMonitorPlain(GetPingMonitorPlainArgs args, InvokeOptions options) {
@@ -225,6 +693,36 @@ public final class HealthChecksFunctions {
      * a URL for fetching the next page.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingMonitors = HealthChecksFunctions.getPingMonitors(GetPingMonitorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.ping_monitor_display_name())
+     *             .homeRegion(var_.ping_monitor_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPingMonitorsResult> getPingMonitors(GetPingMonitorsArgs args) {
@@ -239,6 +737,36 @@ public final class HealthChecksFunctions {
      * a URL for fetching the next page.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingMonitors = HealthChecksFunctions.getPingMonitors(GetPingMonitorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.ping_monitor_display_name())
+     *             .homeRegion(var_.ping_monitor_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPingMonitorsResult> getPingMonitorsPlain(GetPingMonitorsPlainArgs args) {
@@ -253,6 +781,36 @@ public final class HealthChecksFunctions {
      * a URL for fetching the next page.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingMonitors = HealthChecksFunctions.getPingMonitors(GetPingMonitorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.ping_monitor_display_name())
+     *             .homeRegion(var_.ping_monitor_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPingMonitorsResult> getPingMonitors(GetPingMonitorsArgs args, InvokeOptions options) {
@@ -267,6 +825,36 @@ public final class HealthChecksFunctions {
      * a URL for fetching the next page.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingMonitors = HealthChecksFunctions.getPingMonitors(GetPingMonitorsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.ping_monitor_display_name())
+     *             .homeRegion(var_.ping_monitor_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPingMonitorsResult> getPingMonitorsPlain(GetPingMonitorsPlainArgs args, InvokeOptions options) {
@@ -284,6 +872,37 @@ public final class HealthChecksFunctions {
      * `startTime`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingProbeResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
+     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
+     *             .startTimeGreaterThanOrEqualTo(var_.ping_probe_result_start_time_greater_than_or_equal_to())
+     *             .startTimeLessThanOrEqualTo(var_.ping_probe_result_start_time_less_than_or_equal_to())
+     *             .target(var_.ping_probe_result_target())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPingProbeResultsResult> getPingProbeResults(GetPingProbeResultsArgs args) {
@@ -301,6 +920,37 @@ public final class HealthChecksFunctions {
      * `startTime`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingProbeResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
+     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
+     *             .startTimeGreaterThanOrEqualTo(var_.ping_probe_result_start_time_greater_than_or_equal_to())
+     *             .startTimeLessThanOrEqualTo(var_.ping_probe_result_start_time_less_than_or_equal_to())
+     *             .target(var_.ping_probe_result_target())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPingProbeResultsResult> getPingProbeResultsPlain(GetPingProbeResultsPlainArgs args) {
@@ -318,6 +968,37 @@ public final class HealthChecksFunctions {
      * `startTime`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingProbeResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
+     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
+     *             .startTimeGreaterThanOrEqualTo(var_.ping_probe_result_start_time_greater_than_or_equal_to())
+     *             .startTimeLessThanOrEqualTo(var_.ping_probe_result_start_time_less_than_or_equal_to())
+     *             .target(var_.ping_probe_result_target())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPingProbeResultsResult> getPingProbeResults(GetPingProbeResultsArgs args, InvokeOptions options) {
@@ -335,6 +1016,37 @@ public final class HealthChecksFunctions {
      * `startTime`.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.HealthChecks.inputs.GetPingProbeResultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
+     *             .probeConfigurationId(oci_health_checks_probe_configuration.test_probe_configuration().id())
+     *             .startTimeGreaterThanOrEqualTo(var_.ping_probe_result_start_time_greater_than_or_equal_to())
+     *             .startTimeLessThanOrEqualTo(var_.ping_probe_result_start_time_less_than_or_equal_to())
+     *             .target(var_.ping_probe_result_target())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPingProbeResultsResult> getPingProbeResultsPlain(GetPingProbeResultsPlainArgs args, InvokeOptions options) {
@@ -346,6 +1058,35 @@ public final class HealthChecksFunctions {
      * Gets information about all vantage points available to the user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVantagePoints = HealthChecksFunctions.getVantagePoints(GetVantagePointsArgs.builder()
+     *             .displayName(var_.vantage_point_display_name())
+     *             .name(var_.vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVantagePointsResult> getVantagePoints() {
@@ -357,6 +1098,35 @@ public final class HealthChecksFunctions {
      * Gets information about all vantage points available to the user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVantagePoints = HealthChecksFunctions.getVantagePoints(GetVantagePointsArgs.builder()
+     *             .displayName(var_.vantage_point_display_name())
+     *             .name(var_.vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVantagePointsResult> getVantagePointsPlain() {
@@ -368,6 +1138,35 @@ public final class HealthChecksFunctions {
      * Gets information about all vantage points available to the user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVantagePoints = HealthChecksFunctions.getVantagePoints(GetVantagePointsArgs.builder()
+     *             .displayName(var_.vantage_point_display_name())
+     *             .name(var_.vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVantagePointsResult> getVantagePoints(GetVantagePointsArgs args) {
@@ -379,6 +1178,35 @@ public final class HealthChecksFunctions {
      * Gets information about all vantage points available to the user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVantagePoints = HealthChecksFunctions.getVantagePoints(GetVantagePointsArgs.builder()
+     *             .displayName(var_.vantage_point_display_name())
+     *             .name(var_.vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVantagePointsResult> getVantagePointsPlain(GetVantagePointsPlainArgs args) {
@@ -390,6 +1218,35 @@ public final class HealthChecksFunctions {
      * Gets information about all vantage points available to the user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVantagePoints = HealthChecksFunctions.getVantagePoints(GetVantagePointsArgs.builder()
+     *             .displayName(var_.vantage_point_display_name())
+     *             .name(var_.vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVantagePointsResult> getVantagePoints(GetVantagePointsArgs args, InvokeOptions options) {
@@ -401,6 +1258,35 @@ public final class HealthChecksFunctions {
      * Gets information about all vantage points available to the user.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
+     * import com.pulumi.oci.ApmSynthetics.inputs.GetVantagePointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVantagePoints = HealthChecksFunctions.getVantagePoints(GetVantagePointsArgs.builder()
+     *             .displayName(var_.vantage_point_display_name())
+     *             .name(var_.vantage_point_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVantagePointsResult> getVantagePointsPlain(GetVantagePointsPlainArgs args, InvokeOptions options) {

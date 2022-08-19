@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataIntegration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWorkspace = Oci.DataIntegration.GetWorkspace.Invoke(new()
         ///     {
-        ///         var testWorkspace = Output.Create(Oci.DataIntegration.GetWorkspace.InvokeAsync(new Oci.DataIntegration.GetWorkspaceArgs
-        ///         {
-        ///             WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         }));
-        ///     }
+        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataIntegration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWorkspace = Oci.DataIntegration.GetWorkspace.Invoke(new()
         ///     {
-        ///         var testWorkspace = Output.Create(Oci.DataIntegration.GetWorkspace.InvokeAsync(new Oci.DataIntegration.GetWorkspaceArgs
-        ///         {
-        ///             WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         }));
-        ///     }
+        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataIntegration
     }
 
 
-    public sealed class GetWorkspaceArgs : Pulumi.InvokeArgs
+    public sealed class GetWorkspaceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The workspace ID.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataIntegration
         public GetWorkspaceArgs()
         {
         }
+        public static new GetWorkspaceArgs Empty => new GetWorkspaceArgs();
     }
 
-    public sealed class GetWorkspaceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetWorkspaceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The workspace ID.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataIntegration
         public GetWorkspaceInvokeArgs()
         {
         }
+        public static new GetWorkspaceInvokeArgs Empty => new GetWorkspaceInvokeArgs();
     }
 
 

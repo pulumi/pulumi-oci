@@ -24,23 +24,21 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHttpProbeResults = Oci.HealthChecks.GetHttpProbeResults.Invoke(new()
         ///     {
-        ///         var testHttpProbeResults = Output.Create(Oci.HealthChecks.GetHttpProbeResults.InvokeAsync(new Oci.HealthChecks.GetHttpProbeResultsArgs
-        ///         {
-        ///             ProbeConfigurationId = oci_health_checks_probe_configuration.Test_probe_configuration.Id,
-        ///             StartTimeGreaterThanOrEqualTo = @var.Http_probe_result_start_time_greater_than_or_equal_to,
-        ///             StartTimeLessThanOrEqualTo = @var.Http_probe_result_start_time_less_than_or_equal_to,
-        ///             Target = @var.Http_probe_result_target,
-        ///         }));
-        ///     }
+        ///         ProbeConfigurationId = oci_health_checks_probe_configuration.Test_probe_configuration.Id,
+        ///         StartTimeGreaterThanOrEqualTo = @var.Http_probe_result_start_time_greater_than_or_equal_to,
+        ///         StartTimeLessThanOrEqualTo = @var.Http_probe_result_start_time_less_than_or_equal_to,
+        ///         Target = @var.Http_probe_result_target,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,23 +59,21 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHttpProbeResults = Oci.HealthChecks.GetHttpProbeResults.Invoke(new()
         ///     {
-        ///         var testHttpProbeResults = Output.Create(Oci.HealthChecks.GetHttpProbeResults.InvokeAsync(new Oci.HealthChecks.GetHttpProbeResultsArgs
-        ///         {
-        ///             ProbeConfigurationId = oci_health_checks_probe_configuration.Test_probe_configuration.Id,
-        ///             StartTimeGreaterThanOrEqualTo = @var.Http_probe_result_start_time_greater_than_or_equal_to,
-        ///             StartTimeLessThanOrEqualTo = @var.Http_probe_result_start_time_less_than_or_equal_to,
-        ///             Target = @var.Http_probe_result_target,
-        ///         }));
-        ///     }
+        ///         ProbeConfigurationId = oci_health_checks_probe_configuration.Test_probe_configuration.Id,
+        ///         StartTimeGreaterThanOrEqualTo = @var.Http_probe_result_start_time_greater_than_or_equal_to,
+        ///         StartTimeLessThanOrEqualTo = @var.Http_probe_result_start_time_less_than_or_equal_to,
+        ///         Target = @var.Http_probe_result_target,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.HealthChecks
     }
 
 
-    public sealed class GetHttpProbeResultsArgs : Pulumi.InvokeArgs
+    public sealed class GetHttpProbeResultsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetHttpProbeResultsFilterArgs>? _filters;
@@ -124,9 +120,10 @@ namespace Pulumi.Oci.HealthChecks
         public GetHttpProbeResultsArgs()
         {
         }
+        public static new GetHttpProbeResultsArgs Empty => new GetHttpProbeResultsArgs();
     }
 
-    public sealed class GetHttpProbeResultsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetHttpProbeResultsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetHttpProbeResultsFilterInputArgs>? _filters;
@@ -163,6 +160,7 @@ namespace Pulumi.Oci.HealthChecks
         public GetHttpProbeResultsInvokeArgs()
         {
         }
+        public static new GetHttpProbeResultsInvokeArgs Empty => new GetHttpProbeResultsInvokeArgs();
     }
 
 

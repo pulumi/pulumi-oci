@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousDatabaseApexDetailGetArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseApexDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Oracle APEX Application Development version.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousDatabaseApexDetailGetArgs()
         {
         }
+        public static new AutonomousDatabaseApexDetailGetArgs Empty => new AutonomousDatabaseApexDetailGetArgs();
     }
 }

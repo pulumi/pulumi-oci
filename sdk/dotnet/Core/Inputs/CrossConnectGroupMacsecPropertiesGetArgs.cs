@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class CrossConnectGroupMacsecPropertiesGetArgs : Pulumi.ResourceArgs
+    public sealed class CrossConnectGroupMacsecPropertiesGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Type of encryption cipher suite to use for the MACsec connection.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Core.Inputs
         public CrossConnectGroupMacsecPropertiesGetArgs()
         {
         }
+        public static new CrossConnectGroupMacsecPropertiesGetArgs Empty => new CrossConnectGroupMacsecPropertiesGetArgs();
     }
 }

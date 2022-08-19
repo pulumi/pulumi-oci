@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Marketplace.Inputs
 {
 
-    public sealed class GetAcceptedAgreementsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetAcceptedAgreementsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Marketplace.Inputs
         public GetAcceptedAgreementsFilterArgs()
         {
         }
+        public static new GetAcceptedAgreementsFilterArgs Empty => new GetAcceptedAgreementsFilterArgs();
     }
 }

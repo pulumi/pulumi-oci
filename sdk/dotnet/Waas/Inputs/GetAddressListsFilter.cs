@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class GetAddressListsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetAddressListsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public GetAddressListsFilterArgs()
         {
         }
+        public static new GetAddressListsFilterArgs Empty => new GetAddressListsFilterArgs();
     }
 }

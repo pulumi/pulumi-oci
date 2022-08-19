@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement.Inputs
 {
 
-    public sealed class GetCertificateAuthoritiesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetCertificateAuthoritiesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A filter that returns only resources that match the specified name.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public GetCertificateAuthoritiesFilterInputArgs()
         {
         }
+        public static new GetCertificateAuthoritiesFilterInputArgs Empty => new GetCertificateAuthoritiesFilterInputArgs();
     }
 }

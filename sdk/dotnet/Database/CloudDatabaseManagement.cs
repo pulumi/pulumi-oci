@@ -20,33 +20,31 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var test = new Oci.Database.CloudDatabaseManagement("test", new()
     ///     {
-    ///         var test = new Oci.Database.CloudDatabaseManagement("test", new Oci.Database.CloudDatabaseManagementArgs
+    ///         DatabaseId = oci_database_database.Test_database.Id,
+    ///         ManagementType = @var.Database_cloud_database_management_details_management_type,
+    ///         PrivateEndPointId = @var.Database_cloud_database_management_details_private_end_point_id,
+    ///         ServiceName = @var.Database_cloud_database_management_details_service_name,
+    ///         Credentialdetails = new Oci.Database.Inputs.CloudDatabaseManagementCredentialdetailsArgs
     ///         {
-    ///             DatabaseId = oci_database_database.Test_database.Id,
-    ///             ManagementType = @var.Database_cloud_database_management_details_management_type,
-    ///             PrivateEndPointId = @var.Database_cloud_database_management_details_private_end_point_id,
-    ///             ServiceName = @var.Database_cloud_database_management_details_service_name,
-    ///             Credentialdetails = new Oci.Database.Inputs.CloudDatabaseManagementCredentialdetailsArgs
-    ///             {
-    ///                 UserName = @var.Database_cloud_database_management_details_user_name,
-    ///                 PasswordSecretId = @var.Database_cloud_database_management_details_password_secret_id,
-    ///             },
-    ///             EnableManagement = @var.Database_cloud_database_management_details_enable_management,
-    ///             Port = @var.Cloud_database_management_port,
-    ///             Protocol = @var.Cloud_database_management_protocol,
-    ///             Role = @var.Cloud_database_management_role,
-    ///             SslSecretId = oci_vault_secret.Test_secret.Id,
-    ///         });
-    ///     }
+    ///             UserName = @var.Database_cloud_database_management_details_user_name,
+    ///             PasswordSecretId = @var.Database_cloud_database_management_details_password_secret_id,
+    ///         },
+    ///         EnableManagement = @var.Database_cloud_database_management_details_enable_management,
+    ///         Port = @var.Cloud_database_management_port,
+    ///         Protocol = @var.Cloud_database_management_protocol,
+    ///         Role = @var.Cloud_database_management_role,
+    ///         SslSecretId = oci_vault_secret.Test_secret.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Database
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/cloudDatabaseManagement:CloudDatabaseManagement")]
-    public partial class CloudDatabaseManagement : Pulumi.CustomResource
+    public partial class CloudDatabaseManagement : global::Pulumi.CustomResource
     {
         [Output("credentialdetails")]
         public Output<Outputs.CloudDatabaseManagementCredentialdetails> Credentialdetails { get; private set; } = null!;
@@ -160,7 +158,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class CloudDatabaseManagementArgs : Pulumi.ResourceArgs
+    public sealed class CloudDatabaseManagementArgs : global::Pulumi.ResourceArgs
     {
         [Input("credentialdetails", required: true)]
         public Input<Inputs.CloudDatabaseManagementCredentialdetailsArgs> Credentialdetails { get; set; } = null!;
@@ -225,9 +223,10 @@ namespace Pulumi.Oci.Database
         public CloudDatabaseManagementArgs()
         {
         }
+        public static new CloudDatabaseManagementArgs Empty => new CloudDatabaseManagementArgs();
     }
 
-    public sealed class CloudDatabaseManagementState : Pulumi.ResourceArgs
+    public sealed class CloudDatabaseManagementState : global::Pulumi.ResourceArgs
     {
         [Input("credentialdetails")]
         public Input<Inputs.CloudDatabaseManagementCredentialdetailsGetArgs>? Credentialdetails { get; set; }
@@ -292,5 +291,6 @@ namespace Pulumi.Oci.Database
         public CloudDatabaseManagementState()
         {
         }
+        public static new CloudDatabaseManagementState Empty => new CloudDatabaseManagementState();
     }
 }

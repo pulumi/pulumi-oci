@@ -24,23 +24,21 @@ namespace Pulumi.Oci.AnnouncementsService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAnnouncementSubscriptions = Oci.AnnouncementsService.GetAnnouncementSubscriptions.Invoke(new()
         ///     {
-        ///         var testAnnouncementSubscriptions = Output.Create(Oci.AnnouncementsService.GetAnnouncementSubscriptions.InvokeAsync(new Oci.AnnouncementsService.GetAnnouncementSubscriptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Announcement_subscription_display_name,
-        ///             Id = @var.Announcement_subscription_id,
-        ///             State = @var.Announcement_subscription_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Announcement_subscription_display_name,
+        ///         Id = @var.Announcement_subscription_id,
+        ///         State = @var.Announcement_subscription_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,23 +59,21 @@ namespace Pulumi.Oci.AnnouncementsService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAnnouncementSubscriptions = Oci.AnnouncementsService.GetAnnouncementSubscriptions.Invoke(new()
         ///     {
-        ///         var testAnnouncementSubscriptions = Output.Create(Oci.AnnouncementsService.GetAnnouncementSubscriptions.InvokeAsync(new Oci.AnnouncementsService.GetAnnouncementSubscriptionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Announcement_subscription_display_name,
-        ///             Id = @var.Announcement_subscription_id,
-        ///             State = @var.Announcement_subscription_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Announcement_subscription_display_name,
+        ///         Id = @var.Announcement_subscription_id,
+        ///         State = @var.Announcement_subscription_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.AnnouncementsService
     }
 
 
-    public sealed class GetAnnouncementSubscriptionsArgs : Pulumi.InvokeArgs
+    public sealed class GetAnnouncementSubscriptionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -124,9 +120,10 @@ namespace Pulumi.Oci.AnnouncementsService
         public GetAnnouncementSubscriptionsArgs()
         {
         }
+        public static new GetAnnouncementSubscriptionsArgs Empty => new GetAnnouncementSubscriptionsArgs();
     }
 
-    public sealed class GetAnnouncementSubscriptionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAnnouncementSubscriptionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -163,6 +160,7 @@ namespace Pulumi.Oci.AnnouncementsService
         public GetAnnouncementSubscriptionsInvokeArgs()
         {
         }
+        public static new GetAnnouncementSubscriptionsInvokeArgs Empty => new GetAnnouncementSubscriptionsInvokeArgs();
     }
 
 

@@ -27,29 +27,27 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDrgRpcAttachment = new Oci.Core.DrgAttachmentManagement("testDrgRpcAttachment", new()
     ///     {
-    ///         var testDrgRpcAttachment = new Oci.Core.DrgAttachmentManagement("testDrgRpcAttachment", new Oci.Core.DrgAttachmentManagementArgs
-    ///         {
-    ///             AttachmentType = "REMOTE_PEERING_CONNECTION",
-    ///             CompartmentId = @var.Compartment_ocid,
-    ///             NetworkId = oci_core_remote_peering_connection.Test_rpc.Id,
-    ///             DrgId = oci_core_drg.Test_drg.Id,
-    ///             DisplayName = "MyTestDrgAttachmentForRpc",
-    ///             DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
-    ///         });
-    ///     }
+    ///         AttachmentType = "REMOTE_PEERING_CONNECTION",
+    ///         CompartmentId = @var.Compartment_ocid,
+    ///         NetworkId = oci_core_remote_peering_connection.Test_rpc.Id,
+    ///         DrgId = oci_core_drg.Test_drg.Id,
+    ///         DisplayName = "MyTestDrgAttachmentForRpc",
+    ///         DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/drgAttachmentManagement:DrgAttachmentManagement")]
-    public partial class DrgAttachmentManagement : Pulumi.CustomResource
+    public partial class DrgAttachmentManagement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The type for the network resource attached to the DRG.
@@ -191,7 +189,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class DrgAttachmentManagementArgs : Pulumi.ResourceArgs
+    public sealed class DrgAttachmentManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type for the network resource attached to the DRG.
@@ -286,9 +284,10 @@ namespace Pulumi.Oci.Core
         public DrgAttachmentManagementArgs()
         {
         }
+        public static new DrgAttachmentManagementArgs Empty => new DrgAttachmentManagementArgs();
     }
 
-    public sealed class DrgAttachmentManagementState : Pulumi.ResourceArgs
+    public sealed class DrgAttachmentManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type for the network resource attached to the DRG.
@@ -401,5 +400,6 @@ namespace Pulumi.Oci.Core
         public DrgAttachmentManagementState()
         {
         }
+        public static new DrgAttachmentManagementState Empty => new DrgAttachmentManagementState();
     }
 }

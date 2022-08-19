@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall.Inputs
 {
 
-    public sealed class NetworkFirewallPolicyMappedSecretGetArgs : Pulumi.ResourceArgs
+    public sealed class NetworkFirewallPolicyMappedSecretGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
@@ -38,5 +38,6 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
         public NetworkFirewallPolicyMappedSecretGetArgs()
         {
         }
+        public static new NetworkFirewallPolicyMappedSecretGetArgs Empty => new NetworkFirewallPolicyMappedSecretGetArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployPipelineDeployPipelineArtifactItemGetArgs : Pulumi.ResourceArgs
+    public sealed class DeployPipelineDeployPipelineArtifactItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of an artifact
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployPipelineDeployPipelineArtifactItemGetArgs()
         {
         }
+        public static new DeployPipelineDeployPipelineArtifactItemGetArgs Empty => new DeployPipelineDeployPipelineArtifactItemGetArgs();
     }
 }

@@ -22,15 +22,12 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// #### {Compartment-Name} - Name of  your compartment
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///     }
-        /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// {{% examples %}}
@@ -38,20 +35,18 @@ namespace Pulumi.Oci.Opensearch
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOpensearchCluster = Oci.Opensearch.GetOpensearchCluster.Invoke(new()
         ///     {
-        ///         var testOpensearchCluster = Output.Create(Oci.Opensearch.GetOpensearchCluster.InvokeAsync(new Oci.Opensearch.GetOpensearchClusterArgs
-        ///         {
-        ///             OpensearchClusterId = oci_opensearch_opensearch_cluster.Test_opensearch_cluster.Id,
-        ///         }));
-        ///     }
+        ///         OpensearchClusterId = oci_opensearch_opensearch_cluster.Test_opensearch_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -70,15 +65,12 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// #### {Compartment-Name} - Name of  your compartment
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///     }
-        /// 
-        /// }
+        /// });
         /// ```
         /// 
         /// {{% examples %}}
@@ -86,20 +78,18 @@ namespace Pulumi.Oci.Opensearch
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testOpensearchCluster = Oci.Opensearch.GetOpensearchCluster.Invoke(new()
         ///     {
-        ///         var testOpensearchCluster = Output.Create(Oci.Opensearch.GetOpensearchCluster.InvokeAsync(new Oci.Opensearch.GetOpensearchClusterArgs
-        ///         {
-        ///             OpensearchClusterId = oci_opensearch_opensearch_cluster.Test_opensearch_cluster.Id,
-        ///         }));
-        ///     }
+        ///         OpensearchClusterId = oci_opensearch_opensearch_cluster.Test_opensearch_cluster.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -109,7 +99,7 @@ namespace Pulumi.Oci.Opensearch
     }
 
 
-    public sealed class GetOpensearchClusterArgs : Pulumi.InvokeArgs
+    public sealed class GetOpensearchClusterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique OpensearchCluster identifier
@@ -120,9 +110,10 @@ namespace Pulumi.Oci.Opensearch
         public GetOpensearchClusterArgs()
         {
         }
+        public static new GetOpensearchClusterArgs Empty => new GetOpensearchClusterArgs();
     }
 
-    public sealed class GetOpensearchClusterInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetOpensearchClusterInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique OpensearchCluster identifier
@@ -133,6 +124,7 @@ namespace Pulumi.Oci.Opensearch
         public GetOpensearchClusterInvokeArgs()
         {
         }
+        public static new GetOpensearchClusterInvokeArgs Empty => new GetOpensearchClusterInvokeArgs();
     }
 
 

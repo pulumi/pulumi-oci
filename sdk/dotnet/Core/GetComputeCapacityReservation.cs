@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputeCapacityReservation = Oci.Core.GetComputeCapacityReservation.Invoke(new()
         ///     {
-        ///         var testComputeCapacityReservation = Output.Create(Oci.Core.GetComputeCapacityReservation.InvokeAsync(new Oci.Core.GetComputeCapacityReservationArgs
-        ///         {
-        ///             CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
-        ///         }));
-        ///     }
+        ///         CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputeCapacityReservation = Oci.Core.GetComputeCapacityReservation.Invoke(new()
         ///     {
-        ///         var testComputeCapacityReservation = Output.Create(Oci.Core.GetComputeCapacityReservation.InvokeAsync(new Oci.Core.GetComputeCapacityReservationArgs
-        ///         {
-        ///             CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
-        ///         }));
-        ///     }
+        ///         CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetComputeCapacityReservationArgs : Pulumi.InvokeArgs
+    public sealed class GetComputeCapacityReservationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compute capacity reservation.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetComputeCapacityReservationArgs()
         {
         }
+        public static new GetComputeCapacityReservationArgs Empty => new GetComputeCapacityReservationArgs();
     }
 
-    public sealed class GetComputeCapacityReservationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetComputeCapacityReservationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compute capacity reservation.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetComputeCapacityReservationInvokeArgs()
         {
         }
+        public static new GetComputeCapacityReservationInvokeArgs Empty => new GetComputeCapacityReservationInvokeArgs();
     }
 
 

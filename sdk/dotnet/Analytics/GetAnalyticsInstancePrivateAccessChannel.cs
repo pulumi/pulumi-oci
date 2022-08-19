@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Analytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAnalyticsInstancePrivateAccessChannel = Oci.Analytics.GetAnalyticsInstancePrivateAccessChannel.Invoke(new()
         ///     {
-        ///         var testAnalyticsInstancePrivateAccessChannel = Output.Create(Oci.Analytics.GetAnalyticsInstancePrivateAccessChannel.InvokeAsync(new Oci.Analytics.GetAnalyticsInstancePrivateAccessChannelArgs
-        ///         {
-        ///             AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
-        ///             PrivateAccessChannelKey = @var.Analytics_instance_private_access_channel_private_access_channel_key,
-        ///         }));
-        ///     }
+        ///         AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
+        ///         PrivateAccessChannelKey = @var.Analytics_instance_private_access_channel_private_access_channel_key,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Analytics
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAnalyticsInstancePrivateAccessChannel = Oci.Analytics.GetAnalyticsInstancePrivateAccessChannel.Invoke(new()
         ///     {
-        ///         var testAnalyticsInstancePrivateAccessChannel = Output.Create(Oci.Analytics.GetAnalyticsInstancePrivateAccessChannel.InvokeAsync(new Oci.Analytics.GetAnalyticsInstancePrivateAccessChannelArgs
-        ///         {
-        ///             AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
-        ///             PrivateAccessChannelKey = @var.Analytics_instance_private_access_channel_private_access_channel_key,
-        ///         }));
-        ///     }
+        ///         AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
+        ///         PrivateAccessChannelKey = @var.Analytics_instance_private_access_channel_private_access_channel_key,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Analytics
     }
 
 
-    public sealed class GetAnalyticsInstancePrivateAccessChannelArgs : Pulumi.InvokeArgs
+    public sealed class GetAnalyticsInstancePrivateAccessChannelArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the AnalyticsInstance.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Analytics
         public GetAnalyticsInstancePrivateAccessChannelArgs()
         {
         }
+        public static new GetAnalyticsInstancePrivateAccessChannelArgs Empty => new GetAnalyticsInstancePrivateAccessChannelArgs();
     }
 
-    public sealed class GetAnalyticsInstancePrivateAccessChannelInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAnalyticsInstancePrivateAccessChannelInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the AnalyticsInstance.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Analytics
         public GetAnalyticsInstancePrivateAccessChannelInvokeArgs()
         {
         }
+        public static new GetAnalyticsInstancePrivateAccessChannelInvokeArgs Empty => new GetAnalyticsInstancePrivateAccessChannelInvokeArgs();
     }
 
 

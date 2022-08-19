@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Blockchain.Inputs
 {
 
-    public sealed class BlockchainPlatformReplicasGetArgs : Pulumi.ResourceArgs
+    public sealed class BlockchainPlatformReplicasGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Number of CA replicas
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Blockchain.Inputs
         public BlockchainPlatformReplicasGetArgs()
         {
         }
+        public static new BlockchainPlatformReplicasGetArgs Empty => new BlockchainPlatformReplicasGetArgs();
     }
 }

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIngressGatewayRouteTable = Oci.ServiceMesh.GetIngressGatewayRouteTable.Invoke(new()
         ///     {
-        ///         var testIngressGatewayRouteTable = Output.Create(Oci.ServiceMesh.GetIngressGatewayRouteTable.InvokeAsync(new Oci.ServiceMesh.GetIngressGatewayRouteTableArgs
-        ///         {
-        ///             IngressGatewayRouteTableId = oci_service_mesh_ingress_gateway_route_table.Test_ingress_gateway_route_table.Id,
-        ///         }));
-        ///     }
+        ///         IngressGatewayRouteTableId = oci_service_mesh_ingress_gateway_route_table.Test_ingress_gateway_route_table.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIngressGatewayRouteTable = Oci.ServiceMesh.GetIngressGatewayRouteTable.Invoke(new()
         ///     {
-        ///         var testIngressGatewayRouteTable = Output.Create(Oci.ServiceMesh.GetIngressGatewayRouteTable.InvokeAsync(new Oci.ServiceMesh.GetIngressGatewayRouteTableArgs
-        ///         {
-        ///             IngressGatewayRouteTableId = oci_service_mesh_ingress_gateway_route_table.Test_ingress_gateway_route_table.Id,
-        ///         }));
-        ///     }
+        ///         IngressGatewayRouteTableId = oci_service_mesh_ingress_gateway_route_table.Test_ingress_gateway_route_table.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetIngressGatewayRouteTableArgs : Pulumi.InvokeArgs
+    public sealed class GetIngressGatewayRouteTableArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique IngressGatewayRouteTable identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetIngressGatewayRouteTableArgs()
         {
         }
+        public static new GetIngressGatewayRouteTableArgs Empty => new GetIngressGatewayRouteTableArgs();
     }
 
-    public sealed class GetIngressGatewayRouteTableInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIngressGatewayRouteTableInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique IngressGatewayRouteTable identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetIngressGatewayRouteTableInvokeArgs()
         {
         }
+        public static new GetIngressGatewayRouteTableInvokeArgs Empty => new GetIngressGatewayRouteTableInvokeArgs();
     }
 
 

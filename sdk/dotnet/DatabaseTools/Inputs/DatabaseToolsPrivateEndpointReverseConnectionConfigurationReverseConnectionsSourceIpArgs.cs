@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseTools.Inputs
 {
 
-    public sealed class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.DatabaseTools.Inputs
         public DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs()
         {
         }
+        public static new DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs Empty => new DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs();
     }
 }

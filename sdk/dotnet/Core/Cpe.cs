@@ -31,31 +31,29 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCpe = new Oci.Core.Cpe("testCpe", new()
     ///     {
-    ///         var testCpe = new Oci.Core.Cpe("testCpe", new Oci.Core.CpeArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         IpAddress = @var.Cpe_ip_address,
+    ///         CpeDeviceShapeId = data.Oci_core_cpe_device_shapes.Test_cpe_device_shapes.Cpe_device_shapes[0].Cpe_device_shape_id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             IpAddress = @var.Cpe_ip_address,
-    ///             CpeDeviceShapeId = data.Oci_core_cpe_device_shapes.Test_cpe_device_shapes.Cpe_device_shapes[0].Cpe_device_shape_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Cpe_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Cpe_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -67,7 +65,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/cpe:Cpe")]
-    public partial class Cpe : Pulumi.CustomResource
+    public partial class Cpe : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
@@ -155,7 +153,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class CpeArgs : Pulumi.ResourceArgs
+    public sealed class CpeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
@@ -208,9 +206,10 @@ namespace Pulumi.Oci.Core
         public CpeArgs()
         {
         }
+        public static new CpeArgs Empty => new CpeArgs();
     }
 
-    public sealed class CpeState : Pulumi.ResourceArgs
+    public sealed class CpeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
@@ -269,5 +268,6 @@ namespace Pulumi.Oci.Core
         public CpeState()
         {
         }
+        public static new CpeState Empty => new CpeState();
     }
 }

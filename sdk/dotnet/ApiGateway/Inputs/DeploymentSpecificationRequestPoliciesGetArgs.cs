@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRequestPoliciesGetArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRequestPoliciesGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Information on how to authenticate incoming requests.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRequestPoliciesGetArgs()
         {
         }
+        public static new DeploymentSpecificationRequestPoliciesGetArgs Empty => new DeploymentSpecificationRequestPoliciesGetArgs();
     }
 }

@@ -23,6 +23,41 @@ import javax.annotation.Nullable;
  * This resource will be created in root compartment.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Opsi.OperationsInsightsWarehouseUser;
+ * import com.pulumi.oci.Opsi.OperationsInsightsWarehouseUserArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testOperationsInsightsWarehouseUser = new OperationsInsightsWarehouseUser(&#34;testOperationsInsightsWarehouseUser&#34;, OperationsInsightsWarehouseUserArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .connectionPassword(var_.operations_insights_warehouse_user_connection_password())
+ *             .isAwrDataAccess(var_.operations_insights_warehouse_user_is_awr_data_access())
+ *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .isEmDataAccess(var_.operations_insights_warehouse_user_is_em_data_access())
+ *             .isOpsiDataAccess(var_.operations_insights_warehouse_user_is_opsi_data_access())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

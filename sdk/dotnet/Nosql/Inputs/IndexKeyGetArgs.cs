@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Nosql.Inputs
 {
 
-    public sealed class IndexKeyGetArgs : Pulumi.ResourceArgs
+    public sealed class IndexKeyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of a column to be included as an index key.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Nosql.Inputs
         public IndexKeyGetArgs()
         {
         }
+        public static new IndexKeyGetArgs Empty => new IndexKeyGetArgs();
     }
 }

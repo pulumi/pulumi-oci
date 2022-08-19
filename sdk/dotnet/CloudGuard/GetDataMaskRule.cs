@@ -21,20 +21,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataMaskRule = Oci.CloudGuard.GetDataMaskRule.Invoke(new()
         ///     {
-        ///         var testDataMaskRule = Output.Create(Oci.CloudGuard.GetDataMaskRule.InvokeAsync(new Oci.CloudGuard.GetDataMaskRuleArgs
-        ///         {
-        ///             DataMaskRuleId = oci_cloud_guard_data_mask_rule.Test_data_mask_rule.Id,
-        ///         }));
-        ///     }
+        ///         DataMaskRuleId = oci_cloud_guard_data_mask_rule.Test_data_mask_rule.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataMaskRule = Oci.CloudGuard.GetDataMaskRule.Invoke(new()
         ///     {
-        ///         var testDataMaskRule = Output.Create(Oci.CloudGuard.GetDataMaskRule.InvokeAsync(new Oci.CloudGuard.GetDataMaskRuleArgs
-        ///         {
-        ///             DataMaskRuleId = oci_cloud_guard_data_mask_rule.Test_data_mask_rule.Id,
-        ///         }));
-        ///     }
+        ///         DataMaskRuleId = oci_cloud_guard_data_mask_rule.Test_data_mask_rule.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetDataMaskRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetDataMaskRuleArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of dataMaskRule
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetDataMaskRuleArgs()
         {
         }
+        public static new GetDataMaskRuleArgs Empty => new GetDataMaskRuleArgs();
     }
 
-    public sealed class GetDataMaskRuleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDataMaskRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of dataMaskRule
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetDataMaskRuleInvokeArgs()
         {
         }
+        public static new GetDataMaskRuleInvokeArgs Empty => new GetDataMaskRuleInvokeArgs();
     }
 
 

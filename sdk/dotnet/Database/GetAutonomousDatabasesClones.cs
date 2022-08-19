@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabasesClones = Oci.Database.GetAutonomousDatabasesClones.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabasesClones = Output.Create(Oci.Database.GetAutonomousDatabasesClones.InvokeAsync(new Oci.Database.GetAutonomousDatabasesClonesArgs
-        ///         {
-        ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CloneType = @var.Autonomous_databases_clone_clone_type,
-        ///             DisplayName = @var.Autonomous_databases_clone_display_name,
-        ///             State = @var.Autonomous_databases_clone_state,
-        ///         }));
-        ///     }
+        ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CloneType = @var.Autonomous_databases_clone_clone_type,
+        ///         DisplayName = @var.Autonomous_databases_clone_display_name,
+        ///         State = @var.Autonomous_databases_clone_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabasesClones = Oci.Database.GetAutonomousDatabasesClones.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabasesClones = Output.Create(Oci.Database.GetAutonomousDatabasesClones.InvokeAsync(new Oci.Database.GetAutonomousDatabasesClonesArgs
-        ///         {
-        ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CloneType = @var.Autonomous_databases_clone_clone_type,
-        ///             DisplayName = @var.Autonomous_databases_clone_display_name,
-        ///             State = @var.Autonomous_databases_clone_state,
-        ///         }));
-        ///     }
+        ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CloneType = @var.Autonomous_databases_clone_clone_type,
+        ///         DisplayName = @var.Autonomous_databases_clone_display_name,
+        ///         State = @var.Autonomous_databases_clone_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousDatabasesClonesArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDatabasesClonesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDatabasesClonesArgs()
         {
         }
+        public static new GetAutonomousDatabasesClonesArgs Empty => new GetAutonomousDatabasesClonesArgs();
     }
 
-    public sealed class GetAutonomousDatabasesClonesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDatabasesClonesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDatabasesClonesInvokeArgs()
         {
         }
+        public static new GetAutonomousDatabasesClonesInvokeArgs Empty => new GetAutonomousDatabasesClonesInvokeArgs();
     }
 
 

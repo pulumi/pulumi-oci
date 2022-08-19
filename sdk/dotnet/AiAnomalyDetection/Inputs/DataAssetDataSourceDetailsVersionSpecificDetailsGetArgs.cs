@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiAnomalyDetection.Inputs
 {
 
-    public sealed class DataAssetDataSourceDetailsVersionSpecificDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class DataAssetDataSourceDetailsVersionSpecificDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Bucket Name for influx connection
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         public DataAssetDataSourceDetailsVersionSpecificDetailsGetArgs()
         {
         }
+        public static new DataAssetDataSourceDetailsVersionSpecificDetailsGetArgs Empty => new DataAssetDataSourceDetailsVersionSpecificDetailsGetArgs();
     }
 }

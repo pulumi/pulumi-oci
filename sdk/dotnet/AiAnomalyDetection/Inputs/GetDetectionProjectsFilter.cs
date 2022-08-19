@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiAnomalyDetection.Inputs
 {
 
-    public sealed class GetDetectionProjectsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetDetectionProjectsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         public GetDetectionProjectsFilterArgs()
         {
         }
+        public static new GetDetectionProjectsFilterArgs Empty => new GetDetectionProjectsFilterArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class GetFlexComponentsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetFlexComponentsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire name given. The match is not case sensitive.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Database.Inputs
         public GetFlexComponentsFilterInputArgs()
         {
         }
+        public static new GetFlexComponentsFilterInputArgs Empty => new GetFlexComponentsFilterInputArgs();
     }
 }

@@ -49,6 +49,120 @@ import javax.annotation.Nullable;
  * Avoid entering confidential information.
  * 
  * ## Example Usage
+ * ### Create image from instance in tenancy
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.Image;
+ * import com.pulumi.oci.Core.ImageArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testImage = new Image(&#34;testImage&#34;, ImageArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .instanceId(oci_core_instance.test_instance().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.image_display_name())
+ *             .launchMode(var_.image_launch_mode())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * ### Create image from exported image via direct access to object store
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.Image;
+ * import com.pulumi.oci.Core.ImageArgs;
+ * import com.pulumi.oci.Core.inputs.ImageImageSourceDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testImage = new Image(&#34;testImage&#34;, ImageArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.image_display_name())
+ *             .launchMode(var_.image_launch_mode())
+ *             .imageSourceDetails(ImageImageSourceDetailsArgs.builder()
+ *                 .sourceType(&#34;objectStorageTuple&#34;)
+ *                 .bucketName(var_.bucket_name())
+ *                 .namespaceName(var_.namespace())
+ *                 .objectName(var_.object_name())
+ *                 .operatingSystem(var_.image_image_source_details_operating_system())
+ *                 .operatingSystemVersion(var_.image_image_source_details_operating_system_version())
+ *                 .sourceImageType(var_.source_image_type())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * ### Create image from exported image at publicly accessible uri
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.Image;
+ * import com.pulumi.oci.Core.ImageArgs;
+ * import com.pulumi.oci.Core.inputs.ImageImageSourceDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testImage = new Image(&#34;testImage&#34;, ImageArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.image_display_name())
+ *             .launchMode(var_.image_launch_mode())
+ *             .imageSourceDetails(ImageImageSourceDetailsArgs.builder()
+ *                 .sourceType(&#34;objectStorageUri&#34;)
+ *                 .sourceUri(var_.source_uri())
+ *                 .operatingSystem(var_.image_image_source_details_operating_system())
+ *                 .operatingSystemVersion(var_.image_image_source_details_operating_system_version())
+ *                 .sourceImageType(var_.source_image_type())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

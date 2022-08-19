@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyOriginGetArgs : Pulumi.ResourceArgs
+    public sealed class PolicyOriginGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("customHeaders")]
         private InputList<Inputs.PolicyOriginCustomHeaderGetArgs>? _customHeaders;
@@ -48,5 +48,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyOriginGetArgs()
         {
         }
+        public static new PolicyOriginGetArgs Empty => new PolicyOriginGetArgs();
     }
 }

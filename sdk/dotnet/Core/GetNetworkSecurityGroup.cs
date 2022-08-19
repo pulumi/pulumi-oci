@@ -28,20 +28,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkSecurityGroup = Oci.Core.GetNetworkSecurityGroup.Invoke(new()
         ///     {
-        ///         var testNetworkSecurityGroup = Output.Create(Oci.Core.GetNetworkSecurityGroup.InvokeAsync(new Oci.Core.GetNetworkSecurityGroupArgs
-        ///         {
-        ///             NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
-        ///         }));
-        ///     }
+        ///         NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -66,20 +64,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkSecurityGroup = Oci.Core.GetNetworkSecurityGroup.Invoke(new()
         ///     {
-        ///         var testNetworkSecurityGroup = Output.Create(Oci.Core.GetNetworkSecurityGroup.InvokeAsync(new Oci.Core.GetNetworkSecurityGroupArgs
-        ///         {
-        ///             NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
-        ///         }));
-        ///     }
+        ///         NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetNetworkSecurityGroupArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSecurityGroupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -100,9 +96,10 @@ namespace Pulumi.Oci.Core
         public GetNetworkSecurityGroupArgs()
         {
         }
+        public static new GetNetworkSecurityGroupArgs Empty => new GetNetworkSecurityGroupArgs();
     }
 
-    public sealed class GetNetworkSecurityGroupInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSecurityGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.Core
         public GetNetworkSecurityGroupInvokeArgs()
         {
         }
+        public static new GetNetworkSecurityGroupInvokeArgs Empty => new GetNetworkSecurityGroupInvokeArgs();
     }
 
 

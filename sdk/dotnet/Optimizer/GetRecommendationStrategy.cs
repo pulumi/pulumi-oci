@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRecommendationStrategy = Oci.Optimizer.GetRecommendationStrategy.Invoke(new()
         ///     {
-        ///         var testRecommendationStrategy = Output.Create(Oci.Optimizer.GetRecommendationStrategy.InvokeAsync(new Oci.Optimizer.GetRecommendationStrategyArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Recommendation_strategy_compartment_id_in_subtree,
-        ///             Name = @var.Recommendation_strategy_name,
-        ///             RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Recommendation_strategy_compartment_id_in_subtree,
+        ///         Name = @var.Recommendation_strategy_name,
+        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Optimizer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRecommendationStrategy = Oci.Optimizer.GetRecommendationStrategy.Invoke(new()
         ///     {
-        ///         var testRecommendationStrategy = Output.Create(Oci.Optimizer.GetRecommendationStrategy.InvokeAsync(new Oci.Optimizer.GetRecommendationStrategyArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CompartmentIdInSubtree = @var.Recommendation_strategy_compartment_id_in_subtree,
-        ///             Name = @var.Recommendation_strategy_name,
-        ///             RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentIdInSubtree = @var.Recommendation_strategy_compartment_id_in_subtree,
+        ///         Name = @var.Recommendation_strategy_name,
+        ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Optimizer
     }
 
 
-    public sealed class GetRecommendationStrategyArgs : Pulumi.InvokeArgs
+    public sealed class GetRecommendationStrategyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Optimizer
         public GetRecommendationStrategyArgs()
         {
         }
+        public static new GetRecommendationStrategyArgs Empty => new GetRecommendationStrategyArgs();
     }
 
-    public sealed class GetRecommendationStrategyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRecommendationStrategyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.Optimizer
         public GetRecommendationStrategyInvokeArgs()
         {
         }
+        public static new GetRecommendationStrategyInvokeArgs Empty => new GetRecommendationStrategyInvokeArgs();
     }
 
 

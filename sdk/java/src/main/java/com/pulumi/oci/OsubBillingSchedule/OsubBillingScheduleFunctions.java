@@ -21,6 +21,37 @@ public final class OsubBillingScheduleFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubBillingSchedule.OsubBillingScheduleFunctions;
+     * import com.pulumi.oci.OsubBillingSchedule.inputs.GetBillingScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBillingSchedules = OsubBillingScheduleFunctions.getBillingSchedule(GetBillingScheduleArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .subscribedServiceId(oci_core_service.test_service().id())
+     *             .xOneOriginRegion(var_.billing_schedule_x_one_origin_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBillingScheduleResult> getBillingSchedule(GetBillingScheduleArgs args) {
@@ -33,6 +64,37 @@ public final class OsubBillingScheduleFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubBillingSchedule.OsubBillingScheduleFunctions;
+     * import com.pulumi.oci.OsubBillingSchedule.inputs.GetBillingScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBillingSchedules = OsubBillingScheduleFunctions.getBillingSchedule(GetBillingScheduleArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .subscribedServiceId(oci_core_service.test_service().id())
+     *             .xOneOriginRegion(var_.billing_schedule_x_one_origin_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBillingScheduleResult> getBillingSchedulePlain(GetBillingSchedulePlainArgs args) {
@@ -45,6 +107,37 @@ public final class OsubBillingScheduleFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubBillingSchedule.OsubBillingScheduleFunctions;
+     * import com.pulumi.oci.OsubBillingSchedule.inputs.GetBillingScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBillingSchedules = OsubBillingScheduleFunctions.getBillingSchedule(GetBillingScheduleArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .subscribedServiceId(oci_core_service.test_service().id())
+     *             .xOneOriginRegion(var_.billing_schedule_x_one_origin_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetBillingScheduleResult> getBillingSchedule(GetBillingScheduleArgs args, InvokeOptions options) {
@@ -57,6 +150,37 @@ public final class OsubBillingScheduleFunctions {
      * for a particular Subscribed Service if provided
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OsubBillingSchedule.OsubBillingScheduleFunctions;
+     * import com.pulumi.oci.OsubBillingSchedule.inputs.GetBillingScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBillingSchedules = OsubBillingScheduleFunctions.getBillingSchedule(GetBillingScheduleArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+     *             .subscribedServiceId(oci_core_service.test_service().id())
+     *             .xOneOriginRegion(var_.billing_schedule_x_one_origin_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetBillingScheduleResult> getBillingSchedulePlain(GetBillingSchedulePlainArgs args, InvokeOptions options) {

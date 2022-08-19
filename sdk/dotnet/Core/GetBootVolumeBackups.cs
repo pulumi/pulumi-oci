@@ -22,24 +22,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBootVolumeBackups = Oci.Core.GetBootVolumeBackups.Invoke(new()
         ///     {
-        ///         var testBootVolumeBackups = Output.Create(Oci.Core.GetBootVolumeBackups.InvokeAsync(new Oci.Core.GetBootVolumeBackupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
-        ///             DisplayName = @var.Boot_volume_backup_display_name,
-        ///             SourceBootVolumeBackupId = oci_core_boot_volume_backup.Test_boot_volume_backup.Id,
-        ///             State = @var.Boot_volume_backup_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
+        ///         DisplayName = @var.Boot_volume_backup_display_name,
+        ///         SourceBootVolumeBackupId = oci_core_boot_volume_backup.Test_boot_volume_backup.Id,
+        ///         State = @var.Boot_volume_backup_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBootVolumeBackups = Oci.Core.GetBootVolumeBackups.Invoke(new()
         ///     {
-        ///         var testBootVolumeBackups = Output.Create(Oci.Core.GetBootVolumeBackups.InvokeAsync(new Oci.Core.GetBootVolumeBackupsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
-        ///             DisplayName = @var.Boot_volume_backup_display_name,
-        ///             SourceBootVolumeBackupId = oci_core_boot_volume_backup.Test_boot_volume_backup.Id,
-        ///             State = @var.Boot_volume_backup_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
+        ///         DisplayName = @var.Boot_volume_backup_display_name,
+        ///         SourceBootVolumeBackupId = oci_core_boot_volume_backup.Test_boot_volume_backup.Id,
+        ///         State = @var.Boot_volume_backup_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetBootVolumeBackupsArgs : Pulumi.InvokeArgs
+    public sealed class GetBootVolumeBackupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the boot volume.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.Core
         public GetBootVolumeBackupsArgs()
         {
         }
+        public static new GetBootVolumeBackupsArgs Empty => new GetBootVolumeBackupsArgs();
     }
 
-    public sealed class GetBootVolumeBackupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBootVolumeBackupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the boot volume.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.Core
         public GetBootVolumeBackupsInvokeArgs()
         {
         }
+        public static new GetBootVolumeBackupsInvokeArgs Empty => new GetBootVolumeBackupsInvokeArgs();
     }
 
 

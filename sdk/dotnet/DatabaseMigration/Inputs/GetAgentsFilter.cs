@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class GetAgentsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetAgentsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public GetAgentsFilterArgs()
         {
         }
+        public static new GetAgentsFilterArgs Empty => new GetAgentsFilterArgs();
     }
 }

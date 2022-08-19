@@ -17,21 +17,19 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAutonomousDatabaseRegionalWalletManagement = new Oci.Database.AutonomousDatabaseRegionalWalletManagement("testAutonomousDatabaseRegionalWalletManagement", new()
     ///     {
-    ///         var testAutonomousDatabaseRegionalWalletManagement = new Oci.Database.AutonomousDatabaseRegionalWalletManagement("testAutonomousDatabaseRegionalWalletManagement", new Oci.Database.AutonomousDatabaseRegionalWalletManagementArgs
-    ///         {
-    ///             GracePeriod = @var.Autonomous_database_regional_wallet_management_grace_period,
-    ///             ShouldRotate = @var.Autonomous_database_regional_wallet_management_should_rotate,
-    ///         });
-    ///     }
+    ///         GracePeriod = @var.Autonomous_database_regional_wallet_management_grace_period,
+    ///         ShouldRotate = @var.Autonomous_database_regional_wallet_management_should_rotate,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -39,7 +37,7 @@ namespace Pulumi.Oci.Database
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/autonomousDatabaseRegionalWalletManagement:AutonomousDatabaseRegionalWalletManagement")]
-    public partial class AutonomousDatabaseRegionalWalletManagement : Pulumi.CustomResource
+    public partial class AutonomousDatabaseRegionalWalletManagement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
@@ -109,7 +107,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class AutonomousDatabaseRegionalWalletManagementArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseRegionalWalletManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
@@ -126,9 +124,10 @@ namespace Pulumi.Oci.Database
         public AutonomousDatabaseRegionalWalletManagementArgs()
         {
         }
+        public static new AutonomousDatabaseRegionalWalletManagementArgs Empty => new AutonomousDatabaseRegionalWalletManagementArgs();
     }
 
-    public sealed class AutonomousDatabaseRegionalWalletManagementState : Pulumi.ResourceArgs
+    public sealed class AutonomousDatabaseRegionalWalletManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
@@ -157,5 +156,6 @@ namespace Pulumi.Oci.Database
         public AutonomousDatabaseRegionalWalletManagementState()
         {
         }
+        public static new AutonomousDatabaseRegionalWalletManagementState Empty => new AutonomousDatabaseRegionalWalletManagementState();
     }
 }

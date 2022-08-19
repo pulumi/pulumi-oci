@@ -27,6 +27,40 @@ import javax.annotation.Nullable;
  * Add Virtual Machines to the VM cluster. Applies to Exadata Cloud@Customer instances only.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.VmClusterAddVirtualNetwork;
+ * import com.pulumi.oci.Database.VmClusterAddVirtualNetworkArgs;
+ * import com.pulumi.oci.Database.inputs.VmClusterAddVirtualNetworkDbServerArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVmClusterAddVirtualMachine = new VmClusterAddVirtualNetwork(&#34;testVmClusterAddVirtualMachine&#34;, VmClusterAddVirtualNetworkArgs.builder()        
+ *             .dbServers(VmClusterAddVirtualNetworkDbServerArgs.builder()
+ *                 .dbServerId(oci_database_db_server.test_db_server().id())
+ *                 .build())
+ *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * 
+ * ##### Note: You may also need to add `db_servers` and `cpu_core_count` to the ignore_changes for the resource `oci.Database.VmCluster` list if you see a diff on a subsequent apply
  * 
  * ## Import
  * 

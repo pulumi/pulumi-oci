@@ -22,21 +22,19 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateEndpointReachableIp = Oci.ResourceManager.GetPrivateEndpointReachableIp.Invoke(new()
         ///     {
-        ///         var testPrivateEndpointReachableIp = Output.Create(Oci.ResourceManager.GetPrivateEndpointReachableIp.InvokeAsync(new Oci.ResourceManager.GetPrivateEndpointReachableIpArgs
-        ///         {
-        ///             PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
-        ///             PrivateIp = @var.Private_endpoint_reachable_ip_private_ip,
-        ///         }));
-        ///     }
+        ///         PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
+        ///         PrivateIp = @var.Private_endpoint_reachable_ip_private_ip,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateEndpointReachableIp = Oci.ResourceManager.GetPrivateEndpointReachableIp.Invoke(new()
         ///     {
-        ///         var testPrivateEndpointReachableIp = Output.Create(Oci.ResourceManager.GetPrivateEndpointReachableIp.InvokeAsync(new Oci.ResourceManager.GetPrivateEndpointReachableIpArgs
-        ///         {
-        ///             PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
-        ///             PrivateIp = @var.Private_endpoint_reachable_ip_private_ip,
-        ///         }));
-        ///     }
+        ///         PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
+        ///         PrivateIp = @var.Private_endpoint_reachable_ip_private_ip,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ResourceManager
     }
 
 
-    public sealed class GetPrivateEndpointReachableIpArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateEndpointReachableIpArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.ResourceManager
         public GetPrivateEndpointReachableIpArgs()
         {
         }
+        public static new GetPrivateEndpointReachableIpArgs Empty => new GetPrivateEndpointReachableIpArgs();
     }
 
-    public sealed class GetPrivateEndpointReachableIpInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateEndpointReachableIpInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.ResourceManager
         public GetPrivateEndpointReachableIpInvokeArgs()
         {
         }
+        public static new GetPrivateEndpointReachableIpInvokeArgs Empty => new GetPrivateEndpointReachableIpInvokeArgs();
     }
 
 

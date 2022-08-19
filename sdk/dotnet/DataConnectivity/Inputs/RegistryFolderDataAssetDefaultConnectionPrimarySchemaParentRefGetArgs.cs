@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataConnectivity.Inputs
 {
 
-    public sealed class RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefGetArgs : Pulumi.ResourceArgs
+    public sealed class RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Key of the parent object.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefGetArgs()
         {
         }
+        public static new RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefGetArgs Empty => new RegistryFolderDataAssetDefaultConnectionPrimarySchemaParentRefGetArgs();
     }
 }

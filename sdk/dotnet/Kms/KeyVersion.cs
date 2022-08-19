@@ -23,21 +23,19 @@ namespace Pulumi.Oci.Kms
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testKeyVersion = new Oci.Kms.KeyVersion("testKeyVersion", new()
     ///     {
-    ///         var testKeyVersion = new Oci.Kms.KeyVersion("testKeyVersion", new Oci.Kms.KeyVersionArgs
-    ///         {
-    ///             KeyId = oci_kms_key.Test_key.Id,
-    ///             ManagementEndpoint = @var.Key_version_management_endpoint,
-    ///         });
-    ///     }
+    ///         KeyId = oci_kms_key.Test_key.Id,
+    ///         ManagementEndpoint = @var.Key_version_management_endpoint,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -49,7 +47,7 @@ namespace Pulumi.Oci.Kms
     /// ```
     /// </summary>
     [OciResourceType("oci:Kms/keyVersion:KeyVersion")]
-    public partial class KeyVersion : Pulumi.CustomResource
+    public partial class KeyVersion : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment that contains this key version.
@@ -167,7 +165,7 @@ namespace Pulumi.Oci.Kms
         }
     }
 
-    public sealed class KeyVersionArgs : Pulumi.ResourceArgs
+    public sealed class KeyVersionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the key.
@@ -190,9 +188,10 @@ namespace Pulumi.Oci.Kms
         public KeyVersionArgs()
         {
         }
+        public static new KeyVersionArgs Empty => new KeyVersionArgs();
     }
 
-    public sealed class KeyVersionState : Pulumi.ResourceArgs
+    public sealed class KeyVersionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment that contains this key version.
@@ -275,5 +274,6 @@ namespace Pulumi.Oci.Kms
         public KeyVersionState()
         {
         }
+        public static new KeyVersionState Empty => new KeyVersionState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class VirtualDeploymentServiceDiscoveryGetArgs : Pulumi.ResourceArgs
+    public sealed class VirtualDeploymentServiceDiscoveryGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The hostname of the virtual deployments.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public VirtualDeploymentServiceDiscoveryGetArgs()
         {
         }
+        public static new VirtualDeploymentServiceDiscoveryGetArgs Empty => new VirtualDeploymentServiceDiscoveryGetArgs();
     }
 }

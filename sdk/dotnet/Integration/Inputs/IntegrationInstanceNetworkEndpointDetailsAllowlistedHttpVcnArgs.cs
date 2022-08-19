@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Integration.Inputs
 {
 
-    public sealed class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs : Pulumi.ResourceArgs
+    public sealed class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs : global::Pulumi.ResourceArgs
     {
         [Input("allowlistedIps")]
         private InputList<string>? _allowlistedIps;
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Integration.Inputs
         public IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs()
         {
         }
+        public static new IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs Empty => new IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs();
     }
 }

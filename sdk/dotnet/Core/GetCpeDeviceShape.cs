@@ -30,20 +30,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCpeDeviceShape = Oci.Core.GetCpeDeviceShape.Invoke(new()
         ///     {
-        ///         var testCpeDeviceShape = Output.Create(Oci.Core.GetCpeDeviceShape.InvokeAsync(new Oci.Core.GetCpeDeviceShapeArgs
-        ///         {
-        ///             CpeDeviceShapeId = oci_core_cpe_device_shape.Test_cpe_device_shape.Id,
-        ///         }));
-        ///     }
+        ///         CpeDeviceShapeId = oci_core_cpe_device_shape.Test_cpe_device_shape.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -70,20 +68,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCpeDeviceShape = Oci.Core.GetCpeDeviceShape.Invoke(new()
         ///     {
-        ///         var testCpeDeviceShape = Output.Create(Oci.Core.GetCpeDeviceShape.InvokeAsync(new Oci.Core.GetCpeDeviceShapeArgs
-        ///         {
-        ///             CpeDeviceShapeId = oci_core_cpe_device_shape.Test_cpe_device_shape.Id,
-        ///         }));
-        ///     }
+        ///         CpeDeviceShapeId = oci_core_cpe_device_shape.Test_cpe_device_shape.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -93,7 +89,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetCpeDeviceShapeArgs : Pulumi.InvokeArgs
+    public sealed class GetCpeDeviceShapeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.Core
         public GetCpeDeviceShapeArgs()
         {
         }
+        public static new GetCpeDeviceShapeArgs Empty => new GetCpeDeviceShapeArgs();
     }
 
-    public sealed class GetCpeDeviceShapeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCpeDeviceShapeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Core
         public GetCpeDeviceShapeInvokeArgs()
         {
         }
+        public static new GetCpeDeviceShapeInvokeArgs Empty => new GetCpeDeviceShapeInvokeArgs();
     }
 
 

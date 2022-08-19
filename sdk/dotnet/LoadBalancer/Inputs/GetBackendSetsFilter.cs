@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class GetBackendSetsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendSetsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A friendly name for the backend set. It must be unique and it cannot be changed.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public GetBackendSetsFilterArgs()
         {
         }
+        public static new GetBackendSetsFilterArgs Empty => new GetBackendSetsFilterArgs();
     }
 }

@@ -5,25 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "../types";
 import * as utilities from "../utilities";
 
-/**
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testRecords = oci.Dns.getRecords({
- *     zoneNameOrId: oci_dns_zone_name_or.test_zone_name_or.id,
- *     compartmentId: _var.compartment_id,
- *     domain: _var.record_domain,
- *     domainContains: _var.record_domain_contains,
- *     rtype: _var.record_rtype,
- *     scope: _var.record_scope,
- *     viewId: oci_dns_view.test_view.id,
- *     zoneVersion: _var.record_zone_version,
- * });
- * ```
- */
 export function getRecords(args: GetRecordsArgs, opts?: pulumi.InvokeOptions): Promise<GetRecordsResult> {
     if (!opts) {
         opts = {}

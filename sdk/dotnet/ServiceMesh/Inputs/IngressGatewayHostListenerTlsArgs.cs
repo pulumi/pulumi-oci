@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class IngressGatewayHostListenerTlsArgs : Pulumi.ResourceArgs
+    public sealed class IngressGatewayHostListenerTlsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Resource representing the TLS configuration used for validating client certificates.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public IngressGatewayHostListenerTlsArgs()
         {
         }
+        public static new IngressGatewayHostListenerTlsArgs Empty => new IngressGatewayHostListenerTlsArgs();
     }
 }

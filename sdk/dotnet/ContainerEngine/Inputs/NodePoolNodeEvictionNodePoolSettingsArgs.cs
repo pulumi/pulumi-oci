@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class NodePoolNodeEvictionNodePoolSettingsArgs : Pulumi.ResourceArgs
+    public sealed class NodePoolNodeEvictionNodePoolSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public NodePoolNodeEvictionNodePoolSettingsArgs()
         {
         }
+        public static new NodePoolNodeEvictionNodePoolSettingsArgs Empty => new NodePoolNodeEvictionNodePoolSettingsArgs();
     }
 }

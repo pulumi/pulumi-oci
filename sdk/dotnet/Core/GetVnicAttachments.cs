@@ -24,23 +24,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVnicAttachments = Oci.Core.GetVnicAttachments.Invoke(new()
         ///     {
-        ///         var testVnicAttachments = Output.Create(Oci.Core.GetVnicAttachments.InvokeAsync(new Oci.Core.GetVnicAttachmentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Vnic_attachment_availability_domain,
-        ///             InstanceId = oci_core_instance.Test_instance.Id,
-        ///             VnicId = oci_core_vnic.Test_vnic.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Vnic_attachment_availability_domain,
+        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         VnicId = oci_core_vnic.Test_vnic.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,23 +59,21 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVnicAttachments = Oci.Core.GetVnicAttachments.Invoke(new()
         ///     {
-        ///         var testVnicAttachments = Output.Create(Oci.Core.GetVnicAttachments.InvokeAsync(new Oci.Core.GetVnicAttachmentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Vnic_attachment_availability_domain,
-        ///             InstanceId = oci_core_instance.Test_instance.Id,
-        ///             VnicId = oci_core_vnic.Test_vnic.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Vnic_attachment_availability_domain,
+        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         VnicId = oci_core_vnic.Test_vnic.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVnicAttachmentsArgs : Pulumi.InvokeArgs
+    public sealed class GetVnicAttachmentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -124,9 +120,10 @@ namespace Pulumi.Oci.Core
         public GetVnicAttachmentsArgs()
         {
         }
+        public static new GetVnicAttachmentsArgs Empty => new GetVnicAttachmentsArgs();
     }
 
-    public sealed class GetVnicAttachmentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVnicAttachmentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -163,6 +160,7 @@ namespace Pulumi.Oci.Core
         public GetVnicAttachmentsInvokeArgs()
         {
         }
+        public static new GetVnicAttachmentsInvokeArgs Empty => new GetVnicAttachmentsInvokeArgs();
     }
 
 

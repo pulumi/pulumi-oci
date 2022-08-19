@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class PathRouteSetPathRouteGetArgs : Pulumi.ResourceArgs
+    public sealed class PathRouteSetPathRouteGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `example_backend_set`
@@ -36,5 +36,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public PathRouteSetPathRouteGetArgs()
         {
         }
+        public static new PathRouteSetPathRouteGetArgs Empty => new PathRouteSetPathRouteGetArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer.Inputs
 {
 
-    public sealed class GetHistoriesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetHistoriesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Optimizer.Inputs
         public GetHistoriesFilterInputArgs()
         {
         }
+        public static new GetHistoriesFilterInputArgs Empty => new GetHistoriesFilterInputArgs();
     }
 }

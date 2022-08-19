@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class NetworkSourceVirtualSourceListArgs : Pulumi.ResourceArgs
+    public sealed class NetworkSourceVirtualSourceListArgs : global::Pulumi.ResourceArgs
     {
         [Input("ipRanges", required: true)]
         private InputList<string>? _ipRanges;
@@ -26,5 +26,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public NetworkSourceVirtualSourceListArgs()
         {
         }
+        public static new NetworkSourceVirtualSourceListArgs Empty => new NetworkSourceVirtualSourceListArgs();
     }
 }

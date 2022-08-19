@@ -22,23 +22,21 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSoftwareSourceModuleStreamProfile = Oci.OsManagement.GetSoftwareSourceModuleStreamProfile.Invoke(new()
         ///     {
-        ///         var testSoftwareSourceModuleStreamProfile = Output.Create(Oci.OsManagement.GetSoftwareSourceModuleStreamProfile.InvokeAsync(new Oci.OsManagement.GetSoftwareSourceModuleStreamProfileArgs
-        ///         {
-        ///             ModuleName = @var.Software_source_module_name,
-        ///             ProfileName = @var.Software_source_module_stream_profile_name,
-        ///             SoftwareSourceId = @var.Software_source.Id,
-        ///             StreamName = @var.Software_source_module_stream_name,
-        ///         }));
-        ///     }
+        ///         ModuleName = @var.Software_source_module_name,
+        ///         ProfileName = @var.Software_source_module_stream_profile_name,
+        ///         SoftwareSourceId = @var.Software_source.Id,
+        ///         StreamName = @var.Software_source_module_stream_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSoftwareSourceModuleStreamProfile = Oci.OsManagement.GetSoftwareSourceModuleStreamProfile.Invoke(new()
         ///     {
-        ///         var testSoftwareSourceModuleStreamProfile = Output.Create(Oci.OsManagement.GetSoftwareSourceModuleStreamProfile.InvokeAsync(new Oci.OsManagement.GetSoftwareSourceModuleStreamProfileArgs
-        ///         {
-        ///             ModuleName = @var.Software_source_module_name,
-        ///             ProfileName = @var.Software_source_module_stream_profile_name,
-        ///             SoftwareSourceId = @var.Software_source.Id,
-        ///             StreamName = @var.Software_source_module_stream_name,
-        ///         }));
-        ///     }
+        ///         ModuleName = @var.Software_source_module_name,
+        ///         ProfileName = @var.Software_source_module_stream_profile_name,
+        ///         SoftwareSourceId = @var.Software_source.Id,
+        ///         StreamName = @var.Software_source_module_stream_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.OsManagement
     }
 
 
-    public sealed class GetSoftwareSourceModuleStreamProfileArgs : Pulumi.InvokeArgs
+    public sealed class GetSoftwareSourceModuleStreamProfileArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the module
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.OsManagement
         public GetSoftwareSourceModuleStreamProfileArgs()
         {
         }
+        public static new GetSoftwareSourceModuleStreamProfileArgs Empty => new GetSoftwareSourceModuleStreamProfileArgs();
     }
 
-    public sealed class GetSoftwareSourceModuleStreamProfileInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSoftwareSourceModuleStreamProfileInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the module
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.OsManagement
         public GetSoftwareSourceModuleStreamProfileInvokeArgs()
         {
         }
+        public static new GetSoftwareSourceModuleStreamProfileInvokeArgs Empty => new GetSoftwareSourceModuleStreamProfileInvokeArgs();
     }
 
 

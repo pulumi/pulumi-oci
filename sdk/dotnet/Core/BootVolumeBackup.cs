@@ -22,30 +22,28 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBootVolumeBackup = new Oci.Core.BootVolumeBackup("testBootVolumeBackup", new()
     ///     {
-    ///         var testBootVolumeBackup = new Oci.Core.BootVolumeBackup("testBootVolumeBackup", new Oci.Core.BootVolumeBackupArgs
+    ///         BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Boot_volume_backup_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             Type = @var.Boot_volume_backup_type,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Boot_volume_backup_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         Type = @var.Boot_volume_backup_type,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -57,7 +55,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/bootVolumeBackup:BootVolumeBackup")]
-    public partial class BootVolumeBackup : Pulumi.CustomResource
+    public partial class BootVolumeBackup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
@@ -211,7 +209,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class BootVolumeBackupArgs : Pulumi.ResourceArgs
+    public sealed class BootVolumeBackupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
@@ -270,9 +268,10 @@ namespace Pulumi.Oci.Core
         public BootVolumeBackupArgs()
         {
         }
+        public static new BootVolumeBackupArgs Empty => new BootVolumeBackupArgs();
     }
 
-    public sealed class BootVolumeBackupState : Pulumi.ResourceArgs
+    public sealed class BootVolumeBackupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
@@ -403,5 +402,6 @@ namespace Pulumi.Oci.Core
         public BootVolumeBackupState()
         {
         }
+        public static new BootVolumeBackupState Empty => new BootVolumeBackupState();
     }
 }

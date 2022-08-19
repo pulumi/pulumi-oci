@@ -47,6 +47,34 @@ public final class DatabaseMigrationFunctions {
      * Display the ODMS Agent configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgent = DatabaseMigrationFunctions.getAgent(GetAgentArgs.builder()
+     *             .agentId(oci_database_migration_agent.test_agent().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAgentResult> getAgent(GetAgentArgs args) {
@@ -58,6 +86,34 @@ public final class DatabaseMigrationFunctions {
      * Display the ODMS Agent configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgent = DatabaseMigrationFunctions.getAgent(GetAgentArgs.builder()
+     *             .agentId(oci_database_migration_agent.test_agent().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAgentResult> getAgentPlain(GetAgentPlainArgs args) {
@@ -69,6 +125,34 @@ public final class DatabaseMigrationFunctions {
      * Display the ODMS Agent configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgent = DatabaseMigrationFunctions.getAgent(GetAgentArgs.builder()
+     *             .agentId(oci_database_migration_agent.test_agent().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAgentResult> getAgent(GetAgentArgs args, InvokeOptions options) {
@@ -80,6 +164,34 @@ public final class DatabaseMigrationFunctions {
      * Display the ODMS Agent configuration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgent = DatabaseMigrationFunctions.getAgent(GetAgentArgs.builder()
+     *             .agentId(oci_database_migration_agent.test_agent().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAgentResult> getAgentPlain(GetAgentPlainArgs args, InvokeOptions options) {
@@ -91,6 +203,32 @@ public final class DatabaseMigrationFunctions {
      * Get details of the ODMS Agent Images available to install on-premises.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentImages = DatabaseMigrationFunctions.getAgentImages();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAgentImagesResult> getAgentImages() {
@@ -102,6 +240,32 @@ public final class DatabaseMigrationFunctions {
      * Get details of the ODMS Agent Images available to install on-premises.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentImages = DatabaseMigrationFunctions.getAgentImages();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAgentImagesResult> getAgentImagesPlain() {
@@ -113,6 +277,32 @@ public final class DatabaseMigrationFunctions {
      * Get details of the ODMS Agent Images available to install on-premises.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentImages = DatabaseMigrationFunctions.getAgentImages();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAgentImagesResult> getAgentImages(GetAgentImagesArgs args) {
@@ -124,6 +314,32 @@ public final class DatabaseMigrationFunctions {
      * Get details of the ODMS Agent Images available to install on-premises.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentImages = DatabaseMigrationFunctions.getAgentImages();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAgentImagesResult> getAgentImagesPlain(GetAgentImagesPlainArgs args) {
@@ -135,6 +351,32 @@ public final class DatabaseMigrationFunctions {
      * Get details of the ODMS Agent Images available to install on-premises.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentImages = DatabaseMigrationFunctions.getAgentImages();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAgentImagesResult> getAgentImages(GetAgentImagesArgs args, InvokeOptions options) {
@@ -146,6 +388,32 @@ public final class DatabaseMigrationFunctions {
      * Get details of the ODMS Agent Images available to install on-premises.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentImagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgentImages = DatabaseMigrationFunctions.getAgentImages();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAgentImagesResult> getAgentImagesPlain(GetAgentImagesPlainArgs args, InvokeOptions options) {
@@ -157,6 +425,36 @@ public final class DatabaseMigrationFunctions {
      * Display the name of all the existing ODMS Agents in the server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgents = DatabaseMigrationFunctions.getAgents(GetAgentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.agent_display_name())
+     *             .state(var_.agent_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAgentsResult> getAgents(GetAgentsArgs args) {
@@ -168,6 +466,36 @@ public final class DatabaseMigrationFunctions {
      * Display the name of all the existing ODMS Agents in the server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgents = DatabaseMigrationFunctions.getAgents(GetAgentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.agent_display_name())
+     *             .state(var_.agent_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAgentsResult> getAgentsPlain(GetAgentsPlainArgs args) {
@@ -179,6 +507,36 @@ public final class DatabaseMigrationFunctions {
      * Display the name of all the existing ODMS Agents in the server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgents = DatabaseMigrationFunctions.getAgents(GetAgentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.agent_display_name())
+     *             .state(var_.agent_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAgentsResult> getAgents(GetAgentsArgs args, InvokeOptions options) {
@@ -190,6 +548,36 @@ public final class DatabaseMigrationFunctions {
      * Display the name of all the existing ODMS Agents in the server.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAgentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAgents = DatabaseMigrationFunctions.getAgents(GetAgentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.agent_display_name())
+     *             .state(var_.agent_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAgentsResult> getAgentsPlain(GetAgentsPlainArgs args, InvokeOptions options) {
@@ -201,6 +589,34 @@ public final class DatabaseMigrationFunctions {
      * Display Database Connection details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
+     *             .connectionId(oci_database_migration_connection.test_connection().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args) {
@@ -212,6 +628,34 @@ public final class DatabaseMigrationFunctions {
      * Display Database Connection details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
+     *             .connectionId(oci_database_migration_connection.test_connection().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args) {
@@ -223,6 +667,34 @@ public final class DatabaseMigrationFunctions {
      * Display Database Connection details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
+     *             .connectionId(oci_database_migration_connection.test_connection().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOptions options) {
@@ -234,6 +706,34 @@ public final class DatabaseMigrationFunctions {
      * Display Database Connection details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
+     *             .connectionId(oci_database_migration_connection.test_connection().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args, InvokeOptions options) {
@@ -245,6 +745,36 @@ public final class DatabaseMigrationFunctions {
      * List all Database Connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = DatabaseMigrationFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.connection_display_name())
+     *             .state(var_.connection_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args) {
@@ -256,6 +786,36 @@ public final class DatabaseMigrationFunctions {
      * List all Database Connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = DatabaseMigrationFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.connection_display_name())
+     *             .state(var_.connection_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args) {
@@ -267,6 +827,36 @@ public final class DatabaseMigrationFunctions {
      * List all Database Connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = DatabaseMigrationFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.connection_display_name())
+     *             .state(var_.connection_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetConnectionsResult> getConnections(GetConnectionsArgs args, InvokeOptions options) {
@@ -278,6 +868,36 @@ public final class DatabaseMigrationFunctions {
      * List all Database Connections.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConnections = DatabaseMigrationFunctions.getConnections(GetConnectionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.connection_display_name())
+     *             .state(var_.connection_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetConnectionsResult> getConnectionsPlain(GetConnectionsPlainArgs args, InvokeOptions options) {
@@ -289,6 +909,34 @@ public final class DatabaseMigrationFunctions {
      * Get the Pre-Migration Advisor report details
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
+     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobAdvisorReportResult> getJobAdvisorReport(GetJobAdvisorReportArgs args) {
@@ -300,6 +948,34 @@ public final class DatabaseMigrationFunctions {
      * Get the Pre-Migration Advisor report details
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
+     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobAdvisorReportResult> getJobAdvisorReportPlain(GetJobAdvisorReportPlainArgs args) {
@@ -311,6 +987,34 @@ public final class DatabaseMigrationFunctions {
      * Get the Pre-Migration Advisor report details
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
+     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobAdvisorReportResult> getJobAdvisorReport(GetJobAdvisorReportArgs args, InvokeOptions options) {
@@ -322,6 +1026,34 @@ public final class DatabaseMigrationFunctions {
      * Get the Pre-Migration Advisor report details
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
+     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobAdvisorReportResult> getJobAdvisorReportPlain(GetJobAdvisorReportPlainArgs args, InvokeOptions options) {
@@ -333,6 +1065,34 @@ public final class DatabaseMigrationFunctions {
      * List the Job Outputs
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
+     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobOutputResult> getJobOutput(GetJobOutputArgs args) {
@@ -344,6 +1104,34 @@ public final class DatabaseMigrationFunctions {
      * List the Job Outputs
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
+     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobOutputResult> getJobOutputPlain(GetJobOutputPlainArgs args) {
@@ -355,6 +1143,34 @@ public final class DatabaseMigrationFunctions {
      * List the Job Outputs
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
+     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJobOutputResult> getJobOutput(GetJobOutputArgs args, InvokeOptions options) {
@@ -366,6 +1182,34 @@ public final class DatabaseMigrationFunctions {
      * List the Job Outputs
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
+     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJobOutputResult> getJobOutputPlain(GetJobOutputPlainArgs args, InvokeOptions options) {
@@ -377,6 +1221,34 @@ public final class DatabaseMigrationFunctions {
      * Display Migration details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
+     *             .migrationId(oci_database_migration_migration.test_migration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMigrationResult> getMigration(GetMigrationArgs args) {
@@ -388,6 +1260,34 @@ public final class DatabaseMigrationFunctions {
      * Display Migration details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
+     *             .migrationId(oci_database_migration_migration.test_migration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMigrationResult> getMigrationPlain(GetMigrationPlainArgs args) {
@@ -399,6 +1299,34 @@ public final class DatabaseMigrationFunctions {
      * Display Migration details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
+     *             .migrationId(oci_database_migration_migration.test_migration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMigrationResult> getMigration(GetMigrationArgs args, InvokeOptions options) {
@@ -410,6 +1338,34 @@ public final class DatabaseMigrationFunctions {
      * Display Migration details.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
+     *             .migrationId(oci_database_migration_migration.test_migration().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMigrationResult> getMigrationPlain(GetMigrationPlainArgs args, InvokeOptions options) {
@@ -421,6 +1377,32 @@ public final class DatabaseMigrationFunctions {
      * Display sample object types to exclude or include for a Migration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationObjectTypes = DatabaseMigrationFunctions.getMigrationObjectTypes();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMigrationObjectTypesResult> getMigrationObjectTypes() {
@@ -432,6 +1414,32 @@ public final class DatabaseMigrationFunctions {
      * Display sample object types to exclude or include for a Migration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationObjectTypes = DatabaseMigrationFunctions.getMigrationObjectTypes();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMigrationObjectTypesResult> getMigrationObjectTypesPlain() {
@@ -443,6 +1451,32 @@ public final class DatabaseMigrationFunctions {
      * Display sample object types to exclude or include for a Migration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationObjectTypes = DatabaseMigrationFunctions.getMigrationObjectTypes();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMigrationObjectTypesResult> getMigrationObjectTypes(GetMigrationObjectTypesArgs args) {
@@ -454,6 +1488,32 @@ public final class DatabaseMigrationFunctions {
      * Display sample object types to exclude or include for a Migration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationObjectTypes = DatabaseMigrationFunctions.getMigrationObjectTypes();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMigrationObjectTypesResult> getMigrationObjectTypesPlain(GetMigrationObjectTypesPlainArgs args) {
@@ -465,6 +1525,32 @@ public final class DatabaseMigrationFunctions {
      * Display sample object types to exclude or include for a Migration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationObjectTypes = DatabaseMigrationFunctions.getMigrationObjectTypes();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMigrationObjectTypesResult> getMigrationObjectTypes(GetMigrationObjectTypesArgs args, InvokeOptions options) {
@@ -476,6 +1562,32 @@ public final class DatabaseMigrationFunctions {
      * Display sample object types to exclude or include for a Migration.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationObjectTypes = DatabaseMigrationFunctions.getMigrationObjectTypes();
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMigrationObjectTypesResult> getMigrationObjectTypesPlain(GetMigrationObjectTypesPlainArgs args, InvokeOptions options) {
@@ -487,6 +1599,37 @@ public final class DatabaseMigrationFunctions {
      * List all Migrations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.migration_display_name())
+     *             .lifecycleDetails(var_.migration_lifecycle_details())
+     *             .state(var_.migration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMigrationsResult> getMigrations(GetMigrationsArgs args) {
@@ -498,6 +1641,37 @@ public final class DatabaseMigrationFunctions {
      * List all Migrations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.migration_display_name())
+     *             .lifecycleDetails(var_.migration_lifecycle_details())
+     *             .state(var_.migration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMigrationsResult> getMigrationsPlain(GetMigrationsPlainArgs args) {
@@ -509,6 +1683,37 @@ public final class DatabaseMigrationFunctions {
      * List all Migrations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.migration_display_name())
+     *             .lifecycleDetails(var_.migration_lifecycle_details())
+     *             .state(var_.migration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMigrationsResult> getMigrations(GetMigrationsArgs args, InvokeOptions options) {
@@ -520,6 +1725,37 @@ public final class DatabaseMigrationFunctions {
      * List all Migrations.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.migration_display_name())
+     *             .lifecycleDetails(var_.migration_lifecycle_details())
+     *             .state(var_.migration_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMigrationsResult> getMigrationsPlain(GetMigrationsPlainArgs args, InvokeOptions options) {

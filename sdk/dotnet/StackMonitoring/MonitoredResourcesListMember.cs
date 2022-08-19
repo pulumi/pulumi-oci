@@ -17,22 +17,20 @@ namespace Pulumi.Oci.StackMonitoring
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMonitoredResourcesListMember = new Oci.StackMonitoring.MonitoredResourcesListMember("testMonitoredResourcesListMember", new()
     ///     {
-    ///         var testMonitoredResourcesListMember = new Oci.StackMonitoring.MonitoredResourcesListMember("testMonitoredResourcesListMember", new Oci.StackMonitoring.MonitoredResourcesListMemberArgs
-    ///         {
-    ///             MonitoredResourceId = oci_stack_monitoring_monitored_resource.Test_monitored_resource.Id,
-    ///             DestinationResourceId = oci_stack_monitoring_destination_resource.Test_destination_resource.Id,
-    ///             LimitLevel = @var.Monitored_resources_list_member_limit_level,
-    ///         });
-    ///     }
+    ///         MonitoredResourceId = oci_stack_monitoring_monitored_resource.Test_monitored_resource.Id,
+    ///         DestinationResourceId = oci_stack_monitoring_destination_resource.Test_destination_resource.Id,
+    ///         LimitLevel = @var.Monitored_resources_list_member_limit_level,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -44,7 +42,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// ```
     /// </summary>
     [OciResourceType("oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember")]
-    public partial class MonitoredResourcesListMember : Pulumi.CustomResource
+    public partial class MonitoredResourcesListMember : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -114,7 +112,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
     }
 
-    public sealed class MonitoredResourcesListMemberArgs : Pulumi.ResourceArgs
+    public sealed class MonitoredResourcesListMemberArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -137,9 +135,10 @@ namespace Pulumi.Oci.StackMonitoring
         public MonitoredResourcesListMemberArgs()
         {
         }
+        public static new MonitoredResourcesListMemberArgs Empty => new MonitoredResourcesListMemberArgs();
     }
 
-    public sealed class MonitoredResourcesListMemberState : Pulumi.ResourceArgs
+    public sealed class MonitoredResourcesListMemberState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -174,5 +173,6 @@ namespace Pulumi.Oci.StackMonitoring
         public MonitoredResourcesListMemberState()
         {
         }
+        public static new MonitoredResourcesListMemberState Empty => new MonitoredResourcesListMemberState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement.Inputs
 {
 
-    public sealed class ManagedDatabasesChangeDatabaseParameterParameterArgs : Pulumi.ResourceArgs
+    public sealed class ManagedDatabasesChangeDatabaseParameterParameterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The parameter name.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public ManagedDatabasesChangeDatabaseParameterParameterArgs()
         {
         }
+        public static new ManagedDatabasesChangeDatabaseParameterParameterArgs Empty => new ManagedDatabasesChangeDatabaseParameterParameterArgs();
     }
 }

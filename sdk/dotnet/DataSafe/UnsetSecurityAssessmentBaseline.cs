@@ -18,20 +18,18 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testUnsetSecurityAssessmentBaseline = new Oci.DataSafe.UnsetSecurityAssessmentBaseline("testUnsetSecurityAssessmentBaseline", new()
     ///     {
-    ///         var testUnsetSecurityAssessmentBaseline = new Oci.DataSafe.UnsetSecurityAssessmentBaseline("testUnsetSecurityAssessmentBaseline", new Oci.DataSafe.UnsetSecurityAssessmentBaselineArgs
-    ///         {
-    ///             SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
-    ///         });
-    ///     }
+    ///         SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline")]
-    public partial class UnsetSecurityAssessmentBaseline : Pulumi.CustomResource
+    public partial class UnsetSecurityAssessmentBaseline : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the security assessment.
@@ -95,7 +93,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class UnsetSecurityAssessmentBaselineArgs : Pulumi.ResourceArgs
+    public sealed class UnsetSecurityAssessmentBaselineArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the security assessment.
@@ -106,9 +104,10 @@ namespace Pulumi.Oci.DataSafe
         public UnsetSecurityAssessmentBaselineArgs()
         {
         }
+        public static new UnsetSecurityAssessmentBaselineArgs Empty => new UnsetSecurityAssessmentBaselineArgs();
     }
 
-    public sealed class UnsetSecurityAssessmentBaselineState : Pulumi.ResourceArgs
+    public sealed class UnsetSecurityAssessmentBaselineState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the security assessment.
@@ -119,5 +118,6 @@ namespace Pulumi.Oci.DataSafe
         public UnsetSecurityAssessmentBaselineState()
         {
         }
+        public static new UnsetSecurityAssessmentBaselineState Empty => new UnsetSecurityAssessmentBaselineState();
     }
 }

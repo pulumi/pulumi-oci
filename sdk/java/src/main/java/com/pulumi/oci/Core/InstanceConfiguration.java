@@ -24,6 +24,180 @@ import javax.annotation.Nullable;
  * settings to use when creating Compute instances.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.InstanceConfiguration;
+ * import com.pulumi.oci.Core.InstanceConfigurationArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs;
+ * import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testInstanceConfiguration = new InstanceConfiguration(&#34;testInstanceConfiguration&#34;, InstanceConfigurationArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.instance_configuration_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .instanceDetails(InstanceConfigurationInstanceDetailsArgs.builder()
+ *                 .instanceType(var_.instance_configuration_instance_details_instance_type())
+ *                 .blockVolumes(InstanceConfigurationInstanceDetailsBlockVolumeArgs.builder()
+ *                     .attachDetails(InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs.builder()
+ *                         .type(var_.instance_configuration_instance_details_block_volumes_attach_details_type())
+ *                         .device(var_.instance_configuration_instance_details_block_volumes_attach_details_device())
+ *                         .displayName(var_.instance_configuration_instance_details_block_volumes_attach_details_display_name())
+ *                         .isPvEncryptionInTransitEnabled(var_.instance_configuration_instance_details_block_volumes_attach_details_is_pv_encryption_in_transit_enabled())
+ *                         .isReadOnly(var_.instance_configuration_instance_details_block_volumes_attach_details_is_read_only())
+ *                         .isShareable(var_.instance_configuration_instance_details_block_volumes_attach_details_is_shareable())
+ *                         .useChap(var_.instance_configuration_instance_details_block_volumes_attach_details_use_chap())
+ *                         .build())
+ *                     .createDetails(InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs.builder()
+ *                         .availabilityDomain(var_.instance_configuration_instance_details_block_volumes_create_details_availability_domain())
+ *                         .backupPolicyId(data.oci_core_volume_backup_policies().test_volume_backup_policies().volume_backup_policies()[0].id())
+ *                         .compartmentId(var_.compartment_id())
+ *                         .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                         .displayName(var_.instance_configuration_instance_details_block_volumes_create_details_display_name())
+ *                         .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                         .kmsKeyId(oci_kms_key.test_key().id())
+ *                         .sizeInGbs(var_.instance_configuration_instance_details_block_volumes_create_details_size_in_gbs())
+ *                         .sourceDetails(InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs.builder()
+ *                             .type(var_.instance_configuration_instance_details_block_volumes_create_details_source_details_type())
+ *                             .id(var_.instance_configuration_instance_details_block_volumes_create_details_source_details_id())
+ *                             .build())
+ *                         .vpusPerGb(var_.instance_configuration_instance_details_block_volumes_create_details_vpus_per_gb())
+ *                         .build())
+ *                     .volumeId(oci_core_volume.test_volume().id())
+ *                     .build())
+ *                 .launchDetails(InstanceConfigurationInstanceDetailsLaunchDetailsArgs.builder()
+ *                     .agentConfig(InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs.builder()
+ *                         .areAllPluginsDisabled(var_.instance_configuration_instance_details_launch_details_agent_config_are_all_plugins_disabled())
+ *                         .isManagementDisabled(var_.instance_configuration_instance_details_launch_details_agent_config_is_management_disabled())
+ *                         .isMonitoringDisabled(var_.instance_configuration_instance_details_launch_details_agent_config_is_monitoring_disabled())
+ *                         .pluginsConfigs(InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs.builder()
+ *                             .desiredState(var_.instance_configuration_instance_details_launch_details_agent_config_plugins_config_desired_state())
+ *                             .name(var_.instance_configuration_instance_details_launch_details_agent_config_plugins_config_name())
+ *                             .build())
+ *                         .build())
+ *                     .availabilityConfig(InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs.builder()
+ *                         .recoveryAction(var_.instance_configuration_instance_details_launch_details_availability_config_recovery_action())
+ *                         .build())
+ *                     .availabilityDomain(var_.instance_configuration_instance_details_launch_details_availability_domain())
+ *                     .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+ *                     .compartmentId(var_.compartment_id())
+ *                     .createVnicDetails(InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs.builder()
+ *                         .assignPrivateDnsRecord(var_.instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record())
+ *                         .assignPublicIp(var_.instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip())
+ *                         .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                         .displayName(var_.instance_configuration_instance_details_launch_details_create_vnic_details_display_name())
+ *                         .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                         .hostnameLabel(var_.instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label())
+ *                         .nsgIds(var_.instance_configuration_instance_details_launch_details_create_vnic_details_nsg_ids())
+ *                         .privateIp(var_.instance_configuration_instance_details_launch_details_create_vnic_details_private_ip())
+ *                         .skipSourceDestCheck(var_.instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check())
+ *                         .subnetId(oci_core_subnet.test_subnet().id())
+ *                         .build())
+ *                     .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
+ *                     .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                     .displayName(var_.instance_configuration_instance_details_launch_details_display_name())
+ *                     .extendedMetadata(var_.instance_configuration_instance_details_launch_details_extended_metadata())
+ *                     .faultDomain(var_.instance_configuration_instance_details_launch_details_fault_domain())
+ *                     .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                     .instanceOptions(InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs.builder()
+ *                         .areLegacyImdsEndpointsDisabled(var_.instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled())
+ *                         .build())
+ *                     .ipxeScript(var_.instance_configuration_instance_details_launch_details_ipxe_script())
+ *                     .isPvEncryptionInTransitEnabled(var_.instance_configuration_instance_details_launch_details_is_pv_encryption_in_transit_enabled())
+ *                     .launchMode(var_.instance_configuration_instance_details_launch_details_launch_mode())
+ *                     .launchOptions(InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs.builder()
+ *                         .bootVolumeType(var_.instance_configuration_instance_details_launch_details_launch_options_boot_volume_type())
+ *                         .firmware(var_.instance_configuration_instance_details_launch_details_launch_options_firmware())
+ *                         .isConsistentVolumeNamingEnabled(var_.instance_configuration_instance_details_launch_details_launch_options_is_consistent_volume_naming_enabled())
+ *                         .isPvEncryptionInTransitEnabled(var_.instance_configuration_instance_details_launch_details_launch_options_is_pv_encryption_in_transit_enabled())
+ *                         .networkType(var_.instance_configuration_instance_details_launch_details_launch_options_network_type())
+ *                         .remoteDataVolumeType(var_.instance_configuration_instance_details_launch_details_launch_options_remote_data_volume_type())
+ *                         .build())
+ *                     .metadata(var_.instance_configuration_instance_details_launch_details_metadata())
+ *                     .platformConfig(InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs.builder()
+ *                         .type(var_.instance_configuration_instance_details_launch_details_platform_config_type())
+ *                         .areVirtualInstructionsEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled())
+ *                         .isAccessControlServiceEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled())
+ *                         .isInputOutputMemoryManagementUnitEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled())
+ *                         .isMeasuredBootEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled())
+ *                         .isSecureBootEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled())
+ *                         .isSymmetricMultiThreadingEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled())
+ *                         .isTrustedPlatformModuleEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled())
+ *                         .numaNodesPerSocket(var_.instance_configuration_instance_details_launch_details_platform_config_numa_nodes_per_socket())
+ *                         .percentageOfCoresEnabled(var_.instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled())
+ *                         .build())
+ *                     .preemptibleInstanceConfig(InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs.builder()
+ *                         .preemptionAction(InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs.builder()
+ *                             .type(var_.instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_type())
+ *                             .preserveBootVolume(var_.instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume())
+ *                             .build())
+ *                         .build())
+ *                     .preferredMaintenanceAction(var_.instance_configuration_instance_details_launch_details_preferred_maintenance_action())
+ *                     .shape(var_.instance_configuration_instance_details_launch_details_shape())
+ *                     .shapeConfig(InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs.builder()
+ *                         .baselineOcpuUtilization(var_.instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization())
+ *                         .memoryInGbs(var_.instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs())
+ *                         .nvmes(var_.instance_configuration_instance_details_launch_details_shape_config_nvmes())
+ *                         .ocpus(var_.instance_configuration_instance_details_launch_details_shape_config_ocpus())
+ *                         .build())
+ *                     .sourceDetails(InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs.builder()
+ *                         .sourceType(var_.instance_configuration_instance_details_launch_details_source_details_source_type())
+ *                         .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+ *                         .bootVolumeSizeInGbs(var_.instance_configuration_instance_details_launch_details_source_details_boot_volume_size_in_gbs())
+ *                         .bootVolumeVpusPerGb(var_.instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb())
+ *                         .imageId(oci_core_image.test_image().id())
+ *                         .build())
+ *                     .build())
+ *                 .secondaryVnics(InstanceConfigurationInstanceDetailsSecondaryVnicArgs.builder()
+ *                     .createVnicDetails(InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs.builder()
+ *                         .assignPrivateDnsRecord(var_.instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record())
+ *                         .assignPublicIp(var_.instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip())
+ *                         .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *                         .displayName(var_.instance_configuration_instance_details_secondary_vnics_create_vnic_details_display_name())
+ *                         .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *                         .hostnameLabel(var_.instance_configuration_instance_details_secondary_vnics_create_vnic_details_hostname_label())
+ *                         .nsgIds(var_.instance_configuration_instance_details_secondary_vnics_create_vnic_details_nsg_ids())
+ *                         .privateIp(var_.instance_configuration_instance_details_secondary_vnics_create_vnic_details_private_ip())
+ *                         .skipSourceDestCheck(var_.instance_configuration_instance_details_secondary_vnics_create_vnic_details_skip_source_dest_check())
+ *                         .subnetId(oci_core_subnet.test_subnet().id())
+ *                         .build())
+ *                     .displayName(var_.instance_configuration_instance_details_secondary_vnics_display_name())
+ *                     .nicIndex(var_.instance_configuration_instance_details_secondary_vnics_nic_index())
+ *                     .build())
+ *                 .build())
+ *             .instanceId(oci_core_instance.test_instance().id())
+ *             .source(var_.instance_configuration_source())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

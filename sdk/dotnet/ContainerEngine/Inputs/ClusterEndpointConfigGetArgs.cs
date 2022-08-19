@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class ClusterEndpointConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class ClusterEndpointConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public ClusterEndpointConfigGetArgs()
         {
         }
+        public static new ClusterEndpointConfigGetArgs Empty => new ClusterEndpointConfigGetArgs();
     }
 }

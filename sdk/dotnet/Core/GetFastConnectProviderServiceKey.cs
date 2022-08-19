@@ -23,21 +23,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFastConnectProviderServiceKey = Oci.Core.GetFastConnectProviderServiceKey.Invoke(new()
         ///     {
-        ///         var testFastConnectProviderServiceKey = Output.Create(Oci.Core.GetFastConnectProviderServiceKey.InvokeAsync(new Oci.Core.GetFastConnectProviderServiceKeyArgs
-        ///         {
-        ///             ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
-        ///             ProviderServiceKeyName = @var.Fast_connect_provider_service_key_provider_service_key_name,
-        ///         }));
-        ///     }
+        ///         ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
+        ///         ProviderServiceKeyName = @var.Fast_connect_provider_service_key_provider_service_key_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,21 +55,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFastConnectProviderServiceKey = Oci.Core.GetFastConnectProviderServiceKey.Invoke(new()
         ///     {
-        ///         var testFastConnectProviderServiceKey = Output.Create(Oci.Core.GetFastConnectProviderServiceKey.InvokeAsync(new Oci.Core.GetFastConnectProviderServiceKeyArgs
-        ///         {
-        ///             ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
-        ///             ProviderServiceKeyName = @var.Fast_connect_provider_service_key_provider_service_key_name,
-        ///         }));
-        ///     }
+        ///         ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
+        ///         ProviderServiceKeyName = @var.Fast_connect_provider_service_key_provider_service_key_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetFastConnectProviderServiceKeyArgs : Pulumi.InvokeArgs
+    public sealed class GetFastConnectProviderServiceKeyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.Core
         public GetFastConnectProviderServiceKeyArgs()
         {
         }
+        public static new GetFastConnectProviderServiceKeyArgs Empty => new GetFastConnectProviderServiceKeyArgs();
     }
 
-    public sealed class GetFastConnectProviderServiceKeyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFastConnectProviderServiceKeyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Core
         public GetFastConnectProviderServiceKeyInvokeArgs()
         {
         }
+        public static new GetFastConnectProviderServiceKeyInvokeArgs Empty => new GetFastConnectProviderServiceKeyInvokeArgs();
     }
 
 

@@ -10,69 +10,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new certificate according to the details of the request.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testCertificate = new oci.certificatesmanagement.Certificate("testCertificate", {
- *     certificateConfig: {
- *         configType: _var.certificate_certificate_config_config_type,
- *         certChainPem: _var.certificate_certificate_config_cert_chain_pem,
- *         certificatePem: _var.certificate_certificate_config_certificate_pem,
- *         certificateProfileType: _var.certificate_certificate_config_certificate_profile_type,
- *         csrPem: _var.certificate_certificate_config_csr_pem,
- *         issuerCertificateAuthorityId: oci_certificates_management_certificate_authority.test_certificate_authority.id,
- *         keyAlgorithm: _var.certificate_certificate_config_key_algorithm,
- *         privateKeyPem: _var.certificate_certificate_config_private_key_pem,
- *         privateKeyPemPassphrase: _var.certificate_certificate_config_private_key_pem_passphrase,
- *         signatureAlgorithm: _var.certificate_certificate_config_signature_algorithm,
- *         subject: {
- *             commonName: _var.certificate_certificate_config_subject_common_name,
- *             country: _var.certificate_certificate_config_subject_country,
- *             distinguishedNameQualifier: _var.certificate_certificate_config_subject_distinguished_name_qualifier,
- *             domainComponent: _var.certificate_certificate_config_subject_domain_component,
- *             generationQualifier: _var.certificate_certificate_config_subject_generation_qualifier,
- *             givenName: _var.certificate_certificate_config_subject_given_name,
- *             initials: _var.certificate_certificate_config_subject_initials,
- *             localityName: _var.certificate_certificate_config_subject_locality_name,
- *             organization: _var.certificate_certificate_config_subject_organization,
- *             organizationalUnit: _var.certificate_certificate_config_subject_organizational_unit,
- *             pseudonym: _var.certificate_certificate_config_subject_pseudonym,
- *             serialNumber: _var.certificate_certificate_config_subject_serial_number,
- *             stateOrProvinceName: _var.certificate_certificate_config_subject_state_or_province_name,
- *             street: _var.certificate_certificate_config_subject_street,
- *             surname: _var.certificate_certificate_config_subject_surname,
- *             title: _var.certificate_certificate_config_subject_title,
- *             userId: oci_identity_user.test_user.id,
- *         },
- *         subjectAlternativeNames: [{
- *             type: _var.certificate_certificate_config_subject_alternative_names_type,
- *             value: _var.certificate_certificate_config_subject_alternative_names_value,
- *         }],
- *         validity: {
- *             timeOfValidityNotAfter: _var.certificate_certificate_config_validity_time_of_validity_not_after,
- *             timeOfValidityNotBefore: _var.certificate_certificate_config_validity_time_of_validity_not_before,
- *         },
- *         versionName: _var.certificate_certificate_config_version_name,
- *     },
- *     compartmentId: _var.compartment_id,
- *     certificateRules: [{
- *         advanceRenewalPeriod: _var.certificate_certificate_rules_advance_renewal_period,
- *         renewalInterval: _var.certificate_certificate_rules_renewal_interval,
- *         ruleType: _var.certificate_certificate_rules_rule_type,
- *     }],
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     description: _var.certificate_description,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- * });
- * ```
- *
  * ## Import
  *
  * Certificates can be imported using the `id`, e.g.

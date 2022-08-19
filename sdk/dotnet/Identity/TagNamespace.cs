@@ -30,30 +30,28 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testTagNamespace = new Oci.Identity.TagNamespace("testTagNamespace", new()
     ///     {
-    ///         var testTagNamespace = new Oci.Identity.TagNamespace("testTagNamespace", new Oci.Identity.TagNamespaceArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Description = @var.Tag_namespace_description,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Description = @var.Tag_namespace_description,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsRetired = false,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsRetired = false,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -65,7 +63,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/tagNamespace:TagNamespace")]
-    public partial class TagNamespace : Pulumi.CustomResource
+    public partial class TagNamespace : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the tenancy containing the tag namespace.
@@ -159,7 +157,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class TagNamespaceArgs : Pulumi.ResourceArgs
+    public sealed class TagNamespaceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the tenancy containing the tag namespace.
@@ -212,9 +210,10 @@ namespace Pulumi.Oci.Identity
         public TagNamespaceArgs()
         {
         }
+        public static new TagNamespaceArgs Empty => new TagNamespaceArgs();
     }
 
-    public sealed class TagNamespaceState : Pulumi.ResourceArgs
+    public sealed class TagNamespaceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the tenancy containing the tag namespace.
@@ -279,5 +278,6 @@ namespace Pulumi.Oci.Identity
         public TagNamespaceState()
         {
         }
+        public static new TagNamespaceState Empty => new TagNamespaceState();
     }
 }

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditPolicy = Oci.DataSafe.GetAuditPolicy.Invoke(new()
         ///     {
-        ///         var testAuditPolicy = Output.Create(Oci.DataSafe.GetAuditPolicy.InvokeAsync(new Oci.DataSafe.GetAuditPolicyArgs
-        ///         {
-        ///             AuditPolicyId = oci_data_safe_audit_policy.Test_audit_policy.Id,
-        ///         }));
-        ///     }
+        ///         AuditPolicyId = oci_data_safe_audit_policy.Test_audit_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditPolicy = Oci.DataSafe.GetAuditPolicy.Invoke(new()
         ///     {
-        ///         var testAuditPolicy = Output.Create(Oci.DataSafe.GetAuditPolicy.InvokeAsync(new Oci.DataSafe.GetAuditPolicyArgs
-        ///         {
-        ///             AuditPolicyId = oci_data_safe_audit_policy.Test_audit_policy.Id,
-        ///         }));
-        ///     }
+        ///         AuditPolicyId = oci_data_safe_audit_policy.Test_audit_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetAuditPolicyArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditPolicyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique audit policy identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditPolicyArgs()
         {
         }
+        public static new GetAuditPolicyArgs Empty => new GetAuditPolicyArgs();
     }
 
-    public sealed class GetAuditPolicyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditPolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique audit policy identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditPolicyInvokeArgs()
         {
         }
+        public static new GetAuditPolicyInvokeArgs Empty => new GetAuditPolicyInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Ocvp.Inputs
 {
 
-    public sealed class GetSupportedHostShapesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetSupportedHostShapesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A filter to return only resources that match the given name exactly.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Ocvp.Inputs
         public GetSupportedHostShapesFilterInputArgs()
         {
         }
+        public static new GetSupportedHostShapesFilterInputArgs Empty => new GetSupportedHostShapesFilterInputArgs();
     }
 }

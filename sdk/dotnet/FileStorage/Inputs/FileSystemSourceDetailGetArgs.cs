@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FileStorage.Inputs
 {
 
-    public sealed class FileSystemSourceDetailGetArgs : Pulumi.ResourceArgs
+    public sealed class FileSystemSourceDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.FileStorage.Inputs
         public FileSystemSourceDetailGetArgs()
         {
         }
+        public static new FileSystemSourceDetailGetArgs Empty => new FileSystemSourceDetailGetArgs();
     }
 }

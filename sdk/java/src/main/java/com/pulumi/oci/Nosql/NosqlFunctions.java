@@ -29,6 +29,36 @@ public final class NosqlFunctions {
      * Get information about a single index.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetIndexArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
+     *             .indexName(oci_nosql_index.test_index().name())
+     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIndexResult> getIndex(GetIndexArgs args) {
@@ -40,6 +70,36 @@ public final class NosqlFunctions {
      * Get information about a single index.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetIndexArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
+     *             .indexName(oci_nosql_index.test_index().name())
+     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIndexResult> getIndexPlain(GetIndexPlainArgs args) {
@@ -51,6 +111,36 @@ public final class NosqlFunctions {
      * Get information about a single index.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetIndexArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
+     *             .indexName(oci_nosql_index.test_index().name())
+     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIndexResult> getIndex(GetIndexArgs args, InvokeOptions options) {
@@ -62,6 +152,36 @@ public final class NosqlFunctions {
      * Get information about a single index.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetIndexArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
+     *             .indexName(oci_nosql_index.test_index().name())
+     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIndexResult> getIndexPlain(GetIndexPlainArgs args, InvokeOptions options) {
@@ -73,6 +193,37 @@ public final class NosqlFunctions {
      * Get a list of indexes on a table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetIndexesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
+     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.index_name())
+     *             .state(var_.index_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIndexesResult> getIndexes(GetIndexesArgs args) {
@@ -84,6 +235,37 @@ public final class NosqlFunctions {
      * Get a list of indexes on a table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetIndexesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
+     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.index_name())
+     *             .state(var_.index_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIndexesResult> getIndexesPlain(GetIndexesPlainArgs args) {
@@ -95,6 +277,37 @@ public final class NosqlFunctions {
      * Get a list of indexes on a table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetIndexesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
+     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.index_name())
+     *             .state(var_.index_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetIndexesResult> getIndexes(GetIndexesArgs args, InvokeOptions options) {
@@ -106,6 +319,37 @@ public final class NosqlFunctions {
      * Get a list of indexes on a table.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetIndexesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
+     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.index_name())
+     *             .state(var_.index_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetIndexesResult> getIndexesPlain(GetIndexesPlainArgs args, InvokeOptions options) {
@@ -117,6 +361,35 @@ public final class NosqlFunctions {
      * Get table info by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
+     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTableResult> getTable(GetTableArgs args) {
@@ -128,6 +401,35 @@ public final class NosqlFunctions {
      * Get table info by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
+     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTableResult> getTablePlain(GetTablePlainArgs args) {
@@ -139,6 +441,35 @@ public final class NosqlFunctions {
      * Get table info by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
+     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTableResult> getTable(GetTableArgs args, InvokeOptions options) {
@@ -150,6 +481,35 @@ public final class NosqlFunctions {
      * Get table info by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetTableArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
+     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTableResult> getTablePlain(GetTablePlainArgs args, InvokeOptions options) {
@@ -161,6 +521,36 @@ public final class NosqlFunctions {
      * Get a list of tables in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTables = NosqlFunctions.getTables(GetTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.table_name())
+     *             .state(var_.table_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTablesResult> getTables(GetTablesArgs args) {
@@ -172,6 +562,36 @@ public final class NosqlFunctions {
      * Get a list of tables in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTables = NosqlFunctions.getTables(GetTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.table_name())
+     *             .state(var_.table_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTablesResult> getTablesPlain(GetTablesPlainArgs args) {
@@ -183,6 +603,36 @@ public final class NosqlFunctions {
      * Get a list of tables in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTables = NosqlFunctions.getTables(GetTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.table_name())
+     *             .state(var_.table_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetTablesResult> getTables(GetTablesArgs args, InvokeOptions options) {
@@ -194,6 +644,36 @@ public final class NosqlFunctions {
      * Get a list of tables in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetTablesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTables = NosqlFunctions.getTables(GetTablesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.table_name())
+     *             .state(var_.table_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetTablesResult> getTablesPlain(GetTablesPlainArgs args, InvokeOptions options) {

@@ -21,21 +21,19 @@ namespace Pulumi.Oci.Nosql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTable = Oci.Nosql.GetTable.Invoke(new()
         ///     {
-        ///         var testTable = Output.Create(Oci.Nosql.GetTable.InvokeAsync(new Oci.Nosql.GetTableArgs
-        ///         {
-        ///             TableNameOrId = oci_nosql_table_name_or.Test_table_name_or.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         TableNameOrId = oci_nosql_table_name_or.Test_table_name_or.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.Nosql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTable = Oci.Nosql.GetTable.Invoke(new()
         ///     {
-        ///         var testTable = Output.Create(Oci.Nosql.GetTable.InvokeAsync(new Oci.Nosql.GetTableArgs
-        ///         {
-        ///             TableNameOrId = oci_nosql_table_name_or.Test_table_name_or.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         TableNameOrId = oci_nosql_table_name_or.Test_table_name_or.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Nosql
     }
 
 
-    public sealed class GetTableArgs : Pulumi.InvokeArgs
+    public sealed class GetTableArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of a table's compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Nosql
         public GetTableArgs()
         {
         }
+        public static new GetTableArgs Empty => new GetTableArgs();
     }
 
-    public sealed class GetTableInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTableInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of a table's compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.Nosql
         public GetTableInvokeArgs()
         {
         }
+        public static new GetTableInvokeArgs Empty => new GetTableInvokeArgs();
     }
 
 

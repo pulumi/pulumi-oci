@@ -21,29 +21,27 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testInstanceConsoleConnection = new Oci.Core.InstanceConsoleConnection("testInstanceConsoleConnection", new()
     ///     {
-    ///         var testInstanceConsoleConnection = new Oci.Core.InstanceConsoleConnection("testInstanceConsoleConnection", new Oci.Core.InstanceConsoleConnectionArgs
+    ///         InstanceId = oci_core_instance.Test_instance.Id,
+    ///         PublicKey = @var.Instance_console_connection_public_key,
+    ///         DefinedTags = 
     ///         {
-    ///             InstanceId = oci_core_instance.Test_instance.Id,
-    ///             PublicKey = @var.Instance_console_connection_public_key,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/instanceConsoleConnection:InstanceConsoleConnection")]
-    public partial class InstanceConsoleConnection : Pulumi.CustomResource
+    public partial class InstanceConsoleConnection : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the compartment to contain the console connection.
@@ -161,7 +159,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class InstanceConsoleConnectionArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConsoleConnectionArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -202,9 +200,10 @@ namespace Pulumi.Oci.Core
         public InstanceConsoleConnectionArgs()
         {
         }
+        public static new InstanceConsoleConnectionArgs Empty => new InstanceConsoleConnectionArgs();
     }
 
-    public sealed class InstanceConsoleConnectionState : Pulumi.ResourceArgs
+    public sealed class InstanceConsoleConnectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the compartment to contain the console connection.
@@ -281,5 +280,6 @@ namespace Pulumi.Oci.Core
         public InstanceConsoleConnectionState()
         {
         }
+        public static new InstanceConsoleConnectionState Empty => new InstanceConsoleConnectionState();
     }
 }

@@ -23,20 +23,18 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentGetAutoUpgradableConfig = Oci.ManagementAgent.GetManagementAgentGetAutoUpgradableConfig.Invoke(new()
         ///     {
-        ///         var testManagementAgentGetAutoUpgradableConfig = Output.Create(Oci.ManagementAgent.GetManagementAgentGetAutoUpgradableConfig.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentGetAutoUpgradableConfigArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,20 +54,18 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagementAgentGetAutoUpgradableConfig = Oci.ManagementAgent.GetManagementAgentGetAutoUpgradableConfig.Invoke(new()
         ///     {
-        ///         var testManagementAgentGetAutoUpgradableConfig = Output.Create(Oci.ManagementAgent.GetManagementAgentGetAutoUpgradableConfig.InvokeAsync(new Oci.ManagementAgent.GetManagementAgentGetAutoUpgradableConfigArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ManagementAgent
     }
 
 
-    public sealed class GetManagementAgentGetAutoUpgradableConfigArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentGetAutoUpgradableConfigArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment to which a request will be scoped.
@@ -90,9 +86,10 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentGetAutoUpgradableConfigArgs()
         {
         }
+        public static new GetManagementAgentGetAutoUpgradableConfigArgs Empty => new GetManagementAgentGetAutoUpgradableConfigArgs();
     }
 
-    public sealed class GetManagementAgentGetAutoUpgradableConfigInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentGetAutoUpgradableConfigInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment to which a request will be scoped.
@@ -103,6 +100,7 @@ namespace Pulumi.Oci.ManagementAgent
         public GetManagementAgentGetAutoUpgradableConfigInvokeArgs()
         {
         }
+        public static new GetManagementAgentGetAutoUpgradableConfigInvokeArgs Empty => new GetManagementAgentGetAutoUpgradableConfigInvokeArgs();
     }
 
 

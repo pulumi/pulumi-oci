@@ -19,36 +19,34 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVnicAttachment = new Oci.Core.VnicAttachment("testVnicAttachment", new()
     ///     {
-    ///         var testVnicAttachment = new Oci.Core.VnicAttachment("testVnicAttachment", new Oci.Core.VnicAttachmentArgs
+    ///         CreateVnicDetails = new Oci.Core.Inputs.VnicAttachmentCreateVnicDetailsArgs
     ///         {
-    ///             CreateVnicDetails = new Oci.Core.Inputs.VnicAttachmentCreateVnicDetailsArgs
-    ///             {
-    ///                 AssignPrivateDnsRecord = @var.Vnic_attachment_create_vnic_details_assign_private_dns_record,
-    ///                 AssignPublicIp = @var.Vnic_attachment_create_vnic_details_assign_public_ip,
-    ///                 DefinedTags = @var.Vnic_attachment_create_vnic_details_defined_tags,
-    ///                 DisplayName = @var.Vnic_attachment_create_vnic_details_display_name,
-    ///                 FreeformTags = @var.Vnic_attachment_create_vnic_details_freeform_tags,
-    ///                 HostnameLabel = @var.Vnic_attachment_create_vnic_details_hostname_label,
-    ///                 NsgIds = @var.Vnic_attachment_create_vnic_details_nsg_ids,
-    ///                 PrivateIp = @var.Vnic_attachment_create_vnic_details_private_ip,
-    ///                 SkipSourceDestCheck = @var.Vnic_attachment_create_vnic_details_skip_source_dest_check,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                 VlanId = oci_core_vlan.Test_vlan.Id,
-    ///             },
-    ///             InstanceId = oci_core_instance.Test_instance.Id,
-    ///             DisplayName = @var.Vnic_attachment_display_name,
-    ///             NicIndex = @var.Vnic_attachment_nic_index,
-    ///         });
-    ///     }
+    ///             AssignPrivateDnsRecord = @var.Vnic_attachment_create_vnic_details_assign_private_dns_record,
+    ///             AssignPublicIp = @var.Vnic_attachment_create_vnic_details_assign_public_ip,
+    ///             DefinedTags = @var.Vnic_attachment_create_vnic_details_defined_tags,
+    ///             DisplayName = @var.Vnic_attachment_create_vnic_details_display_name,
+    ///             FreeformTags = @var.Vnic_attachment_create_vnic_details_freeform_tags,
+    ///             HostnameLabel = @var.Vnic_attachment_create_vnic_details_hostname_label,
+    ///             NsgIds = @var.Vnic_attachment_create_vnic_details_nsg_ids,
+    ///             PrivateIp = @var.Vnic_attachment_create_vnic_details_private_ip,
+    ///             SkipSourceDestCheck = @var.Vnic_attachment_create_vnic_details_skip_source_dest_check,
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             VlanId = oci_core_vlan.Test_vlan.Id,
+    ///         },
+    ///         InstanceId = oci_core_instance.Test_instance.Id,
+    ///         DisplayName = @var.Vnic_attachment_display_name,
+    ///         NicIndex = @var.Vnic_attachment_nic_index,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -60,7 +58,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/vnicAttachment:VnicAttachment")]
-    public partial class VnicAttachment : Pulumi.CustomResource
+    public partial class VnicAttachment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
@@ -178,7 +176,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class VnicAttachmentArgs : Pulumi.ResourceArgs
+    public sealed class VnicAttachmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
@@ -207,9 +205,10 @@ namespace Pulumi.Oci.Core
         public VnicAttachmentArgs()
         {
         }
+        public static new VnicAttachmentArgs Empty => new VnicAttachmentArgs();
     }
 
-    public sealed class VnicAttachmentState : Pulumi.ResourceArgs
+    public sealed class VnicAttachmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
@@ -286,5 +285,6 @@ namespace Pulumi.Oci.Core
         public VnicAttachmentState()
         {
         }
+        public static new VnicAttachmentState Empty => new VnicAttachmentState();
     }
 }

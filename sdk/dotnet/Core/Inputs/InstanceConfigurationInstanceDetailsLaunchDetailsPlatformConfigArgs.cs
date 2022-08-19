@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs : Pulumi.ResourceArgs
+    public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether virtualization instructions are available.
@@ -75,5 +75,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs()
         {
         }
+        public static new InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs Empty => new InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs();
     }
 }

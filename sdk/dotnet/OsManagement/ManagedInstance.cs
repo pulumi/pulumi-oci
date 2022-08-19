@@ -23,7 +23,7 @@ namespace Pulumi.Oci.OsManagement
     /// ```
     /// </summary>
     [OciResourceType("oci:OsManagement/managedInstance:ManagedInstance")]
-    public partial class ManagedInstance : Pulumi.CustomResource
+    public partial class ManagedInstance : global::Pulumi.CustomResource
     {
         /// <summary>
         /// if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
@@ -225,7 +225,7 @@ namespace Pulumi.Oci.OsManagement
         }
     }
 
-    public sealed class ManagedInstanceArgs : Pulumi.ResourceArgs
+    public sealed class ManagedInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) True if user allow data collection for this instance
@@ -248,9 +248,10 @@ namespace Pulumi.Oci.OsManagement
         public ManagedInstanceArgs()
         {
         }
+        public static new ManagedInstanceArgs Empty => new ManagedInstanceArgs();
     }
 
-    public sealed class ManagedInstanceState : Pulumi.ResourceArgs
+    public sealed class ManagedInstanceState : global::Pulumi.ResourceArgs
     {
         [Input("autonomouses")]
         private InputList<Inputs.ManagedInstanceAutonomouseGetArgs>? _autonomouses;
@@ -435,5 +436,6 @@ namespace Pulumi.Oci.OsManagement
         public ManagedInstanceState()
         {
         }
+        public static new ManagedInstanceState Empty => new ManagedInstanceState();
     }
 }

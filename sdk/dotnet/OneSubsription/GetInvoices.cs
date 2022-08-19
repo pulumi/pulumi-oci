@@ -22,24 +22,22 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInvoices = Oci.OneSubsription.GetInvoices.Invoke(new()
         ///     {
-        ///         var testInvoices = Output.Create(Oci.OneSubsription.GetInvoices.InvokeAsync(new Oci.OneSubsription.GetInvoicesArgs
-        ///         {
-        ///             ArCustomerTransactionId = oci_onesubscription_ar_customer_transaction.Test_ar_customer_transaction.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Fields = @var.Invoice_fields,
-        ///             TimeFrom = @var.Invoice_time_from,
-        ///             TimeTo = @var.Invoice_time_to,
-        ///         }));
-        ///     }
+        ///         ArCustomerTransactionId = oci_onesubscription_ar_customer_transaction.Test_ar_customer_transaction.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Fields = @var.Invoice_fields,
+        ///         TimeFrom = @var.Invoice_time_from,
+        ///         TimeTo = @var.Invoice_time_to,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInvoices = Oci.OneSubsription.GetInvoices.Invoke(new()
         ///     {
-        ///         var testInvoices = Output.Create(Oci.OneSubsription.GetInvoices.InvokeAsync(new Oci.OneSubsription.GetInvoicesArgs
-        ///         {
-        ///             ArCustomerTransactionId = oci_onesubscription_ar_customer_transaction.Test_ar_customer_transaction.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Fields = @var.Invoice_fields,
-        ///             TimeFrom = @var.Invoice_time_from,
-        ///             TimeTo = @var.Invoice_time_to,
-        ///         }));
-        ///     }
+        ///         ArCustomerTransactionId = oci_onesubscription_ar_customer_transaction.Test_ar_customer_transaction.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Fields = @var.Invoice_fields,
+        ///         TimeFrom = @var.Invoice_time_from,
+        ///         TimeTo = @var.Invoice_time_to,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.OneSubsription
     }
 
 
-    public sealed class GetInvoicesArgs : Pulumi.InvokeArgs
+    public sealed class GetInvoicesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// AR Unique identifier for an invoice .
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.OneSubsription
         public GetInvoicesArgs()
         {
         }
+        public static new GetInvoicesArgs Empty => new GetInvoicesArgs();
     }
 
-    public sealed class GetInvoicesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInvoicesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// AR Unique identifier for an invoice .
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.OneSubsription
         public GetInvoicesInvokeArgs()
         {
         }
+        public static new GetInvoicesInvokeArgs Empty => new GetInvoicesInvokeArgs();
     }
 
 

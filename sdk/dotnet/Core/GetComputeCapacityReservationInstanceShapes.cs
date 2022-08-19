@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputeCapacityReservationInstanceShapes = Oci.Core.GetComputeCapacityReservationInstanceShapes.Invoke(new()
         ///     {
-        ///         var testComputeCapacityReservationInstanceShapes = Output.Create(Oci.Core.GetComputeCapacityReservationInstanceShapes.InvokeAsync(new Oci.Core.GetComputeCapacityReservationInstanceShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Compute_capacity_reservation_instance_shape_availability_domain,
-        ///             DisplayName = @var.Compute_capacity_reservation_instance_shape_display_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Compute_capacity_reservation_instance_shape_availability_domain,
+        ///         DisplayName = @var.Compute_capacity_reservation_instance_shape_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testComputeCapacityReservationInstanceShapes = Oci.Core.GetComputeCapacityReservationInstanceShapes.Invoke(new()
         ///     {
-        ///         var testComputeCapacityReservationInstanceShapes = Output.Create(Oci.Core.GetComputeCapacityReservationInstanceShapes.InvokeAsync(new Oci.Core.GetComputeCapacityReservationInstanceShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Compute_capacity_reservation_instance_shape_availability_domain,
-        ///             DisplayName = @var.Compute_capacity_reservation_instance_shape_display_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Compute_capacity_reservation_instance_shape_availability_domain,
+        ///         DisplayName = @var.Compute_capacity_reservation_instance_shape_display_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetComputeCapacityReservationInstanceShapesArgs : Pulumi.InvokeArgs
+    public sealed class GetComputeCapacityReservationInstanceShapesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Core
         public GetComputeCapacityReservationInstanceShapesArgs()
         {
         }
+        public static new GetComputeCapacityReservationInstanceShapesArgs Empty => new GetComputeCapacityReservationInstanceShapesArgs();
     }
 
-    public sealed class GetComputeCapacityReservationInstanceShapesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetComputeCapacityReservationInstanceShapesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Core
         public GetComputeCapacityReservationInstanceShapesInvokeArgs()
         {
         }
+        public static new GetComputeCapacityReservationInstanceShapesInvokeArgs Empty => new GetComputeCapacityReservationInstanceShapesInvokeArgs();
     }
 
 

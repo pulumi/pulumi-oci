@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity.Inputs
 {
 
-    public sealed class TagValidatorArgs : Pulumi.ResourceArgs
+    public sealed class TagValidatorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Specifies the type of validation: a static value (no validation) or a list.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Identity.Inputs
         public TagValidatorArgs()
         {
         }
+        public static new TagValidatorArgs Empty => new TagValidatorArgs();
     }
 }

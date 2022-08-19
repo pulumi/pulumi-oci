@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging.Inputs
 {
 
-    public sealed class LogConfigurationSourceArgs : Pulumi.ResourceArgs
+    public sealed class LogConfigurationSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Log object category.
@@ -40,5 +40,6 @@ namespace Pulumi.Oci.Logging.Inputs
         public LogConfigurationSourceArgs()
         {
         }
+        public static new LogConfigurationSourceArgs Empty => new LogConfigurationSourceArgs();
     }
 }

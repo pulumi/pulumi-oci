@@ -25,22 +25,20 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPingMonitors = Oci.HealthChecks.GetPingMonitors.Invoke(new()
         ///     {
-        ///         var testPingMonitors = Output.Create(Oci.HealthChecks.GetPingMonitors.InvokeAsync(new Oci.HealthChecks.GetPingMonitorsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Ping_monitor_display_name,
-        ///             HomeRegion = @var.Ping_monitor_home_region,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Ping_monitor_display_name,
+        ///         HomeRegion = @var.Ping_monitor_home_region,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,22 +60,20 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPingMonitors = Oci.HealthChecks.GetPingMonitors.Invoke(new()
         ///     {
-        ///         var testPingMonitors = Output.Create(Oci.HealthChecks.GetPingMonitors.InvokeAsync(new Oci.HealthChecks.GetPingMonitorsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Ping_monitor_display_name,
-        ///             HomeRegion = @var.Ping_monitor_home_region,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Ping_monitor_display_name,
+        ///         HomeRegion = @var.Ping_monitor_home_region,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.HealthChecks
     }
 
 
-    public sealed class GetPingMonitorsArgs : Pulumi.InvokeArgs
+    public sealed class GetPingMonitorsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Filters results by compartment.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.HealthChecks
         public GetPingMonitorsArgs()
         {
         }
+        public static new GetPingMonitorsArgs Empty => new GetPingMonitorsArgs();
     }
 
-    public sealed class GetPingMonitorsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPingMonitorsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Filters results by compartment.
@@ -151,6 +148,7 @@ namespace Pulumi.Oci.HealthChecks
         public GetPingMonitorsInvokeArgs()
         {
         }
+        public static new GetPingMonitorsInvokeArgs Empty => new GetPingMonitorsInvokeArgs();
     }
 
 

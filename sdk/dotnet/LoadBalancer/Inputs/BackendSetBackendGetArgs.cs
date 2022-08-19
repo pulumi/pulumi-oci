@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer.Inputs
 {
 
-    public sealed class BackendSetBackendGetArgs : Pulumi.ResourceArgs
+    public sealed class BackendSetBackendGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public BackendSetBackendGetArgs()
         {
         }
+        public static new BackendSetBackendGetArgs Empty => new BackendSetBackendGetArgs();
     }
 }

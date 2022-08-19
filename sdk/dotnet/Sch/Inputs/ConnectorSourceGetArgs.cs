@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Sch.Inputs
 {
 
-    public sealed class ConnectorSourceGetArgs : Pulumi.ResourceArgs
+    public sealed class ConnectorSourceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Sch.Inputs
         public ConnectorSourceGetArgs()
         {
         }
+        public static new ConnectorSourceGetArgs Empty => new ConnectorSourceGetArgs();
     }
 }

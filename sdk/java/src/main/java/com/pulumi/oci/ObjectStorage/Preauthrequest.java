@@ -19,6 +19,39 @@ import javax.annotation.Nullable;
  * Creates a pre-authenticated request specific to the bucket.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ObjectStorage.Preauthrequest;
+ * import com.pulumi.oci.ObjectStorage.PreauthrequestArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPreauthenticatedRequest = new Preauthrequest(&#34;testPreauthenticatedRequest&#34;, PreauthrequestArgs.builder()        
+ *             .accessType(var_.preauthenticated_request_access_type())
+ *             .bucket(var_.preauthenticated_request_bucket())
+ *             .namespace(var_.preauthenticated_request_namespace())
+ *             .timeExpires(var_.preauthenticated_request_time_expires())
+ *             .bucketListingAction(var_.preauthenticated_request_bucket_listing_action())
+ *             .object(var_.preauthenticated_request_object())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

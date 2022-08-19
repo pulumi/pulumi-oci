@@ -24,6 +24,49 @@ import javax.annotation.Nullable;
  * Creates a new session in a bastion. A bastion session lets authorized users connect to a target resource for a predetermined amount of time. The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Bastion.Session;
+ * import com.pulumi.oci.Bastion.SessionArgs;
+ * import com.pulumi.oci.Bastion.inputs.SessionKeyDetailsArgs;
+ * import com.pulumi.oci.Bastion.inputs.SessionTargetResourceDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSession = new Session(&#34;testSession&#34;, SessionArgs.builder()        
+ *             .bastionId(oci_bastion_bastion.test_bastion().id())
+ *             .keyDetails(SessionKeyDetailsArgs.builder()
+ *                 .publicKeyContent(var_.session_key_details_public_key_content())
+ *                 .build())
+ *             .targetResourceDetails(SessionTargetResourceDetailsArgs.builder()
+ *                 .sessionType(var_.session_target_resource_details_session_type())
+ *                 .targetResourceId(oci_bastion_target_resource.test_target_resource().id())
+ *                 .targetResourceOperatingSystemUserName(oci_identity_user.test_user().name())
+ *                 .targetResourcePort(var_.session_target_resource_details_target_resource_port())
+ *                 .targetResourcePrivateIpAddress(var_.session_target_resource_details_target_resource_private_ip_address())
+ *                 .build())
+ *             .displayName(var_.session_display_name())
+ *             .keyType(var_.session_key_type())
+ *             .sessionTtlInSeconds(var_.session_session_ttl_in_seconds())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

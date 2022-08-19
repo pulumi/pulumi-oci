@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCertificate = Oci.Waas.GetCertificate.Invoke(new()
         ///     {
-        ///         var testCertificate = Output.Create(Oci.Waas.GetCertificate.InvokeAsync(new Oci.Waas.GetCertificateArgs
-        ///         {
-        ///             CertificateId = oci_waas_certificate.Test_certificate.Id,
-        ///         }));
-        ///     }
+        ///         CertificateId = oci_waas_certificate.Test_certificate.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCertificate = Oci.Waas.GetCertificate.Invoke(new()
         ///     {
-        ///         var testCertificate = Output.Create(Oci.Waas.GetCertificate.InvokeAsync(new Oci.Waas.GetCertificateArgs
-        ///         {
-        ///             CertificateId = oci_waas_certificate.Test_certificate.Id,
-        ///         }));
-        ///     }
+        ///         CertificateId = oci_waas_certificate.Test_certificate.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Waas
     }
 
 
-    public sealed class GetCertificateArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificateArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate used in the WAAS policy. This number is generated when the certificate is added to the policy.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Waas
         public GetCertificateArgs()
         {
         }
+        public static new GetCertificateArgs Empty => new GetCertificateArgs();
     }
 
-    public sealed class GetCertificateInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCertificateInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate used in the WAAS policy. This number is generated when the certificate is added to the policy.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Waas
         public GetCertificateInvokeArgs()
         {
         }
+        public static new GetCertificateInvokeArgs Empty => new GetCertificateInvokeArgs();
     }
 
 

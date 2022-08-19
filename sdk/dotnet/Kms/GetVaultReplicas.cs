@@ -27,20 +27,18 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVaultReplicas = Oci.Kms.GetVaultReplicas.Invoke(new()
         ///     {
-        ///         var testVaultReplicas = Output.Create(Oci.Kms.GetVaultReplicas.InvokeAsync(new Oci.Kms.GetVaultReplicasArgs
-        ///         {
-        ///             VaultId = oci_kms_vault.Test_vault.Id,
-        ///         }));
-        ///     }
+        ///         VaultId = oci_kms_vault.Test_vault.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -64,20 +62,18 @@ namespace Pulumi.Oci.Kms
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVaultReplicas = Oci.Kms.GetVaultReplicas.Invoke(new()
         ///     {
-        ///         var testVaultReplicas = Output.Create(Oci.Kms.GetVaultReplicas.InvokeAsync(new Oci.Kms.GetVaultReplicasArgs
-        ///         {
-        ///             VaultId = oci_kms_vault.Test_vault.Id,
-        ///         }));
-        ///     }
+        ///         VaultId = oci_kms_vault.Test_vault.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.Kms
     }
 
 
-    public sealed class GetVaultReplicasArgs : Pulumi.InvokeArgs
+    public sealed class GetVaultReplicasArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetVaultReplicasFilterArgs>? _filters;
@@ -106,9 +102,10 @@ namespace Pulumi.Oci.Kms
         public GetVaultReplicasArgs()
         {
         }
+        public static new GetVaultReplicasArgs Empty => new GetVaultReplicasArgs();
     }
 
-    public sealed class GetVaultReplicasInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVaultReplicasInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetVaultReplicasFilterInputArgs>? _filters;
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.Kms
         public GetVaultReplicasInvokeArgs()
         {
         }
+        public static new GetVaultReplicasInvokeArgs Empty => new GetVaultReplicasInvokeArgs();
     }
 
 

@@ -34,24 +34,22 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditTrailAnalytic = Oci.DataSafe.GetAuditTrailAnalytic.Invoke(new()
         ///     {
-        ///         var testAuditTrailAnalytic = Output.Create(Oci.DataSafe.GetAuditTrailAnalytic.InvokeAsync(new Oci.DataSafe.GetAuditTrailAnalyticArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Audit_trail_analytic_access_level,
-        ///             CompartmentIdInSubtree = @var.Audit_trail_analytic_compartment_id_in_subtree,
-        ///             GroupBies = @var.Audit_trail_analytic_group_by,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Audit_trail_analytic_access_level,
+        ///         CompartmentIdInSubtree = @var.Audit_trail_analytic_compartment_id_in_subtree,
+        ///         GroupBies = @var.Audit_trail_analytic_group_by,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -82,24 +80,22 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditTrailAnalytic = Oci.DataSafe.GetAuditTrailAnalytic.Invoke(new()
         ///     {
-        ///         var testAuditTrailAnalytic = Output.Create(Oci.DataSafe.GetAuditTrailAnalytic.InvokeAsync(new Oci.DataSafe.GetAuditTrailAnalyticArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Audit_trail_analytic_access_level,
-        ///             CompartmentIdInSubtree = @var.Audit_trail_analytic_compartment_id_in_subtree,
-        ///             GroupBies = @var.Audit_trail_analytic_group_by,
-        ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Audit_trail_analytic_access_level,
+        ///         CompartmentIdInSubtree = @var.Audit_trail_analytic_compartment_id_in_subtree,
+        ///         GroupBies = @var.Audit_trail_analytic_group_by,
+        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -109,7 +105,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetAuditTrailAnalyticArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditTrailAnalyticArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -150,9 +146,10 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditTrailAnalyticArgs()
         {
         }
+        public static new GetAuditTrailAnalyticArgs Empty => new GetAuditTrailAnalyticArgs();
     }
 
-    public sealed class GetAuditTrailAnalyticInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditTrailAnalyticInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -193,6 +190,7 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditTrailAnalyticInvokeArgs()
         {
         }
+        public static new GetAuditTrailAnalyticInvokeArgs Empty => new GetAuditTrailAnalyticInvokeArgs();
     }
 
 

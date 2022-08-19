@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataConnectivity.Inputs
 {
 
-    public sealed class RegistryDataAssetDefaultConnectionMetadataAggregatorGetArgs : Pulumi.ResourceArgs
+    public sealed class RegistryDataAssetDefaultConnectionMetadataAggregatorGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A user defined description for the object.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public RegistryDataAssetDefaultConnectionMetadataAggregatorGetArgs()
         {
         }
+        public static new RegistryDataAssetDefaultConnectionMetadataAggregatorGetArgs Empty => new RegistryDataAssetDefaultConnectionMetadataAggregatorGetArgs();
     }
 }

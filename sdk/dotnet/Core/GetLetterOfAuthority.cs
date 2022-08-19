@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLetterOfAuthority = Oci.Core.GetLetterOfAuthority.Invoke(new()
         ///     {
-        ///         var testLetterOfAuthority = Output.Create(Oci.Core.GetLetterOfAuthority.InvokeAsync(new Oci.Core.GetLetterOfAuthorityArgs
-        ///         {
-        ///             CrossConnectId = oci_core_cross_connect.Test_cross_connect.Id,
-        ///         }));
-        ///     }
+        ///         CrossConnectId = oci_core_cross_connect.Test_cross_connect.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLetterOfAuthority = Oci.Core.GetLetterOfAuthority.Invoke(new()
         ///     {
-        ///         var testLetterOfAuthority = Output.Create(Oci.Core.GetLetterOfAuthority.InvokeAsync(new Oci.Core.GetLetterOfAuthorityArgs
-        ///         {
-        ///             CrossConnectId = oci_core_cross_connect.Test_cross_connect.Id,
-        ///         }));
-        ///     }
+        ///         CrossConnectId = oci_core_cross_connect.Test_cross_connect.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetLetterOfAuthorityArgs : Pulumi.InvokeArgs
+    public sealed class GetLetterOfAuthorityArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetLetterOfAuthorityArgs()
         {
         }
+        public static new GetLetterOfAuthorityArgs Empty => new GetLetterOfAuthorityArgs();
     }
 
-    public sealed class GetLetterOfAuthorityInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLetterOfAuthorityInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetLetterOfAuthorityInvokeArgs()
         {
         }
+        public static new GetLetterOfAuthorityInvokeArgs Empty => new GetLetterOfAuthorityInvokeArgs();
     }
 
 

@@ -23,21 +23,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVmClusterNetwork = Oci.Database.GetVmClusterNetwork.Invoke(new()
         ///     {
-        ///         var testVmClusterNetwork = Output.Create(Oci.Database.GetVmClusterNetwork.InvokeAsync(new Oci.Database.GetVmClusterNetworkArgs
-        ///         {
-        ///             ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///             VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
-        ///         }));
-        ///     }
+        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+        ///         VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,21 +55,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVmClusterNetwork = Oci.Database.GetVmClusterNetwork.Invoke(new()
         ///     {
-        ///         var testVmClusterNetwork = Output.Create(Oci.Database.GetVmClusterNetwork.InvokeAsync(new Oci.Database.GetVmClusterNetworkArgs
-        ///         {
-        ///             ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///             VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
-        ///         }));
-        ///     }
+        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+        ///         VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetVmClusterNetworkArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterNetworkArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -98,9 +94,10 @@ namespace Pulumi.Oci.Database
         public GetVmClusterNetworkArgs()
         {
         }
+        public static new GetVmClusterNetworkArgs Empty => new GetVmClusterNetworkArgs();
     }
 
-    public sealed class GetVmClusterNetworkInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVmClusterNetworkInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Database
         public GetVmClusterNetworkInvokeArgs()
         {
         }
+        public static new GetVmClusterNetworkInvokeArgs Empty => new GetVmClusterNetworkInvokeArgs();
     }
 
 

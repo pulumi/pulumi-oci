@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Autoscaling
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutoScalingConfiguration = Oci.Autoscaling.GetAutoScalingConfiguration.Invoke(new()
         ///     {
-        ///         var testAutoScalingConfiguration = Output.Create(Oci.Autoscaling.GetAutoScalingConfiguration.InvokeAsync(new Oci.Autoscaling.GetAutoScalingConfigurationArgs
-        ///         {
-        ///             AutoScalingConfigurationId = oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
-        ///         }));
-        ///     }
+        ///         AutoScalingConfigurationId = oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Autoscaling
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutoScalingConfiguration = Oci.Autoscaling.GetAutoScalingConfiguration.Invoke(new()
         ///     {
-        ///         var testAutoScalingConfiguration = Output.Create(Oci.Autoscaling.GetAutoScalingConfiguration.InvokeAsync(new Oci.Autoscaling.GetAutoScalingConfigurationArgs
-        ///         {
-        ///             AutoScalingConfigurationId = oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
-        ///         }));
-        ///     }
+        ///         AutoScalingConfigurationId = oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Autoscaling
     }
 
 
-    public sealed class GetAutoScalingConfigurationArgs : Pulumi.InvokeArgs
+    public sealed class GetAutoScalingConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Autoscaling
         public GetAutoScalingConfigurationArgs()
         {
         }
+        public static new GetAutoScalingConfigurationArgs Empty => new GetAutoScalingConfigurationArgs();
     }
 
-    public sealed class GetAutoScalingConfigurationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutoScalingConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Autoscaling
         public GetAutoScalingConfigurationInvokeArgs()
         {
         }
+        public static new GetAutoScalingConfigurationInvokeArgs Empty => new GetAutoScalingConfigurationInvokeArgs();
     }
 
 

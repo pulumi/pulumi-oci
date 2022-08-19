@@ -21,25 +21,23 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReports = Oci.DataSafe.GetReports.Invoke(new()
         ///     {
-        ///         var testReports = Output.Create(Oci.DataSafe.GetReports.InvokeAsync(new Oci.DataSafe.GetReportsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Report_access_level,
-        ///             CompartmentIdInSubtree = @var.Report_compartment_id_in_subtree,
-        ///             DisplayName = @var.Report_display_name,
-        ///             ReportDefinitionId = oci_data_safe_report_definition.Test_report_definition.Id,
-        ///             State = @var.Report_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Report_access_level,
+        ///         CompartmentIdInSubtree = @var.Report_compartment_id_in_subtree,
+        ///         DisplayName = @var.Report_display_name,
+        ///         ReportDefinitionId = oci_data_safe_report_definition.Test_report_definition.Id,
+        ///         State = @var.Report_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReports = Oci.DataSafe.GetReports.Invoke(new()
         ///     {
-        ///         var testReports = Output.Create(Oci.DataSafe.GetReports.InvokeAsync(new Oci.DataSafe.GetReportsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AccessLevel = @var.Report_access_level,
-        ///             CompartmentIdInSubtree = @var.Report_compartment_id_in_subtree,
-        ///             DisplayName = @var.Report_display_name,
-        ///             ReportDefinitionId = oci_data_safe_report_definition.Test_report_definition.Id,
-        ///             State = @var.Report_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AccessLevel = @var.Report_access_level,
+        ///         CompartmentIdInSubtree = @var.Report_compartment_id_in_subtree,
+        ///         DisplayName = @var.Report_display_name,
+        ///         ReportDefinitionId = oci_data_safe_report_definition.Test_report_definition.Id,
+        ///         State = @var.Report_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetReportsArgs : Pulumi.InvokeArgs
+    public sealed class GetReportsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.DataSafe
         public GetReportsArgs()
         {
         }
+        public static new GetReportsArgs Empty => new GetReportsArgs();
     }
 
-    public sealed class GetReportsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetReportsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.DataSafe
         public GetReportsInvokeArgs()
         {
         }
+        public static new GetReportsInvokeArgs Empty => new GetReportsInvokeArgs();
     }
 
 

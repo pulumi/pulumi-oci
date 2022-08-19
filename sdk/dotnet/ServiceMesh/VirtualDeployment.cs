@@ -17,47 +17,45 @@ namespace Pulumi.Oci.ServiceMesh
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVirtualDeployment = new Oci.ServiceMesh.VirtualDeployment("testVirtualDeployment", new()
     ///     {
-    ///         var testVirtualDeployment = new Oci.ServiceMesh.VirtualDeployment("testVirtualDeployment", new Oci.ServiceMesh.VirtualDeploymentArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Listeners = new[]
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Listeners = 
+    ///             new Oci.ServiceMesh.Inputs.VirtualDeploymentListenerArgs
     ///             {
-    ///                 new Oci.ServiceMesh.Inputs.VirtualDeploymentListenerArgs
-    ///                 {
-    ///                     Port = @var.Virtual_deployment_listeners_port,
-    ///                     Protocol = @var.Virtual_deployment_listeners_protocol,
-    ///                 },
+    ///                 Port = @var.Virtual_deployment_listeners_port,
+    ///                 Protocol = @var.Virtual_deployment_listeners_protocol,
     ///             },
-    ///             ServiceDiscovery = new Oci.ServiceMesh.Inputs.VirtualDeploymentServiceDiscoveryArgs
-    ///             {
-    ///                 Hostname = @var.Virtual_deployment_service_discovery_hostname,
-    ///                 Type = @var.Virtual_deployment_service_discovery_type,
-    ///             },
-    ///             VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
-    ///             AccessLogging = new Oci.ServiceMesh.Inputs.VirtualDeploymentAccessLoggingArgs
-    ///             {
-    ///                 IsEnabled = @var.Virtual_deployment_access_logging_is_enabled,
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Virtual_deployment_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         ServiceDiscovery = new Oci.ServiceMesh.Inputs.VirtualDeploymentServiceDiscoveryArgs
+    ///         {
+    ///             Hostname = @var.Virtual_deployment_service_discovery_hostname,
+    ///             Type = @var.Virtual_deployment_service_discovery_type,
+    ///         },
+    ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+    ///         AccessLogging = new Oci.ServiceMesh.Inputs.VirtualDeploymentAccessLoggingArgs
+    ///         {
+    ///             IsEnabled = @var.Virtual_deployment_access_logging_is_enabled,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Virtual_deployment_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -69,7 +67,7 @@ namespace Pulumi.Oci.ServiceMesh
     /// ```
     /// </summary>
     [OciResourceType("oci:ServiceMesh/virtualDeployment:VirtualDeployment")]
-    public partial class VirtualDeployment : Pulumi.CustomResource
+    public partial class VirtualDeployment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) This configuration determines if logging is enabled and where the logs will be output.
@@ -199,7 +197,7 @@ namespace Pulumi.Oci.ServiceMesh
         }
     }
 
-    public sealed class VirtualDeploymentArgs : Pulumi.ResourceArgs
+    public sealed class VirtualDeploymentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) This configuration determines if logging is enabled and where the logs will be output.
@@ -276,9 +274,10 @@ namespace Pulumi.Oci.ServiceMesh
         public VirtualDeploymentArgs()
         {
         }
+        public static new VirtualDeploymentArgs Empty => new VirtualDeploymentArgs();
     }
 
-    public sealed class VirtualDeploymentState : Pulumi.ResourceArgs
+    public sealed class VirtualDeploymentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) This configuration determines if logging is enabled and where the logs will be output.
@@ -391,5 +390,6 @@ namespace Pulumi.Oci.ServiceMesh
         public VirtualDeploymentState()
         {
         }
+        public static new VirtualDeploymentState Empty => new VirtualDeploymentState();
     }
 }

@@ -17,31 +17,29 @@ namespace Pulumi.Oci.DataCatalog
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMetastore = new Oci.DataCatalog.Metastore("testMetastore", new()
     ///     {
-    ///         var testMetastore = new Oci.DataCatalog.Metastore("testMetastore", new Oci.DataCatalog.MetastoreArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefaultExternalTableLocation = @var.Metastore_default_external_table_location,
+    ///         DefaultManagedTableLocation = @var.Metastore_default_managed_table_location,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefaultExternalTableLocation = @var.Metastore_default_external_table_location,
-    ///             DefaultManagedTableLocation = @var.Metastore_default_managed_table_location,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Metastore_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Metastore_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.DataCatalog
     /// ```
     /// </summary>
     [OciResourceType("oci:DataCatalog/metastore:Metastore")]
-    public partial class Metastore : Pulumi.CustomResource
+    public partial class Metastore : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) OCID of the compartment which holds the metastore.
@@ -159,7 +157,7 @@ namespace Pulumi.Oci.DataCatalog
         }
     }
 
-    public sealed class MetastoreArgs : Pulumi.ResourceArgs
+    public sealed class MetastoreArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) OCID of the compartment which holds the metastore.
@@ -212,9 +210,10 @@ namespace Pulumi.Oci.DataCatalog
         public MetastoreArgs()
         {
         }
+        public static new MetastoreArgs Empty => new MetastoreArgs();
     }
 
-    public sealed class MetastoreState : Pulumi.ResourceArgs
+    public sealed class MetastoreState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) OCID of the compartment which holds the metastore.
@@ -291,5 +290,6 @@ namespace Pulumi.Oci.DataCatalog
         public MetastoreState()
         {
         }
+        public static new MetastoreState Empty => new MetastoreState();
     }
 }

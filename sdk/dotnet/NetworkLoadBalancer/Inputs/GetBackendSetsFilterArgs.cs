@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
 {
 
-    public sealed class GetBackendSetsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetBackendSetsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A user-friendly name for the backend set that must be unique and cannot be changed.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
         public GetBackendSetsFilterInputArgs()
         {
         }
+        public static new GetBackendSetsFilterInputArgs Empty => new GetBackendSetsFilterInputArgs();
     }
 }

@@ -19,6 +19,35 @@ import javax.annotation.Nullable;
  * Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.UserGroupMembership;
+ * import com.pulumi.oci.Identity.UserGroupMembershipArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testUserGroupMembership = new UserGroupMembership(&#34;testUserGroupMembership&#34;, UserGroupMembershipArgs.builder()        
+ *             .groupId(oci_identity_group.test_group().id())
+ *             .userId(oci_identity_user.test_user().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

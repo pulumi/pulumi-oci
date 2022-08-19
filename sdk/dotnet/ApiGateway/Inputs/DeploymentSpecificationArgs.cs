@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Policies controlling the pushing of logs to Oracle Cloud Infrastructure Public Logging.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationArgs()
         {
         }
+        public static new DeploymentSpecificationArgs Empty => new DeploymentSpecificationArgs();
     }
 }

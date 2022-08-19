@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class ResolverEndpointArgs : Pulumi.ResourceArgs
+    public sealed class ResolverEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the owning compartment.
@@ -87,5 +87,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public ResolverEndpointArgs()
         {
         }
+        public static new ResolverEndpointArgs Empty => new ResolverEndpointArgs();
     }
 }

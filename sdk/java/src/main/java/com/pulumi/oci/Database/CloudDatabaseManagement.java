@@ -26,6 +26,47 @@ import javax.annotation.Nullable;
  * `database.0.database_management_config` is updated to appropriate managementType and managementStatus for the specified Oracle Database instance.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.CloudDatabaseManagement;
+ * import com.pulumi.oci.Database.CloudDatabaseManagementArgs;
+ * import com.pulumi.oci.Database.inputs.CloudDatabaseManagementCredentialdetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var test = new CloudDatabaseManagement(&#34;test&#34;, CloudDatabaseManagementArgs.builder()        
+ *             .databaseId(oci_database_database.test_database().id())
+ *             .managementType(var_.database_cloud_database_management_details_management_type())
+ *             .privateEndPointId(var_.database_cloud_database_management_details_private_end_point_id())
+ *             .serviceName(var_.database_cloud_database_management_details_service_name())
+ *             .credentialdetails(CloudDatabaseManagementCredentialdetailsArgs.builder()
+ *                 .userName(var_.database_cloud_database_management_details_user_name())
+ *                 .passwordSecretId(var_.database_cloud_database_management_details_password_secret_id())
+ *                 .build())
+ *             .enableManagement(var_.database_cloud_database_management_details_enable_management())
+ *             .port(var_.cloud_database_management_port())
+ *             .protocol(var_.cloud_database_management_protocol())
+ *             .role(var_.cloud_database_management_role())
+ *             .sslSecretId(oci_vault_secret.test_secret().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -24,6 +24,44 @@ import javax.annotation.Nullable;
  * Generates a key that you can use to encrypt or decrypt data.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Kms.GeneratedKey;
+ * import com.pulumi.oci.Kms.GeneratedKeyArgs;
+ * import com.pulumi.oci.Kms.inputs.GeneratedKeyKeyShapeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testGeneratedKey = new GeneratedKey(&#34;testGeneratedKey&#34;, GeneratedKeyArgs.builder()        
+ *             .cryptoEndpoint(var_.generated_key_crypto_endpoint())
+ *             .includePlaintextKey(var_.generated_key_include_plaintext_key())
+ *             .keyId(oci_kms_key.test_key().id())
+ *             .keyShape(GeneratedKeyKeyShapeArgs.builder()
+ *                 .algorithm(var_.generated_key_key_shape_algorithm())
+ *                 .length(var_.generated_key_key_shape_length())
+ *                 .curveId(oci_kms_curve.test_curve().id())
+ *                 .build())
+ *             .associatedData(var_.generated_key_associated_data())
+ *             .loggingContext(var_.generated_key_logging_context())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

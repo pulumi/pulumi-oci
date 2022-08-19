@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ManagementAgent.Inputs
 {
 
-    public sealed class GetManagementAgentInstallKeysFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetManagementAgentInstallKeysFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
         public GetManagementAgentInstallKeysFilterArgs()
         {
         }
+        public static new GetManagementAgentInstallKeysFilterArgs Empty => new GetManagementAgentInstallKeysFilterArgs();
     }
 }

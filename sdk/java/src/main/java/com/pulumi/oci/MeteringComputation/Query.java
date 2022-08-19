@@ -20,6 +20,68 @@ import javax.annotation.Nullable;
  * Returns the created query.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.MeteringComputation.Query;
+ * import com.pulumi.oci.MeteringComputation.QueryArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.QueryQueryDefinitionArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.QueryQueryDefinitionCostAnalysisUiArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.QueryQueryDefinitionReportQueryArgs;
+ * import com.pulumi.oci.MeteringComputation.inputs.QueryQueryDefinitionReportQueryForecastArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testQuery = new Query(&#34;testQuery&#34;, QueryArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .queryDefinition(QueryQueryDefinitionArgs.builder()
+ *                 .costAnalysisUi(QueryQueryDefinitionCostAnalysisUiArgs.builder()
+ *                     .graph(var_.query_query_definition_cost_analysis_ui_graph())
+ *                     .isCumulativeGraph(var_.query_query_definition_cost_analysis_ui_is_cumulative_graph())
+ *                     .build())
+ *                 .displayName(var_.query_query_definition_display_name())
+ *                 .reportQuery(QueryQueryDefinitionReportQueryArgs.builder()
+ *                     .granularity(var_.query_query_definition_report_query_granularity())
+ *                     .tenantId(oci_metering_computation_tenant.test_tenant().id())
+ *                     .compartmentDepth(var_.query_query_definition_report_query_compartment_depth())
+ *                     .dateRangeName(var_.query_query_definition_report_query_date_range_name())
+ *                     .filter(var_.query_query_definition_report_query_filter())
+ *                     .forecast(QueryQueryDefinitionReportQueryForecastArgs.builder()
+ *                         .timeForecastEnded(var_.query_query_definition_report_query_forecast_time_forecast_ended())
+ *                         .forecastType(var_.query_query_definition_report_query_forecast_forecast_type())
+ *                         .timeForecastStarted(var_.query_query_definition_report_query_forecast_time_forecast_started())
+ *                         .build())
+ *                     .groupBies(var_.query_query_definition_report_query_group_by())
+ *                     .groupByTags(QueryQueryDefinitionReportQueryGroupByTagArgs.builder()
+ *                         .key(var_.query_query_definition_report_query_group_by_tag_key())
+ *                         .namespace(var_.query_query_definition_report_query_group_by_tag_namespace())
+ *                         .value(var_.query_query_definition_report_query_group_by_tag_value())
+ *                         .build())
+ *                     .isAggregateByTime(var_.query_query_definition_report_query_is_aggregate_by_time())
+ *                     .queryType(var_.query_query_definition_report_query_query_type())
+ *                     .timeUsageEnded(var_.query_query_definition_report_query_time_usage_ended())
+ *                     .timeUsageStarted(var_.query_query_definition_report_query_time_usage_started())
+ *                     .build())
+ *                 .version(var_.query_query_definition_version())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

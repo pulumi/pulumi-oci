@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class ClusterEndpointArgs : Pulumi.ResourceArgs
+    public sealed class ClusterEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The non-native networking Kubernetes API server endpoint.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public ClusterEndpointArgs()
         {
         }
+        public static new ClusterEndpointArgs Empty => new ClusterEndpointArgs();
     }
 }

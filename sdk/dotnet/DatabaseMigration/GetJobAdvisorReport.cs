@@ -22,20 +22,18 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobAdvisorReport = Oci.DatabaseMigration.GetJobAdvisorReport.Invoke(new()
         ///     {
-        ///         var testJobAdvisorReport = Output.Create(Oci.DatabaseMigration.GetJobAdvisorReport.InvokeAsync(new Oci.DatabaseMigration.GetJobAdvisorReportArgs
-        ///         {
-        ///             JobId = oci_database_migration_job.Test_job.Id,
-        ///         }));
-        ///     }
+        ///         JobId = oci_database_migration_job.Test_job.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobAdvisorReport = Oci.DatabaseMigration.GetJobAdvisorReport.Invoke(new()
         ///     {
-        ///         var testJobAdvisorReport = Output.Create(Oci.DatabaseMigration.GetJobAdvisorReport.InvokeAsync(new Oci.DatabaseMigration.GetJobAdvisorReportArgs
-        ///         {
-        ///             JobId = oci_database_migration_job.Test_job.Id,
-        ///         }));
-        ///     }
+        ///         JobId = oci_database_migration_job.Test_job.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DatabaseMigration
     }
 
 
-    public sealed class GetJobAdvisorReportArgs : Pulumi.InvokeArgs
+    public sealed class GetJobAdvisorReportArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the job
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetJobAdvisorReportArgs()
         {
         }
+        public static new GetJobAdvisorReportArgs Empty => new GetJobAdvisorReportArgs();
     }
 
-    public sealed class GetJobAdvisorReportInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetJobAdvisorReportInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the job
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetJobAdvisorReportInvokeArgs()
         {
         }
+        public static new GetJobAdvisorReportInvokeArgs Empty => new GetJobAdvisorReportInvokeArgs();
     }
 
 

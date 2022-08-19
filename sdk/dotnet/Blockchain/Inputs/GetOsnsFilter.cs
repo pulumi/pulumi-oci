@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Blockchain.Inputs
 {
 
-    public sealed class GetOsnsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetOsnsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Blockchain.Inputs
         public GetOsnsFilterArgs()
         {
         }
+        public static new GetOsnsFilterArgs Empty => new GetOsnsFilterArgs();
     }
 }

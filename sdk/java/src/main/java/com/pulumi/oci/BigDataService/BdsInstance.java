@@ -33,6 +33,98 @@ import javax.annotation.Nullable;
  * Creates a new BDS instance.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.BigDataService.BdsInstance;
+ * import com.pulumi.oci.BigDataService.BdsInstanceArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceMasterNodeArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceMasterNodeShapeConfigArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceUtilNodeArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceUtilNodeShapeConfigArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceWorkerNodeArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceWorkerNodeShapeConfigArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceComputeOnlyWorkerNodeArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs;
+ * import com.pulumi.oci.BigDataService.inputs.BdsInstanceNetworkConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBdsInstance = new BdsInstance(&#34;testBdsInstance&#34;, BdsInstanceArgs.builder()        
+ *             .clusterAdminPassword(var_.bds_instance_cluster_admin_password())
+ *             .clusterPublicKey(var_.bds_instance_cluster_public_key())
+ *             .clusterVersion(var_.bds_instance_cluster_version())
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.bds_instance_display_name())
+ *             .isHighAvailability(var_.bds_instance_is_high_availability())
+ *             .isSecure(var_.bds_instance_is_secure())
+ *             .masterNode(BdsInstanceMasterNodeArgs.builder()
+ *                 .shape(var_.bds_instance_nodes_shape())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
+ *                 .numberOfNodes(var_.bds_instance_number_of_nodes())
+ *                 .shapeConfig(BdsInstanceMasterNodeShapeConfigArgs.builder()
+ *                     .memoryInGbs(var_.bds_instance_nodes_shape_config_memory_in_gbs())
+ *                     .ocpus(var_.bds_instance_nodes_shape_config_ocpus())
+ *                     .build())
+ *                 .build())
+ *             .utilNode(BdsInstanceUtilNodeArgs.builder()
+ *                 .shape(var_.bds_instance_nodes_shape())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
+ *                 .numberOfNodes(var_.bds_instance_number_of_nodes())
+ *                 .shapeConfig(BdsInstanceUtilNodeShapeConfigArgs.builder()
+ *                     .memoryInGbs(var_.bds_instance_nodes_shape_config_memory_in_gbs())
+ *                     .ocpus(var_.bds_instance_nodes_shape_config_ocpus())
+ *                     .build())
+ *                 .build())
+ *             .workerNode(BdsInstanceWorkerNodeArgs.builder()
+ *                 .shape(var_.bds_instance_nodes_shape())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
+ *                 .numberOfNodes(var_.bds_instance_number_of_nodes())
+ *                 .shapeConfig(BdsInstanceWorkerNodeShapeConfigArgs.builder()
+ *                     .memoryInGbs(var_.bds_instance_nodes_shape_config_memory_in_gbs())
+ *                     .ocpus(var_.bds_instance_nodes_shape_config_ocpus())
+ *                     .build())
+ *                 .build())
+ *             .computeOnlyWorkerNode(BdsInstanceComputeOnlyWorkerNodeArgs.builder()
+ *                 .shape(var_.bds_instance_nodes_shape())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .blockVolumeSizeInGbs(var_.bds_instance_nodes_block_volume_size_in_gbs())
+ *                 .numberOfNodes(var_.bds_instance_number_of_nodes())
+ *                 .shapeConfig(BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs.builder()
+ *                     .memoryInGbs(var_.bds_instance_nodes_shape_config_memory_in_gbs())
+ *                     .ocpus(var_.bds_instance_nodes_shape_config_ocpus())
+ *                     .build())
+ *                 .build())
+ *             .bootstrapScriptUrl(var_.bds_instance_bootstrap_script_url())
+ *             .definedTags(var_.bds_instance_defined_tags())
+ *             .freeformTags(var_.bds_instance_freeform_tags())
+ *             .kerberosRealmName(var_.bds_instance_kerberos_realm_name())
+ *             .kmsKeyId(var_.bds_instance_kms_key_id())
+ *             .networkConfig(BdsInstanceNetworkConfigArgs.builder()
+ *                 .cidrBlock(var_.bds_instance_network_config_cidr_block())
+ *                 .isNatGatewayRequired(var_.bds_instance_network_config_is_nat_gateway_required())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 
@@ -260,6 +352,20 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> kerberosRealmName() {
         return this.kerberosRealmName;
+    }
+    /**
+     * (Updatable) The OCID of the Key Management master encryption key.
+     * 
+     */
+    @Export(name="kmsKeyId", type=String.class, parameters={})
+    private Output<String> kmsKeyId;
+
+    /**
+     * @return (Updatable) The OCID of the Key Management master encryption key.
+     * 
+     */
+    public Output<String> kmsKeyId() {
+        return this.kmsKeyId;
     }
     /**
      * The master node in the BDS instance

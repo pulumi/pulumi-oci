@@ -21,20 +21,18 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProductLicense = Oci.LicenseManager.GetProductLicense.Invoke(new()
         ///     {
-        ///         var testProductLicense = Output.Create(Oci.LicenseManager.GetProductLicense.InvokeAsync(new Oci.LicenseManager.GetProductLicenseArgs
-        ///         {
-        ///             ProductLicenseId = oci_license_manager_product_license.Test_product_license.Id,
-        ///         }));
-        ///     }
+        ///         ProductLicenseId = oci_license_manager_product_license.Test_product_license.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProductLicense = Oci.LicenseManager.GetProductLicense.Invoke(new()
         ///     {
-        ///         var testProductLicense = Output.Create(Oci.LicenseManager.GetProductLicense.InvokeAsync(new Oci.LicenseManager.GetProductLicenseArgs
-        ///         {
-        ///             ProductLicenseId = oci_license_manager_product_license.Test_product_license.Id,
-        ///         }));
-        ///     }
+        ///         ProductLicenseId = oci_license_manager_product_license.Test_product_license.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.LicenseManager
     }
 
 
-    public sealed class GetProductLicenseArgs : Pulumi.InvokeArgs
+    public sealed class GetProductLicenseArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique product license identifier.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.LicenseManager
         public GetProductLicenseArgs()
         {
         }
+        public static new GetProductLicenseArgs Empty => new GetProductLicenseArgs();
     }
 
-    public sealed class GetProductLicenseInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetProductLicenseInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique product license identifier.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.LicenseManager
         public GetProductLicenseInvokeArgs()
         {
         }
+        public static new GetProductLicenseInvokeArgs Empty => new GetProductLicenseInvokeArgs();
     }
 
 

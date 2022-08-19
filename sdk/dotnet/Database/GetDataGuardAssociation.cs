@@ -22,21 +22,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataGuardAssociation = Oci.Database.GetDataGuardAssociation.Invoke(new()
         ///     {
-        ///         var testDataGuardAssociation = Output.Create(Oci.Database.GetDataGuardAssociation.InvokeAsync(new Oci.Database.GetDataGuardAssociationArgs
-        ///         {
-        ///             DataGuardAssociationId = oci_database_data_guard_association.Test_data_guard_association.Id,
-        ///             DatabaseId = oci_database_database.Test_database.Id,
-        ///         }));
-        ///     }
+        ///         DataGuardAssociationId = oci_database_data_guard_association.Test_data_guard_association.Id,
+        ///         DatabaseId = oci_database_database.Test_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataGuardAssociation = Oci.Database.GetDataGuardAssociation.Invoke(new()
         ///     {
-        ///         var testDataGuardAssociation = Output.Create(Oci.Database.GetDataGuardAssociation.InvokeAsync(new Oci.Database.GetDataGuardAssociationArgs
-        ///         {
-        ///             DataGuardAssociationId = oci_database_data_guard_association.Test_data_guard_association.Id,
-        ///             DatabaseId = oci_database_database.Test_database.Id,
-        ///         }));
-        ///     }
+        ///         DataGuardAssociationId = oci_database_data_guard_association.Test_data_guard_association.Id,
+        ///         DatabaseId = oci_database_database.Test_database.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDataGuardAssociationArgs : Pulumi.InvokeArgs
+    public sealed class GetDataGuardAssociationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Data Guard association's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Database
         public GetDataGuardAssociationArgs()
         {
         }
+        public static new GetDataGuardAssociationArgs Empty => new GetDataGuardAssociationArgs();
     }
 
-    public sealed class GetDataGuardAssociationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDataGuardAssociationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Data Guard association's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.Database
         public GetDataGuardAssociationInvokeArgs()
         {
         }
+        public static new GetDataGuardAssociationInvokeArgs Empty => new GetDataGuardAssociationInvokeArgs();
     }
 
 

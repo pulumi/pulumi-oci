@@ -22,30 +22,28 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testVolumeBackup = new Oci.Core.VolumeBackup("testVolumeBackup", new()
     ///     {
-    ///         var testVolumeBackup = new Oci.Core.VolumeBackup("testVolumeBackup", new Oci.Core.VolumeBackupArgs
+    ///         VolumeId = oci_core_volume.Test_volume.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             VolumeId = oci_core_volume.Test_volume.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Volume_backup_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             Type = @var.Volume_backup_type,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Volume_backup_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         Type = @var.Volume_backup_type,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -57,7 +55,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/volumeBackup:VolumeBackup")]
-    public partial class VolumeBackup : Pulumi.CustomResource
+    public partial class VolumeBackup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the volume backup.
@@ -217,7 +215,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class VolumeBackupArgs : Pulumi.ResourceArgs
+    public sealed class VolumeBackupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the volume backup.
@@ -276,9 +274,10 @@ namespace Pulumi.Oci.Core
         public VolumeBackupArgs()
         {
         }
+        public static new VolumeBackupArgs Empty => new VolumeBackupArgs();
     }
 
-    public sealed class VolumeBackupState : Pulumi.ResourceArgs
+    public sealed class VolumeBackupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the volume backup.
@@ -415,5 +414,6 @@ namespace Pulumi.Oci.Core
         public VolumeBackupState()
         {
         }
+        public static new VolumeBackupState Empty => new VolumeBackupState();
     }
 }

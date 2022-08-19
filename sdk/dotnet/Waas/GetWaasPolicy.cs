@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWaasPolicy = Oci.Waas.GetWaasPolicy.Invoke(new()
         ///     {
-        ///         var testWaasPolicy = Output.Create(Oci.Waas.GetWaasPolicy.InvokeAsync(new Oci.Waas.GetWaasPolicyArgs
-        ///         {
-        ///             WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
-        ///         }));
-        ///     }
+        ///         WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWaasPolicy = Oci.Waas.GetWaasPolicy.Invoke(new()
         ///     {
-        ///         var testWaasPolicy = Output.Create(Oci.Waas.GetWaasPolicy.InvokeAsync(new Oci.Waas.GetWaasPolicyArgs
-        ///         {
-        ///             WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
-        ///         }));
-        ///     }
+        ///         WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Waas
     }
 
 
-    public sealed class GetWaasPolicyArgs : Pulumi.InvokeArgs
+    public sealed class GetWaasPolicyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Waas
         public GetWaasPolicyArgs()
         {
         }
+        public static new GetWaasPolicyArgs Empty => new GetWaasPolicyArgs();
     }
 
-    public sealed class GetWaasPolicyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetWaasPolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Waas
         public GetWaasPolicyInvokeArgs()
         {
         }
+        public static new GetWaasPolicyInvokeArgs Empty => new GetWaasPolicyInvokeArgs();
     }
 
 

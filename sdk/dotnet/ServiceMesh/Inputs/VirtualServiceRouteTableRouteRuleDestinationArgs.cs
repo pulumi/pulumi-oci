@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class VirtualServiceRouteTableRouteRuleDestinationArgs : Pulumi.ResourceArgs
+    public sealed class VirtualServiceRouteTableRouteRuleDestinationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public VirtualServiceRouteTableRouteRuleDestinationArgs()
         {
         }
+        public static new VirtualServiceRouteTableRouteRuleDestinationArgs Empty => new VirtualServiceRouteTableRouteRuleDestinationArgs();
     }
 }

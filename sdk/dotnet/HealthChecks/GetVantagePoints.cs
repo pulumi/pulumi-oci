@@ -22,21 +22,19 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVantagePoints = Oci.HealthChecks.GetVantagePoints.Invoke(new()
         ///     {
-        ///         var testVantagePoints = Output.Create(Oci.HealthChecks.GetVantagePoints.InvokeAsync(new Oci.HealthChecks.GetVantagePointsArgs
-        ///         {
-        ///             DisplayName = @var.Vantage_point_display_name,
-        ///             Name = @var.Vantage_point_name,
-        ///         }));
-        ///     }
+        ///         DisplayName = @var.Vantage_point_display_name,
+        ///         Name = @var.Vantage_point_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVantagePoints = Oci.HealthChecks.GetVantagePoints.Invoke(new()
         ///     {
-        ///         var testVantagePoints = Output.Create(Oci.HealthChecks.GetVantagePoints.InvokeAsync(new Oci.HealthChecks.GetVantagePointsArgs
-        ///         {
-        ///             DisplayName = @var.Vantage_point_display_name,
-        ///             Name = @var.Vantage_point_name,
-        ///         }));
-        ///     }
+        ///         DisplayName = @var.Vantage_point_display_name,
+        ///         Name = @var.Vantage_point_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.HealthChecks
     }
 
 
-    public sealed class GetVantagePointsArgs : Pulumi.InvokeArgs
+    public sealed class GetVantagePointsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Filters results that exactly match the `displayName` field.
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.HealthChecks
         public GetVantagePointsArgs()
         {
         }
+        public static new GetVantagePointsArgs Empty => new GetVantagePointsArgs();
     }
 
-    public sealed class GetVantagePointsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVantagePointsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Filters results that exactly match the `displayName` field.
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.HealthChecks
         public GetVantagePointsInvokeArgs()
         {
         }
+        public static new GetVantagePointsInvokeArgs Empty => new GetVantagePointsInvokeArgs();
     }
 
 

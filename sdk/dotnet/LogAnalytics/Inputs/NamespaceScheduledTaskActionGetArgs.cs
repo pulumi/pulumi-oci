@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics.Inputs
 {
 
-    public sealed class NamespaceScheduledTaskActionGetArgs : Pulumi.ResourceArgs
+    public sealed class NamespaceScheduledTaskActionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// if true, purge child compartments data
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public NamespaceScheduledTaskActionGetArgs()
         {
         }
+        public static new NamespaceScheduledTaskActionGetArgs Empty => new NamespaceScheduledTaskActionGetArgs();
     }
 }

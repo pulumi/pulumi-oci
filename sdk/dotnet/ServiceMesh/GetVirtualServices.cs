@@ -22,24 +22,22 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualServices = Oci.ServiceMesh.GetVirtualServices.Invoke(new()
         ///     {
-        ///         var testVirtualServices = Output.Create(Oci.ServiceMesh.GetVirtualServices.InvokeAsync(new Oci.ServiceMesh.GetVirtualServicesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Virtual_service_id,
-        ///             MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-        ///             Name = @var.Virtual_service_name,
-        ///             State = @var.Virtual_service_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Virtual_service_id,
+        ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+        ///         Name = @var.Virtual_service_name,
+        ///         State = @var.Virtual_service_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualServices = Oci.ServiceMesh.GetVirtualServices.Invoke(new()
         ///     {
-        ///         var testVirtualServices = Output.Create(Oci.ServiceMesh.GetVirtualServices.InvokeAsync(new Oci.ServiceMesh.GetVirtualServicesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Id = @var.Virtual_service_id,
-        ///             MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-        ///             Name = @var.Virtual_service_name,
-        ///             State = @var.Virtual_service_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Id = @var.Virtual_service_id,
+        ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+        ///         Name = @var.Virtual_service_name,
+        ///         State = @var.Virtual_service_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.ServiceMesh
     }
 
 
-    public sealed class GetVirtualServicesArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualServicesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.ServiceMesh
         public GetVirtualServicesArgs()
         {
         }
+        public static new GetVirtualServicesArgs Empty => new GetVirtualServicesArgs();
     }
 
-    public sealed class GetVirtualServicesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualServicesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.ServiceMesh
         public GetVirtualServicesInvokeArgs()
         {
         }
+        public static new GetVirtualServicesInvokeArgs Empty => new GetVirtualServicesInvokeArgs();
     }
 
 

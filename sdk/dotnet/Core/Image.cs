@@ -39,87 +39,81 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// ### Create image from instance in tenancy
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testImage = new Oci.Core.Image("testImage", new()
     ///     {
-    ///         var testImage = new Oci.Core.Image("testImage", new Oci.Core.ImageArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         InstanceId = oci_core_instance.Test_instance.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             InstanceId = oci_core_instance.Test_instance.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Image_display_name,
-    ///             LaunchMode = @var.Image_launch_mode,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Image_display_name,
+    ///         LaunchMode = @var.Image_launch_mode,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// ### Create image from exported image via direct access to object store
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testImage = new Oci.Core.Image("testImage", new()
     ///     {
-    ///         var testImage = new Oci.Core.Image("testImage", new Oci.Core.ImageArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Image_display_name,
+    ///         LaunchMode = @var.Image_launch_mode,
+    ///         ImageSourceDetails = new Oci.Core.Inputs.ImageImageSourceDetailsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Image_display_name,
-    ///             LaunchMode = @var.Image_launch_mode,
-    ///             ImageSourceDetails = new Oci.Core.Inputs.ImageImageSourceDetailsArgs
-    ///             {
-    ///                 SourceType = "objectStorageTuple",
-    ///                 BucketName = @var.Bucket_name,
-    ///                 NamespaceName = @var.Namespace,
-    ///                 ObjectName = @var.Object_name,
-    ///                 OperatingSystem = @var.Image_image_source_details_operating_system,
-    ///                 OperatingSystemVersion = @var.Image_image_source_details_operating_system_version,
-    ///                 SourceImageType = @var.Source_image_type,
-    ///             },
-    ///         });
-    ///     }
+    ///             SourceType = "objectStorageTuple",
+    ///             BucketName = @var.Bucket_name,
+    ///             NamespaceName = @var.Namespace,
+    ///             ObjectName = @var.Object_name,
+    ///             OperatingSystem = @var.Image_image_source_details_operating_system,
+    ///             OperatingSystemVersion = @var.Image_image_source_details_operating_system_version,
+    ///             SourceImageType = @var.Source_image_type,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// ### Create image from exported image at publicly accessible uri
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testImage = new Oci.Core.Image("testImage", new()
     ///     {
-    ///         var testImage = new Oci.Core.Image("testImage", new Oci.Core.ImageArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Image_display_name,
+    ///         LaunchMode = @var.Image_launch_mode,
+    ///         ImageSourceDetails = new Oci.Core.Inputs.ImageImageSourceDetailsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Image_display_name,
-    ///             LaunchMode = @var.Image_launch_mode,
-    ///             ImageSourceDetails = new Oci.Core.Inputs.ImageImageSourceDetailsArgs
-    ///             {
-    ///                 SourceType = "objectStorageUri",
-    ///                 SourceUri = @var.Source_uri,
-    ///                 OperatingSystem = @var.Image_image_source_details_operating_system,
-    ///                 OperatingSystemVersion = @var.Image_image_source_details_operating_system_version,
-    ///                 SourceImageType = @var.Source_image_type,
-    ///             },
-    ///         });
-    ///     }
+    ///             SourceType = "objectStorageUri",
+    ///             SourceUri = @var.Source_uri,
+    ///             OperatingSystem = @var.Image_image_source_details_operating_system,
+    ///             OperatingSystemVersion = @var.Image_image_source_details_operating_system_version,
+    ///             SourceImageType = @var.Source_image_type,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -131,7 +125,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/image:Image")]
-    public partial class Image : Pulumi.CustomResource
+    public partial class Image : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Oracle Cloud Agent features supported on the image.
@@ -282,7 +276,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class ImageArgs : Pulumi.ResourceArgs
+    public sealed class ImageArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment you want the image to be created in.
@@ -338,9 +332,10 @@ namespace Pulumi.Oci.Core
         public ImageArgs()
         {
         }
+        public static new ImageArgs Empty => new ImageArgs();
     }
 
-    public sealed class ImageState : Pulumi.ResourceArgs
+    public sealed class ImageState : global::Pulumi.ResourceArgs
     {
         [Input("agentFeatures")]
         private InputList<Inputs.ImageAgentFeatureGetArgs>? _agentFeatures;
@@ -474,5 +469,6 @@ namespace Pulumi.Oci.Core
         public ImageState()
         {
         }
+        public static new ImageState Empty => new ImageState();
     }
 }

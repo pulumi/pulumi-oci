@@ -24,24 +24,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstances = Oci.Core.GetInstances.Invoke(new()
         ///     {
-        ///         var testInstances = Output.Create(Oci.Core.GetInstances.InvokeAsync(new Oci.Core.GetInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Instance_availability_domain,
-        ///             CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
-        ///             DisplayName = @var.Instance_display_name,
-        ///             State = @var.Instance_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Instance_availability_domain,
+        ///         CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
+        ///         DisplayName = @var.Instance_display_name,
+        ///         State = @var.Instance_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,24 +60,22 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testInstances = Oci.Core.GetInstances.Invoke(new()
         ///     {
-        ///         var testInstances = Output.Create(Oci.Core.GetInstances.InvokeAsync(new Oci.Core.GetInstancesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AvailabilityDomain = @var.Instance_availability_domain,
-        ///             CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
-        ///             DisplayName = @var.Instance_display_name,
-        ///             State = @var.Instance_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = @var.Instance_availability_domain,
+        ///         CapacityReservationId = oci_core_capacity_reservation.Test_capacity_reservation.Id,
+        ///         DisplayName = @var.Instance_display_name,
+        ///         State = @var.Instance_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetInstancesArgs : Pulumi.InvokeArgs
+    public sealed class GetInstancesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -132,9 +128,10 @@ namespace Pulumi.Oci.Core
         public GetInstancesArgs()
         {
         }
+        public static new GetInstancesArgs Empty => new GetInstancesArgs();
     }
 
-    public sealed class GetInstancesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetInstancesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -177,6 +174,7 @@ namespace Pulumi.Oci.Core
         public GetInstancesInvokeArgs()
         {
         }
+        public static new GetInstancesInvokeArgs Empty => new GetInstancesInvokeArgs();
     }
 
 

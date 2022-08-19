@@ -59,6 +59,11 @@ public final class GetServiceConnectorTarget {
      */
     private final String logGroupId;
     /**
+     * @return Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+     * 
+     */
+    private final String logSourceIdentifier;
+    /**
      * @return The name of the metric.  Example: `CpuUtilization`
      * 
      */
@@ -100,6 +105,7 @@ public final class GetServiceConnectorTarget {
         @CustomType.Parameter("functionId") String functionId,
         @CustomType.Parameter("kind") String kind,
         @CustomType.Parameter("logGroupId") String logGroupId,
+        @CustomType.Parameter("logSourceIdentifier") String logSourceIdentifier,
         @CustomType.Parameter("metric") String metric,
         @CustomType.Parameter("metricNamespace") String metricNamespace,
         @CustomType.Parameter("namespace") String namespace,
@@ -115,6 +121,7 @@ public final class GetServiceConnectorTarget {
         this.functionId = functionId;
         this.kind = kind;
         this.logGroupId = logGroupId;
+        this.logSourceIdentifier = logSourceIdentifier;
         this.metric = metric;
         this.metricNamespace = metricNamespace;
         this.namespace = namespace;
@@ -187,6 +194,13 @@ public final class GetServiceConnectorTarget {
         return this.logGroupId;
     }
     /**
+     * @return Identifier of the log source that you want to use for processing data received from the service connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+     * 
+     */
+    public String logSourceIdentifier() {
+        return this.logSourceIdentifier;
+    }
+    /**
      * @return The name of the metric.  Example: `CpuUtilization`
      * 
      */
@@ -247,6 +261,7 @@ public final class GetServiceConnectorTarget {
         private String functionId;
         private String kind;
         private String logGroupId;
+        private String logSourceIdentifier;
         private String metric;
         private String metricNamespace;
         private String namespace;
@@ -269,6 +284,7 @@ public final class GetServiceConnectorTarget {
     	      this.functionId = defaults.functionId;
     	      this.kind = defaults.kind;
     	      this.logGroupId = defaults.logGroupId;
+    	      this.logSourceIdentifier = defaults.logSourceIdentifier;
     	      this.metric = defaults.metric;
     	      this.metricNamespace = defaults.metricNamespace;
     	      this.namespace = defaults.namespace;
@@ -316,6 +332,10 @@ public final class GetServiceConnectorTarget {
             this.logGroupId = Objects.requireNonNull(logGroupId);
             return this;
         }
+        public Builder logSourceIdentifier(String logSourceIdentifier) {
+            this.logSourceIdentifier = Objects.requireNonNull(logSourceIdentifier);
+            return this;
+        }
         public Builder metric(String metric) {
             this.metric = Objects.requireNonNull(metric);
             return this;
@@ -340,7 +360,7 @@ public final class GetServiceConnectorTarget {
             this.topicId = Objects.requireNonNull(topicId);
             return this;
         }        public GetServiceConnectorTarget build() {
-            return new GetServiceConnectorTarget(batchRolloverSizeInMbs, batchRolloverTimeInMs, bucket, compartmentId, dimensions, enableFormattedMessaging, functionId, kind, logGroupId, metric, metricNamespace, namespace, objectNamePrefix, streamId, topicId);
+            return new GetServiceConnectorTarget(batchRolloverSizeInMbs, batchRolloverTimeInMs, bucket, compartmentId, dimensions, enableFormattedMessaging, functionId, kind, logGroupId, logSourceIdentifier, metric, metricNamespace, namespace, objectNamePrefix, streamId, topicId);
         }
     }
 }

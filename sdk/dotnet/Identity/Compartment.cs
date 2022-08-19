@@ -13,29 +13,27 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCompartment = new Oci.Identity.Compartment("testCompartment", new()
     ///     {
-    ///         var testCompartment = new Oci.Identity.Compartment("testCompartment", new Oci.Identity.CompartmentArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Description = @var.Compartment_description,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Description = @var.Compartment_description,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -47,7 +45,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/compartment:Compartment")]
-    public partial class Compartment : Pulumi.CustomResource
+    public partial class Compartment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the parent compartment containing the compartment.
@@ -153,7 +151,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class CompartmentArgs : Pulumi.ResourceArgs
+    public sealed class CompartmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the parent compartment containing the compartment.
@@ -206,9 +204,10 @@ namespace Pulumi.Oci.Identity
         public CompartmentArgs()
         {
         }
+        public static new CompartmentArgs Empty => new CompartmentArgs();
     }
 
-    public sealed class CompartmentState : Pulumi.ResourceArgs
+    public sealed class CompartmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the parent compartment containing the compartment.
@@ -285,5 +284,6 @@ namespace Pulumi.Oci.Identity
         public CompartmentState()
         {
         }
+        public static new CompartmentState Empty => new CompartmentState();
     }
 }

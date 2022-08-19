@@ -17,31 +17,29 @@ namespace Pulumi.Oci.EmWarehouse
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testEmWarehouse = new Oci.EmWarehouse.EmWarehouse("testEmWarehouse", new()
     ///     {
-    ///         var testEmWarehouse = new Oci.EmWarehouse.EmWarehouse("testEmWarehouse", new Oci.EmWarehouse.EmWarehouseArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         EmBridgeId = oci_em_warehouse_em_bridge.Test_em_bridge.Id,
+    ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             EmBridgeId = oci_em_warehouse_em_bridge.Test_em_bridge.Id,
-    ///             OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             DisplayName = @var.Em_warehouse_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         DisplayName = @var.Em_warehouse_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.EmWarehouse
     /// ```
     /// </summary>
     [OciResourceType("oci:EmWarehouse/emWarehouse:EmWarehouse")]
-    public partial class EmWarehouse : Pulumi.CustomResource
+    public partial class EmWarehouse : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -189,7 +187,7 @@ namespace Pulumi.Oci.EmWarehouse
         }
     }
 
-    public sealed class EmWarehouseArgs : Pulumi.ResourceArgs
+    public sealed class EmWarehouseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -242,9 +240,10 @@ namespace Pulumi.Oci.EmWarehouse
         public EmWarehouseArgs()
         {
         }
+        public static new EmWarehouseArgs Empty => new EmWarehouseArgs();
     }
 
-    public sealed class EmWarehouseState : Pulumi.ResourceArgs
+    public sealed class EmWarehouseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -357,5 +356,6 @@ namespace Pulumi.Oci.EmWarehouse
         public EmWarehouseState()
         {
         }
+        public static new EmWarehouseState Empty => new EmWarehouseState();
     }
 }

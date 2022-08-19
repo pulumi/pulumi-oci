@@ -18,21 +18,19 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCompareSecurityAssessment = new Oci.DataSafe.CompareSecurityAssessment("testCompareSecurityAssessment", new()
     ///     {
-    ///         var testCompareSecurityAssessment = new Oci.DataSafe.CompareSecurityAssessment("testCompareSecurityAssessment", new Oci.DataSafe.CompareSecurityAssessmentArgs
-    ///         {
-    ///             ComparisonSecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
-    ///             SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
-    ///         });
-    ///     }
+    ///         ComparisonSecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
+    ///         SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -44,7 +42,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/compareSecurityAssessment:CompareSecurityAssessment")]
-    public partial class CompareSecurityAssessment : Pulumi.CustomResource
+    public partial class CompareSecurityAssessment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
@@ -102,7 +100,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class CompareSecurityAssessmentArgs : Pulumi.ResourceArgs
+    public sealed class CompareSecurityAssessmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
@@ -119,9 +117,10 @@ namespace Pulumi.Oci.DataSafe
         public CompareSecurityAssessmentArgs()
         {
         }
+        public static new CompareSecurityAssessmentArgs Empty => new CompareSecurityAssessmentArgs();
     }
 
-    public sealed class CompareSecurityAssessmentState : Pulumi.ResourceArgs
+    public sealed class CompareSecurityAssessmentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
@@ -138,5 +137,6 @@ namespace Pulumi.Oci.DataSafe
         public CompareSecurityAssessmentState()
         {
         }
+        public static new CompareSecurityAssessmentState Empty => new CompareSecurityAssessmentState();
     }
 }

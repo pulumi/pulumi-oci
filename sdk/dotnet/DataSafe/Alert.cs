@@ -23,7 +23,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/alert:Alert")]
-    public partial class Alert : Pulumi.CustomResource
+    public partial class Alert : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of alert.
@@ -201,7 +201,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class AlertArgs : Pulumi.ResourceArgs
+    public sealed class AlertArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of alert.
@@ -254,9 +254,10 @@ namespace Pulumi.Oci.DataSafe
         public AlertArgs()
         {
         }
+        public static new AlertArgs Empty => new AlertArgs();
     }
 
-    public sealed class AlertState : Pulumi.ResourceArgs
+    public sealed class AlertState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of alert.
@@ -429,5 +430,6 @@ namespace Pulumi.Oci.DataSafe
         public AlertState()
         {
         }
+        public static new AlertState Empty => new AlertState();
     }
 }

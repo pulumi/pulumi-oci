@@ -20,27 +20,25 @@ namespace Pulumi.Oci.GenericArtifactsContent
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testArtifactByPath = new Oci.GenericArtifactsContent.ArtifactByPath("testArtifactByPath", new()
     ///     {
-    ///         var testArtifactByPath = new Oci.GenericArtifactsContent.ArtifactByPath("testArtifactByPath", new Oci.GenericArtifactsContent.ArtifactByPathArgs
-    ///         {
-    ///             ArtifactPath = @var.Artifact_path,
-    ///             RepositoryId = oci_artifacts_repository.Test_repository.Id,
-    ///             Version = @var.Version,
-    ///             Source = @var.Source,
-    ///         });
-    ///     }
+    ///         ArtifactPath = @var.Artifact_path,
+    ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
+    ///         Version = @var.Version,
+    ///         Source = @var.Source,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [OciResourceType("oci:GenericArtifactsContent/artifactByPath:ArtifactByPath")]
-    public partial class ArtifactByPath : Pulumi.CustomResource
+    public partial class ArtifactByPath : global::Pulumi.CustomResource
     {
         [Output("artifactId")]
         public Output<string> ArtifactId { get; private set; } = null!;
@@ -167,7 +165,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
         }
     }
 
-    public sealed class ArtifactByPathArgs : Pulumi.ResourceArgs
+    public sealed class ArtifactByPathArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
@@ -202,9 +200,10 @@ namespace Pulumi.Oci.GenericArtifactsContent
         public ArtifactByPathArgs()
         {
         }
+        public static new ArtifactByPathArgs Empty => new ArtifactByPathArgs();
     }
 
-    public sealed class ArtifactByPathState : Pulumi.ResourceArgs
+    public sealed class ArtifactByPathState : global::Pulumi.ResourceArgs
     {
         [Input("artifactId")]
         public Input<string>? ArtifactId { get; set; }
@@ -302,5 +301,6 @@ namespace Pulumi.Oci.GenericArtifactsContent
         public ArtifactByPathState()
         {
         }
+        public static new ArtifactByPathState Empty => new ArtifactByPathState();
     }
 }

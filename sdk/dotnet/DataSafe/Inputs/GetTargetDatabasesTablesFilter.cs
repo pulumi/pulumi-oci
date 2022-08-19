@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe.Inputs
 {
 
-    public sealed class GetTargetDatabasesTablesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabasesTablesFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public GetTargetDatabasesTablesFilterArgs()
         {
         }
+        public static new GetTargetDatabasesTablesFilterArgs Empty => new GetTargetDatabasesTablesFilterArgs();
     }
 }

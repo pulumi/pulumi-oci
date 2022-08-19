@@ -17,35 +17,33 @@ namespace Pulumi.Oci.DataIntegration
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testWorkspace = new Oci.DataIntegration.Workspace("testWorkspace", new()
     ///     {
-    ///         var testWorkspace = new Oci.DataIntegration.Workspace("testWorkspace", new Oci.DataIntegration.WorkspaceArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Workspace_display_name,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Workspace_display_name,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Workspace_description,
-    ///             DnsServerIp = @var.Workspace_dns_server_ip,
-    ///             DnsServerZone = @var.Workspace_dns_server_zone,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsPrivateNetworkEnabled = @var.Workspace_is_private_network_enabled,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Workspace_description,
+    ///         DnsServerIp = @var.Workspace_dns_server_ip,
+    ///         DnsServerZone = @var.Workspace_dns_server_zone,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsPrivateNetworkEnabled = @var.Workspace_is_private_network_enabled,
+    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -57,7 +55,7 @@ namespace Pulumi.Oci.DataIntegration
     /// ```
     /// </summary>
     [OciResourceType("oci:DataIntegration/workspace:Workspace")]
-    public partial class Workspace : Pulumi.CustomResource
+    public partial class Workspace : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment containing the workspace.
@@ -193,7 +191,7 @@ namespace Pulumi.Oci.DataIntegration
         }
     }
 
-    public sealed class WorkspaceArgs : Pulumi.ResourceArgs
+    public sealed class WorkspaceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment containing the workspace.
@@ -276,9 +274,10 @@ namespace Pulumi.Oci.DataIntegration
         public WorkspaceArgs()
         {
         }
+        public static new WorkspaceArgs Empty => new WorkspaceArgs();
     }
 
-    public sealed class WorkspaceState : Pulumi.ResourceArgs
+    public sealed class WorkspaceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment containing the workspace.
@@ -385,5 +384,6 @@ namespace Pulumi.Oci.DataIntegration
         public WorkspaceState()
         {
         }
+        public static new WorkspaceState Empty => new WorkspaceState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard.Inputs
 {
 
-    public sealed class ResponderRecipeResponderRuleDetailsArgs : Pulumi.ResourceArgs
+    public sealed class ResponderRecipeResponderRuleDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Base condition object
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public ResponderRecipeResponderRuleDetailsArgs()
         {
         }
+        public static new ResponderRecipeResponderRuleDetailsArgs Empty => new ResponderRecipeResponderRuleDetailsArgs();
     }
 }

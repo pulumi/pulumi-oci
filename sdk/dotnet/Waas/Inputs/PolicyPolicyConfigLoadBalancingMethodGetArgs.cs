@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class PolicyPolicyConfigLoadBalancingMethodGetArgs : Pulumi.ResourceArgs
+    public sealed class PolicyPolicyConfigLoadBalancingMethodGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
@@ -42,5 +42,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public PolicyPolicyConfigLoadBalancingMethodGetArgs()
         {
         }
+        public static new PolicyPolicyConfigLoadBalancingMethodGetArgs Empty => new PolicyPolicyConfigLoadBalancingMethodGetArgs();
     }
 }

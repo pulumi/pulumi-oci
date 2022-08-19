@@ -21,25 +21,23 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHttpRedirects = Oci.Waas.GetHttpRedirects.Invoke(new()
         ///     {
-        ///         var testHttpRedirects = Output.Create(Oci.Waas.GetHttpRedirects.InvokeAsync(new Oci.Waas.GetHttpRedirectsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayNames = @var.Http_redirect_display_names,
-        ///             Ids = @var.Http_redirect_ids,
-        ///             States = @var.Http_redirect_states,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Http_redirect_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Http_redirect_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayNames = @var.Http_redirect_display_names,
+        ///         Ids = @var.Http_redirect_ids,
+        ///         States = @var.Http_redirect_states,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Http_redirect_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Http_redirect_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.Waas
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testHttpRedirects = Oci.Waas.GetHttpRedirects.Invoke(new()
         ///     {
-        ///         var testHttpRedirects = Output.Create(Oci.Waas.GetHttpRedirects.InvokeAsync(new Oci.Waas.GetHttpRedirectsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayNames = @var.Http_redirect_display_names,
-        ///             Ids = @var.Http_redirect_ids,
-        ///             States = @var.Http_redirect_states,
-        ///             TimeCreatedGreaterThanOrEqualTo = @var.Http_redirect_time_created_greater_than_or_equal_to,
-        ///             TimeCreatedLessThan = @var.Http_redirect_time_created_less_than,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayNames = @var.Http_redirect_display_names,
+        ///         Ids = @var.Http_redirect_ids,
+        ///         States = @var.Http_redirect_states,
+        ///         TimeCreatedGreaterThanOrEqualTo = @var.Http_redirect_time_created_greater_than_or_equal_to,
+        ///         TimeCreatedLessThan = @var.Http_redirect_time_created_less_than,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.Waas
     }
 
 
-    public sealed class GetHttpRedirectsArgs : Pulumi.InvokeArgs
+    public sealed class GetHttpRedirectsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
@@ -152,9 +148,10 @@ namespace Pulumi.Oci.Waas
         public GetHttpRedirectsArgs()
         {
         }
+        public static new GetHttpRedirectsArgs Empty => new GetHttpRedirectsArgs();
     }
 
-    public sealed class GetHttpRedirectsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetHttpRedirectsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
@@ -221,6 +218,7 @@ namespace Pulumi.Oci.Waas
         public GetHttpRedirectsInvokeArgs()
         {
         }
+        public static new GetHttpRedirectsInvokeArgs Empty => new GetHttpRedirectsInvokeArgs();
     }
 
 

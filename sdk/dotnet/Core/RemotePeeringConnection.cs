@@ -17,32 +17,30 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRemotePeeringConnection = new Oci.Core.RemotePeeringConnection("testRemotePeeringConnection", new()
     ///     {
-    ///         var testRemotePeeringConnection = new Oci.Core.RemotePeeringConnection("testRemotePeeringConnection", new Oci.Core.RemotePeeringConnectionArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DrgId = oci_core_drg.Test_drg.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DrgId = oci_core_drg.Test_drg.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Remote_peering_connection_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             PeerId = oci_core_remote_peering_connection.Test_remote_peering_connection2.Id,
-    ///             PeerRegionName = @var.Remote_peering_connection_peer_region_name,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Remote_peering_connection_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         PeerId = oci_core_remote_peering_connection.Test_remote_peering_connection2.Id,
+    ///         PeerRegionName = @var.Remote_peering_connection_peer_region_name,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/remotePeeringConnection:RemotePeeringConnection")]
-    public partial class RemotePeeringConnection : Pulumi.CustomResource
+    public partial class RemotePeeringConnection : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the RPC.
@@ -172,7 +170,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class RemotePeeringConnectionArgs : Pulumi.ResourceArgs
+    public sealed class RemotePeeringConnectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the RPC.
@@ -231,9 +229,10 @@ namespace Pulumi.Oci.Core
         public RemotePeeringConnectionArgs()
         {
         }
+        public static new RemotePeeringConnectionArgs Empty => new RemotePeeringConnectionArgs();
     }
 
-    public sealed class RemotePeeringConnectionState : Pulumi.ResourceArgs
+    public sealed class RemotePeeringConnectionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the RPC.
@@ -322,5 +321,6 @@ namespace Pulumi.Oci.Core
         public RemotePeeringConnectionState()
         {
         }
+        public static new RemotePeeringConnectionState Empty => new RemotePeeringConnectionState();
     }
 }

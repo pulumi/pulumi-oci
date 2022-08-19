@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataLabellingService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataset = Oci.DataLabellingService.GetDataset.Invoke(new()
         ///     {
-        ///         var testDataset = Output.Create(Oci.DataLabellingService.GetDataset.InvokeAsync(new Oci.DataLabellingService.GetDatasetArgs
-        ///         {
-        ///             DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-        ///         }));
-        ///     }
+        ///         DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataLabellingService
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataset = Oci.DataLabellingService.GetDataset.Invoke(new()
         ///     {
-        ///         var testDataset = Output.Create(Oci.DataLabellingService.GetDataset.InvokeAsync(new Oci.DataLabellingService.GetDatasetArgs
-        ///         {
-        ///             DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
-        ///         }));
-        ///     }
+        ///         DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataLabellingService
     }
 
 
-    public sealed class GetDatasetArgs : Pulumi.InvokeArgs
+    public sealed class GetDatasetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Dataset OCID
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataLabellingService
         public GetDatasetArgs()
         {
         }
+        public static new GetDatasetArgs Empty => new GetDatasetArgs();
     }
 
-    public sealed class GetDatasetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatasetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Dataset OCID
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataLabellingService
         public GetDatasetInvokeArgs()
         {
         }
+        public static new GetDatasetInvokeArgs Empty => new GetDatasetInvokeArgs();
     }
 
 

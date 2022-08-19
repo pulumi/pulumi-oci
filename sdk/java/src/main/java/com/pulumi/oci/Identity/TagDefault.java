@@ -27,6 +27,37 @@ import javax.annotation.Nullable;
  * * If the `isRequired` flag is set to &#34;false&#34;, the value you enter is set during resource creation.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.TagDefault;
+ * import com.pulumi.oci.Identity.TagDefaultArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testTagDefault = new TagDefault(&#34;testTagDefault&#34;, TagDefaultArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .tagDefinitionId(oci_identity_tag_definition.test_tag_definition().id())
+ *             .value(var_.tag_default_value())
+ *             .isRequired(var_.tag_default_is_required())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

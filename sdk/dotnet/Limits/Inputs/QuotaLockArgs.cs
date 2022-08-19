@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Limits.Inputs
 {
 
-    public sealed class QuotaLockArgs : Pulumi.ResourceArgs
+    public sealed class QuotaLockArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Limits.Inputs
         public QuotaLockArgs()
         {
         }
+        public static new QuotaLockArgs Empty => new QuotaLockArgs();
     }
 }

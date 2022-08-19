@@ -22,20 +22,18 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testScheduledRuns = Oci.MeteringComputation.GetScheduledRuns.Invoke(new()
         ///     {
-        ///         var testScheduledRuns = Output.Create(Oci.MeteringComputation.GetScheduledRuns.InvokeAsync(new Oci.MeteringComputation.GetScheduledRunsArgs
-        ///         {
-        ///             ScheduleId = oci_metering_computation_schedule.Test_schedule.Id,
-        ///         }));
-        ///     }
+        ///         ScheduleId = oci_metering_computation_schedule.Test_schedule.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testScheduledRuns = Oci.MeteringComputation.GetScheduledRuns.Invoke(new()
         ///     {
-        ///         var testScheduledRuns = Output.Create(Oci.MeteringComputation.GetScheduledRuns.InvokeAsync(new Oci.MeteringComputation.GetScheduledRunsArgs
-        ///         {
-        ///             ScheduleId = oci_metering_computation_schedule.Test_schedule.Id,
-        ///         }));
-        ///     }
+        ///         ScheduleId = oci_metering_computation_schedule.Test_schedule.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.MeteringComputation
     }
 
 
-    public sealed class GetScheduledRunsArgs : Pulumi.InvokeArgs
+    public sealed class GetScheduledRunsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetScheduledRunsFilterArgs>? _filters;
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.MeteringComputation
         public GetScheduledRunsArgs()
         {
         }
+        public static new GetScheduledRunsArgs Empty => new GetScheduledRunsArgs();
     }
 
-    public sealed class GetScheduledRunsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetScheduledRunsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetScheduledRunsFilterInputArgs>? _filters;
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.MeteringComputation
         public GetScheduledRunsInvokeArgs()
         {
         }
+        public static new GetScheduledRunsInvokeArgs Empty => new GetScheduledRunsInvokeArgs();
     }
 
 

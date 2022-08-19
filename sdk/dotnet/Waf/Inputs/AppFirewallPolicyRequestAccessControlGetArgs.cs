@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class AppFirewallPolicyRequestAccessControlGetArgs : Pulumi.ResourceArgs
+    public sealed class AppFirewallPolicyRequestAccessControlGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) References an default Action to take if no AccessControlRule was matched. Allowed action types:
@@ -35,5 +35,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public AppFirewallPolicyRequestAccessControlGetArgs()
         {
         }
+        public static new AppFirewallPolicyRequestAccessControlGetArgs Empty => new AppFirewallPolicyRequestAccessControlGetArgs();
     }
 }

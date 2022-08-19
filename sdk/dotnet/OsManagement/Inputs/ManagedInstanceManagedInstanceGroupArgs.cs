@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagement.Inputs
 {
 
-    public sealed class ManagedInstanceManagedInstanceGroupArgs : Pulumi.ResourceArgs
+    public sealed class ManagedInstanceManagedInstanceGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// User friendly name
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.OsManagement.Inputs
         public ManagedInstanceManagedInstanceGroupArgs()
         {
         }
+        public static new ManagedInstanceManagedInstanceGroupArgs Empty => new ManagedInstanceManagedInstanceGroupArgs();
     }
 }

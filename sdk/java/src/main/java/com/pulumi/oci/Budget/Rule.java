@@ -24,6 +24,43 @@ import javax.annotation.Nullable;
  * Creates a new Alert Rule.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Budget.Rule;
+ * import com.pulumi.oci.Budget.RuleArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAlertRule = new Rule(&#34;testAlertRule&#34;, RuleArgs.builder()        
+ *             .budgetId(oci_budget_budget.test_budget().id())
+ *             .threshold(var_.alert_rule_threshold())
+ *             .thresholdType(var_.alert_rule_threshold_type())
+ *             .type(var_.alert_rule_type())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.alert_rule_description())
+ *             .displayName(var_.alert_rule_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .message(var_.alert_rule_message())
+ *             .recipients(var_.alert_rule_recipients())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

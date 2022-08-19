@@ -26,6 +26,65 @@ import javax.annotation.Nullable;
  * Creates a job.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataScience.Job;
+ * import com.pulumi.oci.DataScience.JobArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobJobLogConfigurationDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testJob = new Job(&#34;testJob&#34;, JobArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .jobConfigurationDetails(JobJobConfigurationDetailsArgs.builder()
+ *                 .jobType(var_.job_job_configuration_details_job_type())
+ *                 .commandLineArguments(var_.job_job_configuration_details_command_line_arguments())
+ *                 .environmentVariables(var_.job_job_configuration_details_environment_variables())
+ *                 .maximumRuntimeInMinutes(var_.job_job_configuration_details_maximum_runtime_in_minutes())
+ *                 .build())
+ *             .jobInfrastructureConfigurationDetails(JobJobInfrastructureConfigurationDetailsArgs.builder()
+ *                 .blockStorageSizeInGbs(var_.job_job_infrastructure_configuration_details_block_storage_size_in_gbs())
+ *                 .jobInfrastructureType(var_.job_job_infrastructure_configuration_details_job_infrastructure_type())
+ *                 .shapeName(oci_core_shape.test_shape().name())
+ *                 .jobShapeConfigDetails(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs.builder()
+ *                     .memoryInGbs(var_.job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs())
+ *                     .ocpus(var_.job_job_infrastructure_configuration_details_job_shape_config_details_ocpus())
+ *                     .build())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .build())
+ *             .projectId(oci_datascience_project.test_project().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.job_description())
+ *             .displayName(var_.job_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .jobLogConfigurationDetails(JobJobLogConfigurationDetailsArgs.builder()
+ *                 .enableAutoLogCreation(var_.job_job_log_configuration_details_enable_auto_log_creation())
+ *                 .enableLogging(var_.job_job_log_configuration_details_enable_logging())
+ *                 .logGroupId(oci_logging_log_group.test_log_group().id())
+ *                 .logId(oci_logging_log.test_log().id())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

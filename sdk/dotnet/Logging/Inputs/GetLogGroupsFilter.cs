@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging.Inputs
 {
 
-    public sealed class GetLogGroupsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetLogGroupsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Logging.Inputs
         public GetLogGroupsFilterArgs()
         {
         }
+        public static new GetLogGroupsFilterArgs Empty => new GetLogGroupsFilterArgs();
     }
 }

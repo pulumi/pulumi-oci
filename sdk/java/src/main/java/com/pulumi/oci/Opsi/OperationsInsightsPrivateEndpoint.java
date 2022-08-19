@@ -24,6 +24,42 @@ import javax.annotation.Nullable;
  * This resource will be created in customer compartment.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Opsi.OperationsInsightsPrivateEndpoint;
+ * import com.pulumi.oci.Opsi.OperationsInsightsPrivateEndpointArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testOperationsInsightsPrivateEndpoint = new OperationsInsightsPrivateEndpoint(&#34;testOperationsInsightsPrivateEndpoint&#34;, OperationsInsightsPrivateEndpointArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.operations_insights_private_endpoint_display_name())
+ *             .isUsedForRacDbs(var_.operations_insights_private_endpoint_is_used_for_rac_dbs())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.operations_insights_private_endpoint_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .nsgIds(var_.operations_insights_private_endpoint_nsg_ids())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -42,24 +42,22 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedInstanceModuleStreams = Oci.OsManagement.GetManagedInstanceModuleStreams.Invoke(new()
         ///     {
-        ///         var testManagedInstanceModuleStreams = Output.Create(Oci.OsManagement.GetManagedInstanceModuleStreams.InvokeAsync(new Oci.OsManagement.GetManagedInstanceModuleStreamsArgs
-        ///         {
-        ///             ManagedInstanceId = @var.Managed_instance_id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ModuleName = @var.Managed_instance_module_name,
-        ///             StreamName = @var.Managed_instance_module_stream_name,
-        ///             StreamStatus = @var.Managed_instance_module_stream_status,
-        ///         }));
-        ///     }
+        ///         ManagedInstanceId = @var.Managed_instance_id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ModuleName = @var.Managed_instance_module_name,
+        ///         StreamName = @var.Managed_instance_module_stream_name,
+        ///         StreamStatus = @var.Managed_instance_module_stream_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -98,24 +96,22 @@ namespace Pulumi.Oci.OsManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedInstanceModuleStreams = Oci.OsManagement.GetManagedInstanceModuleStreams.Invoke(new()
         ///     {
-        ///         var testManagedInstanceModuleStreams = Output.Create(Oci.OsManagement.GetManagedInstanceModuleStreams.InvokeAsync(new Oci.OsManagement.GetManagedInstanceModuleStreamsArgs
-        ///         {
-        ///             ManagedInstanceId = @var.Managed_instance_id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ModuleName = @var.Managed_instance_module_name,
-        ///             StreamName = @var.Managed_instance_module_stream_name,
-        ///             StreamStatus = @var.Managed_instance_module_stream_status,
-        ///         }));
-        ///     }
+        ///         ManagedInstanceId = @var.Managed_instance_id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ModuleName = @var.Managed_instance_module_name,
+        ///         StreamName = @var.Managed_instance_module_stream_name,
+        ///         StreamStatus = @var.Managed_instance_module_stream_status,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -125,7 +121,7 @@ namespace Pulumi.Oci.OsManagement
     }
 
 
-    public sealed class GetManagedInstanceModuleStreamsArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedInstanceModuleStreamsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
@@ -168,9 +164,10 @@ namespace Pulumi.Oci.OsManagement
         public GetManagedInstanceModuleStreamsArgs()
         {
         }
+        public static new GetManagedInstanceModuleStreamsArgs Empty => new GetManagedInstanceModuleStreamsArgs();
     }
 
-    public sealed class GetManagedInstanceModuleStreamsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedInstanceModuleStreamsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
@@ -213,6 +210,7 @@ namespace Pulumi.Oci.OsManagement
         public GetManagedInstanceModuleStreamsInvokeArgs()
         {
         }
+        public static new GetManagedInstanceModuleStreamsInvokeArgs Empty => new GetManagedInstanceModuleStreamsInvokeArgs();
     }
 
 

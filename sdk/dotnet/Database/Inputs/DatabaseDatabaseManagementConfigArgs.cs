@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class DatabaseDatabaseManagementConfigArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseDatabaseManagementConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The status of the Database Management service.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Database.Inputs
         public DatabaseDatabaseManagementConfigArgs()
         {
         }
+        public static new DatabaseDatabaseManagementConfigArgs Empty => new DatabaseDatabaseManagementConfigArgs();
     }
 }

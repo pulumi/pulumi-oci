@@ -19,33 +19,31 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCloudVmClusterIormConfig = new Oci.Database.CloudVmClusterIormConfig("testCloudVmClusterIormConfig", new()
     ///     {
-    ///         var testCloudVmClusterIormConfig = new Oci.Database.CloudVmClusterIormConfig("testCloudVmClusterIormConfig", new Oci.Database.CloudVmClusterIormConfigArgs
+    ///         DbPlans = new[]
     ///         {
-    ///             DbPlans = 
+    ///             new Oci.Database.Inputs.CloudVmClusterIormConfigDbPlanArgs
     ///             {
-    ///                 new Oci.Database.Inputs.CloudVmClusterIormConfigDbPlanArgs
-    ///                 {
-    ///                     DbName = @var.Cloud_vm_cluster_iorm_config_db_plans_db_name,
-    ///                     Share = @var.Cloud_vm_cluster_iorm_config_db_plans_share,
-    ///                 },
+    ///                 DbName = @var.Cloud_vm_cluster_iorm_config_db_plans_db_name,
+    ///                 Share = @var.Cloud_vm_cluster_iorm_config_db_plans_share,
     ///             },
-    ///             CloudVmClusterId = oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id,
-    ///             Objective = "AUTO",
-    ///         });
-    ///     }
+    ///         },
+    ///         CloudVmClusterId = oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id,
+    ///         Objective = "AUTO",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig")]
-    public partial class CloudVmClusterIormConfig : Pulumi.CustomResource
+    public partial class CloudVmClusterIormConfig : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -121,7 +119,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class CloudVmClusterIormConfigArgs : Pulumi.ResourceArgs
+    public sealed class CloudVmClusterIormConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -150,9 +148,10 @@ namespace Pulumi.Oci.Database
         public CloudVmClusterIormConfigArgs()
         {
         }
+        public static new CloudVmClusterIormConfigArgs Empty => new CloudVmClusterIormConfigArgs();
     }
 
-    public sealed class CloudVmClusterIormConfigState : Pulumi.ResourceArgs
+    public sealed class CloudVmClusterIormConfigState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -193,5 +192,6 @@ namespace Pulumi.Oci.Database
         public CloudVmClusterIormConfigState()
         {
         }
+        public static new CloudVmClusterIormConfigState Empty => new CloudVmClusterIormConfigState();
     }
 }

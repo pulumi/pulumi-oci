@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDiscoveryJob = Oci.DataSafe.GetDiscoveryJob.Invoke(new()
         ///     {
-        ///         var testDiscoveryJob = Output.Create(Oci.DataSafe.GetDiscoveryJob.InvokeAsync(new Oci.DataSafe.GetDiscoveryJobArgs
-        ///         {
-        ///             DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
-        ///         }));
-        ///     }
+        ///         DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDiscoveryJob = Oci.DataSafe.GetDiscoveryJob.Invoke(new()
         ///     {
-        ///         var testDiscoveryJob = Output.Create(Oci.DataSafe.GetDiscoveryJob.InvokeAsync(new Oci.DataSafe.GetDiscoveryJobArgs
-        ///         {
-        ///             DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
-        ///         }));
-        ///     }
+        ///         DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetDiscoveryJobArgs : Pulumi.InvokeArgs
+    public sealed class GetDiscoveryJobArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the discovery job.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetDiscoveryJobArgs()
         {
         }
+        public static new GetDiscoveryJobArgs Empty => new GetDiscoveryJobArgs();
     }
 
-    public sealed class GetDiscoveryJobInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDiscoveryJobInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the discovery job.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetDiscoveryJobInvokeArgs()
         {
         }
+        public static new GetDiscoveryJobInvokeArgs Empty => new GetDiscoveryJobInvokeArgs();
     }
 
 

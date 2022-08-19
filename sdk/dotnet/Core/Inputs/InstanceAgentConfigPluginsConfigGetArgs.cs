@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceAgentConfigPluginsConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class InstanceAgentConfigPluginsConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Whether the plugin should be enabled or disabled.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceAgentConfigPluginsConfigGetArgs()
         {
         }
+        public static new InstanceAgentConfigPluginsConfigGetArgs Empty => new InstanceAgentConfigPluginsConfigGetArgs();
     }
 }

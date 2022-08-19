@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class IngressGatewayHostGetArgs : Pulumi.ResourceArgs
+    public sealed class IngressGatewayHostGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("hostnames")]
         private InputList<string>? _hostnames;
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public IngressGatewayHostGetArgs()
         {
         }
+        public static new IngressGatewayHostGetArgs Empty => new IngressGatewayHostGetArgs();
     }
 }

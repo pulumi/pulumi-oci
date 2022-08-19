@@ -22,21 +22,19 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBucket = Oci.ObjectStorage.GetBucket.Invoke(new()
         ///     {
-        ///         var testBucket = Output.Create(Oci.ObjectStorage.GetBucket.InvokeAsync(new Oci.ObjectStorage.GetBucketArgs
-        ///         {
-        ///             Name = @var.Bucket_name,
-        ///             Namespace = @var.Bucket_namespace,
-        ///         }));
-        ///     }
+        ///         Name = @var.Bucket_name,
+        ///         Namespace = @var.Bucket_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBucket = Oci.ObjectStorage.GetBucket.Invoke(new()
         ///     {
-        ///         var testBucket = Output.Create(Oci.ObjectStorage.GetBucket.InvokeAsync(new Oci.ObjectStorage.GetBucketArgs
-        ///         {
-        ///             Name = @var.Bucket_name,
-        ///             Namespace = @var.Bucket_namespace,
-        ///         }));
-        ///     }
+        ///         Name = @var.Bucket_name,
+        ///         Namespace = @var.Bucket_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ObjectStorage
     }
 
 
-    public sealed class GetBucketArgs : Pulumi.InvokeArgs
+    public sealed class GetBucketArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.ObjectStorage
         public GetBucketArgs()
         {
         }
+        public static new GetBucketArgs Empty => new GetBucketArgs();
     }
 
-    public sealed class GetBucketInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBucketInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.ObjectStorage
         public GetBucketInvokeArgs()
         {
         }
+        public static new GetBucketInvokeArgs Empty => new GetBucketInvokeArgs();
     }
 
 

@@ -47,30 +47,28 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testUser = new Oci.Identity.User("testUser", new()
     ///     {
-    ///         var testUser = new Oci.Identity.User("testUser", new Oci.Identity.UserArgs
+    ///         CompartmentId = @var.Tenancy_ocid,
+    ///         Description = @var.User_description,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Tenancy_ocid,
-    ///             Description = @var.User_description,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Email = @var.User_email,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Email = @var.User_email,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -82,7 +80,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/user:User")]
-    public partial class User : Pulumi.CustomResource
+    public partial class User : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Properties indicating how the user is allowed to authenticate.
@@ -227,7 +225,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class UserArgs : Pulumi.ResourceArgs
+    public sealed class UserArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the tenancy containing the user.
@@ -280,9 +278,10 @@ namespace Pulumi.Oci.Identity
         public UserArgs()
         {
         }
+        public static new UserArgs Empty => new UserArgs();
     }
 
-    public sealed class UserState : Pulumi.ResourceArgs
+    public sealed class UserState : global::Pulumi.ResourceArgs
     {
         [Input("capabilities")]
         private InputList<Inputs.UserCapabilityGetArgs>? _capabilities;
@@ -404,5 +403,6 @@ namespace Pulumi.Oci.Identity
         public UserState()
         {
         }
+        public static new UserState Empty => new UserState();
     }
 }

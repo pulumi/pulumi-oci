@@ -21,21 +21,19 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTopUtilizedProductLicenses = Oci.LicenseManager.GetTopUtilizedProductLicenses.Invoke(new()
         ///     {
-        ///         var testTopUtilizedProductLicenses = Output.Create(Oci.LicenseManager.GetTopUtilizedProductLicenses.InvokeAsync(new Oci.LicenseManager.GetTopUtilizedProductLicensesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IsCompartmentIdInSubtree = @var.Top_utilized_product_license_is_compartment_id_in_subtree,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IsCompartmentIdInSubtree = @var.Top_utilized_product_license_is_compartment_id_in_subtree,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTopUtilizedProductLicenses = Oci.LicenseManager.GetTopUtilizedProductLicenses.Invoke(new()
         ///     {
-        ///         var testTopUtilizedProductLicenses = Output.Create(Oci.LicenseManager.GetTopUtilizedProductLicenses.InvokeAsync(new Oci.LicenseManager.GetTopUtilizedProductLicensesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             IsCompartmentIdInSubtree = @var.Top_utilized_product_license_is_compartment_id_in_subtree,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         IsCompartmentIdInSubtree = @var.Top_utilized_product_license_is_compartment_id_in_subtree,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.LicenseManager
     }
 
 
-    public sealed class GetTopUtilizedProductLicensesArgs : Pulumi.InvokeArgs
+    public sealed class GetTopUtilizedProductLicensesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.LicenseManager
         public GetTopUtilizedProductLicensesArgs()
         {
         }
+        public static new GetTopUtilizedProductLicensesArgs Empty => new GetTopUtilizedProductLicensesArgs();
     }
 
-    public sealed class GetTopUtilizedProductLicensesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTopUtilizedProductLicensesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.LicenseManager
         public GetTopUtilizedProductLicensesInvokeArgs()
         {
         }
+        public static new GetTopUtilizedProductLicensesInvokeArgs Empty => new GetTopUtilizedProductLicensesInvokeArgs();
     }
 
 

@@ -21,22 +21,20 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBackendHealth = Oci.NetworkLoadBalancer.GetBackendHealth.Invoke(new()
         ///     {
-        ///         var testBackendHealth = Output.Create(Oci.NetworkLoadBalancer.GetBackendHealth.InvokeAsync(new Oci.NetworkLoadBalancer.GetBackendHealthArgs
-        ///         {
-        ///             BackendName = oci_network_load_balancer_backend.Test_backend.Name,
-        ///             BackendSetName = oci_network_load_balancer_backend_set.Test_backend_set.Name,
-        ///             NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         BackendName = oci_network_load_balancer_backend.Test_backend.Name,
+        ///         BackendSetName = oci_network_load_balancer_backend_set.Test_backend_set.Name,
+        ///         NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBackendHealth = Oci.NetworkLoadBalancer.GetBackendHealth.Invoke(new()
         ///     {
-        ///         var testBackendHealth = Output.Create(Oci.NetworkLoadBalancer.GetBackendHealth.InvokeAsync(new Oci.NetworkLoadBalancer.GetBackendHealthArgs
-        ///         {
-        ///             BackendName = oci_network_load_balancer_backend.Test_backend.Name,
-        ///             BackendSetName = oci_network_load_balancer_backend_set.Test_backend_set.Name,
-        ///             NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-        ///         }));
-        ///     }
+        ///         BackendName = oci_network_load_balancer_backend.Test_backend.Name,
+        ///         BackendSetName = oci_network_load_balancer_backend_set.Test_backend_set.Name,
+        ///         NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     }
 
 
-    public sealed class GetBackendHealthArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendHealthArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the backend server to retrieve health status for. If the backend was created with an explicitly specified name, that name should be used here. If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as &lt;ipAddress&gt;:&lt;port&gt;. If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as &lt;targetId&gt;:&lt;port&gt;.  Example: `10.0.0.3:8080` or `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;:8080`
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetBackendHealthArgs()
         {
         }
+        public static new GetBackendHealthArgs Empty => new GetBackendHealthArgs();
     }
 
-    public sealed class GetBackendHealthInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBackendHealthInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the backend server to retrieve health status for. If the backend was created with an explicitly specified name, that name should be used here. If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as &lt;ipAddress&gt;:&lt;port&gt;. If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as &lt;targetId&gt;:&lt;port&gt;.  Example: `10.0.0.3:8080` or `ocid1.privateip..oc1.&lt;var&gt;&amp;lt;unique_ID&amp;gt;&lt;/var&gt;:8080`
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public GetBackendHealthInvokeArgs()
         {
         }
+        public static new GetBackendHealthInvokeArgs Empty => new GetBackendHealthInvokeArgs();
     }
 
 

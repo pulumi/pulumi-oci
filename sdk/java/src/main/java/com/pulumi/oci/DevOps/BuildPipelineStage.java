@@ -28,6 +28,80 @@ import javax.annotation.Nullable;
  * Creates a new stage.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DevOps.BuildPipelineStage;
+ * import com.pulumi.oci.DevOps.BuildPipelineStageArgs;
+ * import com.pulumi.oci.DevOps.inputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs;
+ * import com.pulumi.oci.DevOps.inputs.BuildPipelineStageBuildSourceCollectionArgs;
+ * import com.pulumi.oci.DevOps.inputs.BuildPipelineStageDeliverArtifactCollectionArgs;
+ * import com.pulumi.oci.DevOps.inputs.BuildPipelineStagePrivateAccessConfigArgs;
+ * import com.pulumi.oci.DevOps.inputs.BuildPipelineStageWaitCriteriaArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBuildPipelineStage = new BuildPipelineStage(&#34;testBuildPipelineStage&#34;, BuildPipelineStageArgs.builder()        
+ *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+ *             .buildPipelineStagePredecessorCollection(BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs.builder()
+ *                 .items(BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs.builder()
+ *                     .id(var_.build_pipeline_stage_build_pipeline_stage_predecessor_collection_items_id())
+ *                     .build())
+ *                 .build())
+ *             .buildPipelineStageType(var_.build_pipeline_stage_build_pipeline_stage_type())
+ *             .buildSourceCollection(BuildPipelineStageBuildSourceCollectionArgs.builder()
+ *                 .items(BuildPipelineStageBuildSourceCollectionItemArgs.builder()
+ *                     .connectionType(var_.build_pipeline_stage_build_source_collection_items_connection_type())
+ *                     .branch(var_.build_pipeline_stage_build_source_collection_items_branch())
+ *                     .connectionId(oci_devops_connection.test_connection().id())
+ *                     .name(var_.build_pipeline_stage_build_source_collection_items_name())
+ *                     .repositoryId(oci_artifacts_repository.test_repository().id())
+ *                     .repositoryUrl(var_.build_pipeline_stage_build_source_collection_items_repository_url())
+ *                     .build())
+ *                 .build())
+ *             .buildSpecFile(var_.build_pipeline_stage_build_spec_file())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .deliverArtifactCollection(BuildPipelineStageDeliverArtifactCollectionArgs.builder()
+ *                 .items(BuildPipelineStageDeliverArtifactCollectionItemArgs.builder()
+ *                     .artifactId(oci_devops_artifact.test_artifact().id())
+ *                     .artifactName(var_.build_pipeline_stage_deliver_artifact_collection_items_artifact_name())
+ *                     .build())
+ *                 .build())
+ *             .deployPipelineId(oci_devops_deploy_pipeline.test_deploy_pipeline().id())
+ *             .description(var_.build_pipeline_stage_description())
+ *             .displayName(var_.build_pipeline_stage_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .image(var_.build_pipeline_stage_image())
+ *             .isPassAllParametersEnabled(var_.build_pipeline_stage_is_pass_all_parameters_enabled())
+ *             .primaryBuildSource(var_.build_pipeline_stage_primary_build_source())
+ *             .privateAccessConfig(BuildPipelineStagePrivateAccessConfigArgs.builder()
+ *                 .networkChannelType(var_.build_pipeline_stage_private_access_config_network_channel_type())
+ *                 .subnetId(oci_core_subnet.test_subnet().id())
+ *                 .nsgIds(var_.build_pipeline_stage_private_access_config_nsg_ids())
+ *                 .build())
+ *             .stageExecutionTimeoutInSeconds(var_.build_pipeline_stage_stage_execution_timeout_in_seconds())
+ *             .waitCriteria(BuildPipelineStageWaitCriteriaArgs.builder()
+ *                 .waitDuration(var_.build_pipeline_stage_wait_criteria_wait_duration())
+ *                 .waitType(var_.build_pipeline_stage_wait_criteria_wait_type())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

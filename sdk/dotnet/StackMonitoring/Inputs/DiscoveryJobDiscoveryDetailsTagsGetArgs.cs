@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring.Inputs
 {
 
-    public sealed class DiscoveryJobDiscoveryDetailsTagsGetArgs : Pulumi.ResourceArgs
+    public sealed class DiscoveryJobDiscoveryDetailsTagsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("propertiesMap")]
         private InputMap<object>? _propertiesMap;
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public DiscoveryJobDiscoveryDetailsTagsGetArgs()
         {
         }
+        public static new DiscoveryJobDiscoveryDetailsTagsGetArgs Empty => new DiscoveryJobDiscoveryDetailsTagsGetArgs();
     }
 }

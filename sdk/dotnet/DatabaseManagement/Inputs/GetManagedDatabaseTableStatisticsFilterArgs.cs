@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement.Inputs
 {
 
-    public sealed class GetManagedDatabaseTableStatisticsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetManagedDatabaseTableStatisticsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public GetManagedDatabaseTableStatisticsFilterInputArgs()
         {
         }
+        public static new GetManagedDatabaseTableStatisticsFilterInputArgs Empty => new GetManagedDatabaseTableStatisticsFilterInputArgs();
     }
 }

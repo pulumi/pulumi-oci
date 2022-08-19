@@ -28,6 +28,157 @@ import javax.annotation.Nullable;
  * Creates a new WebAppFirewallPolicy.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Waf.AppFirewallPolicy;
+ * import com.pulumi.oci.Waf.AppFirewallPolicyArgs;
+ * import com.pulumi.oci.Waf.inputs.AppFirewallPolicyActionArgs;
+ * import com.pulumi.oci.Waf.inputs.AppFirewallPolicyActionBodyArgs;
+ * import com.pulumi.oci.Waf.inputs.AppFirewallPolicyRequestAccessControlArgs;
+ * import com.pulumi.oci.Waf.inputs.AppFirewallPolicyRequestProtectionArgs;
+ * import com.pulumi.oci.Waf.inputs.AppFirewallPolicyRequestRateLimitingArgs;
+ * import com.pulumi.oci.Waf.inputs.AppFirewallPolicyResponseAccessControlArgs;
+ * import com.pulumi.oci.Waf.inputs.AppFirewallPolicyResponseProtectionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testWebAppFirewallPolicy = new AppFirewallPolicy(&#34;testWebAppFirewallPolicy&#34;, AppFirewallPolicyArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .actions(AppFirewallPolicyActionArgs.builder()
+ *                 .name(var_.web_app_firewall_policy_actions_name())
+ *                 .type(var_.web_app_firewall_policy_actions_type())
+ *                 .body(AppFirewallPolicyActionBodyArgs.builder()
+ *                     .text(var_.web_app_firewall_policy_actions_body_text())
+ *                     .type(var_.web_app_firewall_policy_actions_body_type())
+ *                     .build())
+ *                 .code(var_.web_app_firewall_policy_actions_code())
+ *                 .headers(AppFirewallPolicyActionHeaderArgs.builder()
+ *                     .name(var_.web_app_firewall_policy_actions_headers_name())
+ *                     .value(var_.web_app_firewall_policy_actions_headers_value())
+ *                     .build())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .displayName(var_.web_app_firewall_policy_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .requestAccessControl(AppFirewallPolicyRequestAccessControlArgs.builder()
+ *                 .defaultActionName(var_.web_app_firewall_policy_request_access_control_default_action_name())
+ *                 .rules(AppFirewallPolicyRequestAccessControlRuleArgs.builder()
+ *                     .actionName(var_.web_app_firewall_policy_request_access_control_rules_action_name())
+ *                     .name(var_.web_app_firewall_policy_request_access_control_rules_name())
+ *                     .type(var_.web_app_firewall_policy_request_access_control_rules_type())
+ *                     .condition(var_.web_app_firewall_policy_request_access_control_rules_condition())
+ *                     .conditionLanguage(var_.web_app_firewall_policy_request_access_control_rules_condition_language())
+ *                     .build())
+ *                 .build())
+ *             .requestProtection(AppFirewallPolicyRequestProtectionArgs.builder()
+ *                 .bodyInspectionSizeLimitExceededActionName(var_.web_app_firewall_policy_request_protection_body_inspection_size_limit_exceeded_action_name())
+ *                 .bodyInspectionSizeLimitInBytes(var_.web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes())
+ *                 .rules(AppFirewallPolicyRequestProtectionRuleArgs.builder()
+ *                     .actionName(var_.web_app_firewall_policy_request_protection_rules_action_name())
+ *                     .name(var_.web_app_firewall_policy_request_protection_rules_name())
+ *                     .protectionCapabilities(AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs.builder()
+ *                         .key(var_.web_app_firewall_policy_request_protection_rules_protection_capabilities_key())
+ *                         .version(var_.web_app_firewall_policy_request_protection_rules_protection_capabilities_version())
+ *                         .actionName(var_.web_app_firewall_policy_request_protection_rules_protection_capabilities_action_name())
+ *                         .collaborativeActionThreshold(var_.web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_action_threshold())
+ *                         .collaborativeWeights(AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs.builder()
+ *                             .key(var_.web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_key())
+ *                             .weight(var_.web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_weight())
+ *                             .build())
+ *                         .exclusions(AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs.builder()
+ *                             .args(var_.web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_args())
+ *                             .requestCookies(var_.web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_request_cookies())
+ *                             .build())
+ *                         .build())
+ *                     .type(var_.web_app_firewall_policy_request_protection_rules_type())
+ *                     .condition(var_.web_app_firewall_policy_request_protection_rules_condition())
+ *                     .conditionLanguage(var_.web_app_firewall_policy_request_protection_rules_condition_language())
+ *                     .isBodyInspectionEnabled(var_.web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled())
+ *                     .protectionCapabilitySettings(AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs.builder()
+ *                         .allowedHttpMethods(var_.web_app_firewall_policy_request_protection_rules_protection_capability_settings_allowed_http_methods())
+ *                         .maxHttpRequestHeaderLength(var_.web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length())
+ *                         .maxHttpRequestHeaders(var_.web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_headers())
+ *                         .maxNumberOfArguments(var_.web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_number_of_arguments())
+ *                         .maxSingleArgumentLength(var_.web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_single_argument_length())
+ *                         .maxTotalArgumentLength(var_.web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_total_argument_length())
+ *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .requestRateLimiting(AppFirewallPolicyRequestRateLimitingArgs.builder()
+ *                 .rules(AppFirewallPolicyRequestRateLimitingRuleArgs.builder()
+ *                     .actionName(var_.web_app_firewall_policy_request_rate_limiting_rules_action_name())
+ *                     .configurations(AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs.builder()
+ *                         .periodInSeconds(var_.web_app_firewall_policy_request_rate_limiting_rules_configurations_period_in_seconds())
+ *                         .requestsLimit(var_.web_app_firewall_policy_request_rate_limiting_rules_configurations_requests_limit())
+ *                         .actionDurationInSeconds(var_.web_app_firewall_policy_request_rate_limiting_rules_configurations_action_duration_in_seconds())
+ *                         .build())
+ *                     .name(var_.web_app_firewall_policy_request_rate_limiting_rules_name())
+ *                     .type(var_.web_app_firewall_policy_request_rate_limiting_rules_type())
+ *                     .condition(var_.web_app_firewall_policy_request_rate_limiting_rules_condition())
+ *                     .conditionLanguage(var_.web_app_firewall_policy_request_rate_limiting_rules_condition_language())
+ *                     .build())
+ *                 .build())
+ *             .responseAccessControl(AppFirewallPolicyResponseAccessControlArgs.builder()
+ *                 .rules(AppFirewallPolicyResponseAccessControlRuleArgs.builder()
+ *                     .actionName(var_.web_app_firewall_policy_response_access_control_rules_action_name())
+ *                     .name(var_.web_app_firewall_policy_response_access_control_rules_name())
+ *                     .type(var_.web_app_firewall_policy_response_access_control_rules_type())
+ *                     .condition(var_.web_app_firewall_policy_response_access_control_rules_condition())
+ *                     .conditionLanguage(var_.web_app_firewall_policy_response_access_control_rules_condition_language())
+ *                     .build())
+ *                 .build())
+ *             .responseProtection(AppFirewallPolicyResponseProtectionArgs.builder()
+ *                 .rules(AppFirewallPolicyResponseProtectionRuleArgs.builder()
+ *                     .actionName(var_.web_app_firewall_policy_response_protection_rules_action_name())
+ *                     .name(var_.web_app_firewall_policy_response_protection_rules_name())
+ *                     .protectionCapabilities(AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs.builder()
+ *                         .key(var_.web_app_firewall_policy_response_protection_rules_protection_capabilities_key())
+ *                         .version(var_.web_app_firewall_policy_response_protection_rules_protection_capabilities_version())
+ *                         .actionName(var_.web_app_firewall_policy_response_protection_rules_protection_capabilities_action_name())
+ *                         .collaborativeActionThreshold(var_.web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_action_threshold())
+ *                         .collaborativeWeights(AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs.builder()
+ *                             .key(var_.web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_key())
+ *                             .weight(var_.web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_weight())
+ *                             .build())
+ *                         .exclusions(AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs.builder()
+ *                             .args(var_.web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_args())
+ *                             .requestCookies(var_.web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_request_cookies())
+ *                             .build())
+ *                         .build())
+ *                     .type(var_.web_app_firewall_policy_response_protection_rules_type())
+ *                     .condition(var_.web_app_firewall_policy_response_protection_rules_condition())
+ *                     .conditionLanguage(var_.web_app_firewall_policy_response_protection_rules_condition_language())
+ *                     .isBodyInspectionEnabled(var_.web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled())
+ *                     .protectionCapabilitySettings(AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs.builder()
+ *                         .allowedHttpMethods(var_.web_app_firewall_policy_response_protection_rules_protection_capability_settings_allowed_http_methods())
+ *                         .maxHttpRequestHeaderLength(var_.web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length())
+ *                         .maxHttpRequestHeaders(var_.web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_headers())
+ *                         .maxNumberOfArguments(var_.web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_number_of_arguments())
+ *                         .maxSingleArgumentLength(var_.web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_single_argument_length())
+ *                         .maxTotalArgumentLength(var_.web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_total_argument_length())
+ *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .systemTags(var_.web_app_firewall_policy_system_tags())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

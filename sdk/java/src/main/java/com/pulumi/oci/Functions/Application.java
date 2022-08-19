@@ -20,6 +20,53 @@ import javax.annotation.Nullable;
 
 /**
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Functions.Application;
+ * import com.pulumi.oci.Functions.ApplicationArgs;
+ * import com.pulumi.oci.Functions.inputs.ApplicationImagePolicyConfigArgs;
+ * import com.pulumi.oci.Functions.inputs.ApplicationTraceConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testApplication = new Application(&#34;testApplication&#34;, ApplicationArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.application_display_name())
+ *             .subnetIds(var_.application_subnet_ids())
+ *             .config(var_.application_config())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .networkSecurityGroupIds(var_.application_network_security_group_ids())
+ *             .imagePolicyConfig(ApplicationImagePolicyConfigArgs.builder()
+ *                 .isPolicyEnabled(var_.application_image_policy_config_is_policy_enabled())
+ *                 .keyDetails(ApplicationImagePolicyConfigKeyDetailArgs.builder()
+ *                     .kmsKeyId(oci_kms_key.test_key().id())
+ *                     .build())
+ *                 .build())
+ *             .syslogUrl(var_.application_syslog_url())
+ *             .traceConfig(ApplicationTraceConfigArgs.builder()
+ *                 .domainId(oci_functions_domain.test_domain().id())
+ *                 .isEnabled(var_.application_trace_config_is_enabled())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

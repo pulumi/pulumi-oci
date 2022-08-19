@@ -17,18 +17,56 @@ namespace Pulumi.Oci.ContainerEngine
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testNodePool = new Oci.ContainerEngine.NodePool("testNodePool", new()
     ///     {
-    ///         var testNodePool = new Oci.ContainerEngine.NodePool("testNodePool", new Oci.ContainerEngine.NodePoolArgs
+    ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         NodeShape = @var.Node_pool_node_shape,
+    ///         DefinedTags = 
     ///         {
-    ///             ClusterId = oci_containerengine_cluster.Test_cluster.Id,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             NodeShape = @var.Node_pool_node_shape,
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         InitialNodeLabels = new[]
+    ///         {
+    ///             new Oci.ContainerEngine.Inputs.NodePoolInitialNodeLabelArgs
+    ///             {
+    ///                 Key = @var.Node_pool_initial_node_labels_key,
+    ///                 Value = @var.Node_pool_initial_node_labels_value,
+    ///             },
+    ///         },
+    ///         KubernetesVersion = @var.Node_pool_kubernetes_version,
+    ///         NodeConfigDetails = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsArgs
+    ///         {
+    ///             PlacementConfigs = new[]
+    ///             {
+    ///                 new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsPlacementConfigArgs
+    ///                 {
+    ///                     AvailabilityDomain = @var.Node_pool_node_config_details_placement_configs_availability_domain,
+    ///                     SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                     CapacityReservationId = oci_containerengine_capacity_reservation.Test_capacity_reservation.Id,
+    ///                     FaultDomains = @var.Node_pool_node_config_details_placement_configs_fault_domains,
+    ///                 },
+    ///             },
+    ///             Size = @var.Node_pool_node_config_details_size,
+    ///             IsPvEncryptionInTransitEnabled = @var.Node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
+    ///             KmsKeyId = oci_kms_key.Test_key.Id,
+    ///             NodePoolPodNetworkOptionDetails = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs
+    ///             {
+    ///                 CniType = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
+    ///                 MaxPodsPerNode = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
+    ///                 PodNsgIds = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
+    ///                 PodSubnetIds = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
+    ///             },
     ///             DefinedTags = 
     ///             {
     ///                 { "Operations.CostCenter", "42" },
@@ -37,72 +75,32 @@ namespace Pulumi.Oci.ContainerEngine
     ///             {
     ///                 { "Department", "Finance" },
     ///             },
-    ///             InitialNodeLabels = 
-    ///             {
-    ///                 new Oci.ContainerEngine.Inputs.NodePoolInitialNodeLabelArgs
-    ///                 {
-    ///                     Key = @var.Node_pool_initial_node_labels_key,
-    ///                     Value = @var.Node_pool_initial_node_labels_value,
-    ///                 },
-    ///             },
-    ///             KubernetesVersion = @var.Node_pool_kubernetes_version,
-    ///             NodeConfigDetails = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsArgs
-    ///             {
-    ///                 PlacementConfigs = 
-    ///                 {
-    ///                     new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsPlacementConfigArgs
-    ///                     {
-    ///                         AvailabilityDomain = @var.Node_pool_node_config_details_placement_configs_availability_domain,
-    ///                         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                         CapacityReservationId = oci_containerengine_capacity_reservation.Test_capacity_reservation.Id,
-    ///                         FaultDomains = @var.Node_pool_node_config_details_placement_configs_fault_domains,
-    ///                     },
-    ///                 },
-    ///                 Size = @var.Node_pool_node_config_details_size,
-    ///                 IsPvEncryptionInTransitEnabled = @var.Node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
-    ///                 KmsKeyId = oci_kms_key.Test_key.Id,
-    ///                 NodePoolPodNetworkOptionDetails = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs
-    ///                 {
-    ///                     CniType = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
-    ///                     MaxPodsPerNode = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
-    ///                     PodNsgIds = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
-    ///                     PodSubnetIds = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
-    ///                 },
-    ///                 DefinedTags = 
-    ///                 {
-    ///                     { "Operations.CostCenter", "42" },
-    ///                 },
-    ///                 FreeformTags = 
-    ///                 {
-    ///                     { "Department", "Finance" },
-    ///                 },
-    ///                 NsgIds = @var.Node_pool_node_config_details_nsg_ids,
-    ///             },
-    ///             NodeEvictionNodePoolSettings = new Oci.ContainerEngine.Inputs.NodePoolNodeEvictionNodePoolSettingsArgs
-    ///             {
-    ///                 EvictionGraceDuration = @var.Node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
-    ///                 IsForceDeleteAfterGraceDuration = @var.Node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
-    ///             },
-    ///             NodeImageName = oci_core_image.Test_image.Name,
-    ///             NodeMetadata = @var.Node_pool_node_metadata,
-    ///             NodeShapeConfig = new Oci.ContainerEngine.Inputs.NodePoolNodeShapeConfigArgs
-    ///             {
-    ///                 MemoryInGbs = @var.Node_pool_node_shape_config_memory_in_gbs,
-    ///                 Ocpus = @var.Node_pool_node_shape_config_ocpus,
-    ///             },
-    ///             NodeSourceDetails = new Oci.ContainerEngine.Inputs.NodePoolNodeSourceDetailsArgs
-    ///             {
-    ///                 ImageId = oci_core_image.Test_image.Id,
-    ///                 SourceType = @var.Node_pool_node_source_details_source_type,
-    ///                 BootVolumeSizeInGbs = @var.Node_pool_node_source_details_boot_volume_size_in_gbs,
-    ///             },
-    ///             QuantityPerSubnet = @var.Node_pool_quantity_per_subnet,
-    ///             SshPublicKey = @var.Node_pool_ssh_public_key,
-    ///             SubnetIds = @var.Node_pool_subnet_ids,
-    ///         });
-    ///     }
+    ///             NsgIds = @var.Node_pool_node_config_details_nsg_ids,
+    ///         },
+    ///         NodeEvictionNodePoolSettings = new Oci.ContainerEngine.Inputs.NodePoolNodeEvictionNodePoolSettingsArgs
+    ///         {
+    ///             EvictionGraceDuration = @var.Node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
+    ///             IsForceDeleteAfterGraceDuration = @var.Node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
+    ///         },
+    ///         NodeImageName = oci_core_image.Test_image.Name,
+    ///         NodeMetadata = @var.Node_pool_node_metadata,
+    ///         NodeShapeConfig = new Oci.ContainerEngine.Inputs.NodePoolNodeShapeConfigArgs
+    ///         {
+    ///             MemoryInGbs = @var.Node_pool_node_shape_config_memory_in_gbs,
+    ///             Ocpus = @var.Node_pool_node_shape_config_ocpus,
+    ///         },
+    ///         NodeSourceDetails = new Oci.ContainerEngine.Inputs.NodePoolNodeSourceDetailsArgs
+    ///         {
+    ///             ImageId = oci_core_image.Test_image.Id,
+    ///             SourceType = @var.Node_pool_node_source_details_source_type,
+    ///             BootVolumeSizeInGbs = @var.Node_pool_node_source_details_boot_volume_size_in_gbs,
+    ///         },
+    ///         QuantityPerSubnet = @var.Node_pool_quantity_per_subnet,
+    ///         SshPublicKey = @var.Node_pool_ssh_public_key,
+    ///         SubnetIds = @var.Node_pool_subnet_ids,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -114,7 +112,7 @@ namespace Pulumi.Oci.ContainerEngine
     /// ```
     /// </summary>
     [OciResourceType("oci:ContainerEngine/nodePool:NodePool")]
-    public partial class NodePool : Pulumi.CustomResource
+    public partial class NodePool : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the cluster to which this node pool is attached.
@@ -292,7 +290,7 @@ namespace Pulumi.Oci.ContainerEngine
         }
     }
 
-    public sealed class NodePoolArgs : Pulumi.ResourceArgs
+    public sealed class NodePoolArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the cluster to which this node pool is attached.
@@ -435,9 +433,10 @@ namespace Pulumi.Oci.ContainerEngine
         public NodePoolArgs()
         {
         }
+        public static new NodePoolArgs Empty => new NodePoolArgs();
     }
 
-    public sealed class NodePoolState : Pulumi.ResourceArgs
+    public sealed class NodePoolState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the cluster to which this node pool is attached.
@@ -616,5 +615,6 @@ namespace Pulumi.Oci.ContainerEngine
         public NodePoolState()
         {
         }
+        public static new NodePoolState Empty => new NodePoolState();
     }
 }

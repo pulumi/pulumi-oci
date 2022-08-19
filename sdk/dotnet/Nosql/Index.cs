@@ -17,31 +17,29 @@ namespace Pulumi.Oci.Nosql
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testIndex = new Oci.Nosql.Index("testIndex", new()
     ///     {
-    ///         var testIndex = new Oci.Nosql.Index("testIndex", new Oci.Nosql.IndexArgs
+    ///         Keys = new[]
     ///         {
-    ///             Keys = 
+    ///             new Oci.Nosql.Inputs.IndexKeyArgs
     ///             {
-    ///                 new Oci.Nosql.Inputs.IndexKeyArgs
-    ///                 {
-    ///                     ColumnName = @var.Index_keys_column_name,
-    ///                     JsonFieldType = @var.Index_keys_json_field_type,
-    ///                     JsonPath = @var.Index_keys_json_path,
-    ///                 },
+    ///                 ColumnName = @var.Index_keys_column_name,
+    ///                 JsonFieldType = @var.Index_keys_json_field_type,
+    ///                 JsonPath = @var.Index_keys_json_path,
     ///             },
-    ///             TableNameOrId = oci_nosql_table_name_or.Test_table_name_or.Id,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             IsIfNotExists = @var.Index_is_if_not_exists,
-    ///         });
-    ///     }
+    ///         },
+    ///         TableNameOrId = oci_nosql_table_name_or.Test_table_name_or.Id,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         IsIfNotExists = @var.Index_is_if_not_exists,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -53,7 +51,7 @@ namespace Pulumi.Oci.Nosql
     /// ```
     /// </summary>
     [OciResourceType("oci:Nosql/index:Index")]
-    public partial class Index : Pulumi.CustomResource
+    public partial class Index : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
@@ -153,7 +151,7 @@ namespace Pulumi.Oci.Nosql
         }
     }
 
-    public sealed class IndexArgs : Pulumi.ResourceArgs
+    public sealed class IndexArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
@@ -194,9 +192,10 @@ namespace Pulumi.Oci.Nosql
         public IndexArgs()
         {
         }
+        public static new IndexArgs Empty => new IndexArgs();
     }
 
-    public sealed class IndexState : Pulumi.ResourceArgs
+    public sealed class IndexState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
@@ -261,5 +260,6 @@ namespace Pulumi.Oci.Nosql
         public IndexState()
         {
         }
+        public static new IndexState Empty => new IndexState();
     }
 }

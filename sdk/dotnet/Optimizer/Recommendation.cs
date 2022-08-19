@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Optimizer
     /// ```
     /// </summary>
     [OciResourceType("oci:Optimizer/recommendation:Recommendation")]
-    public partial class Recommendation : Pulumi.CustomResource
+    public partial class Recommendation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The unique OCID associated with the category.
@@ -170,7 +170,7 @@ namespace Pulumi.Oci.Optimizer
         }
     }
 
-    public sealed class RecommendationArgs : Pulumi.ResourceArgs
+    public sealed class RecommendationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The unique OCID associated with the recommendation.
@@ -193,9 +193,10 @@ namespace Pulumi.Oci.Optimizer
         public RecommendationArgs()
         {
         }
+        public static new RecommendationArgs Empty => new RecommendationArgs();
     }
 
-    public sealed class RecommendationState : Pulumi.ResourceArgs
+    public sealed class RecommendationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The unique OCID associated with the category.
@@ -314,5 +315,6 @@ namespace Pulumi.Oci.Optimizer
         public RecommendationState()
         {
         }
+        public static new RecommendationState Empty => new RecommendationState();
     }
 }

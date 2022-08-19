@@ -17,24 +17,22 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testListener = new Oci.NetworkLoadBalancer.Listener("testListener", new()
     ///     {
-    ///         var testListener = new Oci.NetworkLoadBalancer.Listener("testListener", new Oci.NetworkLoadBalancer.ListenerArgs
-    ///         {
-    ///             DefaultBackendSetName = oci_network_load_balancer_backend_set.Test_backend_set.Name,
-    ///             NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-    ///             Port = @var.Listener_port,
-    ///             Protocol = @var.Listener_protocol,
-    ///             IpVersion = @var.Listener_ip_version,
-    ///         });
-    ///     }
+    ///         DefaultBackendSetName = oci_network_load_balancer_backend_set.Test_backend_set.Name,
+    ///         NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+    ///         Port = @var.Listener_port,
+    ///         Protocol = @var.Listener_protocol,
+    ///         IpVersion = @var.Listener_ip_version,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -46,7 +44,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     /// ```
     /// </summary>
     [OciResourceType("oci:NetworkLoadBalancer/listener:Listener")]
-    public partial class Listener : Pulumi.CustomResource
+    public partial class Listener : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The name of the associated backend set.  Example: `example_backend_set`
@@ -128,7 +126,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         }
     }
 
-    public sealed class ListenerArgs : Pulumi.ResourceArgs
+    public sealed class ListenerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The name of the associated backend set.  Example: `example_backend_set`
@@ -169,9 +167,10 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public ListenerArgs()
         {
         }
+        public static new ListenerArgs Empty => new ListenerArgs();
     }
 
-    public sealed class ListenerState : Pulumi.ResourceArgs
+    public sealed class ListenerState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The name of the associated backend set.  Example: `example_backend_set`
@@ -212,5 +211,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public ListenerState()
         {
         }
+        public static new ListenerState Empty => new ListenerState();
     }
 }

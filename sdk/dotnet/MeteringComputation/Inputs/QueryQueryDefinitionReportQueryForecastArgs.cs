@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class QueryQueryDefinitionReportQueryForecastArgs : Pulumi.ResourceArgs
+    public sealed class QueryQueryDefinitionReportQueryForecastArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public QueryQueryDefinitionReportQueryForecastArgs()
         {
         }
+        public static new QueryQueryDefinitionReportQueryForecastArgs Empty => new QueryQueryDefinitionReportQueryForecastArgs();
     }
 }

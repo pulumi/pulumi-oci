@@ -22,29 +22,27 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testObject = Oci.ObjectStorage.GetObject.Invoke(new()
         ///     {
-        ///         var testObject = Output.Create(Oci.ObjectStorage.GetObject.InvokeAsync(new Oci.ObjectStorage.GetObjectArgs
-        ///         {
-        ///             Bucket = @var.Object_bucket,
-        ///             Namespace = @var.Object_namespace,
-        ///             Object = @var.Object_object,
-        ///             HttpResponseCacheControl = @var.Object_http_response_cache_control,
-        ///             HttpResponseContentDisposition = @var.Object_http_response_content_disposition,
-        ///             HttpResponseContentEncoding = @var.Object_http_response_content_encoding,
-        ///             HttpResponseContentLanguage = @var.Object_http_response_content_language,
-        ///             HttpResponseContentType = @var.Object_http_response_content_type,
-        ///             HttpResponseExpires = @var.Object_http_response_expires,
-        ///             VersionId = oci_objectstorage_version.Test_version.Id,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Object_bucket,
+        ///         Namespace = @var.Object_namespace,
+        ///         Object = @var.Object_object,
+        ///         HttpResponseCacheControl = @var.Object_http_response_cache_control,
+        ///         HttpResponseContentDisposition = @var.Object_http_response_content_disposition,
+        ///         HttpResponseContentEncoding = @var.Object_http_response_content_encoding,
+        ///         HttpResponseContentLanguage = @var.Object_http_response_content_language,
+        ///         HttpResponseContentType = @var.Object_http_response_content_type,
+        ///         HttpResponseExpires = @var.Object_http_response_expires,
+        ///         VersionId = oci_objectstorage_version.Test_version.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -63,29 +61,27 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testObject = Oci.ObjectStorage.GetObject.Invoke(new()
         ///     {
-        ///         var testObject = Output.Create(Oci.ObjectStorage.GetObject.InvokeAsync(new Oci.ObjectStorage.GetObjectArgs
-        ///         {
-        ///             Bucket = @var.Object_bucket,
-        ///             Namespace = @var.Object_namespace,
-        ///             Object = @var.Object_object,
-        ///             HttpResponseCacheControl = @var.Object_http_response_cache_control,
-        ///             HttpResponseContentDisposition = @var.Object_http_response_content_disposition,
-        ///             HttpResponseContentEncoding = @var.Object_http_response_content_encoding,
-        ///             HttpResponseContentLanguage = @var.Object_http_response_content_language,
-        ///             HttpResponseContentType = @var.Object_http_response_content_type,
-        ///             HttpResponseExpires = @var.Object_http_response_expires,
-        ///             VersionId = oci_objectstorage_version.Test_version.Id,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Object_bucket,
+        ///         Namespace = @var.Object_namespace,
+        ///         Object = @var.Object_object,
+        ///         HttpResponseCacheControl = @var.Object_http_response_cache_control,
+        ///         HttpResponseContentDisposition = @var.Object_http_response_content_disposition,
+        ///         HttpResponseContentEncoding = @var.Object_http_response_content_encoding,
+        ///         HttpResponseContentLanguage = @var.Object_http_response_content_language,
+        ///         HttpResponseContentType = @var.Object_http_response_content_type,
+        ///         HttpResponseExpires = @var.Object_http_response_expires,
+        ///         VersionId = oci_objectstorage_version.Test_version.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.ObjectStorage
     }
 
 
-    public sealed class GetObjectArgs : Pulumi.InvokeArgs
+    public sealed class GetObjectArgs : global::Pulumi.InvokeArgs
     {
         [Input("base64EncodeContent")]
         public bool? Base64EncodeContent { get; set; }
@@ -169,9 +165,10 @@ namespace Pulumi.Oci.ObjectStorage
         public GetObjectArgs()
         {
         }
+        public static new GetObjectArgs Empty => new GetObjectArgs();
     }
 
-    public sealed class GetObjectInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetObjectInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("base64EncodeContent")]
         public Input<bool>? Base64EncodeContent { get; set; }
@@ -245,6 +242,7 @@ namespace Pulumi.Oci.ObjectStorage
         public GetObjectInvokeArgs()
         {
         }
+        public static new GetObjectInvokeArgs Empty => new GetObjectInvokeArgs();
     }
 
 

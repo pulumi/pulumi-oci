@@ -29,6 +29,34 @@ public final class StackMonitoringFunctions {
      * API to get the details of discovery Job by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJob = StackMonitoringFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
+     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryJobResult> getDiscoveryJob(GetDiscoveryJobArgs args) {
@@ -40,6 +68,34 @@ public final class StackMonitoringFunctions {
      * API to get the details of discovery Job by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJob = StackMonitoringFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
+     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryJobResult> getDiscoveryJobPlain(GetDiscoveryJobPlainArgs args) {
@@ -51,6 +107,34 @@ public final class StackMonitoringFunctions {
      * API to get the details of discovery Job by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJob = StackMonitoringFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
+     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryJobResult> getDiscoveryJob(GetDiscoveryJobArgs args, InvokeOptions options) {
@@ -62,6 +146,34 @@ public final class StackMonitoringFunctions {
      * API to get the details of discovery Job by identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJob = StackMonitoringFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
+     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryJobResult> getDiscoveryJobPlain(GetDiscoveryJobPlainArgs args, InvokeOptions options) {
@@ -73,6 +185,35 @@ public final class StackMonitoringFunctions {
      * API to get all the logs of a Discovery Job.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobLogs = StackMonitoringFunctions.getDiscoveryJobLogs(GetDiscoveryJobLogsArgs.builder()
+     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
+     *             .logType(var_.discovery_job_log_log_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryJobLogsResult> getDiscoveryJobLogs(GetDiscoveryJobLogsArgs args) {
@@ -84,6 +225,35 @@ public final class StackMonitoringFunctions {
      * API to get all the logs of a Discovery Job.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobLogs = StackMonitoringFunctions.getDiscoveryJobLogs(GetDiscoveryJobLogsArgs.builder()
+     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
+     *             .logType(var_.discovery_job_log_log_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryJobLogsResult> getDiscoveryJobLogsPlain(GetDiscoveryJobLogsPlainArgs args) {
@@ -95,6 +265,35 @@ public final class StackMonitoringFunctions {
      * API to get all the logs of a Discovery Job.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobLogs = StackMonitoringFunctions.getDiscoveryJobLogs(GetDiscoveryJobLogsArgs.builder()
+     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
+     *             .logType(var_.discovery_job_log_log_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryJobLogsResult> getDiscoveryJobLogs(GetDiscoveryJobLogsArgs args, InvokeOptions options) {
@@ -106,6 +305,35 @@ public final class StackMonitoringFunctions {
      * API to get all the logs of a Discovery Job.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobLogs = StackMonitoringFunctions.getDiscoveryJobLogs(GetDiscoveryJobLogsArgs.builder()
+     *             .discoveryJobId(oci_stack_monitoring_discovery_job.test_discovery_job().id())
+     *             .logType(var_.discovery_job_log_log_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryJobLogsResult> getDiscoveryJobLogsPlain(GetDiscoveryJobLogsPlainArgs args, InvokeOptions options) {
@@ -117,6 +345,35 @@ public final class StackMonitoringFunctions {
      * API to get the details of all Discovery Jobs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobs = StackMonitoringFunctions.getDiscoveryJobs(GetDiscoveryJobsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.discovery_job_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryJobsResult> getDiscoveryJobs(GetDiscoveryJobsArgs args) {
@@ -128,6 +385,35 @@ public final class StackMonitoringFunctions {
      * API to get the details of all Discovery Jobs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobs = StackMonitoringFunctions.getDiscoveryJobs(GetDiscoveryJobsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.discovery_job_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryJobsResult> getDiscoveryJobsPlain(GetDiscoveryJobsPlainArgs args) {
@@ -139,6 +425,35 @@ public final class StackMonitoringFunctions {
      * API to get the details of all Discovery Jobs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobs = StackMonitoringFunctions.getDiscoveryJobs(GetDiscoveryJobsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.discovery_job_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDiscoveryJobsResult> getDiscoveryJobs(GetDiscoveryJobsArgs args, InvokeOptions options) {
@@ -150,6 +465,35 @@ public final class StackMonitoringFunctions {
      * API to get the details of all Discovery Jobs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDiscoveryJobs = StackMonitoringFunctions.getDiscoveryJobs(GetDiscoveryJobsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.discovery_job_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDiscoveryJobsResult> getDiscoveryJobsPlain(GetDiscoveryJobsPlainArgs args, InvokeOptions options) {
@@ -161,6 +505,34 @@ public final class StackMonitoringFunctions {
      * Gets a monitored resource by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResource = StackMonitoringFunctions.getMonitoredResource(GetMonitoredResourceArgs.builder()
+     *             .monitoredResourceId(oci_stack_monitoring_monitored_resource.test_monitored_resource().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMonitoredResourceResult> getMonitoredResource(GetMonitoredResourceArgs args) {
@@ -172,6 +544,34 @@ public final class StackMonitoringFunctions {
      * Gets a monitored resource by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResource = StackMonitoringFunctions.getMonitoredResource(GetMonitoredResourceArgs.builder()
+     *             .monitoredResourceId(oci_stack_monitoring_monitored_resource.test_monitored_resource().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMonitoredResourceResult> getMonitoredResourcePlain(GetMonitoredResourcePlainArgs args) {
@@ -183,6 +583,34 @@ public final class StackMonitoringFunctions {
      * Gets a monitored resource by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResource = StackMonitoringFunctions.getMonitoredResource(GetMonitoredResourceArgs.builder()
+     *             .monitoredResourceId(oci_stack_monitoring_monitored_resource.test_monitored_resource().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetMonitoredResourceResult> getMonitoredResource(GetMonitoredResourceArgs args, InvokeOptions options) {
@@ -194,6 +622,34 @@ public final class StackMonitoringFunctions {
      * Gets a monitored resource by identifier
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredResource = StackMonitoringFunctions.getMonitoredResource(GetMonitoredResourceArgs.builder()
+     *             .monitoredResourceId(oci_stack_monitoring_monitored_resource.test_monitored_resource().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetMonitoredResourceResult> getMonitoredResourcePlain(GetMonitoredResourcePlainArgs args, InvokeOptions options) {

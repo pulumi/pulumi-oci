@@ -28,6 +28,60 @@ import javax.annotation.Nullable;
  * Creates a cloud VM cluster.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.CloudVmCluster;
+ * import com.pulumi.oci.Database.CloudVmClusterArgs;
+ * import com.pulumi.oci.Database.inputs.CloudVmClusterDataCollectionOptionsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCloudVmCluster = new CloudVmCluster(&#34;testCloudVmCluster&#34;, CloudVmClusterArgs.builder()        
+ *             .backupSubnetId(oci_core_subnet.test_subnet().id())
+ *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+ *             .compartmentId(var_.compartment_id())
+ *             .cpuCoreCount(var_.cloud_vm_cluster_cpu_core_count())
+ *             .displayName(var_.cloud_vm_cluster_display_name())
+ *             .giVersion(var_.cloud_vm_cluster_gi_version())
+ *             .hostname(var_.cloud_vm_cluster_hostname())
+ *             .sshPublicKeys(var_.cloud_vm_cluster_ssh_public_keys())
+ *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .backupNetworkNsgIds(var_.cloud_vm_cluster_backup_network_nsg_ids())
+ *             .clusterName(var_.cloud_vm_cluster_cluster_name())
+ *             .dataCollectionOptions(CloudVmClusterDataCollectionOptionsArgs.builder()
+ *                 .isDiagnosticsEventsEnabled(var_.cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled())
+ *                 .build())
+ *             .dataStoragePercentage(var_.cloud_vm_cluster_data_storage_percentage())
+ *             .definedTags(var_.cloud_vm_cluster_defined_tags())
+ *             .domain(var_.cloud_vm_cluster_domain())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isLocalBackupEnabled(var_.cloud_vm_cluster_is_local_backup_enabled())
+ *             .isSparseDiskgroupEnabled(var_.cloud_vm_cluster_is_sparse_diskgroup_enabled())
+ *             .licenseModel(var_.cloud_vm_cluster_license_model())
+ *             .nsgIds(var_.cloud_vm_cluster_nsg_ids())
+ *             .ocpuCount(var_.cloud_vm_cluster_ocpu_count())
+ *             .scanListenerPortTcp(var_.cloud_vm_cluster_scan_listener_port_tcp())
+ *             .scanListenerPortTcpSsl(var_.cloud_vm_cluster_scan_listener_port_tcp_ssl())
+ *             .timeZone(var_.cloud_vm_cluster_time_zone())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

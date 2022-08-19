@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystemComputePerformances = Oci.Database.GetDbSystemComputePerformances.Invoke(new()
         ///     {
-        ///         var testDbSystemComputePerformances = Output.Create(Oci.Database.GetDbSystemComputePerformances.InvokeAsync(new Oci.Database.GetDbSystemComputePerformancesArgs
-        ///         {
-        ///             DbSystemShape = @var.Db_system_compute_performance_db_system_shape,
-        ///         }));
-        ///     }
+        ///         DbSystemShape = @var.Db_system_compute_performance_db_system_shape,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbSystemComputePerformances = Oci.Database.GetDbSystemComputePerformances.Invoke(new()
         ///     {
-        ///         var testDbSystemComputePerformances = Output.Create(Oci.Database.GetDbSystemComputePerformances.InvokeAsync(new Oci.Database.GetDbSystemComputePerformancesArgs
-        ///         {
-        ///             DbSystemShape = @var.Db_system_compute_performance_db_system_shape,
-        ///         }));
-        ///     }
+        ///         DbSystemShape = @var.Db_system_compute_performance_db_system_shape,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetDbSystemComputePerformancesArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemComputePerformancesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// If provided, filters the results to the set of database versions which are supported for the given shape.
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Database
         public GetDbSystemComputePerformancesArgs()
         {
         }
+        public static new GetDbSystemComputePerformancesArgs Empty => new GetDbSystemComputePerformancesArgs();
     }
 
-    public sealed class GetDbSystemComputePerformancesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbSystemComputePerformancesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// If provided, filters the results to the set of database versions which are supported for the given shape.
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Database
         public GetDbSystemComputePerformancesInvokeArgs()
         {
         }
+        public static new GetDbSystemComputePerformancesInvokeArgs Empty => new GetDbSystemComputePerformancesInvokeArgs();
     }
 
 

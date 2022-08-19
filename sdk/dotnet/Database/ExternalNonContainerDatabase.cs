@@ -17,26 +17,24 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testExternalNonContainerDatabase = new Oci.Database.ExternalNonContainerDatabase("testExternalNonContainerDatabase", new()
     ///     {
-    ///         var testExternalNonContainerDatabase = new Oci.Database.ExternalNonContainerDatabase("testExternalNonContainerDatabase", new Oci.Database.ExternalNonContainerDatabaseArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.External_non_container_database_display_name,
+    ///         DefinedTags = @var.External_non_container_database_defined_tags,
+    ///         FreeformTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.External_non_container_database_display_name,
-    ///             DefinedTags = @var.External_non_container_database_defined_tags,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -48,7 +46,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase")]
-    public partial class ExternalNonContainerDatabase : Pulumi.CustomResource
+    public partial class ExternalNonContainerDatabase : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The character set of the external database.
@@ -208,7 +206,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class ExternalNonContainerDatabaseArgs : Pulumi.ResourceArgs
+    public sealed class ExternalNonContainerDatabaseArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -249,9 +247,10 @@ namespace Pulumi.Oci.Database
         public ExternalNonContainerDatabaseArgs()
         {
         }
+        public static new ExternalNonContainerDatabaseArgs Empty => new ExternalNonContainerDatabaseArgs();
     }
 
-    public sealed class ExternalNonContainerDatabaseState : Pulumi.ResourceArgs
+    public sealed class ExternalNonContainerDatabaseState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The character set of the external database.
@@ -400,5 +399,6 @@ namespace Pulumi.Oci.Database
         public ExternalNonContainerDatabaseState()
         {
         }
+        public static new ExternalNonContainerDatabaseState Empty => new ExternalNonContainerDatabaseState();
     }
 }

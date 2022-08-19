@@ -22,22 +22,20 @@ namespace Pulumi.Oci.FileStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSnapshots = Oci.FileStorage.GetSnapshots.Invoke(new()
         ///     {
-        ///         var testSnapshots = Output.Create(Oci.FileStorage.GetSnapshots.InvokeAsync(new Oci.FileStorage.GetSnapshotsArgs
-        ///         {
-        ///             FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
-        ///             Id = @var.Snapshot_id,
-        ///             State = @var.Snapshot_state,
-        ///         }));
-        ///     }
+        ///         FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
+        ///         Id = @var.Snapshot_id,
+        ///         State = @var.Snapshot_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.FileStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testSnapshots = Oci.FileStorage.GetSnapshots.Invoke(new()
         ///     {
-        ///         var testSnapshots = Output.Create(Oci.FileStorage.GetSnapshots.InvokeAsync(new Oci.FileStorage.GetSnapshotsArgs
-        ///         {
-        ///             FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
-        ///             Id = @var.Snapshot_id,
-        ///             State = @var.Snapshot_state,
-        ///         }));
-        ///     }
+        ///         FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
+        ///         Id = @var.Snapshot_id,
+        ///         State = @var.Snapshot_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.FileStorage
     }
 
 
-    public sealed class GetSnapshotsArgs : Pulumi.InvokeArgs
+    public sealed class GetSnapshotsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.FileStorage
         public GetSnapshotsArgs()
         {
         }
+        public static new GetSnapshotsArgs Empty => new GetSnapshotsArgs();
     }
 
-    public sealed class GetSnapshotsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSnapshotsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.FileStorage
         public GetSnapshotsInvokeArgs()
         {
         }
+        public static new GetSnapshotsInvokeArgs Empty => new GetSnapshotsInvokeArgs();
     }
 
 

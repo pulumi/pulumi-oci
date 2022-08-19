@@ -74,6 +74,37 @@ public final class LogAnalyticsFunctions {
      * Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoriesListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsCategoriesList = LogAnalyticsFunctions.getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs.builder()
+     *             .namespace(var_.log_analytics_categories_list_namespace())
+     *             .categoryDisplayText(var_.log_analytics_categories_list_category_display_text())
+     *             .categoryType(var_.log_analytics_categories_list_category_type())
+     *             .name(var_.log_analytics_categories_list_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsCategoriesListResult> getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs args) {
@@ -85,6 +116,37 @@ public final class LogAnalyticsFunctions {
      * Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoriesListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsCategoriesList = LogAnalyticsFunctions.getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs.builder()
+     *             .namespace(var_.log_analytics_categories_list_namespace())
+     *             .categoryDisplayText(var_.log_analytics_categories_list_category_display_text())
+     *             .categoryType(var_.log_analytics_categories_list_category_type())
+     *             .name(var_.log_analytics_categories_list_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsCategoriesListResult> getLogAnalyticsCategoriesListPlain(GetLogAnalyticsCategoriesListPlainArgs args) {
@@ -96,6 +158,37 @@ public final class LogAnalyticsFunctions {
      * Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoriesListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsCategoriesList = LogAnalyticsFunctions.getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs.builder()
+     *             .namespace(var_.log_analytics_categories_list_namespace())
+     *             .categoryDisplayText(var_.log_analytics_categories_list_category_display_text())
+     *             .categoryType(var_.log_analytics_categories_list_category_type())
+     *             .name(var_.log_analytics_categories_list_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsCategoriesListResult> getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs args, InvokeOptions options) {
@@ -107,6 +200,37 @@ public final class LogAnalyticsFunctions {
      * Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoriesListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsCategoriesList = LogAnalyticsFunctions.getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs.builder()
+     *             .namespace(var_.log_analytics_categories_list_namespace())
+     *             .categoryDisplayText(var_.log_analytics_categories_list_category_display_text())
+     *             .categoryType(var_.log_analytics_categories_list_category_type())
+     *             .name(var_.log_analytics_categories_list_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsCategoriesListResult> getLogAnalyticsCategoriesListPlain(GetLogAnalyticsCategoriesListPlainArgs args, InvokeOptions options) {
@@ -118,6 +242,35 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the category with the specified name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsCategory = LogAnalyticsFunctions.getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs.builder()
+     *             .name(var_.log_analytics_category_name())
+     *             .namespace(var_.log_analytics_category_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsCategoryResult> getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs args) {
@@ -129,6 +282,35 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the category with the specified name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsCategory = LogAnalyticsFunctions.getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs.builder()
+     *             .name(var_.log_analytics_category_name())
+     *             .namespace(var_.log_analytics_category_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsCategoryResult> getLogAnalyticsCategoryPlain(GetLogAnalyticsCategoryPlainArgs args) {
@@ -140,6 +322,35 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the category with the specified name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsCategory = LogAnalyticsFunctions.getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs.builder()
+     *             .name(var_.log_analytics_category_name())
+     *             .namespace(var_.log_analytics_category_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsCategoryResult> getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs args, InvokeOptions options) {
@@ -151,6 +362,35 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the category with the specified name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsCategoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsCategory = LogAnalyticsFunctions.getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs.builder()
+     *             .name(var_.log_analytics_category_name())
+     *             .namespace(var_.log_analytics_category_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsCategoryResult> getLogAnalyticsCategoryPlain(GetLogAnalyticsCategoryPlainArgs args, InvokeOptions options) {
@@ -162,6 +402,45 @@ public final class LogAnalyticsFunctions {
      * Return a list of log analytics entities.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_entity_namespace())
+     *             .cloudResourceId(oci_log_analytics_cloud_resource.test_cloud_resource().id())
+     *             .entityTypeNames(var_.log_analytics_entity_entity_type_name())
+     *             .hostname(var_.log_analytics_entity_hostname())
+     *             .hostnameContains(var_.log_analytics_entity_hostname_contains())
+     *             .isManagementAgentIdNull(var_.log_analytics_entity_is_management_agent_id_null())
+     *             .lifecycleDetailsContains(var_.log_analytics_entity_lifecycle_details_contains())
+     *             .name(var_.log_analytics_entity_name())
+     *             .nameContains(var_.log_analytics_entity_name_contains())
+     *             .sourceId(oci_log_analytics_source.test_source().id())
+     *             .state(var_.log_analytics_entity_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs args) {
@@ -173,6 +452,45 @@ public final class LogAnalyticsFunctions {
      * Return a list of log analytics entities.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_entity_namespace())
+     *             .cloudResourceId(oci_log_analytics_cloud_resource.test_cloud_resource().id())
+     *             .entityTypeNames(var_.log_analytics_entity_entity_type_name())
+     *             .hostname(var_.log_analytics_entity_hostname())
+     *             .hostnameContains(var_.log_analytics_entity_hostname_contains())
+     *             .isManagementAgentIdNull(var_.log_analytics_entity_is_management_agent_id_null())
+     *             .lifecycleDetailsContains(var_.log_analytics_entity_lifecycle_details_contains())
+     *             .name(var_.log_analytics_entity_name())
+     *             .nameContains(var_.log_analytics_entity_name_contains())
+     *             .sourceId(oci_log_analytics_source.test_source().id())
+     *             .state(var_.log_analytics_entity_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntitiesPlain(GetLogAnalyticsEntitiesPlainArgs args) {
@@ -184,6 +502,45 @@ public final class LogAnalyticsFunctions {
      * Return a list of log analytics entities.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_entity_namespace())
+     *             .cloudResourceId(oci_log_analytics_cloud_resource.test_cloud_resource().id())
+     *             .entityTypeNames(var_.log_analytics_entity_entity_type_name())
+     *             .hostname(var_.log_analytics_entity_hostname())
+     *             .hostnameContains(var_.log_analytics_entity_hostname_contains())
+     *             .isManagementAgentIdNull(var_.log_analytics_entity_is_management_agent_id_null())
+     *             .lifecycleDetailsContains(var_.log_analytics_entity_lifecycle_details_contains())
+     *             .name(var_.log_analytics_entity_name())
+     *             .nameContains(var_.log_analytics_entity_name_contains())
+     *             .sourceId(oci_log_analytics_source.test_source().id())
+     *             .state(var_.log_analytics_entity_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs args, InvokeOptions options) {
@@ -195,6 +552,45 @@ public final class LogAnalyticsFunctions {
      * Return a list of log analytics entities.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_entity_namespace())
+     *             .cloudResourceId(oci_log_analytics_cloud_resource.test_cloud_resource().id())
+     *             .entityTypeNames(var_.log_analytics_entity_entity_type_name())
+     *             .hostname(var_.log_analytics_entity_hostname())
+     *             .hostnameContains(var_.log_analytics_entity_hostname_contains())
+     *             .isManagementAgentIdNull(var_.log_analytics_entity_is_management_agent_id_null())
+     *             .lifecycleDetailsContains(var_.log_analytics_entity_lifecycle_details_contains())
+     *             .name(var_.log_analytics_entity_name())
+     *             .nameContains(var_.log_analytics_entity_name_contains())
+     *             .sourceId(oci_log_analytics_source.test_source().id())
+     *             .state(var_.log_analytics_entity_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntitiesResult> getLogAnalyticsEntitiesPlain(GetLogAnalyticsEntitiesPlainArgs args, InvokeOptions options) {
@@ -206,6 +602,35 @@ public final class LogAnalyticsFunctions {
      * Returns log analytics entities count summary report.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntitiesSummary = LogAnalyticsFunctions.getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_entities_summary_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsEntitiesSummaryResult> getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs args) {
@@ -217,6 +642,35 @@ public final class LogAnalyticsFunctions {
      * Returns log analytics entities count summary report.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntitiesSummary = LogAnalyticsFunctions.getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_entities_summary_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntitiesSummaryResult> getLogAnalyticsEntitiesSummaryPlain(GetLogAnalyticsEntitiesSummaryPlainArgs args) {
@@ -228,6 +682,35 @@ public final class LogAnalyticsFunctions {
      * Returns log analytics entities count summary report.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntitiesSummary = LogAnalyticsFunctions.getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_entities_summary_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsEntitiesSummaryResult> getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs args, InvokeOptions options) {
@@ -239,6 +722,35 @@ public final class LogAnalyticsFunctions {
      * Returns log analytics entities count summary report.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntitiesSummary = LogAnalyticsFunctions.getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_entities_summary_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntitiesSummaryResult> getLogAnalyticsEntitiesSummaryPlain(GetLogAnalyticsEntitiesSummaryPlainArgs args, InvokeOptions options) {
@@ -250,6 +762,35 @@ public final class LogAnalyticsFunctions {
      * Retrieve the log analytics entity with the given id.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
+     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
+     *             .namespace(var_.log_analytics_entity_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsEntityResult> getLogAnalyticsEntity(GetLogAnalyticsEntityArgs args) {
@@ -261,6 +802,35 @@ public final class LogAnalyticsFunctions {
      * Retrieve the log analytics entity with the given id.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
+     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
+     *             .namespace(var_.log_analytics_entity_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntityResult> getLogAnalyticsEntityPlain(GetLogAnalyticsEntityPlainArgs args) {
@@ -272,6 +842,35 @@ public final class LogAnalyticsFunctions {
      * Retrieve the log analytics entity with the given id.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
+     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
+     *             .namespace(var_.log_analytics_entity_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsEntityResult> getLogAnalyticsEntity(GetLogAnalyticsEntityArgs args, InvokeOptions options) {
@@ -283,6 +882,35 @@ public final class LogAnalyticsFunctions {
      * Retrieve the log analytics entity with the given id.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
+     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
+     *             .namespace(var_.log_analytics_entity_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntityResult> getLogAnalyticsEntityPlain(GetLogAnalyticsEntityPlainArgs args, InvokeOptions options) {
@@ -294,6 +922,36 @@ public final class LogAnalyticsFunctions {
      * Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
+     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
+     *             .namespace(var_.log_analytics_entity_topology_namespace())
+     *             .state(var_.log_analytics_entity_topology_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsEntityTopologyResult> getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs args) {
@@ -305,6 +963,36 @@ public final class LogAnalyticsFunctions {
      * Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
+     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
+     *             .namespace(var_.log_analytics_entity_topology_namespace())
+     *             .state(var_.log_analytics_entity_topology_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntityTopologyResult> getLogAnalyticsEntityTopologyPlain(GetLogAnalyticsEntityTopologyPlainArgs args) {
@@ -316,6 +1004,36 @@ public final class LogAnalyticsFunctions {
      * Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
+     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
+     *             .namespace(var_.log_analytics_entity_topology_namespace())
+     *             .state(var_.log_analytics_entity_topology_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsEntityTopologyResult> getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs args, InvokeOptions options) {
@@ -327,6 +1045,36 @@ public final class LogAnalyticsFunctions {
      * Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
+     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
+     *             .namespace(var_.log_analytics_entity_topology_namespace())
+     *             .state(var_.log_analytics_entity_topology_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsEntityTopologyResult> getLogAnalyticsEntityTopologyPlain(GetLogAnalyticsEntityTopologyPlainArgs args, InvokeOptions options) {
@@ -338,6 +1086,35 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the specified log group such as display name, description, defined tags, and free-form tags.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
+     *             .logAnalyticsLogGroupId(oci_log_analytics_log_analytics_log_group.test_log_analytics_log_group().id())
+     *             .namespace(var_.log_analytics_log_group_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsLogGroupResult> getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs args) {
@@ -349,6 +1126,35 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the specified log group such as display name, description, defined tags, and free-form tags.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
+     *             .logAnalyticsLogGroupId(oci_log_analytics_log_analytics_log_group.test_log_analytics_log_group().id())
+     *             .namespace(var_.log_analytics_log_group_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsLogGroupResult> getLogAnalyticsLogGroupPlain(GetLogAnalyticsLogGroupPlainArgs args) {
@@ -360,6 +1166,35 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the specified log group such as display name, description, defined tags, and free-form tags.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
+     *             .logAnalyticsLogGroupId(oci_log_analytics_log_analytics_log_group.test_log_analytics_log_group().id())
+     *             .namespace(var_.log_analytics_log_group_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsLogGroupResult> getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs args, InvokeOptions options) {
@@ -371,6 +1206,35 @@ public final class LogAnalyticsFunctions {
      * Gets detailed information about the specified log group such as display name, description, defined tags, and free-form tags.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
+     *             .logAnalyticsLogGroupId(oci_log_analytics_log_analytics_log_group.test_log_analytics_log_group().id())
+     *             .namespace(var_.log_analytics_log_group_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsLogGroupResult> getLogAnalyticsLogGroupPlain(GetLogAnalyticsLogGroupPlainArgs args, InvokeOptions options) {
@@ -382,6 +1246,36 @@ public final class LogAnalyticsFunctions {
      * Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroups = LogAnalyticsFunctions.getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_log_group_namespace())
+     *             .displayName(var_.log_analytics_log_group_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsLogGroupsResult> getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs args) {
@@ -393,6 +1287,36 @@ public final class LogAnalyticsFunctions {
      * Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroups = LogAnalyticsFunctions.getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_log_group_namespace())
+     *             .displayName(var_.log_analytics_log_group_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsLogGroupsResult> getLogAnalyticsLogGroupsPlain(GetLogAnalyticsLogGroupsPlainArgs args) {
@@ -404,6 +1328,36 @@ public final class LogAnalyticsFunctions {
      * Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroups = LogAnalyticsFunctions.getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_log_group_namespace())
+     *             .displayName(var_.log_analytics_log_group_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsLogGroupsResult> getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs args, InvokeOptions options) {
@@ -415,6 +1369,36 @@ public final class LogAnalyticsFunctions {
      * Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroups = LogAnalyticsFunctions.getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_log_group_namespace())
+     *             .displayName(var_.log_analytics_log_group_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsLogGroupsResult> getLogAnalyticsLogGroupsPlain(GetLogAnalyticsLogGroupsPlainArgs args, InvokeOptions options) {
@@ -426,6 +1410,35 @@ public final class LogAnalyticsFunctions {
      * Returns the count of log groups in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroupsSummary = LogAnalyticsFunctions.getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_log_groups_summary_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsLogGroupsSummaryResult> getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs args) {
@@ -437,6 +1450,35 @@ public final class LogAnalyticsFunctions {
      * Returns the count of log groups in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroupsSummary = LogAnalyticsFunctions.getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_log_groups_summary_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsLogGroupsSummaryResult> getLogAnalyticsLogGroupsSummaryPlain(GetLogAnalyticsLogGroupsSummaryPlainArgs args) {
@@ -448,6 +1490,35 @@ public final class LogAnalyticsFunctions {
      * Returns the count of log groups in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroupsSummary = LogAnalyticsFunctions.getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_log_groups_summary_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsLogGroupsSummaryResult> getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs args, InvokeOptions options) {
@@ -459,6 +1530,35 @@ public final class LogAnalyticsFunctions {
      * Returns the count of log groups in a compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsLogGroupsSummaryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsLogGroupsSummary = LogAnalyticsFunctions.getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_log_groups_summary_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsLogGroupsSummaryResult> getLogAnalyticsLogGroupsSummaryPlain(GetLogAnalyticsLogGroupsSummaryPlainArgs args, InvokeOptions options) {
@@ -470,6 +1570,35 @@ public final class LogAnalyticsFunctions {
      * Gets a configured object storage based collection rule by given id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
+     *             .logAnalyticsObjectCollectionRuleId(oci_log_analytics_log_analytics_object_collection_rule.test_log_analytics_object_collection_rule().id())
+     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsObjectCollectionRuleResult> getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs args) {
@@ -481,6 +1610,35 @@ public final class LogAnalyticsFunctions {
      * Gets a configured object storage based collection rule by given id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
+     *             .logAnalyticsObjectCollectionRuleId(oci_log_analytics_log_analytics_object_collection_rule.test_log_analytics_object_collection_rule().id())
+     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsObjectCollectionRuleResult> getLogAnalyticsObjectCollectionRulePlain(GetLogAnalyticsObjectCollectionRulePlainArgs args) {
@@ -492,6 +1650,35 @@ public final class LogAnalyticsFunctions {
      * Gets a configured object storage based collection rule by given id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
+     *             .logAnalyticsObjectCollectionRuleId(oci_log_analytics_log_analytics_object_collection_rule.test_log_analytics_object_collection_rule().id())
+     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsObjectCollectionRuleResult> getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs args, InvokeOptions options) {
@@ -503,6 +1690,35 @@ public final class LogAnalyticsFunctions {
      * Gets a configured object storage based collection rule by given id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
+     *             .logAnalyticsObjectCollectionRuleId(oci_log_analytics_log_analytics_object_collection_rule.test_log_analytics_object_collection_rule().id())
+     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsObjectCollectionRuleResult> getLogAnalyticsObjectCollectionRulePlain(GetLogAnalyticsObjectCollectionRulePlainArgs args, InvokeOptions options) {
@@ -514,6 +1730,37 @@ public final class LogAnalyticsFunctions {
      * Gets list of configuration details of Object Storage based collection rules.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsObjectCollectionRules = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
+     *             .name(var_.log_analytics_object_collection_rule_name())
+     *             .state(var_.log_analytics_object_collection_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsObjectCollectionRulesResult> getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs args) {
@@ -525,6 +1772,37 @@ public final class LogAnalyticsFunctions {
      * Gets list of configuration details of Object Storage based collection rules.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsObjectCollectionRules = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
+     *             .name(var_.log_analytics_object_collection_rule_name())
+     *             .state(var_.log_analytics_object_collection_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsObjectCollectionRulesResult> getLogAnalyticsObjectCollectionRulesPlain(GetLogAnalyticsObjectCollectionRulesPlainArgs args) {
@@ -536,6 +1814,37 @@ public final class LogAnalyticsFunctions {
      * Gets list of configuration details of Object Storage based collection rules.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsObjectCollectionRules = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
+     *             .name(var_.log_analytics_object_collection_rule_name())
+     *             .state(var_.log_analytics_object_collection_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsObjectCollectionRulesResult> getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs args, InvokeOptions options) {
@@ -547,6 +1856,37 @@ public final class LogAnalyticsFunctions {
      * Gets list of configuration details of Object Storage based collection rules.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsObjectCollectionRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsObjectCollectionRules = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
+     *             .name(var_.log_analytics_object_collection_rule_name())
+     *             .state(var_.log_analytics_object_collection_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsObjectCollectionRulesResult> getLogAnalyticsObjectCollectionRulesPlain(GetLogAnalyticsObjectCollectionRulesPlainArgs args, InvokeOptions options) {
@@ -558,6 +1898,34 @@ public final class LogAnalyticsFunctions {
      * Lists the preferences of the tenant. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsPreferenceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsPreference = LogAnalyticsFunctions.getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs.builder()
+     *             .namespace(var_.log_analytics_preference_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsPreferenceResult> getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs args) {
@@ -569,6 +1937,34 @@ public final class LogAnalyticsFunctions {
      * Lists the preferences of the tenant. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsPreferenceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsPreference = LogAnalyticsFunctions.getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs.builder()
+     *             .namespace(var_.log_analytics_preference_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsPreferenceResult> getLogAnalyticsPreferencePlain(GetLogAnalyticsPreferencePlainArgs args) {
@@ -580,6 +1976,34 @@ public final class LogAnalyticsFunctions {
      * Lists the preferences of the tenant. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsPreferenceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsPreference = LogAnalyticsFunctions.getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs.builder()
+     *             .namespace(var_.log_analytics_preference_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsPreferenceResult> getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs args, InvokeOptions options) {
@@ -591,6 +2015,34 @@ public final class LogAnalyticsFunctions {
      * Lists the preferences of the tenant. Currently, only &#34;DEFAULT_HOMEPAGE&#34; is supported.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsPreferenceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsPreference = LogAnalyticsFunctions.getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs.builder()
+     *             .namespace(var_.log_analytics_preference_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsPreferenceResult> getLogAnalyticsPreferencePlain(GetLogAnalyticsPreferencePlainArgs args, InvokeOptions options) {
@@ -602,6 +2054,37 @@ public final class LogAnalyticsFunctions {
      * Returns a list of resources and their category assignments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsResourceCategoriesListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsResourceCategoriesList = LogAnalyticsFunctions.getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs.builder()
+     *             .namespace(var_.log_analytics_resource_categories_list_namespace())
+     *             .resourceIds(var_.log_analytics_resource_categories_list_resource_ids())
+     *             .resourceTypes(var_.log_analytics_resource_categories_list_resource_types())
+     *             .resourceCategories(var_.log_analytics_resource_categories_list_resource_categories())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsResourceCategoriesListResult> getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs args) {
@@ -613,6 +2096,37 @@ public final class LogAnalyticsFunctions {
      * Returns a list of resources and their category assignments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsResourceCategoriesListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsResourceCategoriesList = LogAnalyticsFunctions.getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs.builder()
+     *             .namespace(var_.log_analytics_resource_categories_list_namespace())
+     *             .resourceIds(var_.log_analytics_resource_categories_list_resource_ids())
+     *             .resourceTypes(var_.log_analytics_resource_categories_list_resource_types())
+     *             .resourceCategories(var_.log_analytics_resource_categories_list_resource_categories())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsResourceCategoriesListResult> getLogAnalyticsResourceCategoriesListPlain(GetLogAnalyticsResourceCategoriesListPlainArgs args) {
@@ -624,6 +2138,37 @@ public final class LogAnalyticsFunctions {
      * Returns a list of resources and their category assignments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsResourceCategoriesListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsResourceCategoriesList = LogAnalyticsFunctions.getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs.builder()
+     *             .namespace(var_.log_analytics_resource_categories_list_namespace())
+     *             .resourceIds(var_.log_analytics_resource_categories_list_resource_ids())
+     *             .resourceTypes(var_.log_analytics_resource_categories_list_resource_types())
+     *             .resourceCategories(var_.log_analytics_resource_categories_list_resource_categories())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsResourceCategoriesListResult> getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs args, InvokeOptions options) {
@@ -635,6 +2180,37 @@ public final class LogAnalyticsFunctions {
      * Returns a list of resources and their category assignments.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsResourceCategoriesListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsResourceCategoriesList = LogAnalyticsFunctions.getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs.builder()
+     *             .namespace(var_.log_analytics_resource_categories_list_namespace())
+     *             .resourceIds(var_.log_analytics_resource_categories_list_resource_ids())
+     *             .resourceTypes(var_.log_analytics_resource_categories_list_resource_types())
+     *             .resourceCategories(var_.log_analytics_resource_categories_list_resource_categories())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsResourceCategoriesListResult> getLogAnalyticsResourceCategoriesListPlain(GetLogAnalyticsResourceCategoriesListPlainArgs args, InvokeOptions options) {
@@ -646,6 +2222,34 @@ public final class LogAnalyticsFunctions {
      * This API retrieves details of the configured bucket that stores unprocessed payloads.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsUnprocessedDataBucketArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsUnprocessedDataBucket = LogAnalyticsFunctions.getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs.builder()
+     *             .namespace(var_.log_analytics_unprocessed_data_bucket_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsUnprocessedDataBucketResult> getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs args) {
@@ -657,6 +2261,34 @@ public final class LogAnalyticsFunctions {
      * This API retrieves details of the configured bucket that stores unprocessed payloads.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsUnprocessedDataBucketArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsUnprocessedDataBucket = LogAnalyticsFunctions.getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs.builder()
+     *             .namespace(var_.log_analytics_unprocessed_data_bucket_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsUnprocessedDataBucketResult> getLogAnalyticsUnprocessedDataBucketPlain(GetLogAnalyticsUnprocessedDataBucketPlainArgs args) {
@@ -668,6 +2300,34 @@ public final class LogAnalyticsFunctions {
      * This API retrieves details of the configured bucket that stores unprocessed payloads.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsUnprocessedDataBucketArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsUnprocessedDataBucket = LogAnalyticsFunctions.getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs.builder()
+     *             .namespace(var_.log_analytics_unprocessed_data_bucket_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogAnalyticsUnprocessedDataBucketResult> getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs args, InvokeOptions options) {
@@ -679,6 +2339,34 @@ public final class LogAnalyticsFunctions {
      * This API retrieves details of the configured bucket that stores unprocessed payloads.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsUnprocessedDataBucketArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsUnprocessedDataBucket = LogAnalyticsFunctions.getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs.builder()
+     *             .namespace(var_.log_analytics_unprocessed_data_bucket_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogAnalyticsUnprocessedDataBucketResult> getLogAnalyticsUnprocessedDataBucketPlain(GetLogAnalyticsUnprocessedDataBucketPlainArgs args, InvokeOptions options) {
@@ -690,6 +2378,34 @@ public final class LogAnalyticsFunctions {
      * This API returns the count of distinct log sets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSetsCount = LogAnalyticsFunctions.getLogSetsCount(GetLogSetsCountArgs.builder()
+     *             .namespace(var_.log_sets_count_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogSetsCountResult> getLogSetsCount(GetLogSetsCountArgs args) {
@@ -701,6 +2417,34 @@ public final class LogAnalyticsFunctions {
      * This API returns the count of distinct log sets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSetsCount = LogAnalyticsFunctions.getLogSetsCount(GetLogSetsCountArgs.builder()
+     *             .namespace(var_.log_sets_count_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogSetsCountResult> getLogSetsCountPlain(GetLogSetsCountPlainArgs args) {
@@ -712,6 +2456,34 @@ public final class LogAnalyticsFunctions {
      * This API returns the count of distinct log sets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSetsCount = LogAnalyticsFunctions.getLogSetsCount(GetLogSetsCountArgs.builder()
+     *             .namespace(var_.log_sets_count_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetLogSetsCountResult> getLogSetsCount(GetLogSetsCountArgs args, InvokeOptions options) {
@@ -723,6 +2495,34 @@ public final class LogAnalyticsFunctions {
      * This API returns the count of distinct log sets.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogSetsCount = LogAnalyticsFunctions.getLogSetsCount(GetLogSetsCountArgs.builder()
+     *             .namespace(var_.log_sets_count_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetLogSetsCountResult> getLogSetsCountPlain(GetLogSetsCountPlainArgs args, InvokeOptions options) {
@@ -734,6 +2534,34 @@ public final class LogAnalyticsFunctions {
      * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespace = LogAnalyticsFunctions.getNamespace(GetNamespaceArgs.builder()
+     *             .namespace(var_.namespace_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNamespaceResult> getNamespace(GetNamespaceArgs args) {
@@ -745,6 +2573,34 @@ public final class LogAnalyticsFunctions {
      * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespace = LogAnalyticsFunctions.getNamespace(GetNamespaceArgs.builder()
+     *             .namespace(var_.namespace_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNamespaceResult> getNamespacePlain(GetNamespacePlainArgs args) {
@@ -756,6 +2612,34 @@ public final class LogAnalyticsFunctions {
      * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespace = LogAnalyticsFunctions.getNamespace(GetNamespaceArgs.builder()
+     *             .namespace(var_.namespace_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNamespaceResult> getNamespace(GetNamespaceArgs args, InvokeOptions options) {
@@ -767,6 +2651,34 @@ public final class LogAnalyticsFunctions {
      * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespace = LogAnalyticsFunctions.getNamespace(GetNamespaceArgs.builder()
+     *             .namespace(var_.namespace_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNamespaceResult> getNamespacePlain(GetNamespacePlainArgs args, InvokeOptions options) {
@@ -778,6 +2690,35 @@ public final class LogAnalyticsFunctions {
      * Get the scheduled task for the specified task identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
+     *             .namespace(var_.namespace_scheduled_task_namespace())
+     *             .scheduledTaskId(oci_log_analytics_scheduled_task.test_scheduled_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNamespaceScheduledTaskResult> getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs args) {
@@ -789,6 +2730,35 @@ public final class LogAnalyticsFunctions {
      * Get the scheduled task for the specified task identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
+     *             .namespace(var_.namespace_scheduled_task_namespace())
+     *             .scheduledTaskId(oci_log_analytics_scheduled_task.test_scheduled_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNamespaceScheduledTaskResult> getNamespaceScheduledTaskPlain(GetNamespaceScheduledTaskPlainArgs args) {
@@ -800,6 +2770,35 @@ public final class LogAnalyticsFunctions {
      * Get the scheduled task for the specified task identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
+     *             .namespace(var_.namespace_scheduled_task_namespace())
+     *             .scheduledTaskId(oci_log_analytics_scheduled_task.test_scheduled_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNamespaceScheduledTaskResult> getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs args, InvokeOptions options) {
@@ -811,6 +2810,35 @@ public final class LogAnalyticsFunctions {
      * Get the scheduled task for the specified task identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
+     *             .namespace(var_.namespace_scheduled_task_namespace())
+     *             .scheduledTaskId(oci_log_analytics_scheduled_task.test_scheduled_task().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNamespaceScheduledTaskResult> getNamespaceScheduledTaskPlain(GetNamespaceScheduledTaskPlainArgs args, InvokeOptions options) {
@@ -822,6 +2850,37 @@ public final class LogAnalyticsFunctions {
      * Lists scheduled tasks.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceScheduledTasks = LogAnalyticsFunctions.getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_scheduled_task_namespace())
+     *             .displayName(var_.namespace_scheduled_task_display_name())
+     *             .taskType(var_.namespace_scheduled_task_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNamespaceScheduledTasksResult> getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs args) {
@@ -833,6 +2892,37 @@ public final class LogAnalyticsFunctions {
      * Lists scheduled tasks.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceScheduledTasks = LogAnalyticsFunctions.getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_scheduled_task_namespace())
+     *             .displayName(var_.namespace_scheduled_task_display_name())
+     *             .taskType(var_.namespace_scheduled_task_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNamespaceScheduledTasksResult> getNamespaceScheduledTasksPlain(GetNamespaceScheduledTasksPlainArgs args) {
@@ -844,6 +2934,37 @@ public final class LogAnalyticsFunctions {
      * Lists scheduled tasks.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceScheduledTasks = LogAnalyticsFunctions.getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_scheduled_task_namespace())
+     *             .displayName(var_.namespace_scheduled_task_display_name())
+     *             .taskType(var_.namespace_scheduled_task_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNamespaceScheduledTasksResult> getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs args, InvokeOptions options) {
@@ -855,6 +2976,37 @@ public final class LogAnalyticsFunctions {
      * Lists scheduled tasks.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceScheduledTasks = LogAnalyticsFunctions.getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_scheduled_task_namespace())
+     *             .displayName(var_.namespace_scheduled_task_display_name())
+     *             .taskType(var_.namespace_scheduled_task_task_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNamespaceScheduledTasksResult> getNamespaceScheduledTasksPlain(GetNamespaceScheduledTasksPlainArgs args, InvokeOptions options) {
@@ -867,6 +3019,34 @@ public final class LogAnalyticsFunctions {
      * result also indicates if the tenancy is onboarded with Logging Analytics.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNamespacesResult> getNamespaces(GetNamespacesArgs args) {
@@ -879,6 +3059,34 @@ public final class LogAnalyticsFunctions {
      * result also indicates if the tenancy is onboarded with Logging Analytics.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNamespacesResult> getNamespacesPlain(GetNamespacesPlainArgs args) {
@@ -891,6 +3099,34 @@ public final class LogAnalyticsFunctions {
      * result also indicates if the tenancy is onboarded with Logging Analytics.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetNamespacesResult> getNamespaces(GetNamespacesArgs args, InvokeOptions options) {
@@ -903,6 +3139,34 @@ public final class LogAnalyticsFunctions {
      * result also indicates if the tenancy is onboarded with Logging Analytics.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetNamespacesResult> getNamespacesPlain(GetNamespacesPlainArgs args, InvokeOptions options) {

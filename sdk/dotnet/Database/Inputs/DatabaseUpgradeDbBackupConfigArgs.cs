@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class DatabaseUpgradeDbBackupConfigArgs : Pulumi.ResourceArgs
+    public sealed class DatabaseUpgradeDbBackupConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.Database.Inputs
         public DatabaseUpgradeDbBackupConfigArgs()
         {
         }
+        public static new DatabaseUpgradeDbBackupConfigArgs Empty => new DatabaseUpgradeDbBackupConfigArgs();
     }
 }

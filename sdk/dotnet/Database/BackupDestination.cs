@@ -17,37 +17,35 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBackupDestination = new Oci.Database.BackupDestination("testBackupDestination", new()
     ///     {
-    ///         var testBackupDestination = new Oci.Database.BackupDestination("testBackupDestination", new Oci.Database.BackupDestinationArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Backup_destination_display_name,
+    ///         Type = @var.Backup_destination_type,
+    ///         ConnectionString = @var.Backup_destination_connection_string,
+    ///         DefinedTags = @var.Backup_destination_defined_tags,
+    ///         FreeformTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Backup_destination_display_name,
-    ///             Type = @var.Backup_destination_type,
-    ///             ConnectionString = @var.Backup_destination_connection_string,
-    ///             DefinedTags = @var.Backup_destination_defined_tags,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             LocalMountPointPath = @var.Backup_destination_local_mount_point_path,
-    ///             MountTypeDetails = new Oci.Database.Inputs.BackupDestinationMountTypeDetailsArgs
-    ///             {
-    ///                 MountType = @var.Backup_destination_mount_type_details_mount_type,
-    ///                 LocalMountPointPath = @var.Backup_destination_mount_type_details_local_mount_point_path,
-    ///                 NfsServers = @var.Backup_destination_mount_type_details_nfs_server,
-    ///                 NfsServerExport = @var.Backup_destination_mount_type_details_nfs_server_export,
-    ///             },
-    ///             VpcUsers = @var.Backup_destination_vpc_users,
-    ///         });
-    ///     }
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         LocalMountPointPath = @var.Backup_destination_local_mount_point_path,
+    ///         MountTypeDetails = new Oci.Database.Inputs.BackupDestinationMountTypeDetailsArgs
+    ///         {
+    ///             MountType = @var.Backup_destination_mount_type_details_mount_type,
+    ///             LocalMountPointPath = @var.Backup_destination_mount_type_details_local_mount_point_path,
+    ///             NfsServers = @var.Backup_destination_mount_type_details_nfs_server,
+    ///             NfsServerExport = @var.Backup_destination_mount_type_details_nfs_server_export,
+    ///         },
+    ///         VpcUsers = @var.Backup_destination_vpc_users,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -59,7 +57,7 @@ namespace Pulumi.Oci.Database
     /// ```
     /// </summary>
     [OciResourceType("oci:Database/backupDestination:BackupDestination")]
-    public partial class BackupDestination : Pulumi.CustomResource
+    public partial class BackupDestination : global::Pulumi.CustomResource
     {
         /// <summary>
         /// List of databases associated with the backup destination.
@@ -201,7 +199,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class BackupDestinationArgs : Pulumi.ResourceArgs
+    public sealed class BackupDestinationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -278,9 +276,10 @@ namespace Pulumi.Oci.Database
         public BackupDestinationArgs()
         {
         }
+        public static new BackupDestinationArgs Empty => new BackupDestinationArgs();
     }
 
-    public sealed class BackupDestinationState : Pulumi.ResourceArgs
+    public sealed class BackupDestinationState : global::Pulumi.ResourceArgs
     {
         [Input("associatedDatabases")]
         private InputList<Inputs.BackupDestinationAssociatedDatabaseGetArgs>? _associatedDatabases;
@@ -411,5 +410,6 @@ namespace Pulumi.Oci.Database
         public BackupDestinationState()
         {
         }
+        public static new BackupDestinationState Empty => new BackupDestinationState();
     }
 }

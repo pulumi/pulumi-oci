@@ -22,20 +22,18 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPingMonitor = Oci.HealthChecks.GetPingMonitor.Invoke(new()
         ///     {
-        ///         var testPingMonitor = Output.Create(Oci.HealthChecks.GetPingMonitor.InvokeAsync(new Oci.HealthChecks.GetPingMonitorArgs
-        ///         {
-        ///             MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
-        ///         }));
-        ///     }
+        ///         MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPingMonitor = Oci.HealthChecks.GetPingMonitor.Invoke(new()
         ///     {
-        ///         var testPingMonitor = Output.Create(Oci.HealthChecks.GetPingMonitor.InvokeAsync(new Oci.HealthChecks.GetPingMonitorArgs
-        ///         {
-        ///             MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
-        ///         }));
-        ///     }
+        ///         MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.HealthChecks
     }
 
 
-    public sealed class GetPingMonitorArgs : Pulumi.InvokeArgs
+    public sealed class GetPingMonitorArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of a monitor.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.HealthChecks
         public GetPingMonitorArgs()
         {
         }
+        public static new GetPingMonitorArgs Empty => new GetPingMonitorArgs();
     }
 
-    public sealed class GetPingMonitorInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPingMonitorInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of a monitor.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.HealthChecks
         public GetPingMonitorInvokeArgs()
         {
         }
+        public static new GetPingMonitorInvokeArgs Empty => new GetPingMonitorInvokeArgs();
     }
 
 

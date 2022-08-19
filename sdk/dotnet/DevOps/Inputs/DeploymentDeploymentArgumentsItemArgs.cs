@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeploymentDeploymentArgumentsItemArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentDeploymentArgumentsItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of the parameter (case-sensitive).
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeploymentDeploymentArgumentsItemArgs()
         {
         }
+        public static new DeploymentDeploymentArgumentsItemArgs Empty => new DeploymentDeploymentArgumentsItemArgs();
     }
 }

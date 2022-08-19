@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement.Inputs
 {
 
-    public sealed class CertificateCertificateConfigSubjectAlternativeNameGetArgs : Pulumi.ResourceArgs
+    public sealed class CertificateCertificateConfigSubjectAlternativeNameGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public CertificateCertificateConfigSubjectAlternativeNameGetArgs()
         {
         }
+        public static new CertificateCertificateConfigSubjectAlternativeNameGetArgs Empty => new CertificateCertificateConfigSubjectAlternativeNameGetArgs();
     }
 }

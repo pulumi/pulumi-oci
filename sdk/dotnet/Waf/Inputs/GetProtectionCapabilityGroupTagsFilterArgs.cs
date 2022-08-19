@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waf.Inputs
 {
 
-    public sealed class GetProtectionCapabilityGroupTagsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetProtectionCapabilityGroupTagsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire name given.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Waf.Inputs
         public GetProtectionCapabilityGroupTagsFilterInputArgs()
         {
         }
+        public static new GetProtectionCapabilityGroupTagsFilterInputArgs Empty => new GetProtectionCapabilityGroupTagsFilterInputArgs();
     }
 }

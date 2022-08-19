@@ -22,6 +22,41 @@ import javax.annotation.Nullable;
  * Create an Exadata insight resource for an Exadata system in Operations Insights. The Exadata system will be enabled in Operations Insights. Exadata-related metric collection and analysis will be started.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Opsi.ExadataInsight;
+ * import com.pulumi.oci.Opsi.ExadataInsightArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testExadataInsight = new ExadataInsight(&#34;testExadataInsight&#34;, ExadataInsightArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+ *             .enterpriseManagerEntityIdentifier(var_.exadata_insight_enterprise_manager_entity_identifier())
+ *             .enterpriseManagerIdentifier(var_.exadata_insight_enterprise_manager_identifier())
+ *             .entitySource(var_.exadata_insight_entity_source())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .isAutoSyncEnabled(var_.exadata_insight_is_auto_sync_enabled())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

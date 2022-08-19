@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlDbSystemChannelSourceArgs : Pulumi.ResourceArgs
+    public sealed class MysqlDbSystemChannelSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The network address of the DB System.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlDbSystemChannelSourceArgs()
         {
         }
+        public static new MysqlDbSystemChannelSourceArgs Empty => new MysqlDbSystemChannelSourceArgs();
     }
 }

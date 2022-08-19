@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Blockchain.Inputs
 {
 
-    public sealed class BlockchainPlatformComponentDetailPeerArgs : Pulumi.ResourceArgs
+    public sealed class BlockchainPlatformComponentDetailPeerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Availability Domain of peer
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.Blockchain.Inputs
         public BlockchainPlatformComponentDetailPeerArgs()
         {
         }
+        public static new BlockchainPlatformComponentDetailPeerArgs Empty => new BlockchainPlatformComponentDetailPeerArgs();
     }
 }

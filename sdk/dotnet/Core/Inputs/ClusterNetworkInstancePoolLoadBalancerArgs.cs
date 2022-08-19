@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class ClusterNetworkInstancePoolLoadBalancerArgs : Pulumi.ResourceArgs
+    public sealed class ClusterNetworkInstancePoolLoadBalancerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the backend set on the load balancer.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Core.Inputs
         public ClusterNetworkInstancePoolLoadBalancerArgs()
         {
         }
+        public static new ClusterNetworkInstancePoolLoadBalancerArgs Empty => new ClusterNetworkInstancePoolLoadBalancerArgs();
     }
 }

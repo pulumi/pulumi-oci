@@ -23,22 +23,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServiceGateways = Oci.Core.GetServiceGateways.Invoke(new()
         ///     {
-        ///         var testServiceGateways = Output.Create(Oci.Core.GetServiceGateways.InvokeAsync(new Oci.Core.GetServiceGatewaysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             State = @var.Service_gateway_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         State = @var.Service_gateway_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,22 +56,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testServiceGateways = Oci.Core.GetServiceGateways.Invoke(new()
         ///     {
-        ///         var testServiceGateways = Output.Create(Oci.Core.GetServiceGateways.InvokeAsync(new Oci.Core.GetServiceGatewaysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             State = @var.Service_gateway_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         State = @var.Service_gateway_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetServiceGatewaysArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceGatewaysArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -114,9 +110,10 @@ namespace Pulumi.Oci.Core
         public GetServiceGatewaysArgs()
         {
         }
+        public static new GetServiceGatewaysArgs Empty => new GetServiceGatewaysArgs();
     }
 
-    public sealed class GetServiceGatewaysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceGatewaysInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -147,6 +144,7 @@ namespace Pulumi.Oci.Core
         public GetServiceGatewaysInvokeArgs()
         {
         }
+        public static new GetServiceGatewaysInvokeArgs Empty => new GetServiceGatewaysInvokeArgs();
     }
 
 

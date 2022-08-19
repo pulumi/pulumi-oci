@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics.Inputs
 {
 
-    public sealed class ConfigConfigurationReqAuthenticationDetailsAuthHeaderGetArgs : Pulumi.ResourceArgs
+    public sealed class ConfigConfigurationReqAuthenticationDetailsAuthHeaderGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the header.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public ConfigConfigurationReqAuthenticationDetailsAuthHeaderGetArgs()
         {
         }
+        public static new ConfigConfigurationReqAuthenticationDetailsAuthHeaderGetArgs Empty => new ConfigConfigurationReqAuthenticationDetailsAuthHeaderGetArgs();
     }
 }

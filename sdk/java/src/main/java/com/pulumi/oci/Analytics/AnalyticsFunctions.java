@@ -26,6 +26,34 @@ public final class AnalyticsFunctions {
      * Info for a specific Analytics instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
+     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnalyticsInstanceResult> getAnalyticsInstance(GetAnalyticsInstanceArgs args) {
@@ -37,6 +65,34 @@ public final class AnalyticsFunctions {
      * Info for a specific Analytics instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
+     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnalyticsInstanceResult> getAnalyticsInstancePlain(GetAnalyticsInstancePlainArgs args) {
@@ -48,6 +104,34 @@ public final class AnalyticsFunctions {
      * Info for a specific Analytics instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
+     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnalyticsInstanceResult> getAnalyticsInstance(GetAnalyticsInstanceArgs args, InvokeOptions options) {
@@ -59,6 +143,34 @@ public final class AnalyticsFunctions {
      * Info for a specific Analytics instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
+     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnalyticsInstanceResult> getAnalyticsInstancePlain(GetAnalyticsInstancePlainArgs args, InvokeOptions options) {
@@ -70,6 +182,35 @@ public final class AnalyticsFunctions {
      * Retrieve private access channel in the specified Analytics Instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancePrivateAccessChannelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
+     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
+     *             .privateAccessChannelKey(var_.analytics_instance_private_access_channel_private_access_channel_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnalyticsInstancePrivateAccessChannelResult> getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs args) {
@@ -81,6 +222,35 @@ public final class AnalyticsFunctions {
      * Retrieve private access channel in the specified Analytics Instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancePrivateAccessChannelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
+     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
+     *             .privateAccessChannelKey(var_.analytics_instance_private_access_channel_private_access_channel_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnalyticsInstancePrivateAccessChannelResult> getAnalyticsInstancePrivateAccessChannelPlain(GetAnalyticsInstancePrivateAccessChannelPlainArgs args) {
@@ -92,6 +262,35 @@ public final class AnalyticsFunctions {
      * Retrieve private access channel in the specified Analytics Instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancePrivateAccessChannelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
+     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
+     *             .privateAccessChannelKey(var_.analytics_instance_private_access_channel_private_access_channel_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnalyticsInstancePrivateAccessChannelResult> getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs args, InvokeOptions options) {
@@ -103,6 +302,35 @@ public final class AnalyticsFunctions {
      * Retrieve private access channel in the specified Analytics Instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancePrivateAccessChannelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
+     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
+     *             .privateAccessChannelKey(var_.analytics_instance_private_access_channel_private_access_channel_key())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnalyticsInstancePrivateAccessChannelResult> getAnalyticsInstancePrivateAccessChannelPlain(GetAnalyticsInstancePrivateAccessChannelPlainArgs args, InvokeOptions options) {
@@ -114,6 +342,38 @@ public final class AnalyticsFunctions {
      * List Analytics instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstances = AnalyticsFunctions.getAnalyticsInstances(GetAnalyticsInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .capacityType(var_.analytics_instance_capacity_type())
+     *             .featureSet(var_.analytics_instance_feature_set())
+     *             .name(var_.analytics_instance_name())
+     *             .state(var_.analytics_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnalyticsInstancesResult> getAnalyticsInstances(GetAnalyticsInstancesArgs args) {
@@ -125,6 +385,38 @@ public final class AnalyticsFunctions {
      * List Analytics instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstances = AnalyticsFunctions.getAnalyticsInstances(GetAnalyticsInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .capacityType(var_.analytics_instance_capacity_type())
+     *             .featureSet(var_.analytics_instance_feature_set())
+     *             .name(var_.analytics_instance_name())
+     *             .state(var_.analytics_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnalyticsInstancesResult> getAnalyticsInstancesPlain(GetAnalyticsInstancesPlainArgs args) {
@@ -136,6 +428,38 @@ public final class AnalyticsFunctions {
      * List Analytics instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstances = AnalyticsFunctions.getAnalyticsInstances(GetAnalyticsInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .capacityType(var_.analytics_instance_capacity_type())
+     *             .featureSet(var_.analytics_instance_feature_set())
+     *             .name(var_.analytics_instance_name())
+     *             .state(var_.analytics_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetAnalyticsInstancesResult> getAnalyticsInstances(GetAnalyticsInstancesArgs args, InvokeOptions options) {
@@ -147,6 +471,38 @@ public final class AnalyticsFunctions {
      * List Analytics instances.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstances = AnalyticsFunctions.getAnalyticsInstances(GetAnalyticsInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .capacityType(var_.analytics_instance_capacity_type())
+     *             .featureSet(var_.analytics_instance_feature_set())
+     *             .name(var_.analytics_instance_name())
+     *             .state(var_.analytics_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetAnalyticsInstancesResult> getAnalyticsInstancesPlain(GetAnalyticsInstancesPlainArgs args, InvokeOptions options) {

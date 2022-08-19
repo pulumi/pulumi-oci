@@ -22,6 +22,35 @@ import javax.annotation.Nullable;
  * [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.ExternalPluggableDatabaseManagement;
+ * import com.pulumi.oci.Database.ExternalPluggableDatabaseManagementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testExternalPluggableDatabaseManagement = new ExternalPluggableDatabaseManagement(&#34;testExternalPluggableDatabaseManagement&#34;, ExternalPluggableDatabaseManagementArgs.builder()        
+ *             .externalDatabaseConnectorId(oci_database_external_database_connector.test_external_database_connector().id())
+ *             .externalPluggableDatabaseId(oci_database_external_pluggable_database.test_external_pluggable_database().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

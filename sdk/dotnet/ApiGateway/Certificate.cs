@@ -17,32 +17,30 @@ namespace Pulumi.Oci.ApiGateway
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCertificate = new Oci.ApiGateway.Certificate("testCertificate", new()
     ///     {
-    ///         var testCertificate = new Oci.ApiGateway.Certificate("testCertificate", new Oci.ApiGateway.CertificateArgs
+    ///         CertificateDetails = @var.Certificate_certificate,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             Certificate = @var.Certificate_certificate,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Certificate_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IntermediateCertificates = @var.Certificate_intermediate_certificates,
-    ///             PrivateKey = @var.Certificate_private_key,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Certificate_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IntermediateCertificates = @var.Certificate_intermediate_certificates,
+    ///         PrivateKey = @var.Certificate_private_key,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.ApiGateway
     /// ```
     /// </summary>
     [OciResourceType("oci:ApiGateway/certificate:Certificate")]
-    public partial class Certificate : Pulumi.CustomResource
+    public partial class Certificate : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The data of the leaf certificate in pem format.
@@ -178,7 +176,7 @@ namespace Pulumi.Oci.ApiGateway
         }
     }
 
-    public sealed class CertificateArgs : Pulumi.ResourceArgs
+    public sealed class CertificateArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The data of the leaf certificate in pem format.
@@ -237,9 +235,10 @@ namespace Pulumi.Oci.ApiGateway
         public CertificateArgs()
         {
         }
+        public static new CertificateArgs Empty => new CertificateArgs();
     }
 
-    public sealed class CertificateState : Pulumi.ResourceArgs
+    public sealed class CertificateState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The data of the leaf certificate in pem format.
@@ -340,5 +339,6 @@ namespace Pulumi.Oci.ApiGateway
         public CertificateState()
         {
         }
+        public static new CertificateState Empty => new CertificateState();
     }
 }

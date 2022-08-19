@@ -22,23 +22,21 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs
-        ///         {
-        ///             Attribute = @var.Managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute,
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             SqlObjectId = oci_objectstorage_object.Test_object.Id,
-        ///             SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///         }));
-        ///     }
+        ///         Attribute = @var.Managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute,
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         SqlObjectId = oci_objectstorage_object.Test_object.Id,
+        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs
-        ///         {
-        ///             Attribute = @var.Managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute,
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             SqlObjectId = oci_objectstorage_object.Test_object.Id,
-        ///             SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///         }));
-        ///     }
+        ///         Attribute = @var.Managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute,
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         SqlObjectId = oci_objectstorage_object.Test_object.Id,
+        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The attribute of the SQL execution plan.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs Empty => new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs();
     }
 
-    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The attribute of the SQL execution plan.
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanInvokeArgs Empty => new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanInvokeArgs();
     }
 
 

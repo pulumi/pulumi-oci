@@ -23,6 +23,34 @@ public final class OdaFunctions {
      * Gets the specified Digital Assistant instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaInstance = OdaFunctions.getOdaInstance(GetOdaInstanceArgs.builder()
+     *             .odaInstanceId(oci_oda_oda_instance.test_oda_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOdaInstanceResult> getOdaInstance(GetOdaInstanceArgs args) {
@@ -34,6 +62,34 @@ public final class OdaFunctions {
      * Gets the specified Digital Assistant instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaInstance = OdaFunctions.getOdaInstance(GetOdaInstanceArgs.builder()
+     *             .odaInstanceId(oci_oda_oda_instance.test_oda_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOdaInstanceResult> getOdaInstancePlain(GetOdaInstancePlainArgs args) {
@@ -45,6 +101,34 @@ public final class OdaFunctions {
      * Gets the specified Digital Assistant instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaInstance = OdaFunctions.getOdaInstance(GetOdaInstanceArgs.builder()
+     *             .odaInstanceId(oci_oda_oda_instance.test_oda_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOdaInstanceResult> getOdaInstance(GetOdaInstanceArgs args, InvokeOptions options) {
@@ -56,6 +140,34 @@ public final class OdaFunctions {
      * Gets the specified Digital Assistant instance.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaInstance = OdaFunctions.getOdaInstance(GetOdaInstanceArgs.builder()
+     *             .odaInstanceId(oci_oda_oda_instance.test_oda_instance().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOdaInstanceResult> getOdaInstancePlain(GetOdaInstancePlainArgs args, InvokeOptions options) {
@@ -72,6 +184,36 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaInstances = OdaFunctions.getOdaInstances(GetOdaInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.oda_instance_display_name())
+     *             .state(var_.oda_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOdaInstancesResult> getOdaInstances(GetOdaInstancesArgs args) {
@@ -88,6 +230,36 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaInstances = OdaFunctions.getOdaInstances(GetOdaInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.oda_instance_display_name())
+     *             .state(var_.oda_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOdaInstancesResult> getOdaInstancesPlain(GetOdaInstancesPlainArgs args) {
@@ -104,6 +276,36 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaInstances = OdaFunctions.getOdaInstances(GetOdaInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.oda_instance_display_name())
+     *             .state(var_.oda_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetOdaInstancesResult> getOdaInstances(GetOdaInstancesArgs args, InvokeOptions options) {
@@ -120,6 +322,36 @@ public final class OdaFunctions {
      * GET request, include the header&#39;s value as the `page` query parameter.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Oda.OdaFunctions;
+     * import com.pulumi.oci.Oda.inputs.GetOdaInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOdaInstances = OdaFunctions.getOdaInstances(GetOdaInstancesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.oda_instance_display_name())
+     *             .state(var_.oda_instance_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetOdaInstancesResult> getOdaInstancesPlain(GetOdaInstancesPlainArgs args, InvokeOptions options) {

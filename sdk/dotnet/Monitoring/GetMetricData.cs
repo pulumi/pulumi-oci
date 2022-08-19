@@ -26,27 +26,25 @@ namespace Pulumi.Oci.Monitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMetricData = Oci.Monitoring.GetMetricData.Invoke(new()
         ///     {
-        ///         var testMetricData = Output.Create(Oci.Monitoring.GetMetricData.InvokeAsync(new Oci.Monitoring.GetMetricDataArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Namespace = @var.Metric_data_namespace,
-        ///             Query = @var.Metric_data_query,
-        ///             CompartmentIdInSubtree = @var.Metric_data_compartment_id_in_subtree,
-        ///             EndTime = @var.Metric_data_end_time,
-        ///             Resolution = @var.Metric_data_resolution,
-        ///             ResourceGroup = @var.Metric_data_resource_group,
-        ///             StartTime = @var.Metric_data_start_time,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Namespace = @var.Metric_data_namespace,
+        ///         Query = @var.Metric_data_query,
+        ///         CompartmentIdInSubtree = @var.Metric_data_compartment_id_in_subtree,
+        ///         EndTime = @var.Metric_data_end_time,
+        ///         Resolution = @var.Metric_data_resolution,
+        ///         ResourceGroup = @var.Metric_data_resource_group,
+        ///         StartTime = @var.Metric_data_start_time,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -69,27 +67,25 @@ namespace Pulumi.Oci.Monitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMetricData = Oci.Monitoring.GetMetricData.Invoke(new()
         ///     {
-        ///         var testMetricData = Output.Create(Oci.Monitoring.GetMetricData.InvokeAsync(new Oci.Monitoring.GetMetricDataArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Namespace = @var.Metric_data_namespace,
-        ///             Query = @var.Metric_data_query,
-        ///             CompartmentIdInSubtree = @var.Metric_data_compartment_id_in_subtree,
-        ///             EndTime = @var.Metric_data_end_time,
-        ///             Resolution = @var.Metric_data_resolution,
-        ///             ResourceGroup = @var.Metric_data_resource_group,
-        ///             StartTime = @var.Metric_data_start_time,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Namespace = @var.Metric_data_namespace,
+        ///         Query = @var.Metric_data_query,
+        ///         CompartmentIdInSubtree = @var.Metric_data_compartment_id_in_subtree,
+        ///         EndTime = @var.Metric_data_end_time,
+        ///         Resolution = @var.Metric_data_resolution,
+        ///         ResourceGroup = @var.Metric_data_resource_group,
+        ///         StartTime = @var.Metric_data_start_time,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -99,7 +95,7 @@ namespace Pulumi.Oci.Monitoring
     }
 
 
-    public sealed class GetMetricDataArgs : Pulumi.InvokeArgs
+    public sealed class GetMetricDataArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
@@ -160,9 +156,10 @@ namespace Pulumi.Oci.Monitoring
         public GetMetricDataArgs()
         {
         }
+        public static new GetMetricDataArgs Empty => new GetMetricDataArgs();
     }
 
-    public sealed class GetMetricDataInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMetricDataInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
@@ -223,6 +220,7 @@ namespace Pulumi.Oci.Monitoring
         public GetMetricDataInvokeArgs()
         {
         }
+        public static new GetMetricDataInvokeArgs Empty => new GetMetricDataInvokeArgs();
     }
 
 

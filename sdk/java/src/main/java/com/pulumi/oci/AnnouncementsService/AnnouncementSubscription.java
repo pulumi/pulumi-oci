@@ -24,6 +24,46 @@ import javax.annotation.Nullable;
  * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.AnnouncementsService.AnnouncementSubscription;
+ * import com.pulumi.oci.AnnouncementsService.AnnouncementSubscriptionArgs;
+ * import com.pulumi.oci.AnnouncementsService.inputs.AnnouncementSubscriptionFilterGroupsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAnnouncementSubscription = new AnnouncementSubscription(&#34;testAnnouncementSubscription&#34;, AnnouncementSubscriptionArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.announcement_subscription_display_name())
+ *             .onsTopicId(oci_ons_notification_topic.test_notification_topic().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.announcement_subscription_description())
+ *             .filterGroups(AnnouncementSubscriptionFilterGroupsArgs.builder()
+ *                 .filters(AnnouncementSubscriptionFilterGroupsFilterArgs.builder()
+ *                     .type(var_.announcement_subscription_filter_groups_filters_type())
+ *                     .value(var_.announcement_subscription_filter_groups_filters_value())
+ *                     .build())
+ *                 .build())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

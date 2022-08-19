@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployArtifactDeployArtifactSourceArgs : Pulumi.ResourceArgs
+    public sealed class DeployArtifactDeployArtifactSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Specifies content for the inline artifact.
@@ -63,5 +63,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployArtifactDeployArtifactSourceArgs()
         {
         }
+        public static new DeployArtifactDeployArtifactSourceArgs Empty => new DeployArtifactDeployArtifactSourceArgs();
     }
 }

@@ -33,46 +33,44 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMaskingPolicy = new Oci.DataSafe.MaskingPolicy("testMaskingPolicy", new()
     ///     {
-    ///         var testMaskingPolicy = new Oci.DataSafe.MaskingPolicy("testMaskingPolicy", new Oci.DataSafe.MaskingPolicyArgs
+    ///         ColumnSources = new[]
     ///         {
-    ///             ColumnSources = 
+    ///             new Oci.DataSafe.Inputs.MaskingPolicyColumnSourceArgs
     ///             {
-    ///                 new Oci.DataSafe.Inputs.MaskingPolicyColumnSourceArgs
-    ///                 {
-    ///                     ColumnSource = @var.Masking_policy_column_source_column_source,
-    ///                     SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-    ///                     TargetId = oci_cloud_guard_target.Test_target.Id,
-    ///                 },
+    ///                 ColumnSource = @var.Masking_policy_column_source_column_source,
+    ///                 SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+    ///                 TargetId = oci_cloud_guard_target.Test_target.Id,
     ///             },
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Masking_policy_description,
-    ///             DisplayName = @var.Masking_policy_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsDropTempTablesEnabled = @var.Masking_policy_is_drop_temp_tables_enabled,
-    ///             IsRedoLoggingEnabled = @var.Masking_policy_is_redo_logging_enabled,
-    ///             IsRefreshStatsEnabled = @var.Masking_policy_is_refresh_stats_enabled,
-    ///             ParallelDegree = @var.Masking_policy_parallel_degree,
-    ///             PostMaskingScript = @var.Masking_policy_post_masking_script,
-    ///             PreMaskingScript = @var.Masking_policy_pre_masking_script,
-    ///             Recompile = @var.Masking_policy_recompile,
-    ///         });
-    ///     }
+    ///         },
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Masking_policy_description,
+    ///         DisplayName = @var.Masking_policy_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsDropTempTablesEnabled = @var.Masking_policy_is_drop_temp_tables_enabled,
+    ///         IsRedoLoggingEnabled = @var.Masking_policy_is_redo_logging_enabled,
+    ///         IsRefreshStatsEnabled = @var.Masking_policy_is_refresh_stats_enabled,
+    ///         ParallelDegree = @var.Masking_policy_parallel_degree,
+    ///         PostMaskingScript = @var.Masking_policy_post_masking_script,
+    ///         PreMaskingScript = @var.Masking_policy_pre_masking_script,
+    ///         Recompile = @var.Masking_policy_recompile,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -84,7 +82,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/maskingPolicy:MaskingPolicy")]
-    public partial class MaskingPolicy : Pulumi.CustomResource
+    public partial class MaskingPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
@@ -232,7 +230,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class MaskingPolicyArgs : Pulumi.ResourceArgs
+    public sealed class MaskingPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
@@ -339,9 +337,10 @@ namespace Pulumi.Oci.DataSafe
         public MaskingPolicyArgs()
         {
         }
+        public static new MaskingPolicyArgs Empty => new MaskingPolicyArgs();
     }
 
-    public sealed class MaskingPolicyState : Pulumi.ResourceArgs
+    public sealed class MaskingPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
@@ -466,5 +465,6 @@ namespace Pulumi.Oci.DataSafe
         public MaskingPolicyState()
         {
         }
+        public static new MaskingPolicyState Empty => new MaskingPolicyState();
     }
 }

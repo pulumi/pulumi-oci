@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns.Inputs
 {
 
-    public sealed class GetSteeringPoliciesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetSteeringPoliciesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Dns.Inputs
         public GetSteeringPoliciesFilterArgs()
         {
         }
+        public static new GetSteeringPoliciesFilterArgs Empty => new GetSteeringPoliciesFilterArgs();
     }
 }

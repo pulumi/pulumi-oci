@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Jms.Inputs
 {
 
-    public sealed class FleetInventoryLogArgs : Pulumi.ResourceArgs
+    public sealed class FleetInventoryLogArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Jms.Inputs
         public FleetInventoryLogArgs()
         {
         }
+        public static new FleetInventoryLogArgs Empty => new FleetInventoryLogArgs();
     }
 }

@@ -40,6 +40,104 @@ import javax.annotation.Nullable;
  * For more information on configuring a VCN&#39;s default security list, see [Managing Default VCN Resources](https://www.terraform.io/docs/providers/oci/guides/managing_default_resources.html)
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.SecurityList;
+ * import com.pulumi.oci.Core.SecurityListArgs;
+ * import com.pulumi.oci.Core.inputs.SecurityListEgressSecurityRuleArgs;
+ * import com.pulumi.oci.Core.inputs.SecurityListEgressSecurityRuleIcmpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.SecurityListEgressSecurityRuleTcpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs;
+ * import com.pulumi.oci.Core.inputs.SecurityListEgressSecurityRuleUdpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs;
+ * import com.pulumi.oci.Core.inputs.SecurityListIngressSecurityRuleArgs;
+ * import com.pulumi.oci.Core.inputs.SecurityListIngressSecurityRuleIcmpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.SecurityListIngressSecurityRuleTcpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs;
+ * import com.pulumi.oci.Core.inputs.SecurityListIngressSecurityRuleUdpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSecurityList = new SecurityList(&#34;testSecurityList&#34;, SecurityListArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.security_list_display_name())
+ *             .egressSecurityRules(SecurityListEgressSecurityRuleArgs.builder()
+ *                 .destination(var_.security_list_egress_security_rules_destination())
+ *                 .protocol(var_.security_list_egress_security_rules_protocol())
+ *                 .description(var_.security_list_egress_security_rules_description())
+ *                 .destinationType(var_.security_list_egress_security_rules_destination_type())
+ *                 .icmpOptions(SecurityListEgressSecurityRuleIcmpOptionsArgs.builder()
+ *                     .type(var_.security_list_egress_security_rules_icmp_options_type())
+ *                     .code(var_.security_list_egress_security_rules_icmp_options_code())
+ *                     .build())
+ *                 .stateless(var_.security_list_egress_security_rules_stateless())
+ *                 .tcpOptions(SecurityListEgressSecurityRuleTcpOptionsArgs.builder()
+ *                     .max(var_.security_list_egress_security_rules_tcp_options_destination_port_range_max())
+ *                     .min(var_.security_list_egress_security_rules_tcp_options_destination_port_range_min())
+ *                     .sourcePortRange(SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs.builder()
+ *                         .max(var_.security_list_egress_security_rules_tcp_options_source_port_range_max())
+ *                         .min(var_.security_list_egress_security_rules_tcp_options_source_port_range_min())
+ *                         .build())
+ *                     .build())
+ *                 .udpOptions(SecurityListEgressSecurityRuleUdpOptionsArgs.builder()
+ *                     .max(var_.security_list_egress_security_rules_udp_options_destination_port_range_max())
+ *                     .min(var_.security_list_egress_security_rules_udp_options_destination_port_range_min())
+ *                     .sourcePortRange(SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs.builder()
+ *                         .max(var_.security_list_egress_security_rules_udp_options_source_port_range_max())
+ *                         .min(var_.security_list_egress_security_rules_udp_options_source_port_range_min())
+ *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .ingressSecurityRules(SecurityListIngressSecurityRuleArgs.builder()
+ *                 .protocol(var_.security_list_ingress_security_rules_protocol())
+ *                 .source(var_.security_list_ingress_security_rules_source())
+ *                 .description(var_.security_list_ingress_security_rules_description())
+ *                 .icmpOptions(SecurityListIngressSecurityRuleIcmpOptionsArgs.builder()
+ *                     .type(var_.security_list_ingress_security_rules_icmp_options_type())
+ *                     .code(var_.security_list_ingress_security_rules_icmp_options_code())
+ *                     .build())
+ *                 .sourceType(var_.security_list_ingress_security_rules_source_type())
+ *                 .stateless(var_.security_list_ingress_security_rules_stateless())
+ *                 .tcpOptions(SecurityListIngressSecurityRuleTcpOptionsArgs.builder()
+ *                     .max(var_.security_list_ingress_security_rules_tcp_options_destination_port_range_max())
+ *                     .min(var_.security_list_ingress_security_rules_tcp_options_destination_port_range_min())
+ *                     .sourcePortRange(SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs.builder()
+ *                         .max(var_.security_list_ingress_security_rules_tcp_options_source_port_range_max())
+ *                         .min(var_.security_list_ingress_security_rules_tcp_options_source_port_range_min())
+ *                         .build())
+ *                     .build())
+ *                 .udpOptions(SecurityListIngressSecurityRuleUdpOptionsArgs.builder()
+ *                     .max(var_.security_list_ingress_security_rules_udp_options_destination_port_range_max())
+ *                     .min(var_.security_list_ingress_security_rules_udp_options_destination_port_range_min())
+ *                     .sourcePortRange(SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs.builder()
+ *                         .max(var_.security_list_ingress_security_rules_udp_options_source_port_range_max())
+ *                         .min(var_.security_list_ingress_security_rules_udp_options_source_port_range_min())
+ *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

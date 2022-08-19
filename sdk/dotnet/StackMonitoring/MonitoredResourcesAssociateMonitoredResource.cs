@@ -17,23 +17,21 @@ namespace Pulumi.Oci.StackMonitoring
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testMonitoredResourcesAssociateMonitoredResource = new Oci.StackMonitoring.MonitoredResourcesAssociateMonitoredResource("testMonitoredResourcesAssociateMonitoredResource", new()
     ///     {
-    ///         var testMonitoredResourcesAssociateMonitoredResource = new Oci.StackMonitoring.MonitoredResourcesAssociateMonitoredResource("testMonitoredResourcesAssociateMonitoredResource", new Oci.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceArgs
-    ///         {
-    ///             AssociationType = @var.Monitored_resources_associate_monitored_resource_association_type,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DestinationResourceId = oci_stack_monitoring_destination_resource.Test_destination_resource.Id,
-    ///             SourceResourceId = oci_stack_monitoring_source_resource.Test_source_resource.Id,
-    ///         });
-    ///     }
+    ///         AssociationType = @var.Monitored_resources_associate_monitored_resource_association_type,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DestinationResourceId = oci_stack_monitoring_destination_resource.Test_destination_resource.Id,
+    ///         SourceResourceId = oci_stack_monitoring_source_resource.Test_source_resource.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -45,7 +43,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// ```
     /// </summary>
     [OciResourceType("oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource")]
-    public partial class MonitoredResourcesAssociateMonitoredResource : Pulumi.CustomResource
+    public partial class MonitoredResourcesAssociateMonitoredResource : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Association type to be created between source and destination resources
@@ -139,7 +137,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
     }
 
-    public sealed class MonitoredResourcesAssociateMonitoredResourceArgs : Pulumi.ResourceArgs
+    public sealed class MonitoredResourcesAssociateMonitoredResourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Association type to be created between source and destination resources
@@ -168,9 +166,10 @@ namespace Pulumi.Oci.StackMonitoring
         public MonitoredResourcesAssociateMonitoredResourceArgs()
         {
         }
+        public static new MonitoredResourcesAssociateMonitoredResourceArgs Empty => new MonitoredResourcesAssociateMonitoredResourceArgs();
     }
 
-    public sealed class MonitoredResourcesAssociateMonitoredResourceState : Pulumi.ResourceArgs
+    public sealed class MonitoredResourcesAssociateMonitoredResourceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Association type to be created between source and destination resources
@@ -235,5 +234,6 @@ namespace Pulumi.Oci.StackMonitoring
         public MonitoredResourcesAssociateMonitoredResourceState()
         {
         }
+        public static new MonitoredResourcesAssociateMonitoredResourceState Empty => new MonitoredResourcesAssociateMonitoredResourceState();
     }
 }

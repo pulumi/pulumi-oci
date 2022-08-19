@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Adm
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKnowledgeBase = Oci.Adm.GetKnowledgebase.Invoke(new()
         ///     {
-        ///         var testKnowledgeBase = Output.Create(Oci.Adm.GetKnowledgebase.InvokeAsync(new Oci.Adm.GetKnowledgebaseArgs
-        ///         {
-        ///             KnowledgeBaseId = oci_adm_knowledge_base.Test_knowledge_base.Id,
-        ///         }));
-        ///     }
+        ///         KnowledgeBaseId = oci_adm_knowledge_base.Test_knowledge_base.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Adm
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testKnowledgeBase = Oci.Adm.GetKnowledgebase.Invoke(new()
         ///     {
-        ///         var testKnowledgeBase = Output.Create(Oci.Adm.GetKnowledgebase.InvokeAsync(new Oci.Adm.GetKnowledgebaseArgs
-        ///         {
-        ///             KnowledgeBaseId = oci_adm_knowledge_base.Test_knowledge_base.Id,
-        ///         }));
-        ///     }
+        ///         KnowledgeBaseId = oci_adm_knowledge_base.Test_knowledge_base.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Adm
     }
 
 
-    public sealed class GetKnowledgebaseArgs : Pulumi.InvokeArgs
+    public sealed class GetKnowledgebaseArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of a Knowledge Base, as a URL path parameter.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Adm
         public GetKnowledgebaseArgs()
         {
         }
+        public static new GetKnowledgebaseArgs Empty => new GetKnowledgebaseArgs();
     }
 
-    public sealed class GetKnowledgebaseInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetKnowledgebaseInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of a Knowledge Base, as a URL path parameter.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Adm
         public GetKnowledgebaseInvokeArgs()
         {
         }
+        public static new GetKnowledgebaseInvokeArgs Empty => new GetKnowledgebaseInvokeArgs();
     }
 
 

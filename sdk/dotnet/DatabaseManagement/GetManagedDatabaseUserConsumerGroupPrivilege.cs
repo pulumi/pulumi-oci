@@ -21,22 +21,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseUserConsumerGroupPrivilege = Oci.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivilege.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseUserConsumerGroupPrivilege = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivilege.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivilegeArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             UserName = oci_identity_user.Test_user.Name,
-        ///             Name = @var.Managed_database_user_consumer_group_privilege_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         UserName = oci_identity_user.Test_user.Name,
+        ///         Name = @var.Managed_database_user_consumer_group_privilege_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseUserConsumerGroupPrivilege = Oci.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivilege.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseUserConsumerGroupPrivilege = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivilege.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseUserConsumerGroupPrivilegeArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             UserName = oci_identity_user.Test_user.Name,
-        ///             Name = @var.Managed_database_user_consumer_group_privilege_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         UserName = oci_identity_user.Test_user.Name,
+        ///         Name = @var.Managed_database_user_consumer_group_privilege_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseUserConsumerGroupPrivilegeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseUserConsumerGroupPrivilegeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseUserConsumerGroupPrivilegeArgs()
         {
         }
+        public static new GetManagedDatabaseUserConsumerGroupPrivilegeArgs Empty => new GetManagedDatabaseUserConsumerGroupPrivilegeArgs();
     }
 
-    public sealed class GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs Empty => new GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs();
     }
 
 

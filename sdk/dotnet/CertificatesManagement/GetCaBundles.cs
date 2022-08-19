@@ -23,23 +23,21 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCaBundles = Oci.CertificatesManagement.GetCaBundles.Invoke(new()
         ///     {
-        ///         var testCaBundles = Output.Create(Oci.CertificatesManagement.GetCaBundles.InvokeAsync(new Oci.CertificatesManagement.GetCaBundlesArgs
-        ///         {
-        ///             CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Ca_bundle_name,
-        ///             State = @var.Ca_bundle_state,
-        ///         }));
-        ///     }
+        ///         CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Ca_bundle_name,
+        ///         State = @var.Ca_bundle_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,23 +57,21 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCaBundles = Oci.CertificatesManagement.GetCaBundles.Invoke(new()
         ///     {
-        ///         var testCaBundles = Output.Create(Oci.CertificatesManagement.GetCaBundles.InvokeAsync(new Oci.CertificatesManagement.GetCaBundlesArgs
-        ///         {
-        ///             CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Ca_bundle_name,
-        ///             State = @var.Ca_bundle_state,
-        ///         }));
-        ///     }
+        ///         CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Ca_bundle_name,
+        ///         State = @var.Ca_bundle_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.CertificatesManagement
     }
 
 
-    public sealed class GetCaBundlesArgs : Pulumi.InvokeArgs
+    public sealed class GetCaBundlesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the CA bundle.
@@ -122,9 +118,10 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCaBundlesArgs()
         {
         }
+        public static new GetCaBundlesArgs Empty => new GetCaBundlesArgs();
     }
 
-    public sealed class GetCaBundlesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCaBundlesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the CA bundle.
@@ -161,6 +158,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public GetCaBundlesInvokeArgs()
         {
         }
+        public static new GetCaBundlesInvokeArgs Empty => new GetCaBundlesInvokeArgs();
     }
 
 

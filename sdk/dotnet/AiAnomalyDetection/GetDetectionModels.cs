@@ -22,23 +22,21 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testModels = Oci.AiAnomalyDetection.GetDetectionModels.Invoke(new()
         ///     {
-        ///         var testModels = Output.Create(Oci.AiAnomalyDetection.GetDetectionModels.InvokeAsync(new Oci.AiAnomalyDetection.GetDetectionModelsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Model_display_name,
-        ///             ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
-        ///             State = @var.Model_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Model_display_name,
+        ///         ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
+        ///         State = @var.Model_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testModels = Oci.AiAnomalyDetection.GetDetectionModels.Invoke(new()
         ///     {
-        ///         var testModels = Output.Create(Oci.AiAnomalyDetection.GetDetectionModels.InvokeAsync(new Oci.AiAnomalyDetection.GetDetectionModelsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Model_display_name,
-        ///             ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
-        ///             State = @var.Model_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Model_display_name,
+        ///         ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
+        ///         State = @var.Model_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
     }
 
 
-    public sealed class GetDetectionModelsArgs : Pulumi.InvokeArgs
+    public sealed class GetDetectionModelsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public GetDetectionModelsArgs()
         {
         }
+        public static new GetDetectionModelsArgs Empty => new GetDetectionModelsArgs();
     }
 
-    public sealed class GetDetectionModelsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDetectionModelsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public GetDetectionModelsInvokeArgs()
         {
         }
+        public static new GetDetectionModelsInvokeArgs Empty => new GetDetectionModelsInvokeArgs();
     }
 
 

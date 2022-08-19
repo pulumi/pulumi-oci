@@ -21,27 +21,25 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGenericArtifacts = Oci.Artifacts.GetGenericArtifacts.Invoke(new()
         ///     {
-        ///         var testGenericArtifacts = Output.Create(Oci.Artifacts.GetGenericArtifacts.InvokeAsync(new Oci.Artifacts.GetGenericArtifactsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///             ArtifactPath = @var.Generic_artifact_artifact_path,
-        ///             DisplayName = @var.Generic_artifact_display_name,
-        ///             Id = @var.Generic_artifact_id,
-        ///             Sha256 = @var.Generic_artifact_sha256,
-        ///             State = @var.Generic_artifact_state,
-        ///             Version = @var.Generic_artifact_version,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
+        ///         ArtifactPath = @var.Generic_artifact_artifact_path,
+        ///         DisplayName = @var.Generic_artifact_display_name,
+        ///         Id = @var.Generic_artifact_id,
+        ///         Sha256 = @var.Generic_artifact_sha256,
+        ///         State = @var.Generic_artifact_state,
+        ///         Version = @var.Generic_artifact_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,27 +57,25 @@ namespace Pulumi.Oci.Artifacts
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testGenericArtifacts = Oci.Artifacts.GetGenericArtifacts.Invoke(new()
         ///     {
-        ///         var testGenericArtifacts = Output.Create(Oci.Artifacts.GetGenericArtifacts.InvokeAsync(new Oci.Artifacts.GetGenericArtifactsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///             ArtifactPath = @var.Generic_artifact_artifact_path,
-        ///             DisplayName = @var.Generic_artifact_display_name,
-        ///             Id = @var.Generic_artifact_id,
-        ///             Sha256 = @var.Generic_artifact_sha256,
-        ///             State = @var.Generic_artifact_state,
-        ///             Version = @var.Generic_artifact_version,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
+        ///         ArtifactPath = @var.Generic_artifact_artifact_path,
+        ///         DisplayName = @var.Generic_artifact_display_name,
+        ///         Id = @var.Generic_artifact_id,
+        ///         Sha256 = @var.Generic_artifact_sha256,
+        ///         State = @var.Generic_artifact_state,
+        ///         Version = @var.Generic_artifact_version,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Artifacts
     }
 
 
-    public sealed class GetGenericArtifactsArgs : Pulumi.InvokeArgs
+    public sealed class GetGenericArtifactsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
@@ -150,9 +146,10 @@ namespace Pulumi.Oci.Artifacts
         public GetGenericArtifactsArgs()
         {
         }
+        public static new GetGenericArtifactsArgs Empty => new GetGenericArtifactsArgs();
     }
 
-    public sealed class GetGenericArtifactsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetGenericArtifactsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
@@ -213,6 +210,7 @@ namespace Pulumi.Oci.Artifacts
         public GetGenericArtifactsInvokeArgs()
         {
         }
+        public static new GetGenericArtifactsInvokeArgs Empty => new GetGenericArtifactsInvokeArgs();
     }
 
 

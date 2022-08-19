@@ -17,231 +17,229 @@ namespace Pulumi.Oci.DataConnectivity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRegistryDataAsset = new Oci.DataConnectivity.RegistryDataAsset("testRegistryDataAsset", new()
     ///     {
-    ///         var testRegistryDataAsset = new Oci.DataConnectivity.RegistryDataAsset("testRegistryDataAsset", new Oci.DataConnectivity.RegistryDataAssetArgs
+    ///         Identifier = @var.Registry_data_asset_identifier,
+    ///         Properties = @var.Registry_data_asset_properties,
+    ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+    ///         Type = @var.Registry_data_asset_type,
+    ///         AssetProperties = @var.Registry_data_asset_asset_properties,
+    ///         DefaultConnection = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionArgs
     ///         {
-    ///             Identifier = @var.Registry_data_asset_identifier,
-    ///             Properties = @var.Registry_data_asset_properties,
-    ///             RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-    ///             Type = @var.Registry_data_asset_type,
-    ///             AssetProperties = @var.Registry_data_asset_asset_properties,
-    ///             DefaultConnection = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionArgs
+    ///             Identifier = @var.Registry_data_asset_default_connection_identifier,
+    ///             Key = @var.Registry_data_asset_default_connection_key,
+    ///             Name = @var.Registry_data_asset_default_connection_name,
+    ///             ConnectionProperties = new[]
     ///             {
-    ///                 Identifier = @var.Registry_data_asset_default_connection_identifier,
-    ///                 Key = @var.Registry_data_asset_default_connection_key,
-    ///                 Name = @var.Registry_data_asset_default_connection_name,
-    ///                 ConnectionProperties = 
+    ///                 new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionConnectionPropertyArgs
     ///                 {
-    ///                     new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionConnectionPropertyArgs
-    ///                     {
-    ///                         Name = @var.Registry_data_asset_default_connection_connection_properties_name,
-    ///                         Value = @var.Registry_data_asset_default_connection_connection_properties_value,
-    ///                     },
-    ///                 },
-    ///                 Description = @var.Registry_data_asset_default_connection_description,
-    ///                 IsDefault = @var.Registry_data_asset_default_connection_is_default,
-    ///                 Metadata = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionMetadataArgs
-    ///                 {
-    ///                     Aggregator = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionMetadataAggregatorArgs
-    ///                     {
-    ///                         Description = @var.Registry_data_asset_default_connection_metadata_aggregator_description,
-    ///                         Identifier = @var.Registry_data_asset_default_connection_metadata_aggregator_identifier,
-    ///                         Key = @var.Registry_data_asset_default_connection_metadata_aggregator_key,
-    ///                         Name = @var.Registry_data_asset_default_connection_metadata_aggregator_name,
-    ///                         Type = @var.Registry_data_asset_default_connection_metadata_aggregator_type,
-    ///                     },
-    ///                     AggregatorKey = @var.Registry_data_asset_default_connection_metadata_aggregator_key,
-    ///                     CreatedBy = @var.Registry_data_asset_default_connection_metadata_created_by,
-    ///                     CreatedByName = @var.Registry_data_asset_default_connection_metadata_created_by_name,
-    ///                     IdentifierPath = @var.Registry_data_asset_default_connection_metadata_identifier_path,
-    ///                     InfoFields = @var.Registry_data_asset_default_connection_metadata_info_fields,
-    ///                     IsFavorite = @var.Registry_data_asset_default_connection_metadata_is_favorite,
-    ///                     Labels = @var.Registry_data_asset_default_connection_metadata_labels,
-    ///                     RegistryVersion = @var.Registry_data_asset_default_connection_metadata_registry_version,
-    ///                     TimeCreated = @var.Registry_data_asset_default_connection_metadata_time_created,
-    ///                     TimeUpdated = @var.Registry_data_asset_default_connection_metadata_time_updated,
-    ///                     UpdatedBy = @var.Registry_data_asset_default_connection_metadata_updated_by,
-    ///                     UpdatedByName = @var.Registry_data_asset_default_connection_metadata_updated_by_name,
-    ///                 },
-    ///                 ModelType = @var.Registry_data_asset_default_connection_model_type,
-    ///                 ModelVersion = @var.Registry_data_asset_default_connection_model_version,
-    ///                 ObjectStatus = @var.Registry_data_asset_default_connection_object_status,
-    ///                 ObjectVersion = @var.Registry_data_asset_default_connection_object_version,
-    ///                 PrimarySchema = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionPrimarySchemaArgs
-    ///                 {
-    ///                     Identifier = @var.Registry_data_asset_default_connection_primary_schema_identifier,
-    ///                     Key = @var.Registry_data_asset_default_connection_primary_schema_key,
-    ///                     ModelType = @var.Registry_data_asset_default_connection_primary_schema_model_type,
-    ///                     Name = @var.Registry_data_asset_default_connection_primary_schema_name,
-    ///                     DefaultConnection = @var.Registry_data_asset_default_connection_primary_schema_default_connection,
-    ///                     Description = @var.Registry_data_asset_default_connection_primary_schema_description,
-    ///                     ExternalKey = @var.Registry_data_asset_default_connection_primary_schema_external_key,
-    ///                     IsHasContainers = @var.Registry_data_asset_default_connection_primary_schema_is_has_containers,
-    ///                     Metadata = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs
-    ///                     {
-    ///                         Aggregator = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs
-    ///                         {
-    ///                             Description = @var.Registry_data_asset_default_connection_primary_schema_metadata_aggregator_description,
-    ///                             Identifier = @var.Registry_data_asset_default_connection_primary_schema_metadata_aggregator_identifier,
-    ///                             Key = @var.Registry_data_asset_default_connection_primary_schema_metadata_aggregator_key,
-    ///                             Name = @var.Registry_data_asset_default_connection_primary_schema_metadata_aggregator_name,
-    ///                             Type = @var.Registry_data_asset_default_connection_primary_schema_metadata_aggregator_type,
-    ///                         },
-    ///                         AggregatorKey = @var.Registry_data_asset_default_connection_primary_schema_metadata_aggregator_key,
-    ///                         CreatedBy = @var.Registry_data_asset_default_connection_primary_schema_metadata_created_by,
-    ///                         CreatedByName = @var.Registry_data_asset_default_connection_primary_schema_metadata_created_by_name,
-    ///                         IdentifierPath = @var.Registry_data_asset_default_connection_primary_schema_metadata_identifier_path,
-    ///                         InfoFields = @var.Registry_data_asset_default_connection_primary_schema_metadata_info_fields,
-    ///                         IsFavorite = @var.Registry_data_asset_default_connection_primary_schema_metadata_is_favorite,
-    ///                         Labels = @var.Registry_data_asset_default_connection_primary_schema_metadata_labels,
-    ///                         RegistryVersion = @var.Registry_data_asset_default_connection_primary_schema_metadata_registry_version,
-    ///                         TimeCreated = @var.Registry_data_asset_default_connection_primary_schema_metadata_time_created,
-    ///                         TimeUpdated = @var.Registry_data_asset_default_connection_primary_schema_metadata_time_updated,
-    ///                         UpdatedBy = @var.Registry_data_asset_default_connection_primary_schema_metadata_updated_by,
-    ///                         UpdatedByName = @var.Registry_data_asset_default_connection_primary_schema_metadata_updated_by_name,
-    ///                     },
-    ///                     ModelVersion = @var.Registry_data_asset_default_connection_primary_schema_model_version,
-    ///                     ObjectStatus = @var.Registry_data_asset_default_connection_primary_schema_object_status,
-    ///                     ObjectVersion = @var.Registry_data_asset_default_connection_primary_schema_object_version,
-    ///                     ParentRef = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs
-    ///                     {
-    ///                         Parent = @var.Registry_data_asset_default_connection_primary_schema_parent_ref_parent,
-    ///                     },
-    ///                     ResourceName = @var.Registry_data_asset_default_connection_primary_schema_resource_name,
-    ///                 },
-    ///                 Properties = @var.Registry_data_asset_default_connection_properties,
-    ///                 RegistryMetadata = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionRegistryMetadataArgs
-    ///                 {
-    ///                     AggregatorKey = @var.Registry_data_asset_default_connection_registry_metadata_aggregator_key,
-    ///                     CreatedByUserId = oci_identity_user.Test_user.Id,
-    ///                     CreatedByUserName = oci_identity_user.Test_user.Name,
-    ///                     IsFavorite = @var.Registry_data_asset_default_connection_registry_metadata_is_favorite,
-    ///                     Key = @var.Registry_data_asset_default_connection_registry_metadata_key,
-    ///                     Labels = @var.Registry_data_asset_default_connection_registry_metadata_labels,
-    ///                     RegistryVersion = @var.Registry_data_asset_default_connection_registry_metadata_registry_version,
-    ///                     TimeCreated = @var.Registry_data_asset_default_connection_registry_metadata_time_created,
-    ///                     TimeUpdated = @var.Registry_data_asset_default_connection_registry_metadata_time_updated,
-    ///                     UpdatedByUserId = oci_identity_user.Test_user.Id,
-    ///                     UpdatedByUserName = oci_identity_user.Test_user.Name,
-    ///                 },
-    ///                 Type = @var.Registry_data_asset_default_connection_type,
-    ///             },
-    ///             Description = @var.Registry_data_asset_description,
-    ///             EndPoints = @var.Registry_data_asset_end_points,
-    ///             ExternalKey = @var.Registry_data_asset_external_key,
-    ///             Key = @var.Registry_data_asset_key,
-    ///             Metadata = new Oci.DataConnectivity.Inputs.RegistryDataAssetMetadataArgs
-    ///             {
-    ///                 Aggregator = new Oci.DataConnectivity.Inputs.RegistryDataAssetMetadataAggregatorArgs
-    ///                 {
-    ///                     Description = @var.Registry_data_asset_metadata_aggregator_description,
-    ///                     Identifier = @var.Registry_data_asset_metadata_aggregator_identifier,
-    ///                     Key = @var.Registry_data_asset_metadata_aggregator_key,
-    ///                     Name = @var.Registry_data_asset_metadata_aggregator_name,
-    ///                     Type = @var.Registry_data_asset_metadata_aggregator_type,
-    ///                 },
-    ///                 AggregatorKey = @var.Registry_data_asset_metadata_aggregator_key,
-    ///                 CreatedBy = @var.Registry_data_asset_metadata_created_by,
-    ///                 CreatedByName = @var.Registry_data_asset_metadata_created_by_name,
-    ///                 IdentifierPath = @var.Registry_data_asset_metadata_identifier_path,
-    ///                 InfoFields = @var.Registry_data_asset_metadata_info_fields,
-    ///                 IsFavorite = @var.Registry_data_asset_metadata_is_favorite,
-    ///                 Labels = @var.Registry_data_asset_metadata_labels,
-    ///                 RegistryVersion = @var.Registry_data_asset_metadata_registry_version,
-    ///                 TimeCreated = @var.Registry_data_asset_metadata_time_created,
-    ///                 TimeUpdated = @var.Registry_data_asset_metadata_time_updated,
-    ///                 UpdatedBy = @var.Registry_data_asset_metadata_updated_by,
-    ///                 UpdatedByName = @var.Registry_data_asset_metadata_updated_by_name,
-    ///             },
-    ///             ModelType = @var.Registry_data_asset_model_type,
-    ///             ModelVersion = @var.Registry_data_asset_model_version,
-    ///             NativeTypeSystem = new Oci.DataConnectivity.Inputs.RegistryDataAssetNativeTypeSystemArgs
-    ///             {
-    ///                 Description = @var.Registry_data_asset_native_type_system_description,
-    ///                 Identifier = @var.Registry_data_asset_native_type_system_identifier,
-    ///                 Key = @var.Registry_data_asset_native_type_system_key,
-    ///                 ModelType = @var.Registry_data_asset_native_type_system_model_type,
-    ///                 ModelVersion = @var.Registry_data_asset_native_type_system_model_version,
-    ///                 Name = @var.Registry_data_asset_native_type_system_name,
-    ///                 ObjectStatus = @var.Registry_data_asset_native_type_system_object_status,
-    ///                 ObjectVersion = @var.Registry_data_asset_native_type_system_object_version,
-    ///                 ParentRef = new Oci.DataConnectivity.Inputs.RegistryDataAssetNativeTypeSystemParentRefArgs
-    ///                 {
-    ///                     Parent = @var.Registry_data_asset_native_type_system_parent_ref_parent,
-    ///                 },
-    ///                 TypeMappingFrom = @var.Registry_data_asset_native_type_system_type_mapping_from,
-    ///                 TypeMappingTo = @var.Registry_data_asset_native_type_system_type_mapping_to,
-    ///                 Types = 
-    ///                 {
-    ///                     new Oci.DataConnectivity.Inputs.RegistryDataAssetNativeTypeSystemTypeArgs
-    ///                     {
-    ///                         ModelType = @var.Registry_data_asset_native_type_system_types_model_type,
-    ///                         ConfigDefinition = new Oci.DataConnectivity.Inputs.RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs
-    ///                         {
-    ///                             ConfigParameterDefinitions = 
-    ///                             {
-    ///                                 
-    ///                                 {
-    ///                                     { "classFieldName", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_class_field_name },
-    ///                                     { "defaultValue", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_default_value },
-    ///                                     { "description", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_description },
-    ///                                     { "isClassFieldValue", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_is_class_field_value },
-    ///                                     { "isStatic", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_is_static },
-    ///                                     { "parameterName", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_parameter_name },
-    ///                                     { "parameterType", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_parameter_type },
-    ///                                 },
-    ///                             },
-    ///                             IsContained = @var.Registry_data_asset_native_type_system_types_config_definition_is_contained,
-    ///                             Key = @var.Registry_data_asset_native_type_system_types_config_definition_key,
-    ///                             ModelType = @var.Registry_data_asset_native_type_system_types_config_definition_model_type,
-    ///                             ModelVersion = @var.Registry_data_asset_native_type_system_types_config_definition_model_version,
-    ///                             Name = @var.Registry_data_asset_native_type_system_types_config_definition_name,
-    ///                             ObjectStatus = @var.Registry_data_asset_native_type_system_types_config_definition_object_status,
-    ///                             ParentRef = new Oci.DataConnectivity.Inputs.RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs
-    ///                             {
-    ///                                 Parent = @var.Registry_data_asset_native_type_system_types_config_definition_parent_ref_parent,
-    ///                             },
-    ///                         },
-    ///                         Description = @var.Registry_data_asset_native_type_system_types_description,
-    ///                         DtType = @var.Registry_data_asset_native_type_system_types_dt_type,
-    ///                         Key = @var.Registry_data_asset_native_type_system_types_key,
-    ///                         ModelVersion = @var.Registry_data_asset_native_type_system_types_model_version,
-    ///                         Name = @var.Registry_data_asset_native_type_system_types_name,
-    ///                         ObjectStatus = @var.Registry_data_asset_native_type_system_types_object_status,
-    ///                         ParentRef = new Oci.DataConnectivity.Inputs.RegistryDataAssetNativeTypeSystemTypeParentRefArgs
-    ///                         {
-    ///                             Parent = @var.Registry_data_asset_native_type_system_types_parent_ref_parent,
-    ///                         },
-    ///                         TypeSystemName = @var.Registry_data_asset_native_type_system_types_type_system_name,
-    ///                     },
+    ///                     Name = @var.Registry_data_asset_default_connection_connection_properties_name,
+    ///                     Value = @var.Registry_data_asset_default_connection_connection_properties_value,
     ///                 },
     ///             },
-    ///             ObjectStatus = @var.Registry_data_asset_object_status,
-    ///             ObjectVersion = @var.Registry_data_asset_object_version,
-    ///             RegistryMetadata = new Oci.DataConnectivity.Inputs.RegistryDataAssetRegistryMetadataArgs
+    ///             Description = @var.Registry_data_asset_default_connection_description,
+    ///             IsDefault = @var.Registry_data_asset_default_connection_is_default,
+    ///             Metadata = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionMetadataArgs
     ///             {
-    ///                 AggregatorKey = @var.Registry_data_asset_registry_metadata_aggregator_key,
+    ///                 Aggregator = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionMetadataAggregatorArgs
+    ///                 {
+    ///                     Description = @var.Registry_data_asset_default_connection_metadata_aggregator_description,
+    ///                     Identifier = @var.Registry_data_asset_default_connection_metadata_aggregator_identifier,
+    ///                     Key = @var.Registry_data_asset_default_connection_metadata_aggregator_key,
+    ///                     Name = @var.Registry_data_asset_default_connection_metadata_aggregator_name,
+    ///                     Type = @var.Registry_data_asset_default_connection_metadata_aggregator_type,
+    ///                 },
+    ///                 AggregatorKey = @var.Registry_data_asset_default_connection_metadata_aggregator_key,
+    ///                 CreatedBy = @var.Registry_data_asset_default_connection_metadata_created_by,
+    ///                 CreatedByName = @var.Registry_data_asset_default_connection_metadata_created_by_name,
+    ///                 IdentifierPath = @var.Registry_data_asset_default_connection_metadata_identifier_path,
+    ///                 InfoFields = @var.Registry_data_asset_default_connection_metadata_info_fields,
+    ///                 IsFavorite = @var.Registry_data_asset_default_connection_metadata_is_favorite,
+    ///                 Labels = @var.Registry_data_asset_default_connection_metadata_labels,
+    ///                 RegistryVersion = @var.Registry_data_asset_default_connection_metadata_registry_version,
+    ///                 TimeCreated = @var.Registry_data_asset_default_connection_metadata_time_created,
+    ///                 TimeUpdated = @var.Registry_data_asset_default_connection_metadata_time_updated,
+    ///                 UpdatedBy = @var.Registry_data_asset_default_connection_metadata_updated_by,
+    ///                 UpdatedByName = @var.Registry_data_asset_default_connection_metadata_updated_by_name,
+    ///             },
+    ///             ModelType = @var.Registry_data_asset_default_connection_model_type,
+    ///             ModelVersion = @var.Registry_data_asset_default_connection_model_version,
+    ///             ObjectStatus = @var.Registry_data_asset_default_connection_object_status,
+    ///             ObjectVersion = @var.Registry_data_asset_default_connection_object_version,
+    ///             PrimarySchema = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionPrimarySchemaArgs
+    ///             {
+    ///                 Identifier = @var.Registry_data_asset_default_connection_primary_schema_identifier,
+    ///                 Key = @var.Registry_data_asset_default_connection_primary_schema_key,
+    ///                 ModelType = @var.Registry_data_asset_default_connection_primary_schema_model_type,
+    ///                 Name = @var.Registry_data_asset_default_connection_primary_schema_name,
+    ///                 DefaultConnection = @var.Registry_data_asset_default_connection_primary_schema_default_connection,
+    ///                 Description = @var.Registry_data_asset_default_connection_primary_schema_description,
+    ///                 ExternalKey = @var.Registry_data_asset_default_connection_primary_schema_external_key,
+    ///                 IsHasContainers = @var.Registry_data_asset_default_connection_primary_schema_is_has_containers,
+    ///                 Metadata = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionPrimarySchemaMetadataArgs
+    ///                 {
+    ///                     Aggregator = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionPrimarySchemaMetadataAggregatorArgs
+    ///                     {
+    ///                         Description = @var.Registry_data_asset_default_connection_primary_schema_metadata_aggregator_description,
+    ///                         Identifier = @var.Registry_data_asset_default_connection_primary_schema_metadata_aggregator_identifier,
+    ///                         Key = @var.Registry_data_asset_default_connection_primary_schema_metadata_aggregator_key,
+    ///                         Name = @var.Registry_data_asset_default_connection_primary_schema_metadata_aggregator_name,
+    ///                         Type = @var.Registry_data_asset_default_connection_primary_schema_metadata_aggregator_type,
+    ///                     },
+    ///                     AggregatorKey = @var.Registry_data_asset_default_connection_primary_schema_metadata_aggregator_key,
+    ///                     CreatedBy = @var.Registry_data_asset_default_connection_primary_schema_metadata_created_by,
+    ///                     CreatedByName = @var.Registry_data_asset_default_connection_primary_schema_metadata_created_by_name,
+    ///                     IdentifierPath = @var.Registry_data_asset_default_connection_primary_schema_metadata_identifier_path,
+    ///                     InfoFields = @var.Registry_data_asset_default_connection_primary_schema_metadata_info_fields,
+    ///                     IsFavorite = @var.Registry_data_asset_default_connection_primary_schema_metadata_is_favorite,
+    ///                     Labels = @var.Registry_data_asset_default_connection_primary_schema_metadata_labels,
+    ///                     RegistryVersion = @var.Registry_data_asset_default_connection_primary_schema_metadata_registry_version,
+    ///                     TimeCreated = @var.Registry_data_asset_default_connection_primary_schema_metadata_time_created,
+    ///                     TimeUpdated = @var.Registry_data_asset_default_connection_primary_schema_metadata_time_updated,
+    ///                     UpdatedBy = @var.Registry_data_asset_default_connection_primary_schema_metadata_updated_by,
+    ///                     UpdatedByName = @var.Registry_data_asset_default_connection_primary_schema_metadata_updated_by_name,
+    ///                 },
+    ///                 ModelVersion = @var.Registry_data_asset_default_connection_primary_schema_model_version,
+    ///                 ObjectStatus = @var.Registry_data_asset_default_connection_primary_schema_object_status,
+    ///                 ObjectVersion = @var.Registry_data_asset_default_connection_primary_schema_object_version,
+    ///                 ParentRef = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionPrimarySchemaParentRefArgs
+    ///                 {
+    ///                     Parent = @var.Registry_data_asset_default_connection_primary_schema_parent_ref_parent,
+    ///                 },
+    ///                 ResourceName = @var.Registry_data_asset_default_connection_primary_schema_resource_name,
+    ///             },
+    ///             Properties = @var.Registry_data_asset_default_connection_properties,
+    ///             RegistryMetadata = new Oci.DataConnectivity.Inputs.RegistryDataAssetDefaultConnectionRegistryMetadataArgs
+    ///             {
+    ///                 AggregatorKey = @var.Registry_data_asset_default_connection_registry_metadata_aggregator_key,
     ///                 CreatedByUserId = oci_identity_user.Test_user.Id,
     ///                 CreatedByUserName = oci_identity_user.Test_user.Name,
-    ///                 IsFavorite = @var.Registry_data_asset_registry_metadata_is_favorite,
-    ///                 Key = @var.Registry_data_asset_registry_metadata_key,
-    ///                 Labels = @var.Registry_data_asset_registry_metadata_labels,
-    ///                 RegistryVersion = @var.Registry_data_asset_registry_metadata_registry_version,
-    ///                 TimeCreated = @var.Registry_data_asset_registry_metadata_time_created,
-    ///                 TimeUpdated = @var.Registry_data_asset_registry_metadata_time_updated,
+    ///                 IsFavorite = @var.Registry_data_asset_default_connection_registry_metadata_is_favorite,
+    ///                 Key = @var.Registry_data_asset_default_connection_registry_metadata_key,
+    ///                 Labels = @var.Registry_data_asset_default_connection_registry_metadata_labels,
+    ///                 RegistryVersion = @var.Registry_data_asset_default_connection_registry_metadata_registry_version,
+    ///                 TimeCreated = @var.Registry_data_asset_default_connection_registry_metadata_time_created,
+    ///                 TimeUpdated = @var.Registry_data_asset_default_connection_registry_metadata_time_updated,
     ///                 UpdatedByUserId = oci_identity_user.Test_user.Id,
     ///                 UpdatedByUserName = oci_identity_user.Test_user.Name,
     ///             },
-    ///         });
-    ///     }
+    ///             Type = @var.Registry_data_asset_default_connection_type,
+    ///         },
+    ///         Description = @var.Registry_data_asset_description,
+    ///         EndPoints = @var.Registry_data_asset_end_points,
+    ///         ExternalKey = @var.Registry_data_asset_external_key,
+    ///         Key = @var.Registry_data_asset_key,
+    ///         Metadata = new Oci.DataConnectivity.Inputs.RegistryDataAssetMetadataArgs
+    ///         {
+    ///             Aggregator = new Oci.DataConnectivity.Inputs.RegistryDataAssetMetadataAggregatorArgs
+    ///             {
+    ///                 Description = @var.Registry_data_asset_metadata_aggregator_description,
+    ///                 Identifier = @var.Registry_data_asset_metadata_aggregator_identifier,
+    ///                 Key = @var.Registry_data_asset_metadata_aggregator_key,
+    ///                 Name = @var.Registry_data_asset_metadata_aggregator_name,
+    ///                 Type = @var.Registry_data_asset_metadata_aggregator_type,
+    ///             },
+    ///             AggregatorKey = @var.Registry_data_asset_metadata_aggregator_key,
+    ///             CreatedBy = @var.Registry_data_asset_metadata_created_by,
+    ///             CreatedByName = @var.Registry_data_asset_metadata_created_by_name,
+    ///             IdentifierPath = @var.Registry_data_asset_metadata_identifier_path,
+    ///             InfoFields = @var.Registry_data_asset_metadata_info_fields,
+    ///             IsFavorite = @var.Registry_data_asset_metadata_is_favorite,
+    ///             Labels = @var.Registry_data_asset_metadata_labels,
+    ///             RegistryVersion = @var.Registry_data_asset_metadata_registry_version,
+    ///             TimeCreated = @var.Registry_data_asset_metadata_time_created,
+    ///             TimeUpdated = @var.Registry_data_asset_metadata_time_updated,
+    ///             UpdatedBy = @var.Registry_data_asset_metadata_updated_by,
+    ///             UpdatedByName = @var.Registry_data_asset_metadata_updated_by_name,
+    ///         },
+    ///         ModelType = @var.Registry_data_asset_model_type,
+    ///         ModelVersion = @var.Registry_data_asset_model_version,
+    ///         NativeTypeSystem = new Oci.DataConnectivity.Inputs.RegistryDataAssetNativeTypeSystemArgs
+    ///         {
+    ///             Description = @var.Registry_data_asset_native_type_system_description,
+    ///             Identifier = @var.Registry_data_asset_native_type_system_identifier,
+    ///             Key = @var.Registry_data_asset_native_type_system_key,
+    ///             ModelType = @var.Registry_data_asset_native_type_system_model_type,
+    ///             ModelVersion = @var.Registry_data_asset_native_type_system_model_version,
+    ///             Name = @var.Registry_data_asset_native_type_system_name,
+    ///             ObjectStatus = @var.Registry_data_asset_native_type_system_object_status,
+    ///             ObjectVersion = @var.Registry_data_asset_native_type_system_object_version,
+    ///             ParentRef = new Oci.DataConnectivity.Inputs.RegistryDataAssetNativeTypeSystemParentRefArgs
+    ///             {
+    ///                 Parent = @var.Registry_data_asset_native_type_system_parent_ref_parent,
+    ///             },
+    ///             TypeMappingFrom = @var.Registry_data_asset_native_type_system_type_mapping_from,
+    ///             TypeMappingTo = @var.Registry_data_asset_native_type_system_type_mapping_to,
+    ///             Types = new[]
+    ///             {
+    ///                 new Oci.DataConnectivity.Inputs.RegistryDataAssetNativeTypeSystemTypeArgs
+    ///                 {
+    ///                     ModelType = @var.Registry_data_asset_native_type_system_types_model_type,
+    ///                     ConfigDefinition = new Oci.DataConnectivity.Inputs.RegistryDataAssetNativeTypeSystemTypeConfigDefinitionArgs
+    ///                     {
+    ///                         ConfigParameterDefinitions = new[]
+    ///                         {
+    ///                             
+    ///                             {
+    ///                                 { "classFieldName", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_class_field_name },
+    ///                                 { "defaultValue", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_default_value },
+    ///                                 { "description", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_description },
+    ///                                 { "isClassFieldValue", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_is_class_field_value },
+    ///                                 { "isStatic", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_is_static },
+    ///                                 { "parameterName", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_parameter_name },
+    ///                                 { "parameterType", @var.Registry_data_asset_native_type_system_types_config_definition_config_parameter_definitions_parameter_type },
+    ///                             },
+    ///                         },
+    ///                         IsContained = @var.Registry_data_asset_native_type_system_types_config_definition_is_contained,
+    ///                         Key = @var.Registry_data_asset_native_type_system_types_config_definition_key,
+    ///                         ModelType = @var.Registry_data_asset_native_type_system_types_config_definition_model_type,
+    ///                         ModelVersion = @var.Registry_data_asset_native_type_system_types_config_definition_model_version,
+    ///                         Name = @var.Registry_data_asset_native_type_system_types_config_definition_name,
+    ///                         ObjectStatus = @var.Registry_data_asset_native_type_system_types_config_definition_object_status,
+    ///                         ParentRef = new Oci.DataConnectivity.Inputs.RegistryDataAssetNativeTypeSystemTypeConfigDefinitionParentRefArgs
+    ///                         {
+    ///                             Parent = @var.Registry_data_asset_native_type_system_types_config_definition_parent_ref_parent,
+    ///                         },
+    ///                     },
+    ///                     Description = @var.Registry_data_asset_native_type_system_types_description,
+    ///                     DtType = @var.Registry_data_asset_native_type_system_types_dt_type,
+    ///                     Key = @var.Registry_data_asset_native_type_system_types_key,
+    ///                     ModelVersion = @var.Registry_data_asset_native_type_system_types_model_version,
+    ///                     Name = @var.Registry_data_asset_native_type_system_types_name,
+    ///                     ObjectStatus = @var.Registry_data_asset_native_type_system_types_object_status,
+    ///                     ParentRef = new Oci.DataConnectivity.Inputs.RegistryDataAssetNativeTypeSystemTypeParentRefArgs
+    ///                     {
+    ///                         Parent = @var.Registry_data_asset_native_type_system_types_parent_ref_parent,
+    ///                     },
+    ///                     TypeSystemName = @var.Registry_data_asset_native_type_system_types_type_system_name,
+    ///                 },
+    ///             },
+    ///         },
+    ///         ObjectStatus = @var.Registry_data_asset_object_status,
+    ///         ObjectVersion = @var.Registry_data_asset_object_version,
+    ///         RegistryMetadata = new Oci.DataConnectivity.Inputs.RegistryDataAssetRegistryMetadataArgs
+    ///         {
+    ///             AggregatorKey = @var.Registry_data_asset_registry_metadata_aggregator_key,
+    ///             CreatedByUserId = oci_identity_user.Test_user.Id,
+    ///             CreatedByUserName = oci_identity_user.Test_user.Name,
+    ///             IsFavorite = @var.Registry_data_asset_registry_metadata_is_favorite,
+    ///             Key = @var.Registry_data_asset_registry_metadata_key,
+    ///             Labels = @var.Registry_data_asset_registry_metadata_labels,
+    ///             RegistryVersion = @var.Registry_data_asset_registry_metadata_registry_version,
+    ///             TimeCreated = @var.Registry_data_asset_registry_metadata_time_created,
+    ///             TimeUpdated = @var.Registry_data_asset_registry_metadata_time_updated,
+    ///             UpdatedByUserId = oci_identity_user.Test_user.Id,
+    ///             UpdatedByUserName = oci_identity_user.Test_user.Name,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -253,7 +251,7 @@ namespace Pulumi.Oci.DataConnectivity
     /// ```
     /// </summary>
     [OciResourceType("oci:DataConnectivity/registryDataAsset:RegistryDataAsset")]
-    public partial class RegistryDataAsset : Pulumi.CustomResource
+    public partial class RegistryDataAsset : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Additional properties for the data asset.
@@ -407,7 +405,7 @@ namespace Pulumi.Oci.DataConnectivity
         }
     }
 
-    public sealed class RegistryDataAssetArgs : Pulumi.ResourceArgs
+    public sealed class RegistryDataAssetArgs : global::Pulumi.ResourceArgs
     {
         [Input("assetProperties")]
         private InputMap<object>? _assetProperties;
@@ -538,9 +536,10 @@ namespace Pulumi.Oci.DataConnectivity
         public RegistryDataAssetArgs()
         {
         }
+        public static new RegistryDataAssetArgs Empty => new RegistryDataAssetArgs();
     }
 
-    public sealed class RegistryDataAssetState : Pulumi.ResourceArgs
+    public sealed class RegistryDataAssetState : global::Pulumi.ResourceArgs
     {
         [Input("assetProperties")]
         private InputMap<object>? _assetProperties;
@@ -671,5 +670,6 @@ namespace Pulumi.Oci.DataConnectivity
         public RegistryDataAssetState()
         {
         }
+        public static new RegistryDataAssetState Empty => new RegistryDataAssetState();
     }
 }

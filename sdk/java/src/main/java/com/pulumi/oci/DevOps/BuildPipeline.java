@@ -22,6 +22,46 @@ import javax.annotation.Nullable;
  * Creates a new build pipeline.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DevOps.BuildPipeline;
+ * import com.pulumi.oci.DevOps.BuildPipelineArgs;
+ * import com.pulumi.oci.DevOps.inputs.BuildPipelineBuildPipelineParametersArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBuildPipeline = new BuildPipeline(&#34;testBuildPipeline&#34;, BuildPipelineArgs.builder()        
+ *             .projectId(oci_devops_project.test_project().id())
+ *             .buildPipelineParameters(BuildPipelineBuildPipelineParametersArgs.builder()
+ *                 .items(BuildPipelineBuildPipelineParametersItemArgs.builder()
+ *                     .name(var_.build_pipeline_build_pipeline_parameters_items_name())
+ *                     .defaultValue(var_.build_pipeline_build_pipeline_parameters_items_default_value())
+ *                     .description(var_.build_pipeline_build_pipeline_parameters_items_description())
+ *                     .build())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.build_pipeline_description())
+ *             .displayName(var_.build_pipeline_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -20,30 +20,28 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDrgRouteDistribution = new Oci.Core.DrgRouteDistribution("testDrgRouteDistribution", new()
     ///     {
-    ///         var testDrgRouteDistribution = new Oci.Core.DrgRouteDistribution("testDrgRouteDistribution", new Oci.Core.DrgRouteDistributionArgs
+    ///         DistributionType = @var.Drg_route_distribution_distribution_type,
+    ///         DrgId = oci_core_drg.Test_drg.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             DistributionType = @var.Drg_route_distribution_distribution_type,
-    ///             DrgId = oci_core_drg.Test_drg.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Drg_route_distribution_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Drg_route_distribution_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/drgRouteDistribution:DrgRouteDistribution")]
-    public partial class DrgRouteDistribution : Pulumi.CustomResource
+    public partial class DrgRouteDistribution : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
@@ -149,7 +147,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class DrgRouteDistributionArgs : Pulumi.ResourceArgs
+    public sealed class DrgRouteDistributionArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -196,9 +194,10 @@ namespace Pulumi.Oci.Core
         public DrgRouteDistributionArgs()
         {
         }
+        public static new DrgRouteDistributionArgs Empty => new DrgRouteDistributionArgs();
     }
 
-    public sealed class DrgRouteDistributionState : Pulumi.ResourceArgs
+    public sealed class DrgRouteDistributionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
@@ -263,5 +262,6 @@ namespace Pulumi.Oci.Core
         public DrgRouteDistributionState()
         {
         }
+        public static new DrgRouteDistributionState Empty => new DrgRouteDistributionState();
     }
 }

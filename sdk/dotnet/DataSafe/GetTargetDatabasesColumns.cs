@@ -22,27 +22,25 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetDatabasesColumns = Oci.DataSafe.GetTargetDatabasesColumns.Invoke(new()
         ///     {
-        ///         var testTargetDatabasesColumns = Output.Create(Oci.DataSafe.GetTargetDatabasesColumns.InvokeAsync(new Oci.DataSafe.GetTargetDatabasesColumnsArgs
-        ///         {
-        ///             TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///             ColumnNames = @var.Target_databases_column_column_name,
-        ///             ColumnNameContains = @var.Target_databases_column_column_name_contains,
-        ///             Datatypes = @var.Target_databases_column_datatype,
-        ///             SchemaNames = @var.Target_databases_column_schema_name,
-        ///             SchemaNameContains = @var.Target_databases_column_schema_name_contains,
-        ///             TableNames = oci_nosql_table.Test_table.Name,
-        ///             TableNameContains = @var.Target_databases_column_table_name_contains,
-        ///         }));
-        ///     }
+        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///         ColumnNames = @var.Target_databases_column_column_name,
+        ///         ColumnNameContains = @var.Target_databases_column_column_name_contains,
+        ///         Datatypes = @var.Target_databases_column_datatype,
+        ///         SchemaNames = @var.Target_databases_column_schema_name,
+        ///         SchemaNameContains = @var.Target_databases_column_schema_name_contains,
+        ///         TableNames = oci_nosql_table.Test_table.Name,
+        ///         TableNameContains = @var.Target_databases_column_table_name_contains,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,27 +59,25 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTargetDatabasesColumns = Oci.DataSafe.GetTargetDatabasesColumns.Invoke(new()
         ///     {
-        ///         var testTargetDatabasesColumns = Output.Create(Oci.DataSafe.GetTargetDatabasesColumns.InvokeAsync(new Oci.DataSafe.GetTargetDatabasesColumnsArgs
-        ///         {
-        ///             TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///             ColumnNames = @var.Target_databases_column_column_name,
-        ///             ColumnNameContains = @var.Target_databases_column_column_name_contains,
-        ///             Datatypes = @var.Target_databases_column_datatype,
-        ///             SchemaNames = @var.Target_databases_column_schema_name,
-        ///             SchemaNameContains = @var.Target_databases_column_schema_name_contains,
-        ///             TableNames = oci_nosql_table.Test_table.Name,
-        ///             TableNameContains = @var.Target_databases_column_table_name_contains,
-        ///         }));
-        ///     }
+        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///         ColumnNames = @var.Target_databases_column_column_name,
+        ///         ColumnNameContains = @var.Target_databases_column_column_name_contains,
+        ///         Datatypes = @var.Target_databases_column_datatype,
+        ///         SchemaNames = @var.Target_databases_column_schema_name,
+        ///         SchemaNameContains = @var.Target_databases_column_schema_name_contains,
+        ///         TableNames = oci_nosql_table.Test_table.Name,
+        ///         TableNameContains = @var.Target_databases_column_table_name_contains,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -91,7 +87,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetTargetDatabasesColumnsArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabasesColumnsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only items if column name contains a specific string.
@@ -176,9 +172,10 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabasesColumnsArgs()
         {
         }
+        public static new GetTargetDatabasesColumnsArgs Empty => new GetTargetDatabasesColumnsArgs();
     }
 
-    public sealed class GetTargetDatabasesColumnsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTargetDatabasesColumnsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only items if column name contains a specific string.
@@ -263,6 +260,7 @@ namespace Pulumi.Oci.DataSafe
         public GetTargetDatabasesColumnsInvokeArgs()
         {
         }
+        public static new GetTargetDatabasesColumnsInvokeArgs Empty => new GetTargetDatabasesColumnsInvokeArgs();
     }
 
 

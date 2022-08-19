@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmConfig.Inputs
 {
 
-    public sealed class ConfigMetricArgs : Pulumi.ResourceArgs
+    public sealed class ConfigMetricArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) A description of the metric.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.ApmConfig.Inputs
         public ConfigMetricArgs()
         {
         }
+        public static new ConfigMetricArgs Empty => new ConfigMetricArgs();
     }
 }

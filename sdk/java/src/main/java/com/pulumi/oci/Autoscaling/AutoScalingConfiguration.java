@@ -26,6 +26,81 @@ import javax.annotation.Nullable;
  * Creates an autoscaling configuration.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Autoscaling.AutoScalingConfiguration;
+ * import com.pulumi.oci.Autoscaling.AutoScalingConfigurationArgs;
+ * import com.pulumi.oci.Autoscaling.inputs.AutoScalingConfigurationAutoScalingResourcesArgs;
+ * import com.pulumi.oci.Autoscaling.inputs.AutoScalingConfigurationPolicyArgs;
+ * import com.pulumi.oci.Autoscaling.inputs.AutoScalingConfigurationPolicyCapacityArgs;
+ * import com.pulumi.oci.Autoscaling.inputs.AutoScalingConfigurationPolicyExecutionScheduleArgs;
+ * import com.pulumi.oci.Autoscaling.inputs.AutoScalingConfigurationPolicyResourceActionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutoScalingConfiguration = new AutoScalingConfiguration(&#34;testAutoScalingConfiguration&#34;, AutoScalingConfigurationArgs.builder()        
+ *             .autoScalingResources(AutoScalingConfigurationAutoScalingResourcesArgs.builder()
+ *                 .id(var_.auto_scaling_configuration_auto_scaling_resources_id())
+ *                 .type(var_.auto_scaling_configuration_auto_scaling_resources_type())
+ *                 .build())
+ *             .compartmentId(var_.compartment_id())
+ *             .policies(AutoScalingConfigurationPolicyArgs.builder()
+ *                 .policyType(var_.auto_scaling_configuration_policies_policy_type())
+ *                 .capacity(AutoScalingConfigurationPolicyCapacityArgs.builder()
+ *                     .initial(var_.auto_scaling_configuration_policies_capacity_initial())
+ *                     .max(var_.auto_scaling_configuration_policies_capacity_max())
+ *                     .min(var_.auto_scaling_configuration_policies_capacity_min())
+ *                     .build())
+ *                 .displayName(var_.auto_scaling_configuration_policies_display_name())
+ *                 .executionSchedule(AutoScalingConfigurationPolicyExecutionScheduleArgs.builder()
+ *                     .expression(var_.auto_scaling_configuration_policies_execution_schedule_expression())
+ *                     .timezone(var_.auto_scaling_configuration_policies_execution_schedule_timezone())
+ *                     .type(var_.auto_scaling_configuration_policies_execution_schedule_type())
+ *                     .build())
+ *                 .isEnabled(var_.auto_scaling_configuration_policies_is_enabled())
+ *                 .resourceAction(AutoScalingConfigurationPolicyResourceActionArgs.builder()
+ *                     .action(var_.auto_scaling_configuration_policies_resource_action_action())
+ *                     .actionType(var_.auto_scaling_configuration_policies_resource_action_action_type())
+ *                     .build())
+ *                 .rules(AutoScalingConfigurationPolicyRuleArgs.builder()
+ *                     .action(AutoScalingConfigurationPolicyRuleActionArgs.builder()
+ *                         .type(var_.auto_scaling_configuration_policies_rules_action_type())
+ *                         .value(var_.auto_scaling_configuration_policies_rules_action_value())
+ *                         .build())
+ *                     .displayName(var_.auto_scaling_configuration_policies_rules_display_name())
+ *                     .metric(AutoScalingConfigurationPolicyRuleMetricArgs.builder()
+ *                         .metricType(var_.auto_scaling_configuration_policies_rules_metric_metric_type())
+ *                         .threshold(AutoScalingConfigurationPolicyRuleMetricThresholdArgs.builder()
+ *                             .operator(var_.auto_scaling_configuration_policies_rules_metric_threshold_operator())
+ *                             .value(var_.auto_scaling_configuration_policies_rules_metric_threshold_value())
+ *                             .build())
+ *                         .build())
+ *                     .build())
+ *                 .build())
+ *             .coolDownInSeconds(var_.auto_scaling_configuration_cool_down_in_seconds())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.auto_scaling_configuration_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isEnabled(var_.auto_scaling_configuration_is_enabled())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

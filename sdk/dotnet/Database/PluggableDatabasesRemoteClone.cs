@@ -17,26 +17,24 @@ namespace Pulumi.Oci.Database
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testPluggableDatabasesRemoteClone = new Oci.Database.PluggableDatabasesRemoteClone("testPluggableDatabasesRemoteClone", new()
     ///     {
-    ///         var testPluggableDatabasesRemoteClone = new Oci.Database.PluggableDatabasesRemoteClone("testPluggableDatabasesRemoteClone", new Oci.Database.PluggableDatabasesRemoteCloneArgs
-    ///         {
-    ///             ClonedPdbName = @var.Pluggable_databases_remote_clone_cloned_pdb_name,
-    ///             PluggableDatabaseId = oci_database_pluggable_database.Test_pluggable_database.Id,
-    ///             SourceContainerDbAdminPassword = @var.Pluggable_databases_remote_clone_source_container_db_admin_password,
-    ///             TargetContainerDatabaseId = oci_database_database.Test_database.Id,
-    ///             PdbAdminPassword = @var.Pluggable_databases_remote_clone_pdb_admin_password,
-    ///             ShouldPdbAdminAccountBeLocked = @var.Pluggable_databases_remote_clone_should_pdb_admin_account_be_locked,
-    ///             TargetTdeWalletPassword = @var.Pluggable_databases_remote_clone_target_tde_wallet_password,
-    ///         });
-    ///     }
+    ///         ClonedPdbName = @var.Pluggable_databases_remote_clone_cloned_pdb_name,
+    ///         PluggableDatabaseId = oci_database_pluggable_database.Test_pluggable_database.Id,
+    ///         SourceContainerDbAdminPassword = @var.Pluggable_databases_remote_clone_source_container_db_admin_password,
+    ///         TargetContainerDatabaseId = oci_database_database.Test_database.Id,
+    ///         PdbAdminPassword = @var.Pluggable_databases_remote_clone_pdb_admin_password,
+    ///         ShouldPdbAdminAccountBeLocked = @var.Pluggable_databases_remote_clone_should_pdb_admin_account_be_locked,
+    ///         TargetTdeWalletPassword = @var.Pluggable_databases_remote_clone_target_tde_wallet_password,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -44,7 +42,7 @@ namespace Pulumi.Oci.Database
     /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone")]
-    public partial class PluggableDatabasesRemoteClone : Pulumi.CustomResource
+    public partial class PluggableDatabasesRemoteClone : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -198,7 +196,7 @@ namespace Pulumi.Oci.Database
         }
     }
 
-    public sealed class PluggableDatabasesRemoteCloneArgs : Pulumi.ResourceArgs
+    public sealed class PluggableDatabasesRemoteCloneArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -245,9 +243,10 @@ namespace Pulumi.Oci.Database
         public PluggableDatabasesRemoteCloneArgs()
         {
         }
+        public static new PluggableDatabasesRemoteCloneArgs Empty => new PluggableDatabasesRemoteCloneArgs();
     }
 
-    public sealed class PluggableDatabasesRemoteCloneState : Pulumi.ResourceArgs
+    public sealed class PluggableDatabasesRemoteCloneState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -378,5 +377,6 @@ namespace Pulumi.Oci.Database
         public PluggableDatabasesRemoteCloneState()
         {
         }
+        public static new PluggableDatabasesRemoteCloneState Empty => new PluggableDatabasesRemoteCloneState();
     }
 }

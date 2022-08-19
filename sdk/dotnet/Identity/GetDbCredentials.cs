@@ -22,22 +22,20 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbCredentials = Oci.Identity.GetDbCredentials.Invoke(new()
         ///     {
-        ///         var testDbCredentials = Output.Create(Oci.Identity.GetDbCredentials.InvokeAsync(new Oci.Identity.GetDbCredentialsArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///             Name = @var.Db_credential_name,
-        ///             State = @var.Db_credential_state,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///         Name = @var.Db_credential_name,
+        ///         State = @var.Db_credential_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDbCredentials = Oci.Identity.GetDbCredentials.Invoke(new()
         ///     {
-        ///         var testDbCredentials = Output.Create(Oci.Identity.GetDbCredentials.InvokeAsync(new Oci.Identity.GetDbCredentialsArgs
-        ///         {
-        ///             UserId = oci_identity_user.Test_user.Id,
-        ///             Name = @var.Db_credential_name,
-        ///             State = @var.Db_credential_state,
-        ///         }));
-        ///     }
+        ///         UserId = oci_identity_user.Test_user.Id,
+        ///         Name = @var.Db_credential_name,
+        ///         State = @var.Db_credential_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetDbCredentialsArgs : Pulumi.InvokeArgs
+    public sealed class GetDbCredentialsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetDbCredentialsFilterArgs>? _filters;
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.Identity
         public GetDbCredentialsArgs()
         {
         }
+        public static new GetDbCredentialsArgs Empty => new GetDbCredentialsArgs();
     }
 
-    public sealed class GetDbCredentialsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDbCredentialsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetDbCredentialsFilterInputArgs>? _filters;
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.Identity
         public GetDbCredentialsInvokeArgs()
         {
         }
+        public static new GetDbCredentialsInvokeArgs Empty => new GetDbCredentialsInvokeArgs();
     }
 
 

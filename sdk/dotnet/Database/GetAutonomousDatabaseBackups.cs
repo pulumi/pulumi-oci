@@ -22,23 +22,21 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabaseBackups = Oci.Database.GetAutonomousDatabaseBackups.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabaseBackups = Output.Create(Oci.Database.GetAutonomousDatabaseBackups.InvokeAsync(new Oci.Database.GetAutonomousDatabaseBackupsArgs
-        ///         {
-        ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Autonomous_database_backup_display_name,
-        ///             State = @var.Autonomous_database_backup_state,
-        ///         }));
-        ///     }
+        ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Autonomous_database_backup_display_name,
+        ///         State = @var.Autonomous_database_backup_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,23 +55,21 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAutonomousDatabaseBackups = Oci.Database.GetAutonomousDatabaseBackups.Invoke(new()
         ///     {
-        ///         var testAutonomousDatabaseBackups = Output.Create(Oci.Database.GetAutonomousDatabaseBackups.InvokeAsync(new Oci.Database.GetAutonomousDatabaseBackupsArgs
-        ///         {
-        ///             AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Autonomous_database_backup_display_name,
-        ///             State = @var.Autonomous_database_backup_state,
-        ///         }));
-        ///     }
+        ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Autonomous_database_backup_display_name,
+        ///         State = @var.Autonomous_database_backup_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetAutonomousDatabaseBackupsArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDatabaseBackupsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDatabaseBackupsArgs()
         {
         }
+        public static new GetAutonomousDatabaseBackupsArgs Empty => new GetAutonomousDatabaseBackupsArgs();
     }
 
-    public sealed class GetAutonomousDatabaseBackupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAutonomousDatabaseBackupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -159,6 +156,7 @@ namespace Pulumi.Oci.Database
         public GetAutonomousDatabaseBackupsInvokeArgs()
         {
         }
+        public static new GetAutonomousDatabaseBackupsInvokeArgs Empty => new GetAutonomousDatabaseBackupsInvokeArgs();
     }
 
 

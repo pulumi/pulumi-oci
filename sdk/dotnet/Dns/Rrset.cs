@@ -19,35 +19,33 @@ namespace Pulumi.Oci.Dns
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testRrset = new Oci.Dns.Rrset("testRrset", new()
     ///     {
-    ///         var testRrset = new Oci.Dns.Rrset("testRrset", new Oci.Dns.RrsetArgs
+    ///         Domain = @var.Rrset_domain,
+    ///         Rtype = @var.Rrset_rtype,
+    ///         ZoneNameOrId = oci_dns_zone.Test_zone.Id,
+    ///         CompartmentId = @var.Compartment_id,
+    ///         Items = new[]
     ///         {
-    ///             Domain = @var.Rrset_domain,
-    ///             Rtype = @var.Rrset_rtype,
-    ///             ZoneNameOrId = oci_dns_zone.Test_zone.Id,
-    ///             CompartmentId = @var.Compartment_id,
-    ///             Items = 
+    ///             new Oci.Dns.Inputs.RrsetItemArgs
     ///             {
-    ///                 new Oci.Dns.Inputs.RrsetItemArgs
-    ///                 {
-    ///                     Domain = @var.Rrset_items_domain,
-    ///                     Rdata = @var.Rrset_items_rdata,
-    ///                     Rtype = @var.Rrset_items_rtype,
-    ///                     Ttl = @var.Rrset_items_ttl,
-    ///                 },
+    ///                 Domain = @var.Rrset_items_domain,
+    ///                 Rdata = @var.Rrset_items_rdata,
+    ///                 Rtype = @var.Rrset_items_rtype,
+    ///                 Ttl = @var.Rrset_items_ttl,
     ///             },
-    ///             Scope = @var.Rrset_scope,
-    ///             ViewId = oci_dns_view.Test_view.Id,
-    ///         });
-    ///     }
+    ///         },
+    ///         Scope = @var.Rrset_scope,
+    ///         ViewId = oci_dns_view.Test_view.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -67,7 +65,7 @@ namespace Pulumi.Oci.Dns
     ///  skip adding `{view_id}` at the end if Rrset was created without `view_id`.
     /// </summary>
     [OciResourceType("oci:Dns/rrset:Rrset")]
-    public partial class Rrset : Pulumi.CustomResource
+    public partial class Rrset : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment the resource belongs to.
@@ -157,7 +155,7 @@ namespace Pulumi.Oci.Dns
         }
     }
 
-    public sealed class RrsetArgs : Pulumi.ResourceArgs
+    public sealed class RrsetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment the resource belongs to.
@@ -212,9 +210,10 @@ namespace Pulumi.Oci.Dns
         public RrsetArgs()
         {
         }
+        public static new RrsetArgs Empty => new RrsetArgs();
     }
 
-    public sealed class RrsetState : Pulumi.ResourceArgs
+    public sealed class RrsetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment the resource belongs to.
@@ -269,5 +268,6 @@ namespace Pulumi.Oci.Dns
         public RrsetState()
         {
         }
+        public static new RrsetState Empty => new RrsetState();
     }
 }

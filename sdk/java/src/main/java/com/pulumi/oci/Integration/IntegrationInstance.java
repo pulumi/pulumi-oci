@@ -30,6 +30,65 @@ import javax.annotation.Nullable;
  * Creates a new Integration Instance.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Integration.IntegrationInstance;
+ * import com.pulumi.oci.Integration.IntegrationInstanceArgs;
+ * import com.pulumi.oci.Integration.inputs.IntegrationInstanceAlternateCustomEndpointArgs;
+ * import com.pulumi.oci.Integration.inputs.IntegrationInstanceCustomEndpointArgs;
+ * import com.pulumi.oci.Integration.inputs.IntegrationInstanceNetworkEndpointDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testIntegrationInstance = new IntegrationInstance(&#34;testIntegrationInstance&#34;, IntegrationInstanceArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.integration_instance_display_name())
+ *             .integrationInstanceType(var_.integration_instance_integration_instance_type())
+ *             .isByol(var_.integration_instance_is_byol())
+ *             .messagePacks(var_.integration_instance_message_packs())
+ *             .alternateCustomEndpoints(IntegrationInstanceAlternateCustomEndpointArgs.builder()
+ *                 .hostname(var_.integration_instance_alternate_custom_endpoints_hostname())
+ *                 .certificateSecretId(oci_vault_secret.test_secret().id())
+ *                 .build())
+ *             .consumptionModel(var_.integration_instance_consumption_model())
+ *             .customEndpoint(IntegrationInstanceCustomEndpointArgs.builder()
+ *                 .hostname(var_.integration_instance_custom_endpoint_hostname())
+ *                 .certificateSecretId(oci_vault_secret.test_secret().id())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .idcsAt(var_.integration_instance_idcs_at())
+ *             .isFileServerEnabled(var_.integration_instance_is_file_server_enabled())
+ *             .isVisualBuilderEnabled(var_.integration_instance_is_visual_builder_enabled())
+ *             .networkEndpointDetails(IntegrationInstanceNetworkEndpointDetailsArgs.builder()
+ *                 .networkEndpointType(var_.integration_instance_network_endpoint_details_network_endpoint_type())
+ *                 .allowlistedHttpIps(var_.integration_instance_network_endpoint_details_allowlisted_http_ips())
+ *                 .allowlistedHttpVcns(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs.builder()
+ *                     .id(var_.integration_instance_network_endpoint_details_allowlisted_http_vcns_id())
+ *                     .allowlistedIps(var_.integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips())
+ *                     .build())
+ *                 .isIntegrationVcnAllowlisted(var_.integration_instance_network_endpoint_details_is_integration_vcn_allowlisted())
+ *                 .build())
+ *             .state(var_.integration_instance_target_state())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

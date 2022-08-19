@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs()
         {
         }
+        public static new DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs Empty => new DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs();
     }
 }

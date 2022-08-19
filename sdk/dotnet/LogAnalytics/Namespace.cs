@@ -17,22 +17,20 @@ namespace Pulumi.Oci.LogAnalytics
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testNamespace = new Oci.LogAnalytics.Namespace("testNamespace", new()
     ///     {
-    ///         var testNamespace = new Oci.LogAnalytics.Namespace("testNamespace", new Oci.LogAnalytics.NamespaceArgs
-    ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             IsOnboarded = @var.Is_onboarded,
-    ///             Namespace = @var.Namespace_namespace,
-    ///         });
-    ///     }
+    ///         CompartmentId = @var.Compartment_id,
+    ///         IsOnboarded = @var.Is_onboarded,
+    ///         NamespaceName = @var.Namespace_namespace,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -44,7 +42,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// ```
     /// </summary>
     [OciResourceType("oci:LogAnalytics/namespace:Namespace")]
-    public partial class Namespace : Pulumi.CustomResource
+    public partial class Namespace : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the root compartment i.e. OCID of the tenancy.
@@ -108,7 +106,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
     }
 
-    public sealed class NamespaceArgs : Pulumi.ResourceArgs
+    public sealed class NamespaceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the root compartment i.e. OCID of the tenancy.
@@ -131,9 +129,10 @@ namespace Pulumi.Oci.LogAnalytics
         public NamespaceArgs()
         {
         }
+        public static new NamespaceArgs Empty => new NamespaceArgs();
     }
 
-    public sealed class NamespaceState : Pulumi.ResourceArgs
+    public sealed class NamespaceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the root compartment i.e. OCID of the tenancy.
@@ -156,5 +155,6 @@ namespace Pulumi.Oci.LogAnalytics
         public NamespaceState()
         {
         }
+        public static new NamespaceState Empty => new NamespaceState();
     }
 }

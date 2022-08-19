@@ -21,22 +21,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseUserObjectPrivileges = Oci.DatabaseManagement.GetManagedDatabaseUserObjectPrivileges.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseUserObjectPrivileges = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseUserObjectPrivileges.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseUserObjectPrivilegesArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             UserName = oci_identity_user.Test_user.Name,
-        ///             Name = @var.Managed_database_user_object_privilege_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         UserName = oci_identity_user.Test_user.Name,
+        ///         Name = @var.Managed_database_user_object_privilege_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabaseUserObjectPrivileges = Oci.DatabaseManagement.GetManagedDatabaseUserObjectPrivileges.Invoke(new()
         ///     {
-        ///         var testManagedDatabaseUserObjectPrivileges = Output.Create(Oci.DatabaseManagement.GetManagedDatabaseUserObjectPrivileges.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabaseUserObjectPrivilegesArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             UserName = oci_identity_user.Test_user.Name,
-        ///             Name = @var.Managed_database_user_object_privilege_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         UserName = oci_identity_user.Test_user.Name,
+        ///         Name = @var.Managed_database_user_object_privilege_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabaseUserObjectPrivilegesArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseUserObjectPrivilegesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetManagedDatabaseUserObjectPrivilegesFilterArgs>? _filters;
@@ -110,9 +106,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseUserObjectPrivilegesArgs()
         {
         }
+        public static new GetManagedDatabaseUserObjectPrivilegesArgs Empty => new GetManagedDatabaseUserObjectPrivilegesArgs();
     }
 
-    public sealed class GetManagedDatabaseUserObjectPrivilegesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabaseUserObjectPrivilegesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetManagedDatabaseUserObjectPrivilegesFilterInputArgs>? _filters;
@@ -143,6 +140,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabaseUserObjectPrivilegesInvokeArgs()
         {
         }
+        public static new GetManagedDatabaseUserObjectPrivilegesInvokeArgs Empty => new GetManagedDatabaseUserObjectPrivilegesInvokeArgs();
     }
 
 

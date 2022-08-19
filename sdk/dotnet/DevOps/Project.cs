@@ -17,33 +17,31 @@ namespace Pulumi.Oci.DevOps
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testProject = new Oci.DevOps.Project("testProject", new()
     ///     {
-    ///         var testProject = new Oci.DevOps.Project("testProject", new Oci.DevOps.ProjectArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         NotificationConfig = new Oci.DevOps.Inputs.ProjectNotificationConfigArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             NotificationConfig = new Oci.DevOps.Inputs.ProjectNotificationConfigArgs
-    ///             {
-    ///                 TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
-    ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Project_description,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Project_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -55,7 +53,7 @@ namespace Pulumi.Oci.DevOps
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/project:Project")]
-    public partial class Project : Pulumi.CustomResource
+    public partial class Project : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where the project is created.
@@ -173,7 +171,7 @@ namespace Pulumi.Oci.DevOps
         }
     }
 
-    public sealed class ProjectArgs : Pulumi.ResourceArgs
+    public sealed class ProjectArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where the project is created.
@@ -226,9 +224,10 @@ namespace Pulumi.Oci.DevOps
         public ProjectArgs()
         {
         }
+        public static new ProjectArgs Empty => new ProjectArgs();
     }
 
-    public sealed class ProjectState : Pulumi.ResourceArgs
+    public sealed class ProjectState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment where the project is created.
@@ -323,5 +322,6 @@ namespace Pulumi.Oci.DevOps
         public ProjectState()
         {
         }
+        public static new ProjectState Empty => new ProjectState();
     }
 }

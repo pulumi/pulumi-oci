@@ -22,22 +22,20 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseRegistrations = Oci.GoldenGate.GetDatabaseRegistrations.Invoke(new()
         ///     {
-        ///         var testDatabaseRegistrations = Output.Create(Oci.GoldenGate.GetDatabaseRegistrations.InvokeAsync(new Oci.GoldenGate.GetDatabaseRegistrationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Database_registration_display_name,
-        ///             State = @var.Database_registration_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Database_registration_display_name,
+        ///         State = @var.Database_registration_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -56,22 +54,20 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDatabaseRegistrations = Oci.GoldenGate.GetDatabaseRegistrations.Invoke(new()
         ///     {
-        ///         var testDatabaseRegistrations = Output.Create(Oci.GoldenGate.GetDatabaseRegistrations.InvokeAsync(new Oci.GoldenGate.GetDatabaseRegistrationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Database_registration_display_name,
-        ///             State = @var.Database_registration_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Database_registration_display_name,
+        ///         State = @var.Database_registration_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.GoldenGate
     }
 
 
-    public sealed class GetDatabaseRegistrationsArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseRegistrationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -112,9 +108,10 @@ namespace Pulumi.Oci.GoldenGate
         public GetDatabaseRegistrationsArgs()
         {
         }
+        public static new GetDatabaseRegistrationsArgs Empty => new GetDatabaseRegistrationsArgs();
     }
 
-    public sealed class GetDatabaseRegistrationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDatabaseRegistrationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -145,6 +142,7 @@ namespace Pulumi.Oci.GoldenGate
         public GetDatabaseRegistrationsInvokeArgs()
         {
         }
+        public static new GetDatabaseRegistrationsInvokeArgs Empty => new GetDatabaseRegistrationsInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Ocvp.Inputs
 {
 
-    public sealed class GetSupportedVmwareSoftwareVersionsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetSupportedVmwareSoftwareVersionsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Ocvp.Inputs
         public GetSupportedVmwareSoftwareVersionsFilterArgs()
         {
         }
+        public static new GetSupportedVmwareSoftwareVersionsFilterArgs Empty => new GetSupportedVmwareSoftwareVersionsFilterArgs();
     }
 }

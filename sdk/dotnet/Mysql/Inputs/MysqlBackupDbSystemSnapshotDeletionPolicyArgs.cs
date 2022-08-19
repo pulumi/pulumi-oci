@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlBackupDbSystemSnapshotDeletionPolicyArgs : Pulumi.ResourceArgs
+    public sealed class MysqlBackupDbSystemSnapshotDeletionPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlBackupDbSystemSnapshotDeletionPolicyArgs()
         {
         }
+        public static new MysqlBackupDbSystemSnapshotDeletionPolicyArgs Empty => new MysqlBackupDbSystemSnapshotDeletionPolicyArgs();
     }
 }

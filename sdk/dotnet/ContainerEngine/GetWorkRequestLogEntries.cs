@@ -21,21 +21,19 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWorkRequestLogEntries = Oci.ContainerEngine.GetWorkRequestLogEntries.Invoke(new()
         ///     {
-        ///         var testWorkRequestLogEntries = Output.Create(Oci.ContainerEngine.GetWorkRequestLogEntries.InvokeAsync(new Oci.ContainerEngine.GetWorkRequestLogEntriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testWorkRequestLogEntries = Oci.ContainerEngine.GetWorkRequestLogEntries.Invoke(new()
         ///     {
-        ///         var testWorkRequestLogEntries = Output.Create(Oci.ContainerEngine.GetWorkRequestLogEntries.InvokeAsync(new Oci.ContainerEngine.GetWorkRequestLogEntriesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.ContainerEngine
     }
 
 
-    public sealed class GetWorkRequestLogEntriesArgs : Pulumi.InvokeArgs
+    public sealed class GetWorkRequestLogEntriesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.ContainerEngine
         public GetWorkRequestLogEntriesArgs()
         {
         }
+        public static new GetWorkRequestLogEntriesArgs Empty => new GetWorkRequestLogEntriesArgs();
     }
 
-    public sealed class GetWorkRequestLogEntriesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetWorkRequestLogEntriesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.ContainerEngine
         public GetWorkRequestLogEntriesInvokeArgs()
         {
         }
+        public static new GetWorkRequestLogEntriesInvokeArgs Empty => new GetWorkRequestLogEntriesInvokeArgs();
     }
 
 

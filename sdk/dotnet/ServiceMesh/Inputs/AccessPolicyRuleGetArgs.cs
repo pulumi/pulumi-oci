@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class AccessPolicyRuleGetArgs : Pulumi.ResourceArgs
+    public sealed class AccessPolicyRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Action for the traffic between the source and the destination.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public AccessPolicyRuleGetArgs()
         {
         }
+        public static new AccessPolicyRuleGetArgs Empty => new AccessPolicyRuleGetArgs();
     }
 }

@@ -17,29 +17,27 @@ namespace Pulumi.Oci.UsageProxy
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSubscriptionRedeemableUser = new Oci.UsageProxy.SubscriptionRedeemableUser("testSubscriptionRedeemableUser", new()
     ///     {
-    ///         var testSubscriptionRedeemableUser = new Oci.UsageProxy.SubscriptionRedeemableUser("testSubscriptionRedeemableUser", new Oci.UsageProxy.SubscriptionRedeemableUserArgs
+    ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
+    ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+    ///         Items = new[]
     ///         {
-    ///             SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-    ///             TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-    ///             Items = 
+    ///             new Oci.UsageProxy.Inputs.SubscriptionRedeemableUserItemArgs
     ///             {
-    ///                 new Oci.UsageProxy.Inputs.SubscriptionRedeemableUserItemArgs
-    ///                 {
-    ///                     EmailId = oci_usage_proxy_email.Test_email.Id,
-    ///                 },
+    ///                 EmailId = oci_usage_proxy_email.Test_email.Id,
     ///             },
-    ///             UserId = oci_identity_user.Test_user.Id,
-    ///         });
-    ///     }
+    ///         },
+    ///         UserId = oci_identity_user.Test_user.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -51,7 +49,7 @@ namespace Pulumi.Oci.UsageProxy
     /// ```
     /// </summary>
     [OciResourceType("oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser")]
-    public partial class SubscriptionRedeemableUser : Pulumi.CustomResource
+    public partial class SubscriptionRedeemableUser : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The list of email IDs to be added to the list of users that can redeem rewards.
@@ -121,7 +119,7 @@ namespace Pulumi.Oci.UsageProxy
         }
     }
 
-    public sealed class SubscriptionRedeemableUserArgs : Pulumi.ResourceArgs
+    public sealed class SubscriptionRedeemableUserArgs : global::Pulumi.ResourceArgs
     {
         [Input("items", required: true)]
         private InputList<Inputs.SubscriptionRedeemableUserItemArgs>? _items;
@@ -156,9 +154,10 @@ namespace Pulumi.Oci.UsageProxy
         public SubscriptionRedeemableUserArgs()
         {
         }
+        public static new SubscriptionRedeemableUserArgs Empty => new SubscriptionRedeemableUserArgs();
     }
 
-    public sealed class SubscriptionRedeemableUserState : Pulumi.ResourceArgs
+    public sealed class SubscriptionRedeemableUserState : global::Pulumi.ResourceArgs
     {
         [Input("items")]
         private InputList<Inputs.SubscriptionRedeemableUserItemGetArgs>? _items;
@@ -193,5 +192,6 @@ namespace Pulumi.Oci.UsageProxy
         public SubscriptionRedeemableUserState()
         {
         }
+        public static new SubscriptionRedeemableUserState Empty => new SubscriptionRedeemableUserState();
     }
 }

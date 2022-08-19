@@ -23,6 +23,47 @@ import javax.annotation.Nullable;
  * Creates a new Data Mask Rule Definition
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.CloudGuard.DataMaskRule;
+ * import com.pulumi.oci.CloudGuard.DataMaskRuleArgs;
+ * import com.pulumi.oci.CloudGuard.inputs.DataMaskRuleTargetSelectedArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDataMaskRule = new DataMaskRule(&#34;testDataMaskRule&#34;, DataMaskRuleArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .dataMaskCategories(var_.data_mask_rule_data_mask_categories())
+ *             .displayName(var_.data_mask_rule_display_name())
+ *             .iamGroupId(oci_identity_group.test_group().id())
+ *             .targetSelected(DataMaskRuleTargetSelectedArgs.builder()
+ *                 .kind(var_.data_mask_rule_target_selected_kind())
+ *                 .values(var_.data_mask_rule_target_selected_values())
+ *                 .build())
+ *             .dataMaskRuleStatus(var_.data_mask_rule_data_mask_rule_status())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.data_mask_rule_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .state(var_.data_mask_rule_state())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

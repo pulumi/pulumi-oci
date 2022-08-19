@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration.Inputs
 {
 
-    public sealed class GetMigrationsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetMigrationsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Name of directory object in database
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public GetMigrationsFilterInputArgs()
         {
         }
+        public static new GetMigrationsFilterInputArgs Empty => new GetMigrationsFilterInputArgs();
     }
 }

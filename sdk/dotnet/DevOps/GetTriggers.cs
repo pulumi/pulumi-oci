@@ -22,24 +22,22 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTriggers = Oci.DevOps.GetTriggers.Invoke(new()
         ///     {
-        ///         var testTriggers = Output.Create(Oci.DevOps.GetTriggers.InvokeAsync(new Oci.DevOps.GetTriggersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Trigger_display_name,
-        ///             Id = @var.Trigger_id,
-        ///             ProjectId = oci_devops_project.Test_project.Id,
-        ///             State = @var.Trigger_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Trigger_display_name,
+        ///         Id = @var.Trigger_id,
+        ///         ProjectId = oci_devops_project.Test_project.Id,
+        ///         State = @var.Trigger_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testTriggers = Oci.DevOps.GetTriggers.Invoke(new()
         ///     {
-        ///         var testTriggers = Output.Create(Oci.DevOps.GetTriggers.InvokeAsync(new Oci.DevOps.GetTriggersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Trigger_display_name,
-        ///             Id = @var.Trigger_id,
-        ///             ProjectId = oci_devops_project.Test_project.Id,
-        ///             State = @var.Trigger_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Trigger_display_name,
+        ///         Id = @var.Trigger_id,
+        ///         ProjectId = oci_devops_project.Test_project.Id,
+        ///         State = @var.Trigger_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetTriggersArgs : Pulumi.InvokeArgs
+    public sealed class GetTriggersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment in which to list resources.
@@ -132,9 +128,10 @@ namespace Pulumi.Oci.DevOps
         public GetTriggersArgs()
         {
         }
+        public static new GetTriggersArgs Empty => new GetTriggersArgs();
     }
 
-    public sealed class GetTriggersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetTriggersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment in which to list resources.
@@ -181,6 +178,7 @@ namespace Pulumi.Oci.DevOps
         public GetTriggersInvokeArgs()
         {
         }
+        public static new GetTriggersInvokeArgs Empty => new GetTriggersInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class GatewayResponseCacheDetailsServerGetArgs : Pulumi.ResourceArgs
+    public sealed class GatewayResponseCacheDetailsServerGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Hostname or IP address (IPv4 only) where the cache store is running.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public GatewayResponseCacheDetailsServerGetArgs()
         {
         }
+        public static new GatewayResponseCacheDetailsServerGetArgs Empty => new GatewayResponseCacheDetailsServerGetArgs();
     }
 }

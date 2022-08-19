@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DataFlow.outputs.GetApplicationsApplicationApplicationLogConfig;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationsApplicationDriverShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationsApplicationExecutorShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationsApplicationParameter;
@@ -16,6 +17,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetApplicationsApplication {
+    /**
+     * @return Logging details of Application logs for Data Flow Run.
+     * 
+     */
+    private final List<GetApplicationsApplicationApplicationLogConfig> applicationLogConfigs;
     /**
      * @return An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
@@ -169,6 +175,7 @@ public final class GetApplicationsApplication {
 
     @CustomType.Constructor
     private GetApplicationsApplication(
+        @CustomType.Parameter("applicationLogConfigs") List<GetApplicationsApplicationApplicationLogConfig> applicationLogConfigs,
         @CustomType.Parameter("archiveUri") String archiveUri,
         @CustomType.Parameter("arguments") List<String> arguments,
         @CustomType.Parameter("className") String className,
@@ -199,6 +206,7 @@ public final class GetApplicationsApplication {
         @CustomType.Parameter("timeUpdated") String timeUpdated,
         @CustomType.Parameter("type") String type,
         @CustomType.Parameter("warehouseBucketUri") String warehouseBucketUri) {
+        this.applicationLogConfigs = applicationLogConfigs;
         this.archiveUri = archiveUri;
         this.arguments = arguments;
         this.className = className;
@@ -231,6 +239,13 @@ public final class GetApplicationsApplication {
         this.warehouseBucketUri = warehouseBucketUri;
     }
 
+    /**
+     * @return Logging details of Application logs for Data Flow Run.
+     * 
+     */
+    public List<GetApplicationsApplicationApplicationLogConfig> applicationLogConfigs() {
+        return this.applicationLogConfigs;
+    }
     /**
      * @return An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
@@ -451,6 +466,7 @@ public final class GetApplicationsApplication {
     }
 
     public static final class Builder {
+        private List<GetApplicationsApplicationApplicationLogConfig> applicationLogConfigs;
         private String archiveUri;
         private List<String> arguments;
         private String className;
@@ -488,6 +504,7 @@ public final class GetApplicationsApplication {
 
         public Builder(GetApplicationsApplication defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.applicationLogConfigs = defaults.applicationLogConfigs;
     	      this.archiveUri = defaults.archiveUri;
     	      this.arguments = defaults.arguments;
     	      this.className = defaults.className;
@@ -520,6 +537,13 @@ public final class GetApplicationsApplication {
     	      this.warehouseBucketUri = defaults.warehouseBucketUri;
         }
 
+        public Builder applicationLogConfigs(List<GetApplicationsApplicationApplicationLogConfig> applicationLogConfigs) {
+            this.applicationLogConfigs = Objects.requireNonNull(applicationLogConfigs);
+            return this;
+        }
+        public Builder applicationLogConfigs(GetApplicationsApplicationApplicationLogConfig... applicationLogConfigs) {
+            return applicationLogConfigs(List.of(applicationLogConfigs));
+        }
         public Builder archiveUri(String archiveUri) {
             this.archiveUri = Objects.requireNonNull(archiveUri);
             return this;
@@ -652,7 +676,7 @@ public final class GetApplicationsApplication {
             this.warehouseBucketUri = Objects.requireNonNull(warehouseBucketUri);
             return this;
         }        public GetApplicationsApplication build() {
-            return new GetApplicationsApplication(archiveUri, arguments, className, compartmentId, configuration, definedTags, description, displayName, driverShape, driverShapeConfigs, execute, executorShape, executorShapeConfigs, fileUri, freeformTags, id, language, logsBucketUri, metastoreId, numExecutors, ownerPrincipalId, ownerUserName, parameters, privateEndpointId, sparkVersion, state, timeCreated, timeUpdated, type, warehouseBucketUri);
+            return new GetApplicationsApplication(applicationLogConfigs, archiveUri, arguments, className, compartmentId, configuration, definedTags, description, displayName, driverShape, driverShapeConfigs, execute, executorShape, executorShapeConfigs, fileUri, freeformTags, id, language, logsBucketUri, metastoreId, numExecutors, ownerPrincipalId, ownerUserName, parameters, privateEndpointId, sparkVersion, state, timeCreated, timeUpdated, type, warehouseBucketUri);
         }
     }
 }

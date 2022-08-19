@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataSafeConfiguration = Oci.DataSafe.GetDataSafeConfiguration.Invoke(new()
         ///     {
-        ///         var testDataSafeConfiguration = Output.Create(Oci.DataSafe.GetDataSafeConfiguration.InvokeAsync(new Oci.DataSafe.GetDataSafeConfigurationArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataSafeConfiguration = Oci.DataSafe.GetDataSafeConfiguration.Invoke(new()
         ///     {
-        ///         var testDataSafeConfiguration = Output.Create(Oci.DataSafe.GetDataSafeConfiguration.InvokeAsync(new Oci.DataSafe.GetDataSafeConfigurationArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetDataSafeConfigurationArgs : Pulumi.InvokeArgs
+    public sealed class GetDataSafeConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetDataSafeConfigurationArgs()
         {
         }
+        public static new GetDataSafeConfigurationArgs Empty => new GetDataSafeConfigurationArgs();
     }
 
-    public sealed class GetDataSafeConfigurationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDataSafeConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetDataSafeConfigurationInvokeArgs()
         {
         }
+        public static new GetDataSafeConfigurationInvokeArgs Empty => new GetDataSafeConfigurationInvokeArgs();
     }
 
 

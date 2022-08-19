@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class ExadataInfrastructureStorageContactGetArgs : Pulumi.ResourceArgs
+    public sealed class ExadataInfrastructureStorageContactGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("email", required: true)]
         public Input<string> Email { get; set; } = null!;
@@ -30,5 +30,6 @@ namespace Pulumi.Oci.Database.Inputs
         public ExadataInfrastructureStorageContactGetArgs()
         {
         }
+        public static new ExadataInfrastructureStorageContactGetArgs Empty => new ExadataInfrastructureStorageContactGetArgs();
     }
 }

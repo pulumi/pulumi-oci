@@ -17,64 +17,67 @@ namespace Pulumi.Oci.DataFlow
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testApplication = new Oci.DataFlow.Application("testApplication", new()
     ///     {
-    ///         var testApplication = new Oci.DataFlow.Application("testApplication", new Oci.DataFlow.ApplicationArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Application_display_name,
+    ///         DriverShape = @var.Application_driver_shape,
+    ///         ExecutorShape = @var.Application_executor_shape,
+    ///         FileUri = @var.Application_file_uri,
+    ///         Language = @var.Application_language,
+    ///         NumExecutors = @var.Application_num_executors,
+    ///         SparkVersion = @var.Application_spark_version,
+    ///         ApplicationLogConfig = new Oci.DataFlow.Inputs.ApplicationApplicationLogConfigArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Application_display_name,
-    ///             DriverShape = @var.Application_driver_shape,
-    ///             ExecutorShape = @var.Application_executor_shape,
-    ///             FileUri = @var.Application_file_uri,
-    ///             Language = @var.Application_language,
-    ///             NumExecutors = @var.Application_num_executors,
-    ///             SparkVersion = @var.Application_spark_version,
-    ///             ArchiveUri = @var.Application_archive_uri,
-    ///             Arguments = @var.Application_arguments,
-    ///             ClassName = @var.Application_class_name,
-    ///             Configuration = @var.Application_configuration,
-    ///             DefinedTags = 
+    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
+    ///             LogId = oci_logging_log.Test_log.Id,
+    ///         },
+    ///         ArchiveUri = @var.Application_archive_uri,
+    ///         Arguments = @var.Application_arguments,
+    ///         ClassName = @var.Application_class_name,
+    ///         Configuration = @var.Application_configuration,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Application_description,
+    ///         DriverShapeConfig = new Oci.DataFlow.Inputs.ApplicationDriverShapeConfigArgs
+    ///         {
+    ///             MemoryInGbs = @var.Application_driver_shape_config_memory_in_gbs,
+    ///             Ocpus = @var.Application_driver_shape_config_ocpus,
+    ///         },
+    ///         Execute = @var.Application_execute,
+    ///         ExecutorShapeConfig = new Oci.DataFlow.Inputs.ApplicationExecutorShapeConfigArgs
+    ///         {
+    ///             MemoryInGbs = @var.Application_executor_shape_config_memory_in_gbs,
+    ///             Ocpus = @var.Application_executor_shape_config_ocpus,
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         LogsBucketUri = @var.Application_logs_bucket_uri,
+    ///         MetastoreId = @var.Metastore_id,
+    ///         Parameters = new[]
+    ///         {
+    ///             new Oci.DataFlow.Inputs.ApplicationParameterArgs
     ///             {
-    ///                 { "Operations.CostCenter", "42" },
+    ///                 Name = @var.Application_parameters_name,
+    ///                 Value = @var.Application_parameters_value,
     ///             },
-    ///             Description = @var.Application_description,
-    ///             DriverShapeConfig = new Oci.DataFlow.Inputs.ApplicationDriverShapeConfigArgs
-    ///             {
-    ///                 MemoryInGbs = @var.Application_driver_shape_config_memory_in_gbs,
-    ///                 Ocpus = @var.Application_driver_shape_config_ocpus,
-    ///             },
-    ///             Execute = @var.Application_execute,
-    ///             ExecutorShapeConfig = new Oci.DataFlow.Inputs.ApplicationExecutorShapeConfigArgs
-    ///             {
-    ///                 MemoryInGbs = @var.Application_executor_shape_config_memory_in_gbs,
-    ///                 Ocpus = @var.Application_executor_shape_config_ocpus,
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             LogsBucketUri = @var.Application_logs_bucket_uri,
-    ///             MetastoreId = @var.Metastore_id,
-    ///             Parameters = 
-    ///             {
-    ///                 new Oci.DataFlow.Inputs.ApplicationParameterArgs
-    ///                 {
-    ///                     Name = @var.Application_parameters_name,
-    ///                     Value = @var.Application_parameters_value,
-    ///                 },
-    ///             },
-    ///             PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-    ///             Type = @var.Application_type,
-    ///             WarehouseBucketUri = @var.Application_warehouse_bucket_uri,
-    ///         });
-    ///     }
+    ///         },
+    ///         PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+    ///         Type = @var.Application_type,
+    ///         WarehouseBucketUri = @var.Application_warehouse_bucket_uri,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -86,8 +89,14 @@ namespace Pulumi.Oci.DataFlow
     /// ```
     /// </summary>
     [OciResourceType("oci:DataFlow/application:Application")]
-    public partial class Application : Pulumi.CustomResource
+    public partial class Application : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) Logging details of Application logs for Data Flow Run.
+        /// </summary>
+        [Output("applicationLogConfig")]
+        public Output<Outputs.ApplicationApplicationLogConfig> ApplicationLogConfig { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
@@ -306,8 +315,14 @@ namespace Pulumi.Oci.DataFlow
         }
     }
 
-    public sealed class ApplicationArgs : Pulumi.ResourceArgs
+    public sealed class ApplicationArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Logging details of Application logs for Data Flow Run.
+        /// </summary>
+        [Input("applicationLogConfig")]
+        public Input<Inputs.ApplicationApplicationLogConfigArgs>? ApplicationLogConfig { get; set; }
+
         /// <summary>
         /// (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
@@ -485,10 +500,17 @@ namespace Pulumi.Oci.DataFlow
         public ApplicationArgs()
         {
         }
+        public static new ApplicationArgs Empty => new ApplicationArgs();
     }
 
-    public sealed class ApplicationState : Pulumi.ResourceArgs
+    public sealed class ApplicationState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Logging details of Application logs for Data Flow Run.
+        /// </summary>
+        [Input("applicationLogConfig")]
+        public Input<Inputs.ApplicationApplicationLogConfigGetArgs>? ApplicationLogConfig { get; set; }
+
         /// <summary>
         /// (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
@@ -696,5 +718,6 @@ namespace Pulumi.Oci.DataFlow
         public ApplicationState()
         {
         }
+        public static new ApplicationState Empty => new ApplicationState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     [OciResourceType("oci:Core/defaultDhcpOptions:DefaultDhcpOptions")]
-    public partial class DefaultDhcpOptions : Pulumi.CustomResource
+    public partial class DefaultDhcpOptions : global::Pulumi.CustomResource
     {
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class DefaultDhcpOptionsArgs : Pulumi.ResourceArgs
+    public sealed class DefaultDhcpOptionsArgs : global::Pulumi.ResourceArgs
     {
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -124,9 +124,10 @@ namespace Pulumi.Oci.Core
         public DefaultDhcpOptionsArgs()
         {
         }
+        public static new DefaultDhcpOptionsArgs Empty => new DefaultDhcpOptionsArgs();
     }
 
-    public sealed class DefaultDhcpOptionsState : Pulumi.ResourceArgs
+    public sealed class DefaultDhcpOptionsState : global::Pulumi.ResourceArgs
     {
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -173,5 +174,6 @@ namespace Pulumi.Oci.Core
         public DefaultDhcpOptionsState()
         {
         }
+        public static new DefaultDhcpOptionsState Empty => new DefaultDhcpOptionsState();
     }
 }

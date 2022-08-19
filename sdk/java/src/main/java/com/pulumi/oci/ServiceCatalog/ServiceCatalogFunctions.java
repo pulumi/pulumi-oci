@@ -41,6 +41,34 @@ public final class ServiceCatalogFunctions {
      * Gets the details of the specified private application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplication = ServiceCatalogFunctions.getPrivateApplication(GetPrivateApplicationArgs.builder()
+     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateApplicationResult> getPrivateApplication(GetPrivateApplicationArgs args) {
@@ -52,6 +80,34 @@ public final class ServiceCatalogFunctions {
      * Gets the details of the specified private application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplication = ServiceCatalogFunctions.getPrivateApplication(GetPrivateApplicationArgs.builder()
+     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateApplicationResult> getPrivateApplicationPlain(GetPrivateApplicationPlainArgs args) {
@@ -63,6 +119,34 @@ public final class ServiceCatalogFunctions {
      * Gets the details of the specified private application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplication = ServiceCatalogFunctions.getPrivateApplication(GetPrivateApplicationArgs.builder()
+     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateApplicationResult> getPrivateApplication(GetPrivateApplicationArgs args, InvokeOptions options) {
@@ -74,6 +158,34 @@ public final class ServiceCatalogFunctions {
      * Gets the details of the specified private application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplication = ServiceCatalogFunctions.getPrivateApplication(GetPrivateApplicationArgs.builder()
+     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateApplicationResult> getPrivateApplicationPlain(GetPrivateApplicationPlainArgs args, InvokeOptions options) {
@@ -85,6 +197,34 @@ public final class ServiceCatalogFunctions {
      * Gets the details of a specific package within a given private application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplicationPackage = ServiceCatalogFunctions.getPrivateApplicationPackage(GetPrivateApplicationPackageArgs.builder()
+     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateApplicationPackageResult> getPrivateApplicationPackage(GetPrivateApplicationPackageArgs args) {
@@ -96,6 +236,34 @@ public final class ServiceCatalogFunctions {
      * Gets the details of a specific package within a given private application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplicationPackage = ServiceCatalogFunctions.getPrivateApplicationPackage(GetPrivateApplicationPackageArgs.builder()
+     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateApplicationPackageResult> getPrivateApplicationPackagePlain(GetPrivateApplicationPackagePlainArgs args) {
@@ -107,6 +275,34 @@ public final class ServiceCatalogFunctions {
      * Gets the details of a specific package within a given private application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplicationPackage = ServiceCatalogFunctions.getPrivateApplicationPackage(GetPrivateApplicationPackageArgs.builder()
+     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateApplicationPackageResult> getPrivateApplicationPackage(GetPrivateApplicationPackageArgs args, InvokeOptions options) {
@@ -118,6 +314,34 @@ public final class ServiceCatalogFunctions {
      * Gets the details of a specific package within a given private application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplicationPackage = ServiceCatalogFunctions.getPrivateApplicationPackage(GetPrivateApplicationPackageArgs.builder()
+     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateApplicationPackageResult> getPrivateApplicationPackagePlain(GetPrivateApplicationPackagePlainArgs args, InvokeOptions options) {
@@ -129,6 +353,37 @@ public final class ServiceCatalogFunctions {
      * Lists the packages in the specified private application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplicationPackages = ServiceCatalogFunctions.getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs.builder()
+     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .displayName(var_.private_application_package_display_name())
+     *             .packageTypes(var_.private_application_package_package_type())
+     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateApplicationPackagesResult> getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs args) {
@@ -140,6 +395,37 @@ public final class ServiceCatalogFunctions {
      * Lists the packages in the specified private application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplicationPackages = ServiceCatalogFunctions.getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs.builder()
+     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .displayName(var_.private_application_package_display_name())
+     *             .packageTypes(var_.private_application_package_package_type())
+     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateApplicationPackagesResult> getPrivateApplicationPackagesPlain(GetPrivateApplicationPackagesPlainArgs args) {
@@ -151,6 +437,37 @@ public final class ServiceCatalogFunctions {
      * Lists the packages in the specified private application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplicationPackages = ServiceCatalogFunctions.getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs.builder()
+     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .displayName(var_.private_application_package_display_name())
+     *             .packageTypes(var_.private_application_package_package_type())
+     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateApplicationPackagesResult> getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs args, InvokeOptions options) {
@@ -162,6 +479,37 @@ public final class ServiceCatalogFunctions {
      * Lists the packages in the specified private application.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplicationPackages = ServiceCatalogFunctions.getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs.builder()
+     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .displayName(var_.private_application_package_display_name())
+     *             .packageTypes(var_.private_application_package_package_type())
+     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateApplicationPackagesResult> getPrivateApplicationPackagesPlain(GetPrivateApplicationPackagesPlainArgs args, InvokeOptions options) {
@@ -173,6 +521,36 @@ public final class ServiceCatalogFunctions {
      * Lists all the private applications in a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplications = ServiceCatalogFunctions.getPrivateApplications(GetPrivateApplicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_application_display_name())
+     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateApplicationsResult> getPrivateApplications(GetPrivateApplicationsArgs args) {
@@ -184,6 +562,36 @@ public final class ServiceCatalogFunctions {
      * Lists all the private applications in a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplications = ServiceCatalogFunctions.getPrivateApplications(GetPrivateApplicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_application_display_name())
+     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateApplicationsResult> getPrivateApplicationsPlain(GetPrivateApplicationsPlainArgs args) {
@@ -195,6 +603,36 @@ public final class ServiceCatalogFunctions {
      * Lists all the private applications in a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplications = ServiceCatalogFunctions.getPrivateApplications(GetPrivateApplicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_application_display_name())
+     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetPrivateApplicationsResult> getPrivateApplications(GetPrivateApplicationsArgs args, InvokeOptions options) {
@@ -206,6 +644,36 @@ public final class ServiceCatalogFunctions {
      * Lists all the private applications in a given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPrivateApplications = ServiceCatalogFunctions.getPrivateApplications(GetPrivateApplicationsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.private_application_display_name())
+     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetPrivateApplicationsResult> getPrivateApplicationsPlain(GetPrivateApplicationsPlainArgs args, InvokeOptions options) {
@@ -217,6 +685,34 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about the service catalog including name, compartmentId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalog = ServiceCatalogFunctions.getServiceCatalog(GetServiceCatalogArgs.builder()
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceCatalogResult> getServiceCatalog(GetServiceCatalogArgs args) {
@@ -228,6 +724,34 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about the service catalog including name, compartmentId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalog = ServiceCatalogFunctions.getServiceCatalog(GetServiceCatalogArgs.builder()
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceCatalogResult> getServiceCatalogPlain(GetServiceCatalogPlainArgs args) {
@@ -239,6 +763,34 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about the service catalog including name, compartmentId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalog = ServiceCatalogFunctions.getServiceCatalog(GetServiceCatalogArgs.builder()
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceCatalogResult> getServiceCatalog(GetServiceCatalogArgs args, InvokeOptions options) {
@@ -250,6 +802,34 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about the service catalog including name, compartmentId
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalog = ServiceCatalogFunctions.getServiceCatalog(GetServiceCatalogArgs.builder()
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceCatalogResult> getServiceCatalogPlain(GetServiceCatalogPlainArgs args, InvokeOptions options) {
@@ -261,6 +841,34 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about specific service catalog association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogAssociation = ServiceCatalogFunctions.getServiceCatalogAssociation(GetServiceCatalogAssociationArgs.builder()
+     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceCatalogAssociationResult> getServiceCatalogAssociation(GetServiceCatalogAssociationArgs args) {
@@ -272,6 +880,34 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about specific service catalog association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogAssociation = ServiceCatalogFunctions.getServiceCatalogAssociation(GetServiceCatalogAssociationArgs.builder()
+     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceCatalogAssociationResult> getServiceCatalogAssociationPlain(GetServiceCatalogAssociationPlainArgs args) {
@@ -283,6 +919,34 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about specific service catalog association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogAssociation = ServiceCatalogFunctions.getServiceCatalogAssociation(GetServiceCatalogAssociationArgs.builder()
+     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceCatalogAssociationResult> getServiceCatalogAssociation(GetServiceCatalogAssociationArgs args, InvokeOptions options) {
@@ -294,6 +958,34 @@ public final class ServiceCatalogFunctions {
      * Gets detailed information about specific service catalog association.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogAssociation = ServiceCatalogFunctions.getServiceCatalogAssociation(GetServiceCatalogAssociationArgs.builder()
+     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceCatalogAssociationResult> getServiceCatalogAssociationPlain(GetServiceCatalogAssociationPlainArgs args, InvokeOptions options) {
@@ -305,6 +997,37 @@ public final class ServiceCatalogFunctions {
      * Lists all the resource associations for a specific service catalog.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogAssociations = ServiceCatalogFunctions.getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs.builder()
+     *             .entityId(oci_service_catalog_entity.test_entity().id())
+     *             .entityType(var_.service_catalog_association_entity_type())
+     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceCatalogAssociationsResult> getServiceCatalogAssociations() {
@@ -316,6 +1039,37 @@ public final class ServiceCatalogFunctions {
      * Lists all the resource associations for a specific service catalog.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogAssociations = ServiceCatalogFunctions.getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs.builder()
+     *             .entityId(oci_service_catalog_entity.test_entity().id())
+     *             .entityType(var_.service_catalog_association_entity_type())
+     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceCatalogAssociationsResult> getServiceCatalogAssociationsPlain() {
@@ -327,6 +1081,37 @@ public final class ServiceCatalogFunctions {
      * Lists all the resource associations for a specific service catalog.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogAssociations = ServiceCatalogFunctions.getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs.builder()
+     *             .entityId(oci_service_catalog_entity.test_entity().id())
+     *             .entityType(var_.service_catalog_association_entity_type())
+     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceCatalogAssociationsResult> getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs args) {
@@ -338,6 +1123,37 @@ public final class ServiceCatalogFunctions {
      * Lists all the resource associations for a specific service catalog.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogAssociations = ServiceCatalogFunctions.getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs.builder()
+     *             .entityId(oci_service_catalog_entity.test_entity().id())
+     *             .entityType(var_.service_catalog_association_entity_type())
+     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceCatalogAssociationsResult> getServiceCatalogAssociationsPlain(GetServiceCatalogAssociationsPlainArgs args) {
@@ -349,6 +1165,37 @@ public final class ServiceCatalogFunctions {
      * Lists all the resource associations for a specific service catalog.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogAssociations = ServiceCatalogFunctions.getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs.builder()
+     *             .entityId(oci_service_catalog_entity.test_entity().id())
+     *             .entityType(var_.service_catalog_association_entity_type())
+     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceCatalogAssociationsResult> getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs args, InvokeOptions options) {
@@ -360,6 +1207,37 @@ public final class ServiceCatalogFunctions {
      * Lists all the resource associations for a specific service catalog.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogAssociations = ServiceCatalogFunctions.getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs.builder()
+     *             .entityId(oci_service_catalog_entity.test_entity().id())
+     *             .entityType(var_.service_catalog_association_entity_type())
+     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceCatalogAssociationsResult> getServiceCatalogAssociationsPlain(GetServiceCatalogAssociationsPlainArgs args, InvokeOptions options) {
@@ -371,6 +1249,36 @@ public final class ServiceCatalogFunctions {
      * Lists all the service catalogs in the given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogs = ServiceCatalogFunctions.getServiceCatalogs(GetServiceCatalogsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.service_catalog_display_name())
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceCatalogsResult> getServiceCatalogs(GetServiceCatalogsArgs args) {
@@ -382,6 +1290,36 @@ public final class ServiceCatalogFunctions {
      * Lists all the service catalogs in the given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogs = ServiceCatalogFunctions.getServiceCatalogs(GetServiceCatalogsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.service_catalog_display_name())
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceCatalogsResult> getServiceCatalogsPlain(GetServiceCatalogsPlainArgs args) {
@@ -393,6 +1331,36 @@ public final class ServiceCatalogFunctions {
      * Lists all the service catalogs in the given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogs = ServiceCatalogFunctions.getServiceCatalogs(GetServiceCatalogsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.service_catalog_display_name())
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetServiceCatalogsResult> getServiceCatalogs(GetServiceCatalogsArgs args, InvokeOptions options) {
@@ -404,6 +1372,36 @@ public final class ServiceCatalogFunctions {
      * Lists all the service catalogs in the given compartment.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testServiceCatalogs = ServiceCatalogFunctions.getServiceCatalogs(GetServiceCatalogsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.service_catalog_display_name())
+     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetServiceCatalogsResult> getServiceCatalogsPlain(GetServiceCatalogsPlainArgs args, InvokeOptions options) {

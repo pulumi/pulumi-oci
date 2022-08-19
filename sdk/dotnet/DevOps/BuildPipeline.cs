@@ -17,42 +17,40 @@ namespace Pulumi.Oci.DevOps
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testBuildPipeline = new Oci.DevOps.BuildPipeline("testBuildPipeline", new()
     ///     {
-    ///         var testBuildPipeline = new Oci.DevOps.BuildPipeline("testBuildPipeline", new Oci.DevOps.BuildPipelineArgs
+    ///         ProjectId = oci_devops_project.Test_project.Id,
+    ///         BuildPipelineParameters = new Oci.DevOps.Inputs.BuildPipelineBuildPipelineParametersArgs
     ///         {
-    ///             ProjectId = oci_devops_project.Test_project.Id,
-    ///             BuildPipelineParameters = new Oci.DevOps.Inputs.BuildPipelineBuildPipelineParametersArgs
+    ///             Items = new[]
     ///             {
-    ///                 Items = 
+    ///                 new Oci.DevOps.Inputs.BuildPipelineBuildPipelineParametersItemArgs
     ///                 {
-    ///                     new Oci.DevOps.Inputs.BuildPipelineBuildPipelineParametersItemArgs
-    ///                     {
-    ///                         Name = @var.Build_pipeline_build_pipeline_parameters_items_name,
-    ///                         DefaultValue = @var.Build_pipeline_build_pipeline_parameters_items_default_value,
-    ///                         Description = @var.Build_pipeline_build_pipeline_parameters_items_description,
-    ///                     },
+    ///                     Name = @var.Build_pipeline_build_pipeline_parameters_items_name,
+    ///                     DefaultValue = @var.Build_pipeline_build_pipeline_parameters_items_default_value,
+    ///                     Description = @var.Build_pipeline_build_pipeline_parameters_items_description,
     ///                 },
     ///             },
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Build_pipeline_description,
-    ///             DisplayName = @var.Build_pipeline_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Build_pipeline_description,
+    ///         DisplayName = @var.Build_pipeline_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -64,7 +62,7 @@ namespace Pulumi.Oci.DevOps
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/buildPipeline:BuildPipeline")]
-    public partial class BuildPipeline : Pulumi.CustomResource
+    public partial class BuildPipeline : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
@@ -182,7 +180,7 @@ namespace Pulumi.Oci.DevOps
         }
     }
 
-    public sealed class BuildPipelineArgs : Pulumi.ResourceArgs
+    public sealed class BuildPipelineArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
@@ -235,9 +233,10 @@ namespace Pulumi.Oci.DevOps
         public BuildPipelineArgs()
         {
         }
+        public static new BuildPipelineArgs Empty => new BuildPipelineArgs();
     }
 
-    public sealed class BuildPipelineState : Pulumi.ResourceArgs
+    public sealed class BuildPipelineState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
@@ -332,5 +331,6 @@ namespace Pulumi.Oci.DevOps
         public BuildPipelineState()
         {
         }
+        public static new BuildPipelineState Empty => new BuildPipelineState();
     }
 }

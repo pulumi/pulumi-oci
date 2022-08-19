@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience.Inputs
 {
 
-    public sealed class JobRunLogDetailGetArgs : Pulumi.ResourceArgs
+    public sealed class JobRunLogDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The log group id for where log objects are for job runs.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.DataScience.Inputs
         public JobRunLogDetailGetArgs()
         {
         }
+        public static new JobRunLogDetailGetArgs Empty => new JobRunLogDetailGetArgs();
     }
 }

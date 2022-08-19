@@ -21,6 +21,40 @@ import javax.annotation.Nullable;
  * Adds the list of redeemable user email IDs for a subscription ID.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.UsageProxy.SubscriptionRedeemableUser;
+ * import com.pulumi.oci.UsageProxy.SubscriptionRedeemableUserArgs;
+ * import com.pulumi.oci.UsageProxy.inputs.SubscriptionRedeemableUserItemArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSubscriptionRedeemableUser = new SubscriptionRedeemableUser(&#34;testSubscriptionRedeemableUser&#34;, SubscriptionRedeemableUserArgs.builder()        
+ *             .subscriptionId(oci_ons_subscription.test_subscription().id())
+ *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+ *             .items(SubscriptionRedeemableUserItemArgs.builder()
+ *                 .emailId(oci_usage_proxy_email.test_email().id())
+ *                 .build())
+ *             .userId(oci_identity_user.test_user().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

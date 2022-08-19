@@ -31,30 +31,28 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testCrossConnectGroup = new Oci.Core.CrossConnectGroup("testCrossConnectGroup", new()
     ///     {
-    ///         var testCrossConnectGroup = new Oci.Core.CrossConnectGroup("testCrossConnectGroup", new Oci.Core.CrossConnectGroupArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         CustomerReferenceName = @var.Cross_connect_group_customer_reference_name,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             CustomerReferenceName = @var.Cross_connect_group_customer_reference_name,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Cross_connect_group_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Cross_connect_group_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -66,7 +64,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/crossConnectGroup:CrossConnectGroup")]
-    public partial class CrossConnectGroup : Pulumi.CustomResource
+    public partial class CrossConnectGroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect group.
@@ -172,7 +170,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class CrossConnectGroupArgs : Pulumi.ResourceArgs
+    public sealed class CrossConnectGroupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect group.
@@ -225,9 +223,10 @@ namespace Pulumi.Oci.Core
         public CrossConnectGroupArgs()
         {
         }
+        public static new CrossConnectGroupArgs Empty => new CrossConnectGroupArgs();
     }
 
-    public sealed class CrossConnectGroupState : Pulumi.ResourceArgs
+    public sealed class CrossConnectGroupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect group.
@@ -304,5 +303,6 @@ namespace Pulumi.Oci.Core
         public CrossConnectGroupState()
         {
         }
+        public static new CrossConnectGroupState Empty => new CrossConnectGroupState();
     }
 }

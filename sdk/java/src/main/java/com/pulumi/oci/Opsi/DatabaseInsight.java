@@ -23,6 +23,57 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Opsi.DatabaseInsight;
+ * import com.pulumi.oci.Opsi.DatabaseInsightArgs;
+ * import com.pulumi.oci.Opsi.inputs.DatabaseInsightCredentialDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDatabaseInsight = new DatabaseInsight(&#34;testDatabaseInsight&#34;, DatabaseInsightArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .entitySource(var_.database_insight_entity_source())
+ *             .credentialDetails(DatabaseInsightCredentialDetailsArgs.builder()
+ *                 .credentialType(var_.database_insight_credential_details_credential_type())
+ *                 .credentialSourceName(var_.database_insight_credential_details_credential_source_name())
+ *                 .passwordSecretId(oci_vault_secret.test_secret().id())
+ *                 .role(var_.database_insight_credential_details_role())
+ *                 .userName(oci_identity_user.test_user().name())
+ *                 .build())
+ *             .databaseId(oci_database_database.test_database().id())
+ *             .databaseResourceType(var_.database_insight_database_resource_type())
+ *             .dbmPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .deploymentType(var_.database_insight_deployment_type())
+ *             .enterpriseManagerBridgeId(oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge().id())
+ *             .enterpriseManagerEntityIdentifier(var_.database_insight_enterprise_manager_entity_identifier())
+ *             .enterpriseManagerIdentifier(var_.database_insight_enterprise_manager_identifier())
+ *             .exadataInsightId(oci_opsi_exadata_insight.test_exadata_insight().id())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .opsiPrivateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+ *             .serviceName(oci_core_service.test_service().name())
+ *             .systemTags(var_.database_insight_system_tags())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * 
  * ## Import
  * 
  * DatabaseInsights can be imported using the `id`, e.g.

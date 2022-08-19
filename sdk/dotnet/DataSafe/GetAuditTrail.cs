@@ -21,20 +21,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditTrail = Oci.DataSafe.GetAuditTrail.Invoke(new()
         ///     {
-        ///         var testAuditTrail = Output.Create(Oci.DataSafe.GetAuditTrail.InvokeAsync(new Oci.DataSafe.GetAuditTrailArgs
-        ///         {
-        ///             AuditTrailId = oci_data_safe_audit_trail.Test_audit_trail.Id,
-        ///         }));
-        ///     }
+        ///         AuditTrailId = oci_data_safe_audit_trail.Test_audit_trail.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.DataSafe
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAuditTrail = Oci.DataSafe.GetAuditTrail.Invoke(new()
         ///     {
-        ///         var testAuditTrail = Output.Create(Oci.DataSafe.GetAuditTrail.InvokeAsync(new Oci.DataSafe.GetAuditTrailArgs
-        ///         {
-        ///             AuditTrailId = oci_data_safe_audit_trail.Test_audit_trail.Id,
-        ///         }));
-        ///     }
+        ///         AuditTrailId = oci_data_safe_audit_trail.Test_audit_trail.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.DataSafe
     }
 
 
-    public sealed class GetAuditTrailArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditTrailArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the audit trail.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditTrailArgs()
         {
         }
+        public static new GetAuditTrailArgs Empty => new GetAuditTrailArgs();
     }
 
-    public sealed class GetAuditTrailInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAuditTrailInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the audit trail.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         public GetAuditTrailInvokeArgs()
         {
         }
+        public static new GetAuditTrailInvokeArgs Empty => new GetAuditTrailInvokeArgs();
     }
 
 

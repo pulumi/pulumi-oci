@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataConnectivity.Inputs
 {
 
-    public sealed class RegistryFolderDataAssetMetadataAggregatorArgs : Pulumi.ResourceArgs
+    public sealed class RegistryFolderDataAssetMetadataAggregatorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) User-defined description for the folder.
@@ -45,5 +45,6 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public RegistryFolderDataAssetMetadataAggregatorArgs()
         {
         }
+        public static new RegistryFolderDataAssetMetadataAggregatorArgs Empty => new RegistryFolderDataAssetMetadataAggregatorArgs();
     }
 }

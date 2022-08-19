@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class GetVirtualDeploymentsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualDeploymentsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// A filter to return only resources that match the entire name given.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public GetVirtualDeploymentsFilterArgs()
         {
         }
+        public static new GetVirtualDeploymentsFilterArgs Empty => new GetVirtualDeploymentsFilterArgs();
     }
 }

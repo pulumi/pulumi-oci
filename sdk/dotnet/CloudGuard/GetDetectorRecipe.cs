@@ -21,20 +21,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDetectorRecipe = Oci.CloudGuard.GetDetectorRecipe.Invoke(new()
         ///     {
-        ///         var testDetectorRecipe = Output.Create(Oci.CloudGuard.GetDetectorRecipe.InvokeAsync(new Oci.CloudGuard.GetDetectorRecipeArgs
-        ///         {
-        ///             DetectorRecipeId = oci_cloud_guard_detector_recipe.Test_detector_recipe.Id,
-        ///         }));
-        ///     }
+        ///         DetectorRecipeId = oci_cloud_guard_detector_recipe.Test_detector_recipe.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDetectorRecipe = Oci.CloudGuard.GetDetectorRecipe.Invoke(new()
         ///     {
-        ///         var testDetectorRecipe = Output.Create(Oci.CloudGuard.GetDetectorRecipe.InvokeAsync(new Oci.CloudGuard.GetDetectorRecipeArgs
-        ///         {
-        ///             DetectorRecipeId = oci_cloud_guard_detector_recipe.Test_detector_recipe.Id,
-        ///         }));
-        ///     }
+        ///         DetectorRecipeId = oci_cloud_guard_detector_recipe.Test_detector_recipe.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.CloudGuard
     }
 
 
-    public sealed class GetDetectorRecipeArgs : Pulumi.InvokeArgs
+    public sealed class GetDetectorRecipeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// DetectorRecipe OCID
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.CloudGuard
         public GetDetectorRecipeArgs()
         {
         }
+        public static new GetDetectorRecipeArgs Empty => new GetDetectorRecipeArgs();
     }
 
-    public sealed class GetDetectorRecipeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDetectorRecipeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// DetectorRecipe OCID
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.CloudGuard
         public GetDetectorRecipeInvokeArgs()
         {
         }
+        public static new GetDetectorRecipeInvokeArgs Empty => new GetDetectorRecipeInvokeArgs();
     }
 
 

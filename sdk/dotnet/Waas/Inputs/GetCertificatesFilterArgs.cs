@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas.Inputs
 {
 
-    public sealed class GetCertificatesFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetCertificatesFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The certificate extension name.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Waas.Inputs
         public GetCertificatesFilterInputArgs()
         {
         }
+        public static new GetCertificatesFilterInputArgs Empty => new GetCertificatesFilterInputArgs();
     }
 }

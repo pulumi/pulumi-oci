@@ -22,20 +22,18 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateEndpoint = Oci.DataFlow.GetPrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testPrivateEndpoint = Output.Create(Oci.DataFlow.GetPrivateEndpoint.InvokeAsync(new Oci.DataFlow.GetPrivateEndpointArgs
-        ///         {
-        ///             PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.DataFlow
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testPrivateEndpoint = Oci.DataFlow.GetPrivateEndpoint.Invoke(new()
         ///     {
-        ///         var testPrivateEndpoint = Output.Create(Oci.DataFlow.GetPrivateEndpoint.InvokeAsync(new Oci.DataFlow.GetPrivateEndpointArgs
-        ///         {
-        ///             PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-        ///         }));
-        ///     }
+        ///         PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DataFlow
     }
 
 
-    public sealed class GetPrivateEndpointArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateEndpointArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique ID for a private endpoint.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.DataFlow
         public GetPrivateEndpointArgs()
         {
         }
+        public static new GetPrivateEndpointArgs Empty => new GetPrivateEndpointArgs();
     }
 
-    public sealed class GetPrivateEndpointInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPrivateEndpointInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The unique ID for a private endpoint.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.DataFlow
         public GetPrivateEndpointInvokeArgs()
         {
         }
+        public static new GetPrivateEndpointInvokeArgs Empty => new GetPrivateEndpointInvokeArgs();
     }
 
 

@@ -15,20 +15,18 @@ namespace Pulumi.Oci.ManagementAgent
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testManagementAgent = new Oci.ManagementAgent.ManagementAgent("testManagementAgent", new()
     ///     {
-    ///         var testManagementAgent = new Oci.ManagementAgent.ManagementAgent("testManagementAgent", new Oci.ManagementAgent.ManagementAgentArgs
-    ///         {
-    ///             ManagedAgentId = oci_management_agent_managed_agent.Test_managed_agent.Id,
-    ///         });
-    ///     }
+    ///         ManagedAgentId = oci_management_agent_managed_agent.Test_managed_agent.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -40,7 +38,7 @@ namespace Pulumi.Oci.ManagementAgent
     /// ```
     /// </summary>
     [OciResourceType("oci:ManagementAgent/managementAgent:ManagementAgent")]
-    public partial class ManagementAgent : Pulumi.CustomResource
+    public partial class ManagementAgent : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The current availability status of managementAgent
@@ -236,7 +234,7 @@ namespace Pulumi.Oci.ManagementAgent
         }
     }
 
-    public sealed class ManagementAgentArgs : Pulumi.ResourceArgs
+    public sealed class ManagementAgentArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -289,9 +287,10 @@ namespace Pulumi.Oci.ManagementAgent
         public ManagementAgentArgs()
         {
         }
+        public static new ManagementAgentArgs Empty => new ManagementAgentArgs();
     }
 
-    public sealed class ManagementAgentState : Pulumi.ResourceArgs
+    public sealed class ManagementAgentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The current availability status of managementAgent
@@ -470,5 +469,6 @@ namespace Pulumi.Oci.ManagementAgent
         public ManagementAgentState()
         {
         }
+        public static new ManagementAgentState Empty => new ManagementAgentState();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Autoscaling.Inputs
 {
 
-    public sealed class AutoScalingConfigurationPolicyRuleMetricArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationPolicyRuleMetricArgs : global::Pulumi.ResourceArgs
     {
         [Input("metricType")]
         public Input<string>? MetricType { get; set; }
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         public AutoScalingConfigurationPolicyRuleMetricArgs()
         {
         }
+        public static new AutoScalingConfigurationPolicyRuleMetricArgs Empty => new AutoScalingConfigurationPolicyRuleMetricArgs();
     }
 }

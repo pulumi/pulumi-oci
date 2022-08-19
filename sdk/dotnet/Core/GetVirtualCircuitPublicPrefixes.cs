@@ -23,21 +23,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualCircuitPublicPrefixes = Oci.Core.GetVirtualCircuitPublicPrefixes.Invoke(new()
         ///     {
-        ///         var testVirtualCircuitPublicPrefixes = Output.Create(Oci.Core.GetVirtualCircuitPublicPrefixes.InvokeAsync(new Oci.Core.GetVirtualCircuitPublicPrefixesArgs
-        ///         {
-        ///             VirtualCircuitId = oci_core_virtual_circuit.Test_virtual_circuit.Id,
-        ///             VerificationState = @var.Virtual_circuit_public_prefix_verification_state,
-        ///         }));
-        ///     }
+        ///         VirtualCircuitId = oci_core_virtual_circuit.Test_virtual_circuit.Id,
+        ///         VerificationState = @var.Virtual_circuit_public_prefix_verification_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,21 +55,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVirtualCircuitPublicPrefixes = Oci.Core.GetVirtualCircuitPublicPrefixes.Invoke(new()
         ///     {
-        ///         var testVirtualCircuitPublicPrefixes = Output.Create(Oci.Core.GetVirtualCircuitPublicPrefixes.InvokeAsync(new Oci.Core.GetVirtualCircuitPublicPrefixesArgs
-        ///         {
-        ///             VirtualCircuitId = oci_core_virtual_circuit.Test_virtual_circuit.Id,
-        ///             VerificationState = @var.Virtual_circuit_public_prefix_verification_state,
-        ///         }));
-        ///     }
+        ///         VirtualCircuitId = oci_core_virtual_circuit.Test_virtual_circuit.Id,
+        ///         VerificationState = @var.Virtual_circuit_public_prefix_verification_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVirtualCircuitPublicPrefixesArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualCircuitPublicPrefixesArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetVirtualCircuitPublicPrefixesFilterArgs>? _filters;
@@ -106,9 +102,10 @@ namespace Pulumi.Oci.Core
         public GetVirtualCircuitPublicPrefixesArgs()
         {
         }
+        public static new GetVirtualCircuitPublicPrefixesArgs Empty => new GetVirtualCircuitPublicPrefixesArgs();
     }
 
-    public sealed class GetVirtualCircuitPublicPrefixesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVirtualCircuitPublicPrefixesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetVirtualCircuitPublicPrefixesFilterInputArgs>? _filters;
@@ -133,6 +130,7 @@ namespace Pulumi.Oci.Core
         public GetVirtualCircuitPublicPrefixesInvokeArgs()
         {
         }
+        public static new GetVirtualCircuitPublicPrefixesInvokeArgs Empty => new GetVirtualCircuitPublicPrefixesInvokeArgs();
     }
 
 

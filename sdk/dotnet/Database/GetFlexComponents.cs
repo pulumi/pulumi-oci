@@ -21,21 +21,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFlexComponents = Oci.Database.GetFlexComponents.Invoke(new()
         ///     {
-        ///         var testFlexComponents = Output.Create(Oci.Database.GetFlexComponents.InvokeAsync(new Oci.Database.GetFlexComponentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Flex_component_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Flex_component_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.Database
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testFlexComponents = Oci.Database.GetFlexComponents.Invoke(new()
         ///     {
-        ///         var testFlexComponents = Output.Create(Oci.Database.GetFlexComponents.InvokeAsync(new Oci.Database.GetFlexComponentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Flex_component_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Flex_component_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Database
     }
 
 
-    public sealed class GetFlexComponentsArgs : Pulumi.InvokeArgs
+    public sealed class GetFlexComponentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.Database
         public GetFlexComponentsArgs()
         {
         }
+        public static new GetFlexComponentsArgs Empty => new GetFlexComponentsArgs();
     }
 
-    public sealed class GetFlexComponentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFlexComponentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -129,6 +126,7 @@ namespace Pulumi.Oci.Database
         public GetFlexComponentsInvokeArgs()
         {
         }
+        public static new GetFlexComponentsInvokeArgs Empty => new GetFlexComponentsInvokeArgs();
     }
 
 

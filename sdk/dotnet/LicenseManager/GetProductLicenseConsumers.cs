@@ -21,22 +21,20 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProductLicenseConsumers = Oci.LicenseManager.GetProductLicenseConsumers.Invoke(new()
         ///     {
-        ///         var testProductLicenseConsumers = Output.Create(Oci.LicenseManager.GetProductLicenseConsumers.InvokeAsync(new Oci.LicenseManager.GetProductLicenseConsumersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ProductLicenseId = oci_license_manager_product_license.Test_product_license.Id,
-        ///             IsCompartmentIdInSubtree = @var.Product_license_consumer_is_compartment_id_in_subtree,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ProductLicenseId = oci_license_manager_product_license.Test_product_license.Id,
+        ///         IsCompartmentIdInSubtree = @var.Product_license_consumer_is_compartment_id_in_subtree,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testProductLicenseConsumers = Oci.LicenseManager.GetProductLicenseConsumers.Invoke(new()
         ///     {
-        ///         var testProductLicenseConsumers = Output.Create(Oci.LicenseManager.GetProductLicenseConsumers.InvokeAsync(new Oci.LicenseManager.GetProductLicenseConsumersArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ProductLicenseId = oci_license_manager_product_license.Test_product_license.Id,
-        ///             IsCompartmentIdInSubtree = @var.Product_license_consumer_is_compartment_id_in_subtree,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ProductLicenseId = oci_license_manager_product_license.Test_product_license.Id,
+        ///         IsCompartmentIdInSubtree = @var.Product_license_consumer_is_compartment_id_in_subtree,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.LicenseManager
     }
 
 
-    public sealed class GetProductLicenseConsumersArgs : Pulumi.InvokeArgs
+    public sealed class GetProductLicenseConsumersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -102,9 +98,10 @@ namespace Pulumi.Oci.LicenseManager
         public GetProductLicenseConsumersArgs()
         {
         }
+        public static new GetProductLicenseConsumersArgs Empty => new GetProductLicenseConsumersArgs();
     }
 
-    public sealed class GetProductLicenseConsumersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetProductLicenseConsumersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
@@ -127,6 +124,7 @@ namespace Pulumi.Oci.LicenseManager
         public GetProductLicenseConsumersInvokeArgs()
         {
         }
+        public static new GetProductLicenseConsumersInvokeArgs Empty => new GetProductLicenseConsumersInvokeArgs();
     }
 
 

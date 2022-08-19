@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging.Inputs
 {
 
-    public sealed class GetUnifiedAgentConfigurationsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetUnifiedAgentConfigurationsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name key to tag this grok pattern.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.Logging.Inputs
         public GetUnifiedAgentConfigurationsFilterArgs()
         {
         }
+        public static new GetUnifiedAgentConfigurationsFilterArgs Empty => new GetUnifiedAgentConfigurationsFilterArgs();
     }
 }

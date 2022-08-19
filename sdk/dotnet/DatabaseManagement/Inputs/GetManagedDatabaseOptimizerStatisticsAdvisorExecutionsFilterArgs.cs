@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement.Inputs
 {
 
-    public sealed class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the rule.
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterInputArgs()
         {
         }
+        public static new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterInputArgs Empty => new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterInputArgs();
     }
 }

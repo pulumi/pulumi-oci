@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Streaming.Inputs
 {
 
-    public sealed class StreamPoolCustomEncryptionKeyGetArgs : Pulumi.ResourceArgs
+    public sealed class StreamPoolCustomEncryptionKeyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Life cycle State of the custom key
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Streaming.Inputs
         public StreamPoolCustomEncryptionKeyGetArgs()
         {
         }
+        public static new StreamPoolCustomEncryptionKeyGetArgs Empty => new StreamPoolCustomEncryptionKeyGetArgs();
     }
 }

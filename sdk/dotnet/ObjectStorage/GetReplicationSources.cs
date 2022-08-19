@@ -22,21 +22,19 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReplicationSources = Oci.ObjectStorage.GetReplicationSources.Invoke(new()
         ///     {
-        ///         var testReplicationSources = Output.Create(Oci.ObjectStorage.GetReplicationSources.InvokeAsync(new Oci.ObjectStorage.GetReplicationSourcesArgs
-        ///         {
-        ///             Bucket = @var.Replication_source_bucket,
-        ///             Namespace = @var.Replication_source_namespace,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Replication_source_bucket,
+        ///         Namespace = @var.Replication_source_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReplicationSources = Oci.ObjectStorage.GetReplicationSources.Invoke(new()
         ///     {
-        ///         var testReplicationSources = Output.Create(Oci.ObjectStorage.GetReplicationSources.InvokeAsync(new Oci.ObjectStorage.GetReplicationSourcesArgs
-        ///         {
-        ///             Bucket = @var.Replication_source_bucket,
-        ///             Namespace = @var.Replication_source_namespace,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Replication_source_bucket,
+        ///         Namespace = @var.Replication_source_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ObjectStorage
     }
 
 
-    public sealed class GetReplicationSourcesArgs : Pulumi.InvokeArgs
+    public sealed class GetReplicationSourcesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.ObjectStorage
         public GetReplicationSourcesArgs()
         {
         }
+        public static new GetReplicationSourcesArgs Empty => new GetReplicationSourcesArgs();
     }
 
-    public sealed class GetReplicationSourcesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetReplicationSourcesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.ObjectStorage
         public GetReplicationSourcesInvokeArgs()
         {
         }
+        public static new GetReplicationSourcesInvokeArgs Empty => new GetReplicationSourcesInvokeArgs();
     }
 
 

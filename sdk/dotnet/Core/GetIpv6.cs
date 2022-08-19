@@ -25,20 +25,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpv6 = Oci.Core.GetIpv6.Invoke(new()
         ///     {
-        ///         var testIpv6 = Output.Create(Oci.Core.GetIpv6.InvokeAsync(new Oci.Core.GetIpv6Args
-        ///         {
-        ///             Ipv6id = oci_core_ipv6.Test_ipv6.Id,
-        ///         }));
-        ///     }
+        ///         Ipv6id = oci_core_ipv6.Test_ipv6.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -60,20 +58,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpv6 = Oci.Core.GetIpv6.Invoke(new()
         ///     {
-        ///         var testIpv6 = Output.Create(Oci.Core.GetIpv6.InvokeAsync(new Oci.Core.GetIpv6Args
-        ///         {
-        ///             Ipv6id = oci_core_ipv6.Test_ipv6.Id,
-        ///         }));
-        ///     }
+        ///         Ipv6id = oci_core_ipv6.Test_ipv6.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetIpv6Args : Pulumi.InvokeArgs
+    public sealed class GetIpv6Args : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.Core
         public GetIpv6Args()
         {
         }
+        public static new GetIpv6Args Empty => new GetIpv6Args();
     }
 
-    public sealed class GetIpv6InvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIpv6InvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
@@ -107,6 +104,7 @@ namespace Pulumi.Oci.Core
         public GetIpv6InvokeArgs()
         {
         }
+        public static new GetIpv6InvokeArgs Empty => new GetIpv6InvokeArgs();
     }
 
 

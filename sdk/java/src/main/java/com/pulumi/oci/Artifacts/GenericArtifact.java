@@ -19,6 +19,36 @@ import javax.annotation.Nullable;
  * This resource provides the Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Artifacts.GenericArtifact;
+ * import com.pulumi.oci.Artifacts.GenericArtifactArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testGenericArtifact = new GenericArtifact(&#34;testGenericArtifact&#34;, GenericArtifactArgs.builder()        
+ *             .artifactId(oci_artifacts_artifact.test_artifact().id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

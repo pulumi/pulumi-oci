@@ -19,39 +19,37 @@ namespace Pulumi.Oci.HealthChecks
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testHttpMonitor = new Oci.HealthChecks.HttpMonitor("testHttpMonitor", new()
     ///     {
-    ///         var testHttpMonitor = new Oci.HealthChecks.HttpMonitor("testHttpMonitor", new Oci.HealthChecks.HttpMonitorArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DisplayName = @var.Http_monitor_display_name,
+    ///         IntervalInSeconds = @var.Http_monitor_interval_in_seconds,
+    ///         Protocol = @var.Http_monitor_protocol,
+    ///         Targets = @var.Http_monitor_targets,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DisplayName = @var.Http_monitor_display_name,
-    ///             IntervalInSeconds = @var.Http_monitor_interval_in_seconds,
-    ///             Protocol = @var.Http_monitor_protocol,
-    ///             Targets = @var.Http_monitor_targets,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             Headers = @var.Http_monitor_headers,
-    ///             IsEnabled = @var.Http_monitor_is_enabled,
-    ///             Method = @var.Http_monitor_method,
-    ///             Path = @var.Http_monitor_path,
-    ///             Port = @var.Http_monitor_port,
-    ///             TimeoutInSeconds = @var.Http_monitor_timeout_in_seconds,
-    ///             VantagePointNames = @var.Http_monitor_vantage_point_names,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         Headers = @var.Http_monitor_headers,
+    ///         IsEnabled = @var.Http_monitor_is_enabled,
+    ///         Method = @var.Http_monitor_method,
+    ///         Path = @var.Http_monitor_path,
+    ///         Port = @var.Http_monitor_port,
+    ///         TimeoutInSeconds = @var.Http_monitor_timeout_in_seconds,
+    ///         VantagePointNames = @var.Http_monitor_vantage_point_names,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -63,7 +61,7 @@ namespace Pulumi.Oci.HealthChecks
     /// ```
     /// </summary>
     [OciResourceType("oci:HealthChecks/httpMonitor:HttpMonitor")]
-    public partial class HttpMonitor : Pulumi.CustomResource
+    public partial class HttpMonitor : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment.
@@ -211,7 +209,7 @@ namespace Pulumi.Oci.HealthChecks
         }
     }
 
-    public sealed class HttpMonitorArgs : Pulumi.ResourceArgs
+    public sealed class HttpMonitorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment.
@@ -330,9 +328,10 @@ namespace Pulumi.Oci.HealthChecks
         public HttpMonitorArgs()
         {
         }
+        public static new HttpMonitorArgs Empty => new HttpMonitorArgs();
     }
 
-    public sealed class HttpMonitorState : Pulumi.ResourceArgs
+    public sealed class HttpMonitorState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the compartment.
@@ -469,5 +468,6 @@ namespace Pulumi.Oci.HealthChecks
         public HttpMonitorState()
         {
         }
+        public static new HttpMonitorState Empty => new HttpMonitorState();
     }
 }

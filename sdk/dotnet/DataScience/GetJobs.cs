@@ -21,25 +21,23 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobs = Oci.DataScience.GetJobs.Invoke(new()
         ///     {
-        ///         var testJobs = Output.Create(Oci.DataScience.GetJobs.InvokeAsync(new Oci.DataScience.GetJobsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CreatedBy = @var.Job_created_by,
-        ///             DisplayName = @var.Job_display_name,
-        ///             Id = @var.Job_id,
-        ///             ProjectId = oci_datascience_project.Test_project.Id,
-        ///             State = @var.Job_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CreatedBy = @var.Job_created_by,
+        ///         DisplayName = @var.Job_display_name,
+        ///         Id = @var.Job_id,
+        ///         ProjectId = oci_datascience_project.Test_project.Id,
+        ///         State = @var.Job_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,25 +55,23 @@ namespace Pulumi.Oci.DataScience
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testJobs = Oci.DataScience.GetJobs.Invoke(new()
         ///     {
-        ///         var testJobs = Output.Create(Oci.DataScience.GetJobs.InvokeAsync(new Oci.DataScience.GetJobsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CreatedBy = @var.Job_created_by,
-        ///             DisplayName = @var.Job_display_name,
-        ///             Id = @var.Job_id,
-        ///             ProjectId = oci_datascience_project.Test_project.Id,
-        ///             State = @var.Job_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CreatedBy = @var.Job_created_by,
+        ///         DisplayName = @var.Job_display_name,
+        ///         Id = @var.Job_id,
+        ///         ProjectId = oci_datascience_project.Test_project.Id,
+        ///         State = @var.Job_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.DataScience
     }
 
 
-    public sealed class GetJobsArgs : Pulumi.InvokeArgs
+    public sealed class GetJobsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -134,9 +130,10 @@ namespace Pulumi.Oci.DataScience
         public GetJobsArgs()
         {
         }
+        public static new GetJobsArgs Empty => new GetJobsArgs();
     }
 
-    public sealed class GetJobsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetJobsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -185,6 +182,7 @@ namespace Pulumi.Oci.DataScience
         public GetJobsInvokeArgs()
         {
         }
+        public static new GetJobsInvokeArgs Empty => new GetJobsInvokeArgs();
     }
 
 

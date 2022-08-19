@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OspGateway.Inputs
 {
 
-    public sealed class GetInvoicesInvoiceLinesFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetInvoicesInvoiceLinesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Name of the currency
@@ -32,5 +32,6 @@ namespace Pulumi.Oci.OspGateway.Inputs
         public GetInvoicesInvoiceLinesFilterArgs()
         {
         }
+        public static new GetInvoicesInvoiceLinesFilterArgs Empty => new GetInvoicesInvoiceLinesFilterArgs();
     }
 }

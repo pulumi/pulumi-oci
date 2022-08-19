@@ -21,23 +21,21 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMigrations = Oci.DatabaseMigration.GetMigrations.Invoke(new()
         ///     {
-        ///         var testMigrations = Output.Create(Oci.DatabaseMigration.GetMigrations.InvokeAsync(new Oci.DatabaseMigration.GetMigrationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Migration_display_name,
-        ///             LifecycleDetails = @var.Migration_lifecycle_details,
-        ///             State = @var.Migration_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Migration_display_name,
+        ///         LifecycleDetails = @var.Migration_lifecycle_details,
+        ///         State = @var.Migration_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,23 +53,21 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMigrations = Oci.DatabaseMigration.GetMigrations.Invoke(new()
         ///     {
-        ///         var testMigrations = Output.Create(Oci.DatabaseMigration.GetMigrations.InvokeAsync(new Oci.DatabaseMigration.GetMigrationsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Migration_display_name,
-        ///             LifecycleDetails = @var.Migration_lifecycle_details,
-        ///             State = @var.Migration_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Migration_display_name,
+        ///         LifecycleDetails = @var.Migration_lifecycle_details,
+        ///         State = @var.Migration_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.DatabaseMigration
     }
 
 
-    public sealed class GetMigrationsArgs : Pulumi.InvokeArgs
+    public sealed class GetMigrationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -118,9 +114,10 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetMigrationsArgs()
         {
         }
+        public static new GetMigrationsArgs Empty => new GetMigrationsArgs();
     }
 
-    public sealed class GetMigrationsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMigrationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -157,6 +154,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public GetMigrationsInvokeArgs()
         {
         }
+        public static new GetMigrationsInvokeArgs Empty => new GetMigrationsInvokeArgs();
     }
 
 

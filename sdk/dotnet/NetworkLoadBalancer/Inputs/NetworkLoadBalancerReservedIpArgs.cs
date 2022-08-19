@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
 {
 
-    public sealed class NetworkLoadBalancerReservedIpArgs : Pulumi.ResourceArgs
+    public sealed class NetworkLoadBalancerReservedIpArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// OCID of the reserved public IP address created with the virtual cloud network.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
         public NetworkLoadBalancerReservedIpArgs()
         {
         }
+        public static new NetworkLoadBalancerReservedIpArgs Empty => new NetworkLoadBalancerReservedIpArgs();
     }
 }

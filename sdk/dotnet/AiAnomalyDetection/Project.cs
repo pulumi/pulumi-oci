@@ -17,30 +17,28 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testProject = new Oci.AiAnomalyDetection.Project("testProject", new()
     ///     {
-    ///         var testProject = new Oci.AiAnomalyDetection.Project("testProject", new Oci.AiAnomalyDetection.ProjectArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             Description = @var.Project_description,
-    ///             DisplayName = @var.Project_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Project_description,
+    ///         DisplayName = @var.Project_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -52,7 +50,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// ```
     /// </summary>
     [OciResourceType("oci:AiAnomalyDetection/project:Project")]
-    public partial class Project : Pulumi.CustomResource
+    public partial class Project : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The OCID for the project's compartment.
@@ -152,7 +150,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         }
     }
 
-    public sealed class ProjectArgs : Pulumi.ResourceArgs
+    public sealed class ProjectArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID for the project's compartment.
@@ -199,9 +197,10 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public ProjectArgs()
         {
         }
+        public static new ProjectArgs Empty => new ProjectArgs();
     }
 
-    public sealed class ProjectState : Pulumi.ResourceArgs
+    public sealed class ProjectState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID for the project's compartment.
@@ -278,5 +277,6 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public ProjectState()
         {
         }
+        public static new ProjectState Empty => new ProjectState();
     }
 }

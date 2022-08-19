@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Blockchain.Inputs
 {
 
-    public sealed class OsnOcpuAllocationParamGetArgs : Pulumi.ResourceArgs
+    public sealed class OsnOcpuAllocationParamGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Number of OCPU allocation
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Blockchain.Inputs
         public OsnOcpuAllocationParamGetArgs()
         {
         }
+        public static new OsnOcpuAllocationParamGetArgs Empty => new OsnOcpuAllocationParamGetArgs();
     }
 }

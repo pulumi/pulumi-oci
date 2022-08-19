@@ -30,21 +30,19 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBuckets = Oci.ObjectStorage.GetBucketSummaries.Invoke(new()
         ///     {
-        ///         var testBuckets = Output.Create(Oci.ObjectStorage.GetBucketSummaries.InvokeAsync(new Oci.ObjectStorage.GetBucketSummariesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Namespace = @var.Bucket_namespace,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Namespace = @var.Bucket_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -71,21 +69,19 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBuckets = Oci.ObjectStorage.GetBucketSummaries.Invoke(new()
         ///     {
-        ///         var testBuckets = Output.Create(Oci.ObjectStorage.GetBucketSummaries.InvokeAsync(new Oci.ObjectStorage.GetBucketSummariesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Namespace = @var.Bucket_namespace,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Namespace = @var.Bucket_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -95,7 +91,7 @@ namespace Pulumi.Oci.ObjectStorage
     }
 
 
-    public sealed class GetBucketSummariesArgs : Pulumi.InvokeArgs
+    public sealed class GetBucketSummariesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list buckets.
@@ -120,9 +116,10 @@ namespace Pulumi.Oci.ObjectStorage
         public GetBucketSummariesArgs()
         {
         }
+        public static new GetBucketSummariesArgs Empty => new GetBucketSummariesArgs();
     }
 
-    public sealed class GetBucketSummariesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBucketSummariesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which to list buckets.
@@ -147,6 +144,7 @@ namespace Pulumi.Oci.ObjectStorage
         public GetBucketSummariesInvokeArgs()
         {
         }
+        public static new GetBucketSummariesInvokeArgs Empty => new GetBucketSummariesInvokeArgs();
     }
 
 

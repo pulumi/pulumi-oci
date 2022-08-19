@@ -21,20 +21,18 @@ namespace Pulumi.Oci.StackMonitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMonitoredResource = Oci.StackMonitoring.GetMonitoredResource.Invoke(new()
         ///     {
-        ///         var testMonitoredResource = Output.Create(Oci.StackMonitoring.GetMonitoredResource.InvokeAsync(new Oci.StackMonitoring.GetMonitoredResourceArgs
-        ///         {
-        ///             MonitoredResourceId = oci_stack_monitoring_monitored_resource.Test_monitored_resource.Id,
-        ///         }));
-        ///     }
+        ///         MonitoredResourceId = oci_stack_monitoring_monitored_resource.Test_monitored_resource.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.StackMonitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMonitoredResource = Oci.StackMonitoring.GetMonitoredResource.Invoke(new()
         ///     {
-        ///         var testMonitoredResource = Output.Create(Oci.StackMonitoring.GetMonitoredResource.InvokeAsync(new Oci.StackMonitoring.GetMonitoredResourceArgs
-        ///         {
-        ///             MonitoredResourceId = oci_stack_monitoring_monitored_resource.Test_monitored_resource.Id,
-        ///         }));
-        ///     }
+        ///         MonitoredResourceId = oci_stack_monitoring_monitored_resource.Test_monitored_resource.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.StackMonitoring
     }
 
 
-    public sealed class GetMonitoredResourceArgs : Pulumi.InvokeArgs
+    public sealed class GetMonitoredResourceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.StackMonitoring
         public GetMonitoredResourceArgs()
         {
         }
+        public static new GetMonitoredResourceArgs Empty => new GetMonitoredResourceArgs();
     }
 
-    public sealed class GetMonitoredResourceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMonitoredResourceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.StackMonitoring
         public GetMonitoredResourceInvokeArgs()
         {
         }
+        public static new GetMonitoredResourceInvokeArgs Empty => new GetMonitoredResourceInvokeArgs();
     }
 
 

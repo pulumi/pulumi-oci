@@ -19,38 +19,36 @@ namespace Pulumi.Oci.DataSafe
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testSensitiveDataModel = new Oci.DataSafe.SensitiveDataModel("testSensitiveDataModel", new()
     ///     {
-    ///         var testSensitiveDataModel = new Oci.DataSafe.SensitiveDataModel("testSensitiveDataModel", new Oci.DataSafe.SensitiveDataModelArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+    ///         AppSuiteName = @var.Sensitive_data_model_app_suite_name,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             TargetId = oci_cloud_guard_target.Test_target.Id,
-    ///             AppSuiteName = @var.Sensitive_data_model_app_suite_name,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             Description = @var.Sensitive_data_model_description,
-    ///             DisplayName = @var.Sensitive_data_model_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             IsAppDefinedRelationDiscoveryEnabled = @var.Sensitive_data_model_is_app_defined_relation_discovery_enabled,
-    ///             IsIncludeAllSchemas = @var.Sensitive_data_model_is_include_all_schemas,
-    ///             IsIncludeAllSensitiveTypes = @var.Sensitive_data_model_is_include_all_sensitive_types,
-    ///             IsSampleDataCollectionEnabled = @var.Sensitive_data_model_is_sample_data_collection_enabled,
-    ///             SchemasForDiscoveries = @var.Sensitive_data_model_schemas_for_discovery,
-    ///             SensitiveTypeIdsForDiscoveries = @var.Sensitive_data_model_sensitive_type_ids_for_discovery,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = @var.Sensitive_data_model_description,
+    ///         DisplayName = @var.Sensitive_data_model_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsAppDefinedRelationDiscoveryEnabled = @var.Sensitive_data_model_is_app_defined_relation_discovery_enabled,
+    ///         IsIncludeAllSchemas = @var.Sensitive_data_model_is_include_all_schemas,
+    ///         IsIncludeAllSensitiveTypes = @var.Sensitive_data_model_is_include_all_sensitive_types,
+    ///         IsSampleDataCollectionEnabled = @var.Sensitive_data_model_is_sample_data_collection_enabled,
+    ///         SchemasForDiscoveries = @var.Sensitive_data_model_schemas_for_discovery,
+    ///         SensitiveTypeIdsForDiscoveries = @var.Sensitive_data_model_sensitive_type_ids_for_discovery,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -62,7 +60,7 @@ namespace Pulumi.Oci.DataSafe
     /// ```
     /// </summary>
     [OciResourceType("oci:DataSafe/sensitiveDataModel:SensitiveDataModel")]
-    public partial class SensitiveDataModel : Pulumi.CustomResource
+    public partial class SensitiveDataModel : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
@@ -210,7 +208,7 @@ namespace Pulumi.Oci.DataSafe
         }
     }
 
-    public sealed class SensitiveDataModelArgs : Pulumi.ResourceArgs
+    public sealed class SensitiveDataModelArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
@@ -317,9 +315,10 @@ namespace Pulumi.Oci.DataSafe
         public SensitiveDataModelArgs()
         {
         }
+        public static new SensitiveDataModelArgs Empty => new SensitiveDataModelArgs();
     }
 
-    public sealed class SensitiveDataModelState : Pulumi.ResourceArgs
+    public sealed class SensitiveDataModelState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
@@ -456,5 +455,6 @@ namespace Pulumi.Oci.DataSafe
         public SensitiveDataModelState()
         {
         }
+        public static new SensitiveDataModelState Empty => new SensitiveDataModelState();
     }
 }

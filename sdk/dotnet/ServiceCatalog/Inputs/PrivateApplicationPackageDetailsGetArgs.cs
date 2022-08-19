@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceCatalog.Inputs
 {
 
-    public sealed class PrivateApplicationPackageDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class PrivateApplicationPackageDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The package's type.
@@ -30,5 +30,6 @@ namespace Pulumi.Oci.ServiceCatalog.Inputs
         public PrivateApplicationPackageDetailsGetArgs()
         {
         }
+        public static new PrivateApplicationPackageDetailsGetArgs Empty => new PrivateApplicationPackageDetailsGetArgs();
     }
 }

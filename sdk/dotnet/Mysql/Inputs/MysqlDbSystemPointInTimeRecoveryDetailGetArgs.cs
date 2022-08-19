@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlDbSystemPointInTimeRecoveryDetailGetArgs : Pulumi.ResourceArgs
+    public sealed class MysqlDbSystemPointInTimeRecoveryDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlDbSystemPointInTimeRecoveryDetailGetArgs()
         {
         }
+        public static new MysqlDbSystemPointInTimeRecoveryDetailGetArgs Empty => new MysqlDbSystemPointInTimeRecoveryDetailGetArgs();
     }
 }

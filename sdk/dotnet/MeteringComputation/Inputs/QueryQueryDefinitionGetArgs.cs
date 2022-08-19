@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation.Inputs
 {
 
-    public sealed class QueryQueryDefinitionGetArgs : Pulumi.ResourceArgs
+    public sealed class QueryQueryDefinitionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The common fields for Cost Analysis UI rendering.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public QueryQueryDefinitionGetArgs()
         {
         }
+        public static new QueryQueryDefinitionGetArgs Empty => new QueryQueryDefinitionGetArgs();
     }
 }

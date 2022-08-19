@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Analytics.Inputs
 {
 
-    public sealed class AnalyticsInstanceNetworkEndpointDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class AnalyticsInstanceNetworkEndpointDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The type of network endpoint.
@@ -57,5 +57,6 @@ namespace Pulumi.Oci.Analytics.Inputs
         public AnalyticsInstanceNetworkEndpointDetailsGetArgs()
         {
         }
+        public static new AnalyticsInstanceNetworkEndpointDetailsGetArgs Empty => new AnalyticsInstanceNetworkEndpointDetailsGetArgs();
     }
 }

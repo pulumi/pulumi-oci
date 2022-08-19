@@ -23,7 +23,7 @@ namespace Pulumi.Oci.CloudGuard
     /// ```
     /// </summary>
     [OciResourceType("oci:CloudGuard/responderRecipe:ResponderRecipe")]
-    public partial class ResponderRecipe : Pulumi.CustomResource
+    public partial class ResponderRecipe : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.CloudGuard
         }
     }
 
-    public sealed class ResponderRecipeArgs : Pulumi.ResourceArgs
+    public sealed class ResponderRecipeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -218,9 +218,10 @@ namespace Pulumi.Oci.CloudGuard
         public ResponderRecipeArgs()
         {
         }
+        public static new ResponderRecipeArgs Empty => new ResponderRecipeArgs();
     }
 
-    public sealed class ResponderRecipeState : Pulumi.ResourceArgs
+    public sealed class ResponderRecipeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Compartment Identifier
@@ -339,5 +340,6 @@ namespace Pulumi.Oci.CloudGuard
         public ResponderRecipeState()
         {
         }
+        public static new ResponderRecipeState Empty => new ResponderRecipeState();
     }
 }

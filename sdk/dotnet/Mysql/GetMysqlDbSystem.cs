@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlDbSystem = Oci.Mysql.GetMysqlDbSystem.Invoke(new()
         ///     {
-        ///         var testMysqlDbSystem = Output.Create(Oci.Mysql.GetMysqlDbSystem.InvokeAsync(new Oci.Mysql.GetMysqlDbSystemArgs
-        ///         {
-        ///             DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Mysql
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMysqlDbSystem = Oci.Mysql.GetMysqlDbSystem.Invoke(new()
         ///     {
-        ///         var testMysqlDbSystem = Output.Create(Oci.Mysql.GetMysqlDbSystem.InvokeAsync(new Oci.Mysql.GetMysqlDbSystemArgs
-        ///         {
-        ///             DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
-        ///         }));
-        ///     }
+        ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Mysql
     }
 
 
-    public sealed class GetMysqlDbSystemArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlDbSystemArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlDbSystemArgs()
         {
         }
+        public static new GetMysqlDbSystemArgs Empty => new GetMysqlDbSystemArgs();
     }
 
-    public sealed class GetMysqlDbSystemInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMysqlDbSystemInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Mysql
         public GetMysqlDbSystemInvokeArgs()
         {
         }
+        public static new GetMysqlDbSystemInvokeArgs Empty => new GetMysqlDbSystemInvokeArgs();
     }
 
 

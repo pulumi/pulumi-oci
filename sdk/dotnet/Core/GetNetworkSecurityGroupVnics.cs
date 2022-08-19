@@ -22,20 +22,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkSecurityGroupVnics = Oci.Core.GetNetworkSecurityGroupVnics.Invoke(new()
         ///     {
-        ///         var testNetworkSecurityGroupVnics = Output.Create(Oci.Core.GetNetworkSecurityGroupVnics.InvokeAsync(new Oci.Core.GetNetworkSecurityGroupVnicsArgs
-        ///         {
-        ///             NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
-        ///         }));
-        ///     }
+        ///         NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNetworkSecurityGroupVnics = Oci.Core.GetNetworkSecurityGroupVnics.Invoke(new()
         ///     {
-        ///         var testNetworkSecurityGroupVnics = Output.Create(Oci.Core.GetNetworkSecurityGroupVnics.InvokeAsync(new Oci.Core.GetNetworkSecurityGroupVnicsArgs
-        ///         {
-        ///             NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
-        ///         }));
-        ///     }
+        ///         NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetNetworkSecurityGroupVnicsArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSecurityGroupVnicsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetNetworkSecurityGroupVnicsFilterArgs>? _filters;
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.Core
         public GetNetworkSecurityGroupVnicsArgs()
         {
         }
+        public static new GetNetworkSecurityGroupVnicsArgs Empty => new GetNetworkSecurityGroupVnicsArgs();
     }
 
-    public sealed class GetNetworkSecurityGroupVnicsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSecurityGroupVnicsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetNetworkSecurityGroupVnicsFilterInputArgs>? _filters;
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.Core
         public GetNetworkSecurityGroupVnicsInvokeArgs()
         {
         }
+        public static new GetNetworkSecurityGroupVnicsInvokeArgs Empty => new GetNetworkSecurityGroupVnicsInvokeArgs();
     }
 
 

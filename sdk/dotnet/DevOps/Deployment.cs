@@ -23,7 +23,7 @@ namespace Pulumi.Oci.DevOps
     /// ```
     /// </summary>
     [OciResourceType("oci:DevOps/deployment:Deployment")]
-    public partial class Deployment : Pulumi.CustomResource
+    public partial class Deployment : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of a compartment.
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.DevOps
         }
     }
 
-    public sealed class DeploymentArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -254,9 +254,10 @@ namespace Pulumi.Oci.DevOps
         public DeploymentArgs()
         {
         }
+        public static new DeploymentArgs Empty => new DeploymentArgs();
     }
 
-    public sealed class DeploymentState : Pulumi.ResourceArgs
+    public sealed class DeploymentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of a compartment.
@@ -411,5 +412,6 @@ namespace Pulumi.Oci.DevOps
         public DeploymentState()
         {
         }
+        public static new DeploymentState Empty => new DeploymentState();
     }
 }

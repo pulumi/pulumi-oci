@@ -21,6 +21,41 @@ import javax.annotation.Nullable;
  * Creates a new WebAppAcceleration.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Waa.AppAcceleration;
+ * import com.pulumi.oci.Waa.AppAccelerationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testWebAppAcceleration = new AppAcceleration(&#34;testWebAppAcceleration&#34;, AppAccelerationArgs.builder()        
+ *             .backendType(var_.web_app_acceleration_backend_type())
+ *             .compartmentId(var_.compartment_id())
+ *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *             .webAppAccelerationPolicyId(oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy().id())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .displayName(var_.web_app_acceleration_display_name())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .systemTags(var_.web_app_acceleration_system_tags())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

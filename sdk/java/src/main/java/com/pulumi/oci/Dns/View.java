@@ -22,6 +22,38 @@ import javax.annotation.Nullable;
  * Creates a new view in the specified compartment. Requires a `PRIVATE` scope query parameter.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Dns.View;
+ * import com.pulumi.oci.Dns.ViewArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testView = new View(&#34;testView&#34;, ViewArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .scope(&#34;PRIVATE&#34;)
+ *             .definedTags(var_.view_defined_tags())
+ *             .displayName(var_.view_display_name())
+ *             .freeformTags(var_.view_freeform_tags())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

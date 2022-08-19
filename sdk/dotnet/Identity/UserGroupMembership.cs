@@ -17,21 +17,19 @@ namespace Pulumi.Oci.Identity
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testUserGroupMembership = new Oci.Identity.UserGroupMembership("testUserGroupMembership", new()
     ///     {
-    ///         var testUserGroupMembership = new Oci.Identity.UserGroupMembership("testUserGroupMembership", new Oci.Identity.UserGroupMembershipArgs
-    ///         {
-    ///             GroupId = oci_identity_group.Test_group.Id,
-    ///             UserId = oci_identity_user.Test_user.Id,
-    ///         });
-    ///     }
+    ///         GroupId = oci_identity_group.Test_group.Id,
+    ///         UserId = oci_identity_user.Test_user.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -43,7 +41,7 @@ namespace Pulumi.Oci.Identity
     /// ```
     /// </summary>
     [OciResourceType("oci:Identity/userGroupMembership:UserGroupMembership")]
-    public partial class UserGroupMembership : Pulumi.CustomResource
+    public partial class UserGroupMembership : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The OCID of the tenancy containing the user, group, and membership object.
@@ -125,7 +123,7 @@ namespace Pulumi.Oci.Identity
         }
     }
 
-    public sealed class UserGroupMembershipArgs : Pulumi.ResourceArgs
+    public sealed class UserGroupMembershipArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the tenancy containing the user, group, and membership object.
@@ -148,9 +146,10 @@ namespace Pulumi.Oci.Identity
         public UserGroupMembershipArgs()
         {
         }
+        public static new UserGroupMembershipArgs Empty => new UserGroupMembershipArgs();
     }
 
-    public sealed class UserGroupMembershipState : Pulumi.ResourceArgs
+    public sealed class UserGroupMembershipState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the tenancy containing the user, group, and membership object.
@@ -191,5 +190,6 @@ namespace Pulumi.Oci.Identity
         public UserGroupMembershipState()
         {
         }
+        public static new UserGroupMembershipState Empty => new UserGroupMembershipState();
     }
 }

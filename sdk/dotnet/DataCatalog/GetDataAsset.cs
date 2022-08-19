@@ -21,22 +21,20 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataAsset = Oci.DataCatalog.GetDataAsset.Invoke(new()
         ///     {
-        ///         var testDataAsset = Output.Create(Oci.DataCatalog.GetDataAsset.InvokeAsync(new Oci.DataCatalog.GetDataAssetArgs
-        ///         {
-        ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///             DataAssetKey = @var.Data_asset_data_asset_key,
-        ///             Fields = @var.Data_asset_fields,
-        ///         }));
-        ///     }
+        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
+        ///         DataAssetKey = @var.Data_asset_data_asset_key,
+        ///         Fields = @var.Data_asset_fields,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,22 +52,20 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataAsset = Oci.DataCatalog.GetDataAsset.Invoke(new()
         ///     {
-        ///         var testDataAsset = Output.Create(Oci.DataCatalog.GetDataAsset.InvokeAsync(new Oci.DataCatalog.GetDataAssetArgs
-        ///         {
-        ///             CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///             DataAssetKey = @var.Data_asset_data_asset_key,
-        ///             Fields = @var.Data_asset_fields,
-        ///         }));
-        ///     }
+        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
+        ///         DataAssetKey = @var.Data_asset_data_asset_key,
+        ///         Fields = @var.Data_asset_fields,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.DataCatalog
     }
 
 
-    public sealed class GetDataAssetArgs : Pulumi.InvokeArgs
+    public sealed class GetDataAssetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -108,9 +104,10 @@ namespace Pulumi.Oci.DataCatalog
         public GetDataAssetArgs()
         {
         }
+        public static new GetDataAssetArgs Empty => new GetDataAssetArgs();
     }
 
-    public sealed class GetDataAssetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDataAssetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique catalog identifier.
@@ -139,6 +136,7 @@ namespace Pulumi.Oci.DataCatalog
         public GetDataAssetInvokeArgs()
         {
         }
+        public static new GetDataAssetInvokeArgs Empty => new GetDataAssetInvokeArgs();
     }
 
 

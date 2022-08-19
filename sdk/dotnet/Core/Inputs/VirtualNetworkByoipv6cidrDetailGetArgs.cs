@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class VirtualNetworkByoipv6cidrDetailGetArgs : Pulumi.ResourceArgs
+    public sealed class VirtualNetworkByoipv6cidrDetailGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("byoipv6rangeId", required: true)]
         public Input<string> Byoipv6rangeId { get; set; } = null!;
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Core.Inputs
         public VirtualNetworkByoipv6cidrDetailGetArgs()
         {
         }
+        public static new VirtualNetworkByoipv6cidrDetailGetArgs Empty => new VirtualNetworkByoipv6cidrDetailGetArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging.Inputs
 {
 
-    public sealed class UnifiedAgentConfigurationServiceConfigurationDestinationArgs : Pulumi.ResourceArgs
+    public sealed class UnifiedAgentConfigurationServiceConfigurationDestinationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The OCID of the resource.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Logging.Inputs
         public UnifiedAgentConfigurationServiceConfigurationDestinationArgs()
         {
         }
+        public static new UnifiedAgentConfigurationServiceConfigurationDestinationArgs Empty => new UnifiedAgentConfigurationServiceConfigurationDestinationArgs();
     }
 }

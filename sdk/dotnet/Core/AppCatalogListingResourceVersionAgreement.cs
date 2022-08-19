@@ -15,25 +15,23 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAppCatalogListingResourceVersionAgreement = new Oci.Core.AppCatalogListingResourceVersionAgreement("testAppCatalogListingResourceVersionAgreement", new()
     ///     {
-    ///         var testAppCatalogListingResourceVersionAgreement = new Oci.Core.AppCatalogListingResourceVersionAgreement("testAppCatalogListingResourceVersionAgreement", new Oci.Core.AppCatalogListingResourceVersionAgreementArgs
-    ///         {
-    ///             ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
-    ///             ListingResourceVersion = @var.App_catalog_listing_resource_version_agreement_listing_resource_version,
-    ///         });
-    ///     }
+    ///         ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
+    ///         ListingResourceVersion = @var.App_catalog_listing_resource_version_agreement_listing_resource_version,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/appCatalogListingResourceVersionAgreement:AppCatalogListingResourceVersionAgreement")]
-    public partial class AppCatalogListingResourceVersionAgreement : Pulumi.CustomResource
+    public partial class AppCatalogListingResourceVersionAgreement : global::Pulumi.CustomResource
     {
         /// <summary>
         /// EULA link
@@ -115,7 +113,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class AppCatalogListingResourceVersionAgreementArgs : Pulumi.ResourceArgs
+    public sealed class AppCatalogListingResourceVersionAgreementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The OCID of the listing.
@@ -132,9 +130,10 @@ namespace Pulumi.Oci.Core
         public AppCatalogListingResourceVersionAgreementArgs()
         {
         }
+        public static new AppCatalogListingResourceVersionAgreementArgs Empty => new AppCatalogListingResourceVersionAgreementArgs();
     }
 
-    public sealed class AppCatalogListingResourceVersionAgreementState : Pulumi.ResourceArgs
+    public sealed class AppCatalogListingResourceVersionAgreementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// EULA link
@@ -175,5 +174,6 @@ namespace Pulumi.Oci.Core
         public AppCatalogListingResourceVersionAgreementState()
         {
         }
+        public static new AppCatalogListingResourceVersionAgreementState Empty => new AppCatalogListingResourceVersionAgreementState();
     }
 }

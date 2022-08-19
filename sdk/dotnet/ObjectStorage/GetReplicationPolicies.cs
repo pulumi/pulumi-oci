@@ -22,21 +22,19 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReplicationPolicies = Oci.ObjectStorage.GetReplicationPolicies.Invoke(new()
         ///     {
-        ///         var testReplicationPolicies = Output.Create(Oci.ObjectStorage.GetReplicationPolicies.InvokeAsync(new Oci.ObjectStorage.GetReplicationPoliciesArgs
-        ///         {
-        ///             Bucket = @var.Replication_policy_bucket,
-        ///             Namespace = @var.Replication_policy_namespace,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Replication_policy_bucket,
+        ///         Namespace = @var.Replication_policy_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testReplicationPolicies = Oci.ObjectStorage.GetReplicationPolicies.Invoke(new()
         ///     {
-        ///         var testReplicationPolicies = Output.Create(Oci.ObjectStorage.GetReplicationPolicies.InvokeAsync(new Oci.ObjectStorage.GetReplicationPoliciesArgs
-        ///         {
-        ///             Bucket = @var.Replication_policy_bucket,
-        ///             Namespace = @var.Replication_policy_namespace,
-        ///         }));
-        ///     }
+        ///         Bucket = @var.Replication_policy_bucket,
+        ///         Namespace = @var.Replication_policy_namespace,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.ObjectStorage
     }
 
 
-    public sealed class GetReplicationPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetReplicationPoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.ObjectStorage
         public GetReplicationPoliciesArgs()
         {
         }
+        public static new GetReplicationPoliciesArgs Empty => new GetReplicationPoliciesArgs();
     }
 
-    public sealed class GetReplicationPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetReplicationPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.ObjectStorage
         public GetReplicationPoliciesInvokeArgs()
         {
         }
+        public static new GetReplicationPoliciesInvokeArgs Empty => new GetReplicationPoliciesInvokeArgs();
     }
 
 

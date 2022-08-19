@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Functions.Inputs
 {
 
-    public sealed class ApplicationImagePolicyConfigKeyDetailArgs : Pulumi.ResourceArgs
+    public sealed class ApplicationImagePolicyConfigKeyDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Functions.Inputs
         public ApplicationImagePolicyConfigKeyDetailArgs()
         {
         }
+        public static new ApplicationImagePolicyConfigKeyDetailArgs Empty => new ApplicationImagePolicyConfigKeyDetailArgs();
     }
 }

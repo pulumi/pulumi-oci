@@ -21,21 +21,19 @@ namespace Pulumi.Oci.ApmConfig
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConfig = Oci.ApmConfig.GetConfig.Invoke(new()
         ///     {
-        ///         var testConfig = Output.Create(Oci.ApmConfig.GetConfig.InvokeAsync(new Oci.ApmConfig.GetConfigArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             ConfigId = oci_apm_config_config.Test_config.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         ConfigId = oci_apm_config_config.Test_config.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.ApmConfig
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConfig = Oci.ApmConfig.GetConfig.Invoke(new()
         ///     {
-        ///         var testConfig = Output.Create(Oci.ApmConfig.GetConfig.InvokeAsync(new Oci.ApmConfig.GetConfigArgs
-        ///         {
-        ///             ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///             ConfigId = oci_apm_config_config.Test_config.Id,
-        ///         }));
-        ///     }
+        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         ConfigId = oci_apm_config_config.Test_config.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.ApmConfig
     }
 
 
-    public sealed class GetConfigArgs : Pulumi.InvokeArgs
+    public sealed class GetConfigArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM Domain ID the request is intended for.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.ApmConfig
         public GetConfigArgs()
         {
         }
+        public static new GetConfigArgs Empty => new GetConfigArgs();
     }
 
-    public sealed class GetConfigInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConfigInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The APM Domain ID the request is intended for.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.ApmConfig
         public GetConfigInvokeArgs()
         {
         }
+        public static new GetConfigInvokeArgs Empty => new GetConfigInvokeArgs();
     }
 
 

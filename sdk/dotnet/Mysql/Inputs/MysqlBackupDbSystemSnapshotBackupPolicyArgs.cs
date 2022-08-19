@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql.Inputs
 {
 
-    public sealed class MysqlBackupDbSystemSnapshotBackupPolicyArgs : Pulumi.ResourceArgs
+    public sealed class MysqlBackupDbSystemSnapshotBackupPolicyArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -69,5 +69,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         public MysqlBackupDbSystemSnapshotBackupPolicyArgs()
         {
         }
+        public static new MysqlBackupDbSystemSnapshotBackupPolicyArgs Empty => new MysqlBackupDbSystemSnapshotBackupPolicyArgs();
     }
 }

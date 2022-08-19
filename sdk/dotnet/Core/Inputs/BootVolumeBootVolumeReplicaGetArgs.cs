@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class BootVolumeBootVolumeReplicaGetArgs : Pulumi.ResourceArgs
+    public sealed class BootVolumeBootVolumeReplicaGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.Core.Inputs
         public BootVolumeBootVolumeReplicaGetArgs()
         {
         }
+        public static new BootVolumeBootVolumeReplicaGetArgs Empty => new BootVolumeBootVolumeReplicaGetArgs();
     }
 }

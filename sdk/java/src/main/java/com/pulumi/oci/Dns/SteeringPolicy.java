@@ -26,6 +26,68 @@ import javax.annotation.Nullable;
  * creating policies with templates, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Dns.SteeringPolicy;
+ * import com.pulumi.oci.Dns.SteeringPolicyArgs;
+ * import com.pulumi.oci.Dns.inputs.SteeringPolicyAnswerArgs;
+ * import com.pulumi.oci.Dns.inputs.SteeringPolicyRuleArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSteeringPolicy = new SteeringPolicy(&#34;testSteeringPolicy&#34;, SteeringPolicyArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .displayName(var_.steering_policy_display_name())
+ *             .template(var_.steering_policy_template())
+ *             .answers(SteeringPolicyAnswerArgs.builder()
+ *                 .name(var_.steering_policy_answers_name())
+ *                 .rdata(var_.steering_policy_answers_rdata())
+ *                 .rtype(var_.steering_policy_answers_rtype())
+ *                 .isDisabled(var_.steering_policy_answers_is_disabled())
+ *                 .pool(var_.steering_policy_answers_pool())
+ *                 .build())
+ *             .definedTags(var_.steering_policy_defined_tags())
+ *             .freeformTags(var_.steering_policy_freeform_tags())
+ *             .healthCheckMonitorId(oci_health_checks_http_monitor.test_http_monitor().id())
+ *             .rules(SteeringPolicyRuleArgs.builder()
+ *                 .ruleType(var_.steering_policy_rules_rule_type())
+ *                 .cases(SteeringPolicyRuleCaseArgs.builder()
+ *                     .answerDatas(SteeringPolicyRuleCaseAnswerDataArgs.builder()
+ *                         .answerCondition(var_.steering_policy_rules_cases_answer_data_answer_condition())
+ *                         .shouldKeep(var_.steering_policy_rules_cases_answer_data_should_keep())
+ *                         .value(var_.steering_policy_rules_cases_answer_data_value())
+ *                         .build())
+ *                     .caseCondition(var_.steering_policy_rules_cases_case_condition())
+ *                     .count(var_.steering_policy_rules_cases_count())
+ *                     .build())
+ *                 .defaultAnswerDatas(SteeringPolicyRuleDefaultAnswerDataArgs.builder()
+ *                     .answerCondition(var_.steering_policy_rules_default_answer_data_answer_condition())
+ *                     .shouldKeep(var_.steering_policy_rules_default_answer_data_should_keep())
+ *                     .value(var_.steering_policy_rules_default_answer_data_value())
+ *                     .build())
+ *                 .defaultCount(var_.steering_policy_rules_default_count())
+ *                 .description(var_.steering_policy_rules_description())
+ *                 .build())
+ *             .ttl(var_.steering_policy_ttl())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

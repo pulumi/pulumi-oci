@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBlockVolumeReplica = Oci.Core.GetBlockVolumeReplica.Invoke(new()
         ///     {
-        ///         var testBlockVolumeReplica = Output.Create(Oci.Core.GetBlockVolumeReplica.InvokeAsync(new Oci.Core.GetBlockVolumeReplicaArgs
-        ///         {
-        ///             BlockVolumeReplicaId = oci_core_block_volume_replica.Test_block_volume_replica.Id,
-        ///         }));
-        ///     }
+        ///         BlockVolumeReplicaId = oci_core_block_volume_replica.Test_block_volume_replica.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBlockVolumeReplica = Oci.Core.GetBlockVolumeReplica.Invoke(new()
         ///     {
-        ///         var testBlockVolumeReplica = Output.Create(Oci.Core.GetBlockVolumeReplica.InvokeAsync(new Oci.Core.GetBlockVolumeReplicaArgs
-        ///         {
-        ///             BlockVolumeReplicaId = oci_core_block_volume_replica.Test_block_volume_replica.Id,
-        ///         }));
-        ///     }
+        ///         BlockVolumeReplicaId = oci_core_block_volume_replica.Test_block_volume_replica.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetBlockVolumeReplicaArgs : Pulumi.InvokeArgs
+    public sealed class GetBlockVolumeReplicaArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the block volume replica.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetBlockVolumeReplicaArgs()
         {
         }
+        public static new GetBlockVolumeReplicaArgs Empty => new GetBlockVolumeReplicaArgs();
     }
 
-    public sealed class GetBlockVolumeReplicaInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBlockVolumeReplicaInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the block volume replica.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetBlockVolumeReplicaInvokeArgs()
         {
         }
+        public static new GetBlockVolumeReplicaInvokeArgs Empty => new GetBlockVolumeReplicaInvokeArgs();
     }
 
 

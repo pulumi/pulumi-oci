@@ -24,24 +24,22 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUsers = Oci.Identity.GetUsers.Invoke(new()
         ///     {
-        ///         var testUsers = Output.Create(Oci.Identity.GetUsers.InvokeAsync(new Oci.Identity.GetUsersArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             ExternalIdentifier = @var.User_external_identifier,
-        ///             IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
-        ///             Name = @var.User_name,
-        ///             State = @var.User_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         ExternalIdentifier = @var.User_external_identifier,
+        ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
+        ///         Name = @var.User_name,
+        ///         State = @var.User_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -62,24 +60,22 @@ namespace Pulumi.Oci.Identity
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testUsers = Oci.Identity.GetUsers.Invoke(new()
         ///     {
-        ///         var testUsers = Output.Create(Oci.Identity.GetUsers.InvokeAsync(new Oci.Identity.GetUsersArgs
-        ///         {
-        ///             CompartmentId = @var.Tenancy_ocid,
-        ///             ExternalIdentifier = @var.User_external_identifier,
-        ///             IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
-        ///             Name = @var.User_name,
-        ///             State = @var.User_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         ExternalIdentifier = @var.User_external_identifier,
+        ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
+        ///         Name = @var.User_name,
+        ///         State = @var.User_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -89,7 +85,7 @@ namespace Pulumi.Oci.Identity
     }
 
 
-    public sealed class GetUsersArgs : Pulumi.InvokeArgs
+    public sealed class GetUsersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -132,9 +128,10 @@ namespace Pulumi.Oci.Identity
         public GetUsersArgs()
         {
         }
+        public static new GetUsersArgs Empty => new GetUsersArgs();
     }
 
-    public sealed class GetUsersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUsersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -177,6 +174,7 @@ namespace Pulumi.Oci.Identity
         public GetUsersInvokeArgs()
         {
         }
+        public static new GetUsersInvokeArgs Empty => new GetUsersInvokeArgs();
     }
 
 

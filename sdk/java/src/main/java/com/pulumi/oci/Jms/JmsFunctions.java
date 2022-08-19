@@ -50,6 +50,34 @@ public final class JmsFunctions {
      * Retrieve a Fleet with the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleet = JmsFunctions.getFleet(GetFleetArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFleetResult> getFleet(GetFleetArgs args) {
@@ -61,6 +89,34 @@ public final class JmsFunctions {
      * Retrieve a Fleet with the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleet = JmsFunctions.getFleet(GetFleetArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFleetResult> getFleetPlain(GetFleetPlainArgs args) {
@@ -72,6 +128,34 @@ public final class JmsFunctions {
      * Retrieve a Fleet with the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleet = JmsFunctions.getFleet(GetFleetArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFleetResult> getFleet(GetFleetArgs args, InvokeOptions options) {
@@ -83,6 +167,34 @@ public final class JmsFunctions {
      * Retrieve a Fleet with the specified identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleet = JmsFunctions.getFleet(GetFleetArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFleetResult> getFleetPlain(GetFleetPlainArgs args, InvokeOptions options) {
@@ -94,6 +206,36 @@ public final class JmsFunctions {
      * Returns a list of blocklist entities contained by a fleet.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .operation(var_.fleet_blocklist_operation())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFleetBlocklistsResult> getFleetBlocklists(GetFleetBlocklistsArgs args) {
@@ -105,6 +247,36 @@ public final class JmsFunctions {
      * Returns a list of blocklist entities contained by a fleet.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .operation(var_.fleet_blocklist_operation())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFleetBlocklistsResult> getFleetBlocklistsPlain(GetFleetBlocklistsPlainArgs args) {
@@ -116,6 +288,36 @@ public final class JmsFunctions {
      * Returns a list of blocklist entities contained by a fleet.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .operation(var_.fleet_blocklist_operation())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFleetBlocklistsResult> getFleetBlocklists(GetFleetBlocklistsArgs args, InvokeOptions options) {
@@ -127,6 +329,36 @@ public final class JmsFunctions {
      * Returns a list of blocklist entities contained by a fleet.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .operation(var_.fleet_blocklist_operation())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFleetBlocklistsResult> getFleetBlocklistsPlain(GetFleetBlocklistsPlainArgs args, InvokeOptions options) {
@@ -139,6 +371,38 @@ public final class JmsFunctions {
      * is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleets = JmsFunctions.getFleets(GetFleetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.fleet_display_name())
+     *             .displayNameContains(var_.fleet_display_name_contains())
+     *             .id(var_.fleet_id())
+     *             .state(var_.fleet_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFleetsResult> getFleets() {
@@ -151,6 +415,38 @@ public final class JmsFunctions {
      * is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleets = JmsFunctions.getFleets(GetFleetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.fleet_display_name())
+     *             .displayNameContains(var_.fleet_display_name_contains())
+     *             .id(var_.fleet_id())
+     *             .state(var_.fleet_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFleetsResult> getFleetsPlain() {
@@ -163,6 +459,38 @@ public final class JmsFunctions {
      * is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleets = JmsFunctions.getFleets(GetFleetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.fleet_display_name())
+     *             .displayNameContains(var_.fleet_display_name_contains())
+     *             .id(var_.fleet_id())
+     *             .state(var_.fleet_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFleetsResult> getFleets(GetFleetsArgs args) {
@@ -175,6 +503,38 @@ public final class JmsFunctions {
      * is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleets = JmsFunctions.getFleets(GetFleetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.fleet_display_name())
+     *             .displayNameContains(var_.fleet_display_name_contains())
+     *             .id(var_.fleet_id())
+     *             .state(var_.fleet_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFleetsResult> getFleetsPlain(GetFleetsPlainArgs args) {
@@ -187,6 +547,38 @@ public final class JmsFunctions {
      * is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleets = JmsFunctions.getFleets(GetFleetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.fleet_display_name())
+     *             .displayNameContains(var_.fleet_display_name_contains())
+     *             .id(var_.fleet_id())
+     *             .state(var_.fleet_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetFleetsResult> getFleets(GetFleetsArgs args, InvokeOptions options) {
@@ -199,6 +591,38 @@ public final class JmsFunctions {
      * is required unless the query parameter `id` is specified.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleets = JmsFunctions.getFleets(GetFleetsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.fleet_display_name())
+     *             .displayNameContains(var_.fleet_display_name_contains())
+     *             .id(var_.fleet_id())
+     *             .state(var_.fleet_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetFleetsResult> getFleetsPlain(GetFleetsPlainArgs args, InvokeOptions options) {
@@ -210,6 +634,45 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetInstallationSiteArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .installationPath(var_.fleet_installation_site_installation_path())
+     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
+     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
+     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
+     *             .jreVersion(var_.fleet_installation_site_jre_version())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .osFamilies(var_.fleet_installation_site_os_family())
+     *             .pathContains(var_.fleet_installation_site_path_contains())
+     *             .timeEnd(var_.fleet_installation_site_time_end())
+     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstallationSiteResult> getInstallationSite(GetInstallationSiteArgs args) {
@@ -221,6 +684,45 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetInstallationSiteArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .installationPath(var_.fleet_installation_site_installation_path())
+     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
+     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
+     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
+     *             .jreVersion(var_.fleet_installation_site_jre_version())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .osFamilies(var_.fleet_installation_site_os_family())
+     *             .pathContains(var_.fleet_installation_site_path_contains())
+     *             .timeEnd(var_.fleet_installation_site_time_end())
+     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstallationSiteResult> getInstallationSitePlain(GetInstallationSitePlainArgs args) {
@@ -232,6 +734,45 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetInstallationSiteArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .installationPath(var_.fleet_installation_site_installation_path())
+     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
+     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
+     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
+     *             .jreVersion(var_.fleet_installation_site_jre_version())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .osFamilies(var_.fleet_installation_site_os_family())
+     *             .pathContains(var_.fleet_installation_site_path_contains())
+     *             .timeEnd(var_.fleet_installation_site_time_end())
+     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstallationSiteResult> getInstallationSite(GetInstallationSiteArgs args, InvokeOptions options) {
@@ -243,6 +784,45 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetInstallationSiteArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .installationPath(var_.fleet_installation_site_installation_path())
+     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
+     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
+     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
+     *             .jreVersion(var_.fleet_installation_site_jre_version())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .osFamilies(var_.fleet_installation_site_os_family())
+     *             .pathContains(var_.fleet_installation_site_path_contains())
+     *             .timeEnd(var_.fleet_installation_site_time_end())
+     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstallationSiteResult> getInstallationSitePlain(GetInstallationSitePlainArgs args, InvokeOptions options) {
@@ -254,6 +834,45 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetInstallationSitesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .installationPath(var_.fleet_installation_site_installation_path())
+     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
+     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
+     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
+     *             .jreVersion(var_.fleet_installation_site_jre_version())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .osFamilies(var_.fleet_installation_site_os_family())
+     *             .pathContains(var_.fleet_installation_site_path_contains())
+     *             .timeEnd(var_.fleet_installation_site_time_end())
+     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstallationSitesResult> getInstallationSites(GetInstallationSitesArgs args) {
@@ -265,6 +884,45 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetInstallationSitesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .installationPath(var_.fleet_installation_site_installation_path())
+     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
+     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
+     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
+     *             .jreVersion(var_.fleet_installation_site_jre_version())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .osFamilies(var_.fleet_installation_site_os_family())
+     *             .pathContains(var_.fleet_installation_site_path_contains())
+     *             .timeEnd(var_.fleet_installation_site_time_end())
+     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstallationSitesResult> getInstallationSitesPlain(GetInstallationSitesPlainArgs args) {
@@ -276,6 +934,45 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetInstallationSitesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .installationPath(var_.fleet_installation_site_installation_path())
+     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
+     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
+     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
+     *             .jreVersion(var_.fleet_installation_site_jre_version())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .osFamilies(var_.fleet_installation_site_os_family())
+     *             .pathContains(var_.fleet_installation_site_path_contains())
+     *             .timeEnd(var_.fleet_installation_site_time_end())
+     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInstallationSitesResult> getInstallationSites(GetInstallationSitesArgs args, InvokeOptions options) {
@@ -287,6 +984,45 @@ public final class JmsFunctions {
      * List Java installation sites in a Fleet filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetInstallationSitesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .installationPath(var_.fleet_installation_site_installation_path())
+     *             .jreDistribution(var_.fleet_installation_site_jre_distribution())
+     *             .jreSecurityStatus(var_.fleet_installation_site_jre_security_status())
+     *             .jreVendor(var_.fleet_installation_site_jre_vendor())
+     *             .jreVersion(var_.fleet_installation_site_jre_version())
+     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
+     *             .osFamilies(var_.fleet_installation_site_os_family())
+     *             .pathContains(var_.fleet_installation_site_path_contains())
+     *             .timeEnd(var_.fleet_installation_site_time_end())
+     *             .timeStart(var_.fleet_installation_site_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInstallationSitesResult> getInstallationSitesPlain(GetInstallationSitesPlainArgs args, InvokeOptions options) {
@@ -299,6 +1035,35 @@ public final class JmsFunctions {
      * A Java release family is typically a major version in the Java version identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
+     *             .displayName(var_.java_family_display_name())
+     *             .familyVersion(var_.java_family_family_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJavaFamiliesResult> getJavaFamilies() {
@@ -311,6 +1076,35 @@ public final class JmsFunctions {
      * A Java release family is typically a major version in the Java version identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
+     *             .displayName(var_.java_family_display_name())
+     *             .familyVersion(var_.java_family_family_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJavaFamiliesResult> getJavaFamiliesPlain() {
@@ -323,6 +1117,35 @@ public final class JmsFunctions {
      * A Java release family is typically a major version in the Java version identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
+     *             .displayName(var_.java_family_display_name())
+     *             .familyVersion(var_.java_family_family_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJavaFamiliesResult> getJavaFamilies(GetJavaFamiliesArgs args) {
@@ -335,6 +1158,35 @@ public final class JmsFunctions {
      * A Java release family is typically a major version in the Java version identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
+     *             .displayName(var_.java_family_display_name())
+     *             .familyVersion(var_.java_family_family_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJavaFamiliesResult> getJavaFamiliesPlain(GetJavaFamiliesPlainArgs args) {
@@ -347,6 +1199,35 @@ public final class JmsFunctions {
      * A Java release family is typically a major version in the Java version identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
+     *             .displayName(var_.java_family_display_name())
+     *             .familyVersion(var_.java_family_family_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJavaFamiliesResult> getJavaFamilies(GetJavaFamiliesArgs args, InvokeOptions options) {
@@ -359,6 +1240,35 @@ public final class JmsFunctions {
      * A Java release family is typically a major version in the Java version identifier.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
+     *             .displayName(var_.java_family_display_name())
+     *             .familyVersion(var_.java_family_family_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJavaFamiliesResult> getJavaFamiliesPlain(GetJavaFamiliesPlainArgs args, InvokeOptions options) {
@@ -370,6 +1280,34 @@ public final class JmsFunctions {
      * Returns details of a Java release family based on specified version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaFamilyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaFamily = JmsFunctions.getJavaFamily(GetJavaFamilyArgs.builder()
+     *             .familyVersion(var_.java_family_family_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJavaFamilyResult> getJavaFamily(GetJavaFamilyArgs args) {
@@ -381,6 +1319,34 @@ public final class JmsFunctions {
      * Returns details of a Java release family based on specified version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaFamilyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaFamily = JmsFunctions.getJavaFamily(GetJavaFamilyArgs.builder()
+     *             .familyVersion(var_.java_family_family_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJavaFamilyResult> getJavaFamilyPlain(GetJavaFamilyPlainArgs args) {
@@ -392,6 +1358,34 @@ public final class JmsFunctions {
      * Returns details of a Java release family based on specified version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaFamilyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaFamily = JmsFunctions.getJavaFamily(GetJavaFamilyArgs.builder()
+     *             .familyVersion(var_.java_family_family_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJavaFamilyResult> getJavaFamily(GetJavaFamilyArgs args, InvokeOptions options) {
@@ -403,6 +1397,34 @@ public final class JmsFunctions {
      * Returns details of a Java release family based on specified version.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaFamilyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaFamily = JmsFunctions.getJavaFamily(GetJavaFamilyArgs.builder()
+     *             .familyVersion(var_.java_family_family_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJavaFamilyResult> getJavaFamilyPlain(GetJavaFamilyPlainArgs args, InvokeOptions options) {
@@ -414,6 +1436,34 @@ public final class JmsFunctions {
      * Returns detail of a Java release.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaReleaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaRelease = JmsFunctions.getJavaRelease(GetJavaReleaseArgs.builder()
+     *             .releaseVersion(var_.java_release_release_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJavaReleaseResult> getJavaRelease(GetJavaReleaseArgs args) {
@@ -425,6 +1475,34 @@ public final class JmsFunctions {
      * Returns detail of a Java release.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaReleaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaRelease = JmsFunctions.getJavaRelease(GetJavaReleaseArgs.builder()
+     *             .releaseVersion(var_.java_release_release_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJavaReleaseResult> getJavaReleasePlain(GetJavaReleasePlainArgs args) {
@@ -436,6 +1514,34 @@ public final class JmsFunctions {
      * Returns detail of a Java release.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaReleaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaRelease = JmsFunctions.getJavaRelease(GetJavaReleaseArgs.builder()
+     *             .releaseVersion(var_.java_release_release_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJavaReleaseResult> getJavaRelease(GetJavaReleaseArgs args, InvokeOptions options) {
@@ -447,6 +1553,34 @@ public final class JmsFunctions {
      * Returns detail of a Java release.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaReleaseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaRelease = JmsFunctions.getJavaRelease(GetJavaReleaseArgs.builder()
+     *             .releaseVersion(var_.java_release_release_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJavaReleaseResult> getJavaReleasePlain(GetJavaReleasePlainArgs args, InvokeOptions options) {
@@ -458,6 +1592,38 @@ public final class JmsFunctions {
      * Returns a list of Java releases.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaReleases = JmsFunctions.getJavaReleases(GetJavaReleasesArgs.builder()
+     *             .familyVersion(var_.java_release_family_version())
+     *             .jreSecurityStatus(var_.java_release_jre_security_status())
+     *             .licenseType(var_.java_release_license_type())
+     *             .releaseType(var_.java_release_release_type())
+     *             .releaseVersion(var_.java_release_release_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJavaReleasesResult> getJavaReleases() {
@@ -469,6 +1635,38 @@ public final class JmsFunctions {
      * Returns a list of Java releases.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaReleases = JmsFunctions.getJavaReleases(GetJavaReleasesArgs.builder()
+     *             .familyVersion(var_.java_release_family_version())
+     *             .jreSecurityStatus(var_.java_release_jre_security_status())
+     *             .licenseType(var_.java_release_license_type())
+     *             .releaseType(var_.java_release_release_type())
+     *             .releaseVersion(var_.java_release_release_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJavaReleasesResult> getJavaReleasesPlain() {
@@ -480,6 +1678,38 @@ public final class JmsFunctions {
      * Returns a list of Java releases.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaReleases = JmsFunctions.getJavaReleases(GetJavaReleasesArgs.builder()
+     *             .familyVersion(var_.java_release_family_version())
+     *             .jreSecurityStatus(var_.java_release_jre_security_status())
+     *             .licenseType(var_.java_release_license_type())
+     *             .releaseType(var_.java_release_release_type())
+     *             .releaseVersion(var_.java_release_release_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJavaReleasesResult> getJavaReleases(GetJavaReleasesArgs args) {
@@ -491,6 +1721,38 @@ public final class JmsFunctions {
      * Returns a list of Java releases.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaReleases = JmsFunctions.getJavaReleases(GetJavaReleasesArgs.builder()
+     *             .familyVersion(var_.java_release_family_version())
+     *             .jreSecurityStatus(var_.java_release_jre_security_status())
+     *             .licenseType(var_.java_release_license_type())
+     *             .releaseType(var_.java_release_release_type())
+     *             .releaseVersion(var_.java_release_release_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJavaReleasesResult> getJavaReleasesPlain(GetJavaReleasesPlainArgs args) {
@@ -502,6 +1764,38 @@ public final class JmsFunctions {
      * Returns a list of Java releases.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaReleases = JmsFunctions.getJavaReleases(GetJavaReleasesArgs.builder()
+     *             .familyVersion(var_.java_release_family_version())
+     *             .jreSecurityStatus(var_.java_release_jre_security_status())
+     *             .licenseType(var_.java_release_license_type())
+     *             .releaseType(var_.java_release_release_type())
+     *             .releaseVersion(var_.java_release_release_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetJavaReleasesResult> getJavaReleases(GetJavaReleasesArgs args, InvokeOptions options) {
@@ -513,6 +1807,38 @@ public final class JmsFunctions {
      * Returns a list of Java releases.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaReleasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaReleases = JmsFunctions.getJavaReleases(GetJavaReleasesArgs.builder()
+     *             .familyVersion(var_.java_release_family_version())
+     *             .jreSecurityStatus(var_.java_release_jre_security_status())
+     *             .licenseType(var_.java_release_license_type())
+     *             .releaseType(var_.java_release_release_type())
+     *             .releaseVersion(var_.java_release_release_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetJavaReleasesResult> getJavaReleasesPlain(GetJavaReleasesPlainArgs args, InvokeOptions options) {
@@ -524,6 +1850,39 @@ public final class JmsFunctions {
      * List Java Runtime usage in a specified host filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .applicationName(oci_dataflow_application.test_application().name())
+     *             .compartmentId(var_.compartment_id())
+     *             .hostId(oci_jms_host.test_host().id())
+     *             .timeEnd(var_.list_jre_usage_time_end())
+     *             .timeStart(var_.list_jre_usage_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListJreUsageResult> getListJreUsage() {
@@ -535,6 +1894,39 @@ public final class JmsFunctions {
      * List Java Runtime usage in a specified host filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .applicationName(oci_dataflow_application.test_application().name())
+     *             .compartmentId(var_.compartment_id())
+     *             .hostId(oci_jms_host.test_host().id())
+     *             .timeEnd(var_.list_jre_usage_time_end())
+     *             .timeStart(var_.list_jre_usage_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListJreUsageResult> getListJreUsagePlain() {
@@ -546,6 +1938,39 @@ public final class JmsFunctions {
      * List Java Runtime usage in a specified host filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .applicationName(oci_dataflow_application.test_application().name())
+     *             .compartmentId(var_.compartment_id())
+     *             .hostId(oci_jms_host.test_host().id())
+     *             .timeEnd(var_.list_jre_usage_time_end())
+     *             .timeStart(var_.list_jre_usage_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListJreUsageResult> getListJreUsage(GetListJreUsageArgs args) {
@@ -557,6 +1982,39 @@ public final class JmsFunctions {
      * List Java Runtime usage in a specified host filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .applicationName(oci_dataflow_application.test_application().name())
+     *             .compartmentId(var_.compartment_id())
+     *             .hostId(oci_jms_host.test_host().id())
+     *             .timeEnd(var_.list_jre_usage_time_end())
+     *             .timeStart(var_.list_jre_usage_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListJreUsageResult> getListJreUsagePlain(GetListJreUsagePlainArgs args) {
@@ -568,6 +2026,39 @@ public final class JmsFunctions {
      * List Java Runtime usage in a specified host filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .applicationName(oci_dataflow_application.test_application().name())
+     *             .compartmentId(var_.compartment_id())
+     *             .hostId(oci_jms_host.test_host().id())
+     *             .timeEnd(var_.list_jre_usage_time_end())
+     *             .timeStart(var_.list_jre_usage_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetListJreUsageResult> getListJreUsage(GetListJreUsageArgs args, InvokeOptions options) {
@@ -579,6 +2070,39 @@ public final class JmsFunctions {
      * List Java Runtime usage in a specified host filtered by query parameters.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetListJreUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
+     *             .applicationId(oci_dataflow_application.test_application().id())
+     *             .applicationName(oci_dataflow_application.test_application().name())
+     *             .compartmentId(var_.compartment_id())
+     *             .hostId(oci_jms_host.test_host().id())
+     *             .timeEnd(var_.list_jre_usage_time_end())
+     *             .timeStart(var_.list_jre_usage_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetListJreUsageResult> getListJreUsagePlain(GetListJreUsagePlainArgs args, InvokeOptions options) {
@@ -590,6 +2114,36 @@ public final class JmsFunctions {
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSummarizeResourceInventory = JmsFunctions.getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .timeEnd(var_.summarize_resource_inventory_time_end())
+     *             .timeStart(var_.summarize_resource_inventory_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSummarizeResourceInventoryResult> getSummarizeResourceInventory() {
@@ -601,6 +2155,36 @@ public final class JmsFunctions {
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSummarizeResourceInventory = JmsFunctions.getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .timeEnd(var_.summarize_resource_inventory_time_end())
+     *             .timeStart(var_.summarize_resource_inventory_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSummarizeResourceInventoryResult> getSummarizeResourceInventoryPlain() {
@@ -612,6 +2196,36 @@ public final class JmsFunctions {
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSummarizeResourceInventory = JmsFunctions.getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .timeEnd(var_.summarize_resource_inventory_time_end())
+     *             .timeStart(var_.summarize_resource_inventory_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSummarizeResourceInventoryResult> getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs args) {
@@ -623,6 +2237,36 @@ public final class JmsFunctions {
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSummarizeResourceInventory = JmsFunctions.getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .timeEnd(var_.summarize_resource_inventory_time_end())
+     *             .timeStart(var_.summarize_resource_inventory_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSummarizeResourceInventoryResult> getSummarizeResourceInventoryPlain(GetSummarizeResourceInventoryPlainArgs args) {
@@ -634,6 +2278,36 @@ public final class JmsFunctions {
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSummarizeResourceInventory = JmsFunctions.getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .timeEnd(var_.summarize_resource_inventory_time_end())
+     *             .timeStart(var_.summarize_resource_inventory_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSummarizeResourceInventoryResult> getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs args, InvokeOptions options) {
@@ -645,6 +2319,36 @@ public final class JmsFunctions {
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSummarizeResourceInventory = JmsFunctions.getSummarizeResourceInventory(GetSummarizeResourceInventoryArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .timeEnd(var_.summarize_resource_inventory_time_end())
+     *             .timeStart(var_.summarize_resource_inventory_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSummarizeResourceInventoryResult> getSummarizeResourceInventoryPlain(GetSummarizeResourceInventoryPlainArgs args, InvokeOptions options) {

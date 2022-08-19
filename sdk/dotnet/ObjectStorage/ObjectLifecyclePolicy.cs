@@ -17,39 +17,37 @@ namespace Pulumi.Oci.ObjectStorage
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testObjectLifecyclePolicy = new Oci.ObjectStorage.ObjectLifecyclePolicy("testObjectLifecyclePolicy", new()
     ///     {
-    ///         var testObjectLifecyclePolicy = new Oci.ObjectStorage.ObjectLifecyclePolicy("testObjectLifecyclePolicy", new Oci.ObjectStorage.ObjectLifecyclePolicyArgs
+    ///         Bucket = @var.Object_lifecycle_policy_bucket,
+    ///         Namespace = @var.Object_lifecycle_policy_namespace,
+    ///         Rules = new[]
     ///         {
-    ///             Bucket = @var.Object_lifecycle_policy_bucket,
-    ///             Namespace = @var.Object_lifecycle_policy_namespace,
-    ///             Rules = 
+    ///             new Oci.ObjectStorage.Inputs.ObjectLifecyclePolicyRuleArgs
     ///             {
-    ///                 new Oci.ObjectStorage.Inputs.ObjectLifecyclePolicyRuleArgs
+    ///                 Action = @var.Object_lifecycle_policy_rules_action,
+    ///                 IsEnabled = @var.Object_lifecycle_policy_rules_is_enabled,
+    ///                 Name = @var.Object_lifecycle_policy_rules_name,
+    ///                 TimeAmount = @var.Object_lifecycle_policy_rules_time_amount,
+    ///                 TimeUnit = @var.Object_lifecycle_policy_rules_time_unit,
+    ///                 ObjectNameFilter = new Oci.ObjectStorage.Inputs.ObjectLifecyclePolicyRuleObjectNameFilterArgs
     ///                 {
-    ///                     Action = @var.Object_lifecycle_policy_rules_action,
-    ///                     IsEnabled = @var.Object_lifecycle_policy_rules_is_enabled,
-    ///                     Name = @var.Object_lifecycle_policy_rules_name,
-    ///                     TimeAmount = @var.Object_lifecycle_policy_rules_time_amount,
-    ///                     TimeUnit = @var.Object_lifecycle_policy_rules_time_unit,
-    ///                     ObjectNameFilter = new Oci.ObjectStorage.Inputs.ObjectLifecyclePolicyRuleObjectNameFilterArgs
-    ///                     {
-    ///                         ExclusionPatterns = @var.Object_lifecycle_policy_rules_object_name_filter_exclusion_patterns,
-    ///                         InclusionPatterns = @var.Object_lifecycle_policy_rules_object_name_filter_inclusion_patterns,
-    ///                         InclusionPrefixes = @var.Object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes,
-    ///                     },
-    ///                     Target = @var.Object_lifecycle_policy_rules_target,
+    ///                     ExclusionPatterns = @var.Object_lifecycle_policy_rules_object_name_filter_exclusion_patterns,
+    ///                     InclusionPatterns = @var.Object_lifecycle_policy_rules_object_name_filter_inclusion_patterns,
+    ///                     InclusionPrefixes = @var.Object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes,
     ///                 },
+    ///                 Target = @var.Object_lifecycle_policy_rules_target,
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -61,7 +59,7 @@ namespace Pulumi.Oci.ObjectStorage
     /// ```
     /// </summary>
     [OciResourceType("oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy")]
-    public partial class ObjectLifecyclePolicy : Pulumi.CustomResource
+    public partial class ObjectLifecyclePolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -131,7 +129,7 @@ namespace Pulumi.Oci.ObjectStorage
         }
     }
 
-    public sealed class ObjectLifecyclePolicyArgs : Pulumi.ResourceArgs
+    public sealed class ObjectLifecyclePolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -160,9 +158,10 @@ namespace Pulumi.Oci.ObjectStorage
         public ObjectLifecyclePolicyArgs()
         {
         }
+        public static new ObjectLifecyclePolicyArgs Empty => new ObjectLifecyclePolicyArgs();
     }
 
-    public sealed class ObjectLifecyclePolicyState : Pulumi.ResourceArgs
+    public sealed class ObjectLifecyclePolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -197,5 +196,6 @@ namespace Pulumi.Oci.ObjectStorage
         public ObjectLifecyclePolicyState()
         {
         }
+        public static new ObjectLifecyclePolicyState Empty => new ObjectLifecyclePolicyState();
     }
 }

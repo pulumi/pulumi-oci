@@ -50,6 +50,37 @@ public final class KmsFunctions {
      * Decrypts data using the given DecryptDataDetails resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetDecryptedDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDecryptedData = KmsFunctions.getDecryptedData(GetDecryptedDataArgs.builder()
+     *             .ciphertext(var_.decrypted_data_ciphertext())
+     *             .cryptoEndpoint(var_.decrypted_data_crypto_endpoint())
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .associatedData(var_.decrypted_data_associated_data())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDecryptedDataResult> getDecryptedData(GetDecryptedDataArgs args) {
@@ -61,6 +92,37 @@ public final class KmsFunctions {
      * Decrypts data using the given DecryptDataDetails resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetDecryptedDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDecryptedData = KmsFunctions.getDecryptedData(GetDecryptedDataArgs.builder()
+     *             .ciphertext(var_.decrypted_data_ciphertext())
+     *             .cryptoEndpoint(var_.decrypted_data_crypto_endpoint())
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .associatedData(var_.decrypted_data_associated_data())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDecryptedDataResult> getDecryptedDataPlain(GetDecryptedDataPlainArgs args) {
@@ -72,6 +134,37 @@ public final class KmsFunctions {
      * Decrypts data using the given DecryptDataDetails resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetDecryptedDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDecryptedData = KmsFunctions.getDecryptedData(GetDecryptedDataArgs.builder()
+     *             .ciphertext(var_.decrypted_data_ciphertext())
+     *             .cryptoEndpoint(var_.decrypted_data_crypto_endpoint())
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .associatedData(var_.decrypted_data_associated_data())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetDecryptedDataResult> getDecryptedData(GetDecryptedDataArgs args, InvokeOptions options) {
@@ -83,6 +176,37 @@ public final class KmsFunctions {
      * Decrypts data using the given DecryptDataDetails resource.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetDecryptedDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDecryptedData = KmsFunctions.getDecryptedData(GetDecryptedDataArgs.builder()
+     *             .ciphertext(var_.decrypted_data_ciphertext())
+     *             .cryptoEndpoint(var_.decrypted_data_crypto_endpoint())
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .associatedData(var_.decrypted_data_associated_data())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetDecryptedDataResult> getDecryptedDataPlain(GetDecryptedDataPlainArgs args, InvokeOptions options) {
@@ -96,6 +220,37 @@ public final class KmsFunctions {
      * of a UTF-8 string.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetEncryptedDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEncryptedData = KmsFunctions.getEncryptedData(GetEncryptedDataArgs.builder()
+     *             .cryptoEndpoint(var_.encrypted_data_crypto_endpoint())
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .plaintext(var_.encrypted_data_plaintext())
+     *             .associatedData(var_.encrypted_data_associated_data())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEncryptedDataResult> getEncryptedData(GetEncryptedDataArgs args) {
@@ -109,6 +264,37 @@ public final class KmsFunctions {
      * of a UTF-8 string.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetEncryptedDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEncryptedData = KmsFunctions.getEncryptedData(GetEncryptedDataArgs.builder()
+     *             .cryptoEndpoint(var_.encrypted_data_crypto_endpoint())
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .plaintext(var_.encrypted_data_plaintext())
+     *             .associatedData(var_.encrypted_data_associated_data())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEncryptedDataResult> getEncryptedDataPlain(GetEncryptedDataPlainArgs args) {
@@ -122,6 +308,37 @@ public final class KmsFunctions {
      * of a UTF-8 string.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetEncryptedDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEncryptedData = KmsFunctions.getEncryptedData(GetEncryptedDataArgs.builder()
+     *             .cryptoEndpoint(var_.encrypted_data_crypto_endpoint())
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .plaintext(var_.encrypted_data_plaintext())
+     *             .associatedData(var_.encrypted_data_associated_data())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetEncryptedDataResult> getEncryptedData(GetEncryptedDataArgs args, InvokeOptions options) {
@@ -135,6 +352,37 @@ public final class KmsFunctions {
      * of a UTF-8 string.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetEncryptedDataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEncryptedData = KmsFunctions.getEncryptedData(GetEncryptedDataArgs.builder()
+     *             .cryptoEndpoint(var_.encrypted_data_crypto_endpoint())
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .plaintext(var_.encrypted_data_plaintext())
+     *             .associatedData(var_.encrypted_data_associated_data())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetEncryptedDataResult> getEncryptedDataPlain(GetEncryptedDataPlainArgs args, InvokeOptions options) {
@@ -151,6 +399,35 @@ public final class KmsFunctions {
      * a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKey = KmsFunctions.getKey(GetKeyArgs.builder()
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .managementEndpoint(var_.key_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKeyResult> getKey(GetKeyArgs args) {
@@ -167,6 +444,35 @@ public final class KmsFunctions {
      * a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKey = KmsFunctions.getKey(GetKeyArgs.builder()
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .managementEndpoint(var_.key_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKeyResult> getKeyPlain(GetKeyPlainArgs args) {
@@ -183,6 +489,35 @@ public final class KmsFunctions {
      * a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKey = KmsFunctions.getKey(GetKeyArgs.builder()
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .managementEndpoint(var_.key_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKeyResult> getKey(GetKeyArgs args, InvokeOptions options) {
@@ -199,6 +534,35 @@ public final class KmsFunctions {
      * a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKey = KmsFunctions.getKey(GetKeyArgs.builder()
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .managementEndpoint(var_.key_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKeyResult> getKeyPlain(GetKeyPlainArgs args, InvokeOptions options) {
@@ -215,6 +579,36 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeyVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyVersion = KmsFunctions.getKeyVersion(GetKeyVersionArgs.builder()
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .keyVersionId(oci_kms_key_version.test_key_version().id())
+     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKeyVersionResult> getKeyVersion(GetKeyVersionArgs args) {
@@ -231,6 +625,36 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeyVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyVersion = KmsFunctions.getKeyVersion(GetKeyVersionArgs.builder()
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .keyVersionId(oci_kms_key_version.test_key_version().id())
+     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKeyVersionResult> getKeyVersionPlain(GetKeyVersionPlainArgs args) {
@@ -247,6 +671,36 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeyVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyVersion = KmsFunctions.getKeyVersion(GetKeyVersionArgs.builder()
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .keyVersionId(oci_kms_key_version.test_key_version().id())
+     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKeyVersionResult> getKeyVersion(GetKeyVersionArgs args, InvokeOptions options) {
@@ -263,6 +717,36 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeyVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyVersion = KmsFunctions.getKeyVersion(GetKeyVersionArgs.builder()
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .keyVersionId(oci_kms_key_version.test_key_version().id())
+     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKeyVersionResult> getKeyVersionPlain(GetKeyVersionPlainArgs args, InvokeOptions options) {
@@ -280,6 +764,35 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeyVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyVersions = KmsFunctions.getKeyVersions(GetKeyVersionsArgs.builder()
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKeyVersionsResult> getKeyVersions(GetKeyVersionsArgs args) {
@@ -297,6 +810,35 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeyVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyVersions = KmsFunctions.getKeyVersions(GetKeyVersionsArgs.builder()
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKeyVersionsResult> getKeyVersionsPlain(GetKeyVersionsPlainArgs args) {
@@ -314,6 +856,35 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeyVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyVersions = KmsFunctions.getKeyVersions(GetKeyVersionsArgs.builder()
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKeyVersionsResult> getKeyVersions(GetKeyVersionsArgs args, InvokeOptions options) {
@@ -331,6 +902,35 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeyVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeyVersions = KmsFunctions.getKeyVersions(GetKeyVersionsArgs.builder()
+     *             .keyId(oci_kms_key.test_key().id())
+     *             .managementEndpoint(var_.key_version_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKeyVersionsResult> getKeyVersionsPlain(GetKeyVersionsPlainArgs args, InvokeOptions options) {
@@ -347,6 +947,39 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeys = KmsFunctions.getKeys(GetKeysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .managementEndpoint(var_.key_management_endpoint())
+     *             .algorithm(var_.key_algorithm())
+     *             .length(var_.key_length())
+     *             .curveId(oci_kms_curve.test_curve().id())
+     *             .protectionMode(var_.key_protection_mode())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKeysResult> getKeys(GetKeysArgs args) {
@@ -363,6 +996,39 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeys = KmsFunctions.getKeys(GetKeysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .managementEndpoint(var_.key_management_endpoint())
+     *             .algorithm(var_.key_algorithm())
+     *             .length(var_.key_length())
+     *             .curveId(oci_kms_curve.test_curve().id())
+     *             .protectionMode(var_.key_protection_mode())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKeysResult> getKeysPlain(GetKeysPlainArgs args) {
@@ -379,6 +1045,39 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeys = KmsFunctions.getKeys(GetKeysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .managementEndpoint(var_.key_management_endpoint())
+     *             .algorithm(var_.key_algorithm())
+     *             .length(var_.key_length())
+     *             .curveId(oci_kms_curve.test_curve().id())
+     *             .protectionMode(var_.key_protection_mode())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetKeysResult> getKeys(GetKeysArgs args, InvokeOptions options) {
@@ -395,6 +1094,39 @@ public final class KmsFunctions {
      * for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKeys = KmsFunctions.getKeys(GetKeysArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .managementEndpoint(var_.key_management_endpoint())
+     *             .algorithm(var_.key_algorithm())
+     *             .length(var_.key_length())
+     *             .curveId(oci_kms_curve.test_curve().id())
+     *             .protectionMode(var_.key_protection_mode())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetKeysResult> getKeysPlain(GetKeysPlainArgs args, InvokeOptions options) {
@@ -409,6 +1141,35 @@ public final class KmsFunctions {
      * successfully applied across replicas.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetReplicationStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationStatus = KmsFunctions.getReplicationStatus(GetReplicationStatusArgs.builder()
+     *             .replicationId(oci_kms_replication.test_replication().id())
+     *             .managementEndpoint(var_.replication_status_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetReplicationStatusResult> getReplicationStatus(GetReplicationStatusArgs args) {
@@ -423,6 +1184,35 @@ public final class KmsFunctions {
      * successfully applied across replicas.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetReplicationStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationStatus = KmsFunctions.getReplicationStatus(GetReplicationStatusArgs.builder()
+     *             .replicationId(oci_kms_replication.test_replication().id())
+     *             .managementEndpoint(var_.replication_status_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetReplicationStatusResult> getReplicationStatusPlain(GetReplicationStatusPlainArgs args) {
@@ -437,6 +1227,35 @@ public final class KmsFunctions {
      * successfully applied across replicas.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetReplicationStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationStatus = KmsFunctions.getReplicationStatus(GetReplicationStatusArgs.builder()
+     *             .replicationId(oci_kms_replication.test_replication().id())
+     *             .managementEndpoint(var_.replication_status_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetReplicationStatusResult> getReplicationStatus(GetReplicationStatusArgs args, InvokeOptions options) {
@@ -451,6 +1270,35 @@ public final class KmsFunctions {
      * successfully applied across replicas.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetReplicationStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationStatus = KmsFunctions.getReplicationStatus(GetReplicationStatusArgs.builder()
+     *             .replicationId(oci_kms_replication.test_replication().id())
+     *             .managementEndpoint(var_.replication_status_management_endpoint())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetReplicationStatusResult> getReplicationStatusPlain(GetReplicationStatusPlainArgs args, InvokeOptions options) {
@@ -467,6 +1315,34 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVault = KmsFunctions.getVault(GetVaultArgs.builder()
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVaultResult> getVault(GetVaultArgs args) {
@@ -483,6 +1359,34 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVault = KmsFunctions.getVault(GetVaultArgs.builder()
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVaultResult> getVaultPlain(GetVaultPlainArgs args) {
@@ -499,6 +1403,34 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVault = KmsFunctions.getVault(GetVaultArgs.builder()
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVaultResult> getVault(GetVaultArgs args, InvokeOptions options) {
@@ -515,6 +1447,34 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVault = KmsFunctions.getVault(GetVaultArgs.builder()
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVaultResult> getVaultPlain(GetVaultPlainArgs args, InvokeOptions options) {
@@ -531,6 +1491,34 @@ public final class KmsFunctions {
      * write operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVaultReplicas = KmsFunctions.getVaultReplicas(GetVaultReplicasArgs.builder()
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVaultReplicasResult> getVaultReplicas(GetVaultReplicasArgs args) {
@@ -547,6 +1535,34 @@ public final class KmsFunctions {
      * write operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVaultReplicas = KmsFunctions.getVaultReplicas(GetVaultReplicasArgs.builder()
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVaultReplicasResult> getVaultReplicasPlain(GetVaultReplicasPlainArgs args) {
@@ -563,6 +1579,34 @@ public final class KmsFunctions {
      * write operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVaultReplicas = KmsFunctions.getVaultReplicas(GetVaultReplicasArgs.builder()
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVaultReplicasResult> getVaultReplicas(GetVaultReplicasArgs args, InvokeOptions options) {
@@ -579,6 +1623,34 @@ public final class KmsFunctions {
      * write operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultReplicasArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVaultReplicas = KmsFunctions.getVaultReplicas(GetVaultReplicasArgs.builder()
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVaultReplicasResult> getVaultReplicasPlain(GetVaultReplicasPlainArgs args, InvokeOptions options) {
@@ -590,6 +1662,34 @@ public final class KmsFunctions {
      * Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVaultUsage = KmsFunctions.getVaultUsage(GetVaultUsageArgs.builder()
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVaultUsageResult> getVaultUsage(GetVaultUsageArgs args) {
@@ -601,6 +1701,34 @@ public final class KmsFunctions {
      * Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVaultUsage = KmsFunctions.getVaultUsage(GetVaultUsageArgs.builder()
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVaultUsageResult> getVaultUsagePlain(GetVaultUsagePlainArgs args) {
@@ -612,6 +1740,34 @@ public final class KmsFunctions {
      * Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVaultUsage = KmsFunctions.getVaultUsage(GetVaultUsageArgs.builder()
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVaultUsageResult> getVaultUsage(GetVaultUsageArgs args, InvokeOptions options) {
@@ -623,6 +1779,34 @@ public final class KmsFunctions {
      * Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVaultUsage = KmsFunctions.getVaultUsage(GetVaultUsageArgs.builder()
+     *             .vaultId(oci_kms_vault.test_vault().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVaultUsageResult> getVaultUsagePlain(GetVaultUsagePlainArgs args, InvokeOptions options) {
@@ -639,6 +1823,34 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVaults = KmsFunctions.getVaults(GetVaultsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVaultsResult> getVaults(GetVaultsArgs args) {
@@ -655,6 +1867,34 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVaults = KmsFunctions.getVaults(GetVaultsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVaultsResult> getVaultsPlain(GetVaultsPlainArgs args) {
@@ -671,6 +1911,34 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVaults = KmsFunctions.getVaults(GetVaultsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetVaultsResult> getVaults(GetVaultsArgs args, InvokeOptions options) {
@@ -687,6 +1955,34 @@ public final class KmsFunctions {
      * read operations exceeds 10 requests per second for a given tenancy.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVaults = KmsFunctions.getVaults(GetVaultsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetVaultsResult> getVaultsPlain(GetVaultsPlainArgs args, InvokeOptions options) {

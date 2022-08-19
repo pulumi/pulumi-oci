@@ -21,20 +21,18 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataAsset = Oci.AiAnomalyDetection.GetDetectionDataAsset.Invoke(new()
         ///     {
-        ///         var testDataAsset = Output.Create(Oci.AiAnomalyDetection.GetDetectionDataAsset.InvokeAsync(new Oci.AiAnomalyDetection.GetDetectionDataAssetArgs
-        ///         {
-        ///             DataAssetId = oci_ai_anomaly_detection_data_asset.Test_data_asset.Id,
-        ///         }));
-        ///     }
+        ///         DataAssetId = oci_ai_anomaly_detection_data_asset.Test_data_asset.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDataAsset = Oci.AiAnomalyDetection.GetDetectionDataAsset.Invoke(new()
         ///     {
-        ///         var testDataAsset = Output.Create(Oci.AiAnomalyDetection.GetDetectionDataAsset.InvokeAsync(new Oci.AiAnomalyDetection.GetDetectionDataAssetArgs
-        ///         {
-        ///             DataAssetId = oci_ai_anomaly_detection_data_asset.Test_data_asset.Id,
-        ///         }));
-        ///     }
+        ///         DataAssetId = oci_ai_anomaly_detection_data_asset.Test_data_asset.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
     }
 
 
-    public sealed class GetDetectionDataAssetArgs : Pulumi.InvokeArgs
+    public sealed class GetDetectionDataAssetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the Data Asset.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public GetDetectionDataAssetArgs()
         {
         }
+        public static new GetDetectionDataAssetArgs Empty => new GetDetectionDataAssetArgs();
     }
 
-    public sealed class GetDetectionDataAssetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDetectionDataAssetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the Data Asset.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         public GetDetectionDataAssetInvokeArgs()
         {
         }
+        public static new GetDetectionDataAssetInvokeArgs Empty => new GetDetectionDataAssetInvokeArgs();
     }
 
 

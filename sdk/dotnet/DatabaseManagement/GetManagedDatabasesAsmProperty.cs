@@ -21,21 +21,19 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabasesAsmProperty = Oci.DatabaseManagement.GetManagedDatabasesAsmProperty.Invoke(new()
         ///     {
-        ///         var testManagedDatabasesAsmProperty = Output.Create(Oci.DatabaseManagement.GetManagedDatabasesAsmProperty.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabasesAsmPropertyArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             Name = @var.Managed_databases_asm_property_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         Name = @var.Managed_databases_asm_property_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testManagedDatabasesAsmProperty = Oci.DatabaseManagement.GetManagedDatabasesAsmProperty.Invoke(new()
         ///     {
-        ///         var testManagedDatabasesAsmProperty = Output.Create(Oci.DatabaseManagement.GetManagedDatabasesAsmProperty.InvokeAsync(new Oci.DatabaseManagement.GetManagedDatabasesAsmPropertyArgs
-        ///         {
-        ///             ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///             Name = @var.Managed_databases_asm_property_name,
-        ///         }));
-        ///     }
+        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         Name = @var.Managed_databases_asm_property_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DatabaseManagement
     }
 
 
-    public sealed class GetManagedDatabasesAsmPropertyArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabasesAsmPropertyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabasesAsmPropertyArgs()
         {
         }
+        public static new GetManagedDatabasesAsmPropertyArgs Empty => new GetManagedDatabasesAsmPropertyArgs();
     }
 
-    public sealed class GetManagedDatabasesAsmPropertyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetManagedDatabasesAsmPropertyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public GetManagedDatabasesAsmPropertyInvokeArgs()
         {
         }
+        public static new GetManagedDatabasesAsmPropertyInvokeArgs Empty => new GetManagedDatabasesAsmPropertyInvokeArgs();
     }
 
 

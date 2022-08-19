@@ -17,32 +17,30 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLocalPeeringGateway = new Oci.Core.LocalPeeringGateway("testLocalPeeringGateway", new()
     ///     {
-    ///         var testLocalPeeringGateway = new Oci.Core.LocalPeeringGateway("testLocalPeeringGateway", new Oci.Core.LocalPeeringGatewayArgs
+    ///         CompartmentId = @var.Compartment_id,
+    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             VcnId = oci_core_vcn.Test_vcn.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Local_peering_gateway_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             PeerId = oci_core_local_peering_gateway.Test_local_peering_gateway2.Id,
-    ///             RouteTableId = oci_core_route_table.Test_route_table.Id,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Local_peering_gateway_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         PeerId = oci_core_local_peering_gateway.Test_local_peering_gateway2.Id,
+    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/localPeeringGateway:LocalPeeringGateway")]
-    public partial class LocalPeeringGateway : Pulumi.CustomResource
+    public partial class LocalPeeringGateway : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the local peering gateway (LPG).
@@ -184,7 +182,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class LocalPeeringGatewayArgs : Pulumi.ResourceArgs
+    public sealed class LocalPeeringGatewayArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the local peering gateway (LPG).
@@ -243,9 +241,10 @@ namespace Pulumi.Oci.Core
         public LocalPeeringGatewayArgs()
         {
         }
+        public static new LocalPeeringGatewayArgs Empty => new LocalPeeringGatewayArgs();
     }
 
-    public sealed class LocalPeeringGatewayState : Pulumi.ResourceArgs
+    public sealed class LocalPeeringGatewayState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the local peering gateway (LPG).
@@ -352,5 +351,6 @@ namespace Pulumi.Oci.Core
         public LocalPeeringGatewayState()
         {
         }
+        public static new LocalPeeringGatewayState Empty => new LocalPeeringGatewayState();
     }
 }

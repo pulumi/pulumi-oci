@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Kms.Inputs
 {
 
-    public sealed class VaultReplicaDetailArgs : Pulumi.ResourceArgs
+    public sealed class VaultReplicaDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// ReplicationId associated with a vault operation
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Kms.Inputs
         public VaultReplicaDetailArgs()
         {
         }
+        public static new VaultReplicaDetailArgs Empty => new VaultReplicaDetailArgs();
     }
 }

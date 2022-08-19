@@ -21,20 +21,18 @@ namespace Pulumi.Oci.EmWarehouse
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEmWarehouse = Oci.EmWarehouse.GetEmWarehouse.Invoke(new()
         ///     {
-        ///         var testEmWarehouse = Output.Create(Oci.EmWarehouse.GetEmWarehouse.InvokeAsync(new Oci.EmWarehouse.GetEmWarehouseArgs
-        ///         {
-        ///             EmWarehouseId = oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
-        ///         }));
-        ///     }
+        ///         EmWarehouseId = oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.EmWarehouse
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testEmWarehouse = Oci.EmWarehouse.GetEmWarehouse.Invoke(new()
         ///     {
-        ///         var testEmWarehouse = Output.Create(Oci.EmWarehouse.GetEmWarehouse.InvokeAsync(new Oci.EmWarehouse.GetEmWarehouseArgs
-        ///         {
-        ///             EmWarehouseId = oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
-        ///         }));
-        ///     }
+        ///         EmWarehouseId = oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.EmWarehouse
     }
 
 
-    public sealed class GetEmWarehouseArgs : Pulumi.InvokeArgs
+    public sealed class GetEmWarehouseArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique EmWarehouse identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.EmWarehouse
         public GetEmWarehouseArgs()
         {
         }
+        public static new GetEmWarehouseArgs Empty => new GetEmWarehouseArgs();
     }
 
-    public sealed class GetEmWarehouseInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetEmWarehouseInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// unique EmWarehouse identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.EmWarehouse
         public GetEmWarehouseInvokeArgs()
         {
         }
+        public static new GetEmWarehouseInvokeArgs Empty => new GetEmWarehouseInvokeArgs();
     }
 
 

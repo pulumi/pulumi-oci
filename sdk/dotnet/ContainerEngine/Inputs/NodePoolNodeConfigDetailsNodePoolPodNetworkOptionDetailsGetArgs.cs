@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine.Inputs
 {
 
-    public sealed class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsGetArgs : Pulumi.ResourceArgs
+    public sealed class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The CNI plugin used by this node pool
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsGetArgs()
         {
         }
+        public static new NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsGetArgs Empty => new NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsGetArgs();
     }
 }

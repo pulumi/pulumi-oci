@@ -25,6 +25,46 @@ import javax.annotation.Nullable;
  * that can be updated later.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.SensitiveDataModel;
+ * import com.pulumi.oci.DataSafe.SensitiveDataModelArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSensitiveDataModel = new SensitiveDataModel(&#34;testSensitiveDataModel&#34;, SensitiveDataModelArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .targetId(oci_cloud_guard_target.test_target().id())
+ *             .appSuiteName(var_.sensitive_data_model_app_suite_name())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .description(var_.sensitive_data_model_description())
+ *             .displayName(var_.sensitive_data_model_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isAppDefinedRelationDiscoveryEnabled(var_.sensitive_data_model_is_app_defined_relation_discovery_enabled())
+ *             .isIncludeAllSchemas(var_.sensitive_data_model_is_include_all_schemas())
+ *             .isIncludeAllSensitiveTypes(var_.sensitive_data_model_is_include_all_sensitive_types())
+ *             .isSampleDataCollectionEnabled(var_.sensitive_data_model_is_sample_data_collection_enabled())
+ *             .schemasForDiscoveries(var_.sensitive_data_model_schemas_for_discovery())
+ *             .sensitiveTypeIdsForDiscoveries(var_.sensitive_data_model_sensitive_type_ids_for_discovery())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

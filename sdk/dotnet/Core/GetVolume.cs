@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVolume = Oci.Core.GetVolume.Invoke(new()
         ///     {
-        ///         var testVolume = Output.Create(Oci.Core.GetVolume.InvokeAsync(new Oci.Core.GetVolumeArgs
-        ///         {
-        ///             VolumeId = oci_core_volume.Test_volume.Id,
-        ///         }));
-        ///     }
+        ///         VolumeId = oci_core_volume.Test_volume.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testVolume = Oci.Core.GetVolume.Invoke(new()
         ///     {
-        ///         var testVolume = Output.Create(Oci.Core.GetVolume.InvokeAsync(new Oci.Core.GetVolumeArgs
-        ///         {
-        ///             VolumeId = oci_core_volume.Test_volume.Id,
-        ///         }));
-        ///     }
+        ///         VolumeId = oci_core_volume.Test_volume.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetVolumeArgs : Pulumi.InvokeArgs
+    public sealed class GetVolumeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the volume.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Core
         public GetVolumeArgs()
         {
         }
+        public static new GetVolumeArgs Empty => new GetVolumeArgs();
     }
 
-    public sealed class GetVolumeInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVolumeInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the volume.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Core
         public GetVolumeInvokeArgs()
         {
         }
+        public static new GetVolumeInvokeArgs Empty => new GetVolumeInvokeArgs();
     }
 
 

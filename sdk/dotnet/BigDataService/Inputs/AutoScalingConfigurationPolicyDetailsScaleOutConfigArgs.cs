@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService.Inputs
 {
 
-    public sealed class AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs : Pulumi.ResourceArgs
+    public sealed class AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) This value is the maximum number of nodes the cluster can be scaled-out to.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs()
         {
         }
+        public static new AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs Empty => new AutoScalingConfigurationPolicyDetailsScaleOutConfigArgs();
     }
 }

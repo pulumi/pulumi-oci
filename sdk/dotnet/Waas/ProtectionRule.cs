@@ -16,35 +16,6 @@ namespace Pulumi.Oci.Waas
     /// This operation can update or disable protection rules depending on the structure of the request body.
     /// Protection rules can be updated by changing the properties of the protection rule object with the rule's key specified in the key field.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var testProtectionRule = new Oci.Waas.ProtectionRule("testProtectionRule", new Oci.Waas.ProtectionRuleArgs
-    ///         {
-    ///             WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
-    ///             Key = @var.Key,
-    ///             Action = "DETECT",
-    ///             Exclusions = 
-    ///             {
-    ///                 { "exclusions", 
-    ///                 {
-    ///                     "example.com",
-    ///                 } },
-    ///                 { "target", "REQUEST_COOKIES" },
-    ///             },
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// ProtectionRules can be imported using the `id`, e.g.
@@ -54,7 +25,7 @@ namespace Pulumi.Oci.Waas
     /// ```
     /// </summary>
     [OciResourceType("oci:Waas/protectionRule:ProtectionRule")]
-    public partial class ProtectionRule : Pulumi.CustomResource
+    public partial class ProtectionRule : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
@@ -148,7 +119,7 @@ namespace Pulumi.Oci.Waas
         }
     }
 
-    public sealed class ProtectionRuleArgs : Pulumi.ResourceArgs
+    public sealed class ProtectionRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
@@ -183,9 +154,10 @@ namespace Pulumi.Oci.Waas
         public ProtectionRuleArgs()
         {
         }
+        public static new ProtectionRuleArgs Empty => new ProtectionRuleArgs();
     }
 
-    public sealed class ProtectionRuleState : Pulumi.ResourceArgs
+    public sealed class ProtectionRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
@@ -256,5 +228,6 @@ namespace Pulumi.Oci.Waas
         public ProtectionRuleState()
         {
         }
+        public static new ProtectionRuleState Empty => new ProtectionRuleState();
     }
 }

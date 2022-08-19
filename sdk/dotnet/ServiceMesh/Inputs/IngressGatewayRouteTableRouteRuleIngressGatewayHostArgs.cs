@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceMesh.Inputs
 {
 
-    public sealed class IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs : Pulumi.ResourceArgs
+    public sealed class IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the ingress gateway host that this route should apply to.
@@ -27,5 +27,6 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs()
         {
         }
+        public static new IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs Empty => new IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs();
     }
 }

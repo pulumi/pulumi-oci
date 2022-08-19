@@ -22,20 +22,18 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCommitment = Oci.OneSubsription.GetCommitment.Invoke(new()
         ///     {
-        ///         var testCommitment = Output.Create(Oci.OneSubsription.GetCommitment.InvokeAsync(new Oci.OneSubsription.GetCommitmentArgs
-        ///         {
-        ///             CommitmentId = oci_onesubscription_commitment.Test_commitment.Id,
-        ///         }));
-        ///     }
+        ///         CommitmentId = oci_onesubscription_commitment.Test_commitment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testCommitment = Oci.OneSubsription.GetCommitment.Invoke(new()
         ///     {
-        ///         var testCommitment = Output.Create(Oci.OneSubsription.GetCommitment.InvokeAsync(new Oci.OneSubsription.GetCommitmentArgs
-        ///         {
-        ///             CommitmentId = oci_onesubscription_commitment.Test_commitment.Id,
-        ///         }));
-        ///     }
+        ///         CommitmentId = oci_onesubscription_commitment.Test_commitment.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.OneSubsription
     }
 
 
-    public sealed class GetCommitmentArgs : Pulumi.InvokeArgs
+    public sealed class GetCommitmentArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Commitment Id
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.OneSubsription
         public GetCommitmentArgs()
         {
         }
+        public static new GetCommitmentArgs Empty => new GetCommitmentArgs();
     }
 
-    public sealed class GetCommitmentInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCommitmentInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The Commitment Id
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.OneSubsription
         public GetCommitmentInvokeArgs()
         {
         }
+        public static new GetCommitmentInvokeArgs Empty => new GetCommitmentInvokeArgs();
     }
 
 

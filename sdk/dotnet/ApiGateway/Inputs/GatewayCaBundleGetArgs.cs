@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class GatewayCaBundleGetArgs : Pulumi.ResourceArgs
+    public sealed class GatewayCaBundleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
@@ -33,5 +33,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public GatewayCaBundleGetArgs()
         {
         }
+        public static new GatewayCaBundleGetArgs Empty => new GatewayCaBundleGetArgs();
     }
 }

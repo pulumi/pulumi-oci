@@ -19,6 +19,40 @@ import javax.annotation.Nullable;
  * Creates provenance information for the specified model.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataScience.ModelProvenance;
+ * import com.pulumi.oci.DataScience.ModelProvenanceArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testModelProvenance = new ModelProvenance(&#34;testModelProvenance&#34;, ModelProvenanceArgs.builder()        
+ *             .modelId(oci_datascience_model.test_model().id())
+ *             .gitBranch(var_.model_provenance_git_branch())
+ *             .gitCommit(var_.model_provenance_git_commit())
+ *             .repositoryUrl(var_.model_provenance_repository_url())
+ *             .scriptDir(var_.model_provenance_script_dir())
+ *             .trainingId(oci_datascience_training.test_training().id())
+ *             .trainingScript(var_.model_provenance_training_script())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -21,20 +21,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLoadBalancerShapes = Oci.LoadBalancer.GetShapes.Invoke(new()
         ///     {
-        ///         var testLoadBalancerShapes = Output.Create(Oci.LoadBalancer.GetShapes.InvokeAsync(new Oci.LoadBalancer.GetShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLoadBalancerShapes = Oci.LoadBalancer.GetShapes.Invoke(new()
         ///     {
-        ///         var testLoadBalancerShapes = Output.Create(Oci.LoadBalancer.GetShapes.InvokeAsync(new Oci.LoadBalancer.GetShapesArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.LoadBalancer
     }
 
 
-    public sealed class GetShapesArgs : Pulumi.InvokeArgs
+    public sealed class GetShapesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer shapes to list.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.LoadBalancer
         public GetShapesArgs()
         {
         }
+        public static new GetShapesArgs Empty => new GetShapesArgs();
     }
 
-    public sealed class GetShapesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetShapesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer shapes to list.
@@ -115,6 +112,7 @@ namespace Pulumi.Oci.LoadBalancer
         public GetShapesInvokeArgs()
         {
         }
+        public static new GetShapesInvokeArgs Empty => new GetShapesInvokeArgs();
     }
 
 

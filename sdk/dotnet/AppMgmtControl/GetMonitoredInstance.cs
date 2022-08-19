@@ -21,20 +21,18 @@ namespace Pulumi.Oci.AppMgmtControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMonitoredInstance = Oci.AppMgmtControl.GetMonitoredInstance.Invoke(new()
         ///     {
-        ///         var testMonitoredInstance = Output.Create(Oci.AppMgmtControl.GetMonitoredInstance.InvokeAsync(new Oci.AppMgmtControl.GetMonitoredInstanceArgs
-        ///         {
-        ///             MonitoredInstanceId = oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id,
-        ///         }));
-        ///     }
+        ///         MonitoredInstanceId = oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.AppMgmtControl
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testMonitoredInstance = Oci.AppMgmtControl.GetMonitoredInstance.Invoke(new()
         ///     {
-        ///         var testMonitoredInstance = Output.Create(Oci.AppMgmtControl.GetMonitoredInstance.InvokeAsync(new Oci.AppMgmtControl.GetMonitoredInstanceArgs
-        ///         {
-        ///             MonitoredInstanceId = oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id,
-        ///         }));
-        ///     }
+        ///         MonitoredInstanceId = oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.AppMgmtControl
     }
 
 
-    public sealed class GetMonitoredInstanceArgs : Pulumi.InvokeArgs
+    public sealed class GetMonitoredInstanceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of monitored instance.
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.AppMgmtControl
         public GetMonitoredInstanceArgs()
         {
         }
+        public static new GetMonitoredInstanceArgs Empty => new GetMonitoredInstanceArgs();
     }
 
-    public sealed class GetMonitoredInstanceInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetMonitoredInstanceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// OCID of monitored instance.
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.AppMgmtControl
         public GetMonitoredInstanceInvokeArgs()
         {
         }
+        public static new GetMonitoredInstanceInvokeArgs Empty => new GetMonitoredInstanceInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataConnectivity.Inputs
 {
 
-    public sealed class RegistryFolderDataAssetArgs : Pulumi.ResourceArgs
+    public sealed class RegistryFolderDataAssetArgs : global::Pulumi.ResourceArgs
     {
         [Input("assetProperties")]
         private InputMap<object>? _assetProperties;
@@ -123,5 +123,6 @@ namespace Pulumi.Oci.DataConnectivity.Inputs
         public RegistryFolderDataAssetArgs()
         {
         }
+        public static new RegistryFolderDataAssetArgs Empty => new RegistryFolderDataAssetArgs();
     }
 }

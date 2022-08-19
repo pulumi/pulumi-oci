@@ -22,24 +22,22 @@ namespace Pulumi.Oci.FileStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExportSets = Oci.FileStorage.GetExportSets.Invoke(new()
         ///     {
-        ///         var testExportSets = Output.Create(Oci.FileStorage.GetExportSets.InvokeAsync(new Oci.FileStorage.GetExportSetsArgs
-        ///         {
-        ///             AvailabilityDomain = @var.Export_set_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Export_set_display_name,
-        ///             Id = @var.Export_set_id,
-        ///             State = @var.Export_set_state,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.Export_set_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Export_set_display_name,
+        ///         Id = @var.Export_set_id,
+        ///         State = @var.Export_set_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,24 +56,22 @@ namespace Pulumi.Oci.FileStorage
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testExportSets = Oci.FileStorage.GetExportSets.Invoke(new()
         ///     {
-        ///         var testExportSets = Output.Create(Oci.FileStorage.GetExportSets.InvokeAsync(new Oci.FileStorage.GetExportSetsArgs
-        ///         {
-        ///             AvailabilityDomain = @var.Export_set_availability_domain,
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Export_set_display_name,
-        ///             Id = @var.Export_set_id,
-        ///             State = @var.Export_set_state,
-        ///         }));
-        ///     }
+        ///         AvailabilityDomain = @var.Export_set_availability_domain,
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Export_set_display_name,
+        ///         Id = @var.Export_set_id,
+        ///         State = @var.Export_set_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -85,7 +81,7 @@ namespace Pulumi.Oci.FileStorage
     }
 
 
-    public sealed class GetExportSetsArgs : Pulumi.InvokeArgs
+    public sealed class GetExportSetsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -128,9 +124,10 @@ namespace Pulumi.Oci.FileStorage
         public GetExportSetsArgs()
         {
         }
+        public static new GetExportSetsArgs Empty => new GetExportSetsArgs();
     }
 
-    public sealed class GetExportSetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetExportSetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -173,6 +170,7 @@ namespace Pulumi.Oci.FileStorage
         public GetExportSetsInvokeArgs()
         {
         }
+        public static new GetExportSetsInvokeArgs Empty => new GetExportSetsInvokeArgs();
     }
 
 

@@ -24,6 +24,46 @@ import javax.annotation.Nullable;
  * query parameter then the viewId query parameter is required.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Dns.Rrset;
+ * import com.pulumi.oci.Dns.RrsetArgs;
+ * import com.pulumi.oci.Dns.inputs.RrsetItemArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testRrset = new Rrset(&#34;testRrset&#34;, RrsetArgs.builder()        
+ *             .domain(var_.rrset_domain())
+ *             .rtype(var_.rrset_rtype())
+ *             .zoneNameOrId(oci_dns_zone.test_zone().id())
+ *             .compartmentId(var_.compartment_id())
+ *             .items(RrsetItemArgs.builder()
+ *                 .domain(var_.rrset_items_domain())
+ *                 .rdata(var_.rrset_items_rdata())
+ *                 .rtype(var_.rrset_items_rtype())
+ *                 .ttl(var_.rrset_items_ttl())
+ *                 .build())
+ *             .scope(var_.rrset_scope())
+ *             .viewId(oci_dns_view.test_view().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

@@ -18,31 +18,29 @@ namespace Pulumi.Oci.Core
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testDrgRouteTable = new Oci.Core.DrgRouteTable("testDrgRouteTable", new()
     ///     {
-    ///         var testDrgRouteTable = new Oci.Core.DrgRouteTable("testDrgRouteTable", new Oci.Core.DrgRouteTableArgs
+    ///         DrgId = oci_core_drg.Test_drg.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             DrgId = oci_core_drg.Test_drg.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "Operations.CostCenter", "42" },
-    ///             },
-    ///             DisplayName = @var.Drg_route_table_display_name,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "Department", "Finance" },
-    ///             },
-    ///             ImportDrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
-    ///             IsEcmpEnabled = @var.Drg_route_table_is_ecmp_enabled,
-    ///         });
-    ///     }
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = @var.Drg_route_table_display_name,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         ImportDrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
+    ///         IsEcmpEnabled = @var.Drg_route_table_is_ecmp_enabled,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -54,7 +52,7 @@ namespace Pulumi.Oci.Core
     /// ```
     /// </summary>
     [OciResourceType("oci:Core/drgRouteTable:DrgRouteTable")]
-    public partial class DrgRouteTable : Pulumi.CustomResource
+    public partial class DrgRouteTable : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
@@ -160,7 +158,7 @@ namespace Pulumi.Oci.Core
         }
     }
 
-    public sealed class DrgRouteTableArgs : Pulumi.ResourceArgs
+    public sealed class DrgRouteTableArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -219,9 +217,10 @@ namespace Pulumi.Oci.Core
         public DrgRouteTableArgs()
         {
         }
+        public static new DrgRouteTableArgs Empty => new DrgRouteTableArgs();
     }
 
-    public sealed class DrgRouteTableState : Pulumi.ResourceArgs
+    public sealed class DrgRouteTableState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
@@ -298,5 +297,6 @@ namespace Pulumi.Oci.Core
         public DrgRouteTableState()
         {
         }
+        public static new DrgRouteTableState Empty => new DrgRouteTableState();
     }
 }

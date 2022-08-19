@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagement.Inputs
 {
 
-    public sealed class GetSoftwareSourceStreamProfileFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetSoftwareSourceStreamProfileFilterInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.OsManagement.Inputs
         public GetSoftwareSourceStreamProfileFilterInputArgs()
         {
         }
+        public static new GetSoftwareSourceStreamProfileFilterInputArgs Empty => new GetSoftwareSourceStreamProfileFilterInputArgs();
     }
 }

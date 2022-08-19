@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Logging.Inputs
 {
 
-    public sealed class UnifiedAgentConfigurationServiceConfigurationGetArgs : Pulumi.ResourceArgs
+    public sealed class UnifiedAgentConfigurationServiceConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Type of Unified Agent service configuration.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.Logging.Inputs
         public UnifiedAgentConfigurationServiceConfigurationGetArgs()
         {
         }
+        public static new UnifiedAgentConfigurationServiceConfigurationGetArgs Empty => new UnifiedAgentConfigurationServiceConfigurationGetArgs();
     }
 }

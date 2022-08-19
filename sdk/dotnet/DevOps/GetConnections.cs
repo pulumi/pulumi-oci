@@ -22,25 +22,23 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnections = Oci.DevOps.GetConnections.Invoke(new()
         ///     {
-        ///         var testConnections = Output.Create(Oci.DevOps.GetConnections.InvokeAsync(new Oci.DevOps.GetConnectionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ConnectionType = @var.Connection_connection_type,
-        ///             DisplayName = @var.Connection_display_name,
-        ///             Id = @var.Connection_id,
-        ///             ProjectId = oci_devops_project.Test_project.Id,
-        ///             State = @var.Connection_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ConnectionType = @var.Connection_connection_type,
+        ///         DisplayName = @var.Connection_display_name,
+        ///         Id = @var.Connection_id,
+        ///         ProjectId = oci_devops_project.Test_project.Id,
+        ///         State = @var.Connection_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -59,25 +57,23 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testConnections = Oci.DevOps.GetConnections.Invoke(new()
         ///     {
-        ///         var testConnections = Output.Create(Oci.DevOps.GetConnections.InvokeAsync(new Oci.DevOps.GetConnectionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             ConnectionType = @var.Connection_connection_type,
-        ///             DisplayName = @var.Connection_display_name,
-        ///             Id = @var.Connection_id,
-        ///             ProjectId = oci_devops_project.Test_project.Id,
-        ///             State = @var.Connection_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         ConnectionType = @var.Connection_connection_type,
+        ///         DisplayName = @var.Connection_display_name,
+        ///         Id = @var.Connection_id,
+        ///         ProjectId = oci_devops_project.Test_project.Id,
+        ///         State = @var.Connection_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetConnectionsArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment in which to list resources.
@@ -136,9 +132,10 @@ namespace Pulumi.Oci.DevOps
         public GetConnectionsArgs()
         {
         }
+        public static new GetConnectionsArgs Empty => new GetConnectionsArgs();
     }
 
-    public sealed class GetConnectionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConnectionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment in which to list resources.
@@ -187,6 +184,7 @@ namespace Pulumi.Oci.DevOps
         public GetConnectionsInvokeArgs()
         {
         }
+        public static new GetConnectionsInvokeArgs Empty => new GetConnectionsInvokeArgs();
     }
 
 

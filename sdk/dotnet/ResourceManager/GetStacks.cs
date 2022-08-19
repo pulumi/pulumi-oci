@@ -24,23 +24,21 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testStacks = Oci.ResourceManager.GetStacks.Invoke(new()
         ///     {
-        ///         var testStacks = Output.Create(Oci.ResourceManager.GetStacks.InvokeAsync(new Oci.ResourceManager.GetStacksArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Stack_display_name,
-        ///             Id = @var.Stack_id,
-        ///             State = @var.Stack_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Stack_display_name,
+        ///         Id = @var.Stack_id,
+        ///         State = @var.Stack_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -61,23 +59,21 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testStacks = Oci.ResourceManager.GetStacks.Invoke(new()
         ///     {
-        ///         var testStacks = Output.Create(Oci.ResourceManager.GetStacks.InvokeAsync(new Oci.ResourceManager.GetStacksArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             DisplayName = @var.Stack_display_name,
-        ///             Id = @var.Stack_id,
-        ///             State = @var.Stack_state,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         DisplayName = @var.Stack_display_name,
+        ///         Id = @var.Stack_id,
+        ///         State = @var.Stack_state,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -87,7 +83,7 @@ namespace Pulumi.Oci.ResourceManager
     }
 
 
-    public sealed class GetStacksArgs : Pulumi.InvokeArgs
+    public sealed class GetStacksArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
@@ -124,9 +120,10 @@ namespace Pulumi.Oci.ResourceManager
         public GetStacksArgs()
         {
         }
+        public static new GetStacksArgs Empty => new GetStacksArgs();
     }
 
-    public sealed class GetStacksInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetStacksInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
@@ -163,6 +160,7 @@ namespace Pulumi.Oci.ResourceManager
         public GetStacksInvokeArgs()
         {
         }
+        public static new GetStacksInvokeArgs Empty => new GetStacksInvokeArgs();
     }
 
 

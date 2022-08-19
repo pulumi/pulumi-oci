@@ -39,6 +39,55 @@ import javax.annotation.Nullable;
  * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.Volume;
+ * import com.pulumi.oci.Core.VolumeArgs;
+ * import com.pulumi.oci.Core.inputs.VolumeBlockVolumeReplicaArgs;
+ * import com.pulumi.oci.Core.inputs.VolumeSourceDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testVolume = new Volume(&#34;testVolume&#34;, VolumeArgs.builder()        
+ *             .compartmentId(var_.compartment_id())
+ *             .availabilityDomain(var_.volume_availability_domain())
+ *             .backupPolicyId(data.oci_core_volume_backup_policies().test_volume_backup_policies().volume_backup_policies()[0].id())
+ *             .blockVolumeReplicas(VolumeBlockVolumeReplicaArgs.builder()
+ *                 .availabilityDomain(var_.volume_block_volume_replicas_availability_domain())
+ *                 .displayName(var_.volume_block_volume_replicas_display_name())
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(var_.volume_display_name())
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .isAutoTuneEnabled(var_.volume_is_auto_tune_enabled())
+ *             .kmsKeyId(oci_kms_key.test_key().id())
+ *             .sizeInGbs(var_.volume_size_in_gbs())
+ *             .sizeInMbs(var_.volume_size_in_mbs())
+ *             .sourceDetails(VolumeSourceDetailsArgs.builder()
+ *                 .id(var_.volume_source_details_id())
+ *                 .type(var_.volume_source_details_type())
+ *                 .build())
+ *             .vpusPerGb(var_.volume_vpus_per_gb())
+ *             .blockVolumeReplicasDeletion(true)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

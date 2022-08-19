@@ -35,6 +35,36 @@ public final class OspGatewayFunctions {
      * Returns an invoice by invoice id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoice = OspGatewayFunctions.getInvoice(GetInvoiceArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .internalInvoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .ospHomeRegion(var_.invoice_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvoiceResult> getInvoice(GetInvoiceArgs args) {
@@ -46,6 +76,36 @@ public final class OspGatewayFunctions {
      * Returns an invoice by invoice id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoice = OspGatewayFunctions.getInvoice(GetInvoiceArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .internalInvoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .ospHomeRegion(var_.invoice_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvoiceResult> getInvoicePlain(GetInvoicePlainArgs args) {
@@ -57,6 +117,36 @@ public final class OspGatewayFunctions {
      * Returns an invoice by invoice id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoice = OspGatewayFunctions.getInvoice(GetInvoiceArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .internalInvoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .ospHomeRegion(var_.invoice_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvoiceResult> getInvoice(GetInvoiceArgs args, InvokeOptions options) {
@@ -68,6 +158,36 @@ public final class OspGatewayFunctions {
      * Returns an invoice by invoice id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoiceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoice = OspGatewayFunctions.getInvoice(GetInvoiceArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .internalInvoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .ospHomeRegion(var_.invoice_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvoiceResult> getInvoicePlain(GetInvoicePlainArgs args, InvokeOptions options) {
@@ -79,6 +199,43 @@ public final class OspGatewayFunctions {
      * Returns a list of invoices
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoices = OspGatewayFunctions.getInvoices(GetInvoicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.invoice_osp_home_region())
+     *             .invoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .searchText(var_.invoice_search_text())
+     *             .statuses(var_.invoice_status())
+     *             .timeInvoiceEnd(var_.invoice_time_invoice_end())
+     *             .timeInvoiceStart(var_.invoice_time_invoice_start())
+     *             .timePaymentEnd(var_.invoice_time_payment_end())
+     *             .timePaymentStart(var_.invoice_time_payment_start())
+     *             .types(var_.invoice_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvoicesResult> getInvoices(GetInvoicesArgs args) {
@@ -90,6 +247,43 @@ public final class OspGatewayFunctions {
      * Returns a list of invoices
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoices = OspGatewayFunctions.getInvoices(GetInvoicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.invoice_osp_home_region())
+     *             .invoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .searchText(var_.invoice_search_text())
+     *             .statuses(var_.invoice_status())
+     *             .timeInvoiceEnd(var_.invoice_time_invoice_end())
+     *             .timeInvoiceStart(var_.invoice_time_invoice_start())
+     *             .timePaymentEnd(var_.invoice_time_payment_end())
+     *             .timePaymentStart(var_.invoice_time_payment_start())
+     *             .types(var_.invoice_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvoicesResult> getInvoicesPlain(GetInvoicesPlainArgs args) {
@@ -101,6 +295,43 @@ public final class OspGatewayFunctions {
      * Returns a list of invoices
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoices = OspGatewayFunctions.getInvoices(GetInvoicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.invoice_osp_home_region())
+     *             .invoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .searchText(var_.invoice_search_text())
+     *             .statuses(var_.invoice_status())
+     *             .timeInvoiceEnd(var_.invoice_time_invoice_end())
+     *             .timeInvoiceStart(var_.invoice_time_invoice_start())
+     *             .timePaymentEnd(var_.invoice_time_payment_end())
+     *             .timePaymentStart(var_.invoice_time_payment_start())
+     *             .types(var_.invoice_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvoicesResult> getInvoices(GetInvoicesArgs args, InvokeOptions options) {
@@ -112,6 +343,43 @@ public final class OspGatewayFunctions {
      * Returns a list of invoices
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoices = OspGatewayFunctions.getInvoices(GetInvoicesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.invoice_osp_home_region())
+     *             .invoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .searchText(var_.invoice_search_text())
+     *             .statuses(var_.invoice_status())
+     *             .timeInvoiceEnd(var_.invoice_time_invoice_end())
+     *             .timeInvoiceStart(var_.invoice_time_invoice_start())
+     *             .timePaymentEnd(var_.invoice_time_payment_end())
+     *             .timePaymentStart(var_.invoice_time_payment_start())
+     *             .types(var_.invoice_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvoicesResult> getInvoicesPlain(GetInvoicesPlainArgs args, InvokeOptions options) {
@@ -123,6 +391,36 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesInvoiceLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoicesInvoiceLine = OspGatewayFunctions.getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .internalInvoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .ospHomeRegion(var_.invoices_invoice_line_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvoicesInvoiceLineResult> getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs args) {
@@ -134,6 +432,36 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesInvoiceLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoicesInvoiceLine = OspGatewayFunctions.getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .internalInvoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .ospHomeRegion(var_.invoices_invoice_line_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvoicesInvoiceLineResult> getInvoicesInvoiceLinePlain(GetInvoicesInvoiceLinePlainArgs args) {
@@ -145,6 +473,36 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesInvoiceLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoicesInvoiceLine = OspGatewayFunctions.getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .internalInvoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .ospHomeRegion(var_.invoices_invoice_line_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvoicesInvoiceLineResult> getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs args, InvokeOptions options) {
@@ -156,6 +514,36 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesInvoiceLineArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoicesInvoiceLine = OspGatewayFunctions.getInvoicesInvoiceLine(GetInvoicesInvoiceLineArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .internalInvoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .ospHomeRegion(var_.invoices_invoice_line_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvoicesInvoiceLineResult> getInvoicesInvoiceLinePlain(GetInvoicesInvoiceLinePlainArgs args, InvokeOptions options) {
@@ -167,6 +555,36 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesInvoiceLinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoicesInvoiceLines = OspGatewayFunctions.getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .internalInvoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .ospHomeRegion(var_.invoices_invoice_line_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvoicesInvoiceLinesResult> getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs args) {
@@ -178,6 +596,36 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesInvoiceLinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoicesInvoiceLines = OspGatewayFunctions.getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .internalInvoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .ospHomeRegion(var_.invoices_invoice_line_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvoicesInvoiceLinesResult> getInvoicesInvoiceLinesPlain(GetInvoicesInvoiceLinesPlainArgs args) {
@@ -189,6 +637,36 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesInvoiceLinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoicesInvoiceLines = OspGatewayFunctions.getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .internalInvoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .ospHomeRegion(var_.invoices_invoice_line_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetInvoicesInvoiceLinesResult> getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs args, InvokeOptions options) {
@@ -200,6 +678,36 @@ public final class OspGatewayFunctions {
      * Returns the invoice product list by invoice id
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesInvoiceLinesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInvoicesInvoiceLines = OspGatewayFunctions.getInvoicesInvoiceLines(GetInvoicesInvoiceLinesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .internalInvoiceId(oci_osp_gateway_invoice.test_invoice().id())
+     *             .ospHomeRegion(var_.invoices_invoice_line_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetInvoicesInvoiceLinesResult> getInvoicesInvoiceLinesPlain(GetInvoicesInvoiceLinesPlainArgs args, InvokeOptions options) {
@@ -211,6 +719,36 @@ public final class OspGatewayFunctions {
      * Get the subscription plan.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OspGatewayFunctions.getSubscription(GetSubscriptionArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.subscription_osp_home_region())
+     *             .subscriptionId(oci_osp_gateway_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionResult> getSubscription(GetSubscriptionArgs args) {
@@ -222,6 +760,36 @@ public final class OspGatewayFunctions {
      * Get the subscription plan.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OspGatewayFunctions.getSubscription(GetSubscriptionArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.subscription_osp_home_region())
+     *             .subscriptionId(oci_osp_gateway_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionResult> getSubscriptionPlain(GetSubscriptionPlainArgs args) {
@@ -233,6 +801,36 @@ public final class OspGatewayFunctions {
      * Get the subscription plan.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OspGatewayFunctions.getSubscription(GetSubscriptionArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.subscription_osp_home_region())
+     *             .subscriptionId(oci_osp_gateway_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionResult> getSubscription(GetSubscriptionArgs args, InvokeOptions options) {
@@ -244,6 +842,36 @@ public final class OspGatewayFunctions {
      * Get the subscription plan.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscription = OspGatewayFunctions.getSubscription(GetSubscriptionArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.subscription_osp_home_region())
+     *             .subscriptionId(oci_osp_gateway_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionResult> getSubscriptionPlain(GetSubscriptionPlainArgs args, InvokeOptions options) {
@@ -255,6 +883,35 @@ public final class OspGatewayFunctions {
      * Get the subscription data for the compartment
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OspGatewayFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.subscription_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args) {
@@ -266,6 +923,35 @@ public final class OspGatewayFunctions {
      * Get the subscription data for the compartment
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OspGatewayFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.subscription_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args) {
@@ -277,6 +963,35 @@ public final class OspGatewayFunctions {
      * Get the subscription data for the compartment
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OspGatewayFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.subscription_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSubscriptionsResult> getSubscriptions(GetSubscriptionsArgs args, InvokeOptions options) {
@@ -288,6 +1003,35 @@ public final class OspGatewayFunctions {
      * Get the subscription data for the compartment
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
+     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptions = OspGatewayFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .ospHomeRegion(var_.subscription_osp_home_region())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSubscriptionsResult> getSubscriptionsPlain(GetSubscriptionsPlainArgs args, InvokeOptions options) {

@@ -22,21 +22,19 @@ namespace Pulumi.Oci.StackMonitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDiscoveryJobs = Oci.StackMonitoring.GetDiscoveryJobs.Invoke(new()
         ///     {
-        ///         var testDiscoveryJobs = Output.Create(Oci.StackMonitoring.GetDiscoveryJobs.InvokeAsync(new Oci.StackMonitoring.GetDiscoveryJobsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Discovery_job_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Discovery_job_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -55,21 +53,19 @@ namespace Pulumi.Oci.StackMonitoring
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDiscoveryJobs = Oci.StackMonitoring.GetDiscoveryJobs.Invoke(new()
         ///     {
-        ///         var testDiscoveryJobs = Output.Create(Oci.StackMonitoring.GetDiscoveryJobs.InvokeAsync(new Oci.StackMonitoring.GetDiscoveryJobsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             Name = @var.Discovery_job_name,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         Name = @var.Discovery_job_name,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -79,7 +75,7 @@ namespace Pulumi.Oci.StackMonitoring
     }
 
 
-    public sealed class GetDiscoveryJobsArgs : Pulumi.InvokeArgs
+    public sealed class GetDiscoveryJobsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which data is listed.
@@ -104,9 +100,10 @@ namespace Pulumi.Oci.StackMonitoring
         public GetDiscoveryJobsArgs()
         {
         }
+        public static new GetDiscoveryJobsArgs Empty => new GetDiscoveryJobsArgs();
     }
 
-    public sealed class GetDiscoveryJobsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDiscoveryJobsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the compartment in which data is listed.
@@ -131,6 +128,7 @@ namespace Pulumi.Oci.StackMonitoring
         public GetDiscoveryJobsInvokeArgs()
         {
         }
+        public static new GetDiscoveryJobsInvokeArgs Empty => new GetDiscoveryJobsInvokeArgs();
     }
 
 

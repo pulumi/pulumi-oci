@@ -23,21 +23,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLocalPeeringGateways = Oci.Core.GetLocalPeeringGateways.Invoke(new()
         ///     {
-        ///         var testLocalPeeringGateways = Output.Create(Oci.Core.GetLocalPeeringGateways.InvokeAsync(new Oci.Core.GetLocalPeeringGatewaysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -57,21 +55,19 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testLocalPeeringGateways = Oci.Core.GetLocalPeeringGateways.Invoke(new()
         ///     {
-        ///         var testLocalPeeringGateways = Output.Create(Oci.Core.GetLocalPeeringGateways.InvokeAsync(new Oci.Core.GetLocalPeeringGatewaysArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -81,7 +77,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetLocalPeeringGatewaysArgs : Pulumi.InvokeArgs
+    public sealed class GetLocalPeeringGatewaysArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -106,9 +102,10 @@ namespace Pulumi.Oci.Core
         public GetLocalPeeringGatewaysArgs()
         {
         }
+        public static new GetLocalPeeringGatewaysArgs Empty => new GetLocalPeeringGatewaysArgs();
     }
 
-    public sealed class GetLocalPeeringGatewaysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetLocalPeeringGatewaysInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -133,6 +130,7 @@ namespace Pulumi.Oci.Core
         public GetLocalPeeringGatewaysInvokeArgs()
         {
         }
+        public static new GetLocalPeeringGatewaysInvokeArgs Empty => new GetLocalPeeringGatewaysInvokeArgs();
     }
 
 

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage.Inputs
 {
 
-    public sealed class ObjectLifecyclePolicyRuleObjectNameFilterArgs : Pulumi.ResourceArgs
+    public sealed class ObjectLifecyclePolicyRuleObjectNameFilterArgs : global::Pulumi.ResourceArgs
     {
         [Input("exclusionPatterns")]
         private InputList<string>? _exclusionPatterns;
@@ -51,5 +51,6 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
         public ObjectLifecyclePolicyRuleObjectNameFilterArgs()
         {
         }
+        public static new ObjectLifecyclePolicyRuleObjectNameFilterArgs Empty => new ObjectLifecyclePolicyRuleObjectNameFilterArgs();
     }
 }

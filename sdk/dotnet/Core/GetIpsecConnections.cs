@@ -23,22 +23,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpSecConnections = Oci.Core.GetIpsecConnections.Invoke(new()
         ///     {
-        ///         var testIpSecConnections = Output.Create(Oci.Core.GetIpsecConnections.InvokeAsync(new Oci.Core.GetIpsecConnectionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CpeId = oci_core_cpe.Test_cpe.Id,
-        ///             DrgId = oci_core_drg.Test_drg.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CpeId = oci_core_cpe.Test_cpe.Id,
+        ///         DrgId = oci_core_drg.Test_drg.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -58,22 +56,20 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testIpSecConnections = Oci.Core.GetIpsecConnections.Invoke(new()
         ///     {
-        ///         var testIpSecConnections = Output.Create(Oci.Core.GetIpsecConnections.InvokeAsync(new Oci.Core.GetIpsecConnectionsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             CpeId = oci_core_cpe.Test_cpe.Id,
-        ///             DrgId = oci_core_drg.Test_drg.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         CpeId = oci_core_cpe.Test_cpe.Id,
+        ///         DrgId = oci_core_drg.Test_drg.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -83,7 +79,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetIpsecConnectionsArgs : Pulumi.InvokeArgs
+    public sealed class GetIpsecConnectionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -114,9 +110,10 @@ namespace Pulumi.Oci.Core
         public GetIpsecConnectionsArgs()
         {
         }
+        public static new GetIpsecConnectionsArgs Empty => new GetIpsecConnectionsArgs();
     }
 
-    public sealed class GetIpsecConnectionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetIpsecConnectionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -147,6 +144,7 @@ namespace Pulumi.Oci.Core
         public GetIpsecConnectionsInvokeArgs()
         {
         }
+        public static new GetIpsecConnectionsInvokeArgs Empty => new GetIpsecConnectionsInvokeArgs();
     }
 
 

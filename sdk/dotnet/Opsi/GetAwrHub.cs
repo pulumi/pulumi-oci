@@ -21,20 +21,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAwrHub = Oci.Opsi.GetAwrHub.Invoke(new()
         ///     {
-        ///         var testAwrHub = Output.Create(Oci.Opsi.GetAwrHub.InvokeAsync(new Oci.Opsi.GetAwrHubArgs
-        ///         {
-        ///             AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
-        ///         }));
-        ///     }
+        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -52,20 +50,18 @@ namespace Pulumi.Oci.Opsi
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAwrHub = Oci.Opsi.GetAwrHub.Invoke(new()
         ///     {
-        ///         var testAwrHub = Output.Create(Oci.Opsi.GetAwrHub.InvokeAsync(new Oci.Opsi.GetAwrHubArgs
-        ///         {
-        ///             AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
-        ///         }));
-        ///     }
+        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -75,7 +71,7 @@ namespace Pulumi.Oci.Opsi
     }
 
 
-    public sealed class GetAwrHubArgs : Pulumi.InvokeArgs
+    public sealed class GetAwrHubArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Awr Hub identifier
@@ -86,9 +82,10 @@ namespace Pulumi.Oci.Opsi
         public GetAwrHubArgs()
         {
         }
+        public static new GetAwrHubArgs Empty => new GetAwrHubArgs();
     }
 
-    public sealed class GetAwrHubInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAwrHubInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique Awr Hub identifier
@@ -99,6 +96,7 @@ namespace Pulumi.Oci.Opsi
         public GetAwrHubInvokeArgs()
         {
         }
+        public static new GetAwrHubInvokeArgs Empty => new GetAwrHubInvokeArgs();
     }
 
 

@@ -17,35 +17,33 @@ namespace Pulumi.Oci.LicenseManager
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testLicenseRecord = new Oci.LicenseManager.LicenseRecord("testLicenseRecord", new()
     ///     {
-    ///         var testLicenseRecord = new Oci.LicenseManager.LicenseRecord("testLicenseRecord", new Oci.LicenseManager.LicenseRecordArgs
+    ///         DisplayName = @var.License_record_display_name,
+    ///         IsPerpetual = @var.License_record_is_perpetual,
+    ///         IsUnlimited = @var.License_record_is_unlimited,
+    ///         ProductLicenseId = oci_license_manager_product_license.Test_product_license.Id,
+    ///         DefinedTags = 
     ///         {
-    ///             DisplayName = @var.License_record_display_name,
-    ///             IsPerpetual = @var.License_record_is_perpetual,
-    ///             IsUnlimited = @var.License_record_is_unlimited,
-    ///             ProductLicenseId = oci_license_manager_product_license.Test_product_license.Id,
-    ///             DefinedTags = 
-    ///             {
-    ///                 { "foo-namespace.bar-key", "value" },
-    ///             },
-    ///             ExpirationDate = @var.License_record_expiration_date,
-    ///             FreeformTags = 
-    ///             {
-    ///                 { "bar-key", "value" },
-    ///             },
-    ///             LicenseCount = @var.License_record_license_count,
-    ///             ProductId = oci_license_manager_product.Test_product.Id,
-    ///             SupportEndDate = @var.License_record_support_end_date,
-    ///         });
-    ///     }
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         ExpirationDate = @var.License_record_expiration_date,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         LicenseCount = @var.License_record_license_count,
+    ///         ProductId = oci_license_manager_product.Test_product.Id,
+    ///         SupportEndDate = @var.License_record_support_end_date,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -57,7 +55,7 @@ namespace Pulumi.Oci.LicenseManager
     /// ```
     /// </summary>
     [OciResourceType("oci:LicenseManager/licenseRecord:LicenseRecord")]
-    public partial class LicenseRecord : Pulumi.CustomResource
+    public partial class LicenseRecord : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
@@ -205,7 +203,7 @@ namespace Pulumi.Oci.LicenseManager
         }
     }
 
-    public sealed class LicenseRecordArgs : Pulumi.ResourceArgs
+    public sealed class LicenseRecordArgs : global::Pulumi.ResourceArgs
     {
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -282,9 +280,10 @@ namespace Pulumi.Oci.LicenseManager
         public LicenseRecordArgs()
         {
         }
+        public static new LicenseRecordArgs Empty => new LicenseRecordArgs();
     }
 
-    public sealed class LicenseRecordState : Pulumi.ResourceArgs
+    public sealed class LicenseRecordState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
@@ -409,5 +408,6 @@ namespace Pulumi.Oci.LicenseManager
         public LicenseRecordState()
         {
         }
+        public static new LicenseRecordState Empty => new LicenseRecordState();
     }
 }

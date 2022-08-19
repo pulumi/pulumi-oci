@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database.Inputs
 {
 
-    public sealed class AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekGetArgs : Pulumi.ResourceArgs
+    public sealed class AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Name of the month of the year.
@@ -21,5 +21,6 @@ namespace Pulumi.Oci.Database.Inputs
         public AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekGetArgs()
         {
         }
+        public static new AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekGetArgs Empty => new AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekGetArgs();
     }
 }

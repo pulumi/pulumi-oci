@@ -38,6 +38,34 @@ public final class OcvpFunctions {
      * Gets the specified ESXi host&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetExsiHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEsxiHost = OcvpFunctions.getExsiHost(GetExsiHostArgs.builder()
+     *             .esxiHostId(oci_ocvp_esxi_host.test_esxi_host().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExsiHostResult> getExsiHost(GetExsiHostArgs args) {
@@ -49,6 +77,34 @@ public final class OcvpFunctions {
      * Gets the specified ESXi host&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetExsiHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEsxiHost = OcvpFunctions.getExsiHost(GetExsiHostArgs.builder()
+     *             .esxiHostId(oci_ocvp_esxi_host.test_esxi_host().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExsiHostResult> getExsiHostPlain(GetExsiHostPlainArgs args) {
@@ -60,6 +116,34 @@ public final class OcvpFunctions {
      * Gets the specified ESXi host&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetExsiHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEsxiHost = OcvpFunctions.getExsiHost(GetExsiHostArgs.builder()
+     *             .esxiHostId(oci_ocvp_esxi_host.test_esxi_host().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExsiHostResult> getExsiHost(GetExsiHostArgs args, InvokeOptions options) {
@@ -71,6 +155,34 @@ public final class OcvpFunctions {
      * Gets the specified ESXi host&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetExsiHostArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEsxiHost = OcvpFunctions.getExsiHost(GetExsiHostArgs.builder()
+     *             .esxiHostId(oci_ocvp_esxi_host.test_esxi_host().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExsiHostResult> getExsiHostPlain(GetExsiHostPlainArgs args, InvokeOptions options) {
@@ -90,6 +202,37 @@ public final class OcvpFunctions {
      * ESXi host OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .computeInstanceId(oci_core_instance.test_instance().id())
+     *             .displayName(var_.esxi_host_display_name())
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .state(var_.esxi_host_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExsiHostsResult> getExsiHosts() {
@@ -109,6 +252,37 @@ public final class OcvpFunctions {
      * ESXi host OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .computeInstanceId(oci_core_instance.test_instance().id())
+     *             .displayName(var_.esxi_host_display_name())
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .state(var_.esxi_host_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExsiHostsResult> getExsiHostsPlain() {
@@ -128,6 +302,37 @@ public final class OcvpFunctions {
      * ESXi host OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .computeInstanceId(oci_core_instance.test_instance().id())
+     *             .displayName(var_.esxi_host_display_name())
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .state(var_.esxi_host_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExsiHostsResult> getExsiHosts(GetExsiHostsArgs args) {
@@ -147,6 +352,37 @@ public final class OcvpFunctions {
      * ESXi host OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .computeInstanceId(oci_core_instance.test_instance().id())
+     *             .displayName(var_.esxi_host_display_name())
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .state(var_.esxi_host_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExsiHostsResult> getExsiHostsPlain(GetExsiHostsPlainArgs args) {
@@ -166,6 +402,37 @@ public final class OcvpFunctions {
      * ESXi host OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .computeInstanceId(oci_core_instance.test_instance().id())
+     *             .displayName(var_.esxi_host_display_name())
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .state(var_.esxi_host_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetExsiHostsResult> getExsiHosts(GetExsiHostsArgs args, InvokeOptions options) {
@@ -185,6 +452,37 @@ public final class OcvpFunctions {
      * ESXi host OCID.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .computeInstanceId(oci_core_instance.test_instance().id())
+     *             .displayName(var_.esxi_host_display_name())
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .state(var_.esxi_host_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetExsiHostsResult> getExsiHostsPlain(GetExsiHostsPlainArgs args, InvokeOptions options) {
@@ -196,6 +494,34 @@ public final class OcvpFunctions {
      * Gets the specified SDDC&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSddcArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSddc = OcvpFunctions.getSddc(GetSddcArgs.builder()
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSddcResult> getSddc(GetSddcArgs args) {
@@ -207,6 +533,34 @@ public final class OcvpFunctions {
      * Gets the specified SDDC&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSddcArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSddc = OcvpFunctions.getSddc(GetSddcArgs.builder()
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSddcResult> getSddcPlain(GetSddcPlainArgs args) {
@@ -218,6 +572,34 @@ public final class OcvpFunctions {
      * Gets the specified SDDC&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSddcArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSddc = OcvpFunctions.getSddc(GetSddcArgs.builder()
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSddcResult> getSddc(GetSddcArgs args, InvokeOptions options) {
@@ -229,6 +611,34 @@ public final class OcvpFunctions {
      * Gets the specified SDDC&#39;s information.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSddcArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSddc = OcvpFunctions.getSddc(GetSddcArgs.builder()
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSddcResult> getSddcPlain(GetSddcPlainArgs args, InvokeOptions options) {
@@ -241,6 +651,37 @@ public final class OcvpFunctions {
      * filtered by display name or availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSddcsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSddcs = OcvpFunctions.getSddcs(GetSddcsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .computeAvailabilityDomain(var_.sddc_compute_availability_domain())
+     *             .displayName(var_.sddc_display_name())
+     *             .state(var_.sddc_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSddcsResult> getSddcs(GetSddcsArgs args) {
@@ -253,6 +694,37 @@ public final class OcvpFunctions {
      * filtered by display name or availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSddcsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSddcs = OcvpFunctions.getSddcs(GetSddcsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .computeAvailabilityDomain(var_.sddc_compute_availability_domain())
+     *             .displayName(var_.sddc_display_name())
+     *             .state(var_.sddc_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSddcsResult> getSddcsPlain(GetSddcsPlainArgs args) {
@@ -265,6 +737,37 @@ public final class OcvpFunctions {
      * filtered by display name or availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSddcsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSddcs = OcvpFunctions.getSddcs(GetSddcsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .computeAvailabilityDomain(var_.sddc_compute_availability_domain())
+     *             .displayName(var_.sddc_display_name())
+     *             .state(var_.sddc_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSddcsResult> getSddcs(GetSddcsArgs args, InvokeOptions options) {
@@ -277,6 +780,37 @@ public final class OcvpFunctions {
      * filtered by display name or availability domain.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSddcsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSddcs = OcvpFunctions.getSddcs(GetSddcsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .computeAvailabilityDomain(var_.sddc_compute_availability_domain())
+     *             .displayName(var_.sddc_display_name())
+     *             .state(var_.sddc_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSddcsResult> getSddcsPlain(GetSddcsPlainArgs args, InvokeOptions options) {
@@ -284,6 +818,36 @@ public final class OcvpFunctions {
     }
     /**
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedHostShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.supported_host_shape_name())
+     *             .sddcType(var_.supported_host_shape_sddc_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSupportedHostShapesResult> getSupportedHostShapes(GetSupportedHostShapesArgs args) {
@@ -291,6 +855,36 @@ public final class OcvpFunctions {
     }
     /**
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedHostShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.supported_host_shape_name())
+     *             .sddcType(var_.supported_host_shape_sddc_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSupportedHostShapesResult> getSupportedHostShapesPlain(GetSupportedHostShapesPlainArgs args) {
@@ -298,6 +892,36 @@ public final class OcvpFunctions {
     }
     /**
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedHostShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.supported_host_shape_name())
+     *             .sddcType(var_.supported_host_shape_sddc_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSupportedHostShapesResult> getSupportedHostShapes(GetSupportedHostShapesArgs args, InvokeOptions options) {
@@ -305,6 +929,36 @@ public final class OcvpFunctions {
     }
     /**
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedHostShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.supported_host_shape_name())
+     *             .sddcType(var_.supported_host_shape_sddc_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSupportedHostShapesResult> getSupportedHostShapesPlain(GetSupportedHostShapesPlainArgs args, InvokeOptions options) {
@@ -316,6 +970,34 @@ public final class OcvpFunctions {
      * Lists supported SKUs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedSkusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSupportedSkusResult> getSupportedSkus(GetSupportedSkusArgs args) {
@@ -327,6 +1009,34 @@ public final class OcvpFunctions {
      * Lists supported SKUs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedSkusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSupportedSkusResult> getSupportedSkusPlain(GetSupportedSkusPlainArgs args) {
@@ -338,6 +1048,34 @@ public final class OcvpFunctions {
      * Lists supported SKUs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedSkusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSupportedSkusResult> getSupportedSkus(GetSupportedSkusArgs args, InvokeOptions options) {
@@ -349,6 +1087,34 @@ public final class OcvpFunctions {
      * Lists supported SKUs.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedSkusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSupportedSkusResult> getSupportedSkusPlain(GetSupportedSkusPlainArgs args, InvokeOptions options) {
@@ -361,6 +1127,34 @@ public final class OcvpFunctions {
      * VMware Solution.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSupportedVmwareSoftwareVersionsResult> getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs args) {
@@ -373,6 +1167,34 @@ public final class OcvpFunctions {
      * VMware Solution.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSupportedVmwareSoftwareVersionsResult> getSupportedVmwareSoftwareVersionsPlain(GetSupportedVmwareSoftwareVersionsPlainArgs args) {
@@ -385,6 +1207,34 @@ public final class OcvpFunctions {
      * VMware Solution.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetSupportedVmwareSoftwareVersionsResult> getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs args, InvokeOptions options) {
@@ -397,6 +1247,34 @@ public final class OcvpFunctions {
      * VMware Solution.
      * 
      * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetSupportedVmwareSoftwareVersionsResult> getSupportedVmwareSoftwareVersionsPlain(GetSupportedVmwareSoftwareVersionsPlainArgs args, InvokeOptions options) {

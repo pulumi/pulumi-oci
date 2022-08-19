@@ -27,27 +27,25 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDrgAttachments = Oci.Core.GetDrgAttachments.Invoke(new()
         ///     {
-        ///         var testDrgAttachments = Output.Create(Oci.Core.GetDrgAttachments.InvokeAsync(new Oci.Core.GetDrgAttachmentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AttachmentType = @var.Drg_attachment_attachment_type,
-        ///             DisplayName = @var.Drg_attachment_display_name,
-        ///             DrgId = oci_core_drg.Test_drg.Id,
-        ///             DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
-        ///             NetworkId = oci_core_network.Test_network.Id,
-        ///             State = @var.Drg_attachment_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AttachmentType = @var.Drg_attachment_attachment_type,
+        ///         DisplayName = @var.Drg_attachment_display_name,
+        ///         DrgId = oci_core_drg.Test_drg.Id,
+        ///         DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
+        ///         NetworkId = oci_core_network.Test_network.Id,
+        ///         State = @var.Drg_attachment_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -71,27 +69,25 @@ namespace Pulumi.Oci.Core
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testDrgAttachments = Oci.Core.GetDrgAttachments.Invoke(new()
         ///     {
-        ///         var testDrgAttachments = Output.Create(Oci.Core.GetDrgAttachments.InvokeAsync(new Oci.Core.GetDrgAttachmentsArgs
-        ///         {
-        ///             CompartmentId = @var.Compartment_id,
-        ///             AttachmentType = @var.Drg_attachment_attachment_type,
-        ///             DisplayName = @var.Drg_attachment_display_name,
-        ///             DrgId = oci_core_drg.Test_drg.Id,
-        ///             DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
-        ///             NetworkId = oci_core_network.Test_network.Id,
-        ///             State = @var.Drg_attachment_state,
-        ///             VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         }));
-        ///     }
+        ///         CompartmentId = @var.Compartment_id,
+        ///         AttachmentType = @var.Drg_attachment_attachment_type,
+        ///         DisplayName = @var.Drg_attachment_display_name,
+        ///         DrgId = oci_core_drg.Test_drg.Id,
+        ///         DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
+        ///         NetworkId = oci_core_network.Test_network.Id,
+        ///         State = @var.Drg_attachment_state,
+        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -101,7 +97,7 @@ namespace Pulumi.Oci.Core
     }
 
 
-    public sealed class GetDrgAttachmentsArgs : Pulumi.InvokeArgs
+    public sealed class GetDrgAttachmentsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The type for the network resource attached to the DRG.
@@ -162,9 +158,10 @@ namespace Pulumi.Oci.Core
         public GetDrgAttachmentsArgs()
         {
         }
+        public static new GetDrgAttachmentsArgs Empty => new GetDrgAttachmentsArgs();
     }
 
-    public sealed class GetDrgAttachmentsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetDrgAttachmentsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The type for the network resource attached to the DRG.
@@ -225,6 +222,7 @@ namespace Pulumi.Oci.Core
         public GetDrgAttachmentsInvokeArgs()
         {
         }
+        public static new GetDrgAttachmentsInvokeArgs Empty => new GetDrgAttachmentsInvokeArgs();
     }
 
 

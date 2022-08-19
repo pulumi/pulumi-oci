@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Secrets.Inputs
 {
 
-    public sealed class GetSecretbundleVersionsFilterArgs : Pulumi.InvokeArgs
+    public sealed class GetSecretbundleVersionsFilterArgs : global::Pulumi.InvokeArgs
     {
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -29,5 +29,6 @@ namespace Pulumi.Oci.Secrets.Inputs
         public GetSecretbundleVersionsFilterArgs()
         {
         }
+        public static new GetSecretbundleVersionsFilterArgs Empty => new GetSecretbundleVersionsFilterArgs();
     }
 }

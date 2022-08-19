@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class InstanceShapeConfigArgs : Pulumi.ResourceArgs
+    public sealed class InstanceShapeConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
@@ -87,5 +87,6 @@ namespace Pulumi.Oci.Core.Inputs
         public InstanceShapeConfigArgs()
         {
         }
+        public static new InstanceShapeConfigArgs Empty => new InstanceShapeConfigArgs();
     }
 }

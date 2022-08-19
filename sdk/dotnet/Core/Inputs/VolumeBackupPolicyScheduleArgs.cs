@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core.Inputs
 {
 
-    public sealed class VolumeBackupPolicyScheduleArgs : Pulumi.ResourceArgs
+    public sealed class VolumeBackupPolicyScheduleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) The type of volume backup to create.
@@ -78,5 +78,6 @@ namespace Pulumi.Oci.Core.Inputs
         public VolumeBackupPolicyScheduleArgs()
         {
         }
+        public static new VolumeBackupPolicyScheduleArgs Empty => new VolumeBackupPolicyScheduleArgs();
     }
 }

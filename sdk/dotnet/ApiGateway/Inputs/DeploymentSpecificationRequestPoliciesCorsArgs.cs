@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway.Inputs
 {
 
-    public sealed class DeploymentSpecificationRequestPoliciesCorsArgs : Pulumi.ResourceArgs
+    public sealed class DeploymentSpecificationRequestPoliciesCorsArgs : global::Pulumi.ResourceArgs
     {
         [Input("allowedHeaders")]
         private InputList<string>? _allowedHeaders;
@@ -75,5 +75,6 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public DeploymentSpecificationRequestPoliciesCorsArgs()
         {
         }
+        public static new DeploymentSpecificationRequestPoliciesCorsArgs Empty => new DeploymentSpecificationRequestPoliciesCorsArgs();
     }
 }

@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps.Inputs
 {
 
-    public sealed class DeployEnvironmentNetworkChannelGetArgs : Pulumi.ResourceArgs
+    public sealed class DeployEnvironmentNetworkChannelGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Updatable) Network channel type.
@@ -39,5 +39,6 @@ namespace Pulumi.Oci.DevOps.Inputs
         public DeployEnvironmentNetworkChannelGetArgs()
         {
         }
+        public static new DeployEnvironmentNetworkChannelGetArgs Empty => new DeployEnvironmentNetworkChannelGetArgs();
     }
 }

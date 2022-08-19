@@ -21,21 +21,19 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNodePoolOption = Oci.ContainerEngine.GetNodePoolOption.Invoke(new()
         ///     {
-        ///         var testNodePoolOption = Output.Create(Oci.ContainerEngine.GetNodePoolOption.InvokeAsync(new Oci.ContainerEngine.GetNodePoolOptionArgs
-        ///         {
-        ///             NodePoolOptionId = oci_containerengine_node_pool_option.Test_node_pool_option.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         NodePoolOptionId = oci_containerengine_node_pool_option.Test_node_pool_option.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -53,21 +51,19 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testNodePoolOption = Oci.ContainerEngine.GetNodePoolOption.Invoke(new()
         ///     {
-        ///         var testNodePoolOption = Output.Create(Oci.ContainerEngine.GetNodePoolOption.InvokeAsync(new Oci.ContainerEngine.GetNodePoolOptionArgs
-        ///         {
-        ///             NodePoolOptionId = oci_containerengine_node_pool_option.Test_node_pool_option.Id,
-        ///             CompartmentId = @var.Compartment_id,
-        ///         }));
-        ///     }
+        ///         NodePoolOptionId = oci_containerengine_node_pool_option.Test_node_pool_option.Id,
+        ///         CompartmentId = @var.Compartment_id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.ContainerEngine
     }
 
 
-    public sealed class GetNodePoolOptionArgs : Pulumi.InvokeArgs
+    public sealed class GetNodePoolOptionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -94,9 +90,10 @@ namespace Pulumi.Oci.ContainerEngine
         public GetNodePoolOptionArgs()
         {
         }
+        public static new GetNodePoolOptionArgs Empty => new GetNodePoolOptionArgs();
     }
 
-    public sealed class GetNodePoolOptionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNodePoolOptionInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The OCID of the compartment.
@@ -113,6 +110,7 @@ namespace Pulumi.Oci.ContainerEngine
         public GetNodePoolOptionInvokeArgs()
         {
         }
+        public static new GetNodePoolOptionInvokeArgs Empty => new GetNodePoolOptionInvokeArgs();
     }
 
 

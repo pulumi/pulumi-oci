@@ -21,6 +21,38 @@ import javax.annotation.Nullable;
  * Creates a new reference or updates an existing one.
  * 
  * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DevOps.RepositoryRef;
+ * import com.pulumi.oci.DevOps.RepositoryRefArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testRepositoryRef = new RepositoryRef(&#34;testRepositoryRef&#34;, RepositoryRefArgs.builder()        
+ *             .refName(var_.repository_ref_ref_name())
+ *             .refType(var_.repository_ref_ref_type())
+ *             .repositoryId(oci_devops_repository.test_repository().id())
+ *             .commitId(oci_devops_commit.test_commit().id())
+ *             .objectId(oci_objectstorage_object.test_object().id())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 

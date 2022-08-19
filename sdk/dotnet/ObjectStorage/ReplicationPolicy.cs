@@ -17,23 +17,21 @@ namespace Pulumi.Oci.ObjectStorage
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testReplicationPolicy = new Oci.ObjectStorage.ReplicationPolicy("testReplicationPolicy", new()
     ///     {
-    ///         var testReplicationPolicy = new Oci.ObjectStorage.ReplicationPolicy("testReplicationPolicy", new Oci.ObjectStorage.ReplicationPolicyArgs
-    ///         {
-    ///             Bucket = @var.Replication_policy_bucket,
-    ///             DestinationBucketName = oci_objectstorage_bucket.Test_bucket.Name,
-    ///             DestinationRegionName = oci_identity_region.Test_region.Name,
-    ///             Namespace = @var.Replication_policy_namespace,
-    ///         });
-    ///     }
+    ///         Bucket = @var.Replication_policy_bucket,
+    ///         DestinationBucketName = oci_objectstorage_bucket.Test_bucket.Name,
+    ///         DestinationRegionName = oci_identity_region.Test_region.Name,
+    ///         Namespace = @var.Replication_policy_namespace,
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -45,7 +43,7 @@ namespace Pulumi.Oci.ObjectStorage
     /// ```
     /// </summary>
     [OciResourceType("oci:ObjectStorage/replicationPolicy:ReplicationPolicy")]
-    public partial class ReplicationPolicy : Pulumi.CustomResource
+    public partial class ReplicationPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -148,7 +146,7 @@ namespace Pulumi.Oci.ObjectStorage
         }
     }
 
-    public sealed class ReplicationPolicyArgs : Pulumi.ResourceArgs
+    public sealed class ReplicationPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -186,9 +184,10 @@ namespace Pulumi.Oci.ObjectStorage
         public ReplicationPolicyArgs()
         {
         }
+        public static new ReplicationPolicyArgs Empty => new ReplicationPolicyArgs();
     }
 
-    public sealed class ReplicationPolicyState : Pulumi.ResourceArgs
+    public sealed class ReplicationPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -250,5 +249,6 @@ namespace Pulumi.Oci.ObjectStorage
         public ReplicationPolicyState()
         {
         }
+        public static new ReplicationPolicyState Empty => new ReplicationPolicyState();
     }
 }

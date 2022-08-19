@@ -22,20 +22,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryMirrorRecords = Oci.DevOps.GetRepositoryMirrorRecords.Invoke(new()
         ///     {
-        ///         var testRepositoryMirrorRecords = Output.Create(Oci.DevOps.GetRepositoryMirrorRecords.InvokeAsync(new Oci.DevOps.GetRepositoryMirrorRecordsArgs
-        ///         {
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testRepositoryMirrorRecords = Oci.DevOps.GetRepositoryMirrorRecords.Invoke(new()
         ///     {
-        ///         var testRepositoryMirrorRecords = Output.Create(Oci.DevOps.GetRepositoryMirrorRecords.InvokeAsync(new Oci.DevOps.GetRepositoryMirrorRecordsArgs
-        ///         {
-        ///             RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         }));
-        ///     }
+        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetRepositoryMirrorRecordsArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryMirrorRecordsArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private List<Inputs.GetRepositoryMirrorRecordsFilterArgs>? _filters;
@@ -96,9 +92,10 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryMirrorRecordsArgs()
         {
         }
+        public static new GetRepositoryMirrorRecordsArgs Empty => new GetRepositoryMirrorRecordsArgs();
     }
 
-    public sealed class GetRepositoryMirrorRecordsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRepositoryMirrorRecordsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         private InputList<Inputs.GetRepositoryMirrorRecordsFilterInputArgs>? _filters;
@@ -117,6 +114,7 @@ namespace Pulumi.Oci.DevOps
         public GetRepositoryMirrorRecordsInvokeArgs()
         {
         }
+        public static new GetRepositoryMirrorRecordsInvokeArgs Empty => new GetRepositoryMirrorRecordsInvokeArgs();
     }
 
 

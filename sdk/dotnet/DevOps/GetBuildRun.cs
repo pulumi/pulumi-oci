@@ -22,20 +22,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBuildRun = Oci.DevOps.GetBuildRun.Invoke(new()
         ///     {
-        ///         var testBuildRun = Output.Create(Oci.DevOps.GetBuildRun.InvokeAsync(new Oci.DevOps.GetBuildRunArgs
-        ///         {
-        ///             BuildRunId = oci_devops_build_run.Test_build_run.Id,
-        ///         }));
-        ///     }
+        ///         BuildRunId = oci_devops_build_run.Test_build_run.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -54,20 +52,18 @@ namespace Pulumi.Oci.DevOps
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Oci = Pulumi.Oci;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testBuildRun = Oci.DevOps.GetBuildRun.Invoke(new()
         ///     {
-        ///         var testBuildRun = Output.Create(Oci.DevOps.GetBuildRun.InvokeAsync(new Oci.DevOps.GetBuildRunArgs
-        ///         {
-        ///             BuildRunId = oci_devops_build_run.Test_build_run.Id,
-        ///         }));
-        ///     }
+        ///         BuildRunId = oci_devops_build_run.Test_build_run.Id,
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -77,7 +73,7 @@ namespace Pulumi.Oci.DevOps
     }
 
 
-    public sealed class GetBuildRunArgs : Pulumi.InvokeArgs
+    public sealed class GetBuildRunArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique build run identifier.
@@ -88,9 +84,10 @@ namespace Pulumi.Oci.DevOps
         public GetBuildRunArgs()
         {
         }
+        public static new GetBuildRunArgs Empty => new GetBuildRunArgs();
     }
 
-    public sealed class GetBuildRunInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetBuildRunInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Unique build run identifier.
@@ -101,6 +98,7 @@ namespace Pulumi.Oci.DevOps
         public GetBuildRunInvokeArgs()
         {
         }
+        public static new GetBuildRunInvokeArgs Empty => new GetBuildRunInvokeArgs();
     }
 
 
